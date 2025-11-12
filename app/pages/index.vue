@@ -4,7 +4,10 @@
       <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold mb-4 tracking-tight">
         PROTEGEY
       </h1>
-      <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 font-light">
+      <p class="text-lg md:text-xl lg:text-3xl text-gray-300 font-light mt-2">
+        Bientôt Disponible
+      </p>
+      <p class="text-xl md:text-2xl lg:text-2xl text-gray-400 font-light mt-2">
         Launching Soon
       </p>
     </div>
