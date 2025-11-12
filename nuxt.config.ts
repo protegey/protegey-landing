@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      vercelAnalyticsEnabled: process.env.VERCEL_ANALYTICS_ENABLED !== 'false'
+      vercelAnalyticsEnabled: process.env.VERCEL_ANALYTICS_ENABLED !== 'true'
     }
   },
   app: {
