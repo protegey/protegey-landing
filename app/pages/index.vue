@@ -1,14 +1,16 @@
 <template>
   <div class="bg-black text-white">
     <Hero />
-
+    <WhyProtegey />
+    <Solution />
   </div>
 </template>
 
 <script setup>
 
 import Hero from '~/components/sections/Hero.vue'
-
+import WhyProtegey from '~/components/sections/WhyProtegey.vue'
+import Solution from '~/components/sections/Solution.vue'
 </script>
 
 <style>
