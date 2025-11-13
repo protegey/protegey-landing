@@ -1,0 +1,352 @@
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+import { gsap } from 'gsap';
+import { HugeiconsIcon } from '@hugeicons/vue';
+import { ArrowRight01Icon, Shield01Icon } from '@hugeicons/core-free-icons';
+import BackgroundGradientAnimation from '~/components/ui/BackgroundGradientAnimation.vue';
+
+let tl;
+let typewriterTimeout = null;
+
+const typewriterText = ref('');
+const showCursor = ref(true);
+const texts = [
+    'Detect',
+    'Analyze',
+    'Monitor',
+    'Prevent'
+];
+const typingSpeed = 50; // milliseconds per character
+const deletingSpeed = 30; // milliseconds per character when deleting
+const pauseDelay = 2000; // pause before deleting
+const startDelay = 1500; // delay before starting typewriter effect
+
+const startTypewriter = () => {
+    typewriterText.value = '';
+    showCursor.value = true;
+    let currentTextIndex = 0;
+    let currentIndex = 0;
+    let isDeleting = false;
+
+    const type = () => {
+        const currentText = texts[currentTextIndex];
+
+        if (!isDeleting) {
+            // Typing
+            if (currentIndex < currentText.length) {
+                typewriterText.value += currentText[currentIndex];
+                currentIndex++;
+                typewriterTimeout = setTimeout(type, typingSpeed);
+            } else {
+                // Finished typing, wait then start deleting
+                isDeleting = true;
+                typewriterTimeout = setTimeout(type, pauseDelay);
+            }
+        } else {
+            // Deleting
+            if (typewriterText.value.length > 0) {
+                typewriterText.value = typewriterText.value.slice(0, -1);
+                typewriterTimeout = setTimeout(type, deletingSpeed);
+            } else {
+                // Finished deleting, move to next text
+                isDeleting = false;
+                currentIndex = 0;
+                currentTextIndex = (currentTextIndex + 1) % texts.length;
+                typewriterTimeout = setTimeout(type, typingSpeed);
+            }
+        }
+    };
+
+    setTimeout(() => {
+        type();
+    }, startDelay);
+};
+
+onMounted(() => {
+    try {
+        setTimeout(() => {
+            // Set initial states
+            gsap.set('.hero-title', { opacity: 0, y: 60 });
+            gsap.set('.hero-subtitle', { opacity: 0, y: 40 });
+            gsap.set('.hero-cta-button', { opacity: 0, y: 30 });
+            gsap.set('.hero-card', { opacity: 0, scale: 0.8, y: 50 });
+            gsap.set('.floating-element', { opacity: 0, scale: 0 });
+
+            // Hero entrance animation
+            tl = gsap.timeline();
+
+            tl.to('.hero-title', {
+                y: 0,
+                opacity: 1,
+                duration: 1.2,
+                ease: 'power3.out'
+            })
+                .to('.hero-subtitle', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power3.out'
+                }, '-=0.8')
+                .to('.hero-cta-button', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.2,
+                    ease: 'power3.out'
+                }, '-=0.6')
+                .to('.hero-card', {
+                    scale: 1,
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.2,
+                    ease: 'power3.out'
+                }, '-=1')
+                .to('.floating-element', {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: 'back.out(1.7)'
+                }, '-=0.8');
+
+            // Continuous floating animation for card
+            gsap.to('.hero-card', {
+                y: -20,
+                duration: 3,
+                ease: 'power2.inOut',
+                yoyo: true,
+                repeat: -1
+            });
+
+            // Floating elements continuous animation
+            gsap.to('.floating-element', {
+                y: '-10px',
+                x: '5px',
+                rotation: 5,
+                duration: 4,
+                ease: 'power2.inOut',
+                yoyo: true,
+                repeat: -1,
+                stagger: 0.5
+            });
+
+            // Start typewriter effect
+            startTypewriter();
+
+        }, 200);
+    } catch (error) {
+        console.warn('GSAP animation failed:', error);
+    }
+});
+
+onUnmounted(() => {
+    if (tl && tl.kill) tl.kill();
+    gsap.killTweensOf('.hero-card');
+    gsap.killTweensOf('.floating-element');
+    if (typewriterTimeout) {
+        clearTimeout(typewriterTimeout);
+    }
+});
+</script>
+
+<template>
+    <section class="snap-start h-screen flex items-center justify-center relative overflow-hidden">
+        <BackgroundGradientAnimation
+            gradient-background-start="rgb(0, 0, 0)"
+            gradient-background-end="rgb(17, 24, 39)"
+            first-color="163, 230, 53"
+            second-color="168, 85, 247"
+            third-color="96, 165, 250"
+            fourth-color="163, 230, 53"
+            fifth-color="168, 85, 247"
+            pointer-color="163, 230, 53"
+            size="80%"
+            blending-value="hard-light"
+            :interactive="true"
+            container-class-name="absolute inset-0"
+            class-name="relative z-10 h-full w-full"
+        >
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center relative z-20">
+                <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center max-w-7xl mx-auto w-full">
+
+                <!-- Left Content -->
+                <div class="text-left space-y-6 sm:space-y-8 order-2 lg:order-1">
+                    <div class="space-y-4 sm:space-y-6">
+                        <h1
+                            class="hero-title text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+                            <span class="text-text-primary block">The Pan-African Intelligence Engine helping</span>
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500 block">
+                                Telcos, Governments and Financial Institutions
+                            </span>
+                            <span class="text-text-primary block typewriter-text">
+                                {{ typewriterText }}<span v-if="showCursor" class="typewriter-cursor">_</span> Fraud
+                            </span>
+                        </h1>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                        <button
+                            class="hero-cta-button group bg-primary-400 text-neutral-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-primary-300 transition-all duration-300 flex items-center justify-center gap-2">
+                            Join Waitlist
+                            <HugeiconsIcon :icon="ArrowRight01Icon" :size="20"
+                                class="group-hover:translate-x-1 transition-transform" />
+                        </button>
+                        <button
+                            class="hero-cta-button border-2 border-neutral-600 text-text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:border-primary-400 hover:text-primary-400 transition-all duration-300">
+                            Request a Demo
+                        </button>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="hero-cta flex flex-wrap items-center gap-4 sm:gap-6 lg:gap-8 pt-4 sm:pt-8">
+                        <div class="flex items-center gap-2 text-neutral-400">
+                            <HugeiconsIcon :icon="Shield01Icon" :size="20" color="var(--color-primary-500)" />
+                            <span class="text-xs sm:text-sm">Bank-grade Security</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-neutral-400">
+                            <div class="w-2 h-2 bg-primary-400 rounded-full animate-pulse"></div>
+                            <span class="text-xs sm:text-sm">Real-time Protection</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-neutral-400">
+                            <div class="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
+                            <span class="text-xs sm:text-sm">Africa-first</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="relative flex justify-center lg:justify-end order-1 lg:order-2">
+                    <!-- Main Card -->
+                    <div class="hero-card relative scale-75 sm:scale-90 lg:scale-100">
+                        <!-- Card Background -->
+                        <div
+                            class="relative w-72 sm:w-80 h-48 sm:h-52 bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-2xl shadow-2xl border border-neutral-700 overflow-hidden">
+                            <!-- Card Header -->
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="text-primary-400 font-bold text-lg">PROTEGEY</div>
+                                    <div class="text-neutral-400 text-sm">FRAUD SHIELD</div>
+                                </div>
+
+                                <!-- Card Numbers -->
+                                <div class="text-text-primary text-xl font-mono tracking-wider mb-2">
+                                    **** **** **** 2847
+                                </div>
+
+                                <!-- Card Info -->
+                                <div class="flex justify-between items-end">
+                                    <div>
+                                        <div class="text-neutral-400 text-xs uppercase">Valid Thru</div>
+                                        <div class="text-text-primary text-sm">12/28</div>
+                                    </div>
+                                    <div class="text-primary-400 text-sm font-semibold">PROTECTED</div>
+                                </div>
+                            </div>
+
+                            <!-- Chip -->
+                            <div
+                                class="absolute top-6 left-6 w-12 h-8 bg-gradient-to-br from-accent-yellow-400 to-accent-yellow-600 rounded opacity-90">
+                            </div>
+
+                            <!-- Security Pattern -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-primary-400/5 to-secondary-500/10">
+                            </div>
+                        </div>
+
+                        <!-- Flowing Particles -->
+                        <div class="absolute -inset-2 sm:-inset-4">
+                            <!-- Floating squares -->
+                            <div
+                                class="floating-element absolute top-4 sm:top-8 -right-4 sm:-right-8 w-3 h-3 sm:w-4 sm:h-4 bg-primary-400 rotate-45 opacity-80">
+                            </div>
+                            <div
+                                class="floating-element absolute top-8 sm:top-16 -right-8 sm:-right-16 w-2 h-2 sm:w-3 sm:h-3 bg-secondary-500 rotate-12 opacity-60">
+                            </div>
+                            <div
+                                class="floating-element absolute -top-2 sm:-top-4 right-6 sm:right-12 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent-blue-400 rotate-45 opacity-70">
+                            </div>
+
+                            <div
+                                class="floating-element absolute bottom-4 sm:bottom-8 -left-4 sm:-left-8 w-4 h-4 sm:w-5 sm:h-5 bg-secondary-400 rotate-45 opacity-70">
+                            </div>
+                            <div
+                                class="floating-element absolute bottom-8 sm:bottom-16 -left-8 sm:-left-16 w-2 h-2 sm:w-3 sm:h-3 bg-primary-300 rotate-12 opacity-50">
+                            </div>
+                            <div
+                                class="floating-element absolute -bottom-2 sm:-bottom-4 left-6 sm:left-12 w-3 h-3 sm:w-4 sm:h-4 bg-accent-blue-300 rotate-45 opacity-60">
+                            </div>
+
+                            <!-- Middle particles -->
+                            <div
+                                class="floating-element absolute top-1/2 -right-6 sm:-right-12 w-2 h-2 sm:w-3 sm:h-3 bg-primary-500 rotate-45 opacity-80">
+                            </div>
+                            <div
+                                class="floating-element absolute top-1/3 -left-5 sm:-left-10 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-secondary-400 rotate-12 opacity-60">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </BackgroundGradientAnimation>
+    </section>
+</template>
+
+<style scoped>
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+@keyframes float-reverse {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(10px) rotate(-5deg);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+    animation: float-reverse 8s ease-in-out infinite;
+}
+
+.hero-cta-button {
+    opacity: 1;
+}
+
+.typewriter-text {
+    min-height: 1.2em;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 1s steps(2, start) infinite;
+    color: currentColor;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+</style>
