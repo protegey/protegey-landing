@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary-50: #f7fee7;
+    --color-primary-100: #ecfccb;
+    --color-primary-200: #d9f99d;
+    --color-primary-300: #bef264;
+    --color-primary-400: #a3e635;
+    --color-primary-500: #84cc16;
+    --color-primary-600: #65a30d;
+    --color-primary-700: #4d7c0f;
+    --color-primary-800: #365314;
+    --color-primary-900: #1a2e05;
+
+    /* Secondary Colors */
+    --color-secondary-50: #faf5ff;
+    --color-secondary-100: #f3e8ff;
+    --color-secondary-200: #e9d5ff;
+    --color-secondary-300: #d8b4fe;
+    --color-secondary-400: #c084fc;
+    --color-secondary-500: #a855f7;
+    --color-secondary-600: #9333ea;
+    --color-secondary-700: #7e22ce;
+    --color-secondary-800: #6b21a8;
+    --color-secondary-900: #581c87;
+
+    /* Neutral Colors */
+    --color-neutral-50: #f9fafb;
+    --color-neutral-100: #f3f4f6;
+    --color-neutral-200: #e5e7eb;
+    --color-neutral-300: #d1d5db;
+    --color-neutral-400: #9ca3af;
+    --color-neutral-500: #6b7280;
+    --color-neutral-600: #4b5563;
+    --color-neutral-700: #374151;
+    --color-neutral-800: #1f2937;
+    --color-neutral-900: #111827;
+
+    /* Semantic Colors */
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #9ca3af;
+    --color-text-inverse: #000000;
+    --color-bg-primary: #000000;
+    --color-bg-secondary: #111827;
+    --color-bg-card: #1f2937;
+  }
+}
+
+@layer utilities {
+  /* Theme utility classes */
+  .text-brand-primary {
+    color: var(--color-primary-400);
+  }
+  
+  .text-brand-secondary {
+    color: var(--color-secondary-500);
+  }
+  
+  .bg-brand-primary {
+    background-color: var(--color-primary-400);
+  }
+  
+  .bg-brand-secondary {
+    background-color: var(--color-secondary-500);
+  }
+  
+  .border-brand-primary {
+    border-color: var(--color-primary-400);
+  }
+  
+  .border-brand-secondary {
+    border-color: var(--color-secondary-500);
+  }
+  
+  .gradient-primary {
+    background: linear-gradient(to right, var(--color-primary-400), var(--color-secondary-500));
+  }
+  
+  .gradient-card {
+    background: linear-gradient(to bottom right, var(--color-neutral-800), var(--color-neutral-900));
+  }
+}
+
