@@ -152,9 +152,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="snap-start h-screen flex items-center justify-center relative overflow-hidden">
+    <section class="snap-start min-h-screen h-screen flex items-center justify-center relative overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-300">
         <BackgroundGradientAnimation
-            :gradient-background-start="isDark ? 'rgb(0, 0, 0)' : 'rgb(243, 244, 246)'"
+            :gradient-background-start="isDark ? 'rgb(0, 0, 0)' : 'rgb(249, 250, 251)'"
             :gradient-background-end="isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)'"
             first-color="163, 230, 53"
             second-color="168, 85, 247"
@@ -168,71 +168,71 @@ onUnmounted(() => {
             container-class-name="absolute inset-0"
             class-name="relative z-10 h-full w-full"
         >
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center relative z-20">
-                <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center max-w-7xl mx-auto w-full">
+            <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 h-full flex items-center relative z-20 py-16 sm:py-20">
+                <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center max-w-7xl mx-auto w-full">
 
                 <!-- Left Content -->
-                <div class="text-left space-y-6 sm:space-y-8 order-2 lg:order-1">
-                    <div class="space-y-4 sm:space-y-6">
+                <div class="text-left space-y-4 sm:space-y-6 md:space-y-8 order-2 lg:order-1">
+                    <div class="space-y-3 sm:space-y-4 md:space-y-6">
                         <h1
-                            class="hero-title text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+                            class="hero-title text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold leading-tight">
                             <span class="text-gray-900 dark:text-white block">The Pan-African Intelligence Engine helping</span>
                             <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500 block">
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500 block mt-1 sm:mt-2">
                                 Telcos, Governments and Financial Institutions
                             </span>
-                            <span class="text-gray-900 dark:text-white block typewriter-text">
+                            <span class="text-gray-900 dark:text-white block typewriter-text mt-1 sm:mt-2">
                                 {{ typewriterText }}<span v-if="showCursor" class="typewriter-cursor">_</span> Fraud in Real-Time
                             </span>
                         </h1>
                     </div>
 
-                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3 md:gap-4">
                         <button
-                            class="hero-cta-button group bg-primary-400 text-neutral-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-primary-300 transition-all duration-300 flex items-center justify-center gap-2">
+                            class="hero-cta-button group bg-primary-400 text-neutral-900 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-primary-300 transition-all duration-300 flex items-center justify-center gap-2">
                             Join Waitlist
                             <HugeiconsIcon :icon="ArrowRight01Icon" :size="20"
                                 class="group-hover:translate-x-1 transition-transform" />
                         </button>
                         <button
-                            class="hero-cta-button border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:border-primary-400 hover:text-primary-400 transition-all duration-300">
+                            class="hero-cta-button border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:border-primary-400 hover:text-primary-400 transition-all duration-300">
                             Request a Demo
                         </button>
                     </div>
 
                     <!-- Trust indicators -->
-                    <div class="hero-cta flex flex-wrap items-center gap-4 sm:gap-6 lg:gap-8 pt-4 sm:pt-8">
-                        <div class="flex items-center gap-2 text-neutral-400">
-                            <HugeiconsIcon :icon="Shield01Icon" :size="20" color="var(--color-primary-500)" />
+                    <div class="hero-cta flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-3 sm:pt-4 md:pt-8">
+                        <div class="flex items-center gap-1.5 sm:gap-2 text-neutral-400 dark:text-neutral-500">
+                            <HugeiconsIcon :icon="Shield01Icon" :size="16" class="sm:w-5 sm:h-5" color="var(--color-primary-500)" />
                             <span class="text-xs sm:text-sm">Bank-grade Security</span>
                         </div>
-                        <div class="flex items-center gap-2 text-neutral-400">
-                            <div class="w-2 h-2 bg-primary-400 rounded-full animate-pulse"></div>
+                        <div class="flex items-center gap-1.5 sm:gap-2 text-neutral-400 dark:text-neutral-500">
+                            <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary-400 rounded-full animate-pulse"></div>
                             <span class="text-xs sm:text-sm">Real-time Protection</span>
                         </div>
-                        <div class="flex items-center gap-2 text-neutral-400">
-                            <div class="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
+                        <div class="flex items-center gap-1.5 sm:gap-2 text-neutral-400 dark:text-neutral-500">
+                            <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-secondary-400 rounded-full animate-pulse"></div>
                             <span class="text-xs sm:text-sm">Africa-first</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Visual -->
-                <div class="relative flex justify-center lg:justify-end order-1 lg:order-2">
+                <div class="relative flex justify-center lg:justify-end order-1 lg:order-2 mb-4 lg:mb-0">
                     <!-- Main Card -->
-                    <div class="hero-card relative scale-85 sm:scale-90 lg:scale-100">
+                    <div class="hero-card relative scale-75 xs:scale-85 sm:scale-90 md:scale-95 lg:scale-100">
                         <!-- Card Background -->
                         <div
-                            :class="['relative w-72 sm:w-80 h-48 sm:h-52 rounded-2xl shadow-2xl overflow-hidden', 'bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700']">
+                            :class="['relative w-64 xs:w-72 sm:w-80 md:w-80 h-40 xs:h-48 sm:h-52 rounded-2xl shadow-2xl overflow-hidden', 'bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700']">
                             <!-- Card Header -->
-                            <div class="p-6">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="text-primary-400 font-bold text-lg">PROTEGEY</div>
-                                    <div class="text-gray-500 dark:text-gray-400 text-sm">FRAUD SHIELD</div>
+                            <div class="p-4 sm:p-6">
+                                <div class="flex items-center justify-between mb-3 sm:mb-4">
+                                    <div class="text-primary-400 font-bold text-base sm:text-lg">PROTEGEY</div>
+                                    <div class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">FRAUD SHIELD</div>
                                 </div>
 
                                 <!-- Card Numbers -->
-                                <div class="text-gray-900 dark:text-white text-xl font-mono tracking-wider mb-2">
+                                <div class="text-gray-900 dark:text-white text-lg sm:text-xl font-mono tracking-wider mb-1.5 sm:mb-2">
                                     **** **** **** 2847
                                 </div>
 
@@ -242,13 +242,13 @@ onUnmounted(() => {
                                         <div class="text-gray-500 dark:text-gray-400 text-xs uppercase">Valid Thru</div>
                                         <div class="text-gray-900 dark:text-white text-sm">12/28</div>
                                     </div>
-                                    <div class="text-primary-400 text-sm font-semibold">PROTECTED</div>
+                                    <div class="text-primary-400 text-xs sm:text-sm font-semibold">PROTECTED</div>
                                 </div>
                             </div>
 
                             <!-- Chip -->
                             <div
-                                class="absolute top-6 left-6 w-12 h-8 bg-gradient-to-br from-accent-yellow-400 to-accent-yellow-600 rounded opacity-90">
+                                class="absolute top-4 sm:top-6 left-4 sm:left-6 w-10 sm:w-12 h-7 sm:h-8 bg-gradient-to-br from-accent-yellow-400 to-accent-yellow-600 rounded opacity-90">
                             </div>
 
                             <!-- Security Pattern -->

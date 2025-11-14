@@ -1,31 +1,31 @@
 <template>
     <section id="solution" ref="solutionSection"
-        :class="[isDark ? 'bg-gradient-to-b from-slate-900 to-slate-950' : 'bg-gradient-to-b from-slate-100 to-white', 'snap-start h-screen flex items-center px-4 sm:px-6 lg:px-8']">
+        :class="[isDark ? 'bg-gradient-to-b from-slate-900 to-slate-950' : 'bg-gradient-to-b from-slate-100 to-white', 'snap-start min-h-screen h-screen flex items-center px-3 sm:px-4 md:px-6 lg:px-8 py-12 sm:py-16 md:py-20']">
         <div class="max-w-7xl mx-auto w-full">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
                 <div class="fade-up">
                     <div
-                        :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'font-bold mb-4 uppercase tracking-wider']">
+                        :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs sm:text-sm']">
                         The Solution</div>
                     <h2
-                        :class="[isDark ? 'text-4xl md:text-5xl font-bold mb-6 leading-tight' : 'text-4xl md:text-5xl font-bold mb-6 leading-tight text-slate-900']">
+                        :class="[isDark ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight' : 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-slate-900']">
                         Protect What<br />Matters Most
                     </h2>
                     <p
-                        :class="[isDark ? 'text-xl text-slate-300 mb-8 leading-relaxed' : 'text-xl text-slate-700 mb-8 leading-relaxed']">
+                        :class="[isDark ? 'text-base sm:text-lg md:text-xl text-slate-300 mb-6 sm:mb-8 leading-relaxed' : 'text-base sm:text-lg md:text-xl text-slate-700 mb-6 sm:mb-8 leading-relaxed']">
                         Centry's advanced fraud detection technology safeguards Africa's financial ecosystem in
                         real-time.
                     </p>
                     <p
-                        :class="[isDark ? 'text-lg text-slate-400 leading-relaxed mb-8' : 'text-lg text-slate-600 leading-relaxed mb-8']">
+                        :class="[isDark ? 'text-sm sm:text-base md:text-lg text-slate-400 leading-relaxed mb-6 sm:mb-8' : 'text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed mb-6 sm:mb-8']">
                         Next-Generation Fraud Prevention — Built with ML and real-time analytics, Centry seamlessly
                         integrates with telecoms, banks, and fintech APIs to protect millions of transactions.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4">
+                    <div class="space-y-3 sm:space-y-4">
+                        <div class="flex items-start gap-3 sm:gap-4">
                             <div
-                                :class="[isDark ? 'bg-lime-400/20' : 'bg-lime-100', 'w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-1']">
-                                <svg :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'w-5 h-5']"
+                                :class="[isDark ? 'bg-lime-400/20' : 'bg-lime-100', 'w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1']">
+                                <svg :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'w-4 h-4 sm:w-5 sm:h-5']"
                                     fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -34,16 +34,16 @@
                             </div>
                             <div>
                                 <div
-                                    :class="[isDark ? 'font-semibold text-lg mb-1' : 'font-semibold text-lg mb-1 text-slate-900']">
+                                    :class="[isDark ? 'font-semibold text-base sm:text-lg mb-0.5 sm:mb-1' : 'font-semibold text-base sm:text-lg mb-0.5 sm:mb-1 text-slate-900']">
                                     Machine Learning Detection</div>
-                                <div :class="[isDark ? 'text-slate-400' : 'text-slate-600']">AI-powered pattern
+                                <div :class="[isDark ? 'text-slate-400 text-sm sm:text-base' : 'text-slate-600 text-sm sm:text-base']">AI-powered pattern
                                     recognition identifies fraud in milliseconds</div>
                             </div>
                         </div>
-                        <div class="flex items-start gap-4">
+                        <div class="flex items-start gap-3 sm:gap-4">
                             <div
-                                :class="[isDark ? 'bg-lime-400/20' : 'bg-lime-100', 'w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-1']">
-                                <svg :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'w-5 h-5']"
+                                :class="[isDark ? 'bg-lime-400/20' : 'bg-lime-100', 'w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1']">
+                                <svg :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'w-4 h-4 sm:w-5 sm:h-5']"
                                     fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -52,16 +52,16 @@
                             </div>
                             <div>
                                 <div
-                                    :class="[isDark ? 'font-semibold text-lg mb-1' : 'font-semibold text-lg mb-1 text-slate-900']">
+                                    :class="[isDark ? 'font-semibold text-base sm:text-lg mb-0.5 sm:mb-1' : 'font-semibold text-base sm:text-lg mb-0.5 sm:mb-1 text-slate-900']">
                                     Real-Time Integration</div>
-                                <div :class="[isDark ? 'text-slate-400' : 'text-slate-600']">Seamless API connections
+                                <div :class="[isDark ? 'text-slate-400 text-sm sm:text-base' : 'text-slate-600 text-sm sm:text-base']">Seamless API connections
                                     with existing infrastructure</div>
                             </div>
                         </div>
-                        <div class="flex items-start gap-4">
+                        <div class="flex items-start gap-3 sm:gap-4">
                             <div
-                                :class="[isDark ? 'bg-lime-400/20' : 'bg-lime-100', 'w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-1']">
-                                <svg :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'w-5 h-5']"
+                                :class="[isDark ? 'bg-lime-400/20' : 'bg-lime-100', 'w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1']">
+                                <svg :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'w-4 h-4 sm:w-5 sm:h-5']"
                                     fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -70,9 +70,9 @@
                             </div>
                             <div>
                                 <div
-                                    :class="[isDark ? 'font-semibold text-lg mb-1' : 'font-semibold text-lg mb-1 text-slate-900']">
+                                    :class="[isDark ? 'font-semibold text-base sm:text-lg mb-0.5 sm:mb-1' : 'font-semibold text-base sm:text-lg mb-0.5 sm:mb-1 text-slate-900']">
                                     Africa-First Design</div>
-                                <div :class="[isDark ? 'text-slate-400' : 'text-slate-600']">Built for the unique
+                                <div :class="[isDark ? 'text-slate-400 text-sm sm:text-base' : 'text-slate-600 text-sm sm:text-base']">Built for the unique
                                     challenges of African financial systems</div>
                             </div>
                         </div>

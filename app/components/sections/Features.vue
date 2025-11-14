@@ -12,6 +12,8 @@ import {
     Settings01Icon
 } from '@hugeicons/core-free-icons';
 
+defineProps({ isDark: Boolean });
+
 if (typeof window !== 'undefined' && !gsap.plugins.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
 }
@@ -100,25 +102,25 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="features-modern snap-start h-screen flex items-center bg-gray-800">
-        <div class="container mx-auto px-4 h-full flex items-center">
+    <section :class="['features-modern snap-start min-h-screen h-screen flex items-center', isDark ? 'bg-gray-900' : 'bg-gray-50']">
+        <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 h-full flex items-center py-12 sm:py-16 md:py-20">
             <div class="max-w-6xl mx-auto w-full">
 
                 <!-- Header -->
-                <div class="text-center mb-20">
-                    <h2 class="features-title text-4xl md:text-6xl font-bold text-white mb-6">
+                <div class="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+                    <h2 :class="['features-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6', isDark ? 'text-white' : 'text-gray-900']">
                         Features / <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-purple-500">Products</span>
                     </h2>
-                    <p class="features-subtitle text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    <p :class="['features-subtitle text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed', isDark ? 'text-gray-300' : 'text-gray-600']">
                         Comprehensive fraud prevention tools designed for Africa's diverse financial ecosystem.
                     </p>
                 </div>
 
                 <!-- Features Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                     <div v-for="(feature, index) in features" :key="index" class="feature-card group">
-                        <div class="relative h-full p-8 rounded-2xl border transition-all duration-500 hover:-translate-y-2"
+                        <div class="relative h-full p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border transition-all duration-500 hover:-translate-y-2"
                             :class="{
                                 'bg-gradient-to-br from-lime-900/20 to-lime-800/10 border-lime-700/30 hover:border-lime-400/60': feature.color === 'lime',
                                 'bg-gradient-to-br from-purple-900/20 to-purple-800/10 border-purple-700/30 hover:border-purple-400/60': feature.color === 'purple',
@@ -126,13 +128,13 @@ onUnmounted(() => {
                             }">
 
                             <!-- Icon -->
-                            <div class="mb-6">
-                                <div class="w-14 h-14 rounded-xl flex items-center justify-center" :class="{
+                            <div class="mb-4 sm:mb-6">
+                                <div class="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl flex items-center justify-center" :class="{
                                     'bg-lime-500/20': feature.color === 'lime',
                                     'bg-purple-500/20': feature.color === 'purple',
                                     'bg-blue-500/20': feature.color === 'blue'
                                 }">
-                                    <HugeiconsIcon :icon="feature.icon" :size="28" :class="{
+                                    <HugeiconsIcon :icon="feature.icon" :size="24" class="sm:w-6 sm:h-6 md:w-7 md:h-7" :class="{
                                         'text-lime-400': feature.color === 'lime',
                                         'text-purple-400': feature.color === 'purple',
                                         'text-blue-400': feature.color === 'blue'
@@ -141,21 +143,21 @@ onUnmounted(() => {
                             </div>
 
                             <!-- Content -->
-                            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-lime-400 transition-colors">
+                            <h3 :class="['text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 group-hover:text-lime-400 transition-colors', isDark ? 'text-white' : 'text-gray-900']">
                                 {{ feature.title }}
                             </h3>
 
-                            <p class="text-gray-300 leading-relaxed">
+                            <p :class="['leading-relaxed text-sm sm:text-base', isDark ? 'text-gray-300' : 'text-gray-600']">
                                 {{ feature.description }}
                             </p>
 
                             <!-- Decorative Element -->
-                            <div class="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                                <HugeiconsIcon :icon="feature.icon" :size="64" class="text-white" />
+                            <div class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                                <HugeiconsIcon :icon="feature.icon" :size="48" class="sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" />
                             </div>
 
                             <!-- Hover Effect Background -->
-                            <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            <div class="absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                                 :class="{
                                     'bg-gradient-to-br from-lime-400/5 to-transparent': feature.color === 'lime',
                                     'bg-gradient-to-br from-purple-400/5 to-transparent': feature.color === 'purple',
@@ -167,9 +169,9 @@ onUnmounted(() => {
                 </div>
 
                 <!-- Bottom CTA -->
-                <div class="text-center mt-16">
+                <div class="text-center mt-8 sm:mt-12 md:mt-16">
                     <button
-                        class="bg-gradient-to-r from-lime-400 to-purple-500 text-black px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-lime-400/25 transition-all duration-300">
+                        class="bg-gradient-to-r from-lime-400 to-purple-500 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:shadow-lg hover:shadow-lime-400/25 transition-all duration-300">
                         Explore All Features
                     </button>
                 </div>
