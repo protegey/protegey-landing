@@ -40,48 +40,83 @@
     --color-neutral-800: #1f2937;
     --color-neutral-900: #111827;
 
-    /* Semantic Colors */
-    --color-text-primary: #ffffff;
-    --color-text-secondary: #9ca3af;
-    --color-text-inverse: #000000;
-    --color-bg-primary: #000000;
-    --color-bg-secondary: #111827;
-    --color-bg-card: #1f2937;
+    /* Semantic Colors - Light (default) */
+    --color-text-primary: #111827; /* gray-900 */
+    --color-text-secondary: #374151; /* gray-700 */
+    --color-text-inverse: #ffffff; /* white */
+    --color-bg-primary: #ffffff; /* white */
+    --color-bg-secondary: #f3f4f6; /* gray-100 */
+    --color-bg-card: #ffffff; /* white */
+  }
+
+  /* Dark theme overrides */
+  .dark {
+    --color-text-primary: #ffffff; /* white */
+    --color-text-secondary: #9ca3af; /* gray-400 */
+    --color-text-inverse: #000000; /* black */
+    --color-bg-primary: #000000; /* black */
+    --color-bg-secondary: #111827; /* gray-900 */
+    --color-bg-card: #1f2937; /* gray-800 */
   }
 }
 
 @layer utilities {
   /* Theme utility classes */
   .text-brand-primary {
-    color: var(--color-primary-400);
+    @apply text-primary-400;
   }
   
   .text-brand-secondary {
-    color: var(--color-secondary-500);
+    @apply text-secondary-500;
   }
   
   .bg-brand-primary {
-    background-color: var(--color-primary-400);
+    @apply bg-primary-400;
   }
   
   .bg-brand-secondary {
-    background-color: var(--color-secondary-500);
+    @apply bg-secondary-500;
   }
   
   .border-brand-primary {
-    border-color: var(--color-primary-400);
+    @apply border-primary-400;
   }
   
   .border-brand-secondary {
-    border-color: var(--color-secondary-500);
+    @apply border-secondary-500;
   }
   
   .gradient-primary {
-    background: linear-gradient(to right, var(--color-primary-400), var(--color-secondary-500));
+    @apply bg-gradient-to-r from-primary-400 to-secondary-500;
   }
   
   .gradient-card {
-    background: linear-gradient(to bottom right, var(--color-neutral-800), var(--color-neutral-900));
+    @apply bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-900 dark:to-black;
+  }
+
+  /* Semantic classes that work with dark mode */
+  .text-primary {
+    @apply text-gray-900 dark:text-white;
+  }
+
+  .text-secondary {
+    @apply text-gray-600 dark:text-gray-300;
+  }
+
+  .text-muted {
+    @apply text-gray-500 dark:text-gray-400;
+  }
+
+  .bg-surface {
+    @apply bg-white dark:bg-gray-900;
+  }
+
+  .bg-surface-secondary {
+    @apply bg-gray-50 dark:bg-gray-800;
+  }
+
+  .border-default {
+    @apply border-gray-200 dark:border-gray-700;
   }
 }
 

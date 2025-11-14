@@ -45,6 +45,12 @@ export default defineNuxtConfig({
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "theme-color", content: "#0E1225" },
       ],
+      script: [
+        {
+          children:
+            "(function(){try{var stored=localStorage.getItem('theme');var dark=stored==='dark'||(!stored&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',dark);}catch(e){}})();",
+        },
+      ],
       link: [
         // Favicon setup (update paths to match your assets)
         { rel: "icon", type: "image/png", href: "/favicon.png" },
