@@ -182,7 +182,7 @@ onUnmounted(() => {
                                 Telcos, Governments and Financial Institutions
                             </span>
                             <span class="text-gray-900 dark:text-white block typewriter-text">
-                                {{ typewriterText }}<span v-if="showCursor" class="typewriter-cursor">_</span> Fraud
+                                {{ typewriterText }}<span v-if="showCursor" class="typewriter-cursor">_</span> Fraud in Real-Time
                             </span>
                         </h1>
                     </div>

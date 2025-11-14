@@ -1,7 +1,7 @@
 <template>
     <section id="solution" ref="solutionSection"
-        :class="[isDark ? 'bg-gradient-to-b from-slate-900 to-slate-950' : 'bg-gradient-to-b from-slate-100 to-white', 'py-24 px-4 sm:px-6 lg:px-8']">
-        <div class="max-w-7xl mx-auto">
+        :class="[isDark ? 'bg-gradient-to-b from-slate-900 to-slate-950' : 'bg-gradient-to-b from-slate-100 to-white', 'snap-start h-screen flex items-center px-4 sm:px-6 lg:px-8']">
+        <div class="max-w-7xl mx-auto w-full">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="fade-up">
                     <div

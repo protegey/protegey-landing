@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="snap-y snap-mandatory h-screen overflow-y-scroll">
     <Hero :isDark="isDark" />
     <WhyProtegey :isDark="isDark" />
     <Solution :isDark="isDark" />
