@@ -1,16 +1,18 @@
 <template>
-  <div class="bg-black text-white">
-    <Hero />
-    <WhyProtegey />
-    <Solution />
+  <div>
+    <Hero :isDark="isDark" />
+    <WhyProtegey :isDark="isDark" />
+    <Solution :isDark="isDark" />
   </div>
 </template>
 
 <script setup>
-
+import { useTheme } from '~/composables/useTheme'
 import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
 import Solution from '~/components/sections/Solution.vue'
+
+const { isDark } = useTheme()
 </script>
 
 <style>

@@ -83,7 +83,7 @@
                     <div class="main-card relative">
                         <!-- Main Protection Card -->
                         <div
-                            class="relative w-84 h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden">
+                            class="relative w-96 h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden">
 
                             <!-- Card Header -->
                             <div class="p-8">

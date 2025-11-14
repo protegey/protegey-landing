@@ -5,6 +5,8 @@ import { HugeiconsIcon } from '@hugeicons/vue';
 import { ArrowRight01Icon, Shield01Icon } from '@hugeicons/core-free-icons';
 import BackgroundGradientAnimation from '~/components/ui/BackgroundGradientAnimation.vue';
 
+defineProps({ isDark: Boolean });
+
 let tl;
 let typewriterTimeout = null;
 
@@ -152,8 +154,8 @@ onUnmounted(() => {
 <template>
     <section class="snap-start h-screen flex items-center justify-center relative overflow-hidden">
         <BackgroundGradientAnimation
-            gradient-background-start="rgb(0, 0, 0)"
-            gradient-background-end="rgb(17, 24, 39)"
+            :gradient-background-start="isDark ? 'rgb(0, 0, 0)' : 'rgb(243, 244, 246)'"
+            :gradient-background-end="isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)'"
             first-color="163, 230, 53"
             second-color="168, 85, 247"
             third-color="96, 165, 250"
@@ -174,12 +176,12 @@ onUnmounted(() => {
                     <div class="space-y-4 sm:space-y-6">
                         <h1
                             class="hero-title text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
-                            <span class="text-text-primary block">The Pan-African Intelligence Engine helping</span>
+                            <span class="text-gray-900 dark:text-white block">The Pan-African Intelligence Engine helping</span>
                             <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500 block">
                                 Telcos, Governments and Financial Institutions
                             </span>
-                            <span class="text-text-primary block typewriter-text">
+                            <span class="text-gray-900 dark:text-white block typewriter-text">
                                 {{ typewriterText }}<span v-if="showCursor" class="typewriter-cursor">_</span> Fraud
                             </span>
                         </h1>
@@ -193,7 +195,7 @@ onUnmounted(() => {
                                 class="group-hover:translate-x-1 transition-transform" />
                         </button>
                         <button
-                            class="hero-cta-button border-2 border-neutral-600 text-text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:border-primary-400 hover:text-primary-400 transition-all duration-300">
+                            class="hero-cta-button border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:border-primary-400 hover:text-primary-400 transition-all duration-300">
                             Request a Demo
                         </button>
                     </div>
@@ -218,27 +220,27 @@ onUnmounted(() => {
                 <!-- Right Visual -->
                 <div class="relative flex justify-center lg:justify-end order-1 lg:order-2">
                     <!-- Main Card -->
-                    <div class="hero-card relative scale-75 sm:scale-90 lg:scale-100">
+                    <div class="hero-card relative scale-85 sm:scale-90 lg:scale-100">
                         <!-- Card Background -->
                         <div
-                            class="relative w-72 sm:w-80 h-48 sm:h-52 bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-2xl shadow-2xl border border-neutral-700 overflow-hidden">
+                            :class="['relative w-72 sm:w-80 h-48 sm:h-52 rounded-2xl shadow-2xl overflow-hidden', 'bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700']">
                             <!-- Card Header -->
                             <div class="p-6">
                                 <div class="flex items-center justify-between mb-4">
                                     <div class="text-primary-400 font-bold text-lg">PROTEGEY</div>
-                                    <div class="text-neutral-400 text-sm">FRAUD SHIELD</div>
+                                    <div class="text-gray-500 dark:text-gray-400 text-sm">FRAUD SHIELD</div>
                                 </div>
 
                                 <!-- Card Numbers -->
-                                <div class="text-text-primary text-xl font-mono tracking-wider mb-2">
+                                <div class="text-gray-900 dark:text-white text-xl font-mono tracking-wider mb-2">
                                     **** **** **** 2847
                                 </div>
 
                                 <!-- Card Info -->
                                 <div class="flex justify-between items-end">
                                     <div>
-                                        <div class="text-neutral-400 text-xs uppercase">Valid Thru</div>
-                                        <div class="text-text-primary text-sm">12/28</div>
+                                        <div class="text-gray-500 dark:text-gray-400 text-xs uppercase">Valid Thru</div>
+                                        <div class="text-gray-900 dark:text-white text-sm">12/28</div>
                                     </div>
                                     <div class="text-primary-400 text-sm font-semibold">PROTECTED</div>
                                 </div>

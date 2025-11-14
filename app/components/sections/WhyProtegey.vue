@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HugeiconsIcon } from '@hugeicons/vue';
 import { Shield01Icon, ChartDownIcon, ZapIcon } from '@hugeicons/core-free-icons';
 
+defineProps({ isDark: Boolean });
+
 if (typeof window !== 'undefined' && !gsap.plugins.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
 }
@@ -59,14 +61,14 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="why-protegey-section snap-start h-screen flex items-center">
+    <section :class="['why-protegey-section snap-start h-screen flex items-center', isDark ? 'bg-gradient-to-b from-slate-900 to-slate-950' : 'bg-gradient-to-b from-gray-50 to-white']">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
             <div class="max-w-6xl mx-auto w-full">
 
                 <!-- Section Header -->
                 <div class="text-center mb-8 sm:mb-12 lg:mb-16">
                     <h2
-                        class="section-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
+                        :class="['section-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6', isDark ? 'text-white' : 'text-gray-900']">
                         Why <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-purple-500">Protegey</span>
                     </h2>
