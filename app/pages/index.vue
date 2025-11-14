@@ -3,6 +3,7 @@
     <Hero :isDark="isDark" />
     <WhyProtegey :isDark="isDark" />
     <Solution :isDark="isDark" />
+    <Features :isDark="isDark" />
   </div>
 </template>
 
@@ -11,6 +12,7 @@ import { useTheme } from '~/composables/useTheme'
 import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
 import Solution from '~/components/sections/Solution.vue'
+import Features from '~/components/sections/Features.vue'
 
 const { isDark } = useTheme()
 </script>
