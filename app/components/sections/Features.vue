@@ -11,6 +11,7 @@ import {
     Notification02Icon,
     Settings01Icon
 } from '@hugeicons/core-free-icons';
+import BackgroundGradientAnimation from '~/components/ui/BackgroundGradientAnimation.vue';
 
 defineProps({ isDark: Boolean });
 
@@ -102,9 +103,24 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section :class="['features-modern snap-start min-h-screen h-screen flex items-center', isDark ? 'bg-gray-900' : 'bg-gray-50']">
-        <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 h-full flex items-center py-12 sm:py-16 md:py-20">
-            <div class="max-w-6xl mx-auto w-full">
+    <section class="features-modern snap-start min-h-screen h-screen flex items-center justify-center relative overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-300">
+        <BackgroundGradientAnimation
+            :gradient-background-start="isDark ? 'rgb(0, 0, 0)' : 'rgb(249, 250, 251)'"
+            :gradient-background-end="isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)'"
+            first-color="163, 230, 53"
+            second-color="168, 85, 247"
+            third-color="96, 165, 250"
+            fourth-color="163, 230, 53"
+            fifth-color="168, 85, 247"
+            pointer-color="163, 230, 53"
+            size="80%"
+            blending-value="hard-light"
+            :interactive="true"
+            container-class-name="absolute inset-0"
+            class-name="relative z-10 h-full w-full"
+        >
+            <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 h-full flex items-center relative z-20 py-12 sm:py-16 md:py-20">
+                <div class="max-w-6xl mx-auto w-full">
 
                 <!-- Header -->
                 <div class="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
@@ -177,5 +193,6 @@ onUnmounted(() => {
                 </div>
             </div>
         </div>
+        </BackgroundGradientAnimation>
     </section>
 </template>

@@ -1,8 +1,23 @@
 <template>
-    <section id="solution" ref="solutionSection"
-        :class="[isDark ? 'bg-gradient-to-b from-slate-900 to-slate-950' : 'bg-gradient-to-b from-slate-100 to-white', 'snap-start min-h-screen h-screen flex items-center px-3 sm:px-4 md:px-6 lg:px-8 py-12 sm:py-16 md:py-20']">
-        <div class="max-w-7xl mx-auto w-full">
-            <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
+    <section id="solution" ref="solutionSection" class="snap-start min-h-screen h-screen flex items-center justify-center relative overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-300">
+        <BackgroundGradientAnimation
+            :gradient-background-start="isDark ? 'rgb(0, 0, 0)' : 'rgb(249, 250, 251)'"
+            :gradient-background-end="isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)'"
+            first-color="163, 230, 53"
+            second-color="168, 85, 247"
+            third-color="96, 165, 250"
+            fourth-color="163, 230, 53"
+            fifth-color="168, 85, 247"
+            pointer-color="163, 230, 53"
+            size="80%"
+            blending-value="hard-light"
+            :interactive="true"
+            container-class-name="absolute inset-0"
+            class-name="relative z-10 h-full w-full"
+        >
+            <div class="px-3 sm:px-4 md:px-6 lg:px-8 py-12 sm:py-16 md:py-20 h-full flex items-center relative z-20">
+                <div class="max-w-7xl mx-auto w-full">
+                    <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
                 <div class="fade-up">
                     <div
                         :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs sm:text-sm']">
@@ -160,7 +175,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+                </div>
+            </div>
+        </BackgroundGradientAnimation>
     </section>
 </template>
   
@@ -170,6 +187,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HugeiconsIcon } from '@hugeicons/vue';
 import { Shield01Icon } from '@hugeicons/core-free-icons';
+import BackgroundGradientAnimation from '~/components/ui/BackgroundGradientAnimation.vue';
 
 if (typeof window !== 'undefined' && !gsap.plugins.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
