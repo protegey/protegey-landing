@@ -13,12 +13,12 @@
                     </h2>
                     <p
                         :class="[isDark ? 'text-base sm:text-lg md:text-xl text-slate-300 mb-6 sm:mb-8 leading-relaxed' : 'text-base sm:text-lg md:text-xl text-slate-700 mb-6 sm:mb-8 leading-relaxed']">
-                        Centry's advanced fraud detection technology safeguards Africa's financial ecosystem in
+                        Protegey's advanced fraud detection technology safeguards Africa's financial ecosystem in
                         real-time.
                     </p>
                     <p
                         :class="[isDark ? 'text-sm sm:text-base md:text-lg text-slate-400 leading-relaxed mb-6 sm:mb-8' : 'text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed mb-6 sm:mb-8']">
-                        Next-Generation Fraud Prevention — Built with ML and real-time analytics, Centry seamlessly
+                        Next-Generation Fraud Prevention — Built with ML and real-time analytics, Protegey seamlessly
                         integrates with telecoms, banks, and fintech APIs to protect millions of transactions.
                     </p>
                     <div class="space-y-3 sm:space-y-4">
@@ -94,7 +94,7 @@
                                             <HugeiconsIcon :icon="Shield01Icon" class="w-6 h-6 text-black" />
                                         </div>
                                         <div>
-                                            <div class="text-lime-400 font-bold text-lg">CENTRY SHIELD</div>
+                                            <div class="text-lime-400 font-bold text-lg">PROTEGEY SHIELD</div>
                                             <div class="text-gray-400 text-sm">Real-time Protection</div>
                                         </div>
                                     </div>

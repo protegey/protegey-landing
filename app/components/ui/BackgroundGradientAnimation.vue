@@ -44,6 +44,74 @@ const isSafari = ref(false);
 const mouseOffsetX = ref(0);
 const mouseOffsetY = ref(0);
 
+// Animate interactive pointer
+let animationFrame: number | null = null;
+
+const animatePointer = () => {
+  if (interactiveRef.value) {
+    curX.value = curX.value + (tgX.value - curX.value) / 20;
+    curY.value = curY.value + (tgY.value - curY.value) / 20;
+    interactiveRef.value.style.transform = `translate(${Math.round(curX.value)}px, ${Math.round(curY.value)}px)`;
+  }
+  animationFrame = requestAnimationFrame(animatePointer);
+};
+
+// Global mouse move handler for full page tracking
+const handleGlobalMouseMove = (event: MouseEvent) => {
+  if (containerRef.value) {
+    const rect = containerRef.value.getBoundingClientRect();
+    
+    // Calculate mouse position relative to the fixed container
+    const mouseXPos = event.clientX;
+    const mouseYPos = event.clientY;
+    
+    // Calculate position as percentage of viewport
+    mouseX.value = (mouseXPos / window.innerWidth) * 100;
+    mouseY.value = (mouseYPos / window.innerHeight) * 100;
+    
+    // Update interactive pointer position
+    if (interactiveRef.value) {
+      tgX.value = mouseXPos - rect.left;
+      tgY.value = mouseYPos - rect.top;
+    }
+    
+    // Calculate mouse offset for gradient orb reactions (stronger effect)
+    mouseOffsetX.value = (mouseX.value - 50) * 0.5; // Increased from 0.02 for more visible movement
+    mouseOffsetY.value = (mouseY.value - 50) * 0.5;
+  }
+};
+
+const handleMouseMove = (event: MouseEvent) => {
+  if (containerRef.value) {
+    const rect = containerRef.value.getBoundingClientRect();
+    // Calculate mouse position relative to container
+    mouseX.value = ((event.clientX - rect.left) / rect.width) * 100;
+    mouseY.value = ((event.clientY - rect.top) / rect.height) * 100;
+    
+    // Update interactive pointer position
+    if (interactiveRef.value) {
+      tgX.value = event.clientX - rect.left;
+      tgY.value = event.clientY - rect.top;
+    }
+    
+    // Calculate mouse offset for gradient orb reactions
+    mouseOffsetX.value = (mouseX.value - 50) * 0.02;
+    mouseOffsetY.value = (mouseY.value - 50) * 0.02;
+  }
+};
+
+const handleMouseLeave = () => {
+  // Reset to center when mouse leaves
+  mouseX.value = 50;
+  mouseY.value = 50;
+  mouseOffsetX.value = 0;
+  mouseOffsetY.value = 0;
+};
+
+const setIsSafari = (value: boolean) => {
+  isSafari.value = value;
+};
+
 // Set CSS variables
 onMounted(() => {
   if (typeof document !== 'undefined') {
@@ -60,6 +128,12 @@ onMounted(() => {
 
     // Detect Safari
     setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
+    
+    // Add global mouse move listener for page-wide tracking
+    if (props.interactive) {
+      window.addEventListener('mousemove', handleGlobalMouseMove);
+      animatePointer();
+    }
   }
 });
 
@@ -93,26 +167,8 @@ watch(
   }
 );
 
-// Animate interactive pointer
-let animationFrame: number | null = null;
-
-const animatePointer = () => {
-  if (interactiveRef.value) {
-    curX.value = curX.value + (tgX.value - curX.value) / 20;
-    curY.value = curY.value + (tgY.value - curY.value) / 20;
-    interactiveRef.value.style.transform = `translate(${Math.round(curX.value)}px, ${Math.round(curY.value)}px)`;
-  }
-  animationFrame = requestAnimationFrame(animatePointer);
-};
-
 watch([tgX, tgY], () => {
   if (props.interactive && !animationFrame) {
-    animatePointer();
-  }
-});
-
-onMounted(() => {
-  if (props.interactive) {
     animatePointer();
   }
 });
@@ -121,38 +177,11 @@ onUnmounted(() => {
   if (animationFrame) {
     cancelAnimationFrame(animationFrame);
   }
-});
-
-const handleMouseMove = (event: MouseEvent) => {
-  if (containerRef.value) {
-    const rect = containerRef.value.getBoundingClientRect();
-    // Calculate mouse position relative to container
-    mouseX.value = ((event.clientX - rect.left) / rect.width) * 100;
-    mouseY.value = ((event.clientY - rect.top) / rect.height) * 100;
-    
-    // Update interactive pointer position
-    if (interactiveRef.value) {
-      tgX.value = event.clientX - rect.left;
-      tgY.value = event.clientY - rect.top;
-    }
-    
-    // Calculate mouse offset for gradient orb reactions
-    mouseOffsetX.value = (mouseX.value - 50) * 0.02; // Scale factor for subtle movement
-    mouseOffsetY.value = (mouseY.value - 50) * 0.02;
+  // Remove global listener on unmount
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('mousemove', handleGlobalMouseMove);
   }
-};
-
-const handleMouseLeave = () => {
-  // Reset to center when mouse leaves
-  mouseX.value = 50;
-  mouseY.value = 50;
-  mouseOffsetX.value = 0;
-  mouseOffsetY.value = 0;
-};
-
-const setIsSafari = (value: boolean) => {
-  isSafari.value = value;
-};
+});
 </script>
 
 <template>
@@ -162,7 +191,7 @@ const setIsSafari = (value: boolean) => {
     @mouseleave="handleMouseLeave"
     :class="
       cn(
-        'h-screen w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]',
+        'h-full w-full relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]',
         containerClassName
       )
     "
