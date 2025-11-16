@@ -1,6 +1,6 @@
 <template>
-    <section id="solution" ref="solutionSection" class="min-h-screen h-screen flex items-center justify-center relative">
-        <div class="px-3 sm:px-4 md:px-6 lg:px-8 py-12 sm:py-16 md:py-20 h-full flex items-center">
+    <section id="solution" ref="solutionSection" class="relative py-12 sm:py-16 md:py-20 lg:py-24">
+        <div class="px-3 sm:px-4 md:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto w-full">
                 <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
             <div class="fade-up">

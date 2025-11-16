@@ -61,8 +61,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="why-protegey-section min-h-screen h-screen flex items-center justify-center relative">
-        <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 h-full flex items-center py-12 sm:py-16 md:py-20">
+    <section class="why-protegey-section relative py-12 sm:py-16 md:py-20 lg:py-24">
+        <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                 <div class="max-w-6xl mx-auto w-full">
 
                     <!-- Section Header -->
