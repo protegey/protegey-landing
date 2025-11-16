@@ -1,5 +1,5 @@
 <template>
-  <div class="relative min-h-screen bg-gray-50 dark:bg-black">
+  <div class="relative min-h-screen">
     <!-- Continuous Background Animation -->
     <BackgroundGradientAnimation
       :gradient-background-start="isDark ? 'rgb(0, 0, 0)' : 'rgb(249, 250, 251)'"
@@ -23,6 +23,7 @@
       <WhyProtegey :isDark="isDark" />
       <Solution :isDark="isDark" />
       <Features :isDark="isDark" />
+      <Target :isDark="isDark" />
     </div>
   </div>
 </template>
@@ -34,6 +35,7 @@ import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
 import Solution from '~/components/sections/Solution.vue'
 import Features from '~/components/sections/Features.vue'
+import Target from '~/components/sections/Target.vue'
 
 const { isDark } = useTheme()
 </script>
