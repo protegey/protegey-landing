@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  /* Smooth scrolling for the entire document */
+  html {
+    scroll-behavior: smooth;
+  }
+
   :root {
     /* Primary Colors */
     --color-primary-50: #f7fee7;

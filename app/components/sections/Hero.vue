@@ -152,7 +152,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="snap-start min-h-screen h-screen flex items-center justify-center relative overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-300">
+    <section class="min-h-screen h-screen flex items-center justify-center relative overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-300">
         <BackgroundGradientAnimation
             :gradient-background-start="isDark ? 'rgb(0, 0, 0)' : 'rgb(249, 250, 251)'"
             :gradient-background-end="isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)'"
