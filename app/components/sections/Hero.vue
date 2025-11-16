@@ -3,7 +3,6 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import { gsap } from 'gsap';
 import { HugeiconsIcon } from '@hugeicons/vue';
 import { ArrowRight01Icon, Shield01Icon } from '@hugeicons/core-free-icons';
-import BackgroundGradientAnimation from '~/components/ui/BackgroundGradientAnimation.vue';
 
 defineProps({ isDark: Boolean });
 
@@ -152,27 +151,12 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="min-h-screen h-screen flex items-center justify-center relative overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-300">
-        <BackgroundGradientAnimation
-            :gradient-background-start="isDark ? 'rgb(0, 0, 0)' : 'rgb(249, 250, 251)'"
-            :gradient-background-end="isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)'"
-            first-color="163, 230, 53"
-            second-color="168, 85, 247"
-            third-color="96, 165, 250"
-            fourth-color="163, 230, 53"
-            fifth-color="168, 85, 247"
-            pointer-color="163, 230, 53"
-            size="80%"
-            blending-value="hard-light"
-            :interactive="true"
-            container-class-name="absolute inset-0"
-            class-name="relative z-10 h-full w-full"
-        >
-            <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 h-full flex items-center relative z-20 py-16 sm:py-20">
-                <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center max-w-7xl mx-auto w-full">
+    <section class="min-h-screen h-screen flex items-center justify-center relative">
+        <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 h-full flex items-center py-16 sm:py-20">
+            <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center max-w-7xl mx-auto w-full">
 
-                <!-- Left Content -->
-                <div class="text-left space-y-4 sm:space-y-6 md:space-y-8 order-2 lg:order-1">
+            <!-- Left Content -->
+            <div class="text-left space-y-4 sm:space-y-6 md:space-y-8 order-2 lg:order-1">
                     <div class="space-y-3 sm:space-y-4 md:space-y-6">
                         <h1
                             class="hero-title text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold leading-tight">
@@ -290,8 +274,7 @@ onUnmounted(() => {
                     </div>
                 </div>
             </div>
-            </div>
-        </BackgroundGradientAnimation>
+        </div>
     </section>
 </template>
 
