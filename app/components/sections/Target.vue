@@ -1,5 +1,5 @@
 <template>
-    <section id="who" ref="whoSection" class="who-protegey-section relative py-12 sm:py-16 md:py-20 lg:py-24">
+    <section id="who" ref="whoSection" :class="[isDark ? 'bg-black/4' : 'bg-white/4', 'who-protegey-section relative z-10 py-12 sm:py-16 md:py-20 lg:py-24']">
         <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto text-center mb-12 sm:mb-16 fade-up">
                 <div :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs sm:text-sm']">
@@ -15,7 +15,7 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
                 <div
-                    :class="[isDark ? 'bg-gradient-to-br from-lime-900/20 to-lime-800/10 border-lime-700/30' : 'bg-gradient-to-br from-lime-50 to-emerald-50 border-lime-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-lime-400 transition-all text-center group fade-up']">
+                    :class="[isDark ? 'bg-gradient-to-br from-lime-900/20 to-lime-800/10 border-lime-700/30' : 'bg-gradient-to-br from-lime-50 to-emerald-50 border-lime-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-lime-400 transition-all text-center group fade-up h-full flex flex-col justify-between']">
                     <div
                         :class="[isDark ? 'bg-lime-400/20' : 'bg-lime-100', 'w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform']">
                         <svg :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'w-8 h-8 sm:w-10 sm:h-10']" fill="none"
@@ -31,7 +31,7 @@
                 </div>
 
                 <div
-                    :class="[isDark ? 'bg-gradient-to-br from-purple-900/20 to-purple-800/10 border-purple-700/30' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-purple-400 transition-all text-center group fade-up delay-100']">
+                    :class="[isDark ? 'bg-gradient-to-br from-purple-900/20 to-purple-800/10 border-purple-700/30' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-purple-400 transition-all text-center group fade-up delay-100 h-full flex flex-col justify-between']">
                     <div
                         :class="[isDark ? 'bg-purple-400/20' : 'bg-purple-100', 'w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform']">
                         <svg :class="[isDark ? 'text-purple-400' : 'text-purple-600', 'w-8 h-8 sm:w-10 sm:h-10']" fill="none"
@@ -47,7 +47,7 @@
                 </div>
 
                 <div
-                    :class="[isDark ? 'bg-gradient-to-br from-blue-900/20 to-blue-800/10 border-blue-700/30' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-blue-400 transition-all text-center group fade-up delay-200']">
+                    :class="[isDark ? 'bg-gradient-to-br from-blue-900/20 to-blue-800/10 border-blue-700/30' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-blue-400 transition-all text-center group fade-up delay-200 h-full flex flex-col justify-between']">
                     <div
                         :class="[isDark ? 'bg-blue-400/20' : 'bg-blue-100', 'w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform']">
                         <svg :class="[isDark ? 'text-blue-400' : 'text-blue-600', 'w-8 h-8 sm:w-10 sm:h-10']" fill="none"
@@ -63,7 +63,7 @@
                 </div>
 
                 <div
-                    :class="[isDark ? 'bg-gradient-to-br from-emerald-900/20 to-emerald-800/10 border-emerald-700/30' : 'bg-gradient-to-br from-emerald-50 to-emerald-100 border-emerald-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-emerald-400 transition-all text-center group fade-up delay-300']">
+                    :class="[isDark ? 'bg-gradient-to-br from-emerald-900/20 to-emerald-800/10 border-emerald-700/30' : 'bg-gradient-to-br from-emerald-50 to-emerald-100 border-emerald-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-emerald-400 transition-all text-center group fade-up delay-300 h-full flex flex-col justify-between']">
                     <div
                         :class="[isDark ? 'bg-emerald-400/20' : 'bg-emerald-100', 'w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform']">
                         <svg :class="[isDark ? 'text-emerald-400' : 'text-emerald-600', 'w-8 h-8 sm:w-10 sm:h-10']" fill="none"
@@ -79,7 +79,7 @@
                 </div>
 
                 <div
-                    :class="[isDark ? 'bg-gradient-to-br from-orange-900/20 to-orange-800/10 border-orange-700/30' : 'bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-orange-400 transition-all text-center group fade-up delay-400']">
+                    :class="[isDark ? 'bg-gradient-to-br from-orange-900/20 to-orange-800/10 border-orange-700/30' : 'bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-orange-400 transition-all text-center group fade-up delay-400 h-full flex flex-col justify-between']">
                     <div
                         :class="[isDark ? 'bg-orange-400/20' : 'bg-orange-100', 'w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform']">
                         <svg :class="[isDark ? 'text-orange-400' : 'text-orange-600', 'w-8 h-8 sm:w-10 sm:h-10']" fill="none"
@@ -131,14 +131,14 @@ onMounted(() => {
         // force the animation so elements are visible. This avoids scenarios
         // where the IntersectionObserver fails to register due to layout or
         // rendering quirks in certain browsers/dev environments.
-        const fallbackTimer = setTimeout(() => {
+    const fallbackTimer = setTimeout(() => {
             fadeElements.forEach((el) => {
                 if (!el.classList.contains('animate-in')) {
                     // Fallback animate-in applied
                     el.classList.add('animate-in')
                 }
             })
-        }, 600)
+    }, 200)
 
         onUnmounted(() => {
             clearTimeout(fallbackTimer)

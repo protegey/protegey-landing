@@ -13,7 +13,7 @@
       size="80%"
       blending-value="hard-light"
       :interactive="true"
-      container-class-name="fixed inset-0 pointer-events-none"
+  container-class-name="fixed inset-0 pointer-events-none z-[-1]"
       class-name="relative z-0 h-full w-full overflow-hidden"
     />
     
