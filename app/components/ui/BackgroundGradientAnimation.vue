@@ -191,7 +191,7 @@ onUnmounted(() => {
     @mouseleave="handleMouseLeave"
     :class="
         cn(
-          'h-full w-full relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))] z-[-1]',
+    'h-full w-full relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))] pointer-events-none z-[-10]',
           containerClassName
         )
       "

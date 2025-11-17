@@ -5,7 +5,7 @@
       :gradient-background-end="isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)'" first-color="163, 230, 53"
       second-color="168, 85, 247" third-color="96, 165, 250" fourth-color="163, 230, 53" fifth-color="168, 85, 247"
       pointer-color="163, 230, 53" size="80%" blending-value="hard-light" :interactive="true"
-      container-class-name="fixed inset-0 pointer-events-none z-[-1]"
+      container-class-name="fixed inset-0 pointer-events-none z-[-10]"
       class-name="relative z-0 h-full w-full overflow-hidden" />
 
     <!-- Content -->

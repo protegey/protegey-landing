@@ -5,7 +5,7 @@ import Footer from '~/components/sections/Footer.vue'
 </script>
 
 <template>
-  <div class="min-h-screen text-gray-900 dark:text-white transition-colors duration-200">
+  <div class="min-h-screen relative z-10 text-gray-900 dark:text-white transition-colors duration-200">
     <div class="fixed top-2 right-2 sm:top-4 sm:right-4 z-50">
       <ThemeToggle />
     </div>
