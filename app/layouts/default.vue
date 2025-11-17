@@ -1,5 +1,6 @@
 <script setup>
 import ThemeToggle from '~/components/ui/ThemeToggle.vue'
+import Footer from '~/components/sections/Footer.vue'
 // Theme is auto-initialized in the composable
 </script>
 
@@ -8,7 +9,8 @@ import ThemeToggle from '~/components/ui/ThemeToggle.vue'
     <div class="fixed top-2 right-2 sm:top-4 sm:right-4 z-50">
       <ThemeToggle />
     </div>
-    <slot />
+  <slot />
+  <Footer />
   </div>
 </template>
 

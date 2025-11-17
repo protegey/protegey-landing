@@ -1,22 +1,13 @@
 <template>
   <div class="relative min-h-screen">
     <!-- Continuous Background Animation -->
-    <BackgroundGradientAnimation
-      :gradient-background-start="isDark ? 'rgb(0, 0, 0)' : 'rgb(249, 250, 251)'"
-      :gradient-background-end="isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)'"
-      first-color="163, 230, 53"
-      second-color="168, 85, 247"
-      third-color="96, 165, 250"
-      fourth-color="163, 230, 53"
-      fifth-color="168, 85, 247"
-      pointer-color="163, 230, 53"
-      size="80%"
-      blending-value="hard-light"
-      :interactive="true"
-  container-class-name="fixed inset-0 pointer-events-none z-[-1]"
-      class-name="relative z-0 h-full w-full overflow-hidden"
-    />
-    
+    <BackgroundGradientAnimation :gradient-background-start="isDark ? 'rgb(0, 0, 0)' : 'rgb(249, 250, 251)'"
+      :gradient-background-end="isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)'" first-color="163, 230, 53"
+      second-color="168, 85, 247" third-color="96, 165, 250" fourth-color="163, 230, 53" fifth-color="168, 85, 247"
+      pointer-color="163, 230, 53" size="80%" blending-value="hard-light" :interactive="true"
+      container-class-name="fixed inset-0 pointer-events-none z-[-1]"
+      class-name="relative z-0 h-full w-full overflow-hidden" />
+
     <!-- Content -->
     <div class="relative z-10">
       <Hero :isDark="isDark" />
@@ -46,6 +37,7 @@ const { isDark } = useTheme()
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -63,13 +55,14 @@ const { isDark } = useTheme()
 }
 
 @keyframes blink {
+
   0%,
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
 }
 </style>
-
