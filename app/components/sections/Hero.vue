@@ -236,7 +236,7 @@ onUnmounted(() => {
                             </div>
 
                             <!-- Security Pattern -->
-                            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-primary-400/5 to-secondary-500/10">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-primary-400/5 to-secondary-500/10 pointer-events-none" aria-hidden="true">
                             </div>
                         </div>
 

@@ -120,7 +120,7 @@
 
                             <!-- Animated Background Pattern -->
                             <div
-                                class="absolute inset-0 bg-gradient-to-tr from-transparent via-lime-400/5 to-purple-500/10">
+                                class="absolute inset-0 bg-gradient-to-tr from-transparent via-lime-400/5 to-purple-500/10 pointer-events-none" aria-hidden="true">
                             </div>
 
                             <!-- Flowing Data Points -->

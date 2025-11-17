@@ -1,5 +1,5 @@
 <template>
-    <section id="who" ref="whoSection" :class="[isDark ? 'bg-black/4' : 'bg-white/4', 'who-protegey-section relative z-10 py-12 sm:py-16 md:py-20 lg:py-24']">
+    <section id="who" ref="whoSection" class="who-protegey-section relative z-10 py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto text-center mb-12 sm:mb-16 fade-up">
                 <div :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs sm:text-sm']">

@@ -1,6 +1,6 @@
 <template>
     <section ref="ctaSection" class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div :class="[isDark ? 'opacity-20' : 'opacity-10', 'absolute inset-0']">
+    <div :class="[isDark ? 'opacity-20' : 'opacity-10', 'absolute inset-0 pointer-events-none']" aria-hidden="true">
             <div
                 :class="[isDark ? 'bg-lime-500' : 'bg-lime-300', 'absolute top-0 right-0 w-96 h-96 rounded-full filter blur-3xl']">
             </div>

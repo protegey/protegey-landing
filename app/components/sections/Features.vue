@@ -157,7 +157,7 @@ onUnmounted(() => {
                             </div>
 
                             <!-- Hover Effect Background -->
-                            <div class="absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            <div class="absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" aria-hidden="true"
                                 :class="{
                                     'bg-gradient-to-br from-lime-400/5 to-transparent': feature.color === 'lime',
                                     'bg-gradient-to-br from-purple-400/5 to-transparent': feature.color === 'purple',
