@@ -102,7 +102,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="features-modern relative py-12 sm:py-16 md:py-20 lg:py-24">
+    <section id="features" class="features-modern relative py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full">
             <div class="max-w-6xl mx-auto w-full">
 
