@@ -1,5 +1,5 @@
 <template>
-    <section id="waitlist" ref="ctaSection" class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="waitlist" ref="ctaSection" class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden z-10">
     <div :class="[isDark ? 'opacity-20' : 'opacity-10', 'absolute inset-0 pointer-events-none']" aria-hidden="true">
             <div
                 :class="[isDark ? 'bg-lime-500' : 'bg-lime-300', 'absolute top-0 right-0 w-96 h-96 rounded-full filter blur-3xl']">
@@ -63,24 +63,23 @@
                         </div>
                     </div>
 
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label
-                                :class="[isDark ? 'text-slate-300' : 'text-slate-700', 'block text-sm font-semibold mb-2']">Interest
-                                Type</label>
-                            <select v-model="formData.interestType" required
-                                :class="[isDark ? 'bg-slate-900/50 border-slate-700 text-white focus:border-lime-400 focus:ring-lime-400/20' : 'bg-white border-slate-300 text-slate-900 focus:border-lime-500 focus:ring-lime-500/20', 'w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all']">
-                                <option value="" disabled>Select interest</option>
-                                <option v-for="option in interestOptions" :key="option.value" :value="option.value">{{ option.label }}</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label
-                                :class="[isDark ? 'text-slate-300' : 'text-slate-700', 'block text-sm font-semibold mb-2']">Message
-                                / Notes</label>
-                            <textarea v-model="formData.message" rows="4" placeholder="Tell us a little about what you're interested in (optional)"
-                                :class="[isDark ? 'bg-slate-900/50 border-slate-700 text-white placeholder-slate-500 focus:border-lime-400 focus:ring-lime-400/20' : 'bg-white border-slate-300 text-slate-900 placeholder-slate-400 focus:border-lime-500 focus:ring-lime-500/20', 'w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all']"></textarea>
-                        </div>
+                    <div>
+                        <label
+                            :class="[isDark ? 'text-slate-300' : 'text-slate-700', 'block text-sm font-semibold mb-2']">Interest
+                            Type</label>
+                        <select v-model="formData.interestType" required
+                            :class="[isDark ? 'bg-slate-900/50 border-slate-700 text-white focus:border-lime-400 focus:ring-lime-400/20' : 'bg-white border-slate-300 text-slate-900 focus:border-lime-500 focus:ring-lime-500/20', 'w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all']">
+                            <option value="" disabled>Select interest</option>
+                            <option v-for="option in interestOptions" :key="option.value" :value="option.value">{{ option.label }}</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label
+                            :class="[isDark ? 'text-slate-300' : 'text-slate-700', 'block text-sm font-semibold mb-2']">Message
+                            / Notes (Optional)</label>
+                        <textarea v-model="formData.message" rows="4" placeholder="Tell us a little about what you're interested in..."
+                            :class="[isDark ? 'bg-slate-900/50 border-slate-700 text-white placeholder-slate-500 focus:border-lime-400 focus:ring-lime-400/20' : 'bg-white border-slate-300 text-slate-900 placeholder-slate-400 focus:border-lime-500 focus:ring-lime-500/20', 'w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all resize-none']"></textarea>
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
@@ -198,6 +197,15 @@ onMounted(() => {
     if (ctaSection.value) {
         const fadeElements = ctaSection.value.querySelectorAll('.fade-up')
         fadeElements.forEach(el => observer.observe(el))
+
+        // Fallback: force animation after a short delay to ensure visibility
+        setTimeout(() => {
+            fadeElements.forEach(el => {
+                if (!el.classList.contains('animate-in')) {
+                    el.classList.add('animate-in')
+                }
+            })
+        }, 300)
     }
 })
 </script>
