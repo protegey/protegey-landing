@@ -68,8 +68,8 @@ onMounted(() => {
         setTimeout(() => {
             // Set initial states
             gsap.set('.hero-title', { opacity: 0, y: 60 });
-            gsap.set('.hero-subtitle', { opacity: 0, y: 40 });
             gsap.set('.hero-cta-button', { opacity: 0, y: 30 });
+            gsap.set('.hero-cta', { opacity: 0, y: 20 });
             gsap.set('.hero-card', { opacity: 0, scale: 0.8, y: 50 });
             gsap.set('.floating-element', { opacity: 0, scale: 0 });
 
@@ -82,17 +82,17 @@ onMounted(() => {
                 duration: 1.2,
                 ease: 'power3.out'
             })
-                .to('.hero-subtitle', {
-                    y: 0,
-                    opacity: 1,
-                    duration: 1,
-                    ease: 'power3.out'
-                }, '-=0.8')
                 .to('.hero-cta-button', {
                     y: 0,
                     opacity: 1,
                     duration: 0.8,
                     stagger: 0.2,
+                    ease: 'power3.out'
+                }, '-=0.6')
+                .to('.hero-cta', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
                     ease: 'power3.out'
                 }, '-=0.6')
                 .to('.hero-card', {
