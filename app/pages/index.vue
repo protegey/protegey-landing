@@ -15,6 +15,7 @@
       <Solution :isDark="isDark" />
       <Features :isDark="isDark" />
       <Target :isDark="isDark" />
+      <WaitlistDemo :isDark="isDark" />
     </div>
   </div>
 </template>
@@ -27,6 +28,7 @@ import WhyProtegey from '~/components/sections/WhyProtegey.vue'
 import Solution from '~/components/sections/Solution.vue'
 import Features from '~/components/sections/Features.vue'
 import Target from '~/components/sections/Target.vue'
+import WaitlistDemo from '~/components/sections/WaitlistDemo.vue'
 
 const { isDark } = useTheme()
 </script>
