@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  compatibilityDate: '2025-11-17',
   modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt'],
   css: ['~/assets/css/main.css'],
   postcss: {
