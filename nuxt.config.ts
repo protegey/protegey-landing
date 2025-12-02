@@ -48,8 +48,10 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          children:
+          // Use innerHTML for inline script to satisfy types
+          innerHTML:
             "(function(){try{var stored=localStorage.getItem('theme');var dark=stored==='dark'||(!stored&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',dark);}catch(e){}})();",
+          type: 'text/javascript'
         },
       ],
       link: [

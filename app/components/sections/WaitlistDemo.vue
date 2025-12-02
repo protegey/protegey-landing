@@ -1,58 +1,49 @@
 <template>
-    <section id="waitlist" ref="ctaSection" class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden z-10">
-    <div :class="[isDark ? 'opacity-20' : 'opacity-10', 'absolute inset-0 pointer-events-none']" aria-hidden="true">
-            <div
-                :class="[isDark ? 'bg-lime-500' : 'bg-lime-300', 'absolute top-0 right-0 w-96 h-96 rounded-full filter blur-3xl']">
-            </div>
-            <div
-                :class="[isDark ? 'bg-purple-500' : 'bg-purple-300', 'absolute bottom-0 left-0 w-96 h-96 rounded-full filter blur-3xl']">
-            </div>
+    <section id="waitlist" ref="ctaSection" class="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 overflow-hidden">
+        <!-- Subtle grid pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 50px 50px;"></div>
         </div>
 
         <div class="max-w-4xl mx-auto relative z-10">
             <div class="text-center mb-12 fade-up">
-                <h2
-                    :class="[isDark ? 'text-4xl md:text-6xl font-bold mb-6' : 'text-4xl md:text-6xl font-bold mb-6 text-slate-900']">
-                    Join Protegey</h2>
-                <p :class="[isDark ? 'text-xl text-slate-300' : 'text-xl text-slate-700']">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+                    Experience the future of
+                </h2>
+                <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    <span class="text-lime-400">business finance</span>
+                    <span class="text-white"> today</span>
+                </h3>
+                <p class="text-xl text-white/80 max-w-2xl mx-auto">
                     Be among the first to experience Africa's next generation fraud detection platform
                 </p>
             </div>
 
-            <div
-                :class="[isDark ? 'bg-gradient-to-br from-slate-800/50 to-slate-900/50 border-slate-700' : 'bg-gradient-to-br from-slate-100 to-slate-200 border-slate-300', 'p-8 md:p-12 rounded-3xl border backdrop-blur-sm fade-up delay-200']">
+            <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 fade-up delay-200">
                 <form @submit.prevent="handleSubmit" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label
-                                :class="[isDark ? 'text-slate-300' : 'text-slate-700', 'block text-sm font-semibold mb-2']">Full
-                                Name</label>
+                            <label class="block text-sm font-semibold mb-2 text-gray-700">Full Name</label>
                             <input v-model="formData.name" type="text" required placeholder="John Doe"
-                                :class="[isDark ? 'bg-slate-900/50 border-slate-700 text-white placeholder-slate-500 focus:border-lime-400 focus:ring-lime-400/20' : 'bg-white border-slate-300 text-slate-900 placeholder-slate-400 focus:border-lime-500 focus:ring-lime-500/20', 'w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all']" />
+                                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-gray-50" />
                         </div>
                         <div>
-                            <label
-                                :class="[isDark ? 'text-slate-300' : 'text-slate-700', 'block text-sm font-semibold mb-2']">Email
-                                Address</label>
+                            <label class="block text-sm font-semibold mb-2 text-gray-700">Email Address</label>
                             <input v-model="formData.email" type="email" required placeholder="john@company.com"
-                                :class="[isDark ? 'bg-slate-900/50 border-slate-700 text-white placeholder-slate-500 focus:border-lime-400 focus:ring-lime-400/20' : 'bg-white border-slate-300 text-slate-900 placeholder-slate-400 focus:border-lime-500 focus:ring-lime-500/20', 'w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all']" />
+                                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-gray-50" />
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label
-                                :class="[isDark ? 'text-slate-300' : 'text-slate-700', 'block text-sm font-semibold mb-2']">Company
-                                Name</label>
+                            <label class="block text-sm font-semibold mb-2 text-gray-700">Company Name</label>
                             <input v-model="formData.company" type="text" required placeholder="Your Company"
-                                :class="[isDark ? 'bg-slate-900/50 border-slate-700 text-white placeholder-slate-500 focus:border-lime-400 focus:ring-lime-400/20' : 'bg-white border-slate-300 text-slate-900 placeholder-slate-400 focus:border-lime-500 focus:ring-lime-500/20', 'w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all']" />
+                                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-gray-50" />
                         </div>
                         <div>
-                            <label
-                                :class="[isDark ? 'text-slate-300' : 'text-slate-700', 'block text-sm font-semibold mb-2']">Your
-                                Role</label>
+                            <label class="block text-sm font-semibold mb-2 text-gray-700">Your Role</label>
                             <select v-model="formData.role" required
-                                :class="[isDark ? 'bg-slate-900/50 border-slate-700 text-white focus:border-lime-400 focus:ring-lime-400/20' : 'bg-white border-slate-300 text-slate-900 focus:border-lime-500 focus:ring-lime-500/20', 'w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all']">
+                                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-gray-50">
                                 <option value="" disabled>Select your role</option>
                                 <option value="ceo">CEO / Founder</option>
                                 <option value="cto">CTO / Tech Lead</option>
@@ -64,44 +55,40 @@
                     </div>
 
                     <div>
-                        <label
-                            :class="[isDark ? 'text-slate-300' : 'text-slate-700', 'block text-sm font-semibold mb-2']">Interest
-                            Type</label>
+                        <label class="block text-sm font-semibold mb-2 text-gray-700">Interest Type</label>
                         <select v-model="formData.interestType" required
-                            :class="[isDark ? 'bg-slate-900/50 border-slate-700 text-white focus:border-lime-400 focus:ring-lime-400/20' : 'bg-white border-slate-300 text-slate-900 focus:border-lime-500 focus:ring-lime-500/20', 'w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all']">
+                            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-gray-50">
                             <option value="" disabled>Select interest</option>
                             <option v-for="option in interestOptions" :key="option.value" :value="option.value">{{ option.label }}</option>
                         </select>
                     </div>
 
                     <div>
-                        <label
-                            :class="[isDark ? 'text-slate-300' : 'text-slate-700', 'block text-sm font-semibold mb-2']">Message
-                            / Notes (Optional)</label>
+                        <label class="block text-sm font-semibold mb-2 text-gray-700">Message / Notes (Optional)</label>
                         <textarea v-model="formData.message" rows="4" placeholder="Tell us a little about what you're interested in..."
-                            :class="[isDark ? 'bg-slate-900/50 border-slate-700 text-white placeholder-slate-500 focus:border-lime-400 focus:ring-lime-400/20' : 'bg-white border-slate-300 text-slate-900 placeholder-slate-400 focus:border-lime-500 focus:ring-lime-500/20', 'w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all resize-none']"></textarea>
+                            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none bg-gray-50"></textarea>
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <button type="submit" :disabled="isSubmitting"
-                            aria-busy="isSubmitting"
-                            :class="[isDark ? 'bg-lime-400 text-slate-950 hover:bg-lime-300' : 'bg-lime-500 text-white hover:bg-lime-600', 'flex-1 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2', isSubmitting ? 'opacity-60 cursor-not-allowed' : '']">
-                            <span>{{ isSubmitting ? 'Submitting...' : 'Submit' }}</span>
+                            :class="['flex-1 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg', 
+                                    isSubmitting ? 'opacity-60 cursor-not-allowed bg-gray-400' : 'bg-blue-600 hover:bg-blue-700 text-white']">
+                            <span>{{ isSubmitting ? 'Submitting...' : 'Get Started' }}</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
                         </button>
                     </div>
-                    <div v-if="submitMessage" class="text-center text-green-300 font-medium mt-4">
+
+                    <div v-if="submitMessage" class="text-center text-green-600 font-medium mt-4 bg-green-50 py-3 px-4 rounded-lg">
                         {{ submitMessage }}
                     </div>
 
-                    <div v-if="submitError" class="text-center text-red-300 font-medium mt-4">
+                    <div v-if="submitError" class="text-center text-red-600 font-medium mt-4 bg-red-50 py-3 px-4 rounded-lg">
                         {{ submitError }}
                     </div>
 
-                    <p class="text-center text-sm opacity-75 mt-6">
+                    <p class="text-center text-sm text-gray-600 mt-6">
                         We respect your privacy. No spam — ever.
                     </p>
                 </form>

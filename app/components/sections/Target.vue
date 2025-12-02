@@ -1,97 +1,69 @@
 <template>
-    <section id="who" ref="whoSection" class="who-protegey-section relative z-10 py-12 sm:py-16 md:py-20 lg:py-24">
-        <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto text-center mb-12 sm:mb-16 fade-up">
-                <div :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs sm:text-sm']">
-                    Who We Serve</div>
-                <h2
-                    :class="[isDark ? 'text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6' : 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-slate-900']">
-                    Built For Africa's Financial Leaders</h2>
-                <p
-                    :class="[isDark ? 'text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto' : 'text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto']">
-                    Trusted by banks, fintechs, and digital platforms protecting millions of transactions
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
-                <div
-                    :class="[isDark ? 'bg-gradient-to-br from-lime-900/20 to-lime-800/10 border-lime-700/30' : 'bg-gradient-to-br from-lime-50 to-emerald-50 border-lime-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-lime-400 transition-all text-center group fade-up h-full flex flex-col justify-between']">
-                    <div
-                        :class="[isDark ? 'bg-lime-400/20' : 'bg-lime-100', 'w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform']">
-                        <svg :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'w-8 h-8 sm:w-10 sm:h-10']" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
-                        </svg>
-                    </div>
-                    <h3 :class="[isDark ? 'text-lg sm:text-xl font-bold mb-2 text-white' : 'text-lg sm:text-xl font-bold mb-2 text-slate-900']">Banks
-                    </h3>
-                    <p :class="[isDark ? 'text-slate-300 text-xs sm:text-sm' : 'text-slate-700 text-xs sm:text-sm']">Enterprise-grade
-                        protection for traditional banking</p>
+    <section id="who" ref="whoSection" class="who-protegey-section relative py-16 sm:py-20 md:py-24 lg:py-32 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12 md:mb-16 fade-up">
+                    <div class="text-blue-600 font-bold mb-3 uppercase tracking-wider text-sm">Who We Serve</div>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
+                        From early stage startups to industry
+                        <span class="text-blue-600"> leading </span>
+                        global corporations
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                        Trusted by banks, fintechs, and digital platforms protecting millions of transactions
+                    </p>
                 </div>
 
-                <div
-                    :class="[isDark ? 'bg-gradient-to-br from-purple-900/20 to-purple-800/10 border-purple-700/30' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-purple-400 transition-all text-center group fade-up delay-100 h-full flex flex-col justify-between']">
-                    <div
-                        :class="[isDark ? 'bg-purple-400/20' : 'bg-purple-100', 'w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform']">
-                        <svg :class="[isDark ? 'text-purple-400' : 'text-purple-600', 'w-8 h-8 sm:w-10 sm:h-10']" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <div class="bg-white border border-gray-200 rounded-2xl p-8 text-center group hover:shadow-xl hover:border-blue-200 transition-all duration-300 fade-up">
+                        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
+                            <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Banks</h3>
+                        <p class="text-gray-600 text-sm">Enterprise-grade protection for traditional banking</p>
                     </div>
-                    <h3 :class="[isDark ? 'text-lg sm:text-xl font-bold mb-2 text-white' : 'text-lg sm:text-xl font-bold mb-2 text-slate-900']">Fintech
-                        Startups</h3>
-                    <p :class="[isDark ? 'text-slate-300 text-xs sm:text-sm' : 'text-slate-700 text-xs sm:text-sm']">Scale safely with robust
-                        fraud prevention</p>
-                </div>
 
-                <div
-                    :class="[isDark ? 'bg-gradient-to-br from-blue-900/20 to-blue-800/10 border-blue-700/30' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-blue-400 transition-all text-center group fade-up delay-200 h-full flex flex-col justify-between']">
-                    <div
-                        :class="[isDark ? 'bg-blue-400/20' : 'bg-blue-100', 'w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform']">
-                        <svg :class="[isDark ? 'text-blue-400' : 'text-blue-600', 'w-8 h-8 sm:w-10 sm:h-10']" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                        </svg>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-8 text-center group hover:shadow-xl hover:border-purple-200 transition-all duration-300 fade-up delay-100">
+                        <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
+                            <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Fintech Startups</h3>
+                        <p class="text-gray-600 text-sm">Scale safely with robust fraud prevention</p>
                     </div>
-                    <h3 :class="[isDark ? 'text-lg sm:text-xl font-bold mb-2 text-white' : 'text-lg sm:text-xl font-bold mb-2 text-slate-900']">Payment
-                        Platforms</h3>
-                    <p :class="[isDark ? 'text-slate-300 text-xs sm:text-sm' : 'text-slate-700 text-xs sm:text-sm']">Secure every payment
-                        transaction</p>
-                </div>
 
-                <div
-                    :class="[isDark ? 'bg-gradient-to-br from-emerald-900/20 to-emerald-800/10 border-emerald-700/30' : 'bg-gradient-to-br from-emerald-50 to-emerald-100 border-emerald-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-emerald-400 transition-all text-center group fade-up delay-300 h-full flex flex-col justify-between']">
-                    <div
-                        :class="[isDark ? 'bg-emerald-400/20' : 'bg-emerald-100', 'w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform']">
-                        <svg :class="[isDark ? 'text-emerald-400' : 'text-emerald-600', 'w-8 h-8 sm:w-10 sm:h-10']" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                        </svg>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-8 text-center group hover:shadow-xl hover:border-blue-200 transition-all duration-300 fade-up delay-200">
+                        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
+                            <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Payment Platforms</h3>
+                        <p class="text-gray-600 text-sm">Secure every payment transaction</p>
                     </div>
-                    <h3 :class="[isDark ? 'text-lg sm:text-xl font-bold mb-2 text-white' : 'text-lg sm:text-xl font-bold mb-2 text-slate-900']">
-                        E-commerce</h3>
-                    <p :class="[isDark ? 'text-slate-300 text-xs sm:text-sm' : 'text-slate-700 text-xs sm:text-sm']">Protect online
-                        transactions and customers</p>
-                </div>
 
-                <div
-                    :class="[isDark ? 'bg-gradient-to-br from-orange-900/20 to-orange-800/10 border-orange-700/30' : 'bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200', 'p-6 sm:p-8 rounded-xl sm:rounded-2xl border hover:border-orange-400 transition-all text-center group fade-up delay-400 h-full flex flex-col justify-between']">
-                    <div
-                        :class="[isDark ? 'bg-orange-400/20' : 'bg-orange-100', 'w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform']">
-                        <svg :class="[isDark ? 'text-orange-400' : 'text-orange-600', 'w-8 h-8 sm:w-10 sm:h-10']" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                        </svg>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-8 text-center group hover:shadow-xl hover:border-green-200 transition-all duration-300 fade-up delay-300">
+                        <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
+                            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">E-commerce</h3>
+                        <p class="text-gray-600 text-sm">Protect online transactions and customers</p>
                     </div>
-                    <h3 :class="[isDark ? 'text-lg sm:text-xl font-bold mb-2 text-white' : 'text-lg sm:text-xl font-bold mb-2 text-slate-900']">Telecom
-                        Operators</h3>
-                    <p :class="[isDark ? 'text-slate-300 text-xs sm:text-sm' : 'text-slate-700 text-xs sm:text-sm']">Secure mobile money
-                        services</p>
+
+                    <div class="bg-white border border-gray-200 rounded-2xl p-8 text-center group hover:shadow-xl hover:border-orange-200 transition-all duration-300 fade-up delay-400">
+                        <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
+                            <svg class="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Telecom Operators</h3>
+                        <p class="text-gray-600 text-sm">Secure mobile money services</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -151,127 +151,104 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="min-h-screen h-screen flex items-center justify-center relative">
-        <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 h-full flex items-center py-16 sm:py-20">
-            <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center max-w-7xl mx-auto w-full">
+    <section id="hero" class="relative min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 flex items-center justify-center overflow-hidden">
+        <!-- Subtle grid pattern overlay -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
 
-            <!-- Left Content -->
-            <div class="text-left space-y-4 sm:space-y-6 md:space-y-8 order-2 lg:order-1">
-                    <div class="space-y-3 sm:space-y-4 md:space-y-6">
-                        <h1
-                            class="hero-title text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold leading-tight">
-                            <span class="text-gray-900 dark:text-white block">The Pan-African Intelligence Engine helping</span>
-                            <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500 block mt-1 sm:mt-2">
-                                Telcos, Governments and Financial Institutions
-                            </span>
-                            <span class="text-gray-900 dark:text-white block typewriter-text mt-1 sm:mt-2">
-                                {{ typewriterText }}<span v-if="showCursor" class="typewriter-cursor">_</span> Fraud in Real-Time
-                            </span>
-                        </h1>
-                    </div>
+        <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-20 sm:py-48 relative z-10">
+            <div class="max-w-7xl mx-auto">
+                <!-- Main Content -->
+                <div class="text-center mb-16 space-y-6">
+                    <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                        <span class="block">The unified Antifraud and Identity Verification engine for Francophone and Northern Africa, without the enterprise cost</span>
+                    </h1>
+                    <p class="mt-6 text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+                        We cover the full fraud spectrum, from duplicate account detection, lender & merchant risk monitoring, internal fraud and transaction surveillance, all the way to account takeovers, investment scams, SIM-swap fraud, cross-border ID verification and money-muling prevention.
+                    </p>
 
-                    <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3 md:gap-4">
-                        <button
-                            class="hero-cta-button group bg-primary-400 text-neutral-900 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-primary-300 transition-all duration-300 flex items-center justify-center gap-2">
-                            Join Waitlist
-                            <HugeiconsIcon :icon="ArrowRight01Icon" :size="20"
-                                class="group-hover:translate-x-1 transition-transform" />
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+                        <button class="hero-cta-button group bg-white text-blue-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 flex items-center justify-center gap-2 shadow-xl">
+                            Get Started
+                            <HugeiconsIcon :icon="ArrowRight01Icon" :size="20" class="group-hover:translate-x-1 transition-transform" />
                         </button>
-                        <button
-                            class="hero-cta-button border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:border-primary-400 hover:text-primary-400 transition-all duration-300">
+                        <button class="hero-cta-button border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:border-white hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                            <HugeiconsIcon :icon="Shield01Icon" :size="20" class="inline mr-2" />
                             Request a Demo
                         </button>
                     </div>
 
-                    <!-- Trust indicators -->
-                    <div class="hero-cta flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-3 sm:pt-4 md:pt-8">
-                        <div class="flex items-center gap-1.5 sm:gap-2 text-neutral-400 dark:text-neutral-500">
-                            <HugeiconsIcon :icon="Shield01Icon" :size="16" class="sm:w-5 sm:h-5" color="var(--color-primary-500)" />
-                            <span class="text-xs sm:text-sm">Bank-grade Security</span>
+                    <!-- Trust Badges -->
+                    <div class="hero-cta flex flex-wrap items-center justify-center gap-8 pt-12 text-white/80">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-lime-400 rounded-full animate-pulse"></div>
+                            <span class="text-sm">Bank-grade Security</span>
                         </div>
-                        <div class="flex items-center gap-1.5 sm:gap-2 text-neutral-400 dark:text-neutral-500">
-                            <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary-400 rounded-full animate-pulse"></div>
-                            <span class="text-xs sm:text-sm">Real-time Protection</span>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-lime-400 rounded-full animate-pulse"></div>
+                            <span class="text-sm">Real-time Protection</span>
                         </div>
-                        <div class="flex items-center gap-1.5 sm:gap-2 text-neutral-400 dark:text-neutral-500">
-                            <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-secondary-400 rounded-full animate-pulse"></div>
-                            <span class="text-xs sm:text-sm">Africa-first</span>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-lime-400 rounded-full animate-pulse"></div>
+                            <span class="text-sm">Africa-first</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Visual -->
-                <div class="relative flex justify-center lg:justify-end order-1 lg:order-2 mb-4 lg:mb-0">
-                    <!-- Main Card -->
-                    <div class="hero-card relative scale-75 xs:scale-85 sm:scale-90 md:scale-95 lg:scale-100">
-                        <!-- Card Background -->
-                        <div
-                            :class="['relative w-64 xs:w-72 sm:w-80 md:w-80 h-40 xs:h-48 sm:h-52 rounded-2xl shadow-2xl overflow-hidden', 'bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700']">
-                            <!-- Card Header -->
-                            <div class="p-4 sm:p-6">
-                                <div class="flex items-center justify-between mb-3 sm:mb-4">
-                                    <div class="text-primary-400 font-bold text-base sm:text-lg">PROTEGEY</div>
-                                    <div class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">FRAUD SHIELD</div>
+                <!-- Visual Card Section -->
+                <div class="relative max-w-5xl mx-auto mt-20">
+                    <div class="hero-card grid md:grid-cols-3 gap-6">
+                        <!-- Card 1 - Main Security Card -->
+                        <div class="md:col-span-2 bg-white rounded-2xl shadow-2xl p-8 transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="flex items-start justify-between mb-6">
+                                <div>
+                                    <div class="text-blue-600 font-bold text-xl mb-1">PROTEGEY</div>
+                                    <div class="text-gray-500 text-sm">FRAUD SHIELD</div>
                                 </div>
-
-                                <!-- Card Numbers -->
-                                <div class="text-gray-900 dark:text-white text-lg sm:text-xl font-mono tracking-wider mb-1.5 sm:mb-2">
-                                    **** **** **** 2847
-                                </div>
-
-                                <!-- Card Info -->
-                                <div class="flex justify-between items-end">
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 text-xs uppercase">Valid Thru</div>
-                                        <div class="text-gray-900 dark:text-white text-sm">12/28</div>
-                                    </div>
-                                    <div class="text-primary-400 text-xs sm:text-sm font-semibold">PROTECTED</div>
-                                </div>
+                                <div class="bg-gradient-to-br from-lime-400 to-lime-600 w-14 h-10 rounded-lg opacity-90"></div>
                             </div>
-
-                            <!-- Chip -->
-                            <div
-                                class="absolute top-4 sm:top-6 left-4 sm:left-6 w-10 sm:w-12 h-7 sm:h-8 bg-gradient-to-br from-accent-yellow-400 to-accent-yellow-600 rounded opacity-90">
+                            <div class="text-gray-900 text-2xl font-mono tracking-wider mb-4">
+                                **** **** **** 2847
                             </div>
-
-                            <!-- Security Pattern -->
-                            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-primary-400/5 to-secondary-500/10 pointer-events-none" aria-hidden="true">
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <div class="text-gray-500 text-xs uppercase mb-1">Valid Thru</div>
+                                    <div class="text-gray-900 font-semibold">12/28</div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <span class="text-green-600 text-sm font-semibold">PROTECTED</span>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Flowing Particles -->
-                        <div class="absolute -inset-2 sm:-inset-4">
-                            <!-- Floating squares -->
-                            <div
-                                class="floating-element absolute top-4 sm:top-8 -right-4 sm:-right-8 w-3 h-3 sm:w-4 sm:h-4 bg-primary-400 rotate-45 opacity-80">
+                        <!-- Card 2 - Stats Card -->
+                        <div class="bg-white rounded-2xl shadow-2xl p-6 transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="text-gray-500 text-sm mb-2">Threats Blocked</div>
+                            <div class="text-4xl font-bold text-gray-900 mb-1">99.9%</div>
+                            <div class="text-green-600 text-sm flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>+12% this month</span>
                             </div>
-                            <div
-                                class="floating-element absolute top-8 sm:top-16 -right-8 sm:-right-16 w-2 h-2 sm:w-3 sm:h-3 bg-secondary-500 rotate-12 opacity-60">
-                            </div>
-                            <div
-                                class="floating-element absolute -top-2 sm:-top-4 right-6 sm:right-12 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent-blue-400 rotate-45 opacity-70">
-                            </div>
-
-                            <div
-                                class="floating-element absolute bottom-4 sm:bottom-8 -left-4 sm:-left-8 w-4 h-4 sm:w-5 sm:h-5 bg-secondary-400 rotate-45 opacity-70">
-                            </div>
-                            <div
-                                class="floating-element absolute bottom-8 sm:bottom-16 -left-8 sm:-left-16 w-2 h-2 sm:w-3 sm:h-3 bg-primary-300 rotate-12 opacity-50">
-                            </div>
-                            <div
-                                class="floating-element absolute -bottom-2 sm:-bottom-4 left-6 sm:left-12 w-3 h-3 sm:w-4 sm:h-4 bg-accent-blue-300 rotate-45 opacity-60">
-                            </div>
-
-                            <!-- Middle particles -->
-                            <div
-                                class="floating-element absolute top-1/2 -right-6 sm:-right-12 w-2 h-2 sm:w-3 sm:h-3 bg-primary-500 rotate-45 opacity-80">
-                            </div>
-                            <div
-                                class="floating-element absolute top-1/3 -left-5 sm:-left-10 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-secondary-400 rotate-12 opacity-60">
+                            <div class="mt-6 pt-4 border-t border-gray-100">
+                                <div class="flex items-center justify-between text-sm mb-2">
+                                    <span class="text-gray-500">Success Rate</span>
+                                    <span class="text-gray-900 font-semibold">Active</span>
+                                </div>
+                                <div class="w-full bg-gray-100 rounded-full h-2">
+                                    <div class="bg-lime-400 h-2 rounded-full" style="width: 99.9%"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Floating decorative elements -->
+                    <div class="absolute -top-8 -right-8 w-20 h-20 bg-lime-400/20 rounded-2xl rotate-12 blur-xl floating-element"></div>
+                    <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-purple-500/20 rounded-2xl -rotate-12 blur-xl floating-element"></div>
                 </div>
             </div>
         </div>

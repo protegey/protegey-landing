@@ -1,165 +1,109 @@
 <template>
-    <section id="solution" ref="solutionSection" class="relative py-12 sm:py-16 md:py-20 lg:py-24">
-        <div class="px-3 sm:px-4 md:px-6 lg:px-8">
+    <section id="solution" ref="solutionSection" class="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gray-50">
+        <div class="px-4 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto w-full">
-                <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
-            <div class="fade-up">
-                    <div
-                        :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs sm:text-sm']">
-                        The Solution</div>
-                    <h2
-                        :class="[isDark ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight' : 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-slate-900']">
-                        Protect What<br />Matters Most
-                    </h2>
-                    <p
-                        :class="[isDark ? 'text-base sm:text-lg md:text-xl text-slate-300 mb-6 sm:mb-8 leading-relaxed' : 'text-base sm:text-lg md:text-xl text-slate-700 mb-6 sm:mb-8 leading-relaxed']">
-                        Protegey's advanced fraud detection technology safeguards Africa's financial ecosystem in
-                        real-time.
-                    </p>
+                <div class="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
+                    <div class="fade-up">
+                        <div class="text-blue-600 font-bold mb-3 uppercase tracking-wider text-sm">The Solution</div>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
+                            Protect What
+                            <span class="text-blue-600">Matters Most</span>
+                        </h2>
+                        <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                            Protegey's advanced fraud detection technology safeguards Africa's financial ecosystem in real-time.
+                        </p>
                     <p
                         :class="[isDark ? 'text-sm sm:text-base md:text-lg text-slate-400 leading-relaxed mb-6 sm:mb-8' : 'text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed mb-6 sm:mb-8']">
                         Next-Generation Fraud Prevention — Built with ML and real-time analytics, Protegey seamlessly
                         integrates with telecoms, banks, and fintech APIs to protect millions of transactions.
                     </p>
-                    <div class="space-y-3 sm:space-y-4">
-                        <div class="flex items-start gap-3 sm:gap-4">
-                            <div
-                                :class="[isDark ? 'bg-lime-400/20' : 'bg-lime-100', 'w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1']">
-                                <svg :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'w-4 h-4 sm:w-5 sm:h-5']"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd" />
-                                </svg>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-4">
+                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-lg mb-1 text-gray-900">Keep company organized with budgets and expense policies</div>
+                                    <div class="text-gray-600">ML algorithms analyze patterns and provide real-time risk scores with 99.9% accuracy</div>
+                                </div>
                             </div>
-                            <div>
-                                <div
-                                    :class="[isDark ? 'font-semibold text-base sm:text-lg mb-0.5 sm:mb-1' : 'font-semibold text-base sm:text-lg mb-0.5 sm:mb-1 text-slate-900']">
-                                    Machine Learning Detection</div>
-                                <div :class="[isDark ? 'text-slate-400 text-sm sm:text-base' : 'text-slate-600 text-sm sm:text-base']">AI-powered pattern
-                                    recognition identifies fraud in milliseconds</div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-lg mb-1 text-gray-900">Issue corporate cards for greater spend control</div>
+                                    <div class="text-gray-600">Seamless API connections with existing telco, banking, and fintech infrastructure</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-3 sm:gap-4">
-                            <div
-                                :class="[isDark ? 'bg-lime-400/20' : 'bg-lime-100', 'w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1']">
-                                <svg :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'w-4 h-4 sm:w-5 sm:h-5']"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <div>
-                                <div
-                                    :class="[isDark ? 'font-semibold text-base sm:text-lg mb-0.5 sm:mb-1' : 'font-semibold text-base sm:text-lg mb-0.5 sm:mb-1 text-slate-900']">
-                                    Real-Time Integration</div>
-                                <div :class="[isDark ? 'text-slate-400 text-sm sm:text-base' : 'text-slate-600 text-sm sm:text-base']">Seamless API connections
-                                    with existing infrastructure</div>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3 sm:gap-4">
-                            <div
-                                :class="[isDark ? 'bg-lime-400/20' : 'bg-lime-100', 'w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1']">
-                                <svg :class="[isDark ? 'text-lime-400' : 'text-lime-600', 'w-4 h-4 sm:w-5 sm:h-5']"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <div>
-                                <div
-                                    :class="[isDark ? 'font-semibold text-base sm:text-lg mb-0.5 sm:mb-1' : 'font-semibold text-base sm:text-lg mb-0.5 sm:mb-1 text-slate-900']">
-                                    Africa-First Design</div>
-                                <div :class="[isDark ? 'text-slate-400 text-sm sm:text-base' : 'text-slate-600 text-sm sm:text-base']">Built for the unique
-                                    challenges of African financial systems</div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-lg mb-1 text-gray-900">Get ahead faster with AI-powered insights</div>
+                                    <div class="text-gray-600">Built specifically for the unique challenges of African financial systems</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="flex justify-center">
-                    <div class="main-card relative">
-                        <!-- Main Protection Card -->
-                        <div
-                            class="relative w-96 h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden">
-
-                            <!-- Card Header -->
-                            <div class="p-8">
+                    <div class="flex justify-center lg:justify-end">
+                        <div class="main-card relative w-full max-w-md">
+                            <!-- Main Protection Card -->
+                            <div class="relative bg-white rounded-2xl shadow-2xl border border-gray-200 p-8 transform hover:-translate-y-2 transition-all duration-300">
                                 <div class="flex items-center justify-between mb-6">
                                     <div class="flex items-center gap-3">
-                                        <div
-                                            class="w-10 h-10 bg-lime-400 rounded-full flex items-center justify-center">
-                                            <HugeiconsIcon :icon="Shield01Icon" class="w-6 h-6 text-black" />
+                                        <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center">
+                                            <HugeiconsIcon :icon="Shield01Icon" class="w-7 h-7 text-white" />
                                         </div>
                                         <div>
-                                            <div class="text-lime-400 font-bold text-lg">PROTEGEY SHIELD</div>
-                                            <div class="text-gray-400 text-sm">Real-time Protection</div>
+                                            <div class="text-blue-600 font-bold text-lg">PROTEGEY SHIELD</div>
+                                            <div class="text-gray-500 text-sm">Real-time Protection</div>
                                         </div>
                                     </div>
-                                    <div class="text-lime-400 text-sm font-semibold animate-pulse">● ACTIVE</div>
+                                    <div class="flex items-center gap-1.5">
+                                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                        <span class="text-green-600 text-sm font-semibold">ACTIVE</span>
+                                    </div>
                                 </div>
 
                                 <!-- Protection Stats -->
                                 <div class="space-y-4">
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-gray-400 text-sm">Threats Blocked Today</span>
-                                        <span class="text-white font-bold">2,847</span>
+                                    <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                                        <span class="text-gray-600">Threats Blocked Today</span>
+                                        <span class="text-gray-900 font-bold text-lg">2,847</span>
                                     </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-gray-400 text-sm">Response Time</span>
-                                        <span class="text-lime-400 font-bold">&lt;50ms</span>
+                                    <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                                        <span class="text-gray-600">Response Time</span>
+                                        <span class="text-blue-600 font-bold text-lg">&lt;50ms</span>
                                     </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-gray-400 text-sm">Risk Score</span>
-                                        <span class="text-purple-400 font-bold">99.9% Safe</span>
+                                    <div class="flex justify-between items-center py-3">
+                                        <span class="text-gray-600">Risk Score</span>
+                                        <span class="text-lime-600 font-bold text-lg">99.9% Safe</span>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Animated Background Pattern -->
-                            <div
-                                class="absolute inset-0 bg-gradient-to-tr from-transparent via-lime-400/5 to-purple-500/10 pointer-events-none" aria-hidden="true">
-                            </div>
-
-                            <!-- Flowing Data Points -->
-                            <div class="absolute bottom-4 left-8 right-8">
-                                <div class="flex justify-between">
-                                    <div class="w-2 h-2 bg-lime-400 rounded-full animate-ping"></div>
-                                    <div class="w-2 h-2 bg-purple-400 rounded-full animate-ping"
-                                        style="animation-delay: 0.5s;"></div>
-                                    <div class="w-2 h-2 bg-blue-400 rounded-full animate-ping"
-                                        style="animation-delay: 1s;"></div>
-                                    <div class="w-2 h-2 bg-lime-400 rounded-full animate-ping"
-                                        style="animation-delay: 1.5s;"></div>
+                                <!-- Progress Bar -->
+                                <div class="mt-6">
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="text-gray-600">Protection Level</span>
+                                        <span class="text-gray-900 font-semibold">Maximum</span>
+                                    </div>
+                                    <div class="w-full bg-gray-100 rounded-full h-2.5">
+                                        <div class="bg-gradient-to-r from-blue-600 to-lime-400 h-2.5 rounded-full" style="width: 99.9%"></div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- Floating Elements Around Card -->
-                        <div class="absolute -inset-8">
-                            <!-- Data flow indicators -->
-                            <div class="absolute top-4 -right-4 w-3 h-3 bg-lime-400 rounded-full animate-pulse">
-                            </div>
-                            <div class="absolute top-12 -right-8 w-2 h-2 bg-purple-400 rounded-full animate-pulse"
-                                style="animation-delay: 0.7s;"></div>
-                            <div class="absolute bottom-12 -left-6 w-4 h-4 bg-blue-400 rounded-full animate-pulse"
-                                style="animation-delay: 1.4s;"></div>
-                            <div class="absolute bottom-4 -left-2 w-2 h-2 bg-lime-300 rounded-full animate-pulse"
-                                style="animation-delay: 2.1s;"></div>
-
-                            <!-- Geometric shapes -->
-                            <div
-                                class="absolute top-8 -left-4 w-3 h-3 bg-purple-500 rotate-45 animate-spin-slow opacity-70">
-                            </div>
-                            <div
-                                class="absolute bottom-8 -right-6 w-4 h-4 bg-lime-400 rotate-45 animate-bounce-slow opacity-80">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
     </section>

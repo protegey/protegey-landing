@@ -1,33 +1,26 @@
 <template>
-  <div class="relative min-h-screen">
-    <!-- Continuous Background Animation -->
-    <BackgroundGradientAnimation :gradient-background-start="isDark ? 'rgb(0, 0, 0)' : 'rgb(249, 250, 251)'"
-      :gradient-background-end="isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)'" first-color="163, 230, 53"
-      second-color="168, 85, 247" third-color="96, 165, 250" fourth-color="163, 230, 53" fifth-color="168, 85, 247"
-      pointer-color="163, 230, 53" size="80%" blending-value="hard-light" :interactive="true"
-      container-class-name="fixed inset-0 pointer-events-none z-[-10]"
-      class-name="relative z-0 h-full w-full overflow-hidden" />
-
+  <div class="relative min-h-screen bg-gray-50">
     <!-- Content -->
-    <div class="relative z-10">
-      <Hero :isDark="isDark" />
+    <div class="relative">
+      <Hero />
       <WhyProtegey :isDark="isDark" />
-      <Solution :isDark="isDark" />
-      <Features :isDark="isDark" />
-      <Target :isDark="isDark" />
-      <WaitlistDemo :isDark="isDark" />
+      <TrustedBy />
+      <!-- <Solution :isDark="isDark" />
+      <Features :isDark="isDark" /> -->
+      <!-- <Target :isDark="isDark" /> -->
+      <WaitlistDemo />
     </div>
   </div>
 </template>
 
 <script setup>
 import { useTheme } from '~/composables/useTheme'
-import BackgroundGradientAnimation from '~/components/ui/BackgroundGradientAnimation.vue'
 import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
-import Solution from '~/components/sections/Solution.vue'
-import Features from '~/components/sections/Features.vue'
-import Target from '~/components/sections/Target.vue'
+import TrustedBy from '~/components/sections/TrustedBy.vue'
+// import Solution from '~/components/sections/Solution.vue'
+// import Features from '~/components/sections/Features.vue'
+// import Target from '~/components/sections/Target.vue'
 import WaitlistDemo from '~/components/sections/WaitlistDemo.vue'
 
 const { isDark } = useTheme()

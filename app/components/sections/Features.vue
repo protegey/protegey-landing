@@ -102,78 +102,49 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section id="features" class="features-modern relative py-12 sm:py-16 md:py-20 lg:py-24">
-        <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full">
-            <div class="max-w-6xl mx-auto w-full">
+    <!-- Gradient band background like the attachment -->
+    <section id="features" class="features-modern relative py-20 md:py-28 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900">
+        <!-- Inner rounded panel -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+                <div class="relative rounded-3xl bg-white/95 shadow-xl border border-white/60 backdrop-blur-sm px-6 sm:px-10 md:px-14 py-12 md:py-16">
+                    <!-- subtle grid overlay inside the panel -->
+                    <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-[0.08]" aria-hidden="true"
+                         style="background-image:
+                            linear-gradient(rgba(0,0,0,.12) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(0,0,0,.12) 1px, transparent 1px);
+                            background-size: 36px 36px;">
+                    </div>
 
-            <!-- Header -->
-            <div class="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-                    <h2 :class="['features-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6', isDark ? 'text-white' : 'text-gray-900']">
-                        Features / <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-purple-500">Products</span>
-                    </h2>
-                    <p :class="['features-subtitle text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed', isDark ? 'text-gray-300' : 'text-gray-600']">
-                        Comprehensive fraud prevention tools designed for Africa's diverse financial ecosystem.
-                    </p>
-                </div>
+                    <!-- Header -->
+                    <div class="relative text-center max-w-3xl mx-auto mb-10 md:mb-14">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700 ring-1 ring-gray-200">Features</span>
+                        <h2 class="features-title mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900">
+                            Unleash the Power: Features That
+                            <span class="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-orange-500 to-pink-600">Transcend the Ordinary!</span>
+                        </h2>
+                        <p class="features-subtitle mt-4 text-sm sm:text-base text-gray-600">
+                            Unveiling the finest arsenal: power‑packed capabilities that elevate your financial protection to new heights.
+                        </p>
+                    </div>
 
-                <!-- Features Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
-                    <div v-for="(feature, index) in features" :key="index" class="feature-card group">
-                        <div class="relative h-full p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl border transition-all duration-500 hover:-translate-y-2"
-                            :class="{
-                                'bg-gradient-to-br from-lime-900/20 to-lime-800/10 border-lime-700/30 hover:border-lime-400/60': feature.color === 'lime',
-                                'bg-gradient-to-br from-purple-900/20 to-purple-800/10 border-purple-700/30 hover:border-purple-400/60': feature.color === 'purple',
-                                'bg-gradient-to-br from-blue-900/20 to-blue-800/10 border-blue-700/30 hover:border-blue-400/60': feature.color === 'blue'
-                            }">
-
-                            <!-- Icon -->
-                            <div class="mb-3 sm:mb-4 md:mb-6">
-                                <div class="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl flex items-center justify-center" :class="{
-                                    'bg-lime-500/20': feature.color === 'lime',
-                                    'bg-purple-500/20': feature.color === 'purple',
-                                    'bg-blue-500/20': feature.color === 'blue'
-                                }">
-                                    <HugeiconsIcon :icon="feature.icon" :size="24" class="sm:w-6 sm:h-6 md:w-7 md:h-7" :class="{
-                                        'text-lime-400': feature.color === 'lime',
-                                        'text-purple-400': feature.color === 'purple',
-                                        'text-blue-400': feature.color === 'blue'
-                                    }" />
+                    <!-- Features Grid -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+                        <div v-for="(feature, index) in features" :key="index" class="feature-card">
+                            <div class="h-full rounded-2xl border border-gray-200 bg-white shadow-[0_1px_0_0_rgba(0,0,0,0.02)] hover:shadow-lg transition-shadow p-6 md:p-7">
+                                <div class="flex items-start gap-4">
+                                    <!-- Icon in subtle square -->
+                                    <div class="shrink-0 w-10 h-10 rounded-lg border border-gray-200 bg-gray-50 flex items-center justify-center text-gray-700">
+                                        <HugeiconsIcon :icon="feature.icon" :size="18" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-1">{{ feature.title }}</h3>
+                                        <p class="text-sm text-gray-600 leading-relaxed">{{ feature.description }}</p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <!-- Content -->
-                            <h3 :class="['text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 md:mb-4 group-hover:text-lime-400 transition-colors', isDark ? 'text-white' : 'text-gray-900']">
-                                {{ feature.title }}
-                            </h3>
-
-                            <p :class="['leading-relaxed text-xs sm:text-sm md:text-base', isDark ? 'text-gray-300' : 'text-gray-600']">
-                                {{ feature.description }}
-                            </p>
-
-                            <!-- Decorative Element -->
-                            <div class="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 md:bottom-4 md:right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                                <HugeiconsIcon :icon="feature.icon" :size="48" class="sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" />
-                            </div>
-
-                            <!-- Hover Effect Background -->
-                            <div class="absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" aria-hidden="true"
-                                :class="{
-                                    'bg-gradient-to-br from-lime-400/5 to-transparent': feature.color === 'lime',
-                                    'bg-gradient-to-br from-purple-400/5 to-transparent': feature.color === 'purple',
-                                    'bg-gradient-to-br from-blue-400/5 to-transparent': feature.color === 'blue'
-                                }">
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Bottom CTA -->
-                <div class="text-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 pb-4 sm:pb-6 md:pb-8">
-                    <button
-                        class="bg-gradient-to-r from-lime-400 to-purple-500 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:shadow-lg hover:shadow-lime-400/25 transition-all duration-300">
-                        Explore All Features
-                    </button>
                 </div>
             </div>
         </div>
