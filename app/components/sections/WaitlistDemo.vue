@@ -159,6 +159,15 @@ const handleSubmit = async () => {
         return
     }
 
+    // Company email validation
+    const publicDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'protonmail.com', 'mail.com', 'zoho.com', 'yandex.com', 'live.com']
+    const emailDomain = formData.value.email.split('@')[1]?.toLowerCase()
+
+    if (publicDomains.includes(emailDomain)) {
+        submitError.value = 'Please use a company email address (e.g., name@company.com)'
+        return
+    }
+
     isSubmitting.value = true
 
     try {
