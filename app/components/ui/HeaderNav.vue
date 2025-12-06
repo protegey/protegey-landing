@@ -32,11 +32,14 @@ const scrollTo = (selector) => {
       </div>
 
       <nav class="hidden md:flex items-center gap-8" role="navigation" aria-label="Main">
-        <a class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
+        <a href="#whyprotegey"
+          class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
           @click.prevent="scrollTo('whyprotegey')">Why Protegey</a>
-        <a class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
+        <a href="#trustedby"
+          class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
           @click.prevent="scrollTo('trustedby')">Trusted By</a>
-        <a class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
+        <a href="#waitlist"
+          class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
           @click.prevent="scrollTo('waitlist')">Contact</a>
       </nav>
 
@@ -67,13 +70,13 @@ const scrollTo = (selector) => {
     <div v-if="isOpen"
       class="md:hidden fixed left-0 right-0 top-20 z-40 bg-neutral-950 border-t border-neutral-800 shadow-2xl">
       <div class="px-4 py-3 flex flex-col gap-2">
-        <a @click.prevent="scrollTo('hero'); toggleMenu()"
+        <a href="#hero" @click.prevent="scrollTo('hero'); toggleMenu()"
           class="text-neutral-300 py-2 cursor-pointer hover:text-primary-400 font-medium">Home</a>
-        <a @click.prevent="scrollTo('whyprotegey'); toggleMenu()"
+        <a href="#whyprotegey" @click.prevent="scrollTo('whyprotegey'); toggleMenu()"
           class="text-neutral-300 py-2 cursor-pointer hover:text-primary-400 font-medium">Why Protegey</a>
-        <a @click.prevent="scrollTo('trustedby'); toggleMenu()"
+        <a href="#trustedby" @click.prevent="scrollTo('trustedby'); toggleMenu()"
           class="text-neutral-300 py-2 cursor-pointer hover:text-primary-400 font-medium">Trusted By</a>
-        <a @click.prevent="scrollTo('waitlist'); toggleMenu()"
+        <a href="#waitlist" @click.prevent="scrollTo('waitlist'); toggleMenu()"
           class="text-neutral-300 py-2 cursor-pointer hover:text-primary-400 font-medium">Contact</a>
         <button
           class="mt-2 bg-primary-500 text-neutral-950 px-6 py-3 rounded-lg font-bold hover:bg-primary-400 shadow-lg shadow-primary-500/20"

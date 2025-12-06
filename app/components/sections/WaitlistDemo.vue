@@ -33,26 +33,32 @@
                 <form @submit.prevent="handleSubmit" class="space-y-6 relative z-10">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-semibold mb-2 text-neutral-300">Full Name</label>
-                            <input v-model="formData.name" type="text" required placeholder="John Doe"
+                            <label for="name" class="block text-sm font-semibold mb-2 text-neutral-300">Full
+                                Name</label>
+                            <input id="name" v-model="formData.name" type="text" required placeholder="John Doe"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500" />
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-2 text-neutral-300">Email Address</label>
-                            <input v-model="formData.email" type="email" required placeholder="john@company.com"
+                            <label for="email" class="block text-sm font-semibold mb-2 text-neutral-300">Email
+                                Address</label>
+                            <input id="email" v-model="formData.email" type="email" required
+                                placeholder="john@company.com"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500" />
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-semibold mb-2 text-neutral-300">Company Name</label>
-                            <input v-model="formData.company" type="text" required placeholder="Your Company"
+                            <label for="company" class="block text-sm font-semibold mb-2 text-neutral-300">Company
+                                Name</label>
+                            <input id="company" v-model="formData.company" type="text" required
+                                placeholder="Your Company"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500" />
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-2 text-neutral-300">Your Role</label>
-                            <select v-model="formData.role" required
+                            <label for="role" class="block text-sm font-semibold mb-2 text-neutral-300">Your
+                                Role</label>
+                            <select id="role" v-model="formData.role" required
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
                                 <option value="" disabled class="bg-neutral-900">Select your role</option>
                                 <option value="ceo" class="bg-neutral-900">CEO / Founder</option>
@@ -65,8 +71,9 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2 text-neutral-300">Interest Type</label>
-                        <select v-model="formData.interestType" required
+                        <label for="interestType" class="block text-sm font-semibold mb-2 text-neutral-300">Interest
+                            Type</label>
+                        <select id="interestType" v-model="formData.interestType" required
                             class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
                             <option value="" disabled class="bg-neutral-900">Select interest</option>
                             <option v-for="option in interestOptions" :key="option.value" :value="option.value"
@@ -75,9 +82,9 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2 text-neutral-300">Message / Notes
+                        <label for="message" class="block text-sm font-semibold mb-2 text-neutral-300">Message / Notes
                             (Optional)</label>
-                        <textarea v-model="formData.message" rows="4"
+                        <textarea id="message" v-model="formData.message" rows="4"
                             placeholder="Tell us a little about what you're interested in..."
                             class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none bg-neutral-800 text-white placeholder-neutral-500"></textarea>
                     </div>
