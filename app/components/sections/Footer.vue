@@ -16,13 +16,16 @@
           <h3 class="font-semibold mb-4 text-white">Company</h3>
           <ul class="space-y-2 text-sm text-neutral-400">
             <li>
-              <a href="#about" class="hover:text-primary-400 transition-colors" data-testid="link-about">About</a>
+              <NuxtLink to="/about" class="hover:text-primary-400 transition-colors" data-testid="link-about">About
+              </NuxtLink>
             </li>
             <li>
-              <a href="#contact" class="hover:text-primary-400 transition-colors" data-testid="link-contact">Contact</a>
+              <NuxtLink to="/contact" class="hover:text-primary-400 transition-colors" data-testid="link-contact">
+                Contact</NuxtLink>
             </li>
             <li>
-              <a href="#careers" class="hover:text-primary-400 transition-colors" data-testid="link-careers">Careers</a>
+              <NuxtLink to="/careers" class="hover:text-primary-400 transition-colors" data-testid="link-careers">
+                Careers</NuxtLink>
             </li>
           </ul>
         </div>
@@ -32,11 +35,12 @@
           <h3 class="font-semibold mb-4 text-white">Resources</h3>
           <ul class="space-y-2 text-sm text-neutral-400">
             <li>
-              <a href="#api-docs" class="hover:text-primary-400 transition-colors" data-testid="link-api-docs">API
-                Docs</a>
+              <NuxtLink to="/api-docs" class="hover:text-primary-400 transition-colors" data-testid="link-api-docs">API
+                Docs</NuxtLink>
             </li>
             <li>
-              <a href="#privacy" class="hover:text-primary-400 transition-colors" data-testid="link-privacy">Privacy</a>
+              <NuxtLink to="/privacy" class="hover:text-primary-400 transition-colors" data-testid="link-privacy">
+                Privacy</NuxtLink>
             </li>
           </ul>
         </div>
