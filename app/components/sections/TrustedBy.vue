@@ -3,8 +3,8 @@ import { computed } from 'vue';
 
 // The original list of company data
 const companiesLogo = [
-    { name: "Framer", logo: "https://saasly.prebuiltui.com/assets/companies-logo/framer.svg" },
-    { name: "Huawei", logo: "https://saasly.prebuiltui.com/assets/companies-logo/huawei.svg" },
+    { name: "Insead AI Venture Lab", logo: "https://images.squarespace-cdn.com/content/v1/6810066322fce2334c415a1b/53d706fd-da27-42c3-b821-d6e0d36ad975/AI+VENTURE+LAB-4.png?format=1500w" },
+    { name: "The Tony Elumelu Foundation", logo: "https://www.tonyelumelufoundation.org/wp-content/uploads/2021/10/TEF_Logo_White_Bg.png" },
 ];
 
 // Create a computed property that duplicates the list. 
@@ -32,8 +32,8 @@ const marqueeItems = computed(() => {
             <!-- The 'marquee-inner' class applies the scrolling CSS animation -->
             <div class="flex marquee-inner will-change-transform">
                 <div v-for="(company, index) in marqueeItems" :key="index"
-                    class="mx-11 h-8 md:h-10 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0">
-                    <img :src="company.logo" :alt="company.name" class="h-full w-auto object-contain invert" />
+                    class="mx-11 h-16 md:h-20 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0">
+                    <img :src="company.logo" :alt="company.name" class="h-full w-auto object-contain" />
                 </div>
             </div>
 
