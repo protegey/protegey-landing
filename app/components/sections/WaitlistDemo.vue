@@ -58,7 +58,7 @@
                         <div>
                             <label for="role" class="block text-sm font-semibold mb-2 text-neutral-300">Your
                                 Role</label>
-                            <select id="role" v-model="formData.role" required
+                            <select id="role" v-model="formData.role" required aria-label="Your Role"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
                                 <option value="" disabled class="bg-neutral-900">Select your role</option>
                                 <option value="ceo" class="bg-neutral-900">CEO / Founder</option>
@@ -73,7 +73,7 @@
                     <div>
                         <label for="interestType" class="block text-sm font-semibold mb-2 text-neutral-300">Interest
                             Type</label>
-                        <select id="interestType" v-model="formData.interestType" required
+                        <select id="interestType" v-model="formData.interestType" required aria-label="Interest Type"
                             class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
                             <option value="" disabled class="bg-neutral-900">Select interest</option>
                             <option v-for="option in interestOptions" :key="option.value" :value="option.value"
