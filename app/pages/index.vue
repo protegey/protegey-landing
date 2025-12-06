@@ -1,10 +1,11 @@
 <template>
-  <div class="relative min-h-screen bg-gray-50">
+  <div class="relative min-h-screen bg-neutral-950">
     <!-- Content -->
     <div class="relative">
       <Hero />
       <WhyProtegey :isDark="isDark" />
       <TrustedBy />
+      <!-- <NetworkMap /> -->
       <!-- <Solution :isDark="isDark" />
       <Features :isDark="isDark" /> -->
       <!-- <Target :isDark="isDark" /> -->
@@ -18,6 +19,7 @@ import { useTheme } from '~/composables/useTheme'
 import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
 import TrustedBy from '~/components/sections/TrustedBy.vue'
+// import NetworkMap from '~/components/sections/NetworkMap.vue'
 // import Solution from '~/components/sections/Solution.vue'
 // import Features from '~/components/sections/Features.vue'
 // import Target from '~/components/sections/Target.vue'

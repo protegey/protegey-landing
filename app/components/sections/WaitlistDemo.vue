@@ -1,8 +1,12 @@
 <template>
-    <section id="waitlist" ref="ctaSection" class="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 overflow-hidden">
-        <!-- Subtle grid pattern -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    <section id="waitlist" ref="ctaSection"
+        class="relative py-24 px-4 sm:px-6 lg:px-8 bg-neutral-950 overflow-hidden border-t border-neutral-900">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl">
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute top-0 left-0 w-64 h-64 bg-secondary-500/10 rounded-full blur-3xl"></div>
+            </div>
         </div>
 
         <div class="max-w-4xl mx-auto relative z-10">
@@ -11,84 +15,96 @@
                     Experience the future of
                 </h2>
                 <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                    <span class="text-lime-400">business finance</span>
+                    <span class="text-primary-400">fraud intelligence</span>
                     <span class="text-white"> today</span>
                 </h3>
-                <p class="text-xl text-white/80 max-w-2xl mx-auto">
+                <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
                     Be among the first to experience Africa's next generation fraud detection platform
                 </p>
             </div>
 
-            <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 fade-up delay-200">
-                <form @submit.prevent="handleSubmit" class="space-y-6">
+            <div
+                class="bg-neutral-900 border border-neutral-800 rounded-3xl shadow-2xl p-8 md:p-12 fade-up delay-200 relative overflow-hidden">
+                <!-- Glow effect -->
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500">
+                </div>
+
+                <form @submit.prevent="handleSubmit" class="space-y-6 relative z-10">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-semibold mb-2 text-gray-700">Full Name</label>
+                            <label class="block text-sm font-semibold mb-2 text-neutral-300">Full Name</label>
                             <input v-model="formData.name" type="text" required placeholder="John Doe"
-                                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-gray-50" />
+                                class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500" />
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-2 text-gray-700">Email Address</label>
+                            <label class="block text-sm font-semibold mb-2 text-neutral-300">Email Address</label>
                             <input v-model="formData.email" type="email" required placeholder="john@company.com"
-                                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-gray-50" />
+                                class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500" />
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-semibold mb-2 text-gray-700">Company Name</label>
+                            <label class="block text-sm font-semibold mb-2 text-neutral-300">Company Name</label>
                             <input v-model="formData.company" type="text" required placeholder="Your Company"
-                                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-gray-50" />
+                                class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500" />
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-2 text-gray-700">Your Role</label>
+                            <label class="block text-sm font-semibold mb-2 text-neutral-300">Your Role</label>
                             <select v-model="formData.role" required
-                                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-gray-50">
-                                <option value="" disabled>Select your role</option>
-                                <option value="ceo">CEO / Founder</option>
-                                <option value="cto">CTO / Tech Lead</option>
-                                <option value="product">Product Manager</option>
-                                <option value="risk">Risk / Compliance</option>
-                                <option value="other">Other</option>
+                                class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
+                                <option value="" disabled class="bg-neutral-900">Select your role</option>
+                                <option value="ceo" class="bg-neutral-900">CEO / Founder</option>
+                                <option value="cto" class="bg-neutral-900">CTO / Tech Lead</option>
+                                <option value="product" class="bg-neutral-900">Product Manager</option>
+                                <option value="risk" class="bg-neutral-900">Risk / Compliance</option>
+                                <option value="other" class="bg-neutral-900">Other</option>
                             </select>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2 text-gray-700">Interest Type</label>
+                        <label class="block text-sm font-semibold mb-2 text-neutral-300">Interest Type</label>
                         <select v-model="formData.interestType" required
-                            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-gray-50">
-                            <option value="" disabled>Select interest</option>
-                            <option v-for="option in interestOptions" :key="option.value" :value="option.value">{{ option.label }}</option>
+                            class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
+                            <option value="" disabled class="bg-neutral-900">Select interest</option>
+                            <option v-for="option in interestOptions" :key="option.value" :value="option.value"
+                                class="bg-neutral-900">{{ option.label }}</option>
                         </select>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2 text-gray-700">Message / Notes (Optional)</label>
-                        <textarea v-model="formData.message" rows="4" placeholder="Tell us a little about what you're interested in..."
-                            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none bg-gray-50"></textarea>
+                        <label class="block text-sm font-semibold mb-2 text-neutral-300">Message / Notes
+                            (Optional)</label>
+                        <textarea v-model="formData.message" rows="4"
+                            placeholder="Tell us a little about what you're interested in..."
+                            class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none bg-neutral-800 text-white placeholder-neutral-500"></textarea>
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <button type="submit" :disabled="isSubmitting"
-                            :class="['flex-1 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg', 
-                                    isSubmitting ? 'opacity-60 cursor-not-allowed bg-gray-400' : 'bg-blue-600 hover:bg-blue-700 text-white']">
+                            :class="['flex-1 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-primary-500/20',
+                                isSubmitting ? 'opacity-60 cursor-not-allowed bg-neutral-700 text-neutral-400' : 'bg-primary-500 hover:bg-primary-400 text-neutral-950']">
                             <span>{{ isSubmitting ? 'Submitting...' : 'Get Started' }}</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
                         </button>
                     </div>
 
-                    <div v-if="submitMessage" class="text-center text-green-600 font-medium mt-4 bg-green-50 py-3 px-4 rounded-lg">
+                    <div v-if="submitMessage"
+                        class="text-center text-primary-400 font-medium mt-4 bg-primary-500/10 py-3 px-4 rounded-lg border border-primary-500/20">
                         {{ submitMessage }}
                     </div>
 
-                    <div v-if="submitError" class="text-center text-red-600 font-medium mt-4 bg-red-50 py-3 px-4 rounded-lg">
+                    <div v-if="submitError"
+                        class="text-center text-red-400 font-medium mt-4 bg-red-500/10 py-3 px-4 rounded-lg border border-red-500/20">
                         {{ submitError }}
                     </div>
 
-                    <p class="text-center text-sm text-gray-600 mt-6">
+                    <p class="text-center text-sm text-neutral-500 mt-6">
                         We respect your privacy. No spam — ever.
                     </p>
                 </form>
@@ -147,7 +163,7 @@ const handleSubmit = async () => {
 
     try {
         // Minimal API post to /api/waitlist — server should accept interest/message fields
-    const payload = { ...formData.value }
+        const payload = { ...formData.value }
         const res = await fetch('/api/waitlist', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -156,8 +172,8 @@ const handleSubmit = async () => {
 
         if (!res.ok) throw new Error(await res.text())
 
-    const interestLabel = interestOptions.find(o => o.value === formData.value.interestType)?.label || formData.value.interestType || 'Request'
-    submitMessage.value = `${interestLabel} request submitted for ${formData.value.email} (interest: ${formData.value.interestType || 'N/A'})`
+        const interestLabel = interestOptions.find(o => o.value === formData.value.interestType)?.label || formData.value.interestType || 'Request'
+        submitMessage.value = `${interestLabel} request submitted for ${formData.value.email} (interest: ${formData.value.interestType || 'N/A'})`
         formData.value = { name: '', email: '', company: '', role: '', interestType: '', message: '' }
     } catch (err) {
         console.error('Failed to submit form', err)

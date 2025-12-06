@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { gsap } from 'gsap';
 import { HugeiconsIcon } from '@hugeicons/vue';
-import { ArrowRight01Icon, Shield01Icon } from '@hugeicons/core-free-icons';
+import { ArrowRight01Icon, Shield01Icon, Activity01Icon, Globe02Icon, LockComputerIcon } from '@hugeicons/core-free-icons';
 
 defineProps({ isDark: Boolean });
 
@@ -12,15 +12,15 @@ let typewriterTimeout = null;
 const typewriterText = ref('');
 const showCursor = ref(true);
 const texts = [
-    'Detect',
-    'Analyze',
-    'Monitor',
-    'Prevent'
+    'DETECT',
+    'ANALYZE',
+    'MONITOR',
+    'PREVENT'
 ];
-const typingSpeed = 50; // milliseconds per character
-const deletingSpeed = 30; // milliseconds per character when deleting
-const pauseDelay = 2000; // pause before deleting
-const startDelay = 1500; // delay before starting typewriter effect
+const typingSpeed = 50;
+const deletingSpeed = 30;
+const pauseDelay = 2000;
+const startDelay = 1500;
 
 const startTypewriter = () => {
     typewriterText.value = '';
@@ -33,23 +33,19 @@ const startTypewriter = () => {
         const currentText = texts[currentTextIndex];
 
         if (!isDeleting) {
-            // Typing
             if (currentIndex < currentText.length) {
                 typewriterText.value += currentText[currentIndex];
                 currentIndex++;
                 typewriterTimeout = setTimeout(type, typingSpeed);
             } else {
-                // Finished typing, wait then start deleting
                 isDeleting = true;
                 typewriterTimeout = setTimeout(type, pauseDelay);
             }
         } else {
-            // Deleting
             if (typewriterText.value.length > 0) {
                 typewriterText.value = typewriterText.value.slice(0, -1);
                 typewriterTimeout = setTimeout(type, deletingSpeed);
             } else {
-                // Finished deleting, move to next text
                 isDeleting = false;
                 currentIndex = 0;
                 currentTextIndex = (currentTextIndex + 1) % texts.length;
@@ -66,72 +62,47 @@ const startTypewriter = () => {
 onMounted(() => {
     try {
         setTimeout(() => {
-            // Set initial states
-            gsap.set('.hero-title', { opacity: 0, y: 60 });
-            gsap.set('.hero-cta-button', { opacity: 0, y: 30 });
-            gsap.set('.hero-cta', { opacity: 0, y: 20 });
-            gsap.set('.hero-card', { opacity: 0, scale: 0.8, y: 50 });
-            gsap.set('.floating-element', { opacity: 0, scale: 0 });
-
-            // Hero entrance animation
+            gsap.set('.hero-title', { opacity: 0, y: 40 });
+            gsap.set('.hero-subtitle', { opacity: 0, y: 20 });
+            gsap.set('.hero-cta-button', { opacity: 0, y: 20 });
+            gsap.set('.hero-badge', { opacity: 0, y: -20 });
+            gsap.set('.dashboard-card', { opacity: 0, scale: 0.95, rotationX: 10 });
+            
             tl = gsap.timeline();
 
-            tl.to('.hero-title', {
+            tl.to('.hero-badge', {
                 y: 0,
                 opacity: 1,
-                duration: 1.2,
+                duration: 0.8,
                 ease: 'power3.out'
             })
-                .to('.hero-cta-button', {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.8,
-                    stagger: 0.2,
-                    ease: 'power3.out'
-                }, '-=0.6')
-                .to('.hero-cta', {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.8,
-                    ease: 'power3.out'
-                }, '-=0.6')
-                .to('.hero-card', {
-                    scale: 1,
-                    opacity: 1,
-                    y: 0,
-                    duration: 1.2,
-                    ease: 'power3.out'
-                }, '-=1')
-                .to('.floating-element', {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    ease: 'back.out(1.7)'
-                }, '-=0.8');
+            .to('.hero-title', {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: 'power3.out'
+            }, '-=0.4')
+            .to('.hero-subtitle', {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: 'power3.out'
+            }, '-=0.6')
+            .to('.hero-cta-button', {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: 'power3.out'
+            }, '-=0.6')
+            .to('.dashboard-card', {
+                scale: 1,
+                opacity: 1,
+                rotationX: 0,
+                duration: 1.2,
+                ease: 'power3.out'
+            }, '-=0.4');
 
-            // Continuous floating animation for card
-            gsap.to('.hero-card', {
-                y: -20,
-                duration: 3,
-                ease: 'power2.inOut',
-                yoyo: true,
-                repeat: -1
-            });
-
-            // Floating elements continuous animation
-            gsap.to('.floating-element', {
-                y: '-10px',
-                x: '5px',
-                rotation: 5,
-                duration: 4,
-                ease: 'power2.inOut',
-                yoyo: true,
-                repeat: -1,
-                stagger: 0.5
-            });
-
-            // Start typewriter effect
             startTypewriter();
 
         }, 200);
@@ -142,113 +113,147 @@ onMounted(() => {
 
 onUnmounted(() => {
     if (tl && tl.kill) tl.kill();
-    gsap.killTweensOf('.hero-card');
-    gsap.killTweensOf('.floating-element');
-    if (typewriterTimeout) {
-        clearTimeout(typewriterTimeout);
-    }
+    if (typewriterTimeout) clearTimeout(typewriterTimeout);
 });
 </script>
 
 <template>
-    <section id="hero" class="relative min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 flex items-center justify-center overflow-hidden">
-        <!-- Subtle grid pattern overlay -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    <section id="hero" class="relative min-h-screen bg-neutral-950 flex items-center justify-center overflow-hidden pt-20">
+        <!-- Animated Background Grid -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-neutral-950 via-transparent to-neutral-950"></div>
+            
+            <!-- Glowing Orbs -->
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-pulse-glow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 1s;"></div>
         </div>
 
-        <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-20 sm:py-48 relative z-10">
-            <div class="max-w-7xl mx-auto">
-                <!-- Main Content -->
-                <div class="text-center mb-16 space-y-6">
-                    <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                        <span class="block">The unified Antifraud and Identity Verification engine for Francophone and Northern Africa, without the enterprise cost</span>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                
+                <!-- Left Content -->
+                <div class="text-left space-y-8">
+                    <!-- Badge -->
+                    <div class="hero-badge inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary-500/30 bg-primary-500/10 text-primary-400 text-sm font-mono tracking-wide">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+                        </span>
+                        FRAUD INTELLIGENCE NETWORK
+                    </div>
+
+                    <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight">
+                        The Unified <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Anti-Fraud</span> Engine for Francophone and Northern-Africa without the Enterprise Cost
                     </h1>
-                    <p class="mt-6 text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-                        We cover the full fraud spectrum, from duplicate account detection, lender & merchant risk monitoring, internal fraud and transaction surveillance, all the way to account takeovers, investment scams, SIM-swap fraud, cross-border ID verification and money-muling prevention.
+                    
+                    <p class="hero-subtitle text-lg sm:text-xl text-neutral-400 max-w-2xl leading-relaxed">
+                        Aggregate signals from banks, telcos, and regulators to <span class="text-primary-400 font-mono">{{ typewriterText }}<span class="animate-pulse">_</span></span> fraud before it spreads. A shared early-warning network turning scattered events into actionable intelligence.
                     </p>
 
                     <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-                        <button class="hero-cta-button group bg-white text-blue-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 flex items-center justify-center gap-2 shadow-xl">
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button class="hero-cta-button group bg-primary-500 hover:bg-primary-400 text-neutral-950 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,204,22,0.3)] hover:shadow-[0_0_30px_rgba(132,204,22,0.5)]">
                             Get Started
                             <HugeiconsIcon :icon="ArrowRight01Icon" :size="20" class="group-hover:translate-x-1 transition-transform" />
                         </button>
-                        <button class="hero-cta-button border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:border-white hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
-                            <HugeiconsIcon :icon="Shield01Icon" :size="20" class="inline mr-2" />
-                            Request a Demo
+                        <button class="hero-cta-button group border border-neutral-700 hover:border-neutral-500 bg-neutral-900/50 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2">
+                            <HugeiconsIcon :icon="Shield01Icon" :size="20" class="text-neutral-400 group-hover:text-white transition-colors" />
+                            Request Demo
                         </button>
                     </div>
 
-                    <!-- Trust Badges -->
-                    <div class="hero-cta flex flex-wrap items-center justify-center gap-8 pt-12 text-white/80">
-                        <div class="flex items-center gap-2">
-                            <div class="w-2 h-2 bg-lime-400 rounded-full animate-pulse"></div>
-                            <span class="text-sm">Bank-grade Security</span>
+                    <!-- Trust Indicators -->
+                    <div class="hero-cta flex flex-wrap gap-6 pt-8 border-t border-neutral-800/50">
+                        <div class="flex items-center gap-2 text-neutral-400 text-sm">
+                            <HugeiconsIcon :icon="LockComputerIcon" :size="16" class="text-primary-500" />
+                            <span>Bank-grade Security</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-2 h-2 bg-lime-400 rounded-full animate-pulse"></div>
-                            <span class="text-sm">Real-time Protection</span>
+                        <div class="flex items-center gap-2 text-neutral-400 text-sm">
+                            <HugeiconsIcon :icon="Activity01Icon" :size="16" class="text-primary-500" />
+                            <span>Real-time Analysis</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-2 h-2 bg-lime-400 rounded-full animate-pulse"></div>
-                            <span class="text-sm">Africa-first</span>
+                        <div class="flex items-center gap-2 text-neutral-400 text-sm">
+                            <HugeiconsIcon :icon="Globe02Icon" :size="16" class="text-primary-500" />
+                            <span>Pan-African Coverage</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Visual Card Section -->
-                <div class="relative max-w-5xl mx-auto mt-20">
-                    <div class="hero-card grid md:grid-cols-3 gap-6">
-                        <!-- Card 1 - Main Security Card -->
-                        <div class="md:col-span-2 bg-white rounded-2xl shadow-2xl p-8 transform hover:-translate-y-2 transition-all duration-300">
-                            <div class="flex items-start justify-between mb-6">
-                                <div>
-                                    <div class="text-blue-600 font-bold text-xl mb-1">PROTEGEY</div>
-                                    <div class="text-gray-500 text-sm">FRAUD SHIELD</div>
-                                </div>
-                                <div class="bg-gradient-to-br from-lime-400 to-lime-600 w-14 h-10 rounded-lg opacity-90"></div>
+                <!-- Right Visual (Dashboard Mockup) -->
+                <div class="relative perspective-1000">
+                    <div class="dashboard-card relative z-10 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl overflow-hidden">
+                        <!-- Header -->
+                        <div class="flex items-center justify-between px-4 py-3 border-b border-neutral-800 bg-neutral-900/90 backdrop-blur">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50"></div>
                             </div>
-                            <div class="text-gray-900 text-2xl font-mono tracking-wider mb-4">
-                                **** **** **** 2847
-                            </div>
-                            <div class="flex justify-between items-end">
-                                <div>
-                                    <div class="text-gray-500 text-xs uppercase mb-1">Valid Thru</div>
-                                    <div class="text-gray-900 font-semibold">12/28</div>
+                            <div class="text-xs font-mono text-neutral-500">PROTEGEY_INTELLIGENCE_V2.0</div>
+                        </div>
+                        
+                        <!-- Dashboard Content -->
+                        <div class="p-6 space-y-6 bg-neutral-900/50">
+                            <!-- Stats Row -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-neutral-800/50 p-4 rounded-lg border border-neutral-700/50">
+                                    <div class="text-xs text-neutral-400 uppercase tracking-wider mb-1">Threats Blocked</div>
+                                    <div class="text-2xl font-mono font-bold text-white">84,291</div>
+                                    <div class="text-xs text-primary-400 mt-1 flex items-center gap-1">
+                                        <span class="inline-block w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[6px] border-b-primary-400"></span>
+                                        +12.5% vs last week
+                                    </div>
                                 </div>
-                                <div class="flex items-center gap-2">
-                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-                                    <span class="text-green-600 text-sm font-semibold">PROTECTED</span>
+                                <div class="bg-neutral-800/50 p-4 rounded-lg border border-neutral-700/50">
+                                    <div class="text-xs text-neutral-400 uppercase tracking-wider mb-1">Active Nodes</div>
+                                    <div class="text-2xl font-mono font-bold text-white">1,402</div>
+                                    <div class="text-xs text-secondary-400 mt-1">99.9% Uptime</div>
+                                </div>
+                            </div>
+
+                            <!-- Live Feed -->
+                            <div class="bg-neutral-800/30 rounded-lg border border-neutral-700/30 overflow-hidden">
+                                <div class="px-4 py-2 border-b border-neutral-700/30 bg-neutral-800/50 flex justify-between items-center">
+                                    <span class="text-xs font-semibold text-neutral-300">LIVE THREAT FEED</span>
+                                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                                </div>
+                                <div class="p-2 space-y-2">
+                                    <div class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
+                                        <span class="text-red-400">[CRITICAL]</span>
+                                        <span class="text-neutral-300">SIM Swap Detected</span>
+                                        <span class="text-neutral-500 ml-auto">00:01:23</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
+                                        <span class="text-yellow-400">[WARNING]</span>
+                                        <span class="text-neutral-300">Unusual Login Pattern</span>
+                                        <span class="text-neutral-500 ml-auto">00:01:45</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
+                                        <span class="text-primary-400">[INFO]</span>
+                                        <span class="text-neutral-300">New Node Connected</span>
+                                        <span class="text-neutral-500 ml-auto">00:02:10</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Map Visualization Placeholder -->
+                            <div class="h-32 bg-neutral-800/30 rounded-lg border border-neutral-700/30 relative overflow-hidden flex items-center justify-center group">
+                                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <div class="text-center">
+                                    <HugeiconsIcon :icon="Globe02Icon" :size="32" class="text-neutral-600 mx-auto mb-2 group-hover:text-primary-400 transition-colors" />
+                                    <span class="text-xs text-neutral-500 group-hover:text-neutral-300 transition-colors">Network Activity Map</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Card 2 - Stats Card -->
-                        <div class="bg-white rounded-2xl shadow-2xl p-6 transform hover:-translate-y-2 transition-all duration-300">
-                            <div class="text-gray-500 text-sm mb-2">Threats Blocked</div>
-                            <div class="text-4xl font-bold text-gray-900 mb-1">99.9%</div>
-                            <div class="text-green-600 text-sm flex items-center gap-1">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                                <span>+12% this month</span>
-                            </div>
-                            <div class="mt-6 pt-4 border-t border-gray-100">
-                                <div class="flex items-center justify-between text-sm mb-2">
-                                    <span class="text-gray-500">Success Rate</span>
-                                    <span class="text-gray-900 font-semibold">Active</span>
-                                </div>
-                                <div class="w-full bg-gray-100 rounded-full h-2">
-                                    <div class="bg-lime-400 h-2 rounded-full" style="width: 99.9%"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Scan Line Animation -->
+                        <div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-primary-500/5 to-transparent h-[20%] w-full animate-scan"></div>
                     </div>
-
-                    <!-- Floating decorative elements -->
-                    <div class="absolute -top-8 -right-8 w-20 h-20 bg-lime-400/20 rounded-2xl rotate-12 blur-xl floating-element"></div>
-                    <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-purple-500/20 rounded-2xl -rotate-12 blur-xl floating-element"></div>
+                    
+                    <!-- Decorative Elements behind card -->
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary-500/20 rounded-full blur-3xl -z-10"></div>
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-primary-500/20 rounded-full blur-3xl -z-10"></div>
                 </div>
             </div>
         </div>
@@ -256,59 +261,7 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-10px) rotate(5deg);
-    }
-}
-
-@keyframes float-reverse {
-
-    0%,
-    100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(10px) rotate(-5deg);
-    }
-}
-
-.animate-float {
-    animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-reverse {
-    animation: float-reverse 8s ease-in-out infinite;
-}
-
-.hero-cta-button {
-    opacity: 1;
-}
-
-.typewriter-text {
-    min-height: 1.2em;
-}
-
-.typewriter-cursor {
-    display: inline-block;
-    margin-left: 2px;
-    animation: blink 1s steps(2, start) infinite;
-    color: currentColor;
-}
-
-@keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
+.perspective-1000 {
+    perspective: 1000px;
 }
 </style>

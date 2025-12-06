@@ -22,8 +22,18 @@ export default {
         third: "moveInCircle 40s linear infinite",
         fourth: "moveHorizontal 40s ease infinite",
         fifth: "moveInCircle 20s ease infinite",
+        'scan': 'scan 4s linear infinite',
+        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
+        scan: {
+          '0%': { backgroundPosition: '0% 0%' },
+          '100%': { backgroundPosition: '0% 100%' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(163, 230, 53, 0.5)' },
+          '50%': { opacity: .5, boxShadow: '0 0 10px rgba(163, 230, 53, 0.2)' },
+        },
         moveHorizontal: {
           "0%": {
             transform: "translateX(-50%) translateY(-10%)",

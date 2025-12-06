@@ -5,10 +5,9 @@ import Footer from '~/components/sections/Footer.vue'
 </script>
 
 <template>
-  <div class="min-h-screen relative z-10 text-gray-900 dark:text-white transition-colors duration-200 pt-16">
+  <div class="min-h-screen relative z-10 text-gray-900 dark:text-white transition-colors duration-200">
     <HeaderNav />
     <slot />
     <Footer />
   </div>
 </template>
-

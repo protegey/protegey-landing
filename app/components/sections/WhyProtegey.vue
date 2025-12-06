@@ -48,32 +48,85 @@ onMounted(async () => {
 </script>
 
 <template>
-    <section id="whyprotegey" class="why-protegey-section relative py-16 sm:py-20 md:py-24 lg:py-32 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="whyprotegey" class="why-protegey-section relative py-16 sm:py-20 md:py-24 lg:py-32 bg-neutral-950">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl">
+                <div class="absolute top-1/4 right-0 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-500/5 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-6xl mx-auto w-full">
                 <!-- Section Header -->
                 <div ref="headerRef" class="why-header text-center mb-12 md:mb-16 lg:mb-20">
-                    <div class="text-blue-600 font-bold mb-3 uppercase tracking-wider text-sm">Why Security & Risk teams choose US</div>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary-500/30 bg-primary-500/10 text-primary-400 text-sm font-mono tracking-wide mb-4">
+                        <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
+                        PERFORMANCE METRICS
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Security & Risk teams choose US</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 items-stretch">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
                     <!-- Cards -->
-                    <div ref="cardRefs[0]" class="bg-white border border-blue-100 rounded-2xl p-8 flex flex-col shadow hover:shadow-xl transition-all duration-300">
-                        <div class="text-4xl font-bold text-blue-600 mb-3">67% Faster Threat Response</div>
-                        <div class="text-gray-700 text-base md:text-lg leading-relaxed">
-                            Our clients detect and neutralize threats 67% faster than industry average in the region, significantly reducing potential damage from security incidents and minimizing business disruption.
+                    <div ref="cardRefs[0]"
+                        class="group bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col shadow-lg hover:shadow-primary-500/10 hover:border-primary-500/30 transition-all duration-300 relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="mb-6 inline-flex p-3 rounded-lg bg-neutral-800 text-primary-400 group-hover:text-primary-300 group-hover:scale-110 transition-all duration-300">
+                                <HugeiconsIcon :icon="ZapIcon" :size="32" />
+                            </div>
+                            <div class="text-4xl font-bold text-white mb-3 font-mono">67% <span
+                                    class="text-primary-400 text-lg font-normal">Faster</span></div>
+                            <div class="text-neutral-400 text-base md:text-lg leading-relaxed">
+                                Our clients detect and neutralize threats 67% faster than industry average in the
+                                region, significantly reducing potential damage from security incidents and minimizing
+                                business disruption.
+                            </div>
                         </div>
                     </div>
-                    <div ref="cardRefs[1]" class="bg-white border border-blue-100 rounded-2xl p-8 flex flex-col shadow hover:shadow-xl transition-all duration-300">
-                        <div class="text-4xl font-bold text-blue-600 mb-3">40% Cost Reduction</div>
-                        <div class="text-gray-700 text-base md:text-lg leading-relaxed">
-                            Companies switching to PROTEGEY save an average of 40% compared to building and maintaining an in-house security/risk team, without sacrificing protection quality or coverage.
+
+                    <div ref="cardRefs[1]"
+                        class="group bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col shadow-lg hover:shadow-secondary-500/10 hover:border-secondary-500/30 transition-all duration-300 relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-secondary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="mb-6 inline-flex p-3 rounded-lg bg-neutral-800 text-secondary-400 group-hover:text-secondary-300 group-hover:scale-110 transition-all duration-300">
+                                <HugeiconsIcon :icon="ChartDownIcon" :size="32" />
+                            </div>
+                            <div class="text-4xl font-bold text-white mb-3 font-mono">40% <span
+                                    class="text-secondary-400 text-lg font-normal">Savings</span></div>
+                            <div class="text-neutral-400 text-base md:text-lg leading-relaxed">
+                                Companies switching to PROTEGEY save an average of 40% compared to building and
+                                maintaining an in-house security/risk team, without sacrificing protection quality or
+                                coverage.
+                            </div>
                         </div>
                     </div>
-                    <div ref="cardRefs[2]" class="bg-white border border-blue-100 rounded-2xl p-8 flex flex-col shadow hover:shadow-xl transition-all duration-300">
-                        <div class="text-4xl font-bold text-blue-600 mb-3">99.7% Uptime Guaranteed</div>
-                        <div class="text-gray-700 text-base md:text-lg leading-relaxed">
-                            Our platform maintains 99.7% uptime with redundant systems across multiple data centers, ensuring your security coverage never sleeps, even when you do.
+
+                    <div ref="cardRefs[2]"
+                        class="group bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col shadow-lg hover:shadow-emerald-500/10 hover:border-emerald-500/30 transition-all duration-300 relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="mb-6 inline-flex p-3 rounded-lg bg-neutral-800 text-emerald-400 group-hover:text-emerald-300 group-hover:scale-110 transition-all duration-300">
+                                <HugeiconsIcon :icon="Shield01Icon" :size="32" />
+                            </div>
+                            <div class="text-4xl font-bold text-white mb-3 font-mono">99.7% <span
+                                    class="text-emerald-400 text-lg font-normal">Uptime</span></div>
+                            <div class="text-neutral-400 text-base md:text-lg leading-relaxed">
+                                Our platform maintains 99.7% uptime with redundant systems across multiple data centers,
+                                ensuring your security coverage never sleeps, even when you do.
+                            </div>
                         </div>
                     </div>
                 </div>
