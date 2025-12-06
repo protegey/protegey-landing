@@ -251,19 +251,19 @@ onUnmounted(() => {
                                         class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
                                         <span class="text-red-400">[CRITICAL]</span>
                                         <span class="text-neutral-300">SIM Swap Detected</span>
-                                        <span class="text-neutral-500 ml-auto">00:01:23</span>
+                                        <span class="text-neutral-400 ml-auto">00:01:23</span>
                                     </div>
                                     <div
                                         class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
                                         <span class="text-yellow-400">[WARNING]</span>
                                         <span class="text-neutral-300">Unusual Login Pattern</span>
-                                        <span class="text-neutral-500 ml-auto">00:01:45</span>
+                                        <span class="text-neutral-400 ml-auto">00:01:45</span>
                                     </div>
                                     <div
                                         class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
                                         <span class="text-primary-400">[INFO]</span>
                                         <span class="text-neutral-300">New Node Connected</span>
-                                        <span class="text-neutral-500 ml-auto">00:02:10</span>
+                                        <span class="text-neutral-400 ml-auto">00:02:10</span>
                                     </div>
                                 </div>
                             </div>
@@ -278,7 +278,7 @@ onUnmounted(() => {
                                     <HugeiconsIcon :icon="Globe02Icon" :size="32"
                                         class="text-neutral-600 mx-auto mb-2 group-hover:text-primary-400 transition-colors" />
                                     <span
-                                        class="text-xs text-neutral-500 group-hover:text-neutral-300 transition-colors">Network
+                                        class="text-xs text-neutral-400 group-hover:text-neutral-300 transition-colors">Network
                                         Activity Map</span>
                                 </div>
                             </div>

@@ -30,7 +30,9 @@ export default defineNuxtConfig({
         { name: "author", content: "Protegey" },
 
         // Open Graph (Facebook, WhatsApp, LinkedIn)
+        { property: "og:site_name", content: "Protegey" },
         { property: "og:title", content: "Protegey — Intelligent Anti-Fraud for Francophone Africa" },
+        { property: "og:domain", content: "protegey.com" },
         { property: "og:description", content: "A real-time, AI-powered anti-fraud platform designed for Francophone Africa." },
         { property: "og:type", content: "website" },
         { property: "og:url", content: "https://protegey.com" },
@@ -38,11 +40,16 @@ export default defineNuxtConfig({
 
         // Twitter Cards
         { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@ProtegeyHQ" },
+        { name: "twitter:creator", content: "@ProtegeyHQ" },
         { name: "twitter:title", content: "Protegey — Intelligent Anti-Fraud for Francophone Africa" },
         { name: "twitter:description", content: "AI-powered fraud detection and reporting across Francophone Africa." },
         { name: "twitter:image", content: "https://protegey.com/og-image.png" },
 
         // Mobile & PWA basics (optional)
+        { name: "apple-mobile-web-app-title", content: "Protegey" },
+        { name: "apple-mobile-web-app-capable", content: "yes" },
+        { name: "apple-mobile-web-app-status-bar-style", content: "black" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "theme-color", content: "#0E1225" },
       ],

@@ -18,7 +18,7 @@ const marqueeItems = computed(() => {
     <section id="trustedby" class="py-12 bg-neutral-950 w-full border-t border-neutral-900">
         <!-- Title Text -->
         <div class="text-center mb-12 md:mb-16 lg:mb-20">
-            <div class="text-neutral-500 font-bold mb-3 uppercase tracking-wider text-sm">
+            <div class="text-neutral-400 font-bold mb-3 uppercase tracking-wider text-sm">
                 Trusted by Industry Leaders
             </div>
         </div>

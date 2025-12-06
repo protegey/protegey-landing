@@ -15,6 +15,7 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import { useTheme } from '~/composables/useTheme'
 import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
@@ -26,6 +27,27 @@ import TrustedBy from '~/components/sections/TrustedBy.vue'
 import WaitlistDemo from '~/components/sections/WaitlistDemo.vue'
 
 const { isDark } = useTheme()
+
+onMounted(() => {
+  // Fix for accessibility issue where data-aria-hidden is incorrectly applied
+  const content = document.querySelector('.min-h-screen.bg-neutral-950')
+  if (content) {
+    content.removeAttribute('data-aria-hidden')
+    content.removeAttribute('aria-hidden')
+  }
+
+  const header = document.querySelector('header')
+  if (header) {
+    header.removeAttribute('data-aria-hidden')
+    header.removeAttribute('aria-hidden')
+  }
+
+  const footer = document.querySelector('footer')
+  if (footer) {
+    footer.removeAttribute('data-aria-hidden')
+    footer.removeAttribute('aria-hidden')
+  }
+})
 </script>
 
 <style>

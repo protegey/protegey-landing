@@ -104,7 +104,7 @@
                         {{ submitError }}
                     </div>
 
-                    <p class="text-center text-sm text-neutral-500 mt-6">
+                    <p class="text-center text-sm text-neutral-400 mt-6">
                         We respect your privacy. No spam — ever.
                     </p>
                 </form>

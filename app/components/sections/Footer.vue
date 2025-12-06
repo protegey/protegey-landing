@@ -69,7 +69,7 @@
         </div>
       </div>
 
-      <div class="pt-8 border-t border-neutral-900 text-center text-sm text-neutral-500">
+      <div class="pt-8 border-t border-neutral-900 text-center text-sm text-neutral-400">
         <p>© {{ currentYear }} Protegey. All rights reserved.</p>
       </div>
     </div>
