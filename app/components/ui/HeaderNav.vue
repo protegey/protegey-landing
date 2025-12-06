@@ -18,7 +18,7 @@ const scrollTo = (selector) => {
   <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
     <div class="container mx-auto px-4 h-20 flex items-center justify-between">
       <div class="flex items-center gap-4">
-        <a href="#" class="flex items-center space-x-2">
+        <a href="/" class="flex items-center space-x-2">
           <div
             class="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center shadow-lg shadow-primary-500/20">
             <svg class="w-5 h-5 text-neutral-950" fill="currentColor" viewBox="0 0 20 20">
@@ -32,8 +32,6 @@ const scrollTo = (selector) => {
       </div>
 
       <nav class="hidden md:flex items-center gap-8" role="navigation" aria-label="Main">
-        <a class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
-          @click.prevent="scrollTo('hero')">Home</a>
         <a class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
           @click.prevent="scrollTo('whyprotegey')">Why Protegey</a>
         <a class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
