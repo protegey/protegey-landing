@@ -65,6 +65,9 @@ export default defineNuxtConfig({
         // Favicon setup (update paths to match your assets)
         { rel: "icon", type: "image/png", href: "/favicon.png" },
         { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+        // Preconnect to external image domains
+        { rel: "preconnect", href: "https://images.squarespace-cdn.com" },
+        { rel: "preconnect", href: "https://www.tonyelumelufoundation.org" },
       ],
     },
   },

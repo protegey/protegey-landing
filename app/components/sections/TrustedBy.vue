@@ -33,7 +33,8 @@ const marqueeItems = computed(() => {
             <div class="flex marquee-inner will-change-transform">
                 <div v-for="(company, index) in marqueeItems" :key="index"
                     class="mx-11 h-16 md:h-20 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0">
-                    <img :src="company.logo" :alt="company.name" class="h-full w-auto object-contain" />
+                    <img :src="company.logo" :alt="company.name" class="h-full w-auto object-contain" loading="lazy"
+                        decoding="async" />
                 </div>
             </div>
 

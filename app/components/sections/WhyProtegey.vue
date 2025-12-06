@@ -134,3 +134,10 @@ onMounted(async () => {
         </div>
     </section>
 </template>
+
+<style scoped>
+.why-header,
+.group {
+    will-change: transform, opacity;
+}
+</style>

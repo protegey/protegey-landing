@@ -305,4 +305,12 @@ onUnmounted(() => {
 .perspective-1000 {
     perspective: 1000px;
 }
+
+.hero-badge,
+.hero-title,
+.hero-subtitle,
+.hero-cta-button,
+.dashboard-card {
+    will-change: transform, opacity;
+}
 </style>
