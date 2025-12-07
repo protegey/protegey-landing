@@ -37,13 +37,13 @@ const toggleLanguage = () => {
       </div>
 
       <nav class="hidden md:flex items-center gap-8" role="navigation" aria-label="Main">
-        <a href="#whyprotegey"
+        <a href="/#whyprotegey"
           class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
           @click.prevent="scrollTo('whyprotegey')">{{ $t('nav.why_protegey') }}</a>
-        <a href="#trustedby"
+        <a href="/#trustedby"
           class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
           @click.prevent="scrollTo('trustedby')">{{ $t('nav.trusted_by') }}</a>
-        <a href="#waitlist"
+        <a href="/#waitlist"
           class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
           @click.prevent="scrollTo('waitlist')">{{ $t('nav.contact') }}</a>
       </nav>

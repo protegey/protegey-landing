@@ -1,6 +1,6 @@
 <template>
     <div class="bg-neutral-950 min-h-screen pt-24 pb-12">
-        <div class="container mx-auto px-4 max-w-3xl">
+        <div class="container mx-auto py-24 px-4 max-w-3xl">
             <h1 class="text-4xl font-bold text-white mb-8">Privacy Policy</h1>
             <p class="text-neutral-500 mb-8">Last updated: December 6, 2025</p>
 

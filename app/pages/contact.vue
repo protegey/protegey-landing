@@ -1,10 +1,10 @@
 <template>
     <div class="bg-neutral-950 min-h-screen pt-24 pb-12">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-8">{{ $t('contact.title') }}</h1>
+        <div class="container mx-auto py-24 px-4 max-w-4xl">
 
             <div class="grid md:grid-cols-2 gap-12">
                 <div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-8">{{ $t('contact.title') }}</h1>
                     <p class="text-xl text-neutral-400 mb-8">
                         {{ $t('contact.subtitle') }}
                     </p>
@@ -49,19 +49,22 @@
                     <h3 class="text-xl font-bold text-white mb-6">{{ $t('contact.form.title') }}</h3>
                     <form class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.name') }}</label>
+                            <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.name')
+                                }}</label>
                             <input type="text"
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.name_placeholder')">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.email') }}</label>
+                            <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.email')
+                                }}</label>
                             <input type="email"
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.email_placeholder')">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.message') }}</label>
+                            <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.message')
+                                }}</label>
                             <textarea rows="4"
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors resize-none"
                                 :placeholder="$t('contact.form.message_placeholder')"></textarea>

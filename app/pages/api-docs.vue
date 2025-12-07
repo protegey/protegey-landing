@@ -1,6 +1,6 @@
 <template>
     <div class="bg-neutral-950 min-h-screen pt-24 pb-12">
-        <div class="container mx-auto px-4 max-w-4xl">
+        <div class="container mx-auto py-24 px-4 max-w-4xl">
             <div class="flex items-center gap-4 mb-8">
                 <div
                     class="px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-mono">

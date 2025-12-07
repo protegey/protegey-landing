@@ -1,6 +1,6 @@
 <template>
     <div class="bg-neutral-950 min-h-screen pt-24 pb-12">
-        <div class="container mx-auto px-4 max-w-4xl">
+        <div class="container mx-auto py-24 px-4 max-w-4xl">
             <div class="text-center mb-16">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Join the Mission</h1>
                 <p class="text-xl text-neutral-400 max-w-2xl mx-auto">

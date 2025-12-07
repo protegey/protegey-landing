@@ -1,6 +1,6 @@
 <template>
     <div class="bg-neutral-950 min-h-screen pt-24 pb-12">
-        <div class="container mx-auto px-4 max-w-4xl">
+        <div class="container mx-auto py-24 px-4 max-w-4xl">
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-8">{{ $t('about.title') }}</h1>
 
             <div class="prose prose-invert max-w-none">
