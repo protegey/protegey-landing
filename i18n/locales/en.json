@@ -114,5 +114,21 @@
         "why_exist": "Why We Exist",
         "why_exist_text": "Fraud in Africa is not just a nuisance; it's an existential threat to the digital economy. Siloed data means fraudsters can attack one institution and move to the next without detection. Protegey changes that.",
         "why_exist_text2": "By aggregating signals from fintechs, banks, telcos, and merchants, we create a 'herd immunity' effect. When one member detects a threat, everyone is protected."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "Have questions about Protegey? We'd love to hear from you.",
+        "email": "Email",
+        "location": "Location",
+        "form": {
+            "title": "Send us a message",
+            "name": "Name",
+            "name_placeholder": "Enter your name",
+            "email": "Email",
+            "email_placeholder": "Enter your email address",
+            "message": "Message",
+            "message_placeholder": "Enter your message",
+            "submit": "Send Message"
+        }
     }
 }

@@ -114,5 +114,22 @@
         "why_exist": "Pourquoi Nous Existons",
         "why_exist_text": "En Afrique, la fraude n'est pas qu'un simple désagrément ; elle représente une menace existentielle pour l'économie numérique. Le cloisonnement des données permet aux fraudeurs de s'attaquer à une institution puis à une autre sans être détectés. Protegey change la donne.",
         "why_exist_text2": "En centralisant les signaux provenant des fintechs, des banques, des opérateurs télécoms et des commerçants, nous créons un effet d'« immunité collective ». Lorsqu'un membre détecte une menace, tous sont protégés."
+    },
+    "contact": {
+        "title": "Contactez-Nous",
+        "subtitle": "Vous avez des questions concernant Protegey ? N’hésitez pas à nous contacter.",
+        "email": "E-mail",
+        "location": "Emplacement",
+        "form": {
+            "title": "Envoyez-nous un message",
+            "name": "Nom",
+            "name_placeholder": "Entrez votre nom",
+            "email": "E-mail",
+            "email_placeholder": "Entrez votre adresse e-mail",
+            "message": "Message",
+            "message_placeholder": "Entrez votre message",
+            "submit": "Envoyer",
+            "submitting": "Envoi en cours..."
+        }
     }
 }
