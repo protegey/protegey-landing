@@ -166,8 +166,15 @@ onUnmounted(() => {
                         {{ $t('hero.badge') }}
                     </div>
 
-                    <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight"
-                        v-html="$t('hero.title')">
+                    <h1
+                        class="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight">
+                        {{ $t('hero.title_part_1') }}
+
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
+                            {{ $t('hero.title_highlight') }}
+                        </span>
+
+                        {{ $t('hero.title_part_2') }}
                     </h1>
 
                     <p class="hero-subtitle text-lg sm:text-xl text-neutral-400 max-w-2xl leading-relaxed"

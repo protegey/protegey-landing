@@ -8,7 +8,9 @@
     },
     "hero": {
         "badge": "FRAUD INTELLIGENCE NETWORK",
-        "title": "The Unified <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400\">Anti-Fraud</span> Engine for Francophone and Northern-Africa without the Enterprise Cost",
+        "title_part_1": "The Unified ",
+        "title_highlight": "Anti-Fraud",
+        "title_part_2": " Engine for Francophone and Northern-Africa without the Enterprise Cost",
         "subtitle": "Aggregate signals from banks, telcos, and regulators to <span class=\"text-primary-400 font-mono\">{action}<span class=\"animate-pulse\">_</span></span> fraud before it spreads. A shared early-warning network turning scattered events into actionable intelligence.",
         "typewriter": {
             "detect": "DETECT",

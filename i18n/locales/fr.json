@@ -8,7 +8,9 @@
     },
     "hero": {
         "badge": "RÉSEAU DE RENSEIGNEMENT SUR LA FRAUDE",
-        "title": "Le Moteur <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400\">Anti-Fraude</span> Unifié pour l'Afrique Francophone et du Nord, sans le coût Entreprise",
+        "title_part_1": "Le Moteur",
+        "title_highlight": "Anti-Fraude",
+        "title_part_2": "Unifié pour l'Afrique Francophone et du Nord, sans le coût Entreprise",
         "subtitle": "Agrège les signaux des banques, opérateurs télécoms et régulateurs pour <span class=\"text-primary-400 font-mono\">{action}<span class=\"animate-pulse\">_</span></span> la fraude avant qu'elle ne se propage. Un réseau d'alerte précoce partagé transformant des événements épars en renseignements exploitables.",
         "typewriter": {
             "detect": "DÉTECTER",
