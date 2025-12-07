@@ -9,6 +9,7 @@ export default defineNuxtConfig({
       { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français' }
     ],
     defaultLocale: 'en',
+    fallbackLocale: 'en',
     lazy: true,
     langDir: './locales',
     strategy: 'prefix_except_default',
@@ -19,7 +20,7 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
-    }
+    },
   },
   css: ['~/assets/css/main.css'],
   postcss: {

@@ -146,14 +146,14 @@ onMounted(() => {
                         <div>
                             <label for="name" class="block text-sm font-semibold mb-2 text-neutral-300">{{
                                 $t('waitlist.form.name') }}</label>
-                            <input id="name" v-model="formData.name" type="text" required placeholder="John Doe"
+                            <input id="name" v-model="formData.name" type="text" required :placeholder="$t('waitlist.form.name_placeholder')"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500" />
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-semibold mb-2 text-neutral-300">{{
                                 $t('waitlist.form.email') }}</label>
                             <input id="email" v-model="formData.email" type="email" required
-                                placeholder="john@company.com"
+                                :placeholder="$t('waitlist.form.email_placeholder')"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500" />
                         </div>
                     </div>
@@ -163,7 +163,7 @@ onMounted(() => {
                             <label for="company" class="block text-sm font-semibold mb-2 text-neutral-300">{{
                                 $t('waitlist.form.company') }}</label>
                             <input id="company" v-model="formData.company" type="text" required
-                                placeholder="Your Company"
+                                :placeholder="$t('waitlist.form.company_placeholder')"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500" />
                         </div>
                         <div>
@@ -200,7 +200,7 @@ onMounted(() => {
                         <label for="message" class="block text-sm font-semibold mb-2 text-neutral-300">{{
                             $t('waitlist.form.message') }}</label>
                         <textarea id="message" v-model="formData.message" rows="4"
-                            placeholder="Tell us a little about what you're interested in..."
+                            :placeholder="$t('waitlist.form.message_placeholder')"
                             class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none bg-neutral-800 text-white placeholder-neutral-500"></textarea>
                     </div>
 

@@ -60,13 +60,17 @@
         "subtitle": "Soyez parmi les premiers à découvrir la plateforme de détection de fraude de nouvelle génération pour l'Afrique",
         "form": {
             "name": "Nom complet",
+            "name_placeholder": "Entrez votre nom complet",
             "email": "Adresse email",
+            "email_placeholder": "Entrez votre adresse email",
             "company": "Nom de l'entreprise",
+            "company_placeholder": "Entrez le nom de votre entreprise",
             "role": "Votre rôle",
             "role_placeholder": "Sélectionnez votre rôle",
             "interest": "Type d'intérêt",
             "interest_placeholder": "Sélectionnez un intérêt",
             "message": "Message / Notes (Optionnel)",
+            "message_placeholder": "Dites-nous un peu sur ce que vous êtes intéressé...",
             "submit": "Commencer",
             "submitting": "Envoi en cours..."
         },

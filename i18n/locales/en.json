@@ -60,13 +60,17 @@
         "subtitle": "Be among the first to experience Africa's next generation fraud detection platform",
         "form": {
             "name": "Full Name",
+            "name_placeholder": "Enter your full name",
             "email": "Email Address",
+            "email_placeholder": "Enter your email address",
             "company": "Company Name",
+            "company_placeholder": "Enter your company name",
             "role": "Your Role",
             "role_placeholder": "Select your role",
             "interest": "Interest Type",
             "interest_placeholder": "Select interest",
             "message": "Message / Notes (Optional)",
+            "message_placeholder": "Tell us a little about what you're interested in...",
             "submit": "Get Started",
             "submitting": "Submitting..."
         },
