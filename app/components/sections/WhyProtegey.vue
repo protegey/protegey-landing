@@ -64,9 +64,9 @@ onMounted(async () => {
                     <div
                         class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary-500/30 bg-primary-500/10 text-primary-400 text-sm font-mono tracking-wide mb-4">
                         <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
-                        PERFORMANCE METRICS
+                        {{ $t('why_protegey.badge') }}
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Security & Risk teams choose US</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ $t('why_protegey.title') }}</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
@@ -82,11 +82,10 @@ onMounted(async () => {
                                 <HugeiconsIcon :icon="ZapIcon" :size="32" />
                             </div>
                             <div class="text-4xl font-bold text-white mb-3 font-mono">67% <span
-                                    class="text-primary-400 text-lg font-normal">Faster</span></div>
+                                    class="text-primary-400 text-lg font-normal">{{ $t('why_protegey.card1.title')
+                                    }}</span></div>
                             <div class="text-neutral-400 text-base md:text-lg leading-relaxed">
-                                Our clients detect and neutralize threats 67% faster than industry average in the
-                                region, significantly reducing potential damage from security incidents and minimizing
-                                business disruption.
+                                {{ $t('why_protegey.card1.text') }}
                             </div>
                         </div>
                     </div>
@@ -102,11 +101,10 @@ onMounted(async () => {
                                 <HugeiconsIcon :icon="ChartDownIcon" :size="32" />
                             </div>
                             <div class="text-4xl font-bold text-white mb-3 font-mono">40% <span
-                                    class="text-secondary-400 text-lg font-normal">Savings</span></div>
+                                    class="text-secondary-400 text-lg font-normal">{{ $t('why_protegey.card2.title')
+                                    }}</span></div>
                             <div class="text-neutral-400 text-base md:text-lg leading-relaxed">
-                                Companies switching to PROTEGEY save an average of 40% compared to building and
-                                maintaining an in-house security/risk team, without sacrificing protection quality or
-                                coverage.
+                                {{ $t('why_protegey.card2.text') }}
                             </div>
                         </div>
                     </div>
@@ -122,10 +120,10 @@ onMounted(async () => {
                                 <HugeiconsIcon :icon="Shield01Icon" :size="32" />
                             </div>
                             <div class="text-4xl font-bold text-white mb-3 font-mono">99.7% <span
-                                    class="text-emerald-400 text-lg font-normal">Uptime</span></div>
+                                    class="text-emerald-400 text-lg font-normal">{{ $t('why_protegey.card3.title')
+                                    }}</span></div>
                             <div class="text-neutral-400 text-base md:text-lg leading-relaxed">
-                                Our platform maintains 99.7% uptime with redundant systems across multiple data centers,
-                                ensuring your security coverage never sleeps, even when you do.
+                                {{ $t('why_protegey.card3.text') }}
                             </div>
                         </div>
                     </div>

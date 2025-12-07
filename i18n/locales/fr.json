@@ -1,0 +1,103 @@
+{
+    "nav": {
+        "why_protegey": "Pourquoi Protegey",
+        "trusted_by": "Ils nous font confiance",
+        "contact": "Contact",
+        "get_started": "Commencer",
+        "home": "Accueil"
+    },
+    "hero": {
+        "badge": "RÉSEAU DE RENSEIGNEMENT SUR LA FRAUDE",
+        "title": "Le Moteur <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400\">Anti-Fraude</span> Unifié pour l'Afrique Francophone et du Nord, sans le coût Entreprise",
+        "subtitle": "Agrège les signaux des banques, opérateurs télécoms et régulateurs pour <span class=\"text-primary-400 font-mono\">{action}<span class=\"animate-pulse\">_</span></span> la fraude avant qu'elle ne se propage. Un réseau d'alerte précoce partagé transformant des événements épars en renseignements exploitables.",
+        "typewriter": {
+            "detect": "DÉTECTER",
+            "analyze": "ANALYSER",
+            "monitor": "SURVEILLER",
+            "prevent": "PRÉVENIR"
+        },
+        "cta": {
+            "get_started": "Commencer",
+            "request_demo": "Demander une démo"
+        },
+        "trust": {
+            "security": "Sécurité bancaire",
+            "analysis": "Analyse en temps réel",
+            "coverage": "Couverture panafricaine"
+        }
+    },
+    "trusted_by": {
+        "title": "Ils nous font confiance",
+        "iso": {
+            "title": "Conformité ISO 27001",
+            "text": "Notre système de gestion de la sécurité de l'information (ISMS) est conforme à la norme ISO 27001, garantissant une gestion rigoureuse de la sécurité de vos données."
+        },
+        "soc2": {
+            "title": "Conformité SOC 2 Type II",
+            "text": "PROTEGEY est conforme aux exigences SOC 2 Type II, démontrant l'efficacité de nos contrôles en matière de sécurité, disponibilité, intégrité du traitement, confidentialité et protection de la vie privée."
+        }
+    },
+    "why_protegey": {
+        "badge": "INDICATEURS DE PERFORMANCE",
+        "title": "Pourquoi les équipes Sécurité & Risque nous choisissent",
+        "card1": {
+            "title": "Plus Rapide",
+            "text": "Nos clients détectent et neutralisent les menaces 67% plus rapidement que la moyenne du secteur dans la région, réduisant considérablement les dommages potentiels et minimisant les interruptions d'activité."
+        },
+        "card2": {
+            "title": "Économies",
+            "text": "Les entreprises passant à PROTEGEY économisent en moyenne 40% par rapport à la création et au maintien d'une équipe interne de sécurité/risque, sans sacrifier la qualité ou la couverture de la protection."
+        },
+        "card3": {
+            "title": "Disponibilité",
+            "text": "Notre plateforme maintient une disponibilité de 99,7% avec des systèmes redondants dans plusieurs centres de données, garantissant que votre couverture de sécurité ne dort jamais, même quand vous dormez."
+        }
+    },
+    "waitlist": {
+        "title1": "Découvrez le futur du",
+        "title2": "renseignement fraude",
+        "title3": "aujourd'hui",
+        "subtitle": "Soyez parmi les premiers à découvrir la plateforme de détection de fraude de nouvelle génération pour l'Afrique",
+        "form": {
+            "name": "Nom complet",
+            "email": "Adresse email",
+            "company": "Nom de l'entreprise",
+            "role": "Votre rôle",
+            "role_placeholder": "Sélectionnez votre rôle",
+            "interest": "Type d'intérêt",
+            "interest_placeholder": "Sélectionnez un intérêt",
+            "message": "Message / Notes (Optionnel)",
+            "submit": "Commencer",
+            "submitting": "Envoi en cours..."
+        },
+        "privacy": "Nous respectons votre vie privée. Pas de spam — jamais.",
+        "roles": {
+            "ceo": "PDG / Fondateur",
+            "cto": "CTO / Responsable Tech",
+            "product": "Chef de Produit",
+            "risk": "Risque / Conformité",
+            "other": "Autre"
+        },
+        "interests": {
+            "early_access": "Accès anticipé",
+            "integration": "Intégration / API",
+            "partnership": "Partenariat",
+            "security": "Sécurité / Conformité",
+            "other": "Autre"
+        }
+    },
+    "footer": {
+        "slogan": "Plus intelligent. Plus sûr. Protegey.",
+        "company": "Entreprise",
+        "resources": "Ressources",
+        "connect": "Connecter",
+        "links": {
+            "about": "À propos",
+            "contact": "Contact",
+            "careers": "Carrières",
+            "api_docs": "Docs API",
+            "privacy": "Confidentialité"
+        },
+        "copyright": "© {year} Protegey. Tous droits réservés."
+    }
+}

@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import ThemeToggle from '~/components/ui/ThemeToggle.vue'
 
+const { locale, setLocale } = useI18n()
 const isOpen = ref(false)
 
 const toggleMenu = () => {
@@ -11,6 +12,10 @@ const toggleMenu = () => {
 const scrollTo = (selector) => {
   const el = document.getElementById(selector)
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+const toggleLanguage = () => {
+  setLocale(locale.value === 'en' ? 'fr' : 'en')
 }
 </script>
 
@@ -34,24 +39,31 @@ const scrollTo = (selector) => {
       <nav class="hidden md:flex items-center gap-8" role="navigation" aria-label="Main">
         <a href="#whyprotegey"
           class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
-          @click.prevent="scrollTo('whyprotegey')">Why Protegey</a>
+          @click.prevent="scrollTo('whyprotegey')">{{ $t('nav.why_protegey') }}</a>
         <a href="#trustedby"
           class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
-          @click.prevent="scrollTo('trustedby')">Trusted By</a>
+          @click.prevent="scrollTo('trustedby')">{{ $t('nav.trusted_by') }}</a>
         <a href="#waitlist"
           class="text-neutral-300 hover:text-primary-400 cursor-pointer font-medium transition-colors text-sm uppercase tracking-wide"
-          @click.prevent="scrollTo('waitlist')">Contact</a>
+          @click.prevent="scrollTo('waitlist')">{{ $t('nav.contact') }}</a>
       </nav>
 
       <div class="hidden md:flex items-center gap-4">
+        <button @click="toggleLanguage" class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">
+          {{ locale === 'en' ? 'FR' : 'EN' }}
+        </button>
         <!-- <ThemeToggle /> -->
         <button @click.prevent="scrollTo('waitlist')"
-          class="bg-primary-500 text-neutral-950 px-6 py-2.5 rounded-lg font-bold hover:bg-primary-400 transition-all shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40">Get
-          Started</button>
+          class="bg-primary-500 text-neutral-950 px-6 py-2.5 rounded-lg font-bold hover:bg-primary-400 transition-all shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40">
+          {{ $t('nav.get_started') }}
+        </button>
       </div>
 
       <!-- Mobile -->
-      <div class="md:hidden flex items-center gap-2">
+      <div class="md:hidden flex items-center gap-4">
+        <button @click="toggleLanguage" class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">
+          {{ locale === 'en' ? 'FR' : 'EN' }}
+        </button>
         <!-- <ThemeToggle /> -->
         <button @click="toggleMenu" :aria-expanded="isOpen" :aria-label="isOpen ? 'Close menu' : 'Open menu'"
           class="p-2 rounded-md border border-neutral-800 text-neutral-300">
@@ -71,16 +83,17 @@ const scrollTo = (selector) => {
       class="md:hidden fixed left-0 right-0 top-20 z-40 bg-neutral-950 border-t border-neutral-800 shadow-2xl">
       <div class="px-4 py-3 flex flex-col gap-2">
         <a href="#hero" @click.prevent="scrollTo('hero'); toggleMenu()"
-          class="text-neutral-300 py-2 cursor-pointer hover:text-primary-400 font-medium">Home</a>
+          class="text-neutral-300 py-2 cursor-pointer hover:text-primary-400 font-medium">{{ $t('nav.home') }}</a>
         <a href="#whyprotegey" @click.prevent="scrollTo('whyprotegey'); toggleMenu()"
-          class="text-neutral-300 py-2 cursor-pointer hover:text-primary-400 font-medium">Why Protegey</a>
+          class="text-neutral-300 py-2 cursor-pointer hover:text-primary-400 font-medium">{{ $t('nav.why_protegey')
+          }}</a>
         <a href="#trustedby" @click.prevent="scrollTo('trustedby'); toggleMenu()"
-          class="text-neutral-300 py-2 cursor-pointer hover:text-primary-400 font-medium">Trusted By</a>
+          class="text-neutral-300 py-2 cursor-pointer hover:text-primary-400 font-medium">{{ $t('nav.trusted_by') }}</a>
         <a href="#waitlist" @click.prevent="scrollTo('waitlist'); toggleMenu()"
-          class="text-neutral-300 py-2 cursor-pointer hover:text-primary-400 font-medium">Contact</a>
+          class="text-neutral-300 py-2 cursor-pointer hover:text-primary-400 font-medium">{{ $t('nav.contact') }}</a>
         <button
           class="mt-2 bg-primary-500 text-neutral-950 px-6 py-3 rounded-lg font-bold hover:bg-primary-400 shadow-lg shadow-primary-500/20"
-          @click.prevent="scrollTo('waitlist'); toggleMenu()">Get Started</button>
+          @click.prevent="scrollTo('waitlist'); toggleMenu()">{{ $t('nav.get_started') }}</button>
       </div>
     </div>
   </header>

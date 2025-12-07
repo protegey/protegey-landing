@@ -1,6 +1,23 @@
+console.log("NUXT CONFIG LOADED");
 export default defineNuxtConfig({
   compatibilityDate: '2025-11-17',
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt'],
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/i18n'],
+  i18n: {
+    baseUrl: 'https://protegey.com',
+    locales: [
+      { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
+      { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français' }
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: './locales',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    }
+  },
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {

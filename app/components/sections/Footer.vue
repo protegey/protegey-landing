@@ -8,46 +8,47 @@
             <HugeiconsIcon :icon="Shield01Icon" class="w-6 h-6 text-primary-400" />
             <span class="text-lg font-bold text-white">PROTEGEY</span>
           </NuxtLink>
-          <p class="text-sm text-neutral-400">Smarter. Safer. Protegey.</p>
+          <p class="text-sm text-neutral-400">{{ $t('footer.slogan') }}</p>
         </div>
 
         <!-- Company -->
         <div>
-          <h3 class="font-semibold mb-4 text-white">Company</h3>
+          <h3 class="font-semibold mb-4 text-white">{{ $t('footer.company') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-400">
             <li>
-              <NuxtLink to="/about" class="hover:text-primary-400 transition-colors" data-testid="link-about">About
+              <NuxtLink to="/about" class="hover:text-primary-400 transition-colors" data-testid="link-about">{{
+                $t('footer.links.about') }}
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="/contact" class="hover:text-primary-400 transition-colors" data-testid="link-contact">
-                Contact</NuxtLink>
+                {{ $t('footer.links.contact') }}</NuxtLink>
             </li>
             <li>
               <NuxtLink to="/careers" class="hover:text-primary-400 transition-colors" data-testid="link-careers">
-                Careers</NuxtLink>
+                {{ $t('footer.links.careers') }}</NuxtLink>
             </li>
           </ul>
         </div>
 
         <!-- Resources -->
         <div>
-          <h3 class="font-semibold mb-4 text-white">Resources</h3>
+          <h3 class="font-semibold mb-4 text-white">{{ $t('footer.resources') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-400">
             <li>
-              <NuxtLink to="/api-docs" class="hover:text-primary-400 transition-colors" data-testid="link-api-docs">API
-                Docs</NuxtLink>
+              <NuxtLink to="/api-docs" class="hover:text-primary-400 transition-colors" data-testid="link-api-docs">{{
+                $t('footer.links.api_docs') }}</NuxtLink>
             </li>
             <li>
               <NuxtLink to="/privacy" class="hover:text-primary-400 transition-colors" data-testid="link-privacy">
-                Privacy</NuxtLink>
+                {{ $t('footer.links.privacy') }}</NuxtLink>
             </li>
           </ul>
         </div>
 
         <!-- Social -->
         <div>
-          <h3 class="font-semibold mb-4 text-white">Connect</h3>
+          <h3 class="font-semibold mb-4 text-white">{{ $t('footer.connect') }}</h3>
           <div class="flex gap-4">
             <a href="https://www.linkedin.com/company/protegeyhq/" target="_blank" rel="noopener noreferrer"
               class="text-neutral-400 hover:text-primary-400 transition-colors" aria-label="LinkedIn"
@@ -70,7 +71,7 @@
       </div>
 
       <div class="pt-8 border-t border-neutral-900 text-center text-sm text-neutral-400">
-        <p>© {{ currentYear }} Protegey. All rights reserved.</p>
+        <p>{{ $t('footer.copyright', { year: currentYear }) }}</p>
       </div>
     </div>
   </footer>

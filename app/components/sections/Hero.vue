@@ -1,26 +1,36 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
 import { gsap } from 'gsap';
 import { HugeiconsIcon } from '@hugeicons/vue';
 import { ArrowRight01Icon, Shield01Icon, Activity01Icon, Globe02Icon, LockComputerIcon } from '@hugeicons/core-free-icons';
 
 defineProps({ isDark: Boolean });
 
+const { t, locale } = useI18n();
+
 let tl;
 let typewriterTimeout = null;
 
 const typewriterText = ref('');
 const showCursor = ref(true);
-const texts = [
-    'DETECT',
-    'ANALYZE',
-    'MONITOR',
-    'PREVENT'
-];
+
+const texts = computed(() => [
+    t('hero.typewriter.detect'),
+    t('hero.typewriter.analyze'),
+    t('hero.typewriter.monitor'),
+    t('hero.typewriter.prevent')
+]);
+
 const typingSpeed = 50;
 const deletingSpeed = 30;
 const pauseDelay = 2000;
 const startDelay = 1500;
+
+// Reset typewriter when locale changes
+watch(locale, () => {
+    if (typewriterTimeout) clearTimeout(typewriterTimeout);
+    startTypewriter();
+});
 
 const startTypewriter = () => {
     typewriterText.value = '';
@@ -30,7 +40,7 @@ const startTypewriter = () => {
     let isDeleting = false;
 
     const type = () => {
-        const currentText = texts[currentTextIndex];
+        const currentText = texts.value[currentTextIndex];
 
         if (!isDeleting) {
             if (currentIndex < currentText.length) {
@@ -48,15 +58,16 @@ const startTypewriter = () => {
             } else {
                 isDeleting = false;
                 currentIndex = 0;
-                currentTextIndex = (currentTextIndex + 1) % texts.length;
+                currentTextIndex = (currentTextIndex + 1) % texts.value.length;
                 typewriterTimeout = setTimeout(type, typingSpeed);
             }
         }
     };
 
+    // Small delay to ensure texts are ready
     setTimeout(() => {
         type();
-    }, startDelay);
+    }, 100);
 };
 
 const scrollTo = (selector) => {
@@ -152,28 +163,22 @@ onUnmounted(() => {
                                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
                         </span>
-                        FRAUD INTELLIGENCE NETWORK
+                        {{ $t('hero.badge') }}
                     </div>
 
-                    <h1
-                        class="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight">
-                        The Unified <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Anti-Fraud</span>
-                        Engine for Francophone and Northern-Africa without the Enterprise Cost
+                    <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight"
+                        v-html="$t('hero.title')">
                     </h1>
 
-                    <p class="hero-subtitle text-lg sm:text-xl text-neutral-400 max-w-2xl leading-relaxed">
-                        Aggregate signals from banks, telcos, and regulators to <span
-                            class="text-primary-400 font-mono">{{ typewriterText }}<span
-                                class="animate-pulse">_</span></span> fraud before it spreads. A shared early-warning
-                        network turning scattered events into actionable intelligence.
+                    <p class="hero-subtitle text-lg sm:text-xl text-neutral-400 max-w-2xl leading-relaxed"
+                        v-html="$t('hero.subtitle', { action: typewriterText })">
                     </p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <button @click.prevent="scrollTo('waitlist')"
                             class="hero-cta-button group bg-primary-500 hover:bg-primary-400 text-neutral-950 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,204,22,0.3)] hover:shadow-[0_0_30px_rgba(132,204,22,0.5)]">
-                            Get Started
+                            {{ $t('hero.cta.get_started') }}
                             <HugeiconsIcon :icon="ArrowRight01Icon" :size="20"
                                 class="group-hover:translate-x-1 transition-transform" />
                         </button>
@@ -181,7 +186,7 @@ onUnmounted(() => {
                             class="hero-cta-button group border border-neutral-700 hover:border-neutral-500 bg-neutral-900/50 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2">
                             <HugeiconsIcon :icon="Shield01Icon" :size="20"
                                 class="text-neutral-400 group-hover:text-white transition-colors" />
-                            Request Demo
+                            {{ $t('hero.cta.request_demo') }}
                         </button>
                     </div>
 
@@ -189,15 +194,15 @@ onUnmounted(() => {
                     <div class="hero-cta flex flex-wrap gap-6 pt-8 border-t border-neutral-800/50">
                         <div class="flex items-center gap-2 text-neutral-400 text-sm">
                             <HugeiconsIcon :icon="LockComputerIcon" :size="16" class="text-primary-500" />
-                            <span>Bank-grade Security</span>
+                            <span>{{ $t('hero.trust.security') }}</span>
                         </div>
                         <div class="flex items-center gap-2 text-neutral-400 text-sm">
                             <HugeiconsIcon :icon="Activity01Icon" :size="16" class="text-primary-500" />
-                            <span>Real-time Analysis</span>
+                            <span>{{ $t('hero.trust.analysis') }}</span>
                         </div>
                         <div class="flex items-center gap-2 text-neutral-400 text-sm">
                             <HugeiconsIcon :icon="Globe02Icon" :size="16" class="text-primary-500" />
-                            <span>Pan-African Coverage</span>
+                            <span>{{ $t('hero.trust.coverage') }}</span>
                         </div>
                     </div>
                 </div>
