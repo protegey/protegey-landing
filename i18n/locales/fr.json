@@ -96,12 +96,23 @@
         "resources": "Ressources",
         "connect": "Connecter",
         "links": {
-            "about": "À propos",
+            "about": "À Propos",
             "contact": "Contact",
             "careers": "Carrières",
             "api_docs": "Docs API",
             "privacy": "Confidentialité"
         },
         "copyright": "© {year} Protegey. Tous droits réservés."
+    },
+    "about": {
+        "title": "À Propos",
+        "subtitle": "Protegey est le premier réseau africain d'alerte précoce partagé pour le renseignement sur la fraude. Nous construisons l'infrastructure numérique nécessaire pour sécuriser l'avenir financier du continent.",
+        "mission": "Notre Mission",
+        "mission_text": "Éliminer la fraude comme obstacle au commerce numérique en Afrique en créant un réseau de renseignement unifié et en temps réel.",
+        "vision": "Notre Vision",
+        "vision_text": "Un écosystème numérique de confiance où les entreprises peuvent se développer sans craindre de pertes financières dues à la fraude.",
+        "why_exist": "Pourquoi Nous Existons",
+        "why_exist_text": "En Afrique, la fraude n'est pas qu'un simple désagrément ; elle représente une menace existentielle pour l'économie numérique. Le cloisonnement des données permet aux fraudeurs de s'attaquer à une institution puis à une autre sans être détectés. Protegey change la donne.",
+        "why_exist_text2": "En centralisant les signaux provenant des fintechs, des banques, des opérateurs télécoms et des commerçants, nous créons un effet d'« immunité collective ». Lorsqu'un membre détecte une menace, tous sont protégés."
     }
 }

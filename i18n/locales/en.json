@@ -103,5 +103,16 @@
             "privacy": "Privacy"
         },
         "copyright": "© {year} Protegey. All rights reserved."
+    },
+    "about": {
+        "title": "About Us",
+        "subtitle": "Protegey is Africa's first shared early-warning network for fraud intelligence. We are building the digital infrastructure to secure the continent's financial future.",
+        "mission": "Our Mission",
+        "mission_text": "To eliminate fraud as a barrier to digital commerce in Africa by creating a unified, real-time intelligence network.",
+        "vision": "Our Vision",
+        "vision_text": "A trusted digital ecosystem where businesses can grow without fear of financial loss from fraud.",
+        "why_exist": "Why We Exist",
+        "why_exist_text": "Fraud in Africa is not just a nuisance; it's an existential threat to the digital economy. Siloed data means fraudsters can attack one institution and move to the next without detection. Protegey changes that.",
+        "why_exist_text2": "By aggregating signals from fintechs, banks, telcos, and merchants, we create a 'herd immunity' effect. When one member detects a threat, everyone is protected."
     }
 }
