@@ -3,14 +3,14 @@
         "why_protegey": "Why Protegey",
         "trusted_by": "Trusted By",
         "contact": "Contact",
-        "get_started": "Get Started",
+        "request_demo": "Request Demo",
         "home": "Home"
     },
     "hero": {
         "badge": "FRAUD INTELLIGENCE NETWORK",
         "title_part_1": "The Unified ",
         "title_highlight": "Anti-Fraud",
-        "title_part_2": " Engine for Francophone and Northern-Africa without the Enterprise Cost",
+        "title_part_2": " Engine for Francophone and Northern Africa, without the Enterprise Cost",
         "subtitle": "Aggregate signals from banks, telcos, and regulators to <span class=\"text-primary-400 font-mono\">{action}<span class=\"animate-pulse\">_</span></span> fraud before it spreads. A shared early-warning network turning scattered events into actionable intelligence.",
         "typewriter": {
             "detect": "DETECT",
@@ -19,7 +19,6 @@
             "prevent": "PREVENT"
         },
         "cta": {
-            "get_started": "Get Started",
             "request_demo": "Request Demo"
         },
         "trust": {
@@ -41,14 +40,14 @@
     },
     "why_protegey": {
         "badge": "PERFORMANCE METRICS",
-        "title": "Why Security & Risk teams choose US",
+        "title": "Why Risk & Compliance teams choose US",
         "card1": {
             "title": "Faster",
             "text": "Our clients detect and neutralize threats 67% faster than industry average in the region, significantly reducing potential damage from security incidents and minimizing business disruption."
         },
         "card2": {
             "title": "Savings",
-            "text": "Companies switching to PROTEGEY save an average of 40% compared to building and maintaining an in-house security/risk team, without sacrificing protection quality or coverage."
+            "text": "Companies switching to PROTEGEY save an average of 40% compared to building and maintaining an in-house risk/compliance team, without sacrificing protection quality or coverage."
         },
         "card3": {
             "title": "Uptime",
@@ -57,7 +56,7 @@
     },
     "waitlist": {
         "title1": "Experience the future of",
-        "title2": "fraud intelligence",
+        "title2": "fraud intelligence ",
         "title3": "today",
         "subtitle": "Be among the first to experience Africa's next generation fraud detection platform",
         "form": {

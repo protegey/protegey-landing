@@ -22,26 +22,26 @@ const marqueeItems = computed(() => {
                 {{ $t('trusted_by.title') }}
             </div>
         </div>
-        <div class="overflow-hidden w-full relative max-w-5xl mx-auto select-none mb-20">
+        <!-- <div class="overflow-hidden w-full relative max-w-5xl mx-auto select-none mb-20"> -->
 
             <!-- Left Gradient Mask (Fades the logos in) -->
-            <div
-                class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-neutral-950 to-transparent" />
+            <!-- <div
+                class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-neutral-950 to-transparent" /> -->
 
             <!-- Marquee Content Wrapper -->
             <!-- The 'marquee-inner' class applies the scrolling CSS animation -->
-            <div class="flex marquee-inner will-change-transform">
+            <!-- <div class="flex marquee-inner will-change-transform">
                 <div v-for="(company, index) in marqueeItems" :key="index"
                     class="mx-11 h-16 md:h-20 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0">
                     <img :src="company.logo" :alt="company.name" class="h-full w-auto object-contain" loading="lazy"
                         decoding="async" />
                 </div>
-            </div>
+            </div> -->
 
             <!-- Right Gradient Mask (Fades the logos out) -->
-            <div
-                class="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-neutral-950 to-transparent" />
-        </div>
+            <!-- <div
+                class="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-neutral-950 to-transparent" /> -->
+        <!-- </div> -->
         <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
             <!-- ISO 27001 Card -->
             <div

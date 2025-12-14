@@ -3,7 +3,7 @@
         "why_protegey": "Pourquoi Protegey",
         "trusted_by": "Ils nous font confiance",
         "contact": "Contact",
-        "get_started": "Commencer",
+        "request_demo": "Demander une démo",
         "home": "Accueil"
     },
     "hero": {
@@ -19,7 +19,6 @@
             "prevent": "PRÉVENIR"
         },
         "cta": {
-            "get_started": "Commencer",
             "request_demo": "Demander une démo"
         },
         "trust": {
@@ -41,14 +40,14 @@
     },
     "why_protegey": {
         "badge": "INDICATEURS DE PERFORMANCE",
-        "title": "Pourquoi les équipes Sécurité & Risque nous choisissent",
+        "title": "Pourquoi les équipes Risque & Conformité nous choisissent",
         "card1": {
             "title": "Plus Rapide",
             "text": "Nos clients détectent et neutralisent les menaces 67% plus rapidement que la moyenne du secteur dans la région, réduisant considérablement les dommages potentiels et minimisant les interruptions d'activité."
         },
         "card2": {
             "title": "Économies",
-            "text": "Les entreprises passant à PROTEGEY économisent en moyenne 40% par rapport à la création et au maintien d'une équipe interne de sécurité/risque, sans sacrifier la qualité ou la couverture de la protection."
+            "text": "Les entreprises passant à PROTEGEY économisent en moyenne 40% par rapport à la création et au maintien d'une équipe interne de risque/conformité, sans sacrifier la qualité ou la couverture de la protection."
         },
         "card3": {
             "title": "Disponibilité",
@@ -57,7 +56,7 @@
     },
     "waitlist": {
         "title1": "Découvrez le futur du",
-        "title2": "renseignement fraude",
+        "title2": "renseignement fraude ",
         "title3": "aujourd'hui",
         "subtitle": "Soyez parmi les premiers à découvrir la plateforme de détection de fraude de nouvelle génération pour l'Afrique",
         "form": {
