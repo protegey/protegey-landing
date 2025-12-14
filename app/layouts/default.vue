@@ -1,5 +1,5 @@
 <script setup>
-import HeaderNav from '~/components/ui/HeaderNav.vue'
+import HeaderNav from '~/components/sections/HeaderNav.vue'
 import Footer from '~/components/sections/Footer.vue'
 // Theme is auto-initialized in the composable
 </script>

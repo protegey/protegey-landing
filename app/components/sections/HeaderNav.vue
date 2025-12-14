@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import ThemeToggle from '~/components/ui/ThemeToggle.vue'
+import ThemeToggle from '~/components/sections/ThemeToggle.vue'
 
 const { locale, setLocale } = useI18n()
 const isOpen = ref(false)
