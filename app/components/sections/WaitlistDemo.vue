@@ -68,9 +68,18 @@ const handleSubmit = async () => {
 
         if (!res.ok) throw new Error(await res.text())
 
-        const interestLabel = interestOptions.value.find(o => o.value === formData.value.interestType)?.label || formData.value.interestType || 'Request'
-        submitMessage.value = `${interestLabel} request submitted for ${formData.value.email} (interest: ${formData.value.interestType || 'N/A'})`
-        formData.value = { name: '', email: '', company: '', role: '', interestType: '', message: '' }
+        const data = await res.json()
+
+        if (data.message) {
+            submitMessage.value = data.message
+        } else {
+            const interestLabel = interestOptions.value.find(o => o.value === formData.value.interestType)?.label || formData.value.interestType || 'Request'
+            submitMessage.value = `${interestLabel} request submitted for ${formData.value.email}`
+        }
+
+        if (!data.isDuplicate) {
+            formData.value = { name: '', email: '', company: '', role: '', interestType: '', message: '' }
+        }
     } catch (err) {
         console.error('Failed to submit form', err)
         submitError.value = 'There was an error submitting your request. Please try again.'
@@ -146,7 +155,8 @@ onMounted(() => {
                         <div>
                             <label for="name" class="block text-sm font-semibold mb-2 text-neutral-300">{{
                                 $t('waitlist.form.name') }}</label>
-                            <input id="name" v-model="formData.name" type="text" required :placeholder="$t('waitlist.form.name_placeholder')"
+                            <input id="name" v-model="formData.name" type="text" required
+                                :placeholder="$t('waitlist.form.name_placeholder')"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500" />
                         </div>
                         <div>
@@ -172,12 +182,16 @@ onMounted(() => {
                             <select id="role" v-model="formData.role" required :aria-label="$t('waitlist.form.role')"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
                                 <option value="" disabled class="bg-neutral-900">{{ $t('waitlist.form.role_placeholder')
-                                    }}</option>
-                                <option value="CEO / Founder" class="bg-neutral-900">{{ $t('waitlist.roles.ceo') }}</option>
-                                <option value="CTO / Tech Lead" class="bg-neutral-900">{{ $t('waitlist.roles.cto') }}</option>
-                                <option value="Product Manager" class="bg-neutral-900">{{ $t('waitlist.roles.product') }}
+                                }}</option>
+                                <option value="CEO / Founder" class="bg-neutral-900">{{ $t('waitlist.roles.ceo') }}
                                 </option>
-                                <option value="Risk / Compliance" class="bg-neutral-900">{{ $t('waitlist.roles.risk') }}</option>
+                                <option value="CTO / Tech Lead" class="bg-neutral-900">{{ $t('waitlist.roles.cto') }}
+                                </option>
+                                <option value="Product Manager" class="bg-neutral-900">{{ $t('waitlist.roles.product')
+                                    }}
+                                </option>
+                                <option value="Risk / Compliance" class="bg-neutral-900">{{ $t('waitlist.roles.risk') }}
+                                </option>
                                 <option value="Other" class="bg-neutral-900">{{ $t('waitlist.roles.other') }}</option>
                             </select>
                         </div>
@@ -190,7 +204,7 @@ onMounted(() => {
                             :aria-label="$t('waitlist.form.interest')"
                             class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
                             <option value="" disabled class="bg-neutral-900">{{ $t('waitlist.form.interest_placeholder')
-                                }}</option>
+                            }}</option>
                             <option v-for="option in interestOptions" :key="option.value" :value="option.value"
                                 class="bg-neutral-900">{{ option.label }}</option>
                         </select>
@@ -209,7 +223,7 @@ onMounted(() => {
                             :class="['flex-1 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-primary-500/20',
                                 isSubmitting ? 'opacity-60 cursor-not-allowed bg-neutral-700 text-neutral-400' : 'bg-primary-500 hover:bg-primary-400 text-neutral-950']">
                             <span>{{ isSubmitting ? $t('waitlist.form.submitting') : $t('waitlist.form.submit')
-                                }}</span>
+                            }}</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 7l5 5m0 0l-5 5m5-5H6" />

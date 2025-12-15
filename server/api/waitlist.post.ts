@@ -25,6 +25,34 @@ export default defineEventHandler(async (event) => {
     const notion = new Client({ auth: config.notionApiKey })
 
     try {
+        // Check for duplicates
+        // Use manual fetch because SDK notion.databases.query is missing/broken in this environment
+        const existing: any = await $fetch(`https://api.notion.com/v1/databases/${config.notionDatabaseId}/query`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${config.notionApiKey}`,
+                'Notion-Version': '2022-06-28',
+                'Content-Type': 'application/json'
+            },
+            body: {
+                filter: {
+                    property: 'Email',
+                    email: {
+                        equals: body.email
+                    }
+                }
+            }
+        })
+
+        if (existing.results && existing.results.length > 0) {
+            return {
+                success: true,
+                message: 'You are already on the waitlist!',
+                id: existing.results[0].id,
+                isDuplicate: true
+            }
+        }
+
         const response = await notion.pages.create({
             parent: { database_id: config.notionDatabaseId },
             properties: {
@@ -50,11 +78,9 @@ export default defineEventHandler(async (event) => {
                     ],
                 },
                 Role: {
-                    rich_text: [
+                    multi_select: [
                         {
-                            text: {
-                                content: body.role ? body.role.charAt(0).toUpperCase() + body.role.slice(1) : 'Other',
-                            },
+                            name: body.role ? body.role.charAt(0).toUpperCase() + body.role.slice(1) : 'Other',
                         },
                     ],
                 },
