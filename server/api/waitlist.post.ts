@@ -113,9 +113,9 @@ export default defineEventHandler(async (event) => {
         if (resend) {
             try {
                 await resend.emails.send({
-                    from: 'Protegey <onboarding@resend.dev>', // Use resend default for testing, user should update
+                    from: 'Protegey <hello@protegey.com>', // Use resend default for testing, user should update
                     to: body.email,
-                    subject: 'Welcome to the Protegey Waitlist',
+                    subject: 'Welcome to the Protegey Demo Waitlist',
                     html: `
                         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
                             <h1>Welcome to Protegey!</h1>
