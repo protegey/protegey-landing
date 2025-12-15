@@ -23,15 +23,8 @@ const toggleLanguage = () => {
   <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
     <div class="container mx-auto px-4 h-20 flex items-center justify-between">
       <div class="flex items-center gap-4">
-        <a href="/" class="flex items-center space-x-2">
-          <div
-            class="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center shadow-lg shadow-primary-500/20">
-            <svg class="w-5 h-5 text-neutral-950" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd" />
-            </svg>
-          </div>
+        <a href="/" class="flex items-center">
+          <img src="~/assets/images/logo.png" alt="Protegey Logo" class="w-14 h-14 object-contain"></img>
           <span class="text-xl font-bold text-white tracking-tight">Protegey</span>
         </a>
       </div>
