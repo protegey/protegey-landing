@@ -1,5 +1,5 @@
-
 import { Client } from '@notionhq/client'
+import { Resend } from 'resend'
 
 export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig()
@@ -23,6 +23,7 @@ export default defineEventHandler(async (event) => {
     }
 
     const notion = new Client({ auth: config.notionApiKey })
+    const resend = config.resendApiKey ? new Resend(config.resendApiKey) : null
 
     try {
         // Check for duplicates
@@ -107,6 +108,31 @@ export default defineEventHandler(async (event) => {
                 },
             },
         })
+
+        // Send Confirmation Email
+        if (resend) {
+            try {
+                await resend.emails.send({
+                    from: 'Protegey <onboarding@resend.dev>', // Use resend default for testing, user should update
+                    to: body.email,
+                    subject: 'Welcome to the Protegey Waitlist',
+                    html: `
+                        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+                            <h1>Welcome to Protegey!</h1>
+                            <p>Hi ${body.name},</p>
+                            <p>Thanks for requesting access to Protegey. We've received your request and have added you to our priority waitlist.</p>
+                            <p>We'll be in touch soon with next steps.</p>
+                            <br/>
+                            <p>Best regards,</p>
+                            <p>The Protegey Team</p>
+                        </div>
+                    `
+                })
+            } catch (emailError) {
+                console.error('Failed to send confirmation email:', emailError)
+                // correct - we don't want to fail the whole request if email fails
+            }
+        }
 
         return { success: true, id: response.id }
     } catch (error: any) {
