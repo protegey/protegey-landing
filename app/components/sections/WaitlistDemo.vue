@@ -17,11 +17,11 @@ const formData = ref({
 const ctaSection = ref(null)
 
 const interestOptions = computed(() => [
-    { value: 'early_access', label: t('waitlist.interests.early_access') },
-    { value: 'integration', label: t('waitlist.interests.integration') },
-    { value: 'partnership', label: t('waitlist.interests.partnership') },
-    { value: 'security_review', label: t('waitlist.interests.security') },
-    { value: 'other', label: t('waitlist.interests.other') }
+    { value: 'Early Access', label: t('waitlist.interests.early_access') },
+    { value: 'Integration', label: t('waitlist.interests.integration') },
+    { value: 'Partnership', label: t('waitlist.interests.partnership') },
+    { value: 'Security Review', label: t('waitlist.interests.security') },
+    { value: 'Other', label: t('waitlist.interests.other') }
 ])
 
 defineEmits(['scrollToJoin'])
@@ -173,12 +173,12 @@ onMounted(() => {
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
                                 <option value="" disabled class="bg-neutral-900">{{ $t('waitlist.form.role_placeholder')
                                     }}</option>
-                                <option value="ceo" class="bg-neutral-900">{{ $t('waitlist.roles.ceo') }}</option>
-                                <option value="cto" class="bg-neutral-900">{{ $t('waitlist.roles.cto') }}</option>
-                                <option value="product" class="bg-neutral-900">{{ $t('waitlist.roles.product') }}
+                                <option value="CEO / Founder" class="bg-neutral-900">{{ $t('waitlist.roles.ceo') }}</option>
+                                <option value="CTO / Tech Lead" class="bg-neutral-900">{{ $t('waitlist.roles.cto') }}</option>
+                                <option value="Product Manager" class="bg-neutral-900">{{ $t('waitlist.roles.product') }}
                                 </option>
-                                <option value="risk" class="bg-neutral-900">{{ $t('waitlist.roles.risk') }}</option>
-                                <option value="other" class="bg-neutral-900">{{ $t('waitlist.roles.other') }}</option>
+                                <option value="Risk / Compliance" class="bg-neutral-900">{{ $t('waitlist.roles.risk') }}</option>
+                                <option value="Other" class="bg-neutral-900">{{ $t('waitlist.roles.other') }}</option>
                             </select>
                         </div>
                     </div>
