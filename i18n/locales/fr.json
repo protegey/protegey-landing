@@ -129,7 +129,9 @@
             "message": "Message",
             "message_placeholder": "Entrez votre message",
             "submit": "Envoyer",
-            "submitting": "Envoi en cours..."
+            "submitting": "Envoi en cours...",
+            "success": "Votre message a été envoyé avec succès. Nous vous répondrons bientôt !",
+            "error": "Une erreur est survenue. Veuillez réessayer plus tard."
         }
     }
 }
