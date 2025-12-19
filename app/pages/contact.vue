@@ -46,34 +46,53 @@
                     </div>
                 </div>
 
-                <div class="bg-neutral-900 border border-neutral-800 p-8 rounded-2xl">
+                <div class="bg-neutral-900 border border-neutral-800 p-8 rounded-2xl relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500">
+                    </div>
+
                     <h3 class="text-xl font-bold text-white mb-6">{{ $t('contact.form.title') }}</h3>
-                    <form class="space-y-4">
+                    <form @submit.prevent="handleSubmit" class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.name')
-                            }}</label>
-                            <input type="text"
+                                }}</label>
+                            <input v-model="formData.name" type="text" required
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.name_placeholder')">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.email')
-                            }}</label>
-                            <input type="email"
+                                }}</label>
+                            <input v-model="formData.email" type="email" required
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.email_placeholder')">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.message')
-                            }}</label>
-                            <textarea rows="4"
+                                }}</label>
+                            <textarea v-model="formData.message" rows="4" required
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors resize-none"
                                 :placeholder="$t('contact.form.message_placeholder')"></textarea>
                         </div>
-                        <button type="submit"
-                            class="w-full py-3 bg-primary-500 hover:bg-primary-400 text-neutral-950 font-bold rounded-lg transition-colors">
-                            {{ $t('contact.form.submit') }}
+                        <button type="submit" :disabled="isSubmitting"
+                            class="w-full py-3 bg-primary-500 hover:bg-primary-400 text-neutral-950 font-bold rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                            <span>{{ isSubmitting ? $t('contact.form.submitting') : $t('contact.form.submit') }}</span>
+                            <svg v-if="!isSubmitting" class="w-4 h-4" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
                         </button>
+
+                        <div v-if="submitMessage"
+                            class="p-4 rounded-lg bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm text-center">
+                            {{ submitMessage }}
+                        </div>
+
+                        <div v-if="submitError"
+                            class="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm text-center">
+                            {{ submitError }}
+                        </div>
                     </form>
                 </div>
             </div>
@@ -82,6 +101,45 @@
 </template>
 
 <script setup>
+const { t } = useI18n()
+
+const formData = ref({
+    name: '',
+    email: '',
+    message: ''
+})
+
+const isSubmitting = ref(false)
+const submitMessage = ref('')
+const submitError = ref('')
+
+const handleSubmit = async () => {
+    submitMessage.value = ''
+    submitError.value = ''
+    isSubmitting.value = true
+
+    try {
+        const res = await $fetch('/api/contact', {
+            method: 'POST',
+            body: formData.value
+        })
+
+        if (res.success) {
+            submitMessage.value = t('contact.form.success')
+            formData.value = {
+                name: '',
+                email: '',
+                message: ''
+            }
+        }
+    } catch (err) {
+        console.error('Failed to submit contact form:', err)
+        submitError.value = t('contact.form.error')
+    } finally {
+        isSubmitting.value = false
+    }
+}
+
 useHead({
     title: 'Contact Us - Protegey',
     meta: [
