@@ -23,8 +23,7 @@
         },
         "trust": {
             "security": "Sécurité bancaire",
-            "analysis": "Analyse en temps réel",
-            "coverage": "Couverture panafricaine"
+            "analysis": "Analyse en temps réel"
         }
     },
     "trusted_by": {
@@ -58,12 +57,12 @@
         "title1": "Découvrez le futur du",
         "title2": "renseignement fraude ",
         "title3": "aujourd'hui",
-        "subtitle": "Soyez parmi les premiers à découvrir la plateforme de détection de fraude de nouvelle génération pour l'Afrique",
+        "subtitle": "Soyez parmi les premiers à découvrir la plateforme de détection de fraude de nouvelle génération pour l'Afrique Francophone et du Nord",
         "form": {
             "name": "Nom complet",
             "name_placeholder": "Entrez votre nom complet",
             "email": "Adresse email",
-            "email_placeholder": "Entrez votre adresse email",
+            "email_placeholder": "Saisissez votre adresse courriel professionnelle",
             "company": "Nom de l'entreprise",
             "company_placeholder": "Entrez le nom de votre entreprise",
             "role": "Votre rôle",
@@ -103,11 +102,11 @@
             "api_docs": "Docs API",
             "privacy": "Confidentialité"
         },
-        "copyright": "© {year} Protegey. Tous droits réservés."
+        "copyright": "© {year} Protegey Inc. Tous droits réservés."
     },
     "about": {
         "title": "À Propos",
-        "subtitle": "Protegey est le premier réseau africain d'alerte précoce partagé pour le renseignement sur la fraude. Nous construisons l'infrastructure numérique nécessaire pour sécuriser l'avenir financier du continent.",
+        "subtitle": "Protegey est le premier réseau africain d'alerte précoce partagé pour le renseignement sur la fraude. Nous mettons en place l'infrastructure numérique nécessaire pour sécuriser l'avenir financier du continent, en commençant par l'Afrique francophone et l'Afrique du Nord.",
         "mission": "Notre Mission",
         "mission_text": "Éliminer la fraude comme obstacle au commerce numérique en Afrique en créant un réseau de renseignement unifié et en temps réel.",
         "vision": "Notre Vision",

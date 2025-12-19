@@ -202,10 +202,6 @@ onUnmounted(() => {
                             <HugeiconsIcon :icon="Activity01Icon" :size="16" class="text-primary-500" />
                             <span>{{ $t('hero.trust.analysis') }}</span>
                         </div>
-                        <div class="flex items-center gap-2 text-neutral-400 text-sm">
-                            <HugeiconsIcon :icon="Globe02Icon" :size="16" class="text-primary-500" />
-                            <span>{{ $t('hero.trust.coverage') }}</span>
-                        </div>
                     </div>
                 </div>
 

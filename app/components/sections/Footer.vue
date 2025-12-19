@@ -5,7 +5,7 @@
         <!-- Brand -->
         <div>
           <NuxtLink to="/" class="flex items-center gap-2 mb-4">
-            <HugeiconsIcon :icon="Shield01Icon" class="w-6 h-6 text-primary-400" />
+            <img src="~/assets/images/logo.png" alt="Protegey Logo" class="w-14 h-14 object-contain"></img>
             <span class="text-lg font-bold text-white">PROTEGEY</span>
           </NuxtLink>
           <p class="text-sm text-neutral-400">{{ $t('footer.slogan') }}</p>

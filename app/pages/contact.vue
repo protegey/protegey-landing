@@ -39,7 +39,8 @@
                             </div>
                             <div>
                                 <h3 class="text-white font-semibold mb-1">{{ $t('contact.location') }}</h3>
-                                <p class="text-neutral-400">Middletown, Delaware</p>
+                                <p class="text-neutral-400">651 N Broad St, Middletown, 19709 Delaware, United States.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -50,21 +51,21 @@
                     <form class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.name')
-                                }}</label>
+                            }}</label>
                             <input type="text"
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.name_placeholder')">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.email')
-                                }}</label>
+                            }}</label>
                             <input type="email"
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.email_placeholder')">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.message')
-                                }}</label>
+                            }}</label>
                             <textarea rows="4"
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors resize-none"
                                 :placeholder="$t('contact.form.message_placeholder')"></textarea>

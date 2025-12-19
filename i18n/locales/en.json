@@ -23,8 +23,7 @@
         },
         "trust": {
             "security": "Bank-grade Security",
-            "analysis": "Real-time Analysis",
-            "coverage": "Pan-African Coverage"
+            "analysis": "Real-time Analysis"
         }
     },
     "trusted_by": {
@@ -58,12 +57,12 @@
         "title1": "Experience the future of",
         "title2": "fraud intelligence ",
         "title3": "today",
-        "subtitle": "Be among the first to experience Africa's next generation fraud detection platform",
+        "subtitle": "Be among the first to experience Francophone and Northern Africa's next generation fraud detection platform",
         "form": {
             "name": "Full Name",
             "name_placeholder": "Enter your full name",
             "email": "Email Address",
-            "email_placeholder": "Enter your email address",
+            "email_placeholder": "Enter your corporate email address",
             "company": "Company Name",
             "company_placeholder": "Enter your company name",
             "role": "Your Role",
@@ -103,11 +102,11 @@
             "api_docs": "API Docs",
             "privacy": "Privacy"
         },
-        "copyright": "© {year} Protegey. All rights reserved."
+        "copyright": "© {year} Protegey Inc. All rights reserved."
     },
     "about": {
         "title": "About Us",
-        "subtitle": "Protegey is Africa's first shared early-warning network for fraud intelligence. We are building the digital infrastructure to secure the continent's financial future.",
+        "subtitle": "Protegey is Africa's first shared early-warning network for fraud intelligence. We are building the digital infrastructure to secure the continent's financial future, starting with Francophone and Northern Africa.",
         "mission": "Our Mission",
         "mission_text": "To eliminate fraud as a barrier to digital commerce in Africa by creating a unified, real-time intelligence network.",
         "vision": "Our Vision",
