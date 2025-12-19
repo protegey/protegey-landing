@@ -74,7 +74,7 @@ const handleSubmit = async () => {
             submitMessage.value = data.message
         } else {
             const interestLabel = interestOptions.value.find(o => o.value === formData.value.interestType)?.label || formData.value.interestType || 'Request'
-            submitMessage.value = `${interestLabel} request submitted for ${formData.value.email}`
+            submitMessage.value = `Thank you for submitting your request, we'll get back to you shortly`
         }
 
         if (!data.isDuplicate) {

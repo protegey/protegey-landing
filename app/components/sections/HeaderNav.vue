@@ -68,7 +68,7 @@ const toggleLanguage = () => {
 
         <button
           class="mt-2 bg-primary-500 text-neutral-950 px-6 py-3 rounded-lg font-bold hover:bg-primary-400 shadow-lg shadow-primary-500/20"
-          @click.prevent="scrollTo('waitlist'); toggleMenu()">{{ $t('nav.get_started') }}</button>
+          @click.prevent="scrollTo('waitlist'); toggleMenu()">{{ $t('nav.request_demo') }}</button>
       </div>
     </div>
   </header>

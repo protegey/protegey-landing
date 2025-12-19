@@ -113,18 +113,46 @@ export default defineEventHandler(async (event) => {
         if (resend) {
             try {
                 await resend.emails.send({
-                    from: 'Protegey <no-reply@mail.protegey.com>', // Use resend default for testing, user should update
+                    from: 'Protegey Inc. <no-reply@mail.protegey.com>', // Use resend default for testing, user should update
                     to: body.email,
-                    subject: 'Welcome to the Protegey Demo Waitlist',
+                    subject: 'Bienvenue dans une nouvelle ère de l’intelligence antifraude en Afrique Francophone et en Afrique du Nord',
                     html: `
-                        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-                            <h1>Welcome to Protegey!</h1>
-                            <p>Hi ${body.name},</p>
-                            <p>Thanks for requesting access to Protegey. We've received your request and have added you to our priority waitlist.</p>
-                            <p>We'll be in touch soon with next steps.</p>
-                            <br/>
-                            <p>Best regards,</p>
-                            <p>The Protegey Team</p>
+                        <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
+                            <h1 style="color: #1a365d; border-bottom: 2px solid #1a365d; padding-bottom: 10px;">Bienvenue chez PROTEGEY</h1>
+                            
+                            <p>Bonjour <strong>${body.name}</strong>,</p>
+                            
+                            <p>Nous vous remercions pour votre demande d’accès à <strong>PROTEGEY</strong>.</p>
+                            
+                            <p>Votre demande a été dûment enregistrée et vous avez été ajouté à notre liste d’attente prioritaire pour la démonstration. PROTEGEY est une plateforme d’intelligence antifraude, de gestion du risque et de conformité, conçue pour accompagner les régulateurs, les institutions publiques, les banques, les fintechs, les établissements de paiement, les prêteurs digitaux et les plateformes à forte croissance opérant en Afrique Francophone et en Afrique du Nord.</p>
+                            
+                            <p><strong>PROTEGEY vous permet notamment de :</strong></p>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Lutter efficacement contre les comptes multiples et les fraudes à l’identité.</li>
+                                <li style="margin-bottom: 8px;">Détecter de manière anticipée les schémas de fraude et les comportements à risque.</li>
+                                <li style="margin-bottom: 8px;">Automatiser le scoring de risque et les processus de décision.</li>
+                                <li style="margin-bottom: 8px;">Structurer et piloter les investigations à travers des workflows de gestion de cas traçables.</li>
+                                <li style="margin-bottom: 8px;">Renforcer la conformité réglementaire et la préparation aux contrôles et audits.</li>
+                            </ul>
+                            
+                            <p>Notre plateforme a été spécifiquement conçue pour répondre aux exigences réglementaires locales, aux enjeux de sécurité financière, ainsi qu’aux réalités des opérations transfrontalières dans notre région, là où les solutions génériques atteignent rapidement leurs limites.</p>
+                            
+                            <div style="background-color: #f7fafc; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                                <p style="margin-top: 0;"><strong>Prochaines étapes :</strong></p>
+                                <p>Un membre de notre équipe prendra contact avec vous prochainement afin de :</p>
+                                <ul style="margin-bottom: 0;">
+                                    <li style="margin-bottom: 5px;">Organiser une démonstration de la plateforme.</li>
+                                    <li style="margin-bottom: 5px;">Analyser vos besoins spécifiques en matière de fraude, de risque et de conformité.</li>
+                                    <li style="margin-bottom: 5px;">Vous présenter les modalités d’accès anticipé ainsi que les conditions tarifaires préférentielles.</li>
+                                </ul>
+                            </div>
+
+                            <p>Nous serons ravis de vous accompagner dans le renforcement de la sécurité, de la conformité et de la confiance au sein de vos opérations.</p>
+                            
+                            <p style="margin-top: 30px;">
+                                Cordialement,<br>
+                                <strong>L’équipe PROTEGEY</strong>
+                            </p>
                         </div>
                     `
                 })
