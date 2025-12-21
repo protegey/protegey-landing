@@ -1,7 +1,11 @@
 console.log("NUXT CONFIG LOADED");
 export default defineNuxtConfig({
   compatibilityDate: '2025-11-17',
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/i18n'],
+  site: {
+    url: 'https://protegey.com',
+    name: 'Protegey',
+  },
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxtjs/robots'],
   i18n: {
     baseUrl: 'https://protegey.com',
     locales: [
@@ -13,6 +17,7 @@ export default defineNuxtConfig({
     lazy: true,
     langDir: './locales',
     strategy: 'prefix_except_default',
+    seo: true,
     compilation: {
       strictMessage: false
     },
@@ -46,7 +51,6 @@ export default defineNuxtConfig({
       meta: [
         //author
         { name: "author", content: "Protegey" },
-
         // Mobile & PWA basics (optional)
         { name: "mobile-web-app-title", content: "Protegey" },
         { name: "mobile-web-app-capable", content: "yes" },
@@ -73,4 +77,3 @@ export default defineNuxtConfig({
     },
   },
 })
-

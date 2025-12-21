@@ -24,6 +24,22 @@ const productIcon = iconMap[productId] || Activity01Icon
 
 const { t } = useI18n()
 
+const productSchema = computed(() => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": t(`products.${productId}.title`),
+    "description": t(`products.${productId}.description`),
+    "brand": {
+        "@type": "Brand",
+        "name": "Protegey"
+    },
+    "offers": {
+        "@type": "Offer",
+        "url": `https://protegey.com/products/${productId}`,
+        "availability": "https://schema.org/InStock"
+    }
+}))
+
 useHead({
     title: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }),
     meta: [
@@ -34,6 +50,12 @@ useHead({
         { name: 'twitter:title', content: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }) },
         { name: 'twitter:description', content: t(`products.${productId}.description`) },
         { name: 'twitter:image', content: t('seo.global.image') }
+    ],
+    script: [
+        {
+            type: 'application/ld+json',
+            children: computed(() => JSON.stringify(productSchema.value))
+        }
     ]
 })
 </script>

@@ -11,6 +11,25 @@ const head = useLocaleHead({
   addSeoAttributes: true
 })
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Protegey",
+  "url": "https://protegey.com",
+  "logo": "https://protegey.com/favicon.png", // Use favicon as logo for now since it's reachable
+  "sameAs": [
+    "https://www.linkedin.com/company/protegeyhq/",
+    "https://x.com/ProtegeyHQ"
+  ]
+}
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Protegey",
+  "url": "https://protegey.com"
+}
+
 useHead({
   titleTemplate: (titleChunk) => {
     if (!titleChunk) return t('seo.global.title')
@@ -32,7 +51,17 @@ useHead({
     { name: 'twitter:image', content: t('seo.global.image') },
     ...(head.value.meta || [])
   ],
-  link: [...(head.value.link || [])]
+  link: [...(head.value.link || [])],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify(organizationSchema)
+    },
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify(websiteSchema)
+    }
+  ]
 })
 </script>
 
