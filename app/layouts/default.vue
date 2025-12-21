@@ -2,6 +2,38 @@
 import HeaderNav from '~/components/sections/HeaderNav.vue'
 import Footer from '~/components/sections/Footer.vue'
 // Theme is auto-initialized in the composable
+
+const { t } = useI18n()
+
+const head = useLocaleHead({
+  addDirAttribute: true,
+  identifierAttribute: 'id',
+  addSeoAttributes: true
+})
+
+useHead({
+  titleTemplate: (titleChunk) => {
+    if (!titleChunk) return t('seo.global.title')
+    return titleChunk.includes('Protegey') ? titleChunk : `${titleChunk} | Protegey`
+  },
+  htmlAttrs: {
+    lang: head.value.htmlAttrs.lang,
+    dir: head.value.htmlAttrs.dir
+  },
+  meta: [
+    { name: 'description', content: t('seo.global.description') },
+    { name: 'keywords', content: t('seo.global.keywords') },
+    { property: 'og:site_name', content: 'Protegey' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:image', content: t('seo.global.image') },
+    { property: 'og:image:alt', content: t('seo.global.image_alt') },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:site', content: '@ProtegeyHQ' },
+    { name: 'twitter:image', content: t('seo.global.image') },
+    ...(head.value.meta || [])
+  ],
+  link: [...(head.value.link || [])]
+})
 </script>
 
 <template>

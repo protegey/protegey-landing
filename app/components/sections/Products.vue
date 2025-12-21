@@ -60,8 +60,8 @@ onMounted(async () => {
             <!-- Products Grid -->
             <div ref="cardsContainerRef" class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
                 <!-- Signal -->
-                <NuxtLink :to="localePath('products-id', { id: 'signal' })"
-                    class="product-card group relative p-8 md:p-10 rounded-3xl bg-neutral-900/50 border border-neutral-800 hover:border-primary-500/50 transition-all duration-500 overflow-hidden block">
+                <NuxtLink :to="localePath('/products/signal')"
+                    class="product-card group relative p-8 md:p-10 rounded-3xl bg-neutral-900/50 border border-neutral-800 hover:border-primary-500/50 transition-all duration-500 overflow-hidden block z-10">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
@@ -78,8 +78,8 @@ onMounted(async () => {
                 </NuxtLink>
 
                 <!-- Radar -->
-                <NuxtLink :to="localePath('products-id', { id: 'radar' })"
-                    class="product-card group relative p-8 md:p-10 rounded-3xl bg-neutral-900/50 border border-neutral-800 hover:border-secondary-500/50 transition-all duration-500 overflow-hidden block">
+                <NuxtLink :to="localePath('/products/radar')"
+                    class="product-card group relative p-8 md:p-10 rounded-3xl bg-neutral-900/50 border border-neutral-800 hover:border-secondary-500/50 transition-all duration-500 overflow-hidden block z-10">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-secondary-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
@@ -96,8 +96,8 @@ onMounted(async () => {
                 </NuxtLink>
 
                 <!-- Gateway -->
-                <NuxtLink :to="localePath('products-id', { id: 'api' })"
-                    class="product-card group relative p-8 md:p-10 rounded-3xl bg-neutral-900/50 border border-neutral-800 hover:border-emerald-500/50 transition-all duration-500 overflow-hidden block">
+                <NuxtLink :to="localePath('/products/api')"
+                    class="product-card group relative p-8 md:p-10 rounded-3xl bg-neutral-900/50 border border-neutral-800 hover:border-emerald-500/50 transition-all duration-500 overflow-hidden block z-10">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
@@ -114,8 +114,8 @@ onMounted(async () => {
                 </NuxtLink>
 
                 <!-- Console -->
-                <NuxtLink :to="localePath('products-id', { id: 'console' })"
-                    class="product-card group relative p-8 md:p-10 rounded-3xl bg-neutral-900/50 border border-neutral-800 hover:border-amber-500/50 transition-all duration-500 overflow-hidden block">
+                <NuxtLink :to="localePath('/products/console')"
+                    class="product-card group relative p-8 md:p-10 rounded-3xl bg-neutral-900/50 border border-neutral-800 hover:border-amber-500/50 transition-all duration-500 overflow-hidden block z-10">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>

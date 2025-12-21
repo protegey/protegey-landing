@@ -185,7 +185,8 @@ onUnmounted(() => {
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <button @click.prevent="scrollTo('waitlist')"
                             class="hero-cta-button group bg-primary-500 hover:bg-primary-400 text-neutral-950 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,204,22,0.3)] hover:shadow-[0_0_30px_rgba(132,204,22,0.5)]">
-                            <HugeiconsIcon :icon="Shield01Icon" :size="20" class="text-white group-hover:text-white transition-colors" />
+                            <HugeiconsIcon :icon="Shield01Icon" :size="20"
+                                class="text-white group-hover:text-white transition-colors" />
                             {{ $t('hero.cta.request_demo') }}
                             <HugeiconsIcon :icon="ArrowRight01Icon" :size="20"
                                 class="group-hover:translate-x-1 transition-transform" />
@@ -225,20 +226,22 @@ onUnmounted(() => {
                             <!-- Stats Row -->
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="bg-neutral-800/50 p-4 rounded-lg border border-neutral-700/50">
-                                    <div class="text-xs text-neutral-400 uppercase tracking-wider mb-1">Threats Blocked
+                                    <div class="text-xs text-neutral-400 uppercase tracking-wider mb-1">{{
+                                        $t('hero.dashboard.threats_blocked') }}
                                     </div>
                                     <div class="text-2xl font-mono font-bold text-white">84,291</div>
                                     <div class="text-xs text-primary-400 mt-1 flex items-center gap-1">
                                         <span
                                             class="inline-block w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[6px] border-b-primary-400"></span>
-                                        +12.5% vs last week
+                                        {{ $t('hero.dashboard.vs_last_week') }}
                                     </div>
                                 </div>
                                 <div class="bg-neutral-800/50 p-4 rounded-lg border border-neutral-700/50">
-                                    <div class="text-xs text-neutral-400 uppercase tracking-wider mb-1">Active Nodes
+                                    <div class="text-xs text-neutral-400 uppercase tracking-wider mb-1">{{
+                                        $t('hero.dashboard.active_nodes') }}
                                     </div>
                                     <div class="text-2xl font-mono font-bold text-white">1,402</div>
-                                    <div class="text-xs text-secondary-400 mt-1">99.9% Uptime</div>
+                                    <div class="text-xs text-secondary-400 mt-1">{{ $t('hero.dashboard.uptime') }}</div>
                                 </div>
                             </div>
 
@@ -246,26 +249,27 @@ onUnmounted(() => {
                             <div class="bg-neutral-800/30 rounded-lg border border-neutral-700/30 overflow-hidden">
                                 <div
                                     class="px-4 py-2 border-b border-neutral-700/30 bg-neutral-800/50 flex justify-between items-center">
-                                    <span class="text-xs font-semibold text-neutral-300">LIVE THREAT FEED</span>
+                                    <span class="text-xs font-semibold text-neutral-300">{{
+                                        $t('hero.dashboard.live_feed') }}</span>
                                     <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                                 </div>
                                 <div class="p-2 space-y-2">
                                     <div
                                         class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
-                                        <span class="text-red-400">[CRITICAL]</span>
-                                        <span class="text-neutral-300">SIM Swap Detected</span>
+                                        <span class="text-red-400">[{{ $t('hero.dashboard.critical') }}]</span>
+                                        <span class="text-neutral-300">{{ $t('hero.dashboard.sim_swap') }}</span>
                                         <span class="text-neutral-400 ml-auto">00:01:23</span>
                                     </div>
                                     <div
                                         class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
-                                        <span class="text-yellow-400">[WARNING]</span>
-                                        <span class="text-neutral-300">Unusual Login Pattern</span>
+                                        <span class="text-yellow-400">[{{ $t('hero.dashboard.warning') }}]</span>
+                                        <span class="text-neutral-300">{{ $t('hero.dashboard.unusual_login') }}</span>
                                         <span class="text-neutral-400 ml-auto">00:01:45</span>
                                     </div>
                                     <div
                                         class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
-                                        <span class="text-primary-400">[INFO]</span>
-                                        <span class="text-neutral-300">New Node Connected</span>
+                                        <span class="text-primary-400">[{{ $t('hero.dashboard.info') }}]</span>
+                                        <span class="text-neutral-300">{{ $t('hero.dashboard.new_node') }}</span>
                                         <span class="text-neutral-400 ml-auto">00:02:10</span>
                                     </div>
                                 </div>
@@ -281,8 +285,8 @@ onUnmounted(() => {
                                     <HugeiconsIcon :icon="Globe02Icon" :size="32"
                                         class="text-neutral-600 mx-auto mb-2 group-hover:text-primary-400 transition-colors" />
                                     <span
-                                        class="text-xs text-neutral-400 group-hover:text-neutral-300 transition-colors">Network
-                                        Activity Map</span>
+                                        class="text-xs text-neutral-400 group-hover:text-neutral-300 transition-colors">{{
+                                        $t('hero.dashboard.map_activity') }}</span>
                                 </div>
                             </div>
                         </div>

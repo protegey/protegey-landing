@@ -30,9 +30,17 @@ const { isDark } = useTheme()
 const { t } = useI18n()
 
 useHead({
-  title: `Protegey | ${t('hero.title_part_1')}${t('hero.title_highlight')}`,
+  title: t('seo.index.title'),
   meta: [
-    { name: 'description', content: t('footer.slogan') }
+    { name: 'description', content: t('seo.index.description') },
+    // Open Graph
+    { property: 'og:title', content: t('seo.index.title') },
+    { property: 'og:description', content: t('seo.index.description') },
+    { property: 'og:image', content: t('seo.global.image') },
+    // Twitter
+    { name: 'twitter:title', content: t('seo.index.title') },
+    { name: 'twitter:description', content: t('seo.index.description') },
+    { name: 'twitter:image', content: t('seo.global.image') }
   ]
 })
 

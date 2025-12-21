@@ -39,9 +39,15 @@
 const { t } = useI18n()
 
 useHead({
-    title: `${t('about.title')} - Protegey`,
+    title: t('seo.about.title'),
     meta: [
-        { name: 'description', content: t('about.subtitle') }
+        { name: 'description', content: t('seo.about.description') },
+        { property: 'og:title', content: t('seo.about.title') },
+        { property: 'og:description', content: t('seo.about.description') },
+        { property: 'og:image', content: t('seo.global.image') },
+        { name: 'twitter:title', content: t('seo.about.title') },
+        { name: 'twitter:description', content: t('seo.about.description') },
+        { name: 'twitter:image', content: t('seo.global.image') }
     ]
 })
 </script>

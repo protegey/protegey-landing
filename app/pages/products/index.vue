@@ -3,10 +3,18 @@ import ProductHero from '~/components/products/ProductHero.vue'
 import Products from '~/components/sections/Products.vue'
 import ProductCTA from '~/components/products/ProductCTA.vue'
 
+const { t } = useI18n()
+
 useHead({
-    title: 'Protegey - Products Hub',
+    title: t('seo.products.title'),
     meta: [
-        { name: 'description', content: 'Explore Protegey\'s suite of specialized fraud detection and network intelligence products.' }
+        { name: 'description', content: t('seo.products.description') },
+        { property: 'og:title', content: t('seo.products.title') },
+        { property: 'og:description', content: t('seo.products.description') },
+        { property: 'og:image', content: t('seo.global.image') },
+        { name: 'twitter:title', content: t('seo.products.title') },
+        { name: 'twitter:description', content: t('seo.products.description') },
+        { name: 'twitter:image', content: t('seo.global.image') }
     ]
 })
 </script>

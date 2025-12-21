@@ -22,8 +22,19 @@ const iconMap = {
 
 const productIcon = iconMap[productId] || Activity01Icon
 
+const { t } = useI18n()
+
 useHead({
-    title: `Protegey - ${productId.charAt(0).toUpperCase() + productId.slice(1)}`,
+    title: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }),
+    meta: [
+        { name: 'description', content: t(`products.${productId}.description`) },
+        { property: 'og:title', content: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }) },
+        { property: 'og:description', content: t(`products.${productId}.description`) },
+        { property: 'og:image', content: t('seo.global.image') },
+        { name: 'twitter:title', content: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }) },
+        { name: 'twitter:description', content: t(`products.${productId}.description`) },
+        { name: 'twitter:image', content: t('seo.global.image') }
+    ]
 })
 </script>
 

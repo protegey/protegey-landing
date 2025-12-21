@@ -25,6 +25,20 @@
         "trust": {
             "security": "Bank-grade Security",
             "analysis": "Real-time Analysis"
+        },
+        "dashboard": {
+            "threats_blocked": "Threats Blocked",
+            "active_nodes": "Active Nodes",
+            "live_feed": "LIVE THREAT FEED",
+            "critical": "CRITICAL",
+            "warning": "WARNING",
+            "info": "INFO",
+            "sim_swap": "SIM Swap Detected",
+            "unusual_login": "Unusual Login Pattern",
+            "new_node": "New Node Connected",
+            "map_activity": "Network Activity Map",
+            "uptime": "99.9% Uptime",
+            "vs_last_week": "+12.5% vs last week"
         }
     },
     "trusted_by": {
@@ -220,5 +234,46 @@
         "no_roles": "No Open Roles Currently",
         "no_roles_desc": "We're not actively hiring at the moment, but we're always interested in meeting exceptional talent. Check back later for new opportunities.",
         "cta": "Email us your resume"
+    },
+    "seo": {
+        "global": {
+            "title": "Protegey — Intelligent Anti-Fraud for Francophone Africa",
+            "description": "Protegey is an intelligent, centralized anti-fraud platform built for Francophone Africa — offering real-time fraud detection, reporting, analytics, and partner integrations.",
+            "keywords": "fraud detection, anti-fraud, Africa, Francophone, fintech security, fraud analytics, crime reporting, Protegey",
+            "image": "https://protegey.com/og-image.png",
+            "image_alt": "Protegey — Unified Anti-Fraud Engine"
+        },
+        "index": {
+            "title": "Protegey | The Unified Anti-Fraud Engine for Africa",
+            "description": "Protegey is Africa's first shared early-warning network for fraud intelligence, securing the digital economy through unified real-time analysis."
+        },
+        "products": {
+            "title": "Our Products | Protegey Security Infrastructure",
+            "description": "Explore Protegey's suite of security tools: Signal, Radar, Gateway API, and Ops Console, designed to detect and prevent fraud across Africa."
+        },
+        "product_detail": {
+            "title": "{name} | Protegey Products",
+            "description": "{description}"
+        },
+        "about": {
+            "title": "About Us | Protegey Mission & Vision",
+            "description": "Learn about Protegey's mission to secure Africa's digital economy through shared fraud intelligence."
+        },
+        "contact": {
+            "title": "Contact Us | Get in Touch with Protegey",
+            "description": "Have questions? Reach out to the Protegey team for support, partnerships, or enterprise fraud prevention solutions."
+        },
+        "careers": {
+            "title": "Join the Mission | Careers at Protegey",
+            "description": "Help us build the digital immune system for Africa's economy. Explore career opportunities in security and fintech."
+        },
+        "api_docs": {
+            "title": "API Documentation | Protegey Developer Hub",
+            "description": "Complete reference for the Protegey Gateway API. Integrate real-time fraud detection into your applications."
+        },
+        "privacy": {
+            "title": "Privacy Policy | Protegey Data Protection",
+            "description": "Understand how Protegey collects, uses, and safeguards your information."
+        }
     }
 }

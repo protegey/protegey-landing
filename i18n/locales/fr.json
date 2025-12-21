@@ -25,6 +25,20 @@
         "trust": {
             "security": "Sécurité bancaire",
             "analysis": "Analyse en temps réel"
+        },
+        "dashboard": {
+            "threats_blocked": "Menaces bloquées",
+            "active_nodes": "Noeuds actifs",
+            "live_feed": "FLUX DE MENACES EN DIRECT",
+            "critical": "CRITIQUE",
+            "warning": "AVERTISSEMENT",
+            "info": "INFO",
+            "sim_swap": "Détournement de SIM détecté",
+            "unusual_login": "Schéma de connexion inhabituel",
+            "new_node": "Nouveau noeud connecté",
+            "map_activity": "Carte d'activité réseau",
+            "uptime": "Disponibilité 99,9%",
+            "vs_last_week": "+12,5% vs semaine dernière"
         }
     },
     "trusted_by": {
@@ -220,5 +234,46 @@
         "no_roles": "Aucun poste ouvert pour le moment",
         "no_roles_desc": "Nous ne recrutons pas activement pour le moment, mais nous sommes toujours intéressés par la rencontre de talents exceptionnels. Revenez plus tard pour de nouvelles opportunités.",
         "cta": "Envoyez-nous votre CV par e-mail"
+    },
+    "seo": {
+        "global": {
+            "title": "Protegey — Anti-fraude intelligent pour l'Afrique francophone",
+            "description": "Protegey est une plateforme anti-fraude intelligente et centralisée conçue pour l'Afrique francophone — offrant détection de fraude en temps réel, rapports, analyses et intégrations partenaires.",
+            "keywords": "détection de fraude, anti-fraude, Afrique, Afrique francophone, sécurité fintech, analyse de fraude, signalement de crime, Protegey",
+            "image": "https://protegey.com/og-image.png",
+            "image_alt": "Protegey — Moteur Anti-Fraude Unifié"
+        },
+        "index": {
+            "title": "Protegey | Le moteur anti-fraude unifié pour l'Afrique",
+            "description": "Protegey est le premier réseau africain partagé d'alerte précoce pour le renseignement sur la fraude, sécurisant l'économie numérique."
+        },
+        "products": {
+            "title": "Nos Produits | Infrastructure de Sécurité Protegey",
+            "description": "Découvrez la suite d'outils de sécurité Protegey : Signal, Radar, Gateway API et Ops Console, conçus pour prévenir la fraude en Afrique."
+        },
+        "product_detail": {
+            "title": "{name} | Produits Protegey",
+            "description": "{description}"
+        },
+        "about": {
+            "title": "À Propos | Mission et Vision de Protegey",
+            "description": "Découvrez la mission de Protegey : éliminer la fraude comme obstacle au commerce numérique en Afrique grâce au renseignement partagé."
+        },
+        "contact": {
+            "title": "Contactez-nous | Échangez avec l'équipe Protegey",
+            "description": "Vous avez des questions ? Contactez l'équipe Protegey pour toute demande de support, partenariat ou solution d'entreprise."
+        },
+        "careers": {
+            "title": "Rejoignez la Mission | Carrières chez Protegey",
+            "description": "Aidez-nous à construire le système immunitaire numérique de l'Afrique. Découvrez nos opportunités de carrière."
+        },
+        "api_docs": {
+            "title": "Documentation API | Centre pour Développeurs Protegey",
+            "description": "Référence complète de l'API Protegey Gateway. Intégrez la détection de fraude en temps réel dans vos applications."
+        },
+        "privacy": {
+            "title": "Politique de Confidentialité | Protection des Données Protegey",
+            "description": "Découvrez comment Protegey collecte, utilise et protège vos informations."
+        }
     }
 }
