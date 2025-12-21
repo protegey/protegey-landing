@@ -1,7 +1,7 @@
 <template>
   <footer role="contentinfo" aria-label="Site Footer" class="py-12 px-6 border-t border-neutral-900 bg-neutral-950">
     <div class="container mx-auto max-w-6xl">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div class="grid md:grid-cols-5 gap-8 mb-8">
         <!-- Brand -->
         <div>
           <NuxtLink to="/" class="flex items-center gap-2 mb-4">
@@ -27,6 +27,33 @@
             <li>
               <NuxtLink to="/careers" class="hover:text-primary-400 transition-colors" data-testid="link-careers">
                 {{ $t('footer.links.careers') }}</NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Products -->
+        <div>
+          <h3 class="font-semibold mb-4 text-white">{{ $t('nav.products') }}</h3>
+          <ul class="space-y-2 text-sm text-neutral-400">
+            <li>
+              <NuxtLink to="/products/signal" class="hover:text-primary-400 transition-colors">
+                {{ $t('products.signal.title') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/products/radar" class="hover:text-primary-400 transition-colors">
+                {{ $t('products.radar.title') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/products/api" class="hover:text-primary-400 transition-colors">
+                {{ $t('products.api.title') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/products/console" class="hover:text-primary-400 transition-colors">
+                {{ $t('products.console.title') }}
+              </NuxtLink>
             </li>
           </ul>
         </div>

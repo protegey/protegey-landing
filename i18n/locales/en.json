@@ -3,6 +3,7 @@
         "why_protegey": "Why Protegey",
         "trusted_by": "Trusted By",
         "contact": "Contact",
+        "products": "Products",
         "request_demo": "Request Demo",
         "home": "Home"
     },
@@ -51,6 +52,62 @@
         "card3": {
             "title": "Uptime",
             "text": "Our platform maintains 99.7% uptime with redundant systems across multiple data centers, ensuring your security coverage never sleeps, even when you do."
+        }
+    },
+    "products": {
+        "badge": "OUR SOLUTIONS",
+        "title": "Integrated Security Products",
+        "signal": {
+            "title": "Signal",
+            "description": "Shared early-warning intelligence protocol. Instantly flag and synchronize known fraud patterns across the network.",
+            "features": {
+                "f1_title": "Network Intelligence",
+                "f1_desc": "Leverages the power of the shared intelligence network to provide predictive scores based on cross-industry signals.",
+                "f2_title": "Real-time Sync",
+                "f2_desc": "Instantly propagate confirmed fraud signals to all network participants, creating a unified defense shield."
+            }
+        },
+        "radar": {
+            "title": "Radar",
+            "description": "Real-time behavioral monitoring engine. Deep analysis of user events to detect anomalies before they scale.",
+            "features": {
+                "f1_title": "Behavioral Analysis",
+                "f1_desc": "Deep learning models analyze thousands of user data points to establish baseline behaviors and detect subtle anomalies.",
+                "f2_title": "Device Fingerprinting",
+                "f2_desc": "Advanced device recognition technology that persists across sessions and recognizes returning fraudsters."
+            }
+        },
+        "api": {
+            "title": "Gateway API",
+            "description": "Lightweight integration layer. Deploy powerful fraud scoring into your existing workflows with minimalist code.",
+            "features": {
+                "f1_title": "Easy Integration",
+                "f1_desc": "RESTful API designed for developers, with SDKs in major languages to get you up and running in minutes.",
+                "f2_title": "Low Latency",
+                "f2_desc": "Built for high-frequency trading and checkout flows, ensuring security checks never slow down your user experience."
+            }
+        },
+        "console": {
+            "title": "Ops Console",
+            "description": "High-fidelity oversight dashboard. Visualize threat vectors and manage investigations with bank-grade precision.",
+            "features": {
+                "f1_title": "Case Management",
+                "f1_desc": "Streamlined workflows for fraud analysts to review flagged transactions, manage queues, and document decisions.",
+                "f2_title": "Visual Analytics",
+                "f2_desc": "Interactive charts and graphs that turn complex data into actionable insights for your risk team."
+            }
+        },
+        "hero": {
+            "title_start": "Powering Africa's",
+            "title_highlight": "Security Infrastructure",
+            "subtitle": "A comprehensive suite of tools designed to detect, synchronize, and prevent fraud in real-time across the continent."
+        },
+        "back_to_all": "Back to All Products",
+        "cta": {
+            "title": "Ready to Secure Your Network?",
+            "subtitle": "Join the waitlist for early access or contact our sales team to discuss enterprise integration.",
+            "request_demo": "Request Demo",
+            "contact_us": "Contact Us"
         }
     },
     "waitlist": {

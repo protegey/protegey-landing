@@ -28,18 +28,20 @@ const toggleLanguage = () => {
           <span class="text-xl font-bold text-white tracking-tight">Protegey</span>
         </a>
       </div>
-
-
+      <div class="hidden md:flex items-center gap-8">
+        <NuxtLink to="/products" class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
+          $t('nav.products') }}</NuxtLink>
+      </div>
 
       <div class="hidden md:flex items-center gap-4">
         <button @click="toggleLanguage" class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">
           {{ locale === 'en' ? 'FR' : 'EN' }}
         </button>
         <!-- <ThemeToggle /> -->
-        <button @click.prevent="scrollTo('waitlist')"
+        <NuxtLink to="/#waitlist"
           class="bg-primary-500 text-neutral-950 px-6 py-2.5 rounded-lg font-bold hover:bg-primary-400 transition-all shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40">
           {{ $t('nav.request_demo') }}
-        </button>
+        </NuxtLink>
       </div>
 
       <!-- Mobile -->
@@ -64,11 +66,13 @@ const toggleLanguage = () => {
     </div>
     <div v-if="isOpen"
       class="md:hidden fixed left-0 right-0 top-20 z-40 bg-neutral-950 border-t border-neutral-800 shadow-2xl">
-      <div class="px-4 py-3 flex flex-col gap-2">
-
-        <button
-          class="mt-2 bg-primary-500 text-neutral-950 px-6 py-3 rounded-lg font-bold hover:bg-primary-400 shadow-lg shadow-primary-500/20"
-          @click.prevent="scrollTo('waitlist'); toggleMenu()">{{ $t('nav.request_demo') }}</button>
+      <div class="px-4 py-3 flex flex-col gap-4">
+        <NuxtLink to="/products" @click="toggleMenu"
+          class="text-neutral-400 hover:text-white font-medium text-base transition-colors">{{ $t('nav.products') }}
+        </NuxtLink>
+        <NuxtLink
+          class="mt-2 bg-primary-500 text-neutral-950 px-6 py-3 rounded-lg font-bold hover:bg-primary-400 shadow-lg shadow-primary-500/20 text-center"
+          to="/#waitlist" @click="toggleMenu">{{ $t('nav.request_demo') }}</NuxtLink>
       </div>
     </div>
   </header>

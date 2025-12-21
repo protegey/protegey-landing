@@ -3,6 +3,7 @@
         "why_protegey": "Pourquoi Protegey",
         "trusted_by": "Ils nous font confiance",
         "contact": "Contact",
+        "products": "Produits",
         "request_demo": "Demander une démo",
         "home": "Accueil"
     },
@@ -51,6 +52,62 @@
         "card3": {
             "title": "Disponibilité",
             "text": "Notre plateforme maintient une disponibilité de 99,7% avec des systèmes redondants dans plusieurs centres de données, garantissant que votre couverture de sécurité ne dort jamais, même quand vous dormez."
+        }
+    },
+    "products": {
+        "badge": "NOS SOLUTIONS",
+        "title": "Produits de Sécurité Intégrés",
+        "signal": {
+            "title": "Signal",
+            "description": "Protocole de renseignement d'alerte précoce partagé. Signalez et synchronisez instantanément les modèles de fraude connus à travers le réseau.",
+            "features": {
+                "f1_title": "Intelligence Réseau",
+                "f1_desc": "Exploite la puissance du réseau de renseignement partagé pour fournir des scores prédictifs basés sur des signaux intersectoriels.",
+                "f2_title": "Synchro Temps Réel",
+                "f2_desc": "Propagez instantanément les signaux de fraude confirmés à tous les participants du réseau, créant un bouclier de défense unifié."
+            }
+        },
+        "radar": {
+            "title": "Radar",
+            "description": "Moteur de surveillance comportementale en temps réel. Analyse approfondie des événements utilisateurs pour détecter les anomalies avant qu'elles ne s'étendent.",
+            "features": {
+                "f1_title": "Analyse Comportementale",
+                "f1_desc": "Des modèles d'apprentissage profond analysent des milliers de points de données utilisateurs pour établir des comportements de base et détecter les anomalies subtiles.",
+                "f2_title": "Empreinte Appareil",
+                "f2_desc": "Technologie avancée de reconnaissance des appareils qui persiste entre les sessions et reconnaît les fraudeurs récurrents."
+            }
+        },
+        "api": {
+            "title": "Gateway API",
+            "description": "Couche d'intégration légère. Déployez un scoring de fraude puissant dans vos flux de travail existants avec un code minimaliste.",
+            "features": {
+                "f1_title": "Intégration Facile",
+                "f1_desc": "API RESTful conçue pour les développeurs, avec des SDK dans les principaux langages pour vous rendre opérationnel en quelques minutes.",
+                "f2_title": "Faible Latence",
+                "f2_desc": "Conçu pour le trading haute fréquence et les flux de paiement, garantissant que les contrôles de sécurité ne ralentissent jamais votre expérience utilisateur."
+            }
+        },
+        "console": {
+            "title": "Console Ops",
+            "description": "Tableau de bord de supervision haute fidélité. Visualisez les vecteurs de menace et gérez les enquêtes avec une précision bancaire.",
+            "features": {
+                "f1_title": "Gestion des Cas",
+                "f1_desc": "Flux de travail rationalisés pour que les analystes de fraude examinent les transactions signalées, gèrent les files d'attente et documentent les décisions.",
+                "f2_title": "Analytique Visuelle",
+                "f2_desc": "Graphiques interactifs transformant des données complexes en informations exploitables pour votre équipe de risque."
+            }
+        },
+        "hero": {
+            "title_start": "Propulser l'Infrastructure",
+            "title_highlight": "de Sécurité en Afrique",
+            "subtitle": "Une suite complète d'outils conçus pour détecter, synchroniser et prévenir la fraude en temps réel sur tout le continent."
+        },
+        "back_to_all": "Retour aux Produits",
+        "cta": {
+            "title": "Prêt à Sécuriser Votre Réseau ?",
+            "subtitle": "Rejoignez la liste d'attente pour un accès anticipé ou contactez notre équipe commerciale pour une intégration entreprise.",
+            "request_demo": "Demander un Demo",
+            "contact_us": "Contactez-Nous"
         }
     },
     "waitlist": {
