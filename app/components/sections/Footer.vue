@@ -1,5 +1,6 @@
 <template>
-  <footer role="contentinfo" aria-label="Site Footer" class="py-12 px-6 border-t border-neutral-900 bg-neutral-950">
+  <footer role="contentinfo" aria-label="Site Footer"
+    class="relative z-10 py-12 px-6 border-t border-neutral-900 bg-neutral-950">
     <div class="container mx-auto max-w-6xl">
       <div class="grid md:grid-cols-5 gap-8 mb-8">
         <!-- Brand -->
@@ -39,25 +40,22 @@
           <h3 class="font-semibold mb-4 text-white">{{ $t('nav.products') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-400">
             <li>
-              <NuxtLink :to="localePath('products-id', { id: 'signal' })"
-                class="hover:text-primary-400 transition-colors">
+              <NuxtLink :to="localePath('/products/signal')" class="hover:text-primary-400 transition-colors">
                 {{ $t('products.signal.title') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('products-id', { id: 'radar' })"
-                class="hover:text-primary-400 transition-colors">
+              <NuxtLink :to="localePath('/products/radar')" class="hover:text-primary-400 transition-colors">
                 {{ $t('products.radar.title') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('products-id', { id: 'api' })" class="hover:text-primary-400 transition-colors">
+              <NuxtLink :to="localePath('/products/api')" class="hover:text-primary-400 transition-colors">
                 {{ $t('products.api.title') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('products-id', { id: 'console' })"
-                class="hover:text-primary-400 transition-colors">
+              <NuxtLink :to="localePath('/products/console')" class="hover:text-primary-400 transition-colors">
                 {{ $t('products.console.title') }}
               </NuxtLink>
             </li>
