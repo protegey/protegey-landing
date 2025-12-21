@@ -36,10 +36,12 @@
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 useHead({
-    title: 'About Us - Protegey',
+    title: `${t('about.title')} - Protegey`,
     meta: [
-        { name: 'description', content: 'Learn about Protegey\'s mission to secure Africa\'s digital economy through shared fraud intelligence.' }
+        { name: 'description', content: t('about.subtitle') }
     ]
 })
 </script>

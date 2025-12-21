@@ -5,7 +5,7 @@
                 <div
                     class="px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-mono">
                     v1.0.0</div>
-                <h1 class="text-4xl font-bold text-white">API Documentation</h1>
+                <h1 class="text-4xl font-bold text-white">{{ $t('api_docs.title') }}</h1>
             </div>
 
             <div class="bg-neutral-900 border border-neutral-800 rounded-3xl p-12 text-center max-w-2xl mx-auto mt-12">
@@ -15,16 +15,15 @@
                             d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                 </div>
-                <h2 class="text-3xl font-bold text-white mb-4">Coming Soon</h2>
+                <h2 class="text-3xl font-bold text-white mb-4">{{ $t('api_docs.coming_soon') }}</h2>
                 <p class="text-neutral-400 mb-8 text-lg">
-                    We are currently finalizing our public API documentation. The Protegey API will allow you to
-                    integrate real-time fraud detection directly into your applications.
+                    {{ $t('api_docs.intro') }}
                 </p>
 
                 <div
                     class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 font-mono text-sm">
                     <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
-                    v1.0.0 in development
+                    {{ $t('api_docs.status') }}
                 </div>
             </div>
         </div>
@@ -32,10 +31,12 @@
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 useHead({
-    title: 'API Documentation - Protegey',
+    title: `${t('api_docs.title')} - Protegey`,
     meta: [
-        { name: 'description', content: 'Protegey API documentation for developers.' }
+        { name: 'description', content: t('api_docs.intro') }
     ]
 })
 </script>

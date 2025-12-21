@@ -27,6 +27,14 @@ import TrustedBy from '~/components/sections/TrustedBy.vue'
 import WaitlistDemo from '~/components/sections/WaitlistDemo.vue'
 
 const { isDark } = useTheme()
+const { t } = useI18n()
+
+useHead({
+  title: `Protegey | ${t('hero.title_part_1')}${t('hero.title_highlight')}`,
+  meta: [
+    { name: 'description', content: t('footer.slogan') }
+  ]
+})
 
 onMounted(() => {
   // Fix for accessibility issue where data-aria-hidden is incorrectly applied

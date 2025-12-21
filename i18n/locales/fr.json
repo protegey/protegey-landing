@@ -190,5 +190,35 @@
             "success": "Votre message a été envoyé avec succès. Nous vous répondrons bientôt !",
             "error": "Une erreur est survenue. Veuillez réessayer plus tard."
         }
+    },
+    "api_docs": {
+        "title": "Documentation API",
+        "coming_soon": "Bientôt disponible",
+        "intro": "Nous finalisons actuellement notre documentation API publique. L'API Protegey vous permettra d'intégrer la détection de fraude en temps réel directement dans vos applications.",
+        "status": "v1.0.0 en développement"
+    },
+    "privacy": {
+        "title": "Politique de Confidentialité",
+        "last_updated": "Dernière mise à jour : 6 décembre 2025",
+        "intro": "Chez Protegey, nous prenons votre vie privée au sérieux. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous visitez notre site web ou utilisez nos services.",
+        "sections": {
+            "info_collect": "1. Informations que nous collectons",
+            "info_collect_text": "Nous collectons les informations que vous nous fournissez directement, par exemple lorsque vous créez un compte, vous abonnez à notre newsletter ou nous contactez pour obtenir de l'aide. Cela peut inclure votre nom, votre adresse e-mail, le nom de votre entreprise et d'autres coordonnées.",
+            "info_use": "2. Comment nous utilisons vos informations",
+            "info_use_text": "Nous utilisons les informations que nous collectons pour fournir, maintenir et améliorer nos services, pour communiquer avec vous et pour protéger nos utilisateurs.",
+            "data_sharing": "3. Partage de données",
+            "data_sharing_text": "Nous ne vendons pas vos données personnelles. Nous pouvons partager vos informations avec des prestataires de services tiers qui effectuent des services en notre nom, tels que l'hébergement, l'analyse de données et le service client.",
+            "security": "4. Sécurité",
+            "security_text": "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès, altération, divulgation ou destruction non autorisés.",
+            "contact": "5. Contactez-nous",
+            "contact_text": "Si vous avez des questions sur cette politique de confidentialité, veuillez nous contacter à"
+        }
+    },
+    "careers": {
+        "title": "Rejoignez la Mission",
+        "subtitle": "Aidez-nous à construire le système immunitaire numérique de l'économie africaine. Nous recherchons des bâtisseurs et des passionnés.",
+        "no_roles": "Aucun poste ouvert pour le moment",
+        "no_roles_desc": "Nous ne recrutons pas activement pour le moment, mais nous sommes toujours intéressés par la rencontre de talents exceptionnels. Revenez plus tard pour de nouvelles opportunités.",
+        "cta": "Envoyez-nous votre CV par e-mail"
     }
 }
