@@ -54,12 +54,14 @@ useHead({
   link: [...(head.value.link || [])],
   script: [
     {
+      key: 'ldjson-org',
       type: 'application/ld+json',
-      children: JSON.stringify(organizationSchema)
+      innerHTML: JSON.stringify(organizationSchema)
     },
     {
+      key: 'ldjson-website',
       type: 'application/ld+json',
-      children: JSON.stringify(websiteSchema)
+      innerHTML: JSON.stringify(websiteSchema)
     }
   ]
 })

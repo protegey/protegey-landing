@@ -54,11 +54,11 @@ useHead({
     script: [
         {
             type: 'application/ld+json',
-            children: computed(() => JSON.stringify(productSchema.value))
+            innerHTML: computed(() => JSON.stringify(productSchema.value))
         },
         {
             type: 'application/ld+json',
-            children: JSON.stringify({
+            innerHTML: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
                 "itemListElement": [

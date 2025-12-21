@@ -55,21 +55,21 @@
                     <form @submit.prevent="handleSubmit" class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.name')
-                            }}</label>
+                                }}</label>
                             <input v-model="formData.name" type="text" required
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.name_placeholder')">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.email')
-                            }}</label>
+                                }}</label>
                             <input v-model="formData.email" type="email" required
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.email_placeholder')">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.message')
-                            }}</label>
+                                }}</label>
                             <textarea v-model="formData.message" rows="4" required
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors resize-none"
                                 :placeholder="$t('contact.form.message_placeholder')"></textarea>
@@ -154,7 +154,7 @@ useHead({
     script: [
         {
             type: 'application/ld+json',
-            children: JSON.stringify({
+            innerHTML: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
                 "itemListElement": [
