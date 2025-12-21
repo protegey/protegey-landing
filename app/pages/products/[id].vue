@@ -55,6 +55,33 @@ useHead({
         {
             type: 'application/ld+json',
             children: computed(() => JSON.stringify(productSchema.value))
+        },
+        {
+            type: 'application/ld+json',
+            children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://protegey.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": t('nav.products'),
+                        "item": "https://protegey.com/products"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": t(`products.${productId}.title`),
+                        "item": `https://protegey.com/products/${productId}`
+                    }
+                ]
+            })
         }
     ]
 })

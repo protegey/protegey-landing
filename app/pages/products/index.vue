@@ -15,6 +15,29 @@ useHead({
         { name: 'twitter:title', content: t('seo.products.title') },
         { name: 'twitter:description', content: t('seo.products.description') },
         { name: 'twitter:image', content: t('seo.global.image') }
+    ],
+    script: [
+        {
+            type: 'application/ld+json',
+            children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://protegey.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": t('nav.products'),
+                        "item": "https://protegey.com/products"
+                    }
+                ]
+            })
+        }
     ]
 })
 </script>

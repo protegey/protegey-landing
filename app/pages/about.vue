@@ -44,10 +44,30 @@ useHead({
         { name: 'description', content: t('seo.about.description') },
         { property: 'og:title', content: t('seo.about.title') },
         { property: 'og:description', content: t('seo.about.description') },
-        { property: 'og:image', content: t('seo.global.image') },
-        { name: 'twitter:title', content: t('seo.about.title') },
-        { name: 'twitter:description', content: t('seo.about.description') },
         { name: 'twitter:image', content: t('seo.global.image') }
+    ],
+    script: [
+        {
+            type: 'application/ld+json',
+            children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://protegey.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": t('footer.links.about'),
+                        "item": "https://protegey.com/about"
+                    }
+                ]
+            })
+        }
     ]
 })
 </script>
