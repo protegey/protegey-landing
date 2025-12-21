@@ -27,13 +27,13 @@ useHead({
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://protegey.com"
+                        "item": "https://www.protegey.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": t('nav.products'),
-                        "item": "https://protegey.com/products"
+                        "item": "https://www.protegey.com/products"
                     }
                 ]
             })

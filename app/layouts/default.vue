@@ -15,8 +15,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Protegey",
-  "url": "https://protegey.com",
-  "logo": "https://protegey.com/favicon.png", // Use favicon as logo for now since it's reachable
+  "url": "https://www.protegey.com",
+  "logo": "https://www.protegey.com/favicon.png", // Use favicon as logo for now since it's reachable
   "sameAs": [
     "https://www.linkedin.com/company/protegeyhq/",
     "https://x.com/ProtegeyHQ"
@@ -27,7 +27,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Protegey",
-  "url": "https://protegey.com"
+  "url": "https://www.protegey.com"
 }
 
 useHead({

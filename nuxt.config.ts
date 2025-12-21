@@ -2,12 +2,15 @@ console.log("NUXT CONFIG LOADED");
 export default defineNuxtConfig({
   compatibilityDate: '2025-11-17',
   site: {
-    url: 'https://protegey.com',
+    url: 'https://www.protegey.com',
     name: 'Protegey',
   },
   modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+  robots: {
+    sitemap: 'https://www.protegey.com/sitemap_index.xml'
+  },
   i18n: {
-    baseUrl: 'https://protegey.com',
+    baseUrl: 'https://www.protegey.com',
     locales: [
       { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
       { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français' }

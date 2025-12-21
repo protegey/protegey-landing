@@ -35,7 +35,7 @@ const productSchema = computed(() => ({
     },
     "offers": {
         "@type": "Offer",
-        "url": `https://protegey.com/products/${productId}`,
+        "url": `https://www.protegey.com/products/${productId}`,
         "availability": "https://schema.org/InStock"
     }
 }))
@@ -66,19 +66,19 @@ useHead({
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://protegey.com"
+                        "item": "https://www.protegey.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": t('nav.products'),
-                        "item": "https://protegey.com/products"
+                        "item": "https://www.protegey.com/products"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
                         "name": t(`products.${productId}.title`),
-                        "item": `https://protegey.com/products/${productId}`
+                        "item": `https://www.protegey.com/products/${productId}`
                     }
                 ]
             })

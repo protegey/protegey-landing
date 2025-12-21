@@ -52,13 +52,13 @@ useHead({
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://protegey.com"
+                        "item": "https://www.protegey.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": t('footer.links.api_docs'),
-                        "item": "https://protegey.com/api-docs"
+                        "item": "https://www.protegey.com/api-docs"
                     }
                 ]
             })
