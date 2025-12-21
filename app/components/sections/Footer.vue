@@ -4,7 +4,7 @@
       <div class="grid md:grid-cols-5 gap-8 mb-8">
         <!-- Brand -->
         <div>
-          <NuxtLink to="/" class="flex items-center gap-2 mb-4">
+          <NuxtLink :to="localePath('/')" class="flex items-center gap-2 mb-4">
             <img src="~/assets/images/logo.png" alt="Protegey Logo" class="w-14 h-14 object-contain"></img>
             <span class="text-lg font-bold text-white">PROTEGEY</span>
           </NuxtLink>
@@ -16,16 +16,19 @@
           <h3 class="font-semibold mb-4 text-white">{{ $t('footer.company') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-400">
             <li>
-              <NuxtLink to="/about" class="hover:text-primary-400 transition-colors" data-testid="link-about">{{
-                $t('footer.links.about') }}
+              <NuxtLink :to="localePath('about')" class="hover:text-primary-400 transition-colors"
+                data-testid="link-about">{{
+                  $t('footer.links.about') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/contact" class="hover:text-primary-400 transition-colors" data-testid="link-contact">
+              <NuxtLink :to="localePath('contact')" class="hover:text-primary-400 transition-colors"
+                data-testid="link-contact">
                 {{ $t('footer.links.contact') }}</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/careers" class="hover:text-primary-400 transition-colors" data-testid="link-careers">
+              <NuxtLink :to="localePath('careers')" class="hover:text-primary-400 transition-colors"
+                data-testid="link-careers">
                 {{ $t('footer.links.careers') }}</NuxtLink>
             </li>
           </ul>
@@ -36,22 +39,25 @@
           <h3 class="font-semibold mb-4 text-white">{{ $t('nav.products') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-400">
             <li>
-              <NuxtLink to="/products/signal" class="hover:text-primary-400 transition-colors">
+              <NuxtLink :to="localePath('products-id', { id: 'signal' })"
+                class="hover:text-primary-400 transition-colors">
                 {{ $t('products.signal.title') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/products/radar" class="hover:text-primary-400 transition-colors">
+              <NuxtLink :to="localePath('products-id', { id: 'radar' })"
+                class="hover:text-primary-400 transition-colors">
                 {{ $t('products.radar.title') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/products/api" class="hover:text-primary-400 transition-colors">
+              <NuxtLink :to="localePath('products-id', { id: 'api' })" class="hover:text-primary-400 transition-colors">
                 {{ $t('products.api.title') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/products/console" class="hover:text-primary-400 transition-colors">
+              <NuxtLink :to="localePath('products-id', { id: 'console' })"
+                class="hover:text-primary-400 transition-colors">
                 {{ $t('products.console.title') }}
               </NuxtLink>
             </li>
@@ -63,11 +69,13 @@
           <h3 class="font-semibold mb-4 text-white">{{ $t('footer.resources') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-400">
             <li>
-              <NuxtLink to="/api-docs" class="hover:text-primary-400 transition-colors" data-testid="link-api-docs">{{
-                $t('footer.links.api_docs') }}</NuxtLink>
+              <NuxtLink :to="localePath('api-docs')" class="hover:text-primary-400 transition-colors"
+                data-testid="link-api-docs">{{
+                  $t('footer.links.api_docs') }}</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/privacy" class="hover:text-primary-400 transition-colors" data-testid="link-privacy">
+              <NuxtLink :to="localePath('privacy')" class="hover:text-primary-400 transition-colors"
+                data-testid="link-privacy">
                 {{ $t('footer.links.privacy') }}</NuxtLink>
             </li>
           </ul>
@@ -110,4 +118,5 @@ import { HugeiconsIcon } from '@hugeicons/vue'
 import { Shield01Icon } from '@hugeicons/core-free-icons'
 
 const currentYear = computed(() => new Date().getFullYear())
+const localePath = useLocalePath()
 </script>

@@ -2,7 +2,9 @@
 import { ref } from 'vue'
 import ThemeToggle from '~/components/sections/ThemeToggle.vue'
 
-const { locale, setLocale } = useI18n()
+const { locale } = useI18n()
+const localePath = useLocalePath()
+const switchLocalePath = useSwitchLocalePath()
 const isOpen = ref(false)
 
 const toggleMenu = () => {
@@ -13,32 +15,30 @@ const scrollTo = (selector) => {
   const el = document.getElementById(selector)
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
-
-const toggleLanguage = () => {
-  setLocale(locale.value === 'en' ? 'fr' : 'en')
-}
 </script>
 
 <template>
   <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
     <div class="container mx-auto px-4 h-20 flex items-center justify-between">
       <div class="flex items-center gap-4">
-        <a href="/" class="flex items-center">
+        <NuxtLink :to="localePath('/')" class="flex items-center">
           <img src="~/assets/images/logo.png" alt="Protegey Logo" class="w-14 h-14 object-contain"></img>
           <span class="text-xl font-bold text-white tracking-tight">Protegey</span>
-        </a>
+        </NuxtLink>
       </div>
       <div class="hidden md:flex items-center gap-8">
-        <NuxtLink to="/products" class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
-          $t('nav.products') }}</NuxtLink>
+        <NuxtLink :to="localePath('products')"
+          class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
+            $t('nav.products') }}</NuxtLink>
       </div>
 
       <div class="hidden md:flex items-center gap-4">
-        <button @click="toggleLanguage" class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">
+        <NuxtLink :to="switchLocalePath(locale === 'en' ? 'fr' : 'en')"
+          class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">
           {{ locale === 'en' ? 'FR' : 'EN' }}
-        </button>
+        </NuxtLink>
         <!-- <ThemeToggle /> -->
-        <NuxtLink to="/#waitlist"
+        <NuxtLink :to="localePath('/#waitlist')"
           class="bg-primary-500 text-neutral-950 px-6 py-2.5 rounded-lg font-bold hover:bg-primary-400 transition-all shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40">
           {{ $t('nav.request_demo') }}
         </NuxtLink>
@@ -46,9 +46,10 @@ const toggleLanguage = () => {
 
       <!-- Mobile -->
       <div class="md:hidden flex items-center gap-4">
-        <button @click="toggleLanguage" class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">
+        <NuxtLink :to="switchLocalePath(locale === 'en' ? 'fr' : 'en')"
+          class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">
           {{ locale === 'en' ? 'FR' : 'EN' }}
-        </button>
+        </NuxtLink>
         <!-- <ThemeToggle /> -->
         <button @click="toggleMenu" :aria-expanded="isOpen" :aria-label="isOpen ? 'Close menu' : 'Open menu'"
           class="p-2 rounded-md border border-neutral-800 text-neutral-300">
@@ -67,12 +68,12 @@ const toggleLanguage = () => {
     <div v-if="isOpen"
       class="md:hidden fixed left-0 right-0 top-20 z-40 bg-neutral-950 border-t border-neutral-800 shadow-2xl">
       <div class="px-4 py-3 flex flex-col gap-4">
-        <NuxtLink to="/products" @click="toggleMenu"
+        <NuxtLink :to="localePath('products')" @click="toggleMenu"
           class="text-neutral-400 hover:text-white font-medium text-base transition-colors">{{ $t('nav.products') }}
         </NuxtLink>
         <NuxtLink
           class="mt-2 bg-primary-500 text-neutral-950 px-6 py-3 rounded-lg font-bold hover:bg-primary-400 shadow-lg shadow-primary-500/20 text-center"
-          to="/#waitlist" @click="toggleMenu">{{ $t('nav.request_demo') }}</NuxtLink>
+          :to="localePath('/#waitlist')" @click="toggleMenu">{{ $t('nav.request_demo') }}</NuxtLink>
       </div>
     </div>
   </header>

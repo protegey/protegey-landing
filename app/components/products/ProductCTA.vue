@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 </script>
 
 <template>
@@ -23,13 +24,13 @@ const { t } = useI18n()
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <!-- Join Waitlist -->
-                <NuxtLink to="/#waitlist"
+                <NuxtLink :to="localePath('/#waitlist')"
                     class="w-full sm:w-auto px-10 py-4 rounded-xl bg-primary-500 text-neutral-950 font-bold text-lg hover:bg-primary-400 transition-all hover:scale-105 shadow-lg shadow-primary-500/20">
                     {{ $t('products.cta.request_demo') }}
                 </NuxtLink>
 
                 <!-- Contact Sales -->
-                <NuxtLink to="/contact"
+                <NuxtLink :to="localePath('contact')"
                     class="w-full sm:w-auto px-10 py-4 rounded-xl border border-neutral-700 bg-neutral-900 text-white font-bold text-lg hover:bg-neutral-800 transition-all hover:border-neutral-600">
                     {{ $t('products.cta.contact_us') }}
                 </NuxtLink>

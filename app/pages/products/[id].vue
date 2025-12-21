@@ -11,6 +11,7 @@ import ProductCTA from '~/components/products/ProductCTA.vue'
 
 const route = useRoute()
 const productId = route.params.id
+const localePath = useLocalePath()
 
 const iconMap = {
     signal: Activity01Icon,
@@ -31,7 +32,7 @@ useHead({
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-7xl mx-auto">
                 <!-- Back Link -->
-                <NuxtLink to="/products"
+                <NuxtLink :to="localePath('products')"
                     class="inline-flex items-center gap-2 text-neutral-500 hover:text-primary-400 mb-16 transition-colors group">
                     <span class="group-hover:-translate-x-1 transition-transform">←</span> {{ $t('products.back_to_all')
                     }}
