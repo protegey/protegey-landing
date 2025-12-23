@@ -77,8 +77,8 @@
             "title": "Gateway API",
             "tagline": "Décisions de Fraude & Risque en Temps Réel",
             "description": "Le point d'entrée unique pour tous vos besoins de sécurité transactionnelle. Intégrez le scoring de risque en temps réel directement dans vos flux de paiement pour une prise de décision instantanée et automatisée.",
-            "why_built": "Arrêtez les transactions non autorisées là où elles se produisent. Protégez vos revenus en détectant la fraude de paiement et marchande en temps réel avant que l'argent ne quitte le compte.",
-            "what_you_can_do": "Orchestrez l'ensemble de votre pile de fraude via une API REST unique. Obtenez une intelligence au niveau des transactions, évaluez le risque marchand et implémentez des moteurs de règles personnalisés avec des scores de confiance en moins de 100 ms.",
+            "why_built": "Arrêtez les transactions non autorisées et à haut risque. Détectez la fraude marchande et de paiement en temps réel. Réduisez les pertes financières sans ralentir vos clients.",
+            "what_you_can_do": "Scoring de risque instantané pour les transactions, les connexions et les actions. Décisions claires : approuver, examiner ou bloquer. Intégration transparente dans vos systèmes existants.",
             "features": {
                 "f1_title": "Scoring de Transaction en Temps Réel",
                 "f1_desc": "Traitement des décisions en <100ms avec 99,9% de disponibilité. Évaluation des transactions par carte, mobile money et virement bancaire avec des modèles de risque alimentés par l'apprentissage automatique.",
@@ -92,10 +92,9 @@
                 "Moteur de règles personnalisé avec modèles de risque alimentés par l'apprentissage automatique"
             ],
             "target_users": [
-                "Banques et banques numériques traitant des volumes de transactions élevés",
+                "Banques et banques numériques",
                 "Fintechs et processeurs de paiement",
-                "Places de marché et plateformes e-commerce",
-                "Opérateurs de mobile money"
+                "Places de marché et marchands"
             ],
             "results": [
                 "Réduire les pertes de fraude de 60-80%",
@@ -107,8 +106,8 @@
             "title": "Radar",
             "tagline": "Surveillance Comportementale & Protection des Comptes",
             "description": "Prévenez les prises de contrôle de comptes avant que les fraudeurs n'agissent. Surveillance continue des sessions avec détection d'anomalies en temps réel pour les connexions, changements d'appareils et changements comportementaux.",
-            "why_built": "Prévenir les prises de contrôle de comptes avant que les fraudeurs n'agissent. Détecter la fraude par échange de SIM et l'activité des bots en temps réel. Identifier le comportement de mule financière et les comptes compromis tôt.",
-            "what_you_can_do": "Surveillance continue des sessions des modèles de comportement des utilisateurs au fil du temps. Détection d'anomalies pour les connexions, changements d'appareils et changements comportementaux. Scoring de risque au niveau du compte qui évolue avec chaque action de l'utilisateur. Protection même lorsque les identifiants sont valides (mots de passe volés, ingénierie sociale).",
+            "why_built": "Prévenez les prises de contrôle de comptes. Détectez la fraude par échange de SIM et l'activité des bots. Identifiez précocement les comportements de mule financière.",
+            "what_you_can_do": "Surveillance continue du comportement des utilisateurs. Détection des connexions et sessions anormales. Protection même lorsque les identifiants semblent valides.",
             "features": {
                 "f1_title": "Analyse Comportementale Basée sur les Sessions",
                 "f1_desc": "Analyse des modèles de frappe, de navigation et de timing. Empreinte digitale des appareils et suivi de géolocalisation pour détecter les anomalies en temps réel.",
@@ -123,10 +122,9 @@
                 "Détection de bots et d'automatisation"
             ],
             "target_users": [
-                "Banques et opérateurs de mobile money avec de grandes bases d'utilisateurs",
-                "Opérateurs télécoms gérant des comptes d'abonnés",
-                "Super apps et portefeuilles numériques",
-                "Toute plateforme avec des comptes utilisateurs et des données sensibles"
+                "Banques et opérateurs de mobile money",
+                "Opérateurs télécoms",
+                "Super apps et portefeuilles numériques"
             ],
             "results": [
                 "Détecter les prises de contrôle de comptes 10x plus rapidement (minutes vs. heures)",
@@ -138,8 +136,8 @@
             "title": "Signal",
             "tagline": "Réseau de Renseignement sur la Fraude Partagé",
             "description": "Tirez parti de la puissance du premier réseau partagé de renseignement sur la fraude en Afrique. Accédez à des alertes précoces en temps réel provenant de plus de 50 institutions pour arrêter les fraudeurs connus avant qu'ils n'atteignent votre système.",
-            "why_built": "Éliminez les angles morts grâce à une défense collaborative. Brisez les silos d'information pour identifier les réseaux de fraude inter-institutions et les modèles de menaces régionaux au fur et à mesure qu'ils émergent.",
-            "what_you_can_do": "Participez à un écosystème préservant la confidentialité où les signaux de fraude sont partagés instantanément au sein du consortium. Bénéficiez d'une détection à l'échelle du réseau des récidivistes et des modèles d'attaques coordonnées au-delà des frontières.",
+            "why_built": "Arrêtez la fraude répétée entre les plateformes. Détectez les réseaux de fraude organisés et transfrontaliers dans les zones GIM-UEMOA, Afrique du Nord et GIMAC. Réduisez les angles morts des systèmes isolés.",
+            "what_you_can_do": "Signaux de fraude partagés sans exposer les données clients. Alertes précoces basées sur des cas de fraude confirmés. Scoring de risque piloté par le réseau.",
             "how_it_works": "Signal utilise une technologie préservant la confidentialité pour partager les modèles de fraude sur notre réseau. Ce qui est partagé : Empreintes digitales d'appareils anonymisées, modèles comportementaux, typologies de fraude. Ce qui n'est PAS partagé : Noms de clients, numéros de compte, montants de transactions ou toute PII. Avec qui vous partagez : Institutions financières vérifiées dans le consortium Signal (banques, fintechs, opérateurs télécoms). Valeur immédiate : Même en tant que premier participant, vous bénéficiez du renseignement de fraude de base de PROTEGEY.",
             "features": {
                 "f1_title": "Partage de Renseignement Préservant la Confidentialité",
@@ -154,10 +152,9 @@
                 "Analyse et rapports des tendances de fraude régionales"
             ],
             "target_users": [
-                "Banques et écosystèmes fintech recherchant une défense collaborative",
-                "Réseaux de paiement et systèmes de cartes",
-                "Régulateurs et organismes sectoriels coordonnant la prévention de la fraude",
-                "Fournisseurs de paiements transfrontaliers"
+                "Banques et écosystèmes fintech",
+                "Réseaux de paiement",
+                "Régulateurs et organismes sectoriels"
             ],
             "results": [
                 "Détecter les réseaux de fraude 5x plus rapidement grâce au renseignement réseau",
@@ -168,35 +165,34 @@
         "console": {
             "title": "Console Ops",
             "tagline": "Opérations de Fraude Unifiées & Gestion de Cas",
-            "description": "Enquêtez efficacement sur la fraude avec un tableau de bord centralisé pour toutes les alertes. Gestion complète des cas du triage des alertes à la résolution avec pistes d'audit pour la conformité.",
-            "why_built": "Enquêter efficacement et de manière cohérente sur la fraude sur tous les produits PROTEGEY. Détecter et gérer la fraude interne avec une responsabilité claire. Maintenir des pistes d'audit pour la conformité réglementaire et les examens.",
-            "what_you_can_do": "Tableau de bord centralisé pour toutes les alertes de fraude de Gateway API, Radar et Signal. Flux de travail de gestion de cas du triage des alertes à la résolution. Collecte et suivi de preuves avec documentation automatique. Collaboration d'équipe avec accès basé sur les rôles et affectation. Analyses de performance pour l'efficacité et l'efficience de l'équipe de fraude.",
+            "description": "Enquêtez sur la fraude efficacement grâce à un tableau de bord centralisé pour toutes les alertes. Gestion complète des cas, du tri des alertes à la résolution, avec des pistes d'audit pour la conformité.",
+            "why_built": "Enquêtez sur la fraude de manière efficace et cohérente. Détectez et gérez la fraude interne. Maintenez une responsabilité claire et des pistes d'audit.",
+            "what_you_can_do": "Gestion centralisée des cas. Suivi des preuves et flux de travail des analystes. Documentation claire des décisions.",
             "features": {
                 "f1_title": "Gestion Unifiée des Alertes",
-                "f1_desc": "File d'attente centralisée avec priorisation intelligente. Flux de travail d'enquête avec étapes personnalisables. Coffre de preuves avec stockage sécurisé et chaîne de traçabilité.",
+                "f1_desc": "File d'attente centralisée avec priorisation intelligente. Flux de travail d'enquête avec étapes personnalisables. Coffre-fort de preuves avec stockage sécurisé et chaîne de possession.",
                 "f2_title": "Collaboration d'Équipe & Analyses",
-                "f2_desc": "Métriques de productivité des analystes et suivi de résolution de cas. Intégration avec outils externes (SIEM, systèmes de tickets). Journal d'audit pour toutes les actions et décisions."
+                "f2_desc": "Indicateurs de productivité des analystes et suivi de la résolution des cas. Intégration avec des outils externes (SIEM, systèmes de billetterie). Journal d'audit pour toutes les actions et décisions."
             },
             "capabilities": [
-                "File d'attente d'alertes unifiée avec priorisation intelligente",
-                "Flux de travail d'enquête avec étapes personnalisables",
-                "Coffre de preuves avec stockage sécurisé et chaîne de traçabilité",
-                "Métriques de productivité des analystes et suivi de résolution de cas",
-                "Intégration avec outils externes (SIEM, systèmes de tickets)",
-                "Journal d'audit pour toutes les actions et décisions"
+                "File d'attente d'alertes unifiée avec priorisation intelligente.",
+                "Flux de travail d'enquête avec étapes personnalisables.",
+                "Coffre-fort de preuves avec stockage sécurisé et chaîne de possession.",
+                "Indicateurs de productivité des analystes et suivi de la résolution des cas.",
+                "Intégration avec des outils externes (SIEM, systèmes de billetterie).",
+                "Journal d'audit pour toutes les actions et décisions."
             ],
             "deployment_options": {
                 "standalone": "Fonctionne avec vos outils de fraude existants, pas seulement PROTEGEY",
-                "integrated": "Intégration native avec Gateway API, Radar et Signal pour des flux de travail transparents"
+                "integrated": "Intégration native avec Gateway API, Radar et Signal pour des flux de travail fluides"
             },
             "target_users": [
-                "Équipes d'opérations de fraude gérant des volumes d'alertes élevés",
-                "Unités de conformité et de risque nécessitant des pistes d'audit",
-                "Départements d'audit interne enquêtant sur la fraude des employés",
-                "Utilisateurs multi-produits PROTEGEY nécessitant un seul panneau de contrôle"
+                "Équipes d'opérations de fraude",
+                "Unités de conformité et de risque",
+                "Départements d'audit interne"
             ],
             "results": [
-                "Réduire le temps d'enquête d'heures à minutes",
+                "Réduire le temps d'enquête de quelques heures à quelques minutes",
                 "Améliorer les taux de résolution de cas de 40%",
                 "Réduire le temps de formation des analystes avec des flux de travail guidés"
             ]
@@ -204,9 +200,9 @@
         "compliance": {
             "title": "Couche Risque & Conformité",
             "tagline": "Gouvernance, Contrôles & Préparation Réglementaire",
-            "description": "Respectez les obligations AML et réglementaires dans plusieurs juridictions. Réduisez l'exposition au risque de conformité et opérationnel avec des flux de travail automatisés.",
-            "why_built": "Respecter les obligations AML et réglementaires dans plusieurs juridictions. Réduire l'exposition au risque de conformité et opérationnel. Se préparer en toute confiance aux audits et examens réglementaires.",
-            "what_you_can_do": "Surveillance des transactions AML avec scénarios et seuils personnalisables. Registres de risques et cartographie des contrôles alignés sur les cadres réglementaires. Rapports d'incidents, de violations et réglementaires avec flux de travail automatisés. Gestion des politiques avec contrôle de version et suivi d'attestation.",
+            "description": "Répondez aux obligations AML et réglementaires dans plusieurs juridictions. Réduisez l'exposition aux risques de conformité et opérationnels avec des flux de travail automatisés.",
+            "why_built": "Respectez les obligations AML et réglementaires. Réduisez les risques de conformité et opérationnels. Préparez-vous sereinement aux audits et examens.",
+            "what_you_can_do": "Flux de travail de surveillance des transactions AML. Registres de risques et cartographie des contrôles. Reporting d'incidents, de violations et réglementaires.",
             "features": {
                 "f1_title": "Surveillance des Transactions AML",
                 "f1_desc": "Scénarios AML pré-construits pour les réglementations d'Afrique de l'Ouest/Centrale/du Nord. Génération et dépôt de rapports d'activités suspectes (SAR).",
@@ -214,31 +210,30 @@
                 "f2_desc": "Cadres d'évaluation des risques (RCSA, suivi KRI). Tests de contrôle et surveillance de l'efficacité. Gestion du changement réglementaire et analyse d'impact."
             },
             "capabilities": [
-                "Scénarios AML pré-construits pour les réglementations d'Afrique de l'Ouest/Centrale/du Nord",
-                "Génération et dépôt de rapports d'activités suspectes (SAR)",
-                "Cadres d'évaluation des risques (RCSA, suivi KRI)",
-                "Tests de contrôle et surveillance de l'efficacité",
-                "Gestion du changement réglementaire et analyse d'impact"
+                "Scénarios AML pré-construits pour les réglementations d'Afrique de l'Ouest/Centrale/du Nord.",
+                "Génération et dépôt de rapports d'activités suspectes (SAR).",
+                "Cadres d'évaluation des risques (RCSA, suivi KRI).",
+                "Tests de contrôle et surveillance de l'efficacité.",
+                "Gestion du changement réglementaire et analyse d'impact."
             ],
             "target_users": [
-                "Banques et institutions de microfinance sous supervision réglementaire",
-                "Grandes fintechs se préparant à l'obtention de licences ou aux audits",
-                "Régulateurs et autorités de surveillance",
-                "Responsables de la conformité gérant plusieurs exigences réglementaires"
+                "Banques et institutions de microfinance",
+                "Grandes fintechs",
+                "Regulators et autorités de supervision"
             ],
             "results": [
                 "Réduire les coûts de conformité de 30-40%",
                 "Réussir les audits avec une documentation complète",
-                "Répondre aux demandes réglementaires en heures, pas en jours"
+                "Répondre aux demandes réglementaires en quelques heures, pas jours"
             ]
         },
         "panid": {
             "title": "Pan-ID",
             "tagline": "Vérification d'Identité & Renseignement Transfrontalier",
-            "status": "En Développement - Prévu T2 2025",
-            "description": "Prévenez les identités dupliquées et synthétiques à travers les frontières. Vérification d'identité à travers l'Afrique de l'Ouest, Centrale et du Nord avec correspondance biométrique.",
-            "why_built": "Prévenir les identités dupliquées et synthétiques à travers les frontières. Détecter l'utilisation abusive d'identité à travers l'Afrique de l'Ouest, Centrale et du Nord. Soutenir la vérification d'identité lorsque les documents sont perdus, volés ou indisponibles.",
-            "what_you_can_do": "Vérification de l'existence d'identité à travers plusieurs bases de données nationales. Confirmation du type d'ID (passeport, carte d'identité nationale, permis de conduire, carte d'électeur). Vérification assistée par reconnaissance faciale et biométrique pour la vivacité et la correspondance. Réconciliation d'identité transjuridictionnelle pour détecter les doublons. Surveillance continue du risque d'identité pour les changements et anomalies.",
+            "status": "Bientôt Disponible",
+            "description": "Prévenez les identités multiples et synthétiques au-delà des frontières. Vérification d'identité en Afrique de l'Ouest, Centrale et du Nord avec correspondance biométrique.",
+            "why_built": "Prévenez les identités multiples et synthétiques. Détectez l'usurpation d'identité au-delà des frontières (Afrique de l'Ouest, Centrale et du Nord). Soutenez la vérification d'identité en cas de perte ou d'indisponibilité des documents.",
+            "what_you_can_do": "Confirmation de l'existence de l'identité et du type de pièce. Vérification faciale et biométrique. Réconciliation d'identité trans-juridictionnelle. Surveillance continue des risques liés à l'identité.",
             "features": {
                 "f1_title": "Vérification d'Identité Multi-Pays",
                 "f1_desc": "Intégration de bases de données d'identité multi-pays. Correspondance biométrique (reconnaissance faciale, empreinte digitale). Vérification de l'authenticité des documents.",
@@ -246,24 +241,24 @@
                 "f2_desc": "Cartographie du graphe d'identité à travers les juridictions. Scoring de risque d'identité en temps réel. Détection de doublons transfrontaliers."
             },
             "capabilities": [
-                "Intégration de bases de données d'identité multi-pays",
-                "Correspondance biométrique (reconnaissance faciale, empreinte digitale)",
-                "Vérification de l'authenticité des documents",
-                "Cartographie du graphe d'identité à travers les juridictions",
-                "Scoring de risque d'identité en temps réel"
+                "Intégration de bases de données d'identité multi-pays.",
+                "Correspondance biométrique (reconnaissance faciale, empreinte digitale).",
+                "Vérification de l'authenticité des documents.",
+                "Cartographie du graphe d'identité à travers les juridictions.",
+                "Scoring de risque d'identité en temps réel."
             ],
             "target_users": [
-                "Autorités d'immigration et de contrôle aux frontières",
-                "Agences d'identité nationale et de registre civil",
-                "Police et unités d'enquête criminelle",
+                "Autorités d'immigration et de contrôle des frontières",
+                "Agences d'identité nationale et de l'état civil",
+                "Unités de police et d'investigation criminelle",
                 "Bureaux de passeports, consulats et ambassades",
-                "Fintechs transfrontalières et plateformes de transfert d'argent",
-                "Hôtels (uniquement à des fins de vérification lors de l'enregistrement)"
+                "Fintechs transfrontalières et plateformes de transfert de fonds",
+                "Hôtels (uniquement pour l'enregistrement)"
             ],
             "expected_outcomes": [
-                "Réduire la fraude d'identité de 70%",
-                "Vérifier les identités en secondes à travers les frontières",
-                "Détecter les comptes dupliqués et les identités synthétiques"
+                "Réduire la fraude à l'identité de 70%",
+                "Vérifier les identités en quelques secondes au-delà des frontières",
+                "Détecter les comptes en double et les identités synthétiques"
             ]
         },
         "integration_story": {
@@ -285,15 +280,15 @@
             ]
         },
         "mission": {
-            "title": "Notre Mission",
+            "title": "Notre Objectif : Aider nos Utilisateurs à Atteindre le Niveau Supérieur",
             "items": [
-                "Surveillance des transactions AML conforme aux normes réglementaires",
-                "Protection contre la fraude interne et externe avec défense en profondeur",
-                "Prévention de prise de contrôle de compte par analyse comportementale",
-                "Détection de fraude par échange de SIM et mule financière en temps réel",
-                "Détection d'arnaques à l'investissement avant que les clients ne perdent de l'argent",
-                "Prévention de comptes dupliqués sur les plateformes",
-                "Scoring de crédit et renseignement sur les risques pour de meilleures décisions"
+                "Surveillance des transactions AML.",
+                "Protection contre la fraude interne et externe.",
+                "Prévention des prises de contrôle de comptes.",
+                "Détection de fraude par échange de SIM et de mule financière.",
+                "Détection d'arnaques à l'investissement.",
+                "Prévention des comptes en double.",
+                "Scoring de crédit et intelligence de risque."
             ]
         },
         "geographic_coverage": {

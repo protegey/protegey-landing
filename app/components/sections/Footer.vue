@@ -1,106 +1,120 @@
 <template>
   <footer role="contentinfo" aria-label="Site Footer"
-    class="relative z-10 py-20 px-6 border-t border-neutral-900 bg-neutral-950 overflow-hidden">
-    <!-- Background Decor -->
-    <div class="absolute inset-0 pointer-events-none">
-      <div
-        class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary-500/5 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3">
-      </div>
-      <div
-        class="absolute top-0 left-0 w-[400px] h-[400px] bg-violet-500/5 rounded-full blur-[100px] -translate-x-1/3 -translate-y-1/3">
-      </div>
-    </div>
-
-    <div class="container mx-auto max-w-7xl relative z-10">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-        <!-- Brand Section -->
-        <div class="lg:col-span-4 max-w-sm">
-          <NuxtLink :to="localePath('/')" class="flex items-center gap-3 mb-6 group">
-            <div
-              class="p-2 rounded-xl bg-neutral-900 border border-neutral-800 group-hover:border-primary-500/30 transition-colors">
-              <img src="~/assets/images/logo.png" alt="Protegey Logo" class="w-10 h-10 object-contain"></img>
-            </div>
-            <span class="text-2xl font-bold text-white tracking-tight">PROTEGEY</span>
+    class="relative z-10 py-12 px-6 border-t border-neutral-900 bg-neutral-950">
+    <div class="container mx-auto max-w-6xl">
+      <div class="grid md:grid-cols-5 gap-8 mb-8">
+        <!-- Brand -->
+        <div>
+          <NuxtLink :to="localePath('/')" class="flex items-center gap-2 mb-4">
+            <img src="~/assets/images/logo.png" alt="Protegey Logo" class="w-14 h-14 object-contain"></img>
+            <span class="text-lg font-bold text-white">PROTEGEY</span>
           </NuxtLink>
-          <p class="text-neutral-400 leading-relaxed mb-8">
-            {{ $t('footer.slogan') }}
-          </p>
-          <div class="flex gap-4">
-            <a v-for="social in socialLinks" :key="social.name" :href="social.url" target="_blank"
-              rel="noopener noreferrer"
-              class="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-primary-400 hover:border-primary-500/30 transition-all"
-              :aria-label="social.name">
-              <component :is="social.icon" class="w-5 h-5" />
-            </a>
-          </div>
+          <p class="text-sm text-neutral-400">{{ $t('footer.slogan') }}</p>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="font-semibold mb-4 text-white">{{ $t('footer.company') }}</h3>
+          <ul class="space-y-2 text-sm text-neutral-400">
+            <li>
+              <NuxtLink :to="localePath('about')" class="hover:text-primary-400 transition-colors"
+                data-testid="link-about">{{
+                  $t('footer.links.about') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('contact')" class="hover:text-primary-400 transition-colors"
+                data-testid="link-contact">
+                {{ $t('footer.links.contact') }}</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('careers')" class="hover:text-primary-400 transition-colors"
+                data-testid="link-careers">
+                {{ $t('footer.links.careers') }}</NuxtLink>
+            </li>
+          </ul>
         </div>
 
         <!-- Products -->
-        <div class="lg:col-span-3">
-          <h3 class="font-bold text-white mb-6 uppercase tracking-widest text-sm">{{ $t('nav.products') }}</h3>
-          <ul class="space-y-4">
-            <li v-for="product in products" :key="product.id">
-              <NuxtLink :to="localePath(`/products/${product.id}`)"
-                class="text-neutral-400 hover:text-primary-400 transition-colors flex items-center gap-2 group">
-                <span
-                  class="w-1.5 h-1.5 rounded-full bg-neutral-800 group-hover:bg-primary-500 transition-colors"></span>
-                {{ $t(`products.${product.id}.title`) }}
+        <div>
+          <h3 class="font-semibold mb-4 text-white">{{ $t('nav.products') }}</h3>
+          <ul class="space-y-2 text-sm text-neutral-400">
+            <li>
+              <NuxtLink :to="localePath('/products/signal')" class="hover:text-primary-400 transition-colors">
+                {{ $t('products.signal.title') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/products/radar')" class="hover:text-primary-400 transition-colors">
+                {{ $t('products.radar.title') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/products/api')" class="hover:text-primary-400 transition-colors">
+                {{ $t('products.api.title') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/products/console')" class="hover:text-primary-400 transition-colors">
+                {{ $t('products.console.title') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/products/compliance')" class="hover:text-primary-400 transition-colors">
+                {{ $t('products.compliance.title') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/products/panid')" class="hover:text-primary-400 transition-colors">
+                {{ $t('products.panid.title') }}
               </NuxtLink>
             </li>
           </ul>
         </div>
 
-        <!-- Links Grid -->
-        <div class="lg:col-span-5 grid grid-cols-2 gap-8">
-          <div>
-            <h3 class="font-bold text-white mb-6 uppercase tracking-widest text-sm">{{ $t('footer.company') }}</h3>
-            <ul class="space-y-4">
-              <li>
-                <NuxtLink :to="localePath('about')" class="text-neutral-400 hover:text-primary-400 transition-colors">
-                  {{ $t('footer.links.about') }}
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink :to="localePath('contact')" class="text-neutral-400 hover:text-primary-400 transition-colors">
-                  {{ $t('footer.links.contact') }}
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink :to="localePath('careers')" class="text-neutral-400 hover:text-primary-400 transition-colors">
-                  {{ $t('footer.links.careers') }}
-                </NuxtLink>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-bold text-white mb-6 uppercase tracking-widest text-sm">{{ $t('footer.resources') }}</h3>
-            <ul class="space-y-4">
-              <li>
-                <NuxtLink :to="localePath('api-docs')"
-                  class="text-neutral-400 hover:text-primary-400 transition-colors">
-                  {{ $t('footer.links.api_docs') }}
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink :to="localePath('privacy')" class="text-neutral-400 hover:text-primary-400 transition-colors">
-                  {{ $t('footer.links.privacy') }}
-                </NuxtLink>
-              </li>
-            </ul>
+        <!-- Resources -->
+        <div>
+          <h3 class="font-semibold mb-4 text-white">{{ $t('footer.resources') }}</h3>
+          <ul class="space-y-2 text-sm text-neutral-400">
+            <li>
+              <NuxtLink :to="localePath('api-docs')" class="hover:text-primary-400 transition-colors"
+                data-testid="link-api-docs">{{
+                  $t('footer.links.api_docs') }}</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('privacy')" class="hover:text-primary-400 transition-colors"
+                data-testid="link-privacy">
+                {{ $t('footer.links.privacy') }}</NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h3 class="font-semibold mb-4 text-white">{{ $t('footer.connect') }}</h3>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/company/protegeyhq/" target="_blank" rel="noopener noreferrer"
+              class="text-neutral-400 hover:text-primary-400 transition-colors" aria-label="LinkedIn"
+              data-testid="link-linkedin">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.5 19.5H5.5V9h3v10.5zM7 7.8c-.9 0-1.6-.8-1.6-1.7 0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6 0 .9-.7 1.7-1.6 1.7zM20 19.5h-3v-5.5c0-1.3-.5-2.2-1.6-2.2-1 0-1.5.7-1.8 1.4-.1.3-.1.8-.1 1.2V19.5h-3V9h3v1.4c.4-.6 1.3-1.6 3-1.6 2.2 0 3.9 1.5 3.9 4.9V19.5z" />
+              </svg>
+            </a>
+            <a href="https://x.com/ProtegeyHQ" target="_blank" rel="noopener noreferrer"
+              class="text-neutral-400 hover:text-primary-400 transition-colors" aria-label="X (Twitter)"
+              data-testid="link-x">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M24 4.6c-.9.4-1.9.7-2.9.8 1-0.6 1.7-1.6 2.1-2.8-1 0.6-2.1 1-3.3 1.2-1-1-2.5-1.6-4-1.6-3 0-5.3 2.8-4.6 5.9-3.9-.2-7.4-2.1-9.7-5.3-1.3 2.2-.6 5 1.3 6.3-0.8 0-1.5-0.2-2.2-0.6 0 2.3 1.6 4.3 3.8 4.7-0.7 0.2-1.4 0.3-2.1 0.1 0.6 2 2.4 3.4 4.5 3.5-2 1.5-4.5 2-6.8 1.4 2.5 1.6 5.4 2.5 8.5 2.5 10.2 0 15.8-8.8 15.8-16.3v-0.7c1.1-0.8 2-1.7 2.8-2.8-1 0.5-2 0.8-3.1 1" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Bottom Bar -->
-      <div
-        class="pt-12 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-neutral-500">
+      <div class="pt-8 border-t border-neutral-900 text-center text-sm text-neutral-400">
         <p>{{ $t('footer.copyright', { year: currentYear }) }}</p>
-        <div class="flex items-center gap-8">
-          <NuxtLink :to="localePath('privacy')" class="hover:text-neutral-300 transition-colors">Terms of Service
-          </NuxtLink>
-          <NuxtLink :to="localePath('privacy')" class="hover:text-neutral-300 transition-colors">Cookie Policy
-          </NuxtLink>
-        </div>
       </div>
     </div>
   </footer>
@@ -108,25 +122,9 @@
 
 <script setup>
 import { computed } from 'vue'
-import {
-  Linkedin01Icon,
-  NewTwitterIcon
-} from '@hugeicons/core-free-icons'
+import { HugeiconsIcon } from '@hugeicons/vue'
+import { Shield01Icon } from '@hugeicons/core-free-icons'
 
 const currentYear = computed(() => new Date().getFullYear())
 const localePath = useLocalePath()
-
-const products = [
-  { id: 'signal' },
-  { id: 'radar' },
-  { id: 'api' },
-  { id: 'console' },
-  { id: 'compliance' },
-  { id: 'panid' }
-]
-
-const socialLinks = [
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/company/protegeyhq/', icon: Linkedin01Icon },
-  { name: 'X', url: 'https://x.com/ProtegeyHQ', icon: NewTwitterIcon }
-]
 </script>

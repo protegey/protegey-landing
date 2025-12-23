@@ -40,11 +40,11 @@ onMounted(() => {
 <template>
     <div ref="containerRef" class="py-24 space-y-32">
         <!-- Integration Story -->
-        <section class="detail-section container mx-auto px-4">
+        <!-- <section class="detail-section container mx-auto px-4">
             <div
-                class="max-w-5xl mx-auto rounded-[3rem] bg-neutral-900/50 border border-neutral-800 p-8 md:p-16 relative overflow-hidden">
+                class="max-w-5xl mx-auto rounded-[3rem] bg-neutral-900/50 border border-neutral-800 p-8 md:p-16 relative overflow-hidden"> -->
                 <!-- Background Accent -->
-                <div class="absolute top-0 right-0 w-1/2 h-full bg-primary-500/5 blur-[120px] pointer-events-none">
+                <!-- <div class="absolute top-0 right-0 w-1/2 h-full bg-primary-500/5 blur-[120px] pointer-events-none">
                 </div>
 
                 <div class="relative z-10">
@@ -95,7 +95,7 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Mission & Coverage Grid -->
         <div class="detail-section container mx-auto px-4">

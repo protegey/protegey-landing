@@ -77,8 +77,8 @@
             "title": "Gateway API",
             "tagline": "Real-Time Fraud & Risk Decisions",
             "description": "The single entry point for all your transaction security needs. Integrate real-time risk scoring directly into your payment flows for instant, automated decisioning.",
-            "why_built": "Stop unauthorized transactions where they happen. Protect your revenue by detecting payment and merchant fraud in real-time before money leaves the account.",
-            "what_you_can_do": "Orchestrate your entire fraud stack through a single REST API. Get transaction-level intelligence on every payment, evaluate merchant risk, and implement custom rule engines with confidence scores in under 100ms.",
+            "why_built": "Stop unauthorized and high-risk transactions. Detect merchant and payment fraud in real time. Reduce financial losses without slowing customers.",
+            "what_you_can_do": "Instant risk scoring for transactions, logins, and actions. Clear decisions: approve, review, or block. Seamless integration into existing systems.",
             "features": {
                 "f1_title": "Real-time Transaction Scoring",
                 "f1_desc": "Process decisions in <100ms with 99.9% uptime. Evaluate card, mobile money, and bank transfer transactions with machine learning-powered risk models.",
@@ -92,10 +92,9 @@
                 "Custom rule engine with machine learning-powered risk models"
             ],
             "target_users": [
-                "Banks and digital banks processing high transaction volumes",
+                "Banks and digital banks",
                 "Fintechs and payment processors",
-                "Marketplaces and e-commerce platforms",
-                "Mobile money operators"
+                "Marketplaces and merchants"
             ],
             "results": [
                 "Reduce fraud losses by 60-80%",
@@ -107,8 +106,8 @@
             "title": "Radar",
             "tagline": "Behavioral Monitoring & Account Protection",
             "description": "Prevent account takeovers before fraudsters can act. Continuous session monitoring with real-time anomaly detection for logins, device changes, and behavioral shifts.",
-            "why_built": "Prevent account takeovers before fraudsters can act. Detect SIM swap fraud and bot activity in real-time. Identify money mule behavior and compromised accounts early.",
-            "what_you_can_do": "Continuous session monitoring of user behavior patterns over time. Anomaly detection for logins, device changes, and behavioral shifts. Account-level risk scoring that evolves with each user action. Protection even when credentials are valid (stolen passwords, social engineering).",
+            "why_built": "Prevent account takeovers. Detect SIM swap fraud and bot activity. Identify money mule behavior early.",
+            "what_you_can_do": "Continuous monitoring of user behavior. Detection of abnormal logins and sessions. Protection even when credentials appear valid.",
             "features": {
                 "f1_title": "Session-Based Behavioral Analysis",
                 "f1_desc": "Analyze typing patterns, navigation, and timing. Device fingerprinting and geolocation tracking to detect anomalies in real-time.",
@@ -123,10 +122,9 @@
                 "Bot and automation detection"
             ],
             "target_users": [
-                "Banks and mobile money operators with large user bases",
-                "Telcos managing subscriber accounts",
-                "Super apps and digital wallets",
-                "Any platform with user accounts and sensitive data"
+                "Banks and mobile money operators",
+                "Telcos",
+                "Super apps and wallets"
             ],
             "results": [
                 "Detect account takeovers 10x faster (minutes vs. hours)",
@@ -138,8 +136,8 @@
             "title": "Signal",
             "tagline": "Shared Fraud Intelligence Network",
             "description": "Leverage the power of Africa's first shared fraud intelligence network. Access real-time early warnings from 50+ institutions to stop known fraudsters before they hit your system.",
-            "why_built": "Eliminate blind spots with collaborative defense. Break down information silos to identify cross-institution fraud rings and regional threat patterns as they emerge.",
-            "what_you_can_do": "Participate in a privacy-preserving ecosystem where fraud signals are shared instantly across the consortium. Benefit from network-wide detection of repeat offenders and coordinated attack patterns across borders.",
+            "why_built": "Stop repeat fraud across platforms. Detect organized and cross-border fraud rings across GIM-UEMOA, Northern Africa and GIMAC zones. Reduce blind spots in isolated systems.",
+            "what_you_can_do": "Shared fraud signals without exposing customer data. Early warnings from confirmed fraud cases. Network-driven risk scoring.",
             "how_it_works": "Signal uses privacy-preserving technology to share fraud patterns across our network. What's shared: Anonymized device fingerprints, behavioral patterns, fraud typologies. What's NOT shared: Customer names, account numbers, transaction amounts, or any PII. Who you're sharing with: Vetted financial institutions in the Signal consortium (banks, fintechs, telcos). Immediate value: Even as the first participant, you benefit from PROTEGEY's baseline fraud intelligence.",
             "features": {
                 "f1_title": "Privacy-Preserving Intelligence Sharing",
@@ -154,10 +152,9 @@
                 "Regional fraud trend analysis and reporting"
             ],
             "target_users": [
-                "Banks and fintech ecosystems seeking collaborative defense",
-                "Payment networks and card schemes",
-                "Regulators and industry bodies coordinating fraud prevention",
-                "Cross-border payment providers"
+                "Banks and fintech ecosystems",
+                "Payment networks",
+                "Regulators and industry bodies"
             ],
             "results": [
                 "Detect fraud rings 5x faster through network intelligence",
@@ -169,8 +166,8 @@
             "title": "Ops Console",
             "tagline": "Unified Fraud Operations & Case Management",
             "description": "Investigate fraud efficiently with centralized dashboard for all alerts. Complete case management from alert triage to resolution with audit trails for compliance.",
-            "why_built": "Investigate fraud efficiently and consistently across all PROTEGEY products. Detect and manage internal fraud with clear accountability. Maintain audit trails for regulatory compliance and examinations.",
-            "what_you_can_do": "Centralized dashboard for all fraud alerts from Gateway API, Radar, and Signal. Case management workflows from alert triage to resolution. Evidence collection and tracking with automatic documentation. Team collaboration with role-based access and assignment. Performance analytics for fraud team efficiency and effectiveness.",
+            "why_built": "Investigate fraud efficiently and consistently. Detect and manage internal fraud. Maintain clear accountability and audit trails.",
+            "what_you_can_do": "Centralized case management. Evidence tracking and analyst workflows. Clear documentation of decisions.",
             "features": {
                 "f1_title": "Unified Alert Management",
                 "f1_desc": "Centralized queue with intelligent prioritization. Investigation workflows with customizable stages. Evidence vault with secure storage and chain of custody.",
@@ -190,10 +187,9 @@
                 "integrated": "Native integration with Gateway API, Radar, and Signal for seamless workflows"
             },
             "target_users": [
-                "Fraud operations teams managing high alert volumes",
-                "Compliance and risk units requiring audit trails",
-                "Internal audit departments investigating employee fraud",
-                "Multi-product PROTEGEY users needing a single pane of glass"
+                "Fraud operations teams",
+                "Compliance and risk units",
+                "Internal audit departments"
             ],
             "results": [
                 "Cut investigation time from hours to minutes",
@@ -205,8 +201,8 @@
             "title": "Risk & Compliance Layer",
             "tagline": "Governance, Controls & Regulatory Readiness",
             "description": "Meet AML and regulatory obligations across multiple jurisdictions. Reduce compliance and operational risk exposure with automated workflows.",
-            "why_built": "Meet AML and regulatory obligations across multiple jurisdictions. Reduce compliance and operational risk exposure. Prepare confidently for audits and regulatory examinations.",
-            "what_you_can_do": "AML transaction monitoring with customizable scenarios and thresholds. Risk registers and control mapping aligned to regulatory frameworks. Incident, breach, and regulatory reporting with automated workflows. Policy management with version control and attestation tracking.",
+            "why_built": "Meet AML and regulatory obligations. Reduce compliance and operational risk. Prepare confidently for audits and examinations.",
+            "what_you_can_do": "AML transaction monitoring workflows. Risk registers and control mapping. Incident, breach, and regulatory reporting.",
             "features": {
                 "f1_title": "AML Transaction Monitoring",
                 "f1_desc": "Pre-built AML scenarios for West/Central/Northern Africa regulations. Suspicious Activity Report (SAR) generation and filing.",
@@ -221,10 +217,9 @@
                 "Regulatory change management and impact analysis"
             ],
             "target_users": [
-                "Banks and microfinance institutions under regulatory supervision",
-                "Large fintechs preparing for licensing or audits",
-                "Regulators and supervisory authorities",
-                "Compliance officers managing multiple regulatory requirements"
+                "Banks and microfinance institutions",
+                "Large fintechs",
+                "Regulators and supervisory authorities"
             ],
             "results": [
                 "Reduce compliance costs by 30-40%",
@@ -235,10 +230,10 @@
         "panid": {
             "title": "Pan-ID",
             "tagline": "Cross-Border Identity Verification & Intelligence",
-            "status": "In Development - Expected Q2 2025",
+            "status": "Coming Soon",
             "description": "Prevent duplicate and synthetic identities across borders. Identity verification across Western, Central, and Northern Africa with biometric matching.",
-            "why_built": "Prevent duplicate and synthetic identities across borders. Detect identity misuse across Western, Central, and Northern Africa. Support identity verification when documents are lost, stolen, or unavailable.",
-            "what_you_can_do": "Identity existence verification across multiple national databases. ID-type confirmation (passport, national ID, driver's license, voter card). Facial-assisted and biometric verification for liveness and matching. Cross-jurisdiction identity reconciliation to detect duplicates. Continuous identity risk monitoring for changes and anomalies.",
+            "why_built": "Prevent duplicate and synthetic identities. Detect identity misuse across borders (Western, Central and Northern Africa). Support identity verification when documents are lost or unavailable.",
+            "what_you_can_do": "Identity existence and ID-type confirmation. Facial-assisted and biometric verification. Cross-jurisdiction identity reconciliation. Continuous identity risk monitoring.",
             "features": {
                 "f1_title": "Multi-Country Identity Verification",
                 "f1_desc": "Multi-country identity database integration. Biometric matching (facial recognition, fingerprint). Document authenticity verification.",
@@ -258,7 +253,7 @@
                 "Police and criminal investigation units",
                 "Passport offices, consulates, and embassies",
                 "Cross-border fintechs and remittance platforms",
-                "Hotels (for check-in verification purposes only)"
+                "Hotels (for check-in purposes only)"
             ],
             "expected_outcomes": [
                 "Reduce identity fraud by 70%",
@@ -285,15 +280,15 @@
             ]
         },
         "mission": {
-            "title": "Our Mission",
+            "title": "Our Goal: Helping Users Achieve Next Level",
             "items": [
-                "AML transaction monitoring that meets regulatory standards",
-                "Internal and external fraud protection with defense-in-depth",
-                "Account takeover prevention through behavioral analysis",
-                "SIM swap fraud and money mule detection in real-time",
-                "Investment scam detection before customers lose money",
-                "Duplicate account prevention across platforms",
-                "Credit scoring and risk intelligence for better decisions"
+                "AML transaction monitoring",
+                "Internal and external fraud protection",
+                "Account takeover prevention",
+                "SIM swap fraud and money mulling detection",
+                "Investment scam detection",
+                "Duplicate account prevention",
+                "Credit scoring and risk intelligence"
             ]
         },
         "geographic_coverage": {

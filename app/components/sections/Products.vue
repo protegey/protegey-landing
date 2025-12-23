@@ -210,7 +210,7 @@ onMounted(async () => {
                             </div>
                             <span
                                 class="text-[10px] font-bold px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 tracking-tighter uppercase whitespace-nowrap">
-                                Expected Q2 2025
+                                Coming Soon
                             </span>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-4">{{ $t('products.panid.title') }}</h3>
