@@ -4,6 +4,7 @@
     <div class="relative">
       <Hero />
       <WhyProtegey :isDark="isDark" />
+      <Products />
       <TrustedBy />
       <!-- <NetworkMap /> -->
       <!-- <Solution :isDark="isDark" />
@@ -19,6 +20,7 @@ import { onMounted } from 'vue'
 import { useTheme } from '~/composables/useTheme'
 import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
+import Products from '~/components/sections/Products.vue'
 import TrustedBy from '~/components/sections/TrustedBy.vue'
 // import NetworkMap from '~/components/sections/NetworkMap.vue'
 // import Solution from '~/components/sections/Solution.vue'
@@ -33,6 +35,7 @@ useHead({
   title: t('seo.index.title'),
   meta: [
     { name: 'description', content: t('seo.index.description') },
+    { name: 'keywords', content: t('seo.global.keywords') },
     // Open Graph
     { property: 'og:title', content: t('seo.index.title') },
     { property: 'og:description', content: t('seo.index.description') },
@@ -41,6 +44,9 @@ useHead({
     { name: 'twitter:title', content: t('seo.index.title') },
     { name: 'twitter:description', content: t('seo.index.description') },
     { name: 'twitter:image', content: t('seo.global.image') }
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://www.protegey.com' }
   ]
 })
 

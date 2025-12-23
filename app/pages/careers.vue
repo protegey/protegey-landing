@@ -39,9 +39,13 @@ useHead({
     title: t('seo.careers.title'),
     meta: [
         { name: 'description', content: t('seo.careers.description') },
+        { name: 'keywords', content: t('seo.global.keywords') },
         { property: 'og:title', content: t('seo.careers.title') },
         { property: 'og:description', content: t('seo.careers.description') },
         { name: 'twitter:image', content: t('seo.global.image') }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://www.protegey.com/careers' }
     ],
     script: [
         {

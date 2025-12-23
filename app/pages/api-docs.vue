@@ -37,9 +37,13 @@ useHead({
     title: t('seo.api_docs.title'),
     meta: [
         { name: 'description', content: t('seo.api_docs.description') },
+        { name: 'keywords', content: t('seo.global.keywords') },
         { property: 'og:title', content: t('seo.api_docs.title') },
         { property: 'og:description', content: t('seo.api_docs.description') },
         { name: 'twitter:image', content: t('seo.global.image') }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://www.protegey.com/api-docs' }
     ],
     script: [
         {

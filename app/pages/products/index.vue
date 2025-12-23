@@ -1,6 +1,7 @@
 <script setup>
 import ProductHero from '~/components/products/ProductHero.vue'
 import Products from '~/components/sections/Products.vue'
+import ProductSuiteDetails from '~/components/products/ProductSuiteDetails.vue'
 import ProductCTA from '~/components/products/ProductCTA.vue'
 
 const { t } = useI18n()
@@ -43,9 +44,10 @@ useHead({
 </script>
 
 <template>
-    <div class="relative min-h-screen bg-neutral-950">
+    <div class="relative min-h-screen bg-neutral-950 overflow-hidden">
         <ProductHero />
         <Products />
+        <ProductSuiteDetails />
         <ProductCTA />
     </div>
 </template>

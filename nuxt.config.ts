@@ -16,11 +16,8 @@ export default defineNuxtConfig({
       { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français' }
     ],
     defaultLocale: 'en',
-    fallbackLocale: 'en',
-    lazy: true,
-    langDir: './locales',
+    langDir: 'locales',
     strategy: 'prefix_except_default',
-    seo: true,
     compilation: {
       strictMessage: false
     },
@@ -47,19 +44,21 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Protegey",
+      title: "Protegey | Unified Anti-Fraud Engine for Africa",
       htmlAttrs: {
         lang: "en",
       },
       meta: [
-        //author
         { name: "author", content: "Protegey" },
-        // Mobile & PWA basics (optional)
         { name: "mobile-web-app-title", content: "Protegey" },
         { name: "mobile-web-app-capable", content: "yes" },
         { name: "mobile-web-app-status-bar-style", content: "black" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "theme-color", content: "#0E1225" },
+        { property: "og:site_name", content: "Protegey" },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@ProtegeyHQ" },
       ],
       script: [
         {
@@ -71,8 +70,8 @@ export default defineNuxtConfig({
       ],
       link: [
         // Favicon setup (update paths to match your assets)
-        { rel: "icon", type: "image/png", href: "https://protegey.com/favicon.png" },
-        { rel: "apple-touch-icon", href: "https://protegey.com/apple-touch-icon.png" },
+        { rel: "icon", type: "image/png", href: "https://www.protegey.com/favicon.png" },
+        { rel: "apple-touch-icon", href: "https://www.protegey.com/apple-touch-icon.png" },
         // Preconnect to external image domains
         { rel: "preconnect", href: "https://images.squarespace-cdn.com" },
         { rel: "preconnect", href: "https://www.tonyelumelufoundation.org" },

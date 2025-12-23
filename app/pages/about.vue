@@ -42,9 +42,13 @@ useHead({
     title: t('seo.about.title'),
     meta: [
         { name: 'description', content: t('seo.about.description') },
+        { name: 'keywords', content: t('seo.global.keywords') },
         { property: 'og:title', content: t('seo.about.title') },
         { property: 'og:description', content: t('seo.about.description') },
         { name: 'twitter:image', content: t('seo.global.image') }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://www.protegey.com/about' }
     ],
     script: [
         {
