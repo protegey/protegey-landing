@@ -4,7 +4,7 @@
     <div class="relative">
       <Hero />
       <WhyProtegey :isDark="isDark" />
-      <Products />
+      <!-- <Products /> -->
       <TrustedBy />
       <!-- <NetworkMap /> -->
       <!-- <Solution :isDark="isDark" />
@@ -20,7 +20,7 @@ import { onMounted } from 'vue'
 import { useTheme } from '~/composables/useTheme'
 import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
-import Products from '~/components/sections/Products.vue'
+// import Products from '~/components/sections/Products.vue'
 import TrustedBy from '~/components/sections/TrustedBy.vue'
 // import NetworkMap from '~/components/sections/NetworkMap.vue'
 // import Solution from '~/components/sections/Solution.vue'
