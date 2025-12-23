@@ -5,7 +5,9 @@
         "contact": "Contact",
         "products": "Products",
         "request_demo": "Request Demo",
-        "home": "Home"
+        "home": "Home",
+        "open_menu": "Open menu",
+        "close_menu": "Close menu"
     },
     "hero": {
         "badge": "FRAUD INTELLIGENCE NETWORK",
@@ -306,7 +308,16 @@
             "title_highlight": "Security Infrastructure",
             "subtitle": "A comprehensive suite of tools designed to detect, synchronize, and prevent fraud in real-time across the continent."
         },
+        "explore": "Explore",
+        "coming_soon": "Coming Soon",
         "back_to_all": "Back to All Products",
+        "why_built_title": "Why we built it",
+        "what_you_can_do_title": "What you can do with it",
+        "core_capabilities": "Core Capabilities",
+        "target_users_title": "Who we built it for",
+        "results_title": "Results you can expect",
+        "how_it_works_title": "How it works",
+        "deployment_suffix": "Deployment",
         "cta": {
             "title": "Ready to Secure Your Network?",
             "subtitle": "Join the waitlist for early access or contact our sales team to discuss enterprise integration.",
@@ -336,6 +347,13 @@
             "submitting": "Submitting..."
         },
         "privacy": "We respect your privacy. No spam — ever.",
+        "success_message": "Thank you for submitting your request, we'll get back to you shortly",
+        "errors": {
+            "name_email": "Please provide your name and email to continue",
+            "interest": "Please let us know what you are interested in",
+            "company_email": "Please use a company email address (e.g., name{'@'}company.com)",
+            "submit_error": "There was an error submitting your request. Please try again."
+        },
         "roles": {
             "ceo": "CEO / Founder",
             "cto": "CTO / Tech Lead",
@@ -363,7 +381,11 @@
             "api_docs": "API Docs",
             "privacy": "Privacy"
         },
-        "copyright": "© {year} Protegey Inc. All rights reserved."
+        "copyright": "© {year} Protegey Inc. All rights reserved.",
+        "aria_footer": "Site Footer",
+        "logo_alt": "Protegey Logo",
+        "social_linkedin": "LinkedIn",
+        "social_twitter": "X (Twitter)"
     },
     "about": {
         "title": "About Us",

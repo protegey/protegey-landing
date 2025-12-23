@@ -90,7 +90,7 @@ onMounted(async () => {
 
                     <div
                         class="mt-auto flex items-center text-primary-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
-                        Explore
+                        {{ $t('products.explore') }}
                         <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
                     </div>
                 </NuxtLink>
@@ -115,7 +115,7 @@ onMounted(async () => {
 
                     <div
                         class="mt-auto flex items-center text-violet-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
-                        Explore
+                        {{ $t('products.explore') }}
                         <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
                     </div>
                 </NuxtLink>
@@ -140,7 +140,7 @@ onMounted(async () => {
 
                     <div
                         class="mt-auto flex items-center text-emerald-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
-                        Explore
+                        {{ $t('products.explore') }}
                         <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
                     </div>
                 </NuxtLink>
@@ -165,7 +165,7 @@ onMounted(async () => {
 
                     <div
                         class="mt-auto flex items-center text-amber-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
-                        Explore
+                        {{ $t('products.explore') }}
                         <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
                     </div>
                 </NuxtLink>
@@ -190,7 +190,7 @@ onMounted(async () => {
 
                     <div
                         class="mt-auto flex items-center text-violet-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
-                        Explore
+                        {{ $t('products.explore') }}
                         <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
                     </div>
                 </NuxtLink>
@@ -210,7 +210,7 @@ onMounted(async () => {
                             </div>
                             <span
                                 class="text-[10px] font-bold px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 tracking-tighter uppercase whitespace-nowrap">
-                                Coming Soon
+                                {{ $t('products.coming_soon') }}
                             </span>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-4">{{ $t('products.panid.title') }}</h3>
@@ -221,7 +221,7 @@ onMounted(async () => {
 
                     <div
                         class="mt-auto flex items-center text-cyan-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
-                        Coming Soon
+                        {{ $t('products.coming_soon') }}
                         <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
                     </div>
                 </NuxtLink>

@@ -22,7 +22,7 @@ const scrollTo = (selector) => {
     <div class="container mx-auto px-4 h-20 flex items-center justify-between">
       <div class="flex items-center gap-4">
         <NuxtLink :to="localePath('/')" class="flex items-center">
-          <img src="~/assets/images/logo.png" alt="Protegey Logo" class="w-14 h-14 object-contain"></img>
+          <img src="~/assets/images/logo.png" :alt="$t('footer.logo_alt')" class="w-14 h-14 object-contain"></img>
           <span class="text-xl font-bold text-white tracking-tight">Protegey</span>
         </NuxtLink>
       </div>
@@ -51,7 +51,8 @@ const scrollTo = (selector) => {
           {{ locale === 'en' ? 'FR' : 'EN' }}
         </NuxtLink>
         <!-- <ThemeToggle /> -->
-        <button @click="toggleMenu" :aria-expanded="isOpen" :aria-label="isOpen ? 'Close menu' : 'Open menu'"
+        <button @click="toggleMenu" :aria-expanded="isOpen"
+          :aria-label="isOpen ? $t('nav.close_menu') : $t('nav.open_menu')"
           class="p-2 rounded-md border border-neutral-800 text-neutral-300">
           <svg v-if="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
             fill="currentColor">

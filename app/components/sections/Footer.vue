@@ -1,12 +1,12 @@
 <template>
-  <footer role="contentinfo" aria-label="Site Footer"
+  <footer role="contentinfo" :aria-label="$t('footer.aria_footer')"
     class="relative z-10 py-12 px-6 border-t border-neutral-900 bg-neutral-950">
     <div class="container mx-auto max-w-6xl">
       <div class="grid md:grid-cols-5 gap-8 mb-8">
         <!-- Brand -->
         <div>
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2 mb-4">
-            <img src="~/assets/images/logo.png" alt="Protegey Logo" class="w-14 h-14 object-contain"></img>
+            <img src="~/assets/images/logo.png" :alt="$t('footer.logo_alt')" class="w-14 h-14 object-contain"></img>
             <span class="text-lg font-bold text-white">PROTEGEY</span>
           </NuxtLink>
           <p class="text-sm text-neutral-400">{{ $t('footer.slogan') }}</p>
@@ -94,16 +94,16 @@
           <h3 class="font-semibold mb-4 text-white">{{ $t('footer.connect') }}</h3>
           <div class="flex gap-4">
             <a href="https://www.linkedin.com/company/protegeyhq/" target="_blank" rel="noopener noreferrer"
-              class="text-neutral-400 hover:text-primary-400 transition-colors" aria-label="LinkedIn"
-              data-testid="link-linkedin">
+              class="text-neutral-400 hover:text-primary-400 transition-colors"
+              :aria-label="$t('footer.social_linkedin')" data-testid="link-linkedin">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.5 19.5H5.5V9h3v10.5zM7 7.8c-.9 0-1.6-.8-1.6-1.7 0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6 0 .9-.7 1.7-1.6 1.7zM20 19.5h-3v-5.5c0-1.3-.5-2.2-1.6-2.2-1 0-1.5.7-1.8 1.4-.1.3-.1.8-.1 1.2V19.5h-3V9h3v1.4c.4-.6 1.3-1.6 3-1.6 2.2 0 3.9 1.5 3.9 4.9V19.5z" />
               </svg>
             </a>
             <a href="https://x.com/ProtegeyHQ" target="_blank" rel="noopener noreferrer"
-              class="text-neutral-400 hover:text-primary-400 transition-colors" aria-label="X (Twitter)"
-              data-testid="link-x">
+              class="text-neutral-400 hover:text-primary-400 transition-colors"
+              :aria-label="$t('footer.social_twitter')" data-testid="link-x">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M24 4.6c-.9.4-1.9.7-2.9.8 1-0.6 1.7-1.6 2.1-2.8-1 0.6-2.1 1-3.3 1.2-1-1-2.5-1.6-4-1.6-3 0-5.3 2.8-4.6 5.9-3.9-.2-7.4-2.1-9.7-5.3-1.3 2.2-.6 5 1.3 6.3-0.8 0-1.5-0.2-2.2-0.6 0 2.3 1.6 4.3 3.8 4.7-0.7 0.2-1.4 0.3-2.1 0.1 0.6 2 2.4 3.4 4.5 3.5-2 1.5-4.5 2-6.8 1.4 2.5 1.6 5.4 2.5 8.5 2.5 10.2 0 15.8-8.8 15.8-16.3v-0.7c1.1-0.8 2-1.7 2.8-2.8-1 0.5-2 0.8-3.1 1" />

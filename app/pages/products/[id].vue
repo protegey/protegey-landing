@@ -78,7 +78,7 @@ useHead({
                     {
                         "@type": "ListItem",
                         "position": 1,
-                        "name": "Home",
+                        "name": t('nav.home'),
                         "item": "https://www.protegey.com"
                     },
                     {
@@ -138,26 +138,25 @@ useHead({
                     </div>
                 </div>
 
-                <!-- Three Pillar Sections -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-32">
+                <!-- Two Pillar Sections -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-32">
                     <!-- Why we built it -->
                     <div class="p-10 rounded-[2.5rem] bg-neutral-900/30 border border-neutral-800 flex flex-col">
                         <div
                             class="w-12 h-12 rounded-2xl bg-violet-500/10 text-violet-400 flex items-center justify-center mb-6">
                             <HugeiconsIcon :icon="UserGroupIcon" :size="24" />
                         </div>
-                        <h2 class="text-2xl font-bold text-white mb-6">Why we built it</h2>
+                        <h2 class="text-2xl font-bold text-white mb-6">{{ $t('products.why_built_title') }}</h2>
                         <p class="text-neutral-400 leading-relaxed">{{ $t(`products.${productId}.why_built`) }}</p>
                     </div>
 
                     <!-- What you can do -->
-                    <div
-                        class="lg:col-span-2 p-10 rounded-[2.5rem] bg-neutral-900/30 border border-neutral-800 flex flex-col">
+                    <div class="p-10 rounded-[2.5rem] bg-neutral-900/30 border border-neutral-800 flex flex-col">
                         <div
                             class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6">
                             <HugeiconsIcon :icon="ZapIcon" :size="24" />
                         </div>
-                        <h2 class="text-2xl font-bold text-white mb-6">What you can do with it</h2>
+                        <h2 class="text-2xl font-bold text-white mb-6">{{ $t('products.what_you_can_do_title') }}</h2>
                         <p class="text-neutral-400 leading-relaxed">{{ $t(`products.${productId}.what_you_can_do`) }}
                         </p>
                     </div>
@@ -191,7 +190,7 @@ useHead({
                     <div class="space-y-8">
                         <h2 class="text-4xl font-bold text-white mb-12 flex items-center gap-4">
                             <span class="w-1.5 h-10 bg-primary-500 rounded-full"></span>
-                            Core Capabilities
+                            {{ $t('products.core_capabilities') }}
                         </h2>
                         <div class="grid gap-4">
                             <div v-for="(cap, index) in tm(`products.${productId}.capabilities`)" :key="index"
@@ -209,7 +208,7 @@ useHead({
                     <div class="space-y-8">
                         <h2 class="text-4xl font-bold text-white mb-12 flex items-center gap-4">
                             <span class="w-1.5 h-10 bg-violet-500 rounded-full"></span>
-                            Who we built it for
+                            {{ $t('products.target_users_title') }}
                         </h2>
                         <div class="grid gap-4">
                             <div v-for="(user, index) in tm(`products.${productId}.target_users`)" :key="index"
@@ -226,7 +225,7 @@ useHead({
 
                 <!-- Results -->
                 <div class="mb-32">
-                    <h2 class="text-4xl font-bold text-white mb-16 text-center">Results you can expect</h2>
+                    <h2 class="text-4xl font-bold text-white mb-16 text-center">{{ $t('products.results_title') }}</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div v-for="(result, index) in (tm(`products.${productId}.results`).length ? tm(`products.${productId}.results`) : tm(`products.${productId}.expected_outcomes`))"
                             :key="index"
@@ -242,13 +241,13 @@ useHead({
                 </div>
 
                 <!-- Extras: How it works / Deployment Options -->
-                <div v-if="$te(`products.${productId}.how_it_works`) || $te(`products.${productId}.deployment_options`)"
+                <!-- <div v-if="$te(`products.${productId}.how_it_works`) || $te(`products.${productId}.deployment_options`)"
                     class="mb-32">
                     <div v-if="$te(`products.${productId}.how_it_works`)"
                         class="max-w-4xl mx-auto p-10 md:p-16 rounded-[3rem] bg-indigo-500/5 border border-indigo-500/20">
                         <h2 class="text-3xl font-bold text-white mb-8 flex items-center gap-3">
                             <HugeiconsIcon :icon="HelpCircleIcon" :size="28" class="text-indigo-400" />
-                            How it works
+                            {{ $t('products.how_it_works_title') }}
                         </h2>
                         <p class="text-xl text-neutral-300 leading-relaxed italic">
                             {{ $t(`products.${productId}.how_it_works`) }}
@@ -260,11 +259,11 @@ useHead({
                         <div v-for="(val, key) in tm(`products.${productId}.deployment_options`)" :key="key"
                             class="p-10 rounded-[2.5rem] bg-neutral-900/50 border border-neutral-800">
                             <h3 class="text-xl font-bold text-primary-400 uppercase tracking-widest mb-4">{{ key }}
-                                Deployment</h3>
+                                {{ $t('products.deployment_suffix') }}</h3>
                             <p class="text-lg text-neutral-300">{{ rt(val) }}</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- CTA -->
                 <ProductCTA />

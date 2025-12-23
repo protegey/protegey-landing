@@ -5,7 +5,9 @@
         "contact": "Contact",
         "products": "Produits",
         "request_demo": "Demander une démo",
-        "home": "Accueil"
+        "home": "Accueil",
+        "open_menu": "Ouvrir le menu",
+        "close_menu": "Fermer le menu"
     },
     "hero": {
         "badge": "RÉSEAU DE RENSEIGNEMENT SUR LA FRAUDE",
@@ -306,7 +308,16 @@
             "title_highlight": "de Sécurité en Afrique",
             "subtitle": "Une suite complète d'outils conçus pour détecter, synchroniser et prévenir la fraude en temps réel sur tout le continent."
         },
+        "explore": "Explorer",
+        "coming_soon": "Bientôt Disponible",
         "back_to_all": "Retour aux Produits",
+        "why_built_title": "Pourquoi nous l'avons construit",
+        "what_you_can_do_title": "Ce que vous pouvez en faire",
+        "core_capabilities": "Capacités de base",
+        "target_users_title": "Pour qui nous l'avons construit",
+        "results_title": "Résultats escomptés",
+        "how_it_works_title": "Comment ça fonctionne",
+        "deployment_suffix": "Déploiement",
         "cta": {
             "title": "Prêt à Sécuriser Votre Réseau ?",
             "subtitle": "Rejoignez la liste d'attente pour un accès anticipé ou contactez notre équipe commerciale pour une intégration entreprise.",
@@ -336,6 +347,13 @@
             "submitting": "Envoi en cours..."
         },
         "privacy": "Nous respectons votre vie privée. Pas de spam — jamais.",
+        "success_message": "Merci pour votre demande, nous vous répondrons sous peu",
+        "errors": {
+            "name_email": "Veuillez fournir votre nom et votre adresse e-mail pour continuer",
+            "interest": "Veuillez nous indiquer ce qui vous intéresse",
+            "company_email": "Veuillez utiliser une adresse e-mail professionnelle (ex: nom{'@'}entreprise.com)",
+            "submit_error": "Une erreur est survenue lors de l'envoi de votre demande. Veuillez réessayer."
+        },
         "roles": {
             "ceo": "PDG / Fondateur",
             "cto": "CTO / Responsable Tech",
@@ -363,7 +381,11 @@
             "api_docs": "Docs API",
             "privacy": "Confidentialité"
         },
-        "copyright": "© {year} Protegey Inc. Tous droits réservés."
+        "copyright": "© {year} Protegey Inc. Tous droits réservés.",
+        "aria_footer": "Pied de page",
+        "logo_alt": "Logo Protegey",
+        "social_linkedin": "LinkedIn",
+        "social_twitter": "X (Twitter)"
     },
     "about": {
         "title": "À Propos",

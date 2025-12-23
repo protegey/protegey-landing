@@ -55,7 +55,7 @@ useHead({
                     {
                         "@type": "ListItem",
                         "position": 1,
-                        "name": "Home",
+                        "name": t('nav.home'),
                         "item": "https://www.protegey.com"
                     },
                     {

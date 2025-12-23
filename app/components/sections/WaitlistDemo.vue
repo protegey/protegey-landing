@@ -37,12 +37,12 @@ const handleSubmit = async () => {
 
     // Basic validation: ensure name + email present and interest selected for waitlist
     if (!formData.value.name || !formData.value.email) {
-        submitError.value = 'Please provide your name and email to continue'
+        submitError.value = t('waitlist.errors.name_email')
         return
     }
 
     if (!formData.value.interestType) {
-        submitError.value = 'Please let us know what you are interested in'
+        submitError.value = t('waitlist.errors.interest')
         return
     }
 
@@ -51,7 +51,7 @@ const handleSubmit = async () => {
     const emailDomain = formData.value.email.split('@')[1]?.toLowerCase()
 
     if (publicDomains.includes(emailDomain)) {
-        submitError.value = 'Please use a company email address (e.g., name@company.com)'
+        submitError.value = t('waitlist.errors.company_email')
         return
     }
 
@@ -73,8 +73,7 @@ const handleSubmit = async () => {
         if (data.message) {
             submitMessage.value = data.message
         } else {
-            const interestLabel = interestOptions.value.find(o => o.value === formData.value.interestType)?.label || formData.value.interestType || 'Request'
-            submitMessage.value = `Thank you for submitting your request, we'll get back to you shortly`
+            submitMessage.value = t('waitlist.success_message')
         }
 
         if (!data.isDuplicate) {
@@ -82,7 +81,7 @@ const handleSubmit = async () => {
         }
     } catch (err) {
         console.error('Failed to submit form', err)
-        submitError.value = 'There was an error submitting your request. Please try again.'
+        submitError.value = t('waitlist.errors.submit_error')
     } finally {
         isSubmitting.value = false
     }
@@ -182,13 +181,13 @@ onMounted(() => {
                             <select id="role" v-model="formData.role" required :aria-label="$t('waitlist.form.role')"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
                                 <option value="" disabled class="bg-neutral-900">{{ $t('waitlist.form.role_placeholder')
-                                }}</option>
+                                    }}</option>
                                 <option value="CEO / Founder" class="bg-neutral-900">{{ $t('waitlist.roles.ceo') }}
                                 </option>
                                 <option value="CTO / Tech Lead" class="bg-neutral-900">{{ $t('waitlist.roles.cto') }}
                                 </option>
                                 <option value="Product Manager" class="bg-neutral-900">{{ $t('waitlist.roles.product')
-                                    }}
+                                }}
                                 </option>
                                 <option value="Risk / Compliance" class="bg-neutral-900">{{ $t('waitlist.roles.risk') }}
                                 </option>
@@ -204,7 +203,7 @@ onMounted(() => {
                             :aria-label="$t('waitlist.form.interest')"
                             class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
                             <option value="" disabled class="bg-neutral-900">{{ $t('waitlist.form.interest_placeholder')
-                            }}</option>
+                                }}</option>
                             <option v-for="option in interestOptions" :key="option.value" :value="option.value"
                                 class="bg-neutral-900">{{ option.label }}</option>
                         </select>
@@ -223,7 +222,7 @@ onMounted(() => {
                             :class="['flex-1 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-primary-500/20',
                                 isSubmitting ? 'opacity-60 cursor-not-allowed bg-neutral-700 text-neutral-400' : 'bg-primary-500 hover:bg-primary-400 text-neutral-950']">
                             <span>{{ isSubmitting ? $t('waitlist.form.submitting') : $t('waitlist.form.submit')
-                            }}</span>
+                                }}</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 7l5 5m0 0l-5 5m5-5H6" />
