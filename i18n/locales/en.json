@@ -240,7 +240,7 @@
                 "f1_title": "Multi-Country Identity Verification",
                 "f1_desc": "Verify individuals across multiple African countries from a single platform. Pan-ID connects national identity systems and applies biometric and document checks to confirm identities across fragmented and diverse ID environments.",
                 "f2_title": "Identity Graph & Risk Scoring",
-                "f2_desc": "Build a single identity view across borders. Pan-ID links records and activity to detect duplicates, synthetic identities, and fraud, delivering real-time risk scores for regional investigations."
+                "f2_desc": "Build a single identity view across borders. Pan-ID links records and activities to detect duplicates, synthetic identities, and fraud, delivering real-time risk scores for regional investigations."
             },
             "capabilities": [
                 "Multi-country identity database integration",
