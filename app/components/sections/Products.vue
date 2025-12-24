@@ -50,7 +50,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <section id="products" class="relative py-24 md:py-32 overflow-hidden bg-neutral-950">
+    <section id="products" class="relative py-6 md:py-12 overflow-hidden bg-neutral-950">
         <!-- Section Background Decor -->
         <div
             class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary-500/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2">
@@ -221,7 +221,7 @@ onMounted(async () => {
 
                     <div
                         class="mt-auto flex items-center text-cyan-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
-                        {{ $t('products.coming_soon') }}
+                        {{ $t('products.explore') }}
                         <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
                     </div>
                 </NuxtLink>

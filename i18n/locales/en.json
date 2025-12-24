@@ -140,10 +140,10 @@
             "description": "Leverage the power of Africa's first shared fraud intelligence network. Access real-time early warnings from 50+ institutions to stop known fraudsters before they hit your system.",
             "why_built": "Stop repeat fraud across platforms. Detect organized and cross-border fraud rings across GIM-UEMOA, Northern Africa and GIMAC zones. Reduce blind spots in isolated systems.",
             "what_you_can_do": "Shared fraud signals without exposing customer data. Early warnings from confirmed fraud cases. Network-driven risk scoring.",
-            "how_it_works": "Signal uses privacy-preserving technology to share fraud patterns across our network. What's shared: Anonymized device fingerprints, behavioral patterns, fraud typologies. What's NOT shared: Customer names, account numbers, transaction amounts, or any PII. Who you're sharing with: Vetted financial institutions in the Signal consortium (banks, fintechs, telcos). Immediate value: Even as the first participant, you benefit from PROTEGEY's baseline fraud intelligence.",
+            "how_it_works": "Signal uses privacy-preserving technology to share fraud patterns across our network. What's shared: Anonymized device fingerprints, behavioral patterns, fraud typologies. What's NOT shared: Customer names, account numbers, transaction amounts, or any Personally Identifiable Information (PII). Who you're sharing with: Vetted financial institutions in the Signal consortium (banks, fintechs, telcos). Immediate value: Even as the first participant, you benefit from PROTEGEY's baseline fraud intelligence.",
             "features": {
                 "f1_title": "Privacy-Preserving Intelligence Sharing",
-                "f1_desc": "Share anonymized device fingerprints and behavioral patterns without exposing customer PII. Real-time fraud signal broadcasting across vetted financial institutions.",
+                "f1_desc": "Share anonymized device fingerprints and behavioral patterns without exposing Personally Identifiable Information (PII). Real-time fraud signal broadcasting across vetted financial institutions.",
                 "f2_title": "Cross-Border Fraud Detection",
                 "f2_desc": "Detect fraud rings operating across GIM-UEMOA, Northern Africa, and GIMAC zones. Regional fraud trend analysis and reporting."
             },
@@ -238,9 +238,9 @@
             "what_you_can_do": "Identity existence and ID-type confirmation. Facial-assisted and biometric verification. Cross-jurisdiction identity reconciliation. Continuous identity risk monitoring.",
             "features": {
                 "f1_title": "Multi-Country Identity Verification",
-                "f1_desc": "Multi-country identity database integration. Biometric matching (facial recognition, fingerprint). Document authenticity verification.",
+                "f1_desc": "Verify individuals across multiple African countries from a single platform. Pan-ID connects national identity systems and applies biometric and document checks to confirm identities across fragmented and diverse ID environments.",
                 "f2_title": "Identity Graph & Risk Scoring",
-                "f2_desc": "Identity graph mapping across jurisdictions. Real-time identity risk scoring. Cross-border duplicate detection."
+                "f2_desc": "Build a single identity view across borders. Pan-ID links records and activity to detect duplicates, synthetic identities, and fraud, delivering real-time risk scores for regional investigations."
             },
             "capabilities": [
                 "Multi-country identity database integration",

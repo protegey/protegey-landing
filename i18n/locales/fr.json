@@ -140,10 +140,10 @@
             "description": "Tirez parti de la puissance du premier réseau partagé de renseignement sur la fraude en Afrique. Accédez à des alertes précoces en temps réel provenant de plus de 50 institutions pour arrêter les fraudeurs connus avant qu'ils n'atteignent votre système.",
             "why_built": "Arrêtez la fraude répétée entre les plateformes. Détectez les réseaux de fraude organisés et transfrontaliers dans les zones GIM-UEMOA, Afrique du Nord et GIMAC. Réduisez les angles morts des systèmes isolés.",
             "what_you_can_do": "Signaux de fraude partagés sans exposer les données clients. Alertes précoces basées sur des cas de fraude confirmés. Scoring de risque piloté par le réseau.",
-            "how_it_works": "Signal utilise une technologie préservant la confidentialité pour partager les modèles de fraude sur notre réseau. Ce qui est partagé : Empreintes digitales d'appareils anonymisées, modèles comportementaux, typologies de fraude. Ce qui n'est PAS partagé : Noms de clients, numéros de compte, montants de transactions ou toute PII. Avec qui vous partagez : Institutions financières vérifiées dans le consortium Signal (banques, fintechs, opérateurs télécoms). Valeur immédiate : Même en tant que premier participant, vous bénéficiez du renseignement de fraude de base de PROTEGEY.",
+            "how_it_works": "Signal utilise une technologie préservant la confidentialité pour partager les modèles de fraude sur notre réseau. Ce qui est partagé : Empreintes digitales d'appareils anonymisées, modèles comportementaux, typologies de fraude. Ce qui n'est PAS partagé : Noms de clients, numéros de compte, montants de transactions ou toute donnée à caractère personnel (DCP). Avec qui vous partagez : Institutions financières vérifiées dans le consortium Signal (banques, fintechs, opérateurs télécoms). Valeur immédiate : Même en tant que premier participant, vous bénéficiez du renseignement de fraude de base de PROTEGEY.",
             "features": {
                 "f1_title": "Partage de Renseignement Préservant la Confidentialité",
-                "f1_desc": "Partage d'empreintes digitales d'appareils anonymisées et de modèles comportementaux sans exposer les PII des clients. Diffusion de signaux de fraude en temps réel sur les institutions financières vérifiées.",
+                "f1_desc": "Partage d'empreintes digitales d'appareils anonymisées et de modèles comportementaux sans exposer les données à caractère personnel (DCP). Diffusion de signaux de fraude en temps réel sur les institutions financières vérifiées.",
                 "f2_title": "Détection de Fraude Transfrontalière",
                 "f2_desc": "Détection de réseaux de fraude opérant dans les zones GIM-UEMOA, Afrique du Nord et GIMAC. Analyse et rapports des tendances de fraude régionales."
             },
@@ -238,9 +238,9 @@
             "what_you_can_do": "Confirmation de l'existence de l'identité et du type de pièce. Vérification faciale et biométrique. Réconciliation d'identité trans-juridictionnelle. Surveillance continue des risques liés à l'identité.",
             "features": {
                 "f1_title": "Vérification d'Identité Multi-Pays",
-                "f1_desc": "Intégration de bases de données d'identité multi-pays. Correspondance biométrique (reconnaissance faciale, empreinte digitale). Vérification de l'authenticité des documents.",
+                "f1_desc": "Vérifiez l'identité des personnes dans plusieurs pays africains depuis une plateforme unique. Pan-ID connecte les systèmes d'identité nationaux et effectue des contrôles biométriques et documentaires pour confirmer les identités dans des environnements d'identification fragmentés et diversifiés.",
                 "f2_title": "Graphe d'Identité & Scoring de Risque",
-                "f2_desc": "Cartographie du graphe d'identité à travers les juridictions. Scoring de risque d'identité en temps réel. Détection de doublons transfrontaliers."
+                "f2_desc": "Créez une vision unifiée de l'identité au-delà des frontières. Pan-ID relie les enregistrements et les activités pour détecter les doublons, les identités synthétiques et les fraudes, et fournit des scores de risque en temps réel pour les enquêtes régionales."
             },
             "capabilities": [
                 "Intégration de bases de données d'identité multi-pays.",
