@@ -65,8 +65,13 @@
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/products/panid')" class="hover:text-primary-400 transition-colors">
+              <NuxtLink :to="localePath('/products/panid')"
+                class="hover:text-primary-400 transition-colors flex items-center gap-2">
                 {{ $t('products.panid.title') }}
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary-500/10 text-primary-400 border border-primary-500/20 leading-none">
+                  {{ $t('products.panid.status') }}
+                </span>
               </NuxtLink>
             </li>
           </ul>
@@ -109,6 +114,13 @@
                   d="M24 4.6c-.9.4-1.9.7-2.9.8 1-0.6 1.7-1.6 2.1-2.8-1 0.6-2.1 1-3.3 1.2-1-1-2.5-1.6-4-1.6-3 0-5.3 2.8-4.6 5.9-3.9-.2-7.4-2.1-9.7-5.3-1.3 2.2-.6 5 1.3 6.3-0.8 0-1.5-0.2-2.2-0.6 0 2.3 1.6 4.3 3.8 4.7-0.7 0.2-1.4 0.3-2.1 0.1 0.6 2 2.4 3.4 4.5 3.5-2 1.5-4.5 2-6.8 1.4 2.5 1.6 5.4 2.5 8.5 2.5 10.2 0 15.8-8.8 15.8-16.3v-0.7c1.1-0.8 2-1.7 2.8-2.8-1 0.5-2 0.8-3.1 1" />
               </svg>
             </a>
+          </div>
+          <div class="mt-6">
+            <a href="https://www.producthunt.com/products/protegey?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-protegey"
+              target="_blank" rel="noopener noreferrer"><img
+                alt="Protegey - Anti Fraud engine For Francophone Africa. | Product Hunt" width="250" height="54"
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1053988&amp;theme=light&amp;t=1766574832866"
+                class="w-[180px] h-auto"></a>
           </div>
         </div>
       </div>

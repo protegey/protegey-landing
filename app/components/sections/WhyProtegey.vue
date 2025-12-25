@@ -48,7 +48,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <section id="whyprotegey" class="why-protegey-section relative py-16 sm:py-20 md:py-24 lg:py-32 bg-neutral-950">
+    <section id="why-protegey" class="why-protegey-section relative py-16 sm:py-20 md:py-24 lg:py-32 bg-neutral-950">
         <!-- Background Elements -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl">

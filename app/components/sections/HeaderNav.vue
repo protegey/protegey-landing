@@ -1,15 +1,29 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import ThemeToggle from '~/components/sections/ThemeToggle.vue'
 
 const { locale } = useI18n()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 const isOpen = ref(false)
+const isScrolled = ref(false)
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
 }
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+  handleScroll() // Initial check
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 
 const scrollTo = (selector) => {
   const el = document.getElementById(selector)
@@ -18,62 +32,93 @@ const scrollTo = (selector) => {
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
-    <div class="container mx-auto px-4 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-4">
-        <NuxtLink :to="localePath('/')" class="flex items-center">
-          <img src="~/assets/images/logo.png" :alt="$t('footer.logo_alt')" class="w-14 h-14 object-contain"></img>
-          <span class="text-xl font-bold text-white tracking-tight">Protegey</span>
-        </NuxtLink>
-      </div>
-      <div class="hidden md:flex items-center gap-8">
-        <NuxtLink :to="localePath('products')"
-          class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
-            $t('nav.products') }}</NuxtLink>
-      </div>
+  <header 
+    class="fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-in-out"
+    :class="[
+      isScrolled 
+        ? 'top-0 w-full bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800' 
+        : 'top-4 w-[95%] max-w-5xl bg-neutral-900/40 backdrop-blur-xl border border-neutral-700/30 rounded-3xl shadow-2xl'
+    ]"
+  >
+    <div 
+      class="container mx-auto px-6 transition-all duration-500"
+      :class="isScrolled ? 'h-16' : 'h-14'"
+    >
+      <div class="flex items-center justify-between h-full">
+        <div class="flex items-center gap-4">
+          <NuxtLink :to="localePath('/')" class="flex items-center gap-2">
+            <img src="~/assets/images/logo.png" :alt="$t('footer.logo_alt')" class="w-8 h-8 object-contain"></img>
+            <span class="text-lg font-bold text-white tracking-tight">Protegey</span>
+          </NuxtLink>
+        </div>
 
-      <div class="hidden md:flex items-center gap-4">
-        <NuxtLink :to="switchLocalePath(locale === 'en' ? 'fr' : 'en')"
-          class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">
-          {{ locale === 'en' ? 'FR' : 'EN' }}
-        </NuxtLink>
-        <!-- <ThemeToggle /> -->
-        <NuxtLink :to="localePath('/#waitlist')"
-          class="bg-primary-500 text-neutral-950 px-6 py-2.5 rounded-lg font-bold hover:bg-primary-400 transition-all shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40">
-          {{ $t('nav.request_demo') }}
-        </NuxtLink>
-      </div>
+        <div class="hidden md:flex items-center gap-8">
+          <NuxtLink :to="localePath('/') + '#why-protegey'"
+            class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
+              $t('nav.about') }}</NuxtLink>
+          <NuxtLink :to="localePath('products')"
+            class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
+              $t('nav.products') }}</NuxtLink>
+          <NuxtLink :to="localePath('/#waitlist')"
+            class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
+              $t('nav.contact') }}</NuxtLink>
+        </div>
 
-      <!-- Mobile -->
-      <div class="md:hidden flex items-center gap-4">
-        <NuxtLink :to="switchLocalePath(locale === 'en' ? 'fr' : 'en')"
-          class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">
-          {{ locale === 'en' ? 'FR' : 'EN' }}
-        </NuxtLink>
-        <!-- <ThemeToggle /> -->
-        <button @click="toggleMenu" :aria-expanded="isOpen"
-          :aria-label="isOpen ? $t('nav.close_menu') : $t('nav.open_menu')"
-          class="p-2 rounded-md border border-neutral-800 text-neutral-300">
-          <svg v-if="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-            fill="currentColor">
-            <path fill-rule="evenodd" d="M3 5h14v2H3V5zm0 4h14v2H3V9zm0 4h14v2H3v-2z" clip-rule="evenodd" />
-          </svg>
-          <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clip-rule="evenodd" />
-          </svg>
-        </button>
+        <div class="hidden md:flex items-center gap-4">
+          <NuxtLink :to="switchLocalePath(locale === 'en' ? 'fr' : 'en')"
+            class="text-neutral-400 hover:text-white font-medium text-xs transition-colors border border-neutral-800 px-2 py-1 rounded">
+            {{ locale === 'en' ? 'FR' : 'EN' }}
+          </NuxtLink>
+          <NuxtLink :to="localePath('/#waitlist')"
+            :class="[
+              'transition-all duration-300 font-bold text-sm',
+              isScrolled 
+                ? 'bg-primary-500 text-neutral-950 px-5 py-2 rounded-lg hover:bg-primary-400' 
+                : 'bg-white/10 text-white hover:bg-white/20 px-5 py-2 rounded-2xl backdrop-blur-sm'
+            ]"
+          >
+            {{ $t('nav.request_demo') }}
+          </NuxtLink>
+        </div>
+
+        <!-- Mobile -->
+        <div class="md:hidden flex items-center gap-4">
+          <NuxtLink :to="switchLocalePath(locale === 'en' ? 'fr' : 'en')"
+            class="text-neutral-400 hover:text-white font-medium text-xs transition-colors">
+            {{ locale === 'en' ? 'FR' : 'EN' }}
+          </NuxtLink>
+          <button @click="toggleMenu" :aria-expanded="isOpen"
+            :aria-label="isOpen ? $t('nav.close_menu') : $t('nav.open_menu')"
+            class="p-2 rounded-full border border-neutral-800 text-neutral-300">
+            <svg v-if="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd" d="M3 5h14v2H3V5zm0 4h14v2H3V9zm0 4h14v2H3v-2z" clip-rule="evenodd" />
+            </svg>
+            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
-    <div v-if="isOpen"
-      class="md:hidden fixed left-0 right-0 top-20 z-40 bg-neutral-950 border-t border-neutral-800 shadow-2xl">
-      <div class="px-4 py-3 flex flex-col gap-4">
+
+    <!-- Mobile Menu -->
+    <div v-show="isOpen"
+      class="md:hidden absolute left-0 right-0 top-full mt-2 mx-4 z-40 bg-neutral-900 border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300">
+      <div class="px-4 py-4 flex flex-col gap-4">
+        <NuxtLink :to="localePath('/') + '#why-protegey'" @click="toggleMenu"
+          class="text-neutral-400 hover:text-white font-medium text-base transition-colors px-2">{{ $t('nav.about') }}
+        </NuxtLink>
         <NuxtLink :to="localePath('products')" @click="toggleMenu"
-          class="text-neutral-400 hover:text-white font-medium text-base transition-colors">{{ $t('nav.products') }}
+          class="text-neutral-400 hover:text-white font-medium text-base transition-colors px-2">{{ $t('nav.products') }}
+        </NuxtLink>
+        <NuxtLink :to="localePath('/#waitlist')" @click="toggleMenu"
+          class="text-neutral-400 hover:text-white font-medium text-base transition-colors px-2">{{ $t('nav.contact') }}
         </NuxtLink>
         <NuxtLink
-          class="mt-2 bg-primary-500 text-neutral-950 px-6 py-3 rounded-lg font-bold hover:bg-primary-400 shadow-lg shadow-primary-500/20 text-center"
+          class="bg-primary-500 text-neutral-950 px-6 py-3 rounded-xl font-bold hover:bg-primary-400 shadow-lg shadow-primary-500/20 text-center"
           :to="localePath('/#waitlist')" @click="toggleMenu">{{ $t('nav.request_demo') }}</NuxtLink>
       </div>
     </div>
@@ -81,7 +126,8 @@ const scrollTo = (selector) => {
 </template>
 
 <style scoped>
-.container {
-  max-width: 1280px;
+header {
+  will-change: transform, width, top, border-radius;
 }
 </style>
+
