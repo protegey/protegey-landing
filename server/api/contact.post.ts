@@ -1,5 +1,5 @@
 import { Client } from '@notionhq/client'
-import { Resend } from 'resend'
+import { MailtrapClient } from 'mailtrap'
 
 export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig()
@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
     }
 
     const notion = new Client({ auth: config.notionApiKey })
-    const resend = config.resendApiKey ? new Resend(config.resendApiKey) : null
+    const mailtrap = config.mailtrapToken ? new MailtrapClient({ token: config.mailtrapToken }) : null
 
     try {
         const response = await notion.pages.create({
@@ -65,13 +65,12 @@ export default defineEventHandler(async (event) => {
             },
         })
 
-        // Send Notification Email to Admin (Optional, but good to have)
-        // For now, let's just send a confirmation to the user if resend is configured
-        if (resend) {
+        // Send Notification Email via Mailtrap
+        if (mailtrap) {
             try {
-                await resend.emails.send({
-                    from: 'Protegey Inc. <no-reply@mail.protegey.com>',
-                    to: body.email,
+                await mailtrap.send({
+                    from: { name: 'Protegey Inc.', email: 'no-reply@mail.protegey.com' },
+                    to: [{ email: body.email }],
                     subject: "Merci d'avoir contacté Protegey",
                     html: `
                         <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
@@ -92,7 +91,7 @@ export default defineEventHandler(async (event) => {
                     `
                 })
             } catch (emailError) {
-                console.error('Failed to send contact confirmation email:', emailError)
+                console.error('Failed to send contact confirmation email via Mailtrap:', emailError)
             }
         }
 

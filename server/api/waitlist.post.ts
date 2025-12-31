@@ -1,5 +1,5 @@
 import { Client } from '@notionhq/client'
-import { Resend } from 'resend'
+import { MailtrapClient } from 'mailtrap'
 
 export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig()
@@ -23,11 +23,11 @@ export default defineEventHandler(async (event) => {
     }
 
     const notion = new Client({ auth: config.notionApiKey })
-    const resend = config.resendApiKey ? new Resend(config.resendApiKey) : null
+    const mailtrap = config.mailtrapToken ? new MailtrapClient({ token: config.mailtrapToken }) : null
 
     try {
-        // Check for duplicates
-        // Use manual fetch because SDK notion.databases.query is missing/broken in this environment
+        // ... Check for duplicates logic ...
+        // (existing code remains same)
         const existing: any = await $fetch(`https://api.notion.com/v1/databases/${config.notionDatabaseId}/query`, {
             method: 'POST',
             headers: {
@@ -133,12 +133,12 @@ export default defineEventHandler(async (event) => {
             },
         })
 
-        // Send Confirmation Email
-        if (resend) {
+        // Send Confirmation Email via Mailtrap
+        if (mailtrap) {
             try {
-                await resend.emails.send({
-                    from: 'Protegey Inc. <no-reply@mail.protegey.com>', // Use resend default for testing, user should update
-                    to: body.email,
+                await mailtrap.send({
+                    from: { name: 'Protegey Inc.', email: 'no-reply@mail.protegey.com' },
+                    to: [{ email: body.email }],
                     subject: 'Bienvenue dans une nouvelle ère de l’intelligence antifraude en Afrique Francophone et en Afrique du Nord',
                     html: `
                         <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
@@ -181,8 +181,7 @@ export default defineEventHandler(async (event) => {
                     `
                 })
             } catch (emailError) {
-                console.error('Failed to send confirmation email:', emailError)
-                // correct - we don't want to fail the whole request if email fails
+                console.error('Failed to send confirmation email via Mailtrap:', emailError)
             }
         }
 
