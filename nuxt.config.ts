@@ -89,8 +89,8 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        { rel: "icon", type: "image/png", href: "https://www.protegey.com/favicon.png" },
-        { rel: "apple-touch-icon", href: "https://www.protegey.com/apple-touch-icon.png" },
+        { rel: "icon", type: "image/png", href: "/favicon.png" },
+        { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
         { rel: "preconnect", href: "https://images.squarespace-cdn.com" },
         { rel: "preconnect", href: "https://www.tonyelumelufoundation.org" },
       ],
