@@ -32,18 +32,12 @@ const scrollTo = (selector) => {
 </script>
 
 <template>
-  <header 
-    class="fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-in-out"
-    :class="[
-      isScrolled 
-        ? 'top-0 w-full bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800' 
-        : 'top-4 w-[95%] max-w-5xl bg-neutral-900/40 backdrop-blur-xl border border-neutral-700/30 rounded-3xl shadow-2xl'
-    ]"
-  >
-    <div 
-      class="container mx-auto px-6 transition-all duration-500"
-      :class="isScrolled ? 'h-16' : 'h-14'"
-    >
+  <header class="fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-in-out" :class="[
+    isScrolled
+      ? 'top-0 w-full bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800'
+      : 'top-4 w-[95%] max-w-7xl bg-neutral-900/40 backdrop-blur-xl border border-neutral-700/30 rounded-3xl shadow-2xl'
+  ]">
+    <div class="container mx-auto px-6 transition-all duration-500" :class="isScrolled ? 'h-16' : 'h-14'">
       <div class="flex items-center justify-between h-full">
         <div class="flex items-center gap-4">
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2">
@@ -69,14 +63,12 @@ const scrollTo = (selector) => {
             class="text-neutral-400 hover:text-white font-medium text-xs transition-colors border border-neutral-800 px-2 py-1 rounded">
             {{ locale === 'en' ? 'FR' : 'EN' }}
           </NuxtLink>
-          <NuxtLink :to="localePath('/#waitlist')"
-            :class="[
-              'transition-all duration-300 font-bold text-sm',
-              isScrolled 
-                ? 'bg-primary-500 text-neutral-950 px-5 py-2 rounded-lg hover:bg-primary-400' 
-                : 'bg-white/10 text-white hover:bg-white/20 px-5 py-2 rounded-2xl backdrop-blur-sm'
-            ]"
-          >
+          <NuxtLink :to="localePath('/#waitlist')" :class="[
+            'transition-all duration-300 font-bold text-sm',
+            isScrolled
+              ? 'bg-primary-500 text-neutral-950 px-5 py-2 rounded-lg hover:bg-primary-400'
+              : 'bg-white/10 text-white hover:bg-white/20 px-5 py-2 rounded-2xl backdrop-blur-sm'
+          ]">
             {{ $t('nav.request_demo') }}
           </NuxtLink>
         </div>
@@ -112,7 +104,8 @@ const scrollTo = (selector) => {
           class="text-neutral-400 hover:text-white font-medium text-base transition-colors px-2">{{ $t('nav.about') }}
         </NuxtLink>
         <NuxtLink :to="localePath('products')" @click="toggleMenu"
-          class="text-neutral-400 hover:text-white font-medium text-base transition-colors px-2">{{ $t('nav.products') }}
+          class="text-neutral-400 hover:text-white font-medium text-base transition-colors px-2">{{ $t('nav.products')
+          }}
         </NuxtLink>
         <NuxtLink :to="localePath('contact')" @click="toggleMenu"
           class="text-neutral-400 hover:text-white font-medium text-base transition-colors px-2">{{ $t('nav.contact') }}
@@ -130,4 +123,3 @@ header {
   will-change: transform, width, top, border-radius;
 }
 </style>
-
