@@ -489,11 +489,11 @@
     },
     "seo": {
         "global": {
-            "title": "Protegey — Centralized Anti-Fraud Engine for Africa",
-            "description": "Protegey is Africa's premier unified anti-fraud network. We aggregate intelligence from banks, telcos, and regulators to detect and prevent fraud across Western, Central, and Northern Africa in real-time.",
-            "keywords": "fraud intelligence Africa, anti-fraud network, transaction monitoring, AML compliance, identity verification, Fintech security, banking fraud prevention, mobile money security, GIM-UEMOA, GIMAC, Northern Africa fraud detection",
+            "title": "Protegey — Unified Fraud Intelligence Engine for Francophone and Northern Africa",
+            "description": "Protegey is the premier unified fraud intelligence network for Francophone and Northern Africa. We aggregate intelligence from banks, telcos, and regulators to detect and prevent fraud in real-time.",
+            "keywords": "fraud intelligence Africa, anti-fraud network, transaction monitoring, AML compliance, identity verification, Fintech security, banking fraud prevention, mobile money security, GIM-UEMOA, GIMAC, Northern Africa fraud detection, Francophone Africa fraud prevention",
             "image": "https://www.protegey.com/og-image.png",
-            "image_alt": "Protegey — Unified Anti-Fraud Engine"
+            "image_alt": "Protegey — Unified Fraud Intelligence Engine"
         },
         "index": {
             "title": "Protegey | Unified Fraud Intelligence for African Institutions",

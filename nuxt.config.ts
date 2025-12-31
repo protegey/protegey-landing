@@ -25,7 +25,7 @@ export default defineNuxtConfig({
       component: 'NuxtSeo',
       props: {
         title: 'Protegey',
-        description: 'Unified Anti-Fraud Engine for Africa',
+        description: 'Unified Fraud Intelligence Engine for Francophone and Northern Africa',
       }
     }
   },
@@ -68,7 +68,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Protegey | Unified Anti-Fraud Engine for Africa",
+      title: "Protegey | Unified Fraud Intelligence Engine for Francophone and Northern Africa",
       htmlAttrs: {
         // lang is handled dynamically by @nuxtjs/i18n
       },
