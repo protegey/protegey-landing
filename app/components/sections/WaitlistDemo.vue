@@ -8,13 +8,59 @@ const { t } = useI18n()
 const formData = ref({
     name: '',
     email: '',
+    phone: '',
     company: '',
     role: '',
+    businessModel: '',
+    stage: '',
+    sector: '',
+    painPoints: [],
+    otherPainPoint: '',
     interestType: '',
     message: ''
 })
 
 const ctaSection = ref(null)
+
+const roleOptions = computed(() => [
+    { value: 'CEO / Founder', label: t('waitlist.roles.ceo') },
+    { value: 'CTO / Tech Lead', label: t('waitlist.roles.cto') },
+    { value: 'Product Manager', label: t('waitlist.roles.product') },
+    { value: 'Risk / Compliance', label: t('waitlist.roles.risk') },
+    { value: 'Other', label: t('waitlist.roles.other') }
+])
+
+const businessModelOptions = computed(() => [
+    { value: 'B2B', label: t('waitlist.business_models.b2b') },
+    { value: 'B2C', label: t('waitlist.business_models.b2c') },
+    { value: 'B2B2C', label: t('waitlist.business_models.b2b2c') },
+    { value: 'Other', label: t('waitlist.business_models.other') }
+])
+
+const stageOptions = computed(() => [
+    { value: '1-1000', label: t('waitlist.stages.range_1') },
+    { value: '1001 to 5000', label: t('waitlist.stages.range_2') },
+    { value: '5001 to 10,000', label: t('waitlist.stages.range_3') },
+    { value: '+10,000', label: t('waitlist.stages.range_4') }
+])
+
+const sectorOptions = computed(() => [
+    { value: 'Fintech', label: t('waitlist.sectors.fintech') },
+    { value: 'Bank', label: t('waitlist.sectors.bank') },
+    { value: 'MFi', label: t('waitlist.sectors.mfi') },
+    { value: 'Digital Lender', label: t('waitlist.sectors.digital_lender') },
+    { value: 'E-commerce', label: t('waitlist.sectors.ecommerce') },
+    { value: 'Govt Agency', label: t('waitlist.sectors.govt') },
+    { value: 'Other', label: t('waitlist.sectors.other') }
+])
+
+const painPointOptions = computed(() => [
+    { value: 'Risk and Compliance', label: t('waitlist.pain_points.risk') },
+    { value: 'Fraud Detection', label: t('waitlist.pain_points.fraud') },
+    { value: 'ID Verification', label: t('waitlist.pain_points.id') },
+    { value: 'AML/Transaction Monitoring', label: t('waitlist.pain_points.aml') },
+    { value: 'Other', label: t('waitlist.pain_points.other') }
+])
 
 const interestOptions = computed(() => [
     { value: 'Early Access', label: t('waitlist.interests.early_access') },
@@ -77,7 +123,20 @@ const handleSubmit = async () => {
         }
 
         if (!data.isDuplicate) {
-            formData.value = { name: '', email: '', company: '', role: '', interestType: '', message: '' }
+            formData.value = {
+                name: '',
+                email: '',
+                phone: '',
+                company: '',
+                role: '',
+                businessModel: '',
+                stage: '',
+                sector: '',
+                painPoints: [],
+                otherPainPoint: '',
+                interestType: '',
+                message: ''
+            }
         }
     } catch (err) {
         console.error('Failed to submit form', err)
@@ -169,44 +228,109 @@ onMounted(() => {
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
+                            <label for="phone" class="block text-sm font-semibold mb-2 text-neutral-300">{{
+                                $t('waitlist.form.phone') }}</label>
+                            <input id="phone" v-model="formData.phone" type="tel" required
+                                :placeholder="$t('waitlist.form.phone_placeholder')"
+                                class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500" />
+                        </div>
+                        <div>
                             <label for="company" class="block text-sm font-semibold mb-2 text-neutral-300">{{
                                 $t('waitlist.form.company') }}</label>
                             <input id="company" v-model="formData.company" type="text" required
                                 :placeholder="$t('waitlist.form.company_placeholder')"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500" />
                         </div>
+                    </div>
+
+                    <div>
+                        <label for="role" class="block text-sm font-semibold mb-2 text-neutral-300">{{
+                            $t('waitlist.form.role') }}</label>
+                        <select id="role" v-model="formData.role" required :aria-label="$t('waitlist.form.role')"
+                            class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
+                            <option value="" disabled class="bg-neutral-900">{{
+                                $t('waitlist.form.role_placeholder') }}</option>
+                            <option v-for="option in roleOptions" :key="option.value" :value="option.value"
+                                class="bg-neutral-900">{{ option.label }}</option>
+                        </select>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label for="role" class="block text-sm font-semibold mb-2 text-neutral-300">{{
-                                $t('waitlist.form.role') }}</label>
-                            <select id="role" v-model="formData.role" required :aria-label="$t('waitlist.form.role')"
+                            <label for="businessModel" class="block text-sm font-semibold mb-2 text-neutral-300">{{
+                                $t('waitlist.form.business_model') }}</label>
+                            <select id="businessModel" v-model="formData.businessModel" required
+                                :aria-label="$t('waitlist.form.business_model')"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
-                                <option value="" disabled class="bg-neutral-900">{{ $t('waitlist.form.role_placeholder')
+                                <option value="" disabled class="bg-neutral-900">{{
+                                    $t('waitlist.form.business_model_placeholder')
                                     }}</option>
-                                <option value="CEO / Founder" class="bg-neutral-900">{{ $t('waitlist.roles.ceo') }}
-                                </option>
-                                <option value="CTO / Tech Lead" class="bg-neutral-900">{{ $t('waitlist.roles.cto') }}
-                                </option>
-                                <option value="Product Manager" class="bg-neutral-900">{{ $t('waitlist.roles.product')
-                                }}
-                                </option>
-                                <option value="Risk / Compliance" class="bg-neutral-900">{{ $t('waitlist.roles.risk') }}
-                                </option>
-                                <option value="Other" class="bg-neutral-900">{{ $t('waitlist.roles.other') }}</option>
+                                <option v-for="option in businessModelOptions" :key="option.value" :value="option.value"
+                                    class="bg-neutral-900">{{ option.label }}</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="stage" class="block text-sm font-semibold mb-2 text-neutral-300">{{
+                                $t('waitlist.form.stage') }}</label>
+                            <select id="stage" v-model="formData.stage" required :aria-label="$t('waitlist.form.stage')"
+                                class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
+                                <option value="" disabled class="bg-neutral-900">{{
+                                    $t('waitlist.form.stage_placeholder')
+                                }}</option>
+                                <option v-for="option in stageOptions" :key="option.value" :value="option.value"
+                                    class="bg-neutral-900">{{ option.label }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="sector" class="block text-sm font-semibold mb-2 text-neutral-300">{{
+                                $t('waitlist.form.sector') }}</label>
+                            <select id="sector" v-model="formData.sector" required
+                                :aria-label="$t('waitlist.form.sector')"
+                                class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
+                                <option value="" disabled class="bg-neutral-900">{{
+                                    $t('waitlist.form.sector_placeholder')
+                                }}</option>
+                                <option v-for="option in sectorOptions" :key="option.value" :value="option.value"
+                                    class="bg-neutral-900">{{ option.label }}</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="interestType" class="block text-sm font-semibold mb-2 text-neutral-300">{{
+                                $t('waitlist.form.interest') }}</label>
+                            <select id="interestType" v-model="formData.interestType" required
+                                :aria-label="$t('waitlist.form.interest')"
+                                class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
+                                <option value="" disabled class="bg-neutral-900">{{
+                                    $t('waitlist.form.interest_placeholder')
+                                    }}</option>
+                                <option v-for="option in interestOptions" :key="option.value" :value="option.value"
+                                    class="bg-neutral-900">{{ option.label }}</option>
                             </select>
                         </div>
                     </div>
 
                     <div>
-                        <label for="interestType" class="block text-sm font-semibold mb-2 text-neutral-300">{{
-                            $t('waitlist.form.interest') }}</label>
-                        <select id="interestType" v-model="formData.interestType" required
-                            :aria-label="$t('waitlist.form.interest')"
-                            class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white">
-                            <option value="" disabled class="bg-neutral-900">{{ $t('waitlist.form.interest_placeholder')
-                                }}</option>
-                            <option v-for="option in interestOptions" :key="option.value" :value="option.value"
-                                class="bg-neutral-900">{{ option.label }}</option>
-                        </select>
+                        <label class="block text-sm font-semibold mb-3 text-neutral-300">{{
+                            $t('waitlist.form.pain_points') }}</label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <label v-for="option in painPointOptions" :key="option.value"
+                                class="flex items-center gap-3 p-3 bg-neutral-800/50 border border-neutral-700/50 rounded-xl cursor-pointer hover:bg-neutral-800 transition-colors">
+                                <input type="checkbox" :value="option.value" v-model="formData.painPoints"
+                                    class="w-5 h-5 rounded border-neutral-700 bg-neutral-900 text-primary-500 focus:ring-primary-500 focus:ring-offset-neutral-900">
+                                <span class="text-sm text-neutral-300 font-medium">{{ option.label }}</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div v-if="formData.painPoints.includes('Other')">
+                        <label for="otherPainPoint" class="block text-sm font-semibold mb-2 text-neutral-300">{{
+                            $t('waitlist.form.other_pain_point') }}</label>
+                        <textarea id="otherPainPoint" v-model="formData.otherPainPoint" rows="3"
+                            :placeholder="$t('waitlist.form.other_pain_point_placeholder')"
+                            class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none bg-neutral-800 text-white placeholder-neutral-500"></textarea>
                     </div>
 
                     <div>

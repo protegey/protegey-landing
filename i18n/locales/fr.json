@@ -336,15 +336,26 @@
             "name_placeholder": "Entrez votre nom complet",
             "email": "Adresse email",
             "email_placeholder": "Saisissez votre adresse courriel professionnelle",
+            "phone": "Numéro de téléphone",
+            "phone_placeholder": "Entrez votre numéro de téléphone (avec code pays)",
             "company": "Nom de l'entreprise",
             "company_placeholder": "Entrez le nom de votre entreprise",
-            "role": "Votre rôle",
-            "role_placeholder": "Sélectionnez votre rôle",
+            "role": "Poste",
+            "role_placeholder": "Sélectionnez votre poste",
+            "business_model": "Modèle d'affaires",
+            "business_model_placeholder": "Sélectionnez le modèle",
+            "stage": "Étape / Nombre d'utilisateurs",
+            "stage_placeholder": "Sélectionnez la tranche",
+            "sector": "Secteur",
+            "sector_placeholder": "Sélectionnez le secteur",
             "interest": "Type d'intérêt",
             "interest_placeholder": "Sélectionnez un intérêt",
+            "pain_points": "Principaux points de douleur (Sélectionnez tout ce qui s'applique)",
+            "other_pain_point": "Autre point de douleur",
+            "other_pain_point_placeholder": "Faites-nous part de vos autres points faibles",
             "message": "Message / Notes (Optionnel)",
             "message_placeholder": "Dites-nous un peu sur ce que vous êtes intéressé...",
-            "submit": "Commencer",
+            "submit": "Demander une démo",
             "submitting": "Envoi en cours..."
         },
         "privacy": "Nous respectons votre vie privée. Pas de spam — jamais.",
@@ -360,6 +371,34 @@
             "cto": "CTO / Responsable Tech",
             "product": "Chef de Produit",
             "risk": "Risque / Conformité",
+            "other": "Autre"
+        },
+        "business_models": {
+            "b2b": "B2B",
+            "b2c": "B2C",
+            "b2b2c": "B2B2C",
+            "other": "Autre"
+        },
+        "stages": {
+            "range_1": "1-1000",
+            "range_2": "1001 à 5000",
+            "range_3": "5001 à 10 000",
+            "range_4": "+10 000"
+        },
+        "sectors": {
+            "fintech": "Fintech",
+            "bank": "Banque",
+            "mfi": "IMF",
+            "digital_lender": "Prêteur digital",
+            "ecommerce": "E-commerce",
+            "govt": "Agence gouvernementale",
+            "other": "Autre"
+        },
+        "pain_points": {
+            "risk": "Risque et Conformité",
+            "fraud": "Détection de la fraude",
+            "id": "Vérification d'identité",
+            "aml": "AML/Suivi des transactions",
             "other": "Autre"
         },
         "interests": {

@@ -53,13 +53,13 @@ const scrollTo = (selector) => {
         </div>
 
         <div class="hidden md:flex items-center gap-8">
-          <NuxtLink :to="localePath('/') + '#why-protegey'"
+          <NuxtLink :to="localePath('/about')"
             class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
               $t('nav.about') }}</NuxtLink>
           <NuxtLink :to="localePath('products')"
             class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
               $t('nav.products') }}</NuxtLink>
-          <NuxtLink :to="localePath('/#waitlist')"
+          <NuxtLink :to="localePath('/contact')"
             class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
               $t('nav.contact') }}</NuxtLink>
         </div>

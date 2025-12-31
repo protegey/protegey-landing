@@ -336,15 +336,26 @@
             "name_placeholder": "Enter your full name",
             "email": "Email Address",
             "email_placeholder": "Enter your corporate email address",
+            "phone": "Phone Number",
+            "phone_placeholder": "Enter your phone number (with country code)",
             "company": "Company Name",
             "company_placeholder": "Enter your company name",
-            "role": "Your Role",
-            "role_placeholder": "Select your role",
+            "role": "Position",
+            "role_placeholder": "Select your position",
+            "business_model": "Business Model",
+            "business_model_placeholder": "Select business model",
+            "stage": "Stage / Number of Users",
+            "stage_placeholder": "Select user range",
+            "sector": "Sector",
+            "sector_placeholder": "Select sector",
             "interest": "Interest Type",
             "interest_placeholder": "Select interest",
+            "pain_points": "Main Pain Points (Select all that apply)",
+            "other_pain_point": "Other Pain Point",
+            "other_pain_point_placeholder": "Let us know about other pain points",
             "message": "Message / Notes (Optional)",
             "message_placeholder": "Tell us a little about what you're interested in...",
-            "submit": "Get Started",
+            "submit": "Request Demo",
             "submitting": "Submitting..."
         },
         "privacy": "We respect your privacy. No spam — ever.",
@@ -360,6 +371,34 @@
             "cto": "CTO / Tech Lead",
             "product": "Product Manager",
             "risk": "Risk / Compliance",
+            "other": "Other"
+        },
+        "business_models": {
+            "b2b": "B2B",
+            "b2c": "B2C",
+            "b2b2c": "B2B2C",
+            "other": "Other"
+        },
+        "stages": {
+            "range_1": "1-1000",
+            "range_2": "1001 to 5000",
+            "range_3": "5001 to 10,000",
+            "range_4": "+10,000"
+        },
+        "sectors": {
+            "fintech": "Fintech",
+            "bank": "Bank",
+            "mfi": "MFi",
+            "digital_lender": "Digital Lender",
+            "ecommerce": "E-commerce",
+            "govt": "Govt Agency",
+            "other": "Other"
+        },
+        "pain_points": {
+            "risk": "Risk and Compliance",
+            "fraud": "Fraud Detection",
+            "id": "ID Verification",
+            "aml": "AML/Transaction Monitoring",
             "other": "Other"
         },
         "interests": {

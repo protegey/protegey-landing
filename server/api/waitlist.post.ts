@@ -69,6 +69,9 @@ export default defineEventHandler(async (event) => {
                 Email: {
                     email: body.email,
                 },
+                Phone: {
+                    phone_number: body.phone || '',
+                },
                 Company: {
                     rich_text: [
                         {
@@ -81,7 +84,28 @@ export default defineEventHandler(async (event) => {
                 Role: {
                     multi_select: [
                         {
-                            name: body.role ? body.role.charAt(0).toUpperCase() + body.role.slice(1) : 'Other',
+                            name: body.role ? body.role : 'Other',
+                        },
+                    ],
+                },
+                'Business Model': {
+                    multi_select: body.businessModel ? [{ name: body.businessModel }] : [],
+                },
+                'Stage': {
+                    multi_select: body.stage ? [{ name: body.stage }] : [],
+                },
+                'Sector': {
+                    multi_select: body.sector ? [{ name: body.sector }] : [],
+                },
+                'Pain Points': {
+                    multi_select: (body.painPoints || []).map((p: string) => ({ name: String(p) })),
+                },
+                'Other Pain Point': {
+                    rich_text: [
+                        {
+                            text: {
+                                content: body.otherPainPoint || '',
+                            },
                         },
                     ],
                 },
