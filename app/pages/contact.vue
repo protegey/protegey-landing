@@ -55,21 +55,21 @@
                     <form @submit.prevent="handleSubmit" class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.name')
-                            }}</label>
+                                }}</label>
                             <input v-model="formData.name" type="text" required
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.name_placeholder')">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.email')
-                            }}</label>
+                                }}</label>
                             <input v-model="formData.email" type="email" required
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.email_placeholder')">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.message')
-                            }}</label>
+                                }}</label>
                             <textarea v-model="formData.message" rows="4" required
                                 class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors resize-none"
                                 :placeholder="$t('contact.form.message_placeholder')"></textarea>
@@ -140,43 +140,34 @@ const handleSubmit = async () => {
     }
 }
 
-useHead({
+useSeoMeta({
     title: t('seo.contact.title'),
-    meta: [
-        { name: 'description', content: t('seo.contact.description') },
-        { name: 'keywords', content: t('seo.global.keywords') },
-        { property: 'og:title', content: t('seo.contact.title') },
-        { property: 'og:description', content: t('seo.contact.description') },
-        { property: 'og:image', content: t('seo.global.image') },
-        { name: 'twitter:title', content: t('seo.contact.title') },
-        { name: 'twitter:description', content: t('seo.contact.description') },
-        { name: 'twitter:image', content: t('seo.global.image') }
-    ],
+    ogTitle: t('seo.contact.title'),
+    description: t('seo.contact.description'),
+    ogDescription: t('seo.contact.description'),
+    ogImage: t('seo.global.image'),
+    twitterCard: 'summary_large_image',
+    twitterTitle: t('seo.contact.title'),
+    twitterDescription: t('seo.contact.description'),
+    twitterImage: t('seo.global.image'),
+    twitterSite: '@ProtegeyHQ'
+})
+
+useSchemaOrg([
+    defineWebPage({
+        name: t('seo.contact.title'),
+    }),
+    defineBreadcrumb({
+        items: [
+            { name: t('nav.home'), item: '/' },
+            { name: t('nav.contact'), item: '/contact' }
+        ]
+    })
+])
+
+useHead({
     link: [
         { rel: 'canonical', href: 'https://www.protegey.com/contact' }
-    ],
-    script: [
-        {
-            type: 'application/ld+json',
-            innerHTML: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": t('nav.home'),
-                        "item": "https://www.protegey.com"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": t('nav.contact'),
-                        "item": "https://www.protegey.com/contact"
-                    }
-                ]
-            })
-        }
     ]
 })
 </script>

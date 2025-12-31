@@ -35,40 +35,34 @@
 <script setup>
 const { t } = useI18n()
 
-useHead({
+useSeoMeta({
     title: t('seo.careers.title'),
-    meta: [
-        { name: 'description', content: t('seo.careers.description') },
-        { name: 'keywords', content: t('seo.global.keywords') },
-        { property: 'og:title', content: t('seo.careers.title') },
-        { property: 'og:description', content: t('seo.careers.description') },
-        { name: 'twitter:image', content: t('seo.global.image') }
-    ],
+    ogTitle: t('seo.careers.title'),
+    description: t('seo.careers.description'),
+    ogDescription: t('seo.careers.description'),
+    ogImage: t('seo.global.image'),
+    twitterCard: 'summary_large_image',
+    twitterTitle: t('seo.careers.title'),
+    twitterDescription: t('seo.careers.description'),
+    twitterImage: t('seo.global.image'),
+    twitterSite: '@ProtegeyHQ'
+})
+
+useSchemaOrg([
+    defineWebPage({
+        name: t('seo.careers.title'),
+    }),
+    defineBreadcrumb({
+        items: [
+            { name: t('nav.home'), item: '/' },
+            { name: t('footer.links.careers'), item: '/careers' }
+        ]
+    })
+])
+
+useHead({
     link: [
         { rel: 'canonical', href: 'https://www.protegey.com/careers' }
-    ],
-    script: [
-        {
-            type: 'application/ld+json',
-            innerHTML: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": t('nav.home'),
-                        "item": "https://www.protegey.com"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": t('footer.links.careers'),
-                        "item": "https://www.protegey.com/careers"
-                    }
-                ]
-            })
-        }
     ]
 })
 </script>

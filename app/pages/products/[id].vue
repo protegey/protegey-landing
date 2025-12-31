@@ -49,53 +49,40 @@ const productSchema = computed(() => ({
     }
 }))
 
-useHead({
+useSeoMeta({
     title: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }),
-    meta: [
-        { name: 'description', content: t(`products.${productId}.description`) },
-        { name: 'keywords', content: t('seo.global.keywords') },
-        { property: 'og:title', content: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }) },
-        { property: 'og:description', content: t(`products.${productId}.description`) },
-        { property: 'og:image', content: t('seo.global.image') },
-        { name: 'twitter:title', content: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }) },
-        { name: 'twitter:description', content: t(`products.${productId}.description`) },
-        { name: 'twitter:image', content: t('seo.global.image') }
-    ],
+    ogTitle: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }),
+    description: t(`products.${productId}.description`),
+    ogDescription: t(`products.${productId}.description`),
+    ogImage: t('seo.global.image'),
+    twitterCard: 'summary_large_image',
+    twitterTitle: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }),
+    twitterDescription: t(`products.${productId}.description`),
+    twitterImage: t('seo.global.image'),
+    twitterSite: '@ProtegeyHQ'
+})
+
+useSchemaOrg([
+    defineProduct({
+        name: t(`products.${productId}.title`),
+        description: t(`products.${productId}.description`),
+        brand: { name: 'Protegey' },
+        offers: [
+            { url: `https://www.protegey.com/products/${productId}`, availability: 'https://schema.org/InStock' }
+        ]
+    }),
+    defineBreadcrumb({
+        items: [
+            { name: t('nav.home'), item: '/' },
+            { name: t('nav.products'), item: '/products' },
+            { name: t(`products.${productId}.title`), item: `/products/${productId}` }
+        ]
+    })
+])
+
+useHead({
     link: [
         { rel: 'canonical', href: `https://www.protegey.com/products/${productId}` }
-    ],
-    script: [
-        {
-            type: 'application/ld+json',
-            innerHTML: computed(() => JSON.stringify(productSchema.value))
-        },
-        {
-            type: 'application/ld+json',
-            innerHTML: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": t('nav.home'),
-                        "item": "https://www.protegey.com"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": t('nav.products'),
-                        "item": "https://www.protegey.com/products"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 3,
-                        "name": t(`products.${productId}.title`),
-                        "item": `https://www.protegey.com/products/${productId}`
-                    }
-                ]
-            })
-        }
     ]
 })
 </script>

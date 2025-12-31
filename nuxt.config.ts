@@ -4,10 +4,34 @@ export default defineNuxtConfig({
   site: {
     url: 'https://www.protegey.com',
     name: 'Protegey',
+    titleSeparator: '|',
+    defaultLocale: 'en',
+    templateTitle: '%s %separator %siteName',
   },
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/i18n', '@nuxtjs/seo'],
+  seo: {
+    redirectToCanonicalSiteUrl: true
+  },
+  sitemap: {
+    strictNuxtContentPaths: true,
+    autoI18n: true,
+    exclude: ['/api/**']
+  },
   robots: {
-    sitemap: 'https://www.protegey.com/sitemap_index.xml'
+    allow: ['/'],
+  },
+  ogImage: {
+    defaults: {
+      component: 'NuxtSeo',
+      props: {
+        title: 'Protegey',
+        description: 'Unified Anti-Fraud Engine for Africa',
+      }
+    }
+  },
+  linkChecker: {
+    enabled: true,
+    runOnBuild: true
   },
   i18n: {
     baseUrl: 'https://www.protegey.com',
@@ -46,7 +70,7 @@ export default defineNuxtConfig({
     head: {
       title: "Protegey | Unified Anti-Fraud Engine for Africa",
       htmlAttrs: {
-        lang: "en",
+        // lang is handled dynamically by @nuxtjs/i18n
       },
       meta: [
         { name: "author", content: "Protegey" },
@@ -55,10 +79,6 @@ export default defineNuxtConfig({
         { name: "mobile-web-app-status-bar-style", content: "black" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "theme-color", content: "#0E1225" },
-        { property: "og:site_name", content: "Protegey" },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:site", content: "@ProtegeyHQ" },
       ],
       script: [
         {
@@ -69,10 +89,8 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        // Favicon setup (update paths to match your assets)
         { rel: "icon", type: "image/png", href: "https://www.protegey.com/favicon.png" },
         { rel: "apple-touch-icon", href: "https://www.protegey.com/apple-touch-icon.png" },
-        // Preconnect to external image domains
         { rel: "preconnect", href: "https://images.squarespace-cdn.com" },
         { rel: "preconnect", href: "https://www.tonyelumelufoundation.org" },
       ],

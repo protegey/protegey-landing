@@ -31,20 +31,35 @@ import WaitlistDemo from '~/components/sections/WaitlistDemo.vue'
 const { isDark } = useTheme()
 const { t } = useI18n()
 
-useHead({
+useSeoMeta({
   title: t('seo.index.title'),
-  meta: [
-    { name: 'description', content: t('seo.index.description') },
-    { name: 'keywords', content: t('seo.global.keywords') },
-    // Open Graph
-    { property: 'og:title', content: t('seo.index.title') },
-    { property: 'og:description', content: t('seo.index.description') },
-    { property: 'og:image', content: t('seo.global.image') },
-    // Twitter
-    { name: 'twitter:title', content: t('seo.index.title') },
-    { name: 'twitter:description', content: t('seo.index.description') },
-    { name: 'twitter:image', content: t('seo.global.image') }
-  ],
+  ogTitle: t('seo.index.title'),
+  description: t('seo.index.description'),
+  ogDescription: t('seo.index.description'),
+  ogImage: t('seo.global.image'),
+  twitterCard: 'summary_large_image',
+  twitterTitle: t('seo.index.title'),
+  twitterDescription: t('seo.index.description'),
+  twitterImage: t('seo.global.image'),
+  twitterSite: '@ProtegeyHQ'
+})
+
+useSchemaOrg([
+  defineOrganization({
+    name: 'Protegey',
+    logo: 'https://www.protegey.com/logo.png',
+    sameAs: [
+      'https://twitter.com/ProtegeyHQ',
+      'https://www.linkedin.com/company/protegey'
+    ]
+  }),
+  defineWebSite({
+    name: 'Protegey',
+  }),
+  defineWebPage()
+])
+
+useHead({
   link: [
     { rel: 'canonical', href: 'https://www.protegey.com' }
   ]

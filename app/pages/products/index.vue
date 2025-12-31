@@ -6,39 +6,34 @@ import ProductCTA from '~/components/products/ProductCTA.vue'
 
 const { t } = useI18n()
 
-useHead({
+useSeoMeta({
     title: t('seo.products.title'),
-    meta: [
-        { name: 'description', content: t('seo.products.description') },
-        { property: 'og:title', content: t('seo.products.title') },
-        { property: 'og:description', content: t('seo.products.description') },
-        { property: 'og:image', content: t('seo.global.image') },
-        { name: 'twitter:title', content: t('seo.products.title') },
-        { name: 'twitter:description', content: t('seo.products.description') },
-        { name: 'twitter:image', content: t('seo.global.image') }
-    ],
-    script: [
-        {
-            type: 'application/ld+json',
-            innerHTML: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://www.protegey.com"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": t('nav.products'),
-                        "item": "https://www.protegey.com/products"
-                    }
-                ]
-            })
-        }
+    ogTitle: t('seo.products.title'),
+    description: t('seo.products.description'),
+    ogDescription: t('seo.products.description'),
+    ogImage: t('seo.global.image'),
+    twitterCard: 'summary_large_image',
+    twitterTitle: t('seo.products.title'),
+    twitterDescription: t('seo.products.description'),
+    twitterImage: t('seo.global.image'),
+    twitterSite: '@ProtegeyHQ'
+})
+
+useSchemaOrg([
+    defineWebPage({
+        name: t('seo.products.title'),
+    }),
+    defineBreadcrumb({
+        items: [
+            { name: t('nav.home'), item: '/' },
+            { name: t('nav.products'), item: '/products' }
+        ]
+    })
+])
+
+useHead({
+    link: [
+        { rel: 'canonical', href: 'https://www.protegey.com/products' }
     ]
 })
 </script>
