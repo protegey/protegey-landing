@@ -38,13 +38,6 @@
 <script setup>
 const { t } = useI18n()
 
-defineOgImageComponent('NuxtSeo', {
-    title: t('seo.about.title'),
-    description: t('seo.about.description'),
-    theme: '#0E1225',
-    colorMode: 'dark',
-})
-
 useSeoMeta({
     title: t('seo.about.title'),
     ogTitle: t('seo.about.title'),

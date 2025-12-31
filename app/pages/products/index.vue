@@ -6,13 +6,6 @@ import ProductCTA from '~/components/products/ProductCTA.vue'
 
 const { t } = useI18n()
 
-defineOgImageComponent('NuxtSeo', {
-    title: t('seo.products.title'),
-    description: t('seo.products.description'),
-    theme: '#0E1225',
-    colorMode: 'dark',
-})
-
 useSeoMeta({
     title: t('seo.products.title'),
     ogTitle: t('seo.products.title'),

@@ -53,13 +53,13 @@ const scrollTo = (selector) => {
         </div>
 
         <div class="hidden md:flex items-center gap-8">
-          <NuxtLink :to="localePath('/about')"
+          <NuxtLink :to="localePath('about')"
             class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
               $t('nav.about') }}</NuxtLink>
           <NuxtLink :to="localePath('products')"
             class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
               $t('nav.products') }}</NuxtLink>
-          <NuxtLink :to="localePath('/contact')"
+          <NuxtLink :to="localePath('contact')"
             class="text-neutral-400 hover:text-white font-medium text-sm transition-colors">{{
               $t('nav.contact') }}</NuxtLink>
         </div>
@@ -108,13 +108,13 @@ const scrollTo = (selector) => {
     <div v-show="isOpen"
       class="md:hidden absolute left-0 right-0 top-full mt-2 mx-4 z-40 bg-neutral-900 border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300">
       <div class="px-4 py-4 flex flex-col gap-4">
-        <NuxtLink :to="localePath('/') + '#why-protegey'" @click="toggleMenu"
+        <NuxtLink :to="localePath('about')" @click="toggleMenu"
           class="text-neutral-400 hover:text-white font-medium text-base transition-colors px-2">{{ $t('nav.about') }}
         </NuxtLink>
         <NuxtLink :to="localePath('products')" @click="toggleMenu"
           class="text-neutral-400 hover:text-white font-medium text-base transition-colors px-2">{{ $t('nav.products') }}
         </NuxtLink>
-        <NuxtLink :to="localePath('/#waitlist')" @click="toggleMenu"
+        <NuxtLink :to="localePath('contact')" @click="toggleMenu"
           class="text-neutral-400 hover:text-white font-medium text-base transition-colors px-2">{{ $t('nav.contact') }}
         </NuxtLink>
         <NuxtLink

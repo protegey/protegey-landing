@@ -49,13 +49,6 @@ const productSchema = computed(() => ({
     }
 }))
 
-defineOgImageComponent('NuxtSeo', {
-    title: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }),
-    description: t(`products.${productId}.description`),
-    theme: '#0E1225',
-    colorMode: 'dark',
-})
-
 useSeoMeta({
     title: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }),
     ogTitle: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }),
