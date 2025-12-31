@@ -55,17 +55,26 @@ useSeoMeta({
     twitterSite: '@ProtegeyHQ'
 })
 
-useSchemaOrg([
-    defineWebPage({
-        name: t('seo.privacy.title'),
-    }),
-    defineBreadcrumb({
-        items: [
-            { name: t('nav.home'), item: '/' },
-            { name: t('footer.links.privacy'), item: '/privacy' }
-        ]
+if (import.meta.server) {
+    defineOgImageComponent('NuxtSeo', {
+        title: t('seo.privacy.title'),
+        description: t('seo.privacy.description'),
+        theme: '#0E1225',
+        colorMode: 'dark',
     })
-])
+
+    useSchemaOrg([
+        defineWebPage({
+            name: t('seo.privacy.title'),
+        }),
+        defineBreadcrumb({
+            items: [
+                { name: t('nav.home'), item: '/' },
+                { name: t('footer.links.privacy'), item: '/privacy' }
+            ]
+        })
+    ])
+}
 
 useHead({
     link: [

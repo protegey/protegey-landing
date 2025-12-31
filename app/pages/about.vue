@@ -51,18 +51,27 @@ useSeoMeta({
     twitterSite: '@ProtegeyHQ'
 })
 
-useSchemaOrg([
-    defineAboutPage({
-        name: t('seo.about.title'),
+if (import.meta.server) {
+    defineOgImageComponent('NuxtSeo', {
+        title: t('seo.about.title'),
         description: t('seo.about.description'),
-    }),
-    defineBreadcrumb({
-        items: [
-            { name: t('nav.home'), item: '/' },
-            { name: t('footer.links.about'), item: '/about' }
-        ]
+        theme: '#0E1225',
+        colorMode: 'dark',
     })
-])
+
+    useSchemaOrg([
+        defineAboutPage({
+            name: t('seo.about.title'),
+            description: t('seo.about.description'),
+        }),
+        defineBreadcrumb({
+            items: [
+                { name: t('nav.home'), item: '/' },
+                { name: t('footer.links.about'), item: '/about' }
+            ]
+        })
+    ])
+}
 
 useHead({
     link: [

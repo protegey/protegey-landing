@@ -62,23 +62,32 @@ useSeoMeta({
     twitterSite: '@ProtegeyHQ'
 })
 
-useSchemaOrg([
-    defineProduct({
-        name: t(`products.${productId}.title`),
+if (import.meta.server) {
+    defineOgImageComponent('NuxtSeo', {
+        title: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }),
         description: t(`products.${productId}.description`),
-        brand: { name: 'Protegey' },
-        offers: [
-            { url: `https://www.protegey.com/products/${productId}`, availability: 'https://schema.org/InStock' }
-        ]
-    }),
-    defineBreadcrumb({
-        items: [
-            { name: t('nav.home'), item: '/' },
-            { name: t('nav.products'), item: '/products' },
-            { name: t(`products.${productId}.title`), item: `/products/${productId}` }
-        ]
+        theme: '#0E1225',
+        colorMode: 'dark',
     })
-])
+
+    useSchemaOrg([
+        defineProduct({
+            name: t(`products.${productId}.title`),
+            description: t(`products.${productId}.description`),
+            brand: { name: 'Protegey' },
+            offers: [
+                { url: `https://www.protegey.com/products/${productId}`, availability: 'https://schema.org/InStock' }
+            ]
+        }),
+        defineBreadcrumb({
+            items: [
+                { name: t('nav.home'), item: '/' },
+                { name: t('nav.products'), item: '/products' },
+                { name: t(`products.${productId}.title`), item: `/products/${productId}` }
+            ]
+        })
+    ])
+}
 
 useHead({
     link: [

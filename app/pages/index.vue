@@ -53,20 +53,22 @@ useSeoMeta({
   twitterSite: '@ProtegeyHQ'
 })
 
-useSchemaOrg([
-  defineOrganization({
-    name: 'Protegey',
-    logo: 'https://www.protegey.com/logo.png',
-    sameAs: [
-      'https://twitter.com/ProtegeyHQ',
-      'https://www.linkedin.com/company/protegey'
-    ]
-  }),
-  defineWebSite({
-    name: 'Protegey',
-  }),
-  defineWebPage()
-])
+if (import.meta.server) {
+  useSchemaOrg([
+    defineOrganization({
+      name: 'Protegey',
+      logo: 'https://www.protegey.com/logo.png',
+      sameAs: [
+        'https://twitter.com/ProtegeyHQ',
+        'https://www.linkedin.com/company/protegey'
+      ]
+    }),
+    defineWebSite({
+      name: 'Protegey',
+    }),
+    defineWebPage()
+  ])
+}
 
 useHead({
   link: [

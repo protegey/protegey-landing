@@ -48,17 +48,26 @@ useSeoMeta({
     twitterSite: '@ProtegeyHQ'
 })
 
-useSchemaOrg([
-    defineWebPage({
-        name: t('seo.careers.title'),
-    }),
-    defineBreadcrumb({
-        items: [
-            { name: t('nav.home'), item: '/' },
-            { name: t('footer.links.careers'), item: '/careers' }
-        ]
+if (import.meta.server) {
+    defineOgImageComponent('NuxtSeo', {
+        title: t('seo.careers.title'),
+        description: t('seo.careers.description'),
+        theme: '#0E1225',
+        colorMode: 'dark',
     })
-])
+
+    useSchemaOrg([
+        defineWebPage({
+            name: t('seo.careers.title'),
+        }),
+        defineBreadcrumb({
+            items: [
+                { name: t('nav.home'), item: '/' },
+                { name: t('footer.links.careers'), item: '/careers' }
+            ]
+        })
+    ])
+}
 
 useHead({
     link: [
