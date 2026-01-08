@@ -6,6 +6,7 @@
       <WhyProtegey :isDark="isDark" />
       <!-- <Products /> -->
       <TrustedBy />
+      <!-- <GeographicCoverage /> -->
       <!-- <NetworkMap /> -->
       <!-- <Solution :isDark="isDark" />
       <Features :isDark="isDark" /> -->
@@ -22,6 +23,7 @@ import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
 // import Products from '~/components/sections/Products.vue'
 import TrustedBy from '~/components/sections/TrustedBy.vue'
+// import GeographicCoverage from '~/components/sections/GeographicCoverage.vue'
 // import NetworkMap from '~/components/sections/NetworkMap.vue'
 // import Solution from '~/components/sections/Solution.vue'
 // import Features from '~/components/sections/Features.vue'
@@ -57,14 +59,20 @@ if (import.meta.server) {
   useSchemaOrg([
     defineOrganization({
       name: 'Protegey',
+      url: 'https://www.protegey.com',
       logo: 'https://www.protegey.com/logo.png',
       sameAs: [
         'https://twitter.com/ProtegeyHQ',
         'https://www.linkedin.com/company/protegey'
-      ]
+      ],
+      areaServed: [
+        'Senegal', 'Ivory Coast', 'Cameroon', 'Morocco', 'Algeria', 'Tunisia', 'Egypt', 'Democratic Republic of Congo'
+      ],
+      description: t('seo.global.description')
     }),
     defineWebSite({
       name: 'Protegey',
+      url: 'https://www.protegey.com'
     }),
     defineWebPage()
   ])
@@ -73,6 +81,11 @@ if (import.meta.server) {
 useHead({
   link: [
     { rel: 'canonical', href: 'https://www.protegey.com' }
+  ],
+  meta: [
+    { name: 'geo.region', content: 'SN;CI;CM;MA;DZ;TN;EG;CD' },
+    { name: 'geo.placename', content: 'Dakar;Abidjan;Douala;Casablanca;Algiers;Tunis;Cairo;Kinshasa' },
+    { name: 'keywords', content: t('seo.global.keywords') }
   ]
 })
 
