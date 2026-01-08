@@ -89,16 +89,16 @@ if (import.meta.server) {
     ])
 }
 
-useHead({
+useHead(() => ({
     link: [
-        { rel: 'canonical', href: `https://www.protegey.com/products/${productId}` }
+        { rel: 'canonical', href: 'https://www.protegey.com' + (route.path === '/' ? '' : route.path) }
     ],
     meta: [
         { name: 'geo.region', content: 'SN;CI;CM;MA;DZ;TN;EG;CD' },
         { name: 'geo.placename', content: 'Dakar;Abidjan;Douala;Casablanca;Algiers;Tunis;Cairo;Kinshasa' },
         { name: 'keywords', content: t('seo.global.keywords') }
     ]
-})
+}))
 </script>
 
 <template>

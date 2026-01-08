@@ -15,7 +15,21 @@ export default defineNuxtConfig({
   sitemap: {
     strictNuxtContentPaths: true,
     autoI18n: true,
-    exclude: ['/api/**']
+    exclude: ['/api/**'],
+    urls: [
+      '/products/signal',
+      '/products/radar',
+      '/products/api',
+      '/products/console',
+      '/products/compliance',
+      '/products/panid',
+      '/fr/products/signal',
+      '/fr/products/radar',
+      '/fr/products/api',
+      '/fr/products/console',
+      '/fr/products/compliance',
+      '/fr/products/panid'
+    ]
   },
   robots: {
     allow: ['/'],

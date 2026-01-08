@@ -76,9 +76,10 @@ if (import.meta.server) {
     ])
 }
 
-useHead({
+const route = useRoute()
+useHead(() => ({
     link: [
-        { rel: 'canonical', href: 'https://www.protegey.com/privacy' }
+        { rel: 'canonical', href: 'https://www.protegey.com' + (route.path === '/' ? '' : route.path) }
     ]
-})
+}))
 </script>

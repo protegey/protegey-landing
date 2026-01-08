@@ -40,11 +40,12 @@ if (import.meta.server) {
     ])
 }
 
-useHead({
+const route = useRoute()
+useHead(() => ({
     link: [
-        { rel: 'canonical', href: 'https://www.protegey.com/products' }
+        { rel: 'canonical', href: 'https://www.protegey.com' + (route.path === '/' ? '' : route.path) }
     ]
-})
+}))
 </script>
 
 <template>
