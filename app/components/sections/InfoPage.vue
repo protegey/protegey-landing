@@ -20,19 +20,38 @@ const localePath = useLocalePath()
 </script>
 
 <template>
-    <div class="min-h-screen bg-black pt-24 pb-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+    <div class="relative min-h-screen bg-neutral-900 pt-32 pb-16 overflow-hidden">
+        <!-- Animated Background Grid -->
+        <div class="absolute inset-0 z-0">
+            <div
+                class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-b from-neutral-950 via-transparent to-neutral-950"></div>
+
+            <!-- Glowing Orbs -->
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl animate-pulse-glow">
+            </div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-500/5 rounded-full blur-3xl animate-pulse-glow"
+                style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-12">
                 <!-- Sidebar Navigation -->
                 <aside class="hidden lg:block lg:col-span-3">
-                    <nav class="sticky top-28 space-y-1">
+                    <nav class="sticky top-32 space-y-2">
+                        <div class="text-xs font-mono text-primary-500 uppercase tracking-widest mb-4 px-3">
+                            Resources
+                        </div>
                         <NuxtLink v-for="item in geoNav" :key="item.path" :to="localePath(item.path)"
-                            class="group flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors"
+                            class="group flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all duration-300 border border-transparent"
                             :class="[
                                 route.path.endsWith(item.path)
-                                    ? 'bg-primary-900/20 text-primary-400 border border-primary-800/50'
-                                    : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                                    ? 'bg-primary-500/10 text-primary-400 border-primary-500/20 shadow-[0_0_20px_rgba(132,204,22,0.1)]'
+                                    : 'text-neutral-500 hover:text-white hover:bg-white/5'
                             ]">
+                            <span class="w-1.5 h-1.5 rounded-full mr-3 transition-colors"
+                                :class="route.path.endsWith(item.path) ? 'bg-primary-500' : 'bg-neutral-800 group-hover:bg-neutral-600'"></span>
                             {{ item.name }}
                         </NuxtLink>
                     </nav>
@@ -40,23 +59,30 @@ const localePath = useLocalePath()
 
                 <!-- Main Content -->
                 <main class="lg:col-span-9">
-                    <div class="prose prose-invert prose-primary max-w-none">
-                        <h1 class="text-4xl font-bold tracking-tight text-white mb-2">{{ title }}</h1>
-                        <p v-if="subtitle" class="text-xl text-neutral-400 mb-12">{{ subtitle }}</p>
+                    <div
+                        class="bg-neutral-950/40 backdrop-blur-sm border border-neutral-800/50 rounded-3xl p-8 md:p-12 shadow-2xl">
+                        <div class="prose prose-invert prose-primary max-w-none">
+                            <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 hero-title">
+                                {{ title }}
+                            </h1>
+                            <p v-if="subtitle" class="text-xl text-neutral-400 mb-12 lead">
+                                {{ subtitle }}
+                            </p>
 
-                        <div class="mt-8">
-                            <slot />
+                            <div class="mt-8">
+                                <slot />
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Mobile Navigation -->
-                    <div class="mt-16 pt-8 border-t border-neutral-900 lg:hidden">
-                        <h2 class="text-lg font-semibold text-white mb-4">Explore GEO Guides</h2>
-                        <div class="grid grid-cols-1 gap-2">
-                            <NuxtLink v-for="item in geoNav" :key="item.path" :to="localePath(item.path)"
-                                class="block px-4 py-3 rounded-lg border border-neutral-800 bg-neutral-900/50 text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors">
-                                {{ item.name }}
-                            </NuxtLink>
+                        <!-- Mobile Navigation -->
+                        <div class="mt-16 pt-8 border-t border-neutral-900 lg:hidden text-left">
+                            <h2 class="text-lg font-semibold text-white mb-4">Explore GEO Guides</h2>
+                            <div class="grid grid-cols-1 gap-2">
+                                <NuxtLink v-for="item in geoNav" :key="item.path" :to="localePath(item.path)"
+                                    class="block px-4 py-4 rounded-xl border border-neutral-800 bg-neutral-900/50 text-neutral-300 hover:text-white hover:bg-neutral-800 transition-all">
+                                    {{ item.name }}
+                                </NuxtLink>
+                            </div>
                         </div>
                     </div>
                 </main>
@@ -67,22 +93,43 @@ const localePath = useLocalePath()
 
 <style scoped>
 .prose :deep(h2) {
-    @apply text-2xl font-bold text-white mt-12 mb-6 border-b border-neutral-900 pb-2;
+    @apply text-2xl font-bold text-white mt-12 mb-6 border-l-4 border-primary-500 pl-4 bg-primary-500/5 py-2;
 }
 
 .prose :deep(p) {
-    @apply text-neutral-300 leading-relaxed mb-6;
+    @apply text-neutral-400 leading-relaxed mb-6 text-lg;
 }
 
 .prose :deep(ul) {
-    @apply list-disc list-inside text-neutral-300 space-y-3 mb-8;
+    @apply space-y-4 mb-8 list-none p-0;
+}
+
+.prose :deep(li) {
+    @apply flex items-start text-neutral-400 text-lg;
+}
+
+.prose :deep(li)::before {
+    content: "→";
+    @apply text-primary-500 mr-3 font-bold flex-shrink-0;
 }
 
 .prose :deep(ol) {
-    @apply list-decimal list-inside text-neutral-300 space-y-4 mb-8;
+    @apply space-y-6 mb-8 list-none p-0;
+}
+
+.prose :deep(ol li) {
+    @apply flex items-start text-neutral-300 text-lg bg-white/5 p-4 rounded-2xl border border-white/5;
+}
+
+.prose :deep(ol li)::before {
+    content: none;
 }
 
 .prose :deep(blockquote) {
-    @apply pl-6 border-l-4 border-primary-500 italic text-neutral-400 bg-primary-950/10 py-4 pr-4 rounded-r-lg mb-8;
+    @apply pl-6 border-l-4 border-primary-500 italic text-neutral-300 bg-primary-500/5 py-6 pr-6 rounded-r-2xl mb-12 text-xl;
+}
+
+.lead {
+    @apply text-neutral-300 border-b border-neutral-800 pb-8 mb-12;
 }
 </style>

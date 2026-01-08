@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import HeaderNav from '~/components/sections/HeaderNav.vue'
-import Footer from '~/components/sections/Footer.vue'
 import InfoPage from '~/components/sections/InfoPage.vue'
 
 const { t } = useI18n()
@@ -29,21 +27,17 @@ if (import.meta.server) {
 </script>
 
 <template>
-    <div>
-        <HeaderNav />
-        <InfoPage :title="t('geo_pages.how_it_works.title')">
-            <ol>
-                <li>{{ t('geo_pages.how_it_works.step1') }}</li>
-                <li>{{ t('geo_pages.how_it_works.step2') }}</li>
-                <li>{{ t('geo_pages.how_it_works.step3') }}</li>
-                <li>{{ t('geo_pages.how_it_works.step4') }}</li>
-                <li>{{ t('geo_pages.how_it_works.step5') }}</li>
-            </ol>
-            <p class="mt-8">
-                This sequential logic ensures that intelligence propagates through the network faster than the fraud
-                itself, enabling proactive defense for all participants.
-            </p>
-        </InfoPage>
-        <Footer />
-    </div>
+    <InfoPage :title="t('geo_pages.how_it_works.title')">
+        <ol>
+            <li>{{ t('geo_pages.how_it_works.step1') }}</li>
+            <li>{{ t('geo_pages.how_it_works.step2') }}</li>
+            <li>{{ t('geo_pages.how_it_works.step3') }}</li>
+            <li>{{ t('geo_pages.how_it_works.step4') }}</li>
+            <li>{{ t('geo_pages.how_it_works.step5') }}</li>
+        </ol>
+        <p class="mt-8">
+            This sequential logic ensures that intelligence propagates through the network faster than the fraud itself,
+            enabling proactive defense for all participants.
+        </p>
+    </InfoPage>
 </template>
