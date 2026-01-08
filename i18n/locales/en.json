@@ -201,33 +201,32 @@
             ]
         },
         "compliance": {
-            "title": "Risk & Compliance Layer",
-            "tagline": "Governance, Controls & Regulatory Readiness",
-            "description": "Meet AML and regulatory obligations across multiple jurisdictions. Reduce compliance and operational risk exposure with automated workflows.",
-            "why_built": "Meet AML and regulatory obligations. Reduce compliance and operational risk. Prepare confidently for audits and examinations.",
-            "what_you_can_do": "AML transaction monitoring workflows. Risk registers and control mapping. Incident, breach, and regulatory reporting.",
-            "features": {
-                "f1_title": "AML Transaction Monitoring",
-                "f1_desc": "Pre-built AML scenarios for West/Central/Northern Africa regulations. Suspicious Activity Report (SAR) generation and filing.",
-                "f2_title": "Risk Assessment & Control Testing",
-                "f2_desc": "Risk assessment frameworks (RCSA, KRI tracking). Control testing and effectiveness monitoring. Regulatory change management and impact analysis."
-            },
+            "title": "Risk & Compliance as a Service (RCaaS)",
+            "tagline": "Powerful Risk & Compliance, out of the box",
+            "description": "Our RCaaS is a plug-and-play Risk and Compliance function for fintechs, digital lenders, MFIs, banks, and SACCOs operating across Francophone and Northern Africa. Instead of building internal teams, policies, tools, and workflows from scratch, organizations can activate a full risk and compliance stack in days, not months.",
+            "why_built": "Built for teams that can’t hire a risk & compliance department yet. Building a risk and compliance function traditionally requires specialized hires, expensive tooling, months of setup, and regulatory interpretation. RCaaS replaces all of that.",
+            "what_you_can_do": "A complete risk and compliance function, out of the box. No prior risk expertise required. PROTEGEY handles the complexity behind the scenes.",
+            "how_it_works": "Connect your payments, lending, or onboarding flows. Activate region-aware risk rules and AI models. Operate in autopilot or assisted-review mode. Scale when your team grows, without replatforming.\nPROTEGEY handles the complexity behind the scenes.",
             "capabilities": [
-                "Pre-built AML scenarios for West/Central/Northern Africa regulations",
-                "Suspicious Activity Report (SAR) generation and filing",
-                "Risk assessment frameworks (RCSA, KRI tracking)",
-                "Control testing and effectiveness monitoring",
-                "Regulatory change management and impact analysis"
+                "Automated fraud detection and prevention",
+                "Real-time transaction and behavior risk scoring",
+                "Cross-border identity and merchant verification",
+                "AML, KYC, and KYB-aligned controls",
+                "Audit trails, logs, and regulator-ready reports",
+                "Built-in case management and escalation workflows"
             ],
             "target_users": [
-                "Banks and microfinance institutions",
-                "Large fintechs",
-                "Regulators and supervisory authorities"
+                "Fintechs & Payment Processors",
+                "Digital Lenders & BNPL platforms",
+                "Microfinance Institutions (MFIs)",
+                "Banks & Neo-banks",
+                "Early-stage teams or scaling platforms"
             ],
             "results": [
-                "Reduce compliance costs by 30-40%",
-                "Pass audits with comprehensive documentation",
-                "Respond to regulatory requests in hours, not days"
+                "Instant coverage",
+                "Lower operational risk",
+                "Faster partner and regulator confidence",
+                "A clear path to internalization when ready"
             ]
         },
         "panid": {
@@ -272,14 +271,14 @@
                 "Gateway API receives the elevated risk score and challenges the next transaction",
                 "Signal checks if this device/pattern has been flagged by other institutions",
                 "Ops Console creates a case for the fraud analyst to investigate",
-                "Risk & Compliance Layer logs the incident for regulatory reporting",
+                "Risk & Compliance as a Service logs the incident for regulatory reporting",
                 "Pan-ID (future) verifies the user's identity through biometric re-authentication"
             ],
             "better_together": [
                 "Gateway API + Radar: Transaction decisions informed by behavioral context",
                 "Radar + Signal: Account monitoring enhanced by cross-platform intelligence",
                 "All Products + Ops Console: Unified investigation and response",
-                "Gateway API + Risk & Compliance: Transaction monitoring meets AML requirements"
+                "Gateway API + RCaaS: Transaction monitoring meets automated AML compliance"
             ]
         },
         "mission": {

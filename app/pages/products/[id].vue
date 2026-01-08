@@ -159,7 +159,7 @@ useHead({
                 </div>
 
                 <!-- Features Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
+                <div v-if="$te(`products.${productId}.features`)" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
                     <div
                         class="p-10 md:p-14 rounded-[3rem] bg-neutral-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all group">
                         <h3 class="text-3xl font-bold text-white mb-6 group-hover:text-primary-400 transition-colors">
@@ -237,7 +237,7 @@ useHead({
                 </div>
 
                 <!-- Extras: How it works / Deployment Options -->
-                <!-- <div v-if="$te(`products.${productId}.how_it_works`) || $te(`products.${productId}.deployment_options`)"
+                <div v-if="$te(`products.${productId}.how_it_works`) || $te(`products.${productId}.deployment_options`)"
                     class="mb-32">
                     <div v-if="$te(`products.${productId}.how_it_works`)"
                         class="max-w-4xl mx-auto p-10 md:p-16 rounded-[3rem] bg-indigo-500/5 border border-indigo-500/20">
@@ -245,7 +245,7 @@ useHead({
                             <HugeiconsIcon :icon="HelpCircleIcon" :size="28" class="text-indigo-400" />
                             {{ $t('products.how_it_works_title') }}
                         </h2>
-                        <p class="text-xl text-neutral-300 leading-relaxed italic">
+                        <p class="text-xl text-neutral-300 leading-relaxed italic whitespace-pre-line">
                             {{ $t(`products.${productId}.how_it_works`) }}
                         </p>
                     </div>
@@ -259,7 +259,7 @@ useHead({
                             <p class="text-lg text-neutral-300">{{ rt(val) }}</p>
                         </div>
                     </div>
-                </div> -->
+                </div>
 
                 <!-- CTA -->
                 <ProductCTA />

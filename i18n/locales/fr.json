@@ -201,33 +201,32 @@
             ]
         },
         "compliance": {
-            "title": "Couche Risque & Conformité",
-            "tagline": "Gouvernance, Contrôles & Préparation Réglementaire",
-            "description": "Répondez aux obligations AML et réglementaires dans plusieurs juridictions. Réduisez l'exposition aux risques de conformité et opérationnels avec des flux de travail automatisés.",
-            "why_built": "Respectez les obligations AML et réglementaires. Réduisez les risques de conformité et opérationnels. Préparez-vous sereinement aux audits et examens.",
-            "what_you_can_do": "Flux de travail de surveillance des transactions AML. Registres de risques et cartographie des contrôles. Reporting d'incidents, de violations et réglementaires.",
-            "features": {
-                "f1_title": "Surveillance des Transactions AML",
-                "f1_desc": "Scénarios AML pré-construits pour les réglementations d'Afrique de l'Ouest/Centrale/du Nord. Génération et dépôt de rapports d'activités suspectes (SAR).",
-                "f2_title": "Évaluation des Risques & Tests de Contrôle",
-                "f2_desc": "Cadres d'évaluation des risques (RCSA, suivi KRI). Tests de contrôle et surveillance de l'efficacité. Gestion du changement réglementaire et analyse d'impact."
-            },
+            "title": "Risk & Compliance as a Service (RCaaS)",
+            "tagline": "Une fonction Risque & Conformité puissante, prête à l'emploi",
+            "description": "Notre RCaaS est une fonction de Risque et Conformité clé en main pour les fintechs, prêteurs digitaux, IMF, banques et coopératives opérant en Afrique Francophone et du Nord. Au lieu de bâtir des équipes, politiques et outils internes à partir de zéro, activez une pile complète de risque et conformité en quelques jours seulement.",
+            "why_built": "Conçu pour les équipes qui ne peuvent pas encore recruter un département risque et conformité complet. Traditionnellement, cela nécessite des recrutements spécialisés, des outils coûteux, des mois de configuration et d'interprétation réglementaire. Le RCaaS remplace tout cela.",
+            "what_you_can_do": "Une fonction risque et conformité complète, dès l'activation. Aucune expertise préalable n'est requise. PROTEGEY gère la complexité en coulisses.",
+            "how_it_works": "Connectez vos flux de paiement, de prêt ou d'onboarding\nActivez des règles de risque régionales et des modèles d'IA\nOpérez en mode pilote automatique ou avec révision assistée\nÉvoluez sans changer de plateforme\nPROTEGEY gère la complexité en coulisses.",
             "capabilities": [
-                "Scénarios AML pré-construits pour les réglementations d'Afrique de l'Ouest/Centrale/du Nord.",
-                "Génération et dépôt de rapports d'activités suspectes (SAR).",
-                "Cadres d'évaluation des risques (RCSA, suivi KRI).",
-                "Tests de contrôle et surveillance de l'efficacité.",
-                "Gestion du changement réglementaire et analyse d'impact."
+                "Détection et prévention automatisées de la fraude",
+                "Scoring de risque des transactions et comportements en temps réel",
+                "Vérification d'identité et de marchands transfrontalière",
+                "Contrôles alignés sur la LBC/FT (AML), KYC et KYB",
+                "Pistes d'audit, journaux et rapports prêts pour le régulateur",
+                "Flux de gestion des cas et d'escalade intégrés"
             ],
             "target_users": [
-                "Banques et institutions de microfinance",
-                "Grandes fintechs",
-                "Regulators et autorités de supervision"
+                "Fintechs & Processeurs de paiement",
+                "Prêteurs digitaux & plateformes BNPL",
+                "Institutions de Microfinance (IMF)",
+                "Banques & Néo-banques",
+                "Équipes en démarrage ou plateformes en pleine expansion"
             ],
             "results": [
-                "Réduire les coûts de conformité de 30-40%",
-                "Réussir les audits avec une documentation complète",
-                "Répondre aux demandes réglementaires en quelques heures, pas jours"
+                "Couverture instantanée",
+                "Réduction du risque opérationnel",
+                "Confiance accrue des partenaires et régulateurs",
+                "Un chemin clair vers l'internalisation une fois prêt"
             ]
         },
         "panid": {
@@ -272,14 +271,14 @@
                 "Gateway API reçoit le score de risque élevé et conteste la prochaine transaction",
                 "Signal vérifie si cet appareil/modèle a été signalé par d'autres institutions",
                 "Ops Console crée un cas pour que l'analyste de fraude enquête",
-                "Couche Risque & Conformité enregistre l'incident pour les rapports réglementaires",
+                "Risk & Compliance as a Service enregistre l'incident pour les rapports réglementaires",
                 "Pan-ID (futur) vérifie l'identité de l'utilisateur par ré-authentification biométrique"
             ],
             "better_together": [
                 "Gateway API + Radar : Décisions de transaction informées par le contexte comportemental",
                 "Radar + Signal : Surveillance de compte améliorée par l'intelligence inter-plateformes",
                 "Tous les Produits + Ops Console : Enquête et réponse unifiées",
-                "Gateway API + Risque & Conformité : Surveillance des transactions répond aux exigences AML"
+                "Gateway API + RCaaS : La surveillance des transactions rencontre la conformité LBC/FT automatisée"
             ]
         },
         "mission": {
