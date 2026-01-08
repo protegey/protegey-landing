@@ -62,7 +62,7 @@ if (import.meta.server) {
     useSchemaOrg([
         defineAboutPage({
             name: t('seo.about.title'),
-            description: t('seo.about.description'),
+            description: t('geo.canonical_definition'),
         }),
         defineBreadcrumb({
             items: [

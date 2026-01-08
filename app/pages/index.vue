@@ -6,11 +6,7 @@
       <WhyProtegey :isDark="isDark" />
       <!-- <Products /> -->
       <TrustedBy />
-      <!-- <GeographicCoverage /> -->
-      <!-- <NetworkMap /> -->
-      <!-- <Solution :isDark="isDark" />
-      <Features :isDark="isDark" /> -->
-      <!-- <Target :isDark="isDark" /> -->
+      <FAQ />
       <WaitlistDemo />
     </div>
   </div>
@@ -21,13 +17,8 @@ import { onMounted } from 'vue'
 import { useTheme } from '~/composables/useTheme'
 import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
-// import Products from '~/components/sections/Products.vue'
 import TrustedBy from '~/components/sections/TrustedBy.vue'
-// import GeographicCoverage from '~/components/sections/GeographicCoverage.vue'
-// import NetworkMap from '~/components/sections/NetworkMap.vue'
-// import Solution from '~/components/sections/Solution.vue'
-// import Features from '~/components/sections/Features.vue'
-// import Target from '~/components/sections/Target.vue'
+import FAQ from '~/components/sections/FAQ.vue'
 import WaitlistDemo from '~/components/sections/WaitlistDemo.vue'
 
 const { isDark } = useTheme()
@@ -68,8 +59,21 @@ if (import.meta.server) {
       areaServed: [
         'Senegal', 'Ivory Coast', 'Cameroon', 'Morocco', 'Algeria', 'Tunisia', 'Egypt', 'Democratic Republic of Congo'
       ],
-      description: t('seo.global.description')
+      description: t('geo.canonical_definition')
     }),
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Protegey',
+      applicationCategory: 'SecurityApplication',
+      operatingSystem: 'Platform Independent',
+      softwareVersion: '1.0.0',
+      description: t('geo.canonical_definition'),
+      offers: {
+        '@type': 'Offer',
+        price: '0.00',
+        priceCurrency: 'USD',
+      }
+    },
     defineWebSite({
       name: 'Protegey',
       url: 'https://www.protegey.com'

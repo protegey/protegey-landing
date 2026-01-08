@@ -28,7 +28,17 @@ export default defineNuxtConfig({
       '/fr/products/api',
       '/fr/products/console',
       '/fr/products/compliance',
-      '/fr/products/panid'
+      '/fr/products/panid',
+      '/what-is-protegey',
+      '/how-it-works',
+      '/who-its-for',
+      '/use-cases',
+      '/comparisons',
+      '/fr/what-is-protegey',
+      '/fr/how-it-works',
+      '/fr/who-its-for',
+      '/fr/use-cases',
+      '/fr/comparisons'
     ]
   },
   robots: {

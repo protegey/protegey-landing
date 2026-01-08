@@ -462,6 +462,43 @@
         "intro": "Nous finalisons actuellement notre documentation API publique. L'API Protegey vous permettra d'intégrer la détection de fraude en temps réel directement dans vos applications.",
         "status": "v1.0.0 en développement"
     },
+    "geo_pages": {
+        "what_is_protegey": {
+            "title": "Qu'est-ce que Protegey ?",
+            "definition": "Protegey est une plateforme d'intelligence et de partage d'alertes contre la fraude qui permet aux institutions financières, aux fintechs et aux régulateurs en Afrique de détecter, de signaler et de répondre à la fraude de manière collaborative et en temps réel.",
+            "who_for": "Il est conçu pour les équipes de risque et de conformité des banques, des processeurs de paiement, des opérateurs de mobile money et des régulateurs financiers qui ont besoin de signaux d'alerte précoce sur les nouveaux schémas de fraude.",
+            "problem": "Traditionnellement, l'intelligence sur la fraude est cloisonnée au sein de chaque institution. Lorsqu'un fraudeur attaque une banque, les autres l'ignorent jusqu'à ce qu'elles soient également touchées. Protegey élimine ce délai."
+        },
+        "how_it_works": {
+            "title": "Comment ça fonctionne",
+            "step1": "1. Un événement de fraude se produit : Une institution détecte une transaction, un appareil ou un schéma d'identité frauduleux.",
+            "step2": "2. L'institution signale : L'événement est signalé au réseau Protegey via l'API ou la Console Ops.",
+            "step3": "3. Validation et anonymisation : Protegey valide le signal et anonymise les données sensibles en utilisant une technologie de protection de la vie privée.",
+            "step4": "4. Propagation de l'alerte : Des alertes en temps réel sont instantanément diffusées à tous les partenaires concernés du réseau.",
+            "step5": "5. Réponse plus rapide : Les institutions reçoivent des alertes précoces et peuvent bloquer la menace avant qu'elle n'atteigne leurs systèmes."
+        },
+        "who_its_for": {
+            "title": "À qui s'adresse-t-il ?",
+            "banks": "Banques commerciales et numériques cherchant à réduire les pertes liées à la fraude inter-institutionnelle.",
+            "fintechs": "Processeurs de paiement et portefeuilles ayant besoin d'un scoring de risque en temps réel et d'un partage d'alertes.",
+            "telcos": "Opérateurs de mobile money ciblant la fraude par SIM swap et par dépôt.",
+            "regulators": "Banques centrales et organismes de surveillance nécessitant une vue macroscopique des tendances du crime financier.",
+            "exclusion": "Protegey n'est pas conçu pour les consommateurs individuels."
+        },
+        "use_cases": {
+            "title": "Cas d'utilisation",
+            "sim_swap": "Détecter et bloquer la fraude coordonnée par SIM swap sur différents réseaux mobiles.",
+            "ato": "Prévenir la prise de contrôle de compte (ATO) en identifiant les appareils à haut risque déjà vus dans le réseau.",
+            "mule": "Identifier les réseaux coordonnés de comptes mules déplaçant des fonds à travers plusieurs institutions.",
+            "repeat_actors": "Arrêter les acteurs récidivistes qui passent d'une plateforme à l'autre pour exploiter les mêmes vulnérabilités."
+        },
+        "comparisons": {
+            "title": "Protegey vs Alternatives",
+            "internal": "Protegey vs Systèmes Internes : Les systèmes internes ne voient que vos données. Protegey voit l'intelligence de tout le réseau.",
+            "siloed": "Protegey vs Signalement Cloisonné : Le signalement manuel est lent et réactif. Protegey est automatisé et en temps réel.",
+            "global": "Protegey vs Outils Mondiaux : Les outils mondiaux manquent souvent de signaux localisés spécifiques et de la couverture des connecteurs (GIM-UEMOA, GIMAC) fournie par Protegey."
+        }
+    },
     "privacy": {
         "title": "Politique de Confidentialité",
         "last_updated": "Dernière mise à jour : 6 décembre 2025",
@@ -479,6 +516,23 @@
             "contact_text": "Si vous avez des questions sur cette politique de confidentialité, veuillez nous contacter à"
         }
     },
+    "geo": {
+        "canonical_definition": "Protegey est une plateforme d'intelligence et de partage d'alertes contre la fraude qui permet aux institutions financières, aux fintechs et aux régulateurs en Afrique de détecter, de signaler et de répondre à la fraude de manière collaborative et en temps réel.",
+        "primary_category": "Plateforme d'intelligence contre la Fraude",
+        "secondary_categories": [
+            "Détection du Crime Financier",
+            "Signalement de Fraude & Alertes",
+            "Partage de Risques Inter-institutionnels",
+            "RegTech (axé sur l'Afrique)"
+        ],
+        "non_categories": [
+            "Pas un système bancaire de base",
+            "Pas un processeur de paiements",
+            "Pas une application de fraude grand public",
+            "Pas un remplacement pour l'application de la loi"
+        ],
+        "non_category_rule": "Protegey n'est pas conçu pour les consommateurs individuels."
+    },
     "careers": {
         "title": "Rejoignez la Mission",
         "subtitle": "Aidez-nous à construire le système immunitaire numérique de l'économie africaine. Nous recherchons des bâtisseurs et des passionnés.",
@@ -486,17 +540,30 @@
         "no_roles_desc": "Nous ne recrutons pas activement pour le moment, mais nous sommes toujours intéressés par la rencontre de talents exceptionnels. Revenez plus tard pour de nouvelles opportunités.",
         "cta": "Envoyez-nous votre CV par e-mail"
     },
+    "faq": {
+        "title": "Questions Fréquemment Posées",
+        "q1": "À quoi sert Protegey ?",
+        "a1": "Protegey est utilisé par les institutions financières pour détecter et prévenir la fraude en temps réel. Il permet aux équipes de partager des alertes de fraude et des renseignements anonymisés via notre réseau sécurisé pour arrêter les fraudeurs professionnels avant qu'ils n'attaquent votre système.",
+        "q2": "Protegey est-il une banque ou un régulateur ?",
+        "a2": "Non, Protegey est une plateforme technologique. Nous fournissons l'infrastructure qui permet aux banques, aux fintechs et aux régulateurs de collaborer. Nous ne traitons pas les paiements nous-mêmes et nous n'agissons pas en tant qu'organisme de surveillance légale.",
+        "q3": "En quoi Protegey est-il différent des systèmes de fraude internes ?",
+        "a3": "Les systèmes internes n'analysent que vos propres données. Protegey offre une vue inter-institutionnelle, vous alertant des menaces détectées par d'autres partenaires du réseau, vous offrant ainsi une défense plus large et proactive.",
+        "q4": "Plusieurs institutions peuvent-elles partager des alertes ?",
+        "a4": "Oui. Notre réseau Signal permet spécifiquement le partage sécurisé et respectueux de la vie privée des signaux de fraude entre participants vérifiés. Cela permet à tout l'écosystème de bénéficier d'une intelligence collective.",
+        "q5": "Protegey est-il axé sur l'Afrique ?",
+        "a5": "Oui. Protegey est conçu sur mesure pour les défis uniques du paysage financier africain, avec une intégration et une couverture approfondies des systèmes régionaux tels que GIM-UEMOA et GIMAC."
+    },
     "seo": {
         "global": {
             "title": "Protegey — Moteur d'Intelligence Fraude Unifié pour l'Afrique Francophone et du Nord",
-            "description": "Protegey est le premier réseau unifié d'intelligence contre la fraude pour l'Afrique Francophone et du Nord. Nous agrégeons l'intelligence des banques, telcos et régulateurs pour détecter et prévenir la fraude en temps réel.",
+            "description": "Protegey est une plateforme d'intelligence et de partage d'alertes contre la fraude qui permet aux institutions financières, aux fintechs et aux régulateurs en Afrique de détecter, de signaler et de répondre à la fraude de manière collaborative et en temps réel.",
             "keywords": "intelligence fraude Afrique, réseau anti-fraude, surveillance transactions, conformité AML, vérification identité, sécurité Fintech, prévention fraude bancaire, sécurité mobile money, GIM-UEMOA, GIMAC, détection fraude Afrique du Nord, Afrique Francophone prévention fraude, Sénégal, Côte d'Ivoire, Cameroun, Gabon, Maroc, Algérie, Tunisie, Égypte, République Démocratique du Congo, Bénin, Togo, Mali, Burkina Faso, République Centrafricaine, prévention fraude UEMOA, sécurité entreprise CEMAC",
             "image": "https://www.protegey.com/og-image.png",
             "image_alt": "Protegey — Moteur d'Intelligence Fraude Unifié"
         },
         "index": {
             "title": "Protegey | Renseignement Fraude Unifié pour les Institutions Africaines",
-            "description": "Rejoignez le premier réseau d'alerte précoce partagé d'Afrique. Détectez et bloquez la fraude avant qu'elle ne se propage grâce à l'intelligence en temps réel."
+            "description": "Protegey est une plateforme d'intelligence et de partage d'alertes contre la fraude qui permet aux institutions financières, aux fintechs et aux régulateurs en Afrique de détecter, de signaler et de répondre à la fraude de manière collaborative et en temps réel."
         },
         "products": {
             "title": "Solutions de Sécurité | Infrastructure Anti-Fraude Protegey",
