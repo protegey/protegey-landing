@@ -32,10 +32,10 @@ if (import.meta.server) {
     <InfoPage :title="t('geo_pages.what_is_protegey.title')">
         <p>{{ t('geo_pages.what_is_protegey.definition') }}</p>
 
-        <h2>Who It Is For</h2>
+        <h2>{{ t('geo_pages.common.who_for_header') }}</h2>
         <p>{{ t('geo_pages.what_is_protegey.who_for') }}</p>
 
-        <h2>Core Problem Solved</h2>
+        <h2>{{ t('geo_pages.common.problem_header') }}</h2>
         <p>{{ t('geo_pages.what_is_protegey.problem') }}</p>
 
         <blockquote>

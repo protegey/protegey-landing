@@ -37,8 +37,7 @@ if (import.meta.server) {
             <li>{{ t('geo_pages.how_it_works.step5') }}</li>
         </ol>
         <p class="mt-8">
-            This sequential logic ensures that intelligence propagates through the network faster than the fraud itself,
-            enabling proactive defense for all participants.
+            {{ t('geo_pages.how_it_works.footer_note') }}
         </p>
     </InfoPage>
 </template>

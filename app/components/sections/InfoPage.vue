@@ -41,7 +41,7 @@ const localePath = useLocalePath()
                 <aside class="hidden lg:block lg:col-span-3">
                     <nav class="sticky top-32 space-y-2">
                         <div class="text-xs font-mono text-primary-500 uppercase tracking-widest mb-4 px-3">
-                            Resources
+                            {{ t('geo_pages.common.resources_label') }}
                         </div>
                         <NuxtLink v-for="item in geoNav" :key="item.path" :to="localePath(item.path)"
                             class="group flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all duration-300 border border-transparent"
@@ -76,7 +76,9 @@ const localePath = useLocalePath()
 
                         <!-- Mobile Navigation -->
                         <div class="mt-16 pt-8 border-t border-neutral-900 lg:hidden text-left">
-                            <h2 class="text-lg font-semibold text-white mb-4">Explore GEO Guides</h2>
+                            <h2 class="text-lg font-semibold text-white mb-4">{{
+                                t('geo_pages.common.explore_guides_label') }}
+                            </h2>
                             <div class="grid grid-cols-1 gap-2">
                                 <NuxtLink v-for="item in geoNav" :key="item.path" :to="localePath(item.path)"
                                     class="block px-4 py-4 rounded-xl border border-neutral-800 bg-neutral-900/50 text-neutral-300 hover:text-white hover:bg-neutral-800 transition-all">

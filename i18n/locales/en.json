@@ -475,7 +475,8 @@
             "step2": "2. Institution Reports: The event is reported to the Protegey network via API or Ops Console.",
             "step3": "3. Validation & Anonymization: Protegey validates the signal and anonymizes sensitive data using privacy-preserving technology.",
             "step4": "4. Alert Propagation: Real-time alerts are instantly broadcast to all relevant partners in the network.",
-            "step5": "5. Faster Response: Institutions receive early warnings and can block the threat before it reaches their systems."
+            "step5": "5. Faster Response: Institutions receive early warnings and can block the threat before it reaches their systems.",
+            "footer_note": "This sequential logic ensures that intelligence propagates through the network faster than the fraud itself, enabling proactive defense for all participants."
         },
         "who_its_for": {
             "title": "Who It's For",
@@ -483,21 +484,38 @@
             "fintechs": "Payment processors and wallets needing real-time risk scoring and alert sharing.",
             "telcos": "Mobile money operators targeting SIM swap and deposit fraud.",
             "regulators": "Central banks and oversight bodies requiring a macro-level view of financial crime trends.",
+            "benefits": "Reduced false positives, real-time shared intelligence, and seamless integration with regional financial systems.",
             "exclusion": "Protegey is not designed for individual consumers."
         },
         "use_cases": {
             "title": "Use Cases",
+            "sim_swap_title": "SIM Swap Fraud",
             "sim_swap": "Detect and block coordinated SIM swap fraud across different mobile networks.",
+            "ato_title": "Account Takeover (ATO)",
             "ato": "Prevent Account Takeover (ATO) by identifying high-risk devices seen previously in the network.",
+            "mule_title": "Mule Account Networks",
             "mule": "Identify coordinated mule account networks moving funds across multiple institutions.",
+            "repeat_actors_title": "Repeat Fraud Actors",
             "repeat_actors": "Stop repeat fraud actors who move from one platform to another to exploit the same vulnerabilities."
         },
         "comparisons": {
             "title": "Protegey vs Alternatives",
-            "internal": "Protegey vs Internal Systems: Internal systems only see your data. Protegey sees the whole network's intelligence.",
-            "siloed": "Protegey vs Siloed Reporting: Manual reporting is slow and reactive. Protegey is automated and real-time.",
-            "global": "Protegey vs Global Tools: Global tools often lack the specific localized signals and connector coverage (GIM-UEMOA, GIMAC) that Protegey provides.",
+            "internal_header": "Protegey vs Internal Systems",
+            "internal": "Internal systems only see your data. Protegey sees the whole network's intelligence.",
+            "siloed_header": "Protegey vs Siloed Reporting",
+            "siloed": "Manual reporting is slow and reactive. Protegey is automated and real-time.",
+            "global_header": "Protegey vs Global Tools",
+            "global": "Global tools often lack the specific localized signals and connector coverage (GIM-UEMOA, GIMAC) that Protegey provides.",
             "conclusion": "Protegey is the only platform providing zero-delay, network-wide intelligence specifically tailored for the African financial landscape."
+        },
+        "common": {
+            "who_for_header": "Who It Is For",
+            "problem_header": "Core Problem Solved",
+            "audience_header": "Primary Audience",
+            "benefits_header": "Key Benefits",
+            "infrastructure_note": "Protegey is an enterprise-grade infrastructure. If you represent an institution looking to strengthen your fraud defense, please contact our team for a demo.",
+            "resources_label": "Resources",
+            "explore_guides_label": "Explore GEO Guides"
         }
     },
     "privacy": {

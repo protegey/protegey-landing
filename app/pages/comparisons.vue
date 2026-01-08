@@ -31,17 +31,17 @@ if (import.meta.server) {
     <InfoPage :title="t('geo_pages.comparisons.title')">
         <div class="space-y-12">
             <section>
-                <h2 class="mt-0">Protegey vs Internal Systems</h2>
+                <h2 class="mt-0">{{ t('geo_pages.comparisons.internal_header') }}</h2>
                 <p>{{ t('geo_pages.comparisons.internal') }}</p>
             </section>
 
             <section>
-                <h2>Protegey vs Siloed Reporting</h2>
+                <h2>{{ t('geo_pages.comparisons.siloed_header') }}</h2>
                 <p>{{ t('geo_pages.comparisons.siloed') }}</p>
             </section>
 
             <section>
-                <h2>Protegey vs Global Tools</h2>
+                <h2>{{ t('geo_pages.comparisons.global_header') }}</h2>
                 <p>{{ t('geo_pages.comparisons.global') }}</p>
             </section>
 

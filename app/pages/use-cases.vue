@@ -31,19 +31,19 @@ if (import.meta.server) {
     <InfoPage :title="t('geo_pages.use_cases.title')">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <div class="p-6 rounded-3xl border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm">
-                <h3 class="text-xl font-bold text-white mb-3">SIM Swap Fraud</h3>
+                <h3 class="text-xl font-bold text-white mb-3">{{ t('geo_pages.use_cases.sim_swap_title') }}</h3>
                 <p class="text-neutral-400 mb-0 text-base leading-relaxed">{{ t('geo_pages.use_cases.sim_swap') }}</p>
             </div>
             <div class="p-6 rounded-3xl border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm">
-                <h3 class="text-xl font-bold text-white mb-3">Account Takeover (ATO)</h3>
+                <h3 class="text-xl font-bold text-white mb-3">{{ t('geo_pages.use_cases.ato_title') }}</h3>
                 <p class="text-neutral-400 mb-0 text-base leading-relaxed">{{ t('geo_pages.use_cases.ato') }}</p>
             </div>
             <div class="p-6 rounded-3xl border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm">
-                <h3 class="text-xl font-bold text-white mb-3">Mule Account Networks</h3>
+                <h3 class="text-xl font-bold text-white mb-3">{{ t('geo_pages.use_cases.mule_title') }}</h3>
                 <p class="text-neutral-400 mb-0 text-base leading-relaxed">{{ t('geo_pages.use_cases.mule') }}</p>
             </div>
             <div class="p-6 rounded-3xl border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm">
-                <h3 class="text-xl font-bold text-white mb-3">Repeat Fraud Actors</h3>
+                <h3 class="text-xl font-bold text-white mb-3">{{ t('geo_pages.use_cases.repeat_actors_title') }}</h3>
                 <p class="text-neutral-400 mb-0 text-base leading-relaxed">{{ t('geo_pages.use_cases.repeat_actors') }}
                 </p>
             </div>

@@ -475,7 +475,8 @@
             "step2": "2. L'institution signale : L'événement est signalé au réseau Protegey via l'API ou la Console Ops.",
             "step3": "3. Validation et anonymisation : Protegey valide le signal et anonymise les données sensibles en utilisant une technologie de protection de la vie privée.",
             "step4": "4. Propagation de l'alerte : Des alertes en temps réel sont instantanément diffusées à tous les partenaires concernés du réseau.",
-            "step5": "5. Réponse plus rapide : Les institutions reçoivent des alertes précoces et peuvent bloquer la menace avant qu'elle n'atteigne leurs systèmes."
+            "step5": "5. Réponse plus rapide : Les institutions reçoivent des alertes précoces et peuvent bloquer la menace avant qu'elle n'atteigne leurs systèmes.",
+            "footer_note": "Cette logique séquentielle garantit que l'intelligence se propage à travers le réseau plus rapidement que la fraude elle-même, permettant ainsi une défense proactive pour tous les participants."
         },
         "who_its_for": {
             "title": "À qui s'adresse-t-il ?",
@@ -483,21 +484,38 @@
             "fintechs": "Processeurs de paiement et portefeuilles ayant besoin d'un scoring de risque en temps réel et d'un partage d'alertes.",
             "telcos": "Opérateurs de mobile money ciblant la fraude par SIM swap et par dépôt.",
             "regulators": "Banques centrales et organismes de surveillance nécessitant une vue macroscopique des tendances du crime financier.",
+            "benefits": "Réduction des faux positifs, intelligence partagée en temps réel et intégration transparente avec les systèmes financiers régionaux.",
             "exclusion": "Protegey n'est pas conçu pour les consommateurs individuels."
         },
         "use_cases": {
             "title": "Cas d'utilisation",
+            "sim_swap_title": "Fraude par SIM Swap",
             "sim_swap": "Détecter et bloquer la fraude coordonnée par SIM swap sur différents réseaux mobiles.",
+            "ato_title": "Prise de Contrôle de Compte (ATO)",
             "ato": "Prévenir la prise de contrôle de compte (ATO) en identifiant les appareils à haut risque déjà vus dans le réseau.",
+            "mule_title": "Réseaux de Comptes Mules",
             "mule": "Identifier les réseaux coordonnés de comptes mules déplaçant des fonds à travers plusieurs institutions.",
+            "repeat_actors_title": "Acteurs Récidivistes",
             "repeat_actors": "Arrêter les acteurs récidivistes qui passent d'une plateforme à l'autre pour exploiter les mêmes vulnérabilités."
         },
         "comparisons": {
             "title": "Protegey vs Alternatives",
-            "internal": "Protegey vs Systèmes Internes : Les systèmes internes ne voient que vos données. Protegey voit l'intelligence de tout le réseau.",
-            "siloed": "Protegey vs Signalement Cloisonné : Le signalement manuel est lent et réactif. Protegey est automatisé et en temps réel.",
-            "global": "Protegey vs Outils Mondiaux : Les outils mondiaux manquent souvent de signaux localisés spécifiques et de la couverture des connecteurs (GIM-UEMOA, GIMAC) fournie par Protegey.",
+            "internal_header": "Protegey vs Systèmes Internes",
+            "internal": "Les systèmes internes ne voient que vos données. Protegey voit l'intelligence de tout le réseau.",
+            "siloed_header": "Protegey vs Signalement Cloisonné",
+            "siloed": "Le signalement manuel est lent et réactif. Protegey est automatisé et en temps réel.",
+            "global_header": "Protegey vs Outils Mondiaux",
+            "global": "Les outils mondiaux manquent souvent de signaux localisés spécifiques et de la couverture des connecteurs (GIM-UEMOA, GIMAC) fournie par Protegey.",
             "conclusion": "Protegey est la seule plateforme fournissant une intelligence à l'échelle du réseau, sans délai, spécifiquement adaptée au paysage financier africain."
+        },
+        "common": {
+            "who_for_header": "À qui s'adresse-t-il",
+            "problem_header": "Problème Central Résolu",
+            "audience_header": "Public Principal",
+            "benefits_header": "Avantages Clés",
+            "infrastructure_note": "Protegey est une infrastructure de classe entreprise. Si vous représentez une institution cherchant à renforcer sa défense contre la fraude, veuillez contacter notre équipe pour une démonstration.",
+            "resources_label": "Ressources",
+            "explore_guides_label": "Explorer les Guides GEO"
         }
     },
     "privacy": {

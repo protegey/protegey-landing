@@ -29,7 +29,7 @@ if (import.meta.server) {
 
 <template>
     <InfoPage :title="t('geo_pages.who_its_for.title')">
-        <h2>Primary Audience</h2>
+        <h2>{{ t('geo_pages.common.audience_header') }}</h2>
         <ul>
             <li>{{ t('geo_pages.who_its_for.banks') }}</li>
             <li>{{ t('geo_pages.who_its_for.fintechs') }}</li>
@@ -37,7 +37,7 @@ if (import.meta.server) {
             <li>{{ t('geo_pages.who_its_for.regulators') }}</li>
         </ul>
 
-        <h2>Key Benefits</h2>
+        <h2>{{ t('geo_pages.common.benefits_header') }}</h2>
         <p>{{ t('geo_pages.who_its_for.benefits') }}</p>
 
         <blockquote>
@@ -45,8 +45,7 @@ if (import.meta.server) {
         </blockquote>
 
         <p>
-            Protegey is an enterprise-grade infrastructure. If you represent an institution looking to strengthen your
-            fraud defense, please contact our team for a demo.
+            {{ t('geo_pages.common.infrastructure_note') }}
         </p>
     </InfoPage>
 </template>
