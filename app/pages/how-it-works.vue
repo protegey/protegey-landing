@@ -19,9 +19,10 @@ useSeoMeta({
 
 if (import.meta.server) {
     useSchemaOrg([
-        defineWebPage({
+        {
+            '@type': 'WebPage',
             name: t('geo_pages.how_it_works.title'),
-        })
+        }
     ])
 }
 </script>

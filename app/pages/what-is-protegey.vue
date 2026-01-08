@@ -19,10 +19,11 @@ useSeoMeta({
 
 if (import.meta.server) {
     useSchemaOrg([
-        defineWebPage({
+        {
+            '@type': 'WebPage',
             name: t('geo_pages.what_is_protegey.title'),
             description: t('geo_pages.what_is_protegey.definition'),
-        })
+        }
     ])
 }
 </script>
