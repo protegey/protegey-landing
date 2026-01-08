@@ -43,8 +43,8 @@ onMounted(() => {
         <!-- <section class="detail-section container mx-auto px-4">
             <div
                 class="max-w-5xl mx-auto rounded-[3rem] bg-neutral-900/50 border border-neutral-800 p-8 md:p-16 relative overflow-hidden"> -->
-                <!-- Background Accent -->
-                <!-- <div class="absolute top-0 right-0 w-1/2 h-full bg-primary-500/5 blur-[120px] pointer-events-none">
+        <!-- Background Accent -->
+        <!-- <div class="absolute top-0 right-0 w-1/2 h-full bg-primary-500/5 blur-[120px] pointer-events-none">
                 </div>
 
                 <div class="relative z-10">
@@ -103,20 +103,20 @@ onMounted(() => {
                 <!-- Mission -->
                 <div
                     class="p-8 md:p-12 rounded-[2.5rem] bg-neutral-900/30 border border-neutral-800 group hover:border-primary-500/20 transition-all duration-500">
-                    <div class="flex items-center gap-4 mb-8">
+                    <div class="flex items-center gap-4 mb-8 rtl:flex-row-reverse">
                         <div
                             class="p-3 rounded-2xl bg-violet-500/10 text-violet-400 group-hover:scale-110 transition-transform duration-500">
                             <HugeiconsIcon :icon="Target02Icon" :size="32" />
                         </div>
-                        <h2 class="text-3xl font-bold text-white">{{ $t('products.mission.title') }}</h2>
+                        <h2 class="text-3xl font-bold text-white rtl:text-right">{{ $t('products.mission.title') }}</h2>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div v-for="(item, index) in tm('products.mission.items')" :key="index"
-                            class="flex items-start gap-3 p-4 rounded-xl bg-white/5 text-sm text-neutral-400">
+                            class="flex items-start gap-3 p-4 rounded-xl bg-white/5 text-sm text-neutral-400 rtl:flex-row-reverse">
                             <div
                                 class="mt-1 w-1.5 h-1.5 rounded-full bg-violet-500 shadow-lg shadow-violet-500/50 flex-shrink-0">
                             </div>
-                            {{ rt(item) }}
+                            <span class="rtl:text-right">{{ rt(item) }}</span>
                         </div>
                     </div>
                 </div>
@@ -124,25 +124,27 @@ onMounted(() => {
                 <!-- Coverage -->
                 <div
                     class="p-8 md:p-12 rounded-[2.5rem] bg-neutral-900/30 border border-neutral-800 group hover:border-primary-500/20 transition-all duration-500">
-                    <div class="flex items-center gap-4 mb-8">
+                    <div class="flex items-center gap-4 mb-8 rtl:flex-row-reverse">
                         <div
                             class="p-3 rounded-2xl bg-cyan-500/10 text-cyan-400 group-hover:scale-110 transition-transform duration-500">
                             <HugeiconsIcon :icon="GlobalIcon" :size="32" />
                         </div>
-                        <h2 class="text-3xl font-bold text-white">{{ $t('products.geographic_coverage.title') }}</h2>
+                        <h2 class="text-3xl font-bold text-white rtl:text-right">{{
+                            $t('products.geographic_coverage.title') }}</h2>
                     </div>
-                    <p class="text-lg text-neutral-400 mb-8">{{ $t('products.geographic_coverage.description') }}</p>
+                    <p class="text-lg text-neutral-400 mb-8 rtl:text-right">{{
+                        $t('products.geographic_coverage.description') }}</p>
 
                     <div class="space-y-4 mb-8">
                         <div v-for="(region, index) in tm('products.geographic_coverage.regions')" :key="index"
-                            class="flex items-center gap-4 p-4 rounded-2xl bg-neutral-950 border border-neutral-800/50 hover:border-cyan-500/30 transition-colors">
+                            class="flex items-center gap-4 p-4 rounded-2xl bg-neutral-950 border border-neutral-800/50 hover:border-cyan-500/30 transition-colors rtl:flex-row-reverse">
                             <div class="w-2 h-10 bg-cyan-500 rounded-full"></div>
-                            <span class="text-white font-medium">{{ rt(region) }}</span>
+                            <span class="text-white font-medium rtl:text-right">{{ rt(region) }}</span>
                         </div>
                     </div>
 
                     <div
-                        class="p-4 rounded-2xl bg-neutral-950/80 border border-neutral-800 italic text-sm text-neutral-500">
+                        class="p-4 rounded-2xl bg-neutral-950/80 border border-neutral-800 italic text-sm text-neutral-500 rtl:text-right">
                         {{ $t('products.geographic_coverage.note') }}
                     </div>
                 </div>

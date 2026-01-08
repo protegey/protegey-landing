@@ -24,12 +24,12 @@ onMounted(() => {
 <template>
     <section ref="heroRef" class="relative pt-32 pb-0 md:pt-48 md:pb-0 overflow-visible">
         <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
+            <div class="max-w-4xl mx-auto text-center rtl:text-center">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight rtl:text-center">
                     {{ $t('products.hero.title_start') }} <span class="text-primary-500">{{
                         $t('products.hero.title_highlight') }}</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-neutral-400 leading-relaxed">
+                <p class="text-xl md:text-2xl text-neutral-400 leading-relaxed rtl:text-center">
                     {{ $t('products.hero.subtitle') }}
                 </p>
 

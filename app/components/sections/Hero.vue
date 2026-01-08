@@ -154,7 +154,7 @@ onUnmounted(() => {
             <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                 <!-- Left Content -->
-                <div class="text-left space-y-8">
+                <div class="text-left rtl:text-right space-y-8">
                     <!-- Badge -->
                     <div
                         class="hero-badge inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary-500/30 bg-primary-500/10 text-primary-400 text-sm font-mono tracking-wide">
@@ -189,7 +189,7 @@ onUnmounted(() => {
                                 class="text-white group-hover:text-white transition-colors" />
                             {{ $t('hero.cta.request_demo') }}
                             <HugeiconsIcon :icon="ArrowRight01Icon" :size="20"
-                                class="group-hover:translate-x-1 transition-transform" />
+                                class="group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
                         </button>
                     </div>
 
@@ -258,19 +258,19 @@ onUnmounted(() => {
                                         class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
                                         <span class="text-red-400">[{{ $t('hero.dashboard.critical') }}]</span>
                                         <span class="text-neutral-300">{{ $t('hero.dashboard.sim_swap') }}</span>
-                                        <span class="text-neutral-400 ml-auto">00:01:23</span>
+                                        <span class="text-neutral-400 ms-auto">00:01:23</span>
                                     </div>
                                     <div
                                         class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
                                         <span class="text-yellow-400">[{{ $t('hero.dashboard.warning') }}]</span>
                                         <span class="text-neutral-300">{{ $t('hero.dashboard.unusual_login') }}</span>
-                                        <span class="text-neutral-400 ml-auto">00:01:45</span>
+                                        <span class="text-neutral-400 ms-auto">00:01:45</span>
                                     </div>
                                     <div
                                         class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
                                         <span class="text-primary-400">[{{ $t('hero.dashboard.info') }}]</span>
                                         <span class="text-neutral-300">{{ $t('hero.dashboard.new_node') }}</span>
-                                        <span class="text-neutral-400 ml-auto">00:02:10</span>
+                                        <span class="text-neutral-400 ms-auto">00:02:10</span>
                                     </div>
                                 </div>
                             </div>
@@ -286,7 +286,7 @@ onUnmounted(() => {
                                         class="text-neutral-600 mx-auto mb-2 group-hover:text-primary-400 transition-colors" />
                                     <span
                                         class="text-xs text-neutral-400 group-hover:text-neutral-300 transition-colors">{{
-                                        $t('hero.dashboard.map_activity') }}</span>
+                                            $t('hero.dashboard.map_activity') }}</span>
                                 </div>
                             </div>
                         </div>

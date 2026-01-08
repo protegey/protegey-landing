@@ -13,6 +13,7 @@ import {
 } from '@hugeicons/core-free-icons';
 
 defineProps({ isDark: Boolean });
+const { t, tm, rt } = useI18n();
 
 if (typeof window !== 'undefined' && !gsap.plugins.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
@@ -103,14 +104,16 @@ onUnmounted(() => {
 
 <template>
     <!-- Gradient band background like the attachment -->
-    <section id="features" class="features-modern relative py-20 md:py-28 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900">
+    <section id="features"
+        class="features-modern relative py-20 md:py-28 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900">
         <!-- Inner rounded panel -->
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-7xl">
-                <div class="relative rounded-3xl bg-white/95 shadow-xl border border-white/60 backdrop-blur-sm px-6 sm:px-10 md:px-14 py-12 md:py-16">
+                <div
+                    class="relative rounded-3xl bg-white/95 shadow-xl border border-white/60 backdrop-blur-sm px-6 sm:px-10 md:px-14 py-12 md:py-16">
                     <!-- subtle grid overlay inside the panel -->
                     <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-[0.08]" aria-hidden="true"
-                         style="background-image:
+                        style="background-image:
                             linear-gradient(rgba(0,0,0,.12) 1px, transparent 1px),
                             linear-gradient(90deg, rgba(0,0,0,.12) 1px, transparent 1px);
                             background-size: 36px 36px;">
@@ -118,28 +121,41 @@ onUnmounted(() => {
 
                     <!-- Header -->
                     <div class="relative text-center max-w-3xl mx-auto mb-10 md:mb-14">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700 ring-1 ring-gray-200">Features</span>
-                        <h2 class="features-title mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900">
-                            Unleash the Power: Features That
-                            <span class="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-orange-500 to-pink-600">Transcend the Ordinary!</span>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700 ring-1 ring-gray-200">{{
+                                t('features.badge') }}</span>
+                        <h2
+                            class="features-title mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 rtl:text-center">
+                            {{ t('features.title_main') }}
+                            <span
+                                class="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-orange-500 to-pink-600">{{
+                                    t('features.title_highlight') }}</span>
                         </h2>
-                        <p class="features-subtitle mt-4 text-sm sm:text-base text-gray-600">
-                            Unveiling the finest arsenal: power‑packed capabilities that elevate your financial protection to new heights.
+                        <p class="features-subtitle mt-4 text-sm sm:text-base text-gray-600 rtl:text-center">
+                            {{ t('features.subtitle') }}
                         </p>
                     </div>
 
                     <!-- Features Grid -->
                     <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-                        <div v-for="(feature, index) in features" :key="index" class="feature-card">
-                            <div class="h-full rounded-2xl border border-gray-200 bg-white shadow-[0_1px_0_0_rgba(0,0,0,0.02)] hover:shadow-lg transition-shadow p-6 md:p-7">
-                                <div class="flex items-start gap-4">
+                        <div v-for="(feature, key) in tm('features.items')" :key="key" class="feature-card">
+                            <div
+                                class="h-full rounded-2xl border border-gray-200 bg-white shadow-[0_1px_0_0_rgba(0,0,0,0.02)] hover:shadow-lg transition-shadow p-6 md:p-7">
+                                <div class="flex items-start gap-4 rtl:flex-row-reverse">
                                     <!-- Icon in subtle square -->
-                                    <div class="shrink-0 w-10 h-10 rounded-lg border border-gray-200 bg-gray-50 flex items-center justify-center text-gray-700">
-                                        <HugeiconsIcon :icon="feature.icon" :size="18" />
+                                    <div
+                                        class="shrink-0 w-10 h-10 rounded-lg border border-gray-200 bg-gray-50 flex items-center justify-center text-gray-700">
+                                        <!-- Map icon from feature object or key -->
+                                        <HugeiconsIcon
+                                            :icon="key === 'fraud' ? Shield01Icon : (key === 'behavioral' ? ChartHistogramIcon : (key === 'compliance' ? FileValidationIcon : (key === 'monitoring' ? Activity01Icon : (key === 'alerts' ? Notification02Icon : Settings01Icon))))"
+                                            :size="18" />
                                     </div>
                                     <div>
-                                        <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-1">{{ feature.title }}</h3>
-                                        <p class="text-sm text-gray-600 leading-relaxed">{{ feature.description }}</p>
+                                        <h3
+                                            class="text-base md:text-lg font-semibold text-gray-900 mb-1 rtl:text-right">
+                                            {{ rt(feature.title) }}</h3>
+                                        <p class="text-sm text-gray-600 leading-relaxed rtl:text-right">{{
+                                            rt(feature.description) }}</p>
                                     </div>
                                 </div>
                             </div>

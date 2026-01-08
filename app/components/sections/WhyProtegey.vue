@@ -66,7 +66,8 @@ onMounted(async () => {
                         <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
                         {{ $t('why_protegey.badge') }}
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ $t('why_protegey.title') }}</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 rtl:text-center">{{
+                        $t('why_protegey.title') }}</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
@@ -81,10 +82,11 @@ onMounted(async () => {
                                 class="mb-6 inline-flex p-3 rounded-lg bg-neutral-800 text-primary-400 group-hover:text-primary-300 group-hover:scale-110 transition-all duration-300">
                                 <HugeiconsIcon :icon="ZapIcon" :size="32" />
                             </div>
-                            <div class="text-4xl font-bold text-white mb-3 font-mono">67% <span
-                                    class="text-primary-400 text-lg font-normal">{{ $t('why_protegey.card1.title')
+                            <div class="text-4xl font-bold text-white mb-3 font-mono rtl:text-right">{{
+                                $t('why_protegey.card1.value') }} <span class="text-primary-400 text-lg font-normal">{{
+                                    $t('why_protegey.card1.title')
                                     }}</span></div>
-                            <div class="text-neutral-400 text-base md:text-lg leading-relaxed">
+                            <div class="text-neutral-400 text-base md:text-lg leading-relaxed rtl:text-right">
                                 {{ $t('why_protegey.card1.text') }}
                             </div>
                         </div>
@@ -100,10 +102,11 @@ onMounted(async () => {
                                 class="mb-6 inline-flex p-3 rounded-lg bg-neutral-800 text-secondary-400 group-hover:text-secondary-300 group-hover:scale-110 transition-all duration-300">
                                 <HugeiconsIcon :icon="ChartDownIcon" :size="32" />
                             </div>
-                            <div class="text-4xl font-bold text-white mb-3 font-mono">40% <span
+                            <div class="text-4xl font-bold text-white mb-3 font-mono rtl:text-right">{{
+                                $t('why_protegey.card2.value') }} <span
                                     class="text-secondary-400 text-lg font-normal">{{ $t('why_protegey.card2.title')
                                     }}</span></div>
-                            <div class="text-neutral-400 text-base md:text-lg leading-relaxed">
+                            <div class="text-neutral-400 text-base md:text-lg leading-relaxed rtl:text-right">
                                 {{ $t('why_protegey.card2.text') }}
                             </div>
                         </div>
@@ -119,10 +122,11 @@ onMounted(async () => {
                                 class="mb-6 inline-flex p-3 rounded-lg bg-neutral-800 text-emerald-400 group-hover:text-emerald-300 group-hover:scale-110 transition-all duration-300">
                                 <HugeiconsIcon :icon="Shield01Icon" :size="32" />
                             </div>
-                            <div class="text-4xl font-bold text-white mb-3 font-mono">99.7% <span
-                                    class="text-emerald-400 text-lg font-normal">{{ $t('why_protegey.card3.title')
+                            <div class="text-4xl font-bold text-white mb-3 font-mono rtl:text-right">{{
+                                $t('why_protegey.card3.value') }} <span class="text-emerald-400 text-lg font-normal">{{
+                                    $t('why_protegey.card3.title')
                                     }}</span></div>
-                            <div class="text-neutral-400 text-base md:text-lg leading-relaxed">
+                            <div class="text-neutral-400 text-base md:text-lg leading-relaxed rtl:text-right">
                                 {{ $t('why_protegey.card3.text') }}
                             </div>
                         </div>

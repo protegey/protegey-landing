@@ -63,7 +63,8 @@ onMounted(async () => {
                     <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
                     {{ $t('products.badge') }}
                 </div>
-                <h2 class="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight capitalize leading-tight">
+                <h2
+                    class="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight capitalize leading-tight rtl:text-center">
                     {{ $t('products.title') }}
                 </h2>
                 <div class="h-1.5 w-24 bg-gradient-to-r from-primary-500 to-violet-500 mx-auto rounded-full"></div>
@@ -82,16 +83,17 @@ onMounted(async () => {
                             class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-800 text-primary-400 group-hover:scale-110 group-hover:bg-primary-500/20 transition-all duration-500 shadow-xl shadow-black/20">
                             <HugeiconsIcon :icon="Activity01Icon" :size="32" />
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">{{ $t('products.signal.title') }}</h3>
-                        <p class="text-neutral-400 text-lg leading-relaxed mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4 rtl:text-right">{{ $t('products.signal.title') }}
+                        </h3>
+                        <p class="text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
                             {{ $t('products.signal.description') }}
                         </p>
                     </div>
 
                     <div
-                        class="mt-auto flex items-center text-primary-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
+                        class="mt-auto flex items-center text-primary-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300 rtl:flex-row-reverse">
                         {{ $t('products.explore') }}
-                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
+                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" class="rtl:rotate-180" />
                     </div>
                 </NuxtLink>
 
@@ -107,8 +109,9 @@ onMounted(async () => {
                             class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-800 text-violet-400 group-hover:scale-110 group-hover:bg-violet-500/20 transition-all duration-500 shadow-xl shadow-black/20">
                             <HugeiconsIcon :icon="ViewIcon" :size="32" />
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">{{ $t('products.radar.title') }}</h3>
-                        <p class="text-neutral-400 text-lg leading-relaxed mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4 rtl:text-right">{{ $t('products.radar.title') }}
+                        </h3>
+                        <p class="text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
                             {{ $t('products.radar.description') }}
                         </p>
                     </div>
@@ -132,16 +135,17 @@ onMounted(async () => {
                             class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-800 text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all duration-500 shadow-xl shadow-black/20">
                             <HugeiconsIcon :icon="Settings01Icon" :size="32" />
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">{{ $t('products.api.title') }}</h3>
-                        <p class="text-neutral-400 text-lg leading-relaxed mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4 rtl:text-right">{{ $t('products.api.title') }}
+                        </h3>
+                        <p class="text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
                             {{ $t('products.api.description') }}
                         </p>
                     </div>
 
                     <div
-                        class="mt-auto flex items-center text-emerald-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
+                        class="mt-auto flex items-center text-emerald-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300 rtl:flex-row-reverse">
                         {{ $t('products.explore') }}
-                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
+                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" class="rtl:rotate-180" />
                     </div>
                 </NuxtLink>
 
@@ -157,16 +161,17 @@ onMounted(async () => {
                             class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-800 text-amber-400 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all duration-500 shadow-xl shadow-black/20">
                             <HugeiconsIcon :icon="DashboardSquare01Icon" :size="32" />
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">{{ $t('products.console.title') }}</h3>
-                        <p class="text-neutral-400 text-lg leading-relaxed mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4 rtl:text-right">{{ $t('products.console.title') }}
+                        </h3>
+                        <p class="text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
                             {{ $t('products.console.description') }}
                         </p>
                     </div>
 
                     <div
-                        class="mt-auto flex items-center text-amber-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
+                        class="mt-auto flex items-center text-amber-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300 rtl:flex-row-reverse">
                         {{ $t('products.explore') }}
-                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
+                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" class="rtl:rotate-180" />
                     </div>
                 </NuxtLink>
 
@@ -182,8 +187,9 @@ onMounted(async () => {
                             class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-800 text-violet-400 group-hover:scale-110 group-hover:bg-violet-500/20 transition-all duration-500 shadow-xl shadow-black/20">
                             <HugeiconsIcon :icon="Shield01Icon" :size="32" />
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">{{ $t('products.compliance.title') }}</h3>
-                        <p class="text-neutral-400 text-lg leading-relaxed mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4 rtl:text-right">{{ $t('products.compliance.title')
+                            }}</h3>
+                        <p class="text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
                             {{ $t('products.compliance.description') }}
                         </p>
                     </div>
@@ -213,16 +219,17 @@ onMounted(async () => {
                                 {{ $t('products.coming_soon') }}
                             </span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">{{ $t('products.panid.title') }}</h3>
-                        <p class="text-neutral-400 text-lg leading-relaxed mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4 rtl:text-right">{{ $t('products.panid.title') }}
+                        </h3>
+                        <p class="text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
                             {{ $t('products.panid.description') }}
                         </p>
                     </div>
 
                     <div
-                        class="mt-auto flex items-center text-cyan-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
+                        class="mt-auto flex items-center text-cyan-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300 rtl:flex-row-reverse">
                         {{ $t('products.explore') }}
-                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
+                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" class="rtl:rotate-180" />
                     </div>
                 </NuxtLink>
             </div>

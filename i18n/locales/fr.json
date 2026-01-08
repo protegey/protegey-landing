@@ -59,14 +59,17 @@
         "badge": "INDICATEURS DE PERFORMANCE",
         "title": "Pourquoi les équipes Risque & Conformité nous choisissent",
         "card1": {
+            "value": "67%",
             "title": "Plus Rapide",
             "text": "Nos clients détectent et neutralisent les menaces 67% plus rapidement que la moyenne du secteur dans la région, réduisant considérablement les dommages potentiels et minimisant les interruptions d'activité."
         },
         "card2": {
+            "value": "40%",
             "title": "Économies",
             "text": "Les entreprises passant à PROTEGEY économisent en moyenne 40% par rapport à la création et au maintien d'une équipe interne de risque/conformité, sans sacrifier la qualité ou la couverture de la protection."
         },
         "card3": {
+            "value": "99,7%",
             "title": "Disponibilité",
             "text": "Notre plateforme maintient une disponibilité de 99,7% avec des systèmes redondants dans plusieurs centres de données, garantissant que votre couverture de sécurité ne dort jamais, même quand vous dormez."
         }
@@ -295,12 +298,15 @@
         },
         "geographic_coverage": {
             "title": "Couverture Géographique",
-            "description": "Nos produits sont spécifiquement conçus pour le paysage réglementaire et de fraude de :",
+            "heading_part1": "Sécuriser l' ",
+            "heading_highlight": "Économie Numérique Africaine",
+            "description": "Nos produits sont spécifiquement adaptés aux paysages réglementaires et de fraude uniques à travers l'Afrique, fournissant une intelligence localisée que les outils mondiaux manquent souvent.",
             "regions": [
                 "Zone GIM-UEMOA (Union Économique et Monétaire Ouest-Africaine)",
                 "Zone GIMAC (Communauté Économique et Monétaire de l'Afrique Centrale)",
                 "Afrique du Nord (région du Maghreb)"
             ],
+            "region_text": "Intelligence complète sur la fraude et conformité réglementaire adaptée aux institutions de cette zone.",
             "note": "Nous comprenons les défis uniques de la fraude transfrontalière, de la prolifération du mobile money et des exigences réglementaires en évolution dans ces marchés."
         },
         "hero": {
@@ -318,11 +324,106 @@
         "results_title": "Résultats escomptés",
         "how_it_works_title": "Comment ça fonctionne",
         "deployment_suffix": "Déploiement",
+        "features": {
+            "badge": "Caractéristiques",
+            "title_main": "Libérez la Puissance : Des fonctionnalités qui",
+            "title_highlight": "Transcendent l'Ordinaire !",
+            "subtitle": "Dévoilement du meilleur arsenal : des capacités puissantes qui élèvent votre protection financière vers de nouveaux sommets.",
+            "items": {
+                "fraud": {
+                    "title": "Détection et Score de Fraude",
+                    "description": "Algorithmes de ML avancés qui analysent les modèles de transaction et fournissent des scores de risque en temps réel avec une précision de 99,9 %."
+                },
+                "behavioral": {
+                    "title": "Analyses Comportementales",
+                    "description": "Aperçu approfondi des modèles de comportement des utilisateurs pour identifier les anomalies et prévenir les tentatives de fraude sophistiquées."
+                },
+                "compliance": {
+                    "title": "Outils de Conformité & AML",
+                    "description": "Fonctionnalités complètes de lutte contre le blanchiment d'argent avec rapports automatisés et conformité réglementaire."
+                },
+                "monitoring": {
+                    "title": "Surveillance des Transactions",
+                    "description": "Surveillance en temps réel de toutes les transactions financières avec des systèmes d'alerte et de réponse intelligents."
+                },
+                "alerts": {
+                    "title": "Alertes en Temps Réel & Gestion de Cas",
+                    "description": "Notifications instantanées et outils complets de gestion de cas pour les équipes d'investigation sur la fraude."
+                },
+                "api": {
+                    "title": "Intégration API",
+                    "description": "Intégration transparente avec les systèmes existants grâce à des API robustes et un support webhook."
+                }
+            }
+        },
+        "solution": {
+            "badge": "La Solution",
+            "title_main": "Protégez ce qui",
+            "title_highlight": "Compte le Plus",
+            "description": "La technologie avancée de détection de fraude de Protegey sauvegarde l'écosystème financier de l'Afrique en temps réel.",
+            "hero_text": "Prévention de la Fraude de Nouvelle Génération — Construit avec le ML et des analyses en temps réel, Protegey s'intègre parfaitement aux API des télécoms, des banques et des fintechs pour protéger des millions de transactions.",
+            "features": [
+                {
+                    "title": "Gardez l'entreprise organisée avec des budgets et des politiques de dépenses",
+                    "text": "Les algorithmes de ML analysent les modèles et fournissent des scores de risque en temps réel avec une précision de 99,9 %"
+                },
+                {
+                    "title": "Émettez des cartes d'entreprise pour un meilleur contrôle des dépenses",
+                    "text": "Connexions API transparentes avec les infrastructures télécoms, bancaires et fintech existantes"
+                },
+                {
+                    "title": "Avancez plus vite avec des aperçus propulsés par l'IA",
+                    "text": "Construit spécifiquement pour les défis uniques des systèmes financiers africains"
+                }
+            ],
+            "card": {
+                "title": "BOUCLIER PROTEGEY",
+                "tagline": "Protection en Temps Réel",
+                "status": "ACTIF",
+                "stat1_label": "Menaces bloquées aujourd'hui",
+                "stat1_value": "2 847",
+                "stat2_label": "Temps de réponse",
+                "stat2_value": "<50ms",
+                "stat3_label": "Score de risque",
+                "stat3_value": "99,9 % sûr",
+                "protection_level": "Niveau de protection",
+                "protection_status": "Maximum"
+            }
+        },
         "cta": {
             "title": "Prêt à Sécuriser Votre Réseau ?",
             "subtitle": "Rejoignez la liste d'attente pour un accès anticipé ou contactez notre équipe commerciale pour une intégration entreprise.",
             "request_demo": "Demander un Demo",
             "contact_us": "Contactez-Nous"
+        },
+        "target": {
+            "badge": "Qui nous servons",
+            "title_main": "Des startups en phase de démarrage aux",
+            "title_highlight": "leaders",
+            "title_suffix": "mondiaux de l'industrie",
+            "subtitle": "Approuvé par les banques, les fintechs et les plateformes numériques protégeant des millions de transactions",
+            "items": {
+                "banks": {
+                    "title": "Banques",
+                    "description": "Protection de classe entreprise pour la banque traditionnelle"
+                },
+                "fintechs": {
+                    "title": "Startups Fintech",
+                    "description": "Évoluez en toute sécurité avec une prévention de la fraude robuste"
+                },
+                "payments": {
+                    "title": "Plateformes de Paiement",
+                    "description": "Sécurisez chaque transaction de paiement"
+                },
+                "ecommerce": {
+                    "title": "Commerce électronique",
+                    "description": "Protégez les transactions en ligne et les clients"
+                },
+                "telecoms": {
+                    "title": "Opérateurs Télécom",
+                    "description": "Sécurisez les services de mobile money"
+                }
+            }
         }
     },
     "waitlist": {
@@ -561,6 +662,7 @@
     },
     "faq": {
         "title": "Questions Fréquemment Posées",
+        "subtitle": "Réponses claires aux questions sur le rôle et la mission de Protegey.",
         "q1": "À quoi sert Protegey ?",
         "a1": "Protegey est utilisé par les institutions financières pour détecter et prévenir la fraude en temps réel. Il permet aux équipes de partager des alertes de fraude et des renseignements anonymisés via notre réseau sécurisé pour arrêter les fraudeurs professionnels avant qu'ils n'attaquent votre système.",
         "q2": "Protegey est-il une banque ou un régulateur ?",

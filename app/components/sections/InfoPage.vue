@@ -40,7 +40,8 @@ const localePath = useLocalePath()
                 <!-- Sidebar Navigation -->
                 <aside class="hidden lg:block lg:col-span-3">
                     <nav class="sticky top-32 space-y-2">
-                        <div class="text-xs font-mono text-primary-500 uppercase tracking-widest mb-4 px-3">
+                        <div
+                            class="text-xs font-mono text-primary-500 uppercase tracking-widest mb-4 px-3 rtl:text-right">
                             {{ t('geo_pages.common.resources_label') }}
                         </div>
                         <NuxtLink v-for="item in geoNav" :key="item.path" :to="localePath(item.path)"
@@ -50,7 +51,7 @@ const localePath = useLocalePath()
                                     ? 'bg-primary-500/10 text-primary-400 border-primary-500/20 shadow-[0_0_20px_rgba(132,204,22,0.1)]'
                                     : 'text-neutral-500 hover:text-white hover:bg-white/5'
                             ]">
-                            <span class="w-1.5 h-1.5 rounded-full mr-3 transition-colors"
+                            <span class="w-1.5 h-1.5 rounded-full me-3 transition-colors"
                                 :class="route.path.endsWith(item.path) ? 'bg-primary-500' : 'bg-neutral-800 group-hover:bg-neutral-600'"></span>
                             {{ item.name }}
                         </NuxtLink>
@@ -95,11 +96,11 @@ const localePath = useLocalePath()
 
 <style scoped>
 .prose :deep(h2) {
-    @apply text-2xl font-bold text-white mt-12 mb-6 border-l-4 border-primary-500 pl-4 bg-primary-500/5 py-2;
+    @apply text-2xl font-bold text-white mt-12 mb-6 border-s-4 border-primary-500 ps-4 bg-primary-500/5 py-2 rtl:text-right;
 }
 
 .prose :deep(p) {
-    @apply text-neutral-400 leading-relaxed mb-6 text-lg;
+    @apply text-neutral-400 leading-relaxed mb-6 text-lg rtl:text-right;
 }
 
 .prose :deep(ul) {
@@ -112,7 +113,7 @@ const localePath = useLocalePath()
 
 .prose :deep(li)::before {
     content: "→";
-    @apply text-primary-500 mr-3 font-bold flex-shrink-0;
+    @apply text-primary-500 me-3 font-bold flex-shrink-0 rtl:rotate-180;
 }
 
 .prose :deep(ol) {
@@ -128,7 +129,7 @@ const localePath = useLocalePath()
 }
 
 .prose :deep(blockquote) {
-    @apply pl-6 border-l-4 border-primary-500 italic text-neutral-300 bg-primary-500/5 py-6 pr-6 rounded-r-2xl mb-12 text-xl;
+    @apply ps-6 border-s-4 border-primary-500 italic text-neutral-300 bg-primary-500/5 py-6 pe-6 rounded-e-2xl mb-12 text-xl rtl:text-right;
 }
 
 .lead {

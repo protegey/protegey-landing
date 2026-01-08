@@ -5,15 +5,14 @@
       <div class="grid md:grid-cols-5 gap-8 mb-8">
         <!-- Brand -->
         <div>
-          <NuxtLink :to="localePath('/')" class="flex items-center gap-2 mb-4">
+          <NuxtLink :to="localePath('/')" class="flex items-center gap-2 mb-4 rtl:justify-end">
             <img src="~/assets/images/logo.png" :alt="$t('footer.logo_alt')" class="w-14 h-14 object-contain"></img>
             <span class="text-lg font-bold text-white">PROTEGEY</span>
           </NuxtLink>
-          <p class="text-sm text-neutral-400">{{ $t('footer.slogan') }}</p>
+          <p class="text-sm text-neutral-400 rtl:text-right">{{ $t('footer.slogan') }}</p>
         </div>
 
-        <!-- Company -->
-        <div>
+        <div class="rtl:text-right">
           <h3 class="font-semibold mb-4 text-white">{{ $t('footer.company') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-400">
             <li>
@@ -35,8 +34,7 @@
           </ul>
         </div>
 
-        <!-- Products -->
-        <div>
+        <div class="rtl:text-right">
           <h3 class="font-semibold mb-4 text-white">{{ $t('nav.products') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-400">
             <li>
@@ -66,7 +64,7 @@
             </li>
             <li>
               <NuxtLink :to="localePath('/products/panid')"
-                class="hover:text-primary-400 transition-colors flex items-center gap-2">
+                class="hover:text-primary-400 transition-colors flex items-center gap-2 rtl:justify-end">
                 {{ $t('products.panid.title') }}
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary-500/10 text-primary-400 border border-primary-500/20 leading-none">
@@ -77,8 +75,7 @@
           </ul>
         </div>
 
-        <!-- Resources -->
-        <div>
+        <div class="rtl:text-right">
           <h3 class="font-semibold mb-4 text-white">{{ $t('footer.resources') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-400">
             <li>
@@ -125,7 +122,7 @@
         </div>
       </div>
 
-      <div class="pt-8 border-t border-neutral-900 text-center text-sm text-neutral-400">
+      <div class="pt-8 border-t border-neutral-900 text-center text-sm text-neutral-400 rtl:text-right">
         <p>{{ $t('footer.copyright', { year: currentYear }) }}</p>
       </div>
     </div>

@@ -14,15 +14,15 @@ const localePath = useLocalePath()
             </div>
         </div>
 
-        <div class="container mx-auto max-w-5xl relative z-10 text-center">
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight">
+        <div class="container mx-auto max-w-5xl relative z-10 text-center rtl:text-center">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight rtl:text-center">
                 {{ $t('products.cta.title') }}
             </h2>
-            <p class="text-xl md:text-2xl text-neutral-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-xl md:text-2xl text-neutral-400 mb-12 max-w-2xl mx-auto leading-relaxed rtl:text-center">
                 {{ $t('products.cta.subtitle') }}
             </p>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 rtl:flex-row-reverse">
                 <!-- Join Waitlist -->
                 <NuxtLink :to="localePath('/#waitlist')"
                     class="w-full sm:w-auto px-10 py-4 rounded-xl bg-primary-500 text-neutral-950 font-bold text-lg hover:bg-primary-400 transition-all hover:scale-105 shadow-lg shadow-primary-500/20">

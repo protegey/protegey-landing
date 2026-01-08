@@ -59,10 +59,18 @@ const scrollTo = (selector) => {
         </div>
 
         <div class="hidden md:flex items-center gap-4">
-          <NuxtLink :to="switchLocalePath(locale === 'en' ? 'fr' : 'en')"
-            class="text-neutral-400 hover:text-white font-medium text-xs transition-colors border border-neutral-800 px-2 py-1 rounded">
-            {{ locale === 'en' ? 'FR' : 'EN' }}
-          </NuxtLink>
+          <div class="flex items-center bg-neutral-800/50 rounded-lg p-1 border border-neutral-700/30">
+            <template v-for="l in ['en', 'fr', 'ar']" :key="l">
+              <NuxtLink :to="switchLocalePath(l)"
+                class="px-2 py-1 rounded text-[10px] font-bold transition-all uppercase" :class="[
+                  locale === l
+                    ? 'bg-primary-500 text-neutral-950'
+                    : 'text-neutral-400 hover:text-white'
+                ]">
+                {{ l }}
+              </NuxtLink>
+            </template>
+          </div>
           <NuxtLink :to="localePath('/#waitlist')" :class="[
             'transition-all duration-300 font-bold text-sm',
             isScrolled
@@ -75,10 +83,18 @@ const scrollTo = (selector) => {
 
         <!-- Mobile -->
         <div class="md:hidden flex items-center gap-4">
-          <NuxtLink :to="switchLocalePath(locale === 'en' ? 'fr' : 'en')"
-            class="text-neutral-400 hover:text-white font-medium text-xs transition-colors">
-            {{ locale === 'en' ? 'FR' : 'EN' }}
-          </NuxtLink>
+          <div class="flex items-center bg-neutral-800/50 rounded-lg p-1 border border-neutral-700/30 mr-2">
+            <template v-for="l in ['en', 'fr', 'ar']" :key="l">
+              <NuxtLink :to="switchLocalePath(l)"
+                class="px-2 py-1 rounded text-[10px] font-bold uppercase transition-all" :class="[
+                  locale === l
+                    ? 'bg-primary-500 text-neutral-950'
+                    : 'text-neutral-400 hover:text-white'
+                ]">
+                {{ l }}
+              </NuxtLink>
+            </template>
+          </div>
           <button @click="toggleMenu" :aria-expanded="isOpen"
             :aria-label="isOpen ? $t('nav.close_menu') : $t('nav.open_menu')"
             class="p-2 rounded-full border border-neutral-800 text-neutral-300">

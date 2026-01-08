@@ -56,16 +56,17 @@ onMounted(() => {
             <div class="max-w-7xl mx-auto">
                 <div class="geo-content text-center mb-20">
                     <div
-                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-bold tracking-widest uppercase mb-6">
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-bold tracking-widest uppercase mb-6 rtl:flex-row-reverse">
                         <HugeiconsIcon :icon="GlobalIcon" :size="16" />
                         {{ $t('products.geographic_coverage.title') }}
                     </div>
-                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight capitalize leading-tight">
-                        Securing the <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-primary-400">African
-                            Digital Economy</span>
+                    <h2
+                        class="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight capitalize leading-tight rtl:text-center">
+                        {{ $t('products.geographic_coverage.heading_part1') }} <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-primary-400">{{
+                                $t('products.geographic_coverage.heading_highlight') }}</span>
                     </h2>
-                    <p class="text-neutral-400 text-xl max-w-3xl mx-auto leading-relaxed">
+                    <p class="text-neutral-400 text-xl max-w-3xl mx-auto leading-relaxed rtl:text-center">
                         {{ $t('products.geographic_coverage.description') }}
                     </p>
                 </div>
@@ -73,24 +74,24 @@ onMounted(() => {
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div v-for="(region, index) in tm('products.geographic_coverage.regions')" :key="index"
                         class="region-card p-10 rounded-[2.5rem] bg-neutral-900/40 border border-neutral-800 hover:border-cyan-500/30 transition-all duration-500 group">
-                        <div class="flex items-center gap-4 mb-6">
+                        <div class="flex items-center gap-4 mb-6 rtl:flex-row-reverse">
                             <div
                                 class="w-1.5 h-12 bg-cyan-500 rounded-full group-hover:scale-y-110 transition-transform">
                             </div>
-                            <h3 class="text-2xl font-bold text-white transition-colors group-hover:text-cyan-400">
+                            <h3
+                                class="text-2xl font-bold text-white transition-colors group-hover:text-cyan-400 rtl:text-right">
                                 {{ rt(region) }}
                             </h3>
                         </div>
-                        <p class="text-neutral-400 leading-relaxed font-light">
-                            Comprehensive fraud intelligence and regulatory compliance tailored for institutions in this
-                            zone.
+                        <p class="text-neutral-400 leading-relaxed font-light rtl:text-right">
+                            {{ $t('products.geographic_coverage.region_text') }}
                         </p>
                     </div>
                 </div>
 
                 <div
                     class="mt-16 p-8 rounded-[2rem] bg-neutral-900/20 border border-neutral-800/50 backdrop-blur-sm text-center">
-                    <p class="text-neutral-500 italic text-lg">
+                    <p class="text-neutral-500 italic text-lg rtl:text-center">
                         {{ $t('products.geographic_coverage.note') }}
                     </p>
                 </div>

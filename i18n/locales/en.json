@@ -59,14 +59,17 @@
         "badge": "PERFORMANCE METRICS",
         "title": "Why Risk & Compliance teams choose US",
         "card1": {
+            "value": "67%",
             "title": "Faster",
             "text": "Our clients detect and neutralize threats 67% faster than industry average in the region, significantly reducing potential damage from security incidents and minimizing business disruption."
         },
         "card2": {
+            "value": "40%",
             "title": "Savings",
             "text": "Companies switching to PROTEGEY save an average of 40% compared to building and maintaining an in-house risk/compliance team, without sacrificing protection quality or coverage."
         },
         "card3": {
+            "value": "99.7%",
             "title": "Uptime",
             "text": "Our platform maintains 99.7% uptime with redundant systems across multiple data centers, ensuring your security coverage never sleeps, even when you do."
         }
@@ -295,12 +298,15 @@
         },
         "geographic_coverage": {
             "title": "Geographic Coverage",
-            "description": "Our products are specifically designed for the regulatory and fraud landscape of:",
+            "heading_part1": "Securing the ",
+            "heading_highlight": "African Digital Economy",
+            "description": "Our products are specifically tailored to the unique regulatory and fraud landscapes across Africa, providing localized intelligence that global tools often miss.",
             "regions": [
                 "GIM-UEMOA zone (West African Economic and Monetary Union)",
                 "GIMAC zone (Central African Economic and Monetary Community)",
                 "Northern Africa (Maghreb region)"
             ],
+            "region_text": "Comprehensive fraud intelligence and regulatory compliance tailored for institutions in this zone.",
             "note": "We understand the unique challenges of cross-border fraud, mobile money proliferation, and evolving regulatory requirements in these markets."
         },
         "hero": {
@@ -318,11 +324,106 @@
         "results_title": "Results you can expect",
         "how_it_works_title": "How it works",
         "deployment_suffix": "Deployment",
+        "features": {
+            "badge": "Features",
+            "title_main": "Unleash the Power: Features That",
+            "title_highlight": "Transcend the Ordinary!",
+            "subtitle": "Unveiling the finest arsenal: power‑packed capabilities that elevate your financial protection to new heights.",
+            "items": {
+                "fraud": {
+                    "title": "Fraud Detection & Scoring",
+                    "description": "Advanced ML algorithms that analyze transaction patterns and provide real-time risk scores with 99.9% accuracy."
+                },
+                "behavioral": {
+                    "title": "Behavioral Analytics",
+                    "description": "Deep insights into user behavior patterns to identify anomalies and prevent sophisticated fraud attempts."
+                },
+                "compliance": {
+                    "title": "Compliance & AML Tools",
+                    "description": "Comprehensive anti-money laundering features with automated reporting and regulatory compliance."
+                },
+                "monitoring": {
+                    "title": "Transaction Monitoring",
+                    "description": "Real-time surveillance of all financial transactions with intelligent alerting and response systems."
+                },
+                "alerts": {
+                    "title": "Real-time Alerts & Case Management",
+                    "description": "Instant notifications and comprehensive case management tools for fraud investigation teams."
+                },
+                "api": {
+                    "title": "API Integration",
+                    "description": "Seamless integration with existing systems through robust APIs and webhook support."
+                }
+            }
+        },
+        "solution": {
+            "badge": "The Solution",
+            "title_main": "Protect What",
+            "title_highlight": "Matters Most",
+            "description": "Protegey's advanced fraud detection technology safeguards Africa's financial ecosystem in real-time.",
+            "hero_text": "Next-Generation Fraud Prevention — Built with ML and real-time analytics, Protegey seamlessly integrates with telecoms, banks, and fintech APIs to protect millions of transactions.",
+            "features": [
+                {
+                    "title": "Keep company organized with budgets and expense policies",
+                    "text": "ML algorithms analyze patterns and provide real-time risk scores with 99.9% accuracy"
+                },
+                {
+                    "title": "Issue corporate cards for greater spend control",
+                    "text": "Seamless API connections with existing telco, banking, and fintech infrastructure"
+                },
+                {
+                    "title": "Get ahead faster with AI-powered insights",
+                    "text": "Built specifically for the unique challenges of African financial systems"
+                }
+            ],
+            "card": {
+                "title": "PROTEGEY SHIELD",
+                "tagline": "Real-time Protection",
+                "status": "ACTIVE",
+                "stat1_label": "Threats Blocked Today",
+                "stat1_value": "2,847",
+                "stat2_label": "Response Time",
+                "stat2_value": "<50ms",
+                "stat3_label": "Risk Score",
+                "stat3_value": "99.9% Safe",
+                "protection_level": "Protection Level",
+                "protection_status": "Maximum"
+            }
+        },
         "cta": {
             "title": "Ready to Secure Your Network?",
             "subtitle": "Join the waitlist for early access or contact our sales team to discuss enterprise integration.",
             "request_demo": "Request Demo",
             "contact_us": "Contact Us"
+        },
+        "target": {
+            "badge": "Who We Serve",
+            "title_main": "From early stage startups to industry",
+            "title_highlight": "leading",
+            "title_suffix": "global corporations",
+            "subtitle": "Trusted by banks, fintechs, and digital platforms protecting millions of transactions",
+            "items": {
+                "banks": {
+                    "title": "Banks",
+                    "description": "Enterprise-grade protection for traditional banking"
+                },
+                "fintechs": {
+                    "title": "Fintech Startups",
+                    "description": "Scale safely with robust fraud prevention"
+                },
+                "payments": {
+                    "title": "Payment Platforms",
+                    "description": "Secure every payment transaction"
+                },
+                "ecommerce": {
+                    "title": "E-commerce",
+                    "description": "Protect online transactions and customers"
+                },
+                "telecoms": {
+                    "title": "Telecom Operators",
+                    "description": "Secure mobile money services"
+                }
+            }
         }
     },
     "waitlist": {
@@ -561,6 +662,7 @@
     },
     "faq": {
         "title": "Frequently Asked Questions",
+        "subtitle": "Clear answers to questions about Protegey's role and mission.",
         "q1": "What is Protegey used for?",
         "a1": "Protegey is used by financial institutions to detect and prevent fraud in real time. It enables teams to share anonymized fraud alerts and intelligence across our secure network to stop professional fraudsters before they attack your system.",
         "q2": "Is Protegey a bank or a regulator?",

@@ -38,7 +38,18 @@ export default defineNuxtConfig({
       '/fr/how-it-works',
       '/fr/who-its-for',
       '/fr/use-cases',
-      '/fr/comparisons'
+      '/fr/comparisons',
+      '/ar/what-is-protegey',
+      '/ar/how-it-works',
+      '/ar/who-its-for',
+      '/ar/use-cases',
+      '/ar/comparisons',
+      '/ar/products/signal',
+      '/ar/products/radar',
+      '/ar/products/api',
+      '/ar/products/console',
+      '/ar/products/compliance',
+      '/ar/products/panid'
     ]
   },
   robots: {
@@ -61,7 +72,8 @@ export default defineNuxtConfig({
     baseUrl: 'https://www.protegey.com',
     locales: [
       { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
-      { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français' }
+      { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français' },
+      { code: 'ar', language: 'ar-EG', file: 'ar.json', name: 'العربية', dir: 'rtl' }
     ],
     defaultLocale: 'en',
     langDir: 'locales',

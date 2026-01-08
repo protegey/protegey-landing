@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 const faqs = [
     { q: t('faq.q1'), a: t('faq.a1') },
@@ -36,8 +36,8 @@ const toggle = (index: number) => {
     <section class="py-24 bg-black relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ t('faq.title') }}</h2>
-                <p class="text-neutral-400">Clear answers to literal questions about Protegey's role and mission.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 rtl:text-center">{{ t('faq.title') }}</h2>
+                <p class="text-neutral-400 rtl:text-center">{{ t('faq.subtitle') }}</p>
             </div>
 
             <div class="space-y-4">
@@ -45,9 +45,9 @@ const toggle = (index: number) => {
                     class="border border-neutral-900 rounded-2xl bg-neutral-950/50 overflow-hidden transition-all duration-300"
                     :class="{ 'ring-1 ring-primary-500/30 border-primary-500/30': openIndex === index }">
                     <button @click="toggle(index)"
-                        class="w-full flex items-center justify-between p-6 text-left focus:outline-none">
+                        class="w-full flex items-center justify-between p-6 text-left focus:outline-none rtl:text-right rtl:flex-row-reverse">
                         <span class="text-lg font-medium text-white">{{ faq.q }}</span>
-                        <span class="ml-6 flex-shrink-0 transition-transform duration-300"
+                        <span class="ms-6 flex-shrink-0 transition-transform duration-300 rtl:ms-0 rtl:me-6"
                             :class="{ 'rotate-180': openIndex === index }">
                             <svg class="h-6 w-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -56,7 +56,7 @@ const toggle = (index: number) => {
                         </span>
                     </button>
 
-                    <div v-show="openIndex === index" class="px-6 pb-6">
+                    <div v-show="openIndex === index" class="px-6 pb-6 rtl:text-right">
                         <p class="text-neutral-400 leading-relaxed">
                             {{ faq.a }}
                         </p>
