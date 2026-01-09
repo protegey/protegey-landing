@@ -30,7 +30,7 @@ const websiteSchema = {
   "url": "https://www.protegey.com"
 }
 
-useHead({
+useHead(() => ({
   titleTemplate: (titleChunk) => {
     if (!titleChunk) return t('seo.global.title')
     return titleChunk.includes('Protegey') ? titleChunk : `${titleChunk} | Protegey`
@@ -64,7 +64,7 @@ useHead({
       innerHTML: JSON.stringify(websiteSchema)
     }
   ]
-})
+}))
 </script>
 
 <template>
