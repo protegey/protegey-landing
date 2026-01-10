@@ -55,16 +55,33 @@ if (import.meta.server) {
     })
 
     useSchemaOrg([
-        defineWebPage({
+        {
+            '@type': 'WebPage',
             name: t('seo.api_docs.title'),
-        }),
-        defineBreadcrumb({
-            items: [
-                { name: t('nav.home'), item: '/' },
-                { name: t('nav.products'), item: '/products' },
-                { name: t('nav.api_docs'), item: '/api-docs' }
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: t('nav.home'),
+                    item: 'https://www.protegey.com/'
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: t('nav.products'),
+                    item: 'https://www.protegey.com/products'
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 3,
+                    name: t('nav.api_docs'),
+                    item: 'https://www.protegey.com/api-docs'
+                }
             ]
-        })
+        }
     ])
 }
 

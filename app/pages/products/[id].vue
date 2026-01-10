@@ -71,21 +71,45 @@ if (import.meta.server) {
     })
 
     useSchemaOrg([
-        defineProduct({
-            name: t(`products.${productId}.title`),
-            description: t(`products.${productId}.description`),
-            brand: { name: 'Protegey' },
-            offers: [
-                { url: `https://www.protegey.com/products/${productId}`, availability: 'https://schema.org/InStock' }
-            ]
-        }),
-        defineBreadcrumb({
-            items: [
-                { name: t('nav.home'), item: '/' },
-                { name: t('nav.products'), item: '/products' },
-                { name: t(`products.${productId}.title`), item: `/products/${productId}` }
-            ]
-        })
+        useSchemaOrg([
+            {
+                '@type': 'Product',
+                name: t(`products.${productId}.title`),
+                description: t(`products.${productId}.description`),
+                brand: {
+                    '@type': 'Brand',
+                    name: 'Protegey'
+                },
+                offers: {
+                    '@type': 'Offer',
+                    url: `https://www.protegey.com/products/${productId}`,
+                    availability: 'https://schema.org/InStock'
+                }
+            },
+            {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                    {
+                        '@type': 'ListItem',
+                        position: 1,
+                        name: t('nav.home'),
+                        item: 'https://www.protegey.com/'
+                    },
+                    {
+                        '@type': 'ListItem',
+                        position: 2,
+                        name: t('nav.products'),
+                        item: 'https://www.protegey.com/products'
+                    },
+                    {
+                        '@type': 'ListItem',
+                        position: 3,
+                        name: t(`products.${productId}.title`),
+                        item: `https://www.protegey.com/products/${productId}`
+                    }
+                ]
+            }
+        ])
     ])
 }
 
@@ -151,7 +175,7 @@ useHead(() => ({
                             <HugeiconsIcon :icon="UserGroupIcon" :size="24" />
                         </div>
                         <h2 class="text-2xl font-bold text-white mb-6 rtl:text-right">{{ $t('products.why_built_title')
-                            }}</h2>
+                        }}</h2>
                         <p class="text-neutral-400 leading-relaxed rtl:text-right">{{
                             $t(`products.${productId}.why_built`) }}</p>
                     </div>

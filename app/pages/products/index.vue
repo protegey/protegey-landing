@@ -28,15 +28,27 @@ if (import.meta.server) {
     })
 
     useSchemaOrg([
-        defineWebPage({
+        {
+            '@type': 'CollectionPage',
             name: t('seo.products.title'),
-        }),
-        defineBreadcrumb({
-            items: [
-                { name: t('nav.home'), item: '/' },
-                { name: t('nav.products'), item: '/products' }
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: t('nav.home'),
+                    item: 'https://www.protegey.com/'
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: t('nav.products'),
+                    item: 'https://www.protegey.com/products'
+                }
             ]
-        })
+        }
     ])
 }
 

@@ -64,15 +64,27 @@ if (import.meta.server) {
     })
 
     useSchemaOrg([
-        defineWebPage({
+        {
+            '@type': 'WebPage',
             name: t('seo.privacy.title'),
-        }),
-        defineBreadcrumb({
-            items: [
-                { name: t('nav.home'), item: '/' },
-                { name: t('footer.links.privacy'), item: '/privacy' }
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: t('nav.home'),
+                    item: 'https://www.protegey.com/'
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: t('footer.links.privacy'),
+                    item: 'https://www.protegey.com/privacy'
+                }
             ]
-        })
+        }
     ])
 }
 
