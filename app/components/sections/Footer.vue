@@ -112,13 +112,6 @@
               </svg>
             </a>
           </div>
-          <!-- <div class="mt-6">
-            <a href="https://www.producthunt.com/products/protegey?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-protegey"
-              target="_blank" rel="noopener noreferrer"><img
-                alt="Protegey - Anti Fraud engine For Francophone Africa. | Product Hunt" width="250" height="54"
-                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1053988&amp;theme=light&amp;t=1766574832866"
-                class="w-[180px] h-auto"></a>
-          </div> -->
         </div>
       </div>
 
