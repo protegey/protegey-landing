@@ -48,37 +48,45 @@ useSeoMeta({
 
 if (import.meta.server) {
   useSchemaOrg([
-    defineOrganization({
-      name: 'Protegey',
-      url: 'https://www.protegey.com',
-      logo: 'https://www.protegey.com/logo.png',
-      sameAs: [
-        'https://twitter.com/ProtegeyHQ',
-        'https://www.linkedin.com/company/protegey'
-      ],
-      areaServed: [
-        'Senegal', 'Ivory Coast', 'Cameroon', 'Morocco', 'Algeria', 'Tunisia', 'Egypt', 'Democratic Republic of Congo'
-      ],
-      description: t('geo.canonical_definition')
-    }),
-    {
-      '@type': 'SoftwareApplication',
-      name: 'Protegey',
-      applicationCategory: 'SecurityApplication',
-      operatingSystem: 'Platform Independent',
-      softwareVersion: '1.0.0',
-      description: t('geo.canonical_definition'),
-      offers: {
-        '@type': 'Offer',
-        price: '0.00',
-        priceCurrency: 'USD',
+    useSchemaOrg([
+      {
+        '@type': 'Organization',
+        name: 'Protegey',
+        url: 'https://www.protegey.com',
+        logo: 'https://www.protegey.com/logo.png',
+        sameAs: [
+          'https://twitter.com/ProtegeyHQ',
+          'https://www.linkedin.com/company/protegey'
+        ],
+        areaServed: [
+          'Senegal', 'Ivory Coast', 'Cameroon', 'Morocco', 'Algeria', 'Tunisia', 'Egypt', 'Democratic Republic of Congo'
+        ],
+        description: t('geo.canonical_definition')
+      },
+      {
+        '@type': 'SoftwareApplication',
+        name: 'Protegey',
+        applicationCategory: 'SecurityApplication',
+        operatingSystem: 'Platform Independent',
+        softwareVersion: '1.0.0',
+        description: t('geo.canonical_definition'),
+        offers: {
+          '@type': 'Offer',
+          price: '0.00',
+          priceCurrency: 'USD',
+        }
+      },
+      {
+        '@type': 'WebSite',
+        name: 'Protegey',
+        url: 'https://www.protegey.com'
+      },
+      {
+        '@type': 'WebPage',
+        name: 'Protegey',
+        description: t('geo.canonical_definition'),
       }
-    },
-    defineWebSite({
-      name: 'Protegey',
-      url: 'https://www.protegey.com'
-    }),
-    defineWebPage()
+    ])
   ])
 }
 
