@@ -12,6 +12,36 @@ export default defineNuxtConfig({
   seo: {
     redirectToCanonicalSiteUrl: true
   },
+  routeRules: {
+    // 1. Cache the homepage and standard pages (SWR - Stale While Revalidate)
+    '/': { swr: 3600 },
+    '/about': { swr: 3600 },
+    '/contact': { swr: 3600 },
+    '/trust': { swr: 3600 },
+    '/use-cases': { swr: 3600 },
+    '/comparisons': { swr: 3600 },
+    '/what-is-protegey': { swr: 3600 },
+    '/how-it-works': { swr: 3600 },
+    '/who-its-for': { swr: 3600 },
+    '/privacy': { swr: 3600 },
+    '/careers': { swr: 3600 },
+    '/api-docs': { swr: 3600 },
+
+    // 2. Cache Product pages
+    '/products/**': { swr: 3600 },
+
+    // 3. Cache Localized routes (catch-all for fr/ and ar/)
+    '/fr/**': { swr: 3600 },
+    '/ar/**': { swr: 3600 },
+
+    // 4. Cache Sitemap & Robots (Essential for bots)
+    '/sitemap.xml': { swr: 3600 },
+    '/sitemap-index.xml': { swr: 3600 },
+    '/robots.txt': { swr: 3600 },
+
+    // 5. Explicitly dynamic for API
+    '/api/**': { swr: false, cache: false },
+  },
   sitemap: {
     strictNuxtContentPaths: true,
     autoI18n: true,
