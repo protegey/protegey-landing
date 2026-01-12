@@ -13,7 +13,8 @@ const geoNav = [
     { name: t('geo_pages.how_it_works.title'), path: '/how-it-works' },
     { name: t('geo_pages.who_its_for.title'), path: '/who-its-for' },
     { name: t('geo_pages.use_cases.title'), path: '/use-cases' },
-    { name: t('geo_pages.comparisons.title'), path: '/comparisons' }
+    { name: t('geo_pages.comparisons.title'), path: '/comparisons' },
+    { name: t('geo_pages.trust.title'), path: '/trust' }
 ]
 
 const localePath = useLocalePath()

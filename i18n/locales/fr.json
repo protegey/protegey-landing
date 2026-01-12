@@ -605,9 +605,37 @@
             "internal": "Les systèmes internes ne voient que vos données. Protegey voit l'intelligence de tout le réseau.",
             "siloed_header": "Protegey vs Signalement Cloisonné",
             "siloed": "Le signalement manuel est lent et réactif. Protegey est automatisé et en temps réel.",
-            "global_header": "Protegey vs Outils Mondiaux",
+            "global_header": "Outils Génériques Mondiaux",
             "global": "Les outils mondiaux manquent souvent de signaux localisés spécifiques et de la couverture des connecteurs (GIM-UEMOA, GIMAC) fournie par Protegey.",
-            "conclusion": "Protegey est la seule plateforme fournissant une intelligence à l'échelle du réseau, sans délai, spécifiquement adaptée au paysage financier africain."
+            "conclusion": "Protegey est la seule plateforme fournissant une intelligence à l'échelle du réseau, sans délai, spécifiquement adaptée au paysage financier africain.",
+            "table": {
+                "feature": "Fonctionnalité",
+                "protegey": "Protegey",
+                "legacy": "Outils Hérités",
+                "global": "Outils Mondiaux",
+                "speed": "Vitesse",
+                "speed_protegey": "Temps Réel (Zéro Délai)",
+                "speed_others": "Lot / Retardé",
+                "coverage": "Couverture",
+                "coverage_protegey": "À l'échelle du réseau (Inter-Institution)",
+                "coverage_others": "Isolé (Interne Uniquement)",
+                "local": "Localisation",
+                "local_protegey": "Spécifique à l'Afrique (GIM-UEMOA)",
+                "local_others": "Générique / Centré sur l'Occident"
+            }
+        },
+        "trust": {
+            "title": "Centre de Confiance",
+            "subtitle": "Notre engagement envers la sécurité, la confidentialité et l'IA éthique.",
+            "certification_header": "Certifications & Conformité",
+            "transparency_header": "Déclaration de Transparence IA",
+            "transparency_text": "Chez Protegey, nous croyons en une IA éthique. Nos modèles de détection de fraude sont conçus pour être explicables, équitables et sans biais. Nous n'utilisons pas de modèles 'boîte noire' pour les décisions critiques. Chaque score de risque est accompagné de codes de raison clairs, assurant la transparence pour la conformité et l'audit.",
+            "soc2_title": "SOC 2 Type II",
+            "soc2_text": "Nous sommes conformes à la norme SOC 2 Type II, vérifiant nos contrôles rigoureux en matière de sécurité, de disponibilité et de confidentialité.",
+            "gdpr_title": "RGPD & Confidentialité des Données",
+            "gdpr_text": "Nous respectons des normes strictes de protection des données, garantissant que toutes les données personnelles sont traitées avec le plus haut niveau de confidentialité et de sécurité.",
+            "iso_title": "ISO 27001",
+            "iso_text": "Nos systèmes de gestion de la sécurité de l'information sont certifiés ISO 27001, la norme mondiale pour la sécurité de l'information."
         },
         "common": {
             "who_for_header": "À qui s'adresse-t-il",

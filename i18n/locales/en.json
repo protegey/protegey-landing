@@ -605,9 +605,37 @@
             "internal": "Internal systems only see your data. Protegey sees the whole network's intelligence.",
             "siloed_header": "Protegey vs Siloed Reporting",
             "siloed": "Manual reporting is slow and reactive. Protegey is automated and real-time.",
-            "global_header": "Protegey vs Global Tools",
+            "global_header": "Global Generic Tools",
             "global": "Global tools often lack the specific localized signals and connector coverage (GIM-UEMOA, GIMAC) that Protegey provides.",
-            "conclusion": "Protegey is the only platform providing zero-delay, network-wide intelligence specifically tailored for the African financial landscape."
+            "conclusion": "Protegey is the only platform providing zero-delay, network-wide intelligence specifically tailored for the African financial landscape.",
+            "table": {
+                "feature": "Feature",
+                "protegey": "Protegey",
+                "legacy": "Legacy Tools",
+                "global": "Global Tools",
+                "speed": "Speed",
+                "speed_protegey": "Real-time (Zero Delay)",
+                "speed_others": "Batch / Delayed",
+                "coverage": "Coverage",
+                "coverage_protegey": "Network-wide (Cross-Institution)",
+                "coverage_others": "Siloed (Internal Only)",
+                "local": "Localization",
+                "local_protegey": "African-Specific (GIM-UEMOA)",
+                "local_others": "Generic / Western-Centric"
+            }
+        },
+        "trust": {
+            "title": "Trust Center",
+            "subtitle": "Our commitment to security, privacy, and ethical AI.",
+            "certification_header": "Certifications & Compliance",
+            "transparency_header": "AI Transparency Statement",
+            "transparency_text": "At Protegey, we believe in ethical AI. Our fraud detection models are designed to be explainable, fair, and unbiased. We do not use black-box models for critical decisions. Every risk score is accompanied by clear reason codes, ensuring transparency for compliance and auditing purposes.",
+            "soc2_title": "SOC 2 Type II",
+            "soc2_text": "We are SOC 2 Type II compliant, verifying our rigorous controls for security, availability, and confidentiality.",
+            "gdpr_title": "GDPR & Data Privacy",
+            "gdpr_text": "We adhere to strict data protection standards, ensuring all personal data is handled with the highest level of privacy and security.",
+            "iso_title": "ISO 27001",
+            "iso_text": "Our information security management systems are ISO 27001 certified, the global standard for information security."
         },
         "common": {
             "who_for_header": "Who It Is For",
