@@ -109,7 +109,7 @@ export default defineNuxtConfig({
       { code: 'ar', iso: 'ar-EG', file: 'ar.json', name: 'العربية', dir: 'rtl' }
     ],
     defaultLocale: 'en',
-    langDir: 'i18n/locales',
+    langDir: 'locales',
     strategy: 'prefix_except_default',
     compilation: {
       strictMessage: false
