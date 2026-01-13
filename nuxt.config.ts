@@ -13,33 +13,10 @@ export default defineNuxtConfig({
     redirectToCanonicalSiteUrl: true
   },
   routeRules: {
-    // 1. Cache the homepage and standard pages (SWR - Stale While Revalidate)
-    '/': { swr: 3600 },
-    '/about': { swr: 3600 },
-    '/contact': { swr: 3600 },
-    '/trust': { swr: 3600 },
-    '/use-cases': { swr: 3600 },
-    '/comparisons': { swr: 3600 },
-    '/what-is-protegey': { swr: 3600 },
-    '/how-it-works': { swr: 3600 },
-    '/who-its-for': { swr: 3600 },
-    '/privacy': { swr: 3600 },
-    '/careers': { swr: 3600 },
-    '/api-docs': { swr: 3600 },
+    // 1. Cache all pages by default (SWR - Stale While Revalidate)
+    '/**': { swr: 3600 },
 
-    // 2. Cache Product pages
-    '/products/**': { swr: 3600 },
-
-    // 3. Cache Localized routes (catch-all for fr/ and ar/)
-    '/fr/**': { swr: 3600 },
-    '/ar/**': { swr: 3600 },
-
-    // 4. Cache Sitemap & Robots (Essential for bots)
-    '/sitemap.xml': { swr: 3600 },
-    '/sitemap-index.xml': { swr: 3600 },
-    '/robots.txt': { swr: 3600 },
-
-    // 5. Explicitly dynamic for API
+    // 2. Explicitly dynamic for API
     '/api/**': { swr: false, cache: false },
   },
   sitemap: {
@@ -47,33 +24,59 @@ export default defineNuxtConfig({
     autoI18n: true,
     exclude: ['/api/**'],
     urls: [
+      '/',
+      '/about',
+      '/contact',
+      '/trust',
+      '/use-cases',
+      '/comparisons',
+      '/what-is-protegey',
+      '/how-it-works',
+      '/who-its-for',
+      '/privacy',
+      '/careers',
+      '/api-docs',
+      '/products',
       '/products/signal',
       '/products/radar',
       '/products/api',
       '/products/console',
       '/products/compliance',
       '/products/panid',
+      // French routes
+      '/fr',
+      '/fr/about',
+      '/fr/contact',
+      '/fr/trust',
+      '/fr/use-cases',
+      '/fr/comparisons',
+      '/fr/what-is-protegey',
+      '/fr/how-it-works',
+      '/fr/who-its-for',
+      '/fr/privacy',
+      '/fr/careers',
+      '/fr/api-docs',
+      '/fr/products',
       '/fr/products/signal',
       '/fr/products/radar',
       '/fr/products/api',
       '/fr/products/console',
       '/fr/products/compliance',
       '/fr/products/panid',
-      '/what-is-protegey',
-      '/how-it-works',
-      '/who-its-for',
-      '/use-cases',
-      '/comparisons',
-      '/fr/what-is-protegey',
-      '/fr/how-it-works',
-      '/fr/who-its-for',
-      '/fr/use-cases',
-      '/fr/comparisons',
+      // Arabic routes
+      '/ar',
+      '/ar/about',
+      '/ar/contact',
+      '/ar/trust',
+      '/ar/use-cases',
+      '/ar/comparisons',
       '/ar/what-is-protegey',
       '/ar/how-it-works',
       '/ar/who-its-for',
-      '/ar/use-cases',
-      '/ar/comparisons',
+      '/ar/privacy',
+      '/ar/careers',
+      '/ar/api-docs',
+      '/ar/products',
       '/ar/products/signal',
       '/ar/products/radar',
       '/ar/products/api',
@@ -101,12 +104,12 @@ export default defineNuxtConfig({
   i18n: {
     baseUrl: 'https://www.protegey.com',
     locales: [
-      { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
-      { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français' },
-      { code: 'ar', language: 'ar-EG', iso: 'ar-EG', file: 'ar.json', name: 'العربية', dir: 'rtl' }
+      { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
+      { code: 'fr', iso: 'fr-FR', file: 'fr.json', name: 'Français' },
+      { code: 'ar', iso: 'ar-EG', file: 'ar.json', name: 'العربية', dir: 'rtl' }
     ],
     defaultLocale: 'en',
-    langDir: 'locales',
+    langDir: 'i18n/locales',
     strategy: 'prefix_except_default',
     compilation: {
       strictMessage: false
