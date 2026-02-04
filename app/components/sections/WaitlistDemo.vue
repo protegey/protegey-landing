@@ -10,6 +10,7 @@ const formData = ref({
     name: '',
     email: '',
     phone: '',
+    country: '',
     company: '',
     role: '',
     businessModel: '',
@@ -106,7 +107,7 @@ const handleSubmit = async () => {
 
     try {
         // Minimal API post to /api/waitlist — server should accept interest/message fields
-        const payload = { ...formData.value }
+        const payload = { ...formData.value, lang: locale.value }
         const res = await fetch('/api/waitlist', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -128,6 +129,7 @@ const handleSubmit = async () => {
                 name: '',
                 email: '',
                 phone: '',
+                country: '',
                 company: '',
                 role: '',
                 businessModel: '',
@@ -234,18 +236,27 @@ onMounted(() => {
                             <label for="phone"
                                 class="block text-sm font-semibold mb-2 text-neutral-300 rtl:text-right">{{
                                     $t('waitlist.form.phone') }}</label>
-                            <input id="phone" v-model="formData.phone" type="tel" required
+                            <input id="phone" v-model="formData.phone" type="tel"
                                 :placeholder="$t('waitlist.form.phone_placeholder')"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500 rtl:text-right" />
                         </div>
                         <div>
-                            <label for="company"
+                            <label for="country"
                                 class="block text-sm font-semibold mb-2 text-neutral-300 rtl:text-right">{{
-                                    $t('waitlist.form.company') }}</label>
-                            <input id="company" v-model="formData.company" type="text" required
-                                :placeholder="$t('waitlist.form.company_placeholder')"
+                                    $t('waitlist.form.country') }}</label>
+                            <input id="country" v-model="formData.country" type="text" required
+                                :placeholder="$t('waitlist.form.country_placeholder')"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500 rtl:text-right" />
                         </div>
+                    </div>
+
+                    <div>
+                        <label for="company"
+                            class="block text-sm font-semibold mb-2 text-neutral-300 rtl:text-right">{{
+                                $t('waitlist.form.company') }}</label>
+                        <input id="company" v-model="formData.company" type="text" required
+                            :placeholder="$t('waitlist.form.company_placeholder')"
+                            class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500 rtl:text-right" />
                     </div>
 
                     <div>
