@@ -68,6 +68,22 @@
                                 :placeholder="$t('contact.form.email_placeholder')">
                         </div>
                         <div>
+                            <label class="block text-sm font-medium text-neutral-400 mb-1">{{
+                                $t('contact.form.phone')
+                                }}</label>
+                            <input v-model="formData.phone" type="tel"
+                                class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
+                                :placeholder="$t('contact.form.phone_placeholder')">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-400 mb-1">{{
+                                $t('contact.form.country')
+                                }}</label>
+                            <input v-model="formData.country" type="text" required
+                                class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
+                                :placeholder="$t('contact.form.country_placeholder')">
+                        </div>
+                        <div>
                             <label class="block text-sm font-medium text-neutral-400 mb-1">{{ $t('contact.form.message')
                                 }}</label>
                             <textarea v-model="formData.message" rows="4" required
@@ -103,9 +119,13 @@
 <script setup>
 const { t } = useI18n()
 
+const { locale } = useI18n()
+
 const formData = ref({
     name: '',
     email: '',
+    phone: '',
+    country: '',
     message: ''
 })
 
@@ -121,7 +141,7 @@ const handleSubmit = async () => {
     try {
         const res = await $fetch('/api/contact', {
             method: 'POST',
-            body: formData.value
+            body: { ...formData.value, lang: locale.value }
         })
 
         if (res.success) {
@@ -129,6 +149,8 @@ const handleSubmit = async () => {
             formData.value = {
                 name: '',
                 email: '',
+                phone: '',
+                country: '',
                 message: ''
             }
         }
