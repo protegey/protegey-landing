@@ -265,7 +265,7 @@ function getEmailContent(lang: string, name: string) {
     } else {
         // English (Default)
         return {
-            subject: 'Welcome to a new era of anti-fraud intelligence in Francophone and Northern Africa',
+            subject: 'Welcome to a new era of Fraud Intelligence in Africa',
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
                     <h1 style="color: #1a365d; border-bottom: 2px solid #1a365d; padding-bottom: 10px;">Welcome to PROTEGEY</h1>
@@ -274,7 +274,7 @@ function getEmailContent(lang: string, name: string) {
                     
                     <p>Thank you for your request to access <strong>PROTEGEY</strong>.</p>
                     
-                    <p>Your request has been duly recorded and you have been added to our priority waitlist for the demonstration. PROTEGEY is an anti-fraud intelligence, risk management, and compliance platform designed to support regulators, public institutions, banks, fintechs, payment institutions, digital lenders, and high-growth platforms operating in Francophone and Northern Africa.</p>
+                    <p>Your request has been duly recorded and you have been added to our priority waitlist for the demonstration. PROTEGEY is a Fraud Intelligence, risk management, and compliance platform designed to support regulators, public institutions, banks, fintechs, payment institutions, digital lenders, and high-growth platforms operating in Francophone and Northern Africa.</p>
                     
                     <p><strong>PROTEGEY allows you to:</strong></p>
                     <ul style="padding-left: 20px;">

@@ -13,7 +13,7 @@
     "hero": {
         "badge": "FRAUD INTELLIGENCE NETWORK",
         "title_part_1": "The Unified ",
-        "title_highlight": "Anti-Fraud",
+        "title_highlight": "Fraud Intelligence",
         "title_part_2": " Engine for Francophone and Northern Africa, without the Enterprise Cost",
         "subtitle": "Aggregate signals from banks, telcos, and regulators to <span class=\"text-primary-400 font-mono\">{action}<span class=\"animate-pulse\">_</span></span> fraud before it spreads. A shared early-warning network turning scattered events into actionable intelligence.",
         "typewriter": {
@@ -721,7 +721,7 @@
             "description": "Protegey is a real-time fraud intelligence and alert-sharing platform that allows financial institutions, fintechs, and regulators across Africa to collaboratively identify, report, and respond to fraud with speed and shared insight."
         },
         "products": {
-            "title": "Security Solutions | Protegey Anti-Fraud Infrastructure",
+            "title": "Security Solutions | Protegey Fraud Intelligence Infrastructure",
             "description": "Comprehensive security suite for African financial ecosystems: Gateway API, Radar Behavioral Monitoring, Signal Intelligence Network, and Ops Console."
         },
         "product_detail": {
