@@ -73,7 +73,7 @@ export default defineEventHandler(async (event) => {
                     email: body.email,
                 },
                 Phone: {
-                    phone_number: body.phone || '',
+                    phone_number: body.phone || null,
                 },
                 Country: {
                     rich_text: [
