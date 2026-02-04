@@ -54,8 +54,11 @@ export default defineEventHandler(async (event) => {
             }
         }
 
-        // Helper to sanitize multi-select options (remove commas)
-        const sanitizeOption = (val: string) => val.replace(/,/g, '')
+        // Helper to sanitize multi-select options (remove commas and truncate to 100 chars)
+        const sanitizeOption = (val: string) => (val || '').replace(/,/g, '').substring(0, 100)
+
+        // Helper to truncate text to Notion limits (2000 chars)
+        const truncate = (str: string, length: number = 2000) => (str || '').substring(0, length)
 
         const response = await notion.pages.create({
             parent: { database_id: config.notionDatabaseId },
@@ -64,7 +67,7 @@ export default defineEventHandler(async (event) => {
                     title: [
                         {
                             text: {
-                                content: body.name,
+                                content: truncate(body.name),
                             },
                         },
                     ],
@@ -79,7 +82,7 @@ export default defineEventHandler(async (event) => {
                     rich_text: [
                         {
                             text: {
-                                content: body.country,
+                                content: truncate(body.country),
                             },
                         },
                     ],
@@ -88,7 +91,7 @@ export default defineEventHandler(async (event) => {
                     rich_text: [
                         {
                             text: {
-                                content: body.company || 'N/A',
+                                content: truncate(body.company || 'N/A'),
                             },
                         },
                     ],
@@ -110,13 +113,13 @@ export default defineEventHandler(async (event) => {
                     multi_select: body.sector ? [{ name: sanitizeOption(body.sector) }] : [],
                 },
                 'Pain Points': {
-                    multi_select: (body.painPoints || []).map((p: string) => ({ name: sanitizeOption(String(p)) })),
+                    multi_select: (Array.isArray(body.painPoints) ? body.painPoints : []).map((p: string) => ({ name: sanitizeOption(String(p)) })),
                 },
                 'Other Pain Point': {
                     rich_text: [
                         {
                             text: {
-                                content: body.otherPainPoint || '',
+                                content: truncate(body.otherPainPoint || ''),
                             },
                         },
                     ],
@@ -132,7 +135,7 @@ export default defineEventHandler(async (event) => {
                     rich_text: [
                         {
                             text: {
-                                content: body.message || '',
+                                content: truncate(body.message || ''),
                             },
                         },
                     ],

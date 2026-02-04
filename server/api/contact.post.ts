@@ -26,6 +26,9 @@ export default defineEventHandler(async (event) => {
     const mailtrap = config.mailtrapToken ? new MailtrapClient({ token: config.mailtrapToken }) : null
 
     try {
+        // Helper to truncate text to Notion limits (2000 chars)
+        const truncate = (str: string, length: number = 2000) => (str || '').substring(0, length)
+
         const response = await notion.pages.create({
             parent: { database_id: config.notionDatabaseId },
             properties: {
@@ -33,7 +36,7 @@ export default defineEventHandler(async (event) => {
                     title: [
                         {
                             text: {
-                                content: body.name,
+                                content: truncate(body.name),
                             },
                         },
                     ],
@@ -48,7 +51,7 @@ export default defineEventHandler(async (event) => {
                     rich_text: [
                         {
                             text: {
-                                content: body.country,
+                                content: truncate(body.country),
                             },
                         },
                     ],
@@ -64,7 +67,7 @@ export default defineEventHandler(async (event) => {
                     rich_text: [
                         {
                             text: {
-                                content: body.message,
+                                content: truncate(body.message),
                             },
                         },
                     ],
