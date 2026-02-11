@@ -178,86 +178,102 @@ export default defineEventHandler(async (event) => {
 function getEmailContent(lang: string, name: string) {
     if (lang === 'fr') {
         return {
-            subject: 'Bienvenue dans une nouvelle ère de l’intelligence antifraude en Afrique Francophone et en Afrique du Nord',
+            subject: 'Démonstration de la plateforme PROTEGEY et Accès Sandbox',
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
-                    <h1 style="color: #1a365d; border-bottom: 2px solid #1a365d; padding-bottom: 10px;">Bienvenue chez PROTEGEY</h1>
+                    <h2 style="color: #1a365d;">Bonjour ${name},</h2>
                     
-                    <p>Bonjour <strong>${name}</strong>,</p>
+                    <p>Nous vous remercions de l'intérêt que vous portez à PROTEGEY.</p>
                     
-                    <p>Nous vous remercions pour votre demande d’accès à <strong>PROTEGEY</strong>.</p>
+                    <p>Nous sommes heureux de vous informer que nous sommes désormais officiellement opérationnels et que nous procédons activement à l'intégration de partenaires.</p>
                     
-                    <p>Votre demande a été dûment enregistrée et vous avez été ajouté à notre liste d’attente prioritaire pour la démonstration. PROTEGEY est une plateforme d’intelligence antifraude, de gestion du risque et de conformité, conçue pour accompagner les régulateurs, les institutions publiques, les banques, les fintechs, les établissements de paiement, les prêteurs digitaux et les plateformes à forte croissance opérant en Afrique Francophone et en Afrique du Nord.</p>
+                    <p>Pour vous présenter les fonctionnalités et les cas d'utilisation de la plateforme PROTEGEY, nous vous invitons cordialement à remplir le formulaire ci-dessous. Une fois le formulaire soumis (nom complet et e-mail professionnel), vous serez redirigé vers la démonstration de la plateforme ou vous recevrez un lien d'accès à la démo.</p>
                     
-                    <p><strong>PROTEGEY vous permet notamment de :</strong></p>
-                    <ul style="padding-left: 20px;">
-                        <li style="margin-bottom: 8px;">Lutter efficacement contre les comptes multiples et les fraudes à l’identité.</li>
-                        <li style="margin-bottom: 8px;">Détecter de manière anticipée les schémas de fraude et les comportements à risque.</li>
-                        <li style="margin-bottom: 8px;">Automatiser le scoring de risque et les processus de décision.</li>
-                        <li style="margin-bottom: 8px;">Structurer et piloter les investigations à travers des workflows de gestion de cas traçables.</li>
-                        <li style="margin-bottom: 8px;">Renforcer la conformité réglementaire et la préparation aux contrôles et audits.</li>
-                    </ul>
-                    
-                    <p>Notre plateforme a été spécifiquement conçue pour répondre aux exigences réglementaires locales, aux enjeux de sécurité financière, ainsi qu’aux réalités des opérations transfrontalières dans notre région, là où les solutions génériques atteignent rapidement leurs limites.</p>
-                    
-                    <div style="background-color: #f7fafc; padding: 15px; border-radius: 5px; margin: 20px 0;">
-                        <p style="margin-top: 0;"><strong>Prochaines étapes :</strong></p>
-                        <p>Un membre de notre équipe prendra contact avec vous prochainement afin de :</p>
-                        <ul style="margin-bottom: 0;">
-                            <li style="margin-bottom: 5px;">Organiser une démonstration de la plateforme.</li>
-                            <li style="margin-bottom: 5px;">Analyser vos besoins spécifiques en matière de fraude, de risque et de conformité.</li>
-                            <li style="margin-bottom: 5px;">Vous présenter les modalités d’accès anticipé ainsi que les conditions tarifaires préférentielles.</li>
-                        </ul>
+                    <p><strong>Formulaire de démo PROTEGEY :</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnfcAwwrEGIC54uo-n470BVRTMRer2jq2gZpSo3pXByilYmg/viewform" style="color: #1a365d; text-decoration: underline;">Cliquez ici pour accéder au formulaire</a></p>
+
+                    <p>Si vous avez des questions après avoir visionné la démo, n'hésitez pas à nous contacter à <a href="mailto:hello@protegey.com" style="color: #1a365d; text-decoration: underline;">hello@protegey.com</a> et nous nous ferons un plaisir de vous aider.</p>
+
+                    <div style="background-color: #f7fafc; padding: 20px; border-left: 4px solid #1a365d; border-radius: 5px; margin: 25px 0;">
+                        <p style="margin-top: 0;"><strong>Souhaitez-vous aller plus loin ?</strong></p>
+                        <p>Veuillez nous envoyer les détails ci-dessous à <a href="mailto:hello@protegey.com" style="color: #1a365d; text-decoration: underline;">hello@protegey.com</a> afin que nous puissions activer votre accès sandbox et vous permettre d'explorer la plateforme avant de passer en production :</p>
+
+                        
+                        <p><strong>Détails de l'organisation :</strong><br>
+                        • Nom du partenaire<br>
+                        • Type de partenaire (Fintech, Banque, Telco, Régulateur, Marketplace, Autre)<br>
+                        • Pays<br>
+                        • E-mail de contact de l'organisation<br>
+                        • Téléphone de contact<br>
+                        • Notes internes pour PROTEGEY (facultatif)</p>
+
+                        <p><strong>Détails de l'administrateur partenaire principal :</strong><br>
+                        • Nom complet<br>
+                        • Rôle<br>
+                        • E-mail (de préférence e-mail professionnel)<br>
+                        • Numéro de téléphone (facultatif)</p>
                     </div>
 
-                    <p>Nous serons ravis de vous accompagner dans le renforcement de la sécurité, de la conformité et de la confiance au sein de vos opérations.</p>
+                    <p>Vous pouvez également consulter notre documentation technique ici :<br>
+                    <a href="https://docs.protegey.com" style="color: #1a365d; text-decoration: underline;">docs.protegey.com</a></p>
+
+                    <p>Nous sommes impatients de vous accompagner dans le renforcement de vos opérations de Risque et de Conformité avec PROTEGEY.</p>
                     
                     <p style="margin-top: 30px;">
-                        Cordialement,<br>
-                        <strong>L’équipe PROTEGEY</strong>
+                        Cordialement,<br><br>
+                        <strong>Lamyaa Chaibni</strong><br>
+                        Senior Account Manager<br>
+                        <strong>PROTEGEY</strong>
                     </p>
                 </div>
             `
         }
     } else if (lang === 'ar') {
         return {
-            subject: 'مرحباً بكم في عصر جديد من استخبارات مكافحة الاحتيال في أفريقيا الناطقة بالفرنسية وشمال أفريقيا',
+            subject: 'عرض توضيحي لمنصة PROTEGEY والوصول إلى البيئة التجريبية (Sandbox)',
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333; direction: rtl; text-align: right;">
-                    <h1 style="color: #1a365d; border-bottom: 2px solid #1a365d; padding-bottom: 10px;">مرحباً بكم في PROTEGEY</h1>
+                    <h2 style="color: #1a365d;">مرحباً ${name}،</h2>
                     
-                    <p>مرحباً <strong>${name}</strong>،</p>
+                    <p>نشكركم على اهتمامكم بـ PROTEGEY.</p>
                     
-                    <p>نشكركم على طلبكم للوصول إلى <strong>PROTEGEY</strong>.</p>
+                    <p>يسعدنا إبلاغكم أننا نعمل الآن رسمياً ونقوم حالياً بضم الشركاء بنشاط.</p>
                     
-                    <p>تم تسجيل طلبكم وسنضمكم إلى قائمة الانتظار ذات الأولوية للعرض التوضيحي. PROTEGEY هي منصة لاستخبارات مكافحة الاحتيال وإدارة المخاطر والامتثال، مصممة لدعم المنظمين والمؤسسات العامة والبنوك وشركات التكنولوجيا المالية ومؤسسات الدفع والمقرضين الرقميين والمنصات عالية النمو العاملة في أفريقيا الناطقة بالفرنسية وشمال أفريقيا.</p>
+                    <p>لتعريفكم بميزات وحالات استخدام منصة PROTEGEY، ندعوكم لملء النموذج أدناه. بمجرد تقديم النموذج (الاسم الكامل والبريد الإلكتروني المهني)، سيتم توجيهكم إلى العرض التوضيحي للمنصة أو تزويدكم برابط الوصول.</p>
                     
-                    <p><strong>تسمح لكم PROTEGEY بما يلي:</strong></p>
-                    <ul style="padding-right: 20px;">
-                        <li style="margin-bottom: 8px;">مكافحة الحسابات المتعددة واحتيال الهوية بفعالية.</li>
-                        <li style="margin-bottom: 8px;">الكشف المبكر عن أنماط الاحتيال والسلوكيات الخطرة.</li>
-                        <li style="margin-bottom: 8px;">أتمتة تسجيل المخاطر وعمليات اتخاذ القرار.</li>
-                        <li style="margin-bottom: 8px;">هيكلة وتوجيه التحقيقات من خلال سير عمل إدارة الحالات القابلة للتتبع.</li>
-                        <li style="margin-bottom: 8px;">تعزيز الامتثال التنظيمي والاستعداد للضوابط وعمليات التدقيق.</li>
-                    </ul>
-                    
-                    <p>تم تصميم منصتنا خصيصاً لتلبية المتطلبات التنظيمية المحلية، وتحديات الأمن المالي، بالإضافة إلى واقع العمليات العابرة للحدود في منطقتنا، حيث تصل الحلول العامة بسرعة إلى حدودها.</p>
-                    
-                    <div style="background-color: #f7fafc; padding: 15px; border-radius: 5px; margin: 20px 0;">
-                        <p style="margin-top: 0;"><strong>الخطوات التالية:</strong></p>
-                        <p>سيتصل بكم أحد أعضاء فريقنا قريباً من أجل:</p>
-                        <ul style="margin-bottom: 0; padding-right: 20px;">
-                            <li style="margin-bottom: 5px;">تنظيم عرض توضيحي للمنصة.</li>
-                            <li style="margin-bottom: 5px;">تحليل احتياجاتكم المحددة في مجال الاحتيال والمخاطر والامتثال.</li>
-                            <li style="margin-bottom: 5px;">تقديم شروط الوصول المبكر بالإضافة إلى شروط التسعير التفضيلية.</li>
-                        </ul>
+                    <p><strong>نموذج عرض PROTEGEY:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnfcAwwrEGIC54uo-n470BVRTMRer2jq2gZpSo3pXByilYmg/viewform" style="color: #1a365d; text-decoration: underline;">اضغط هنا للوصول إلى النموذج</a></p>
+
+                    <p>إذا كان لديكم أي أسئلة بعد مشاهدة العرض، فلا تترددوا في التواصل معنا عبر البريد الإلكتروني <a href="mailto:hello@protegey.com" style="color: #1a365d; text-decoration: underline;">hello@protegey.com</a> وسنكون سعداء بمساعدتكم.</p>
+
+                    <div style="background-color: #f7fafc; padding: 20px; border-right: 4px solid #1a365d; border-radius: 5px; margin: 25px 0;">
+                        <p style="margin-top: 0;"><strong>هل ترغبون في المضي قدماً؟</strong></p>
+                        <p>يرجى إرسال التفاصيل أدناه إلى <a href="mailto:hello@protegey.com" style="color: #1a365d; text-decoration: underline;">hello@protegey.com</a> حتى نتمكن من تفعيل وصولك إلى البيئة التجريبية (Sandbox) والسماح لك باستكشاف المنصة قبل الانتقال إلى مرحلة الإنتاج:</p>
+
+                        
+                        <p><strong>تفاصيل المؤسسة:</strong><br>
+                        • اسم الشريك<br>
+                        • نوع الشريك (Fintech, Bank, Telco, Regulator, Marketplace, Other)<br>
+                        • الدولة<br>
+                        • البريد الإلكتروني للتواصل مع المؤسسة<br>
+                        • رقم الهاتف للتواصل<br>
+                        • ملاحظات داخلية لـ PROTEGEY (اختياري)</p>
+
+                        <p><strong>تفاصيل المسؤول الأساسي للشريك:</strong><br>
+                        • الاسم الكامل<br>
+                        • الدور الوظيفي<br>
+                        • البريد الإلكتروني (يفضل بريد الشركة)<br>
+                        • رقم الهاتف (اختياري)</p>
                     </div>
 
-                    <p>سنسعد بمرافقتكم في تعزيز الأمن والامتثال والثقة داخل عملياتكم.</p>
+                    <p>يمكنكم أيضاً الاطلاع على وثائقنا التقنية من هنا:<br>
+                    <a href="https://docs.protegey.com" style="color: #1a365d; text-decoration: underline;">docs.protegey.com</a></p>
+
+                    <p>نتطلع إلى دعمكم في تعزيز عمليات المخاطر والامتثال الخاصة بكم مع PROTEGEY.</p>
                     
                     <p style="margin-top: 30px;">
-                        مع خالص التحيات،<br>
-                        <strong>فريق PROTEGEY</strong>
+                        مع خالص التحيات،<br><br>
+                        <strong>Lamyaa Chaibni</strong><br>
+                        Senior Account Manager<br>
+                        <strong>PROTEGEY</strong>
                     </p>
                 </div>
             `
@@ -265,43 +281,51 @@ function getEmailContent(lang: string, name: string) {
     } else {
         // English (Default)
         return {
-            subject: 'Welcome to a new era of Fraud Intelligence in Africa',
+            subject: 'PROTEGEY Platform Demo & Sandbox Access',
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
-                    <h1 style="color: #1a365d; border-bottom: 2px solid #1a365d; padding-bottom: 10px;">Welcome to PROTEGEY</h1>
+                    <h2 style="color: #1a365d;">Hello ${name},</h2>
                     
-                    <p>Hello <strong>${name}</strong>,</p>
+                    <p>Thank you for your interest in PROTEGEY.</p>
                     
-                    <p>Thank you for your request to access <strong>PROTEGEY</strong>.</p>
+                    <p>We are pleased to inform you that we are now officially operational and actively onboarding partners.</p>
                     
-                    <p>Your request has been duly recorded and you have been added to our priority waitlist for the demonstration. PROTEGEY is a Fraud Intelligence, risk management, and compliance platform designed to support regulators, public institutions, banks, fintechs, payment institutions, digital lenders, and high-growth platforms operating in Francophone and Northern Africa.</p>
+                    <p>To introduce you to the features and use cases of the PROTEGEY platform, we kindly invite you to complete the form below. Once the form is submitted (full name and professional email), you will be redirected to the platform demo or provided with access to the demo link.</p>
                     
-                    <p><strong>PROTEGEY allows you to:</strong></p>
-                    <ul style="padding-left: 20px;">
-                        <li style="margin-bottom: 8px;">Effectively fight against multiple accounts and identity fraud.</li>
-                        <li style="margin-bottom: 8px;">Detect fraud patterns and risky behaviors in advance.</li>
-                        <li style="margin-bottom: 8px;">Automate risk scoring and decision processes.</li>
-                        <li style="margin-bottom: 8px;">Structure and pilot investigations through traceable case management workflows.</li>
-                        <li style="margin-bottom: 8px;">Strengthen regulatory compliance and preparation for controls and audits.</li>
-                    </ul>
-                    
-                    <p>Our platform has been specifically designed to meet local regulatory requirements, financial security challenges, as well as the realities of cross-border operations in our region, where generic solutions quickly reach their limits.</p>
-                    
-                    <div style="background-color: #f7fafc; padding: 15px; border-radius: 5px; margin: 20px 0;">
-                        <p style="margin-top: 0;"><strong>Next steps:</strong></p>
-                        <p>A member of our team will contact you shortly to:</p>
-                        <ul style="margin-bottom: 0;">
-                            <li style="margin-bottom: 5px;">Organize a demonstration of the platform.</li>
-                            <li style="margin-bottom: 5px;">Analyze your specific fraud, risk, and compliance needs.</li>
-                            <li style="margin-bottom: 5px;">Present early access terms as well as preferential pricing conditions.</li>
-                        </ul>
+                    <p><strong>PROTEGEY Demo form:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnfcAwwrEGIC54uo-n470BVRTMRer2jq2gZpSo3pXByilYmg/viewform" style="color: #1a365d; text-decoration: underline;">Click here to access the form</a></p>
+
+                    <p>If you have any questions after viewing the demo, please feel free to contact us at <a href="mailto:hello@protegey.com" style="color: #1a365d; text-decoration: underline;">hello@protegey.com</a> and we will be happy to assist.</p>
+
+                    <div style="background-color: #f7fafc; padding: 20px; border-left: 4px solid #1a365d; border-radius: 5px; margin: 25px 0;">
+                        <p style="margin-top: 0;"><strong>Should you wish to proceed further?</strong></p>
+                        <p>Please email us the details below at <a href="mailto:hello@protegey.com" style="color: #1a365d; text-decoration: underline;">hello@protegey.com</a> so we can activate your sandbox access and allow you to explore the platform before moving to production:</p>
+
+                        
+                        <p><strong>Organization Details:</strong><br>
+                        • Partner Name<br>
+                        • Partner Type (Fintech, Bank, Telco, Regulator, Marketplace, Other)<br>
+                        • Country<br>
+                        • Organization Contact Email<br>
+                        • Contact Phone<br>
+                        • Internal notes for PROTEGEY (optional)</p>
+
+                        <p><strong>Primary Partner Admin Details for PROTEGEY Platform Access:</strong><br>
+                        • Full Name<br>
+                        • Role<br>
+                        • Email (preferably company email)<br>
+                        • Phone number (optional)</p>
                     </div>
 
-                    <p>We would be delighted to accompany you in strengthening security, compliance, and trust within your operations.</p>
+                    <p>You may also consult our technical documentation here:<br>
+                    <a href="https://docs.protegey.com" style="color: #1a365d; text-decoration: underline;">docs.protegey.com</a></p>
+
+                    <p>We look forward to supporting you in strengthening your Risk and Compliance operations with PROTEGEY.</p>
                     
                     <p style="margin-top: 30px;">
-                        Sincerely,<br>
-                        <strong>The PROTEGEY Team</strong>
+                        Warm regards,<br><br>
+                        <strong>Lamyaa Chaibni</strong><br>
+                        Senior Account Manager<br>
+                        <strong>PROTEGEY</strong>
                     </p>
                 </div>
             `

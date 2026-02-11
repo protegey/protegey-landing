@@ -123,8 +123,10 @@ function getEmailContent(lang: string, name: string, message: string) {
                     </div>
                     
                     <p style="margin-top: 30px;">
-                        Cordialement,<br>
-                        <strong>L’équipe PROTEGEY</strong>
+                        Cordialement,<br><br>
+                        <strong>Lamyaa Chaibni</strong><br>
+                        Senior Account Manager<br>
+                        <strong>PROTEGEY</strong>
                     </p>
                 </div>
             `
@@ -144,8 +146,10 @@ function getEmailContent(lang: string, name: string, message: string) {
                     </div>
                     
                     <p style="margin-top: 30px;">
-                        مع خالص التحيات،<br>
-                        <strong>فريق PROTEGEY</strong>
+                        مع خالص التحيات،<br><br>
+                        <strong>Lamyaa Chaibni</strong><br>
+                        Senior Account Manager<br>
+                        <strong>PROTEGEY</strong>
                     </p>
                 </div>
             `
@@ -166,8 +170,10 @@ function getEmailContent(lang: string, name: string, message: string) {
                     </div>
                     
                     <p style="margin-top: 30px;">
-                        Sincerely,<br>
-                        <strong>The PROTEGEY Team</strong>
+                        Sincerely,<br><br>
+                        <strong>Lamyaa Chaibni</strong><br>
+                        Senior Account Manager<br>
+                        <strong>PROTEGEY</strong>
                     </p>
                 </div>
             `
