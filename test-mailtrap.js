@@ -13,10 +13,12 @@ const client = new MailtrapClient({ token });
 const sender = { name: "Protegey Inc.", email: "no-reply@mail.protegey.com" };
 const recipients = [{ email: "test@example.com" }];
 
-const name = "Test User";
+const name = "Ghost";
+const title = "Mr.";
+const greetingName = title ? `${title} ${name}` : name;
 const htmlContent = `
     <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
-        <h2 style="color: #1a365d;">Dear ${name},</h2>
+        <h2 style="color: #1a365d;">Dear ${greetingName},</h2>
         
         <p>Thank you for your interest in PROTEGEY.</p>
         

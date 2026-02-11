@@ -7,6 +7,7 @@ defineProps({ isDark: Boolean })
 const { t } = useI18n()
 
 const formData = ref({
+    title: '',
     name: '',
     email: '',
     phone: '',
@@ -21,6 +22,13 @@ const formData = ref({
     interestType: '',
     message: ''
 })
+
+const titleOptions = computed(() => [
+    { value: 'Mr.', label: t('waitlist.titles.mr') },
+    { value: 'Mrs.', label: t('waitlist.titles.mrs') },
+    // { value: 'Ms.', label: t('waitlist.titles.ms') },
+    // { value: 'Dr.', label: t('waitlist.titles.dr') }
+])
 
 const ctaSection = ref(null)
 
@@ -126,6 +134,7 @@ const handleSubmit = async () => {
 
         if (!data.isDuplicate) {
             formData.value = {
+                title: '',
                 name: '',
                 email: '',
                 phone: '',
@@ -212,8 +221,21 @@ onMounted(() => {
                 </div>
 
                 <form @submit.prevent="handleSubmit" class="space-y-6 relative z-10">
-                    <div class="grid md:grid-cols-2 gap-6">
+                    <div class="grid md:grid-cols-3 gap-6">
                         <div>
+                            <label for="title"
+                                class="block text-sm font-semibold mb-2 text-neutral-300 rtl:text-right">{{
+                                    $t('waitlist.form.title') }}</label>
+                            <select id="title" v-model="formData.title"
+                                :aria-label="$t('waitlist.form.title')"
+                                class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white rtl:text-right">
+                                <option value="" disabled class="bg-neutral-900">{{
+                                    $t('waitlist.form.title_placeholder') }}</option>
+                                <option v-for="option in titleOptions" :key="option.value" :value="option.value"
+                                    class="bg-neutral-900">{{ option.label }}</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2">
                             <label for="name"
                                 class="block text-sm font-semibold mb-2 text-neutral-300 rtl:text-right">{{
                                     $t('waitlist.form.name') }}</label>
@@ -221,14 +243,14 @@ onMounted(() => {
                                 :placeholder="$t('waitlist.form.name_placeholder')"
                                 class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500 rtl:text-right" />
                         </div>
-                        <div>
-                            <label for="email"
-                                class="block text-sm font-semibold mb-2 text-neutral-300 rtl:text-right">{{
-                                    $t('waitlist.form.email') }}</label>
-                            <input id="email" v-model="formData.email" type="email" required
-                                :placeholder="$t('waitlist.form.email_placeholder')"
-                                class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500 rtl:text-right" />
-                        </div>
+                    </div>
+                    <div>
+                        <label for="email"
+                            class="block text-sm font-semibold mb-2 text-neutral-300 rtl:text-right">{{
+                                $t('waitlist.form.email') }}</label>
+                        <input id="email" v-model="formData.email" type="email" required
+                            :placeholder="$t('waitlist.form.email_placeholder')"
+                            class="w-full px-4 py-3 border border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-neutral-800 text-white placeholder-neutral-500 rtl:text-right" />
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">

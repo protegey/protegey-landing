@@ -432,6 +432,8 @@
         "title3": "aujourd'hui",
         "subtitle": "Soyez parmi les premiers à découvrir la plateforme de détection de fraude de nouvelle génération pour l'Afrique Francophone et du Nord",
         "form": {
+            "title": "Civilité",
+            "title_placeholder": "Sélectionnez",
             "name": "Nom complet",
             "name_placeholder": "Entrez votre nom complet",
             "email": "Adresse email",
@@ -467,6 +469,12 @@
             "interest": "Veuillez nous indiquer ce qui vous intéresse",
             "company_email": "Veuillez utiliser une adresse e-mail professionnelle (ex: nom{'@'}entreprise.com)",
             "submit_error": "Une erreur est survenue lors de l'envoi de votre demande. Veuillez réessayer."
+        },
+        "titles": {
+            "mr": "M.",
+            "mrs": "Mme",
+            "ms": "Mlle",
+            "dr": "Dr."
         },
         "roles": {
             "ceo": "PDG / Fondateur",

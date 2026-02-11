@@ -432,6 +432,8 @@
         "title3": "today",
         "subtitle": "Be among the first to experience Francophone and Northern Africa's next generation fraud detection platform",
         "form": {
+            "title": "Title",
+            "title_placeholder": "Select title",
             "name": "Full Name",
             "name_placeholder": "Enter your full name",
             "email": "Email Address",
@@ -467,6 +469,12 @@
             "interest": "Please let us know what you are interested in",
             "company_email": "Please use a company email address (e.g., name{'@'}company.com)",
             "submit_error": "There was an error submitting your request. Please try again."
+        },
+        "titles": {
+            "mr": "Mr.",
+            "mrs": "Mrs.",
+            "ms": "Ms.",
+            "dr": "Dr."
         },
         "roles": {
             "ceo": "CEO / Founder",

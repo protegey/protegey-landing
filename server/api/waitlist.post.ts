@@ -145,6 +145,15 @@ export default defineEventHandler(async (event) => {
                         start: new Date().toISOString(),
                     },
                 },
+                Title: {
+                    rich_text: [
+                        {
+                            text: {
+                                content: body.title || 'N/A',
+                            },
+                        },
+                    ],
+                },
             },
         })
 
@@ -152,7 +161,7 @@ export default defineEventHandler(async (event) => {
         if (mailtrap) {
             try {
                 const lang = body.lang || 'en'
-                const emailContent = getEmailContent(lang, body.name)
+                const emailContent = getEmailContent(lang, body.name, body.title)
 
                 await mailtrap.send({
                     from: { name: 'Protegey Inc.', email: 'no-reply@mail.protegey.com' },
@@ -175,13 +184,14 @@ export default defineEventHandler(async (event) => {
     }
 })
 
-function getEmailContent(lang: string, name: string) {
+function getEmailContent(lang: string, name: string, title?: string) {
+    const greetingName = title ? `${title} ${name}` : name
     if (lang === 'fr') {
         return {
             subject: 'Votre Démo PROTEGEY et Accès Sandbox',
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
-                    <h2 style="color: #1a365d;">Cher(e) ${name},</h2>
+                    <h2 style="color: #1a365d;">Cher(e) ${greetingName},</h2>
                     
                     <p>Merci de votre intérêt pour PROTEGEY.</p>
                     
@@ -233,7 +243,7 @@ function getEmailContent(lang: string, name: string) {
             subject: 'العرض التوضيحي لـ PROTEGEY والوصول إلى Sandbox',
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333; direction: rtl; text-align: right;">
-                    <h2 style="color: #1a365d;">عزيزي/عزيزتي ${name}،</h2>
+                    <h2 style="color: #1a365d;">عزيزي/عزيزتي ${greetingName}،</h2>
                     
                     <p>شكراً لاهتمامك بـ PROTEGEY.</p>
                     
@@ -286,7 +296,7 @@ function getEmailContent(lang: string, name: string) {
             subject: 'Your PROTEGEY Demo & Sandbox Access',
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
-                    <h2 style="color: #1a365d;">Dear ${name},</h2>
+                    <h2 style="color: #1a365d;">Dear ${greetingName},</h2>
                     
                     <p>Thank you for your interest in PROTEGEY.</p>
                     
