@@ -87,7 +87,7 @@ export default defineEventHandler(async (event) => {
                 const emailContent = getEmailContent(lang, body.name, body.message)
 
                 await mailtrap.send({
-                    from: { name: 'Protegey Inc.', email: 'no-reply@mail.protegey.com' },
+                    from: { name: 'PROTEGEY.', email: 'no-reply@mail.protegey.com' },
                     to: [{ email: body.email }],
                     subject: emailContent.subject,
                     html: emailContent.html
