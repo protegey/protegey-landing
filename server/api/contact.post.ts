@@ -83,7 +83,7 @@ export default defineEventHandler(async (event) => {
         // Send Notification Email via Mailtrap
         if (mailtrap) {
             try {
-                const lang = body.lang || 'en'
+                const lang = body.lang || 'fr'
                 const emailContent = getEmailContent(lang, body.name, body.message)
 
                 await mailtrap.send({

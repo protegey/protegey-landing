@@ -160,7 +160,7 @@ export default defineEventHandler(async (event) => {
         // Send Confirmation Email via Mailtrap
         if (mailtrap) {
             try {
-                const lang = body.lang || 'en'
+                const lang = body.lang || 'fr'
                 const emailContent = getEmailContent(lang, body.name, body.title)
 
                 await mailtrap.send({

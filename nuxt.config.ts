@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     url: 'https://www.protegey.com',
     name: 'Protegey',
     titleSeparator: '|',
-    defaultLocale: 'en',
+    defaultLocale: 'fr',
     templateTitle: '%s %separator %siteName',
   },
   modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/i18n', '@nuxtjs/seo'],
@@ -108,7 +108,7 @@ export default defineNuxtConfig({
       { code: 'fr', iso: 'fr-FR', file: 'fr.json', name: 'Français' },
       { code: 'ar', iso: 'ar-EG', file: 'ar.json', name: 'العربية', dir: 'rtl' }
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'fr',
     langDir: 'locales',
     strategy: 'prefix_except_default',
     compilation: {
