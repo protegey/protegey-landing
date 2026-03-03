@@ -19,6 +19,7 @@ import ProductCTA from '~/components/products/ProductCTA.vue'
 const route = useRoute()
 const productId = route.params.id
 const localePath = useLocalePath()
+const { t, tm, rt, locale } = useI18n()
 
 const iconMap = {
     signal: Activity01Icon,
@@ -31,7 +32,9 @@ const iconMap = {
 
 const productIcon = iconMap[productId] || Activity01Icon
 
-const { t, tm, rt } = useI18n()
+const baseUrl = 'https://www.protegey.com'
+const currentLocale = locale.value
+const localePrefix = currentLocale === 'en' ? '' : `/${currentLocale}`
 
 const productSchema = computed(() => ({
     "@context": "https://schema.org",
@@ -44,7 +47,7 @@ const productSchema = computed(() => ({
     },
     "offers": {
         "@type": "Offer",
-        "url": `https://www.protegey.com/products/${productId}`,
+        "url": `${baseUrl}${localePrefix}/products/${productId}`,
         "availability": "https://schema.org/InStock"
     }
 }))
@@ -71,58 +74,40 @@ if (import.meta.server) {
     })
 
     useSchemaOrg([
-        useSchemaOrg([
-            {
-                '@type': 'Product',
-                name: t(`products.${productId}.title`),
-                description: t(`products.${productId}.description`),
-                brand: {
-                    '@type': 'Brand',
-                    name: 'Protegey'
+        productSchema.value,
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: t('nav.home'),
+                    item: baseUrl
                 },
-                offers: {
-                    '@type': 'Offer',
-                    url: `https://www.protegey.com/products/${productId}`,
-                    availability: 'https://schema.org/InStock'
+                {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: t('nav.products'),
+                    item: `${baseUrl}${localePrefix}/products`
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 3,
+                    name: t(`products.${productId}.title`),
+                    item: `${baseUrl}${localePrefix}/products/${productId}`
                 }
-            },
-            {
-                '@type': 'BreadcrumbList',
-                itemListElement: [
-                    {
-                        '@type': 'ListItem',
-                        position: 1,
-                        name: t('nav.home'),
-                        item: 'https://www.protegey.com/'
-                    },
-                    {
-                        '@type': 'ListItem',
-                        position: 2,
-                        name: t('nav.products'),
-                        item: 'https://www.protegey.com/products'
-                    },
-                    {
-                        '@type': 'ListItem',
-                        position: 3,
-                        name: t(`products.${productId}.title`),
-                        item: `https://www.protegey.com/products/${productId}`
-                    }
-                ]
-            }
-        ])
+            ]
+        }
     ])
 }
 
-useHead(() => ({
-    link: [
-        { rel: 'canonical', href: 'https://www.protegey.com' + (route.path === '/' ? '' : route.path) }
-    ],
+useHead({
     meta: [
         { name: 'geo.region', content: 'SN;CI;CM;MA;DZ;TN;EG;CD' },
         { name: 'geo.placename', content: 'Dakar;Abidjan;Douala;Casablanca;Algiers;Tunis;Cairo;Kinshasa' },
         { name: 'keywords', content: t('seo.global.keywords') }
     ]
-}))
+})
 </script>
 
 <template>

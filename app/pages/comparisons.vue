@@ -3,14 +3,6 @@ import InfoPage from '~/components/sections/InfoPage.vue'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
-const route = useRoute()
-
-useHead(() => ({
-    title: t('geo_pages.comparisons.title'),
-    link: [
-        { rel: 'canonical', href: 'https://www.protegey.com' + (route.path === '/' ? '' : route.path) }
-    ]
-}))
 
 useSeoMeta({
     title: t('geo_pages.comparisons.title'),

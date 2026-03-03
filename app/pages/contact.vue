@@ -117,9 +117,7 @@
 </template>
 
 <script setup>
-const { t } = useI18n()
-
-const { locale } = useI18n()
+const { t, locale } = useI18n()
 
 const formData = ref({
     name: '',
@@ -176,6 +174,10 @@ useSeoMeta({
 })
 
 if (import.meta.server) {
+    const baseUrl = 'https://www.protegey.com'
+    const currentLocale = locale.value
+    const localePrefix = currentLocale === 'en' ? '' : `/${currentLocale}`
+
     defineOgImageComponent('NuxtSeo', {
         title: t('seo.contact.title'),
         description: t('seo.contact.description'),
@@ -195,23 +197,16 @@ if (import.meta.server) {
                     '@type': 'ListItem',
                     position: 1,
                     name: t('nav.home'),
-                    item: 'https://www.protegey.com/'
+                    item: baseUrl
                 },
                 {
                     '@type': 'ListItem',
                     position: 2,
                     name: t('nav.contact'),
-                    item: 'https://www.protegey.com/contact'
+                    item: `${baseUrl}${localePrefix}/contact`
                 }
             ]
         }
     ])
 }
-
-const route = useRoute()
-useHead(() => ({
-    link: [
-        { rel: 'canonical', href: 'https://www.protegey.com' + (route.path === '/' ? '' : route.path) }
-    ]
-}))
 </script>

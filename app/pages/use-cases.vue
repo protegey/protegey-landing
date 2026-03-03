@@ -3,7 +3,6 @@ import InfoPage from '~/components/sections/InfoPage.vue'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
-const route = useRoute()
 
 const cases = [
     { id: 'sim_swap', titleKey: 'geo_pages.use_cases.sim_swap_title', contentKey: 'geo_pages.use_cases.sim_swap' },
@@ -11,13 +10,6 @@ const cases = [
     { id: 'mule', titleKey: 'geo_pages.use_cases.mule_title', contentKey: 'geo_pages.use_cases.mule' },
     { id: 'repeat_actors', titleKey: 'geo_pages.use_cases.repeat_actors_title', contentKey: 'geo_pages.use_cases.repeat_actors' }
 ]
-
-useHead(() => ({
-    title: t('geo_pages.use_cases.title'),
-    link: [
-        { rel: 'canonical', href: 'https://www.protegey.com' + (route.path === '/' ? '' : route.path) }
-    ]
-}))
 
 useSeoMeta({
     title: t('geo_pages.use_cases.title'),

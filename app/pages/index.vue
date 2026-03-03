@@ -47,12 +47,13 @@ useSeoMeta({
 })
 
 if (import.meta.server) {
+  const baseUrl = 'https://www.protegey.com'
   useSchemaOrg([
     {
       '@type': 'Organization',
       name: 'Protegey',
-      url: 'https://www.protegey.com',
-      logo: 'https://www.protegey.com/logo.png',
+      url: baseUrl,
+      logo: `${baseUrl}/logo.png`,
       sameAs: [
         'https://twitter.com/ProtegeyHQ',
         'https://www.linkedin.com/company/protegey'
@@ -78,25 +79,18 @@ if (import.meta.server) {
     {
       '@type': 'WebSite',
       name: 'Protegey',
-      url: 'https://www.protegey.com'
-    },
-    {
-      '@type': 'WebPage'
+      url: baseUrl
     }
   ])
 }
 
-const route = useRoute()
-useHead(() => ({
-  link: [
-    { rel: 'canonical', href: 'https://www.protegey.com' + (route.path === '/' ? '' : route.path) }
-  ],
+useHead({
   meta: [
     { name: 'geo.region', content: 'SN;CI;CM;MA;DZ;TN;EG;CD' },
     { name: 'geo.placename', content: 'Dakar;Abidjan;Douala;Casablanca;Algiers;Tunis;Cairo;Kinshasa' },
     { name: 'keywords', content: t('seo.global.keywords') }
   ]
-}))
+})
 
 onMounted(() => {
   // Fix for accessibility issue where data-aria-hidden is incorrectly applied

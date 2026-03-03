@@ -5,14 +5,6 @@ import { Shield01Icon, CircleLock01Icon, Certificate01Icon, EyeIcon } from '@hug
 
 const { t } = useI18n()
 const localePath = useLocalePath()
-const route = useRoute()
-
-useHead(() => ({
-    title: t('geo_pages.trust.title'),
-    link: [
-        { rel: 'canonical', href: 'https://www.protegey.com' + (route.path === '/' ? '' : route.path) }
-    ]
-}))
 
 useSeoMeta({
     title: t('geo_pages.trust.title'),

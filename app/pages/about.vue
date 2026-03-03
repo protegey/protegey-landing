@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 useSeoMeta({
     title: t('seo.about.title'),
@@ -52,6 +52,10 @@ useSeoMeta({
 })
 
 if (import.meta.server) {
+    const baseUrl = 'https://www.protegey.com'
+    const currentLocale = locale.value
+    const localePrefix = currentLocale === 'en' ? '' : `/${currentLocale}`
+    
     defineOgImageComponent('NuxtSeo', {
         title: t('seo.about.title'),
         description: t('seo.about.description'),
@@ -72,23 +76,16 @@ if (import.meta.server) {
                     '@type': 'ListItem',
                     position: 1,
                     name: t('nav.home'),
-                    item: 'https://www.protegey.com/'
+                    item: baseUrl
                 },
                 {
                     '@type': 'ListItem',
                     position: 2,
                     name: t('footer.links.about'),
-                    item: 'https://www.protegey.com/about'
+                    item: `${baseUrl}${localePrefix}/about`
                 }
             ]
         }
     ])
 }
-
-const route = useRoute()
-useHead(() => ({
-    link: [
-        { rel: 'canonical', href: 'https://www.protegey.com' + (route.path === '/' ? '' : route.path) }
-    ]
-}))
 </script>
