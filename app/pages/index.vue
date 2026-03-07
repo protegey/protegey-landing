@@ -4,8 +4,9 @@
     <div class="relative">
       <Hero />
       <WhyProtegey :isDark="isDark" />
-      <!-- <Products /> -->
-      <TrustedBy />
+      <!-- <Products />
+      <SignalPipeline /> -->
+      <!-- <TrustedBy /> -->
       <FAQ />
       <WaitlistDemo />
     </div>
@@ -17,6 +18,8 @@ import { onMounted } from 'vue'
 import { useTheme } from '~/composables/useTheme'
 import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
+import Products from '~/components/sections/Products.vue'
+import SignalPipeline from '~/components/sections/SignalPipeline.vue'
 import TrustedBy from '~/components/sections/TrustedBy.vue'
 import FAQ from '~/components/sections/FAQ.vue'
 import WaitlistDemo from '~/components/sections/WaitlistDemo.vue'

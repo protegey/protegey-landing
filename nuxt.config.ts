@@ -1,4 +1,3 @@
-console.log("NUXT CONFIG LOADED");
 export default defineNuxtConfig({
   compatibilityDate: '2025-11-17',
   site: {

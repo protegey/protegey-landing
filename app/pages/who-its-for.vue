@@ -1,43 +1,35 @@
 <script setup lang="ts">
 import InfoPage from '~/components/sections/InfoPage.vue'
+import WhoItsFor from '~/components/sections/WhoItsFor.vue'
 
 const { t } = useI18n()
-const localePath = useLocalePath()
 
 useSeoMeta({
-    title: t('geo_pages.who_its_for.title'),
-    description: t('geo_pages.who_its_for.title'),
+    title: t('who_its_for.seo.title'),
+    description: t('who_its_for.seo.description'),
 })
 
 if (import.meta.server) {
     useSchemaOrg([
         {
             '@type': 'WebPage',
-            name: t('geo_pages.who_its_for.title'),
+            name: t('who_its_for.seo.title'),
+            description: t('who_its_for.seo.description'),
         }
     ])
 }
 </script>
 
 <template>
-    <InfoPage :title="t('geo_pages.who_its_for.title')">
-        <h2>{{ t('geo_pages.common.audience_header') }}</h2>
-        <ul>
-            <li>{{ t('geo_pages.who_its_for.banks') }}</li>
-            <li>{{ t('geo_pages.who_its_for.fintechs') }}</li>
-            <li>{{ t('geo_pages.who_its_for.telcos') }}</li>
-            <li>{{ t('geo_pages.who_its_for.regulators') }}</li>
-        </ul>
+    <InfoPage :title="t('who_its_for.title')" :subtitle="t('who_its_for.subtitle')">
+        <!-- Cards -->
+        <div class="max-w-5xl mx-auto">
+            <WhoItsFor />
+        </div>
 
-        <h2>{{ t('geo_pages.common.benefits_header') }}</h2>
-        <p>{{ t('geo_pages.who_its_for.benefits') }}</p>
-
-        <blockquote>
-            {{ t('geo_pages.who_its_for.exclusion') }}
-        </blockquote>
-
-        <p>
-            {{ t('geo_pages.common.infrastructure_note') }}
+        <!-- Closing note -->
+        <p class="text-center text-neutral-500 text-sm mt-14 max-w-xl mx-auto">
+            {{ t('who_its_for.exclusion') }}
         </p>
     </InfoPage>
 </template>
