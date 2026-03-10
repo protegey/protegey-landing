@@ -88,6 +88,11 @@
                 data-testid="link-privacy">
                 {{ $t('footer.links.privacy') }}</NuxtLink>
             </li>
+            <li>
+              <NuxtLink :to="localePath('terms')" class="hover:text-primary-400 transition-colors"
+                data-testid="link-terms">
+                {{ $t('footer.links.terms') }}</NuxtLink>
+            </li>
           </ul>
         </div>
 

@@ -14,14 +14,19 @@
                     {{ $t('privacy.sections.info_collect_text') }}
                 </p>
 
-                <h3 class="text-white text-xl font-bold mt-8 mb-4">{{ $t('privacy.sections.info_use') }}</h3>
+                <h3 class="text-white text-xl font-bold mt-8 mb-4">{{ $t('privacy.sections.data_processor') }}</h3>
                 <p class="text-neutral-400">
-                    {{ $t('privacy.sections.info_use_text') }}
+                    {{ $t('privacy.sections.data_processor_text') }}
                 </p>
 
                 <h3 class="text-white text-xl font-bold mt-8 mb-4">{{ $t('privacy.sections.data_sharing') }}</h3>
                 <p class="text-neutral-400">
                     {{ $t('privacy.sections.data_sharing_text') }}
+                </p>
+
+                <h3 class="text-white text-xl font-bold mt-8 mb-4">{{ $t('privacy.sections.retention') }}</h3>
+                <p class="text-neutral-400">
+                    {{ $t('privacy.sections.retention_text') }}
                 </p>
 
                 <h3 class="text-white text-xl font-bold mt-8 mb-4">{{ $t('privacy.sections.security') }}</h3>

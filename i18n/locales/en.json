@@ -529,7 +529,8 @@
             "contact": "Contact",
             "careers": "Careers",
             "api_docs": "API Docs",
-            "privacy": "Privacy"
+            "privacy": "Privacy",
+            "terms": "Terms"
         },
         "copyright": "© {year} Protegey Inc. All rights reserved.",
         "aria_footer": "Site Footer",
@@ -825,19 +826,42 @@
     },
     "privacy": {
         "title": "Privacy Policy",
-        "last_updated": "Last updated: December 6, 2025",
+        "last_updated": "Last updated: March 10, 2026",
         "intro": "At Protegey, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.",
         "sections": {
             "info_collect": "1. Information We Collect",
-            "info_collect_text": "We collect information that you provide directly to us, such as when you create an account, subscribe to our newsletter, or contact us for support. This may include your name, email address, company name, and other contact details.",
-            "info_use": "2. How We Use Your Information",
-            "info_use_text": "We use the information we collect to provide, maintain, and improve our services, to communicate with you, and to protect our users.",
+            "info_collect_text": "We collect information that you provide directly to us, such as when you create an account, subscribe to our newsletter, or contact us for support. As part of our Fraud Intelligence services, we also process pseudonymous Derived Signals from our Partners.",
+            "data_processor": "2. Protegey as a Data Processor",
+            "data_processor_text": "For our core fraud intelligence services, Protegey acts as a Data Processor. We process structured data records produced from transaction events, containing hashed identifiers and risk indicators rather than plaintext personal data. The Partner remains the Data Controller.",
             "data_sharing": "3. Data Sharing",
-            "data_sharing_text": "We do not sell your personal data. We may share your information with third-party service providers who perform services on our behalf, such as hosting, data analysis, and customer service.",
-            "security": "4. Security",
-            "security_text": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.",
-            "contact": "5. Contact Us",
+            "data_sharing_text": "We do not sell your personal data. We facilitate cross-institution correlation through secure, anonymized signal sharing to generate regulatory intelligence packages, without exposing underlying PII.",
+            "retention": "4. Retention & Deletion",
+            "retention_text": "Standard retention for derived signals is 24 months, unless shorter periods are required by law or earlier anonymization is requested.",
+            "security": "5. Security",
+            "security_text": "We implement rigorous technical and organizational security measures, including AES-256 encryption at rest and TLS 1.3 in transit, to protect your data.",
+            "contact": "6. Contact Us",
             "contact_text": "If you have any questions about this Privacy Policy, please contact us at"
+        }
+    },
+    "terms": {
+        "title": "Terms of Service",
+        "last_updated": "Last updated: March 10, 2026",
+        "intro": "These Terms of Service ('Terms') govern your access to and use of the Protegey platform and services. By using our services, you agree to be bound by these Terms.",
+        "sections": {
+            "definitions": "1. Definitions",
+            "definitions_text": "Personal Data refers to information relating to an identified or identifiable natural person. Derived Signals refer to structured data records produced from transaction events, containing hashed identifiers and risk indicators rather than plaintext personal data.",
+            "roles": "2. Roles and Responsibilities",
+            "roles_text": "The Partner remains the Data Controller for all customer personal data. Protegey acts as a Data Processor, processing pseudonymous signals to provide fraud intelligence and risk scoring services.",
+            "processing": "3. Scope of Processing",
+            "processing_text": "Protegey processes signals for real-time fraud detection, cross-institution correlation, AML monitoring, and generating regulatory intelligence packages.",
+            "obligations": "4. Partner Obligations",
+            "obligations_text": "Partners must maintain internal Hash-to-Identity mappings and ensure no plaintext PII is submitted to the Protegey API. Partners are responsible for resolving identities upon regulatory request.",
+            "security": "5. Security & Confidentiality",
+            "security_text": "Protegey maintains rigorous technical and organizational security measures, including AES-256 encryption at rest and TLS 1.3 in transit.",
+            "retention": "6. Retention & Deletion",
+            "retention_text": "Standard retention for derived signals is 24 months, unless shorter periods are required by law or earlier anonymization is requested.",
+            "contact": "7. Contact Us",
+            "contact_text": "For legal inquiries or questions regarding these Terms, please contact us at"
         }
     },
     "geo": {
@@ -921,6 +945,10 @@
         "privacy": {
             "title": "Privacy & Data Protection | Protegey Security Standards",
             "description": "Our commitment to data privacy and security. Learn how we handle information across the Protegey network while maintaining bank-grade security."
+        },
+        "terms": {
+            "title": "Terms of Service | Protegey Legal & Compliance",
+            "description": "Protegey Terms of Service. Review the legal framework governing our fraud intelligence platform and services."
         }
     },
     "errors": {

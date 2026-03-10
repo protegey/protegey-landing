@@ -529,7 +529,8 @@
             "contact": "Contact",
             "careers": "Carrières",
             "api_docs": "Docs API",
-            "privacy": "Confidentialité"
+            "privacy": "Confidentialité",
+            "terms": "Conditions"
         },
         "copyright": "© {year} Protegey Inc. Tous droits réservés.",
         "aria_footer": "Pied de page",
@@ -825,19 +826,42 @@
     },
     "privacy": {
         "title": "Politique de Confidentialité",
-        "last_updated": "Dernière mise à jour : 6 décembre 2025",
+        "last_updated": "Dernière mise à jour : 10 mars 2026",
         "intro": "Chez Protegey, nous prenons votre vie privée au sérieux. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous visitez notre site web ou utilisez nos services.",
         "sections": {
             "info_collect": "1. Informations que nous collectons",
-            "info_collect_text": "Nous collectons les informations que vous nous fournissez directement, par exemple lorsque vous créez un compte, vous abonnez à notre newsletter ou nous contactez pour obtenir de l'aide. Cela peut inclure votre nom, votre adresse e-mail, le nom de votre entreprise et d'autres coordonnées.",
-            "info_use": "2. Comment nous utilisons vos informations",
-            "info_use_text": "Nous utilisons les informations que nous collectons pour fournir, maintenir et améliorer nos services, pour communiquer avec vous et pour protéger nos utilisateurs.",
+            "info_collect_text": "Nous collectons les informations que vous nous fournissez directement, par exemple lorsque vous créez un compte, vous abonnez à notre newsletter ou nous contactez pour obtenir de l'aide. Dans le cadre de nos services d'Intelligence sur la Fraude, nous traitons également des Signaux Dérivés pseudonymes provenant de nos Partenaires.",
+            "data_processor": "2. Protegey en tant que Sous-traitant",
+            "data_processor_text": "Pour nos services principaux d'intelligence sur la fraude, Protegey agit en tant que Sous-traitant. Nous traitons des enregistrements de données structurés produits à partir d'événements de transaction, contenant des identifiants hachés et des indicateurs de risque plutôt que des données personnelles en texte clair. Le Partenaire reste le Responsable du Traitement.",
             "data_sharing": "3. Partage de données",
-            "data_sharing_text": "Nous ne vendons pas vos données personnelles. Nous pouvons partager vos informations avec des prestataires de services tiers qui effectuent des services en notre nom, tels que l'hébergement, l'analyse de données et le service client.",
-            "security": "4. Sécurité",
-            "security_text": "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès, altération, divulgation ou destruction non autorisés.",
-            "contact": "5. Contactez-nous",
+            "data_sharing_text": "Nous ne vendons pas vos données personnelles. Nous facilitons la corrélation inter-institutions grâce à un partage de signaux sécurisé et anonymisé pour générer des packages d'intelligence réglementaire, sans exposer les données personnelles sous-jacentes.",
+            "retention": "4. Rétention et Suppression",
+            "retention_text": "La rétention standard pour les signaux dérivés est de 24 mois, à moins que des périodes plus courtes ne soient requises par la loi ou qu'une anonymisation précoce ne soit demandée.",
+            "security": "5. Sécurité",
+            "security_text": "Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles rigoureuses, y compris le cryptage AES-256 au repos et TLS 1.3 en transit, pour protéger vos données.",
+            "contact": "6. Contactez-nous",
             "contact_text": "Si vous avez des questions sur cette politique de confidentialité, veuillez nous contacter à"
+        }
+    },
+    "terms": {
+        "title": "Conditions d'utilisation",
+        "last_updated": "Dernière mise à jour : 10 mars 2026",
+        "intro": "Ces conditions d'utilisation ('Conditions') régissent votre accès et votre utilisation de la plateforme et des services Protegey. En utilisant nos services, vous acceptez d'être lié par ces Conditions.",
+        "sections": {
+            "definitions": "1. Définitions",
+            "definitions_text": "Les données personnelles désignent les informations relatives à une personne physique identifiée ou identifiable. Les signaux dérivés désignent les enregistrements de données structurés produits à partir d'événements de transaction, contenant des identifiants hachés et des indicateurs de risque plutôt que des données personnelles en texte clair.",
+            "roles": "2. Rôles et responsabilités",
+            "roles_text": "Le partenaire reste le responsable du traitement de toutes les données personnelles des clients. Protegey agit en tant que sous-traitant, traitant des signaux pseudonymes pour fournir des services d'intelligence sur la fraude et de scoring de risque.",
+            "processing": "3. Étendue du traitement",
+            "processing_text": "Protegey traite les signaux pour la détection de la fraude en temps réel, la corrélation inter-institutions, le suivi AML et la génération de packages d'intelligence réglementaire.",
+            "obligations": "4. Obligations du partenaire",
+            "obligations_text": "Les partenaires doivent maintenir des mappages internes Hash-to-Identity et s'assurer qu'aucune DCP en texte clair n'est soumise à l'API Protegey. Les partenaires sont responsables de la résolution des identités sur demande réglementaire.",
+            "security": "5. Sécurité et confidentialité",
+            "security_text": "Protegey maintient des mesures de sécurité techniques et organisationnelles rigoureuses, y compris le cryptage AES-256 au repos et le TLS 1.3 en transit.",
+            "retention": "6. Rétention et suppression",
+            "retention_text": "La rétention standard pour les signaux dérivés est de 24 mois, à moins que des périodes plus courtes ne soient requises par la loi ou qu'une anonymisation précoce ne soit demandée.",
+            "contact": "7. Contactez-nous",
+            "contact_text": "Pour les demandes juridiques ou les questions concernant ces Conditions, veuillez nous contacter à"
         }
     },
     "geo": {
@@ -921,6 +945,10 @@
         "privacy": {
             "title": "Confidentialité & Protection des Données | Normes de Sécurité Protegey",
             "description": "Notre engagement envers la confidentialité et la sécurité des données. Découvrez comment nous gérons les informations tout en maintenant une sécurité de niveau bancaire."
+        },
+        "terms": {
+            "title": "Conditions d'utilisation | Protegey Légal & Conformité",
+            "description": "Conditions d'utilisation de Protegey. Consultez le cadre juridique régissant notre plateforme et nos services d'intelligence sur la fraude."
         }
     },
     "errors": {
