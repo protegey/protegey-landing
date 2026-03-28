@@ -22,6 +22,11 @@ export default defineEventHandler(async (event) => {
         })
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(body.email)) {
+        throw createError({ statusCode: 400, message: 'Invalid email address.' })
+    }
+
     const notion = new Client({ auth: config.notionApiKey })
     const mailtrap = config.mailtrapToken ? new MailtrapClient({ token: config.mailtrapToken }) : null
 
@@ -179,12 +184,23 @@ export default defineEventHandler(async (event) => {
         console.error('Notion API Error:', error)
         throw createError({
             statusCode: 500,
-            message: error.message || 'Failed to submit to Notion.'
+            message: 'Failed to submit. Please try again later.'
         })
     }
 })
 
+function escapeHtml(str: string): string {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;')
+}
+
 function getEmailContent(lang: string, name: string, title?: string) {
+    name = escapeHtml(name)
+    if (title) title = escapeHtml(title)
     let greetingName = name
     if (title) {
         if (lang === 'fr') {

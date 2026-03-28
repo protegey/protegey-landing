@@ -22,10 +22,34 @@ export default defineEventHandler(async (event) => {
         })
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(body.email)) {
+        throw createError({ statusCode: 400, message: 'Invalid email address.' })
+    }
+
     const notion = new Client({ auth: config.notionApiKey })
     const mailtrap = config.mailtrapToken ? new MailtrapClient({ token: config.mailtrapToken }) : null
 
     try {
+        // Check for duplicate submissions by email
+        const existing: any = await $fetch(`https://api.notion.com/v1/databases/${config.notionDatabaseId}/query`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${config.notionApiKey}`,
+                'Notion-Version': '2022-06-28',
+                'Content-Type': 'application/json'
+            },
+            body: {
+                filter: {
+                    property: 'Email',
+                    email: { equals: body.email }
+                }
+            }
+        })
+        if (existing.results && existing.results.length > 0) {
+            return { success: true, isDuplicate: true }
+        }
+
         // Helper to truncate text to Notion limits (2000 chars)
         const truncate = (str: string, length: number = 2000) => (str || '').substring(0, length)
 
@@ -102,24 +126,35 @@ export default defineEventHandler(async (event) => {
         console.error('Notion API Error (Contact):', error)
         throw createError({
             statusCode: 500,
-            message: error.message || 'Failed to submit contact form.'
+            message: 'Failed to submit contact form. Please try again later.'
         })
     }
 })
 
+function escapeHtml(str: string): string {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;')
+}
+
 function getEmailContent(lang: string, name: string, message: string) {
+    const safeName = escapeHtml(name)
+    const safeMessage = escapeHtml(message)
     if (lang === 'fr') {
         return {
             subject: "Merci d'avoir contacté Protegey",
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
-                    <h2 style="color: #1a365d;">Bonjour ${name},</h2>
+                    <h2 style="color: #1a365d;">Bonjour ${safeName},</h2>
                     
                     <p>Nous vous remercions de nous avoir contactés. Nous avons bien reçu votre message et nous reviendrons vers vous dans les plus brefs délais.</p>
                     
                     <div style="background-color: #f7fafc; padding: 20px; border-left: 4px solid #1a365d; border-radius: 5px; margin: 25px 0;">
                         <strong style="color: #1a365d; display: block; margin-bottom: 10px;">Rappel de votre message :</strong>
-                        <p style="margin: 0; font-style: italic; color: #4a5568;">"${message}"</p>
+                        <p style="margin: 0; font-style: italic; color: #4a5568;">"${safeMessage}"</p>
                     </div>
                     
                     <p style="margin-top: 30px;">
@@ -136,13 +171,13 @@ function getEmailContent(lang: string, name: string, message: string) {
             subject: "شكراً لتواصلكم مع بروتجي",
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333; direction: rtl; text-align: right;">
-                    <h2 style="color: #1a365d;">مرحباً ${name}،</h2>
+                    <h2 style="color: #1a365d;">مرحباً ${safeName}،</h2>
                     
                     <p>نشكركم على تواصلكم معنا. لقد استلمنا رسالتكم وسنعود إليكم في أقرب وقت ممكن.</p>
                     
                     <div style="background-color: #f7fafc; padding: 20px; border-right: 4px solid #1a365d; border-radius: 5px; margin: 25px 0;">
                         <strong style="color: #1a365d; display: block; margin-bottom: 10px;">تذكير برسالتكم:</strong>
-                        <p style="margin: 0; font-style: italic; color: #4a5568;">"${message}"</p>
+                        <p style="margin: 0; font-style: italic; color: #4a5568;">"${safeMessage}"</p>
                     </div>
                     
                     <p style="margin-top: 30px;">
@@ -160,13 +195,13 @@ function getEmailContent(lang: string, name: string, message: string) {
             subject: "Thank you for contacting Protegey",
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
-                    <h2 style="color: #1a365d;">Hello ${name},</h2>
+                    <h2 style="color: #1a365d;">Hello ${safeName},</h2>
                     
                     <p>Thank you for contacting us. We have received your message and will get back to you as soon as possible.</p>
                     
                     <div style="background-color: #f7fafc; padding: 20px; border-left: 4px solid #1a365d; border-radius: 5px; margin: 25px 0;">
                         <strong style="color: #1a365d; display: block; margin-bottom: 10px;">Copy of your message:</strong>
-                        <p style="margin: 0; font-style: italic; color: #4a5568;">"${message}"</p>
+                        <p style="margin: 0; font-style: italic; color: #4a5568;">"${safeMessage}"</p>
                     </div>
                     
                     <p style="margin-top: 30px;">
