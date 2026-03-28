@@ -1,107 +1,113 @@
 <template>
-    <section id="solution" ref="solutionSection" class="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gray-50">
-        <div class="px-4 sm:px-6 lg:px-8">
+    <section id="solution" ref="solutionSection" class="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-neutral-950 overflow-hidden">
+
+        <!-- Background glows -->
+        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div class="absolute top-1/4 left-0 w-[500px] h-[500px] bg-secondary-500/5 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary-500/5 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-7xl mx-auto w-full">
                 <div class="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
+
+                    <!-- Left: Text content -->
                     <div class="fade-up">
-                        <div class="text-blue-600 font-bold mb-3 uppercase tracking-wider text-sm rtl:text-right">{{
-                            $t('solution.badge') }}</div>
-                        <h2
-                            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900 rtl:text-right">
+                        <div class="inline-flex items-center gap-2 text-primary-400 font-semibold text-sm uppercase tracking-wider mb-4 rtl:text-right">
+                            <span class="w-6 h-px bg-primary-500"></span>
+                            {{ $t('solution.badge') }}
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white rtl:text-right">
                             {{ $t('solution.title_main') }}
-                            <span class="text-blue-600">{{ $t('solution.title_highlight') }}</span>
+                            <span class="text-primary-400">{{ $t('solution.title_highlight') }}</span>
                         </h2>
-                        <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed rtl:text-right">
+                        <p class="text-lg md:text-xl text-neutral-300 mb-6 leading-relaxed rtl:text-right">
                             {{ $t('solution.description') }}
                         </p>
-                        <p
-                            :class="[isDark ? 'text-sm sm:text-base md:text-lg text-slate-400 leading-relaxed mb-6 sm:mb-8 rtl:text-right' : 'text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed mb-6 sm:mb-8 rtl:text-right']">
+                        <p class="text-sm sm:text-base md:text-lg text-neutral-400 leading-relaxed mb-8 rtl:text-right">
                             {{ $t('solution.hero_text') }}
                         </p>
+
                         <div class="space-y-4 mb-8">
                             <div v-for="(feature, index) in tm('solution.features')" :key="index"
                                 class="flex items-start gap-4 rtl:flex-row-reverse">
-                                <div
-                                    class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                    <svg class="w-5 h-5 text-blue-600 rtl:rotate-180" fill="currentColor"
-                                        viewBox="0 0 20 20">
+                                <div class="w-8 h-8 bg-primary-500/10 border border-primary-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-4 h-4 text-primary-400 rtl:rotate-180" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                             clip-rule="evenodd" />
                                     </svg>
                                 </div>
                                 <div class="rtl:text-right">
-                                    <div class="font-semibold text-lg mb-1 text-gray-900">{{ rt(feature.title) }}</div>
-                                    <div class="text-gray-600">{{ rt(feature.text) }}</div>
+                                    <div class="font-semibold text-base mb-0.5 text-white">{{ rt(feature.title) }}</div>
+                                    <div class="text-sm text-neutral-400">{{ rt(feature.text) }}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Right: Protection card -->
                     <div class="flex justify-center lg:justify-end rtl:lg:justify-start">
                         <div class="main-card relative w-full max-w-md">
-                            <!-- Main Protection Card -->
-                            <div
-                                class="relative bg-white rounded-2xl shadow-2xl border border-gray-200 p-8 transform hover:-translate-y-2 transition-all duration-300">
-                                <div class="flex items-center justify-between mb-6 rtl:flex-row-reverse">
+                            <div class="relative bg-neutral-900 rounded-2xl border border-neutral-800 p-8 shadow-2xl shadow-neutral-950/50 hover:-translate-y-2 transition-all duration-300">
+
+                                <!-- Card glow -->
+                                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-500/5 to-secondary-500/5 pointer-events-none"></div>
+
+                                <!-- Card header -->
+                                <div class="relative flex items-center justify-between mb-6 rtl:flex-row-reverse">
                                     <div class="flex items-center gap-3 rtl:flex-row-reverse">
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center">
-                                            <HugeiconsIcon :icon="Shield01Icon" class="w-7 h-7 text-white" />
+                                        <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20">
+                                            <HugeiconsIcon :icon="Shield01Icon" class="w-6 h-6 text-white" />
                                         </div>
                                         <div class="rtl:text-right">
-                                            <div class="text-blue-600 font-bold text-lg leading-none mb-1">{{
-                                                $t('solution.card.title') }}</div>
-                                            <div class="text-gray-500 text-sm">{{ $t('solution.card.tagline') }}</div>
+                                            <div class="text-primary-400 font-bold text-lg leading-none mb-0.5">
+                                                {{ $t('solution.card.title') }}
+                                            </div>
+                                            <div class="text-neutral-500 text-sm">{{ $t('solution.card.tagline') }}</div>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-1.5 rtl:flex-row-reverse">
-                                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                                        <span class="text-green-600 text-sm font-semibold">{{ $t('solution.card.status')
-                                            }}</span>
+                                        <div class="w-2 h-2 bg-primary-400 rounded-full animate-pulse"></div>
+                                        <span class="text-primary-400 text-sm font-semibold">{{ $t('solution.card.status') }}</span>
                                     </div>
                                 </div>
 
-                                <!-- Protection Stats -->
-                                <div class="space-y-4">
-                                    <div
-                                        class="flex justify-between items-center py-3 border-b border-gray-100 rtl:flex-row-reverse">
-                                        <span class="text-gray-600 rtl:text-right">{{ $t('solution.card.stat1_label')
-                                            }}</span>
-                                        <span class="text-gray-900 font-bold text-lg rtl:text-left">{{
-                                            $t('solution.card.stat1_value') }}</span>
+                                <!-- Protection stats -->
+                                <div class="relative space-y-1">
+                                    <div class="flex justify-between items-center py-3 border-b border-neutral-800 rtl:flex-row-reverse">
+                                        <span class="text-neutral-400 text-sm rtl:text-right">{{ $t('solution.card.stat1_label') }}</span>
+                                        <span class="text-white font-bold text-lg rtl:text-left">{{ $t('solution.card.stat1_value') }}</span>
                                     </div>
-                                    <div
-                                        class="flex justify-between items-center py-3 border-b border-gray-100 rtl:flex-row-reverse">
-                                        <span class="text-gray-600 rtl:text-right">{{ $t('solution.card.stat2_label')
-                                            }}</span>
-                                        <span class="text-blue-600 font-bold text-lg rtl:text-left">{{
-                                            $t('solution.card.stat2_value') }}</span>
+                                    <div class="flex justify-between items-center py-3 border-b border-neutral-800 rtl:flex-row-reverse">
+                                        <span class="text-neutral-400 text-sm rtl:text-right">{{ $t('solution.card.stat2_label') }}</span>
+                                        <span class="text-secondary-400 font-bold text-lg rtl:text-left">{{ $t('solution.card.stat2_value') }}</span>
                                     </div>
                                     <div class="flex justify-between items-center py-3 rtl:flex-row-reverse">
-                                        <span class="text-gray-600 rtl:text-right">{{ $t('solution.card.stat3_label')
-                                            }}</span>
-                                        <span class="text-lime-600 font-bold text-lg rtl:text-left">{{
-                                            $t('solution.card.stat3_value') }}</span>
+                                        <span class="text-neutral-400 text-sm rtl:text-right">{{ $t('solution.card.stat3_label') }}</span>
+                                        <span class="text-primary-400 font-bold text-lg rtl:text-left">{{ $t('solution.card.stat3_value') }}</span>
                                     </div>
                                 </div>
 
-                                <!-- Progress Bar -->
-                                <div class="mt-6">
+                                <!-- Progress bar -->
+                                <div class="relative mt-6">
                                     <div class="flex justify-between text-sm mb-2 rtl:flex-row-reverse">
-                                        <span class="text-gray-600 rtl:text-right">{{
-                                            $t('solution.card.protection_level') }}</span>
-                                        <span class="text-gray-900 font-semibold rtl:text-left">{{
-                                            $t('solution.card.protection_status') }}</span>
+                                        <span class="text-neutral-400 rtl:text-right">{{ $t('solution.card.protection_level') }}</span>
+                                        <span class="text-white font-semibold rtl:text-left">{{ $t('solution.card.protection_status') }}</span>
                                     </div>
-                                    <div class="w-full bg-gray-100 rounded-full h-2.5">
-                                        <div class="bg-gradient-to-r from-blue-600 to-lime-400 h-2.5 rounded-full rtl:from-lime-400 rtl:to-blue-600"
+                                    <div class="w-full bg-neutral-800 rounded-full h-2">
+                                        <div class="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full rtl:from-secondary-500 rtl:to-primary-500"
                                             style="width: 99.9%"></div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Decorative glow behind card -->
+                            <div class="absolute -top-8 -right-8 w-32 h-32 bg-primary-500/15 rounded-full blur-2xl -z-10"></div>
+                            <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-secondary-500/15 rounded-full blur-2xl -z-10"></div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -133,28 +139,15 @@ onMounted(() => {
                 once: true,
                 onEnter: () => {
                     const tl = gsap.timeline();
-
                     tl.from('.fade-up', {
-                        y: 50,
-                        opacity: 0,
-                        duration: 1,
-                        ease: 'power3.out'
+                        y: 50, opacity: 0, duration: 1, ease: 'power3.out'
                     })
-                        .from('.main-card', {
-                            scale: 0.9,
-                            y: 60,
-                            opacity: 0,
-                            duration: 1.2,
-                            ease: 'power3.out'
-                        }, '-=0.4');
+                    .from('.main-card', {
+                        scale: 0.9, y: 60, opacity: 0, duration: 1.2, ease: 'power3.out'
+                    }, '-=0.4');
 
-                    // Continuous floating animation
                     gsap.to('.main-card', {
-                        y: -10,
-                        duration: 4,
-                        ease: 'power2.inOut',
-                        yoyo: true,
-                        repeat: -1
+                        y: -10, duration: 4, ease: 'power2.inOut', yoyo: true, repeat: -1
                     });
                 }
             });
@@ -169,35 +162,3 @@ onUnmounted(() => {
     gsap.killTweensOf('.main-card');
 });
 </script>
-
-<style scoped>
-@keyframes spin-slow {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes bounce-slow {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-.animate-spin-slow {
-    animation: spin-slow 8s linear infinite;
-}
-
-.animate-bounce-slow {
-    animation: bounce-slow 2s ease-in-out infinite;
-}
-</style>

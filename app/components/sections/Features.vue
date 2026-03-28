@@ -21,44 +21,21 @@ if (typeof window !== 'undefined' && !gsap.plugins.ScrollTrigger) {
 
 let st;
 
-const features = [
-    {
-        icon: Shield01Icon,
-        title: 'Fraud Detection & Scoring',
-        description: 'Advanced ML algorithms that analyze transaction patterns and provide real-time risk scores with 99.9% accuracy.',
-        color: 'lime'
-    },
-    {
-        icon: ChartHistogramIcon,
-        title: 'Behavioral Analytics',
-        description: 'Deep insights into user behavior patterns to identify anomalies and prevent sophisticated fraud attempts.',
-        color: 'purple'
-    },
-    {
-        icon: FileValidationIcon,
-        title: 'Compliance & AML Tools',
-        description: 'Comprehensive anti-money laundering features with automated reporting and regulatory compliance.',
-        color: 'blue'
-    },
-    {
-        icon: Activity01Icon,
-        title: 'Transaction Monitoring',
-        description: 'Real-time surveillance of all financial transactions with intelligent alerting and response systems.',
-        color: 'lime'
-    },
-    {
-        icon: Notification02Icon,
-        title: 'Real-time Alerts & Case Management',
-        description: 'Instant notifications and comprehensive case management tools for fraud investigation teams.',
-        color: 'purple'
-    },
-    {
-        icon: Settings01Icon,
-        title: 'API Integration',
-        description: 'Seamless integration with existing systems through robust APIs and webhook support.',
-        color: 'blue'
-    }
-];
+// Icon + accent color mapping per feature key
+const featureMeta = {
+    fraud:       { icon: Shield01Icon,        accent: 'primary' },
+    behavioral:  { icon: ChartHistogramIcon,  accent: 'secondary' },
+    compliance:  { icon: FileValidationIcon,  accent: 'cyan' },
+    monitoring:  { icon: Activity01Icon,      accent: 'primary' },
+    alerts:      { icon: Notification02Icon,  accent: 'secondary' },
+    integration: { icon: Settings01Icon,      accent: 'cyan' },
+};
+
+const accentClasses = {
+    primary:   { icon: 'text-primary-400',   bg: 'bg-primary-500/10',   border: 'border-primary-500/20',   hover: 'hover:border-primary-500/40 hover:bg-primary-500/5' },
+    secondary: { icon: 'text-secondary-400', bg: 'bg-secondary-500/10', border: 'border-secondary-500/20', hover: 'hover:border-secondary-500/40 hover:bg-secondary-500/5' },
+    cyan:      { icon: 'text-accent-cyan-500', bg: 'bg-accent-cyan-500/10', border: 'border-accent-cyan-500/20', hover: 'hover:border-accent-cyan-500/40 hover:bg-accent-cyan-500/5' },
+};
 
 onMounted(() => {
     try {
@@ -69,26 +46,15 @@ onMounted(() => {
                 once: true,
                 onEnter: () => {
                     const tl = gsap.timeline();
-
                     tl.from('.features-title', {
-                        y: 50,
-                        opacity: 0,
-                        duration: 1,
-                        ease: 'power3.out'
+                        y: 50, opacity: 0, duration: 1, ease: 'power3.out'
                     })
-                        .from('.features-subtitle', {
-                            y: 30,
-                            opacity: 0,
-                            duration: 0.8,
-                            ease: 'power3.out'
-                        }, '-=0.6')
-                        .from('.feature-card', {
-                            y: 40,
-                            opacity: 0,
-                            duration: 0.8,
-                            stagger: 0.15,
-                            ease: 'power3.out'
-                        }, '-=0.4');
+                    .from('.features-subtitle', {
+                        y: 30, opacity: 0, duration: 0.8, ease: 'power3.out'
+                    }, '-=0.6')
+                    .from('.feature-card', {
+                        y: 40, opacity: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out'
+                    }, '-=0.4');
                 }
             });
         }, 100);
@@ -103,64 +69,78 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <!-- Gradient band background like the attachment -->
-    <section id="features"
-        class="features-modern relative py-20 md:py-28 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900">
-        <!-- Inner rounded panel -->
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" class="features-modern relative py-20 md:py-28 bg-neutral-950 overflow-hidden">
+
+        <!-- Subtle background glow -->
+        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div class="absolute top-0 left-1/3 w-[600px] h-[400px] bg-primary-500/5 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-0 right-1/3 w-[500px] h-[300px] bg-secondary-500/5 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="mx-auto max-w-7xl">
-                <div
-                    class="relative rounded-3xl bg-white/95 shadow-xl border border-white/60 backdrop-blur-sm px-6 sm:px-10 md:px-14 py-12 md:py-16">
-                    <!-- subtle grid overlay inside the panel -->
-                    <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-[0.08]" aria-hidden="true"
+
+                <!-- Section panel -->
+                <div class="relative rounded-3xl border border-neutral-800/60 bg-neutral-900/40 backdrop-blur-sm px-6 sm:px-10 md:px-14 py-12 md:py-16 overflow-hidden">
+
+                    <!-- Inner grid texture -->
+                    <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-[0.03]" aria-hidden="true"
                         style="background-image:
-                            linear-gradient(rgba(0,0,0,.12) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(0,0,0,.12) 1px, transparent 1px);
+                            linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px);
                             background-size: 36px 36px;">
                     </div>
 
                     <!-- Header -->
                     <div class="relative text-center max-w-3xl mx-auto mb-10 md:mb-14">
-                        <span
-                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700 ring-1 ring-gray-200">{{
-                                t('features.badge') }}</span>
-                        <h2
-                            class="features-title mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 rtl:text-center">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border border-primary-500/30 bg-primary-500/10 text-primary-400">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse"></span>
+                            {{ t('features.badge') }}
+                        </span>
+                        <h2 class="features-title mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white rtl:text-center">
                             {{ t('features.title_main') }}
-                            <span
-                                class="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-orange-500 to-pink-600">{{
-                                    t('features.title_highlight') }}</span>
+                            <span class="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-secondary-400">
+                                {{ t('features.title_highlight') }}
+                            </span>
                         </h2>
-                        <p class="features-subtitle mt-4 text-sm sm:text-base text-gray-600 rtl:text-center">
+                        <p class="features-subtitle mt-4 text-sm sm:text-base text-neutral-400 rtl:text-center">
                             {{ t('features.subtitle') }}
                         </p>
                     </div>
 
                     <!-- Features Grid -->
-                    <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                         <div v-for="(feature, key) in tm('features.items')" :key="key" class="feature-card">
-                            <div
-                                class="h-full rounded-2xl border border-gray-200 bg-white shadow-[0_1px_0_0_rgba(0,0,0,0.02)] hover:shadow-lg transition-shadow p-6 md:p-7">
+                            <div :class="[
+                                'h-full rounded-2xl border transition-all duration-300 p-6 md:p-7 group',
+                                accentClasses[featureMeta[key]?.accent ?? 'primary'].border,
+                                accentClasses[featureMeta[key]?.accent ?? 'primary'].hover,
+                                'bg-neutral-900/60'
+                            ]">
                                 <div class="flex items-start gap-4 rtl:flex-row-reverse">
-                                    <!-- Icon in subtle square -->
-                                    <div
-                                        class="shrink-0 w-10 h-10 rounded-lg border border-gray-200 bg-gray-50 flex items-center justify-center text-gray-700">
-                                        <!-- Map icon from feature object or key -->
+                                    <!-- Icon -->
+                                    <div :class="[
+                                        'shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-colors',
+                                        accentClasses[featureMeta[key]?.accent ?? 'primary'].bg,
+                                        accentClasses[featureMeta[key]?.accent ?? 'primary'].icon
+                                    ]">
                                         <HugeiconsIcon
-                                            :icon="key === 'fraud' ? Shield01Icon : (key === 'behavioral' ? ChartHistogramIcon : (key === 'compliance' ? FileValidationIcon : (key === 'monitoring' ? Activity01Icon : (key === 'alerts' ? Notification02Icon : Settings01Icon))))"
+                                            :icon="featureMeta[key]?.icon ?? Shield01Icon"
                                             :size="18" />
                                     </div>
                                     <div>
-                                        <h3
-                                            class="text-base md:text-lg font-semibold text-gray-900 mb-1 rtl:text-right">
-                                            {{ rt(feature.title) }}</h3>
-                                        <p class="text-sm text-gray-600 leading-relaxed rtl:text-right">{{
-                                            rt(feature.description) }}</p>
+                                        <h3 class="text-base md:text-lg font-semibold text-white mb-1.5 rtl:text-right">
+                                            {{ rt(feature.title) }}
+                                        </h3>
+                                        <p class="text-sm text-neutral-400 leading-relaxed rtl:text-right">
+                                            {{ rt(feature.description) }}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
