@@ -1,5 +1,5 @@
 <template>
-  <div class="relative min-h-screen bg-neutral-950">
+  <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950">
     <!-- Content -->
     <div class="relative">
       <Hero />
@@ -99,7 +99,7 @@ useHead({
 
 onMounted(() => {
   // Fix for accessibility issue where data-aria-hidden is incorrectly applied
-  const content = document.querySelector('.min-h-screen.bg-neutral-950')
+  const content = document.querySelector('.min-h-screen.bg-neutral-50')
   if (content) {
     content.removeAttribute('data-aria-hidden')
     content.removeAttribute('aria-hidden')

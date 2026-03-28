@@ -69,7 +69,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section id="features" class="features-modern relative py-20 md:py-28 bg-neutral-950 overflow-hidden">
+    <section id="features" class="features-modern relative py-20 md:py-28 bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
 
         <!-- Subtle background glow -->
         <div class="pointer-events-none absolute inset-0" aria-hidden="true">
@@ -81,7 +81,7 @@ onUnmounted(() => {
             <div class="mx-auto max-w-7xl">
 
                 <!-- Section panel -->
-                <div class="relative rounded-3xl border border-neutral-800/60 bg-neutral-900/40 backdrop-blur-sm px-6 sm:px-10 md:px-14 py-12 md:py-16 overflow-hidden">
+                <div class="relative rounded-3xl border border-neutral-200/80 dark:border-neutral-800/60 bg-white/80 dark:bg-neutral-900/40 backdrop-blur-sm px-6 sm:px-10 md:px-14 py-12 md:py-16 overflow-hidden">
 
                     <!-- Inner grid texture -->
                     <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-[0.03]" aria-hidden="true"
@@ -97,13 +97,13 @@ onUnmounted(() => {
                             <span class="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse"></span>
                             {{ t('features.badge') }}
                         </span>
-                        <h2 class="features-title mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white rtl:text-center">
+                        <h2 class="features-title mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-white rtl:text-center">
                             {{ t('features.title_main') }}
                             <span class="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-secondary-400">
                                 {{ t('features.title_highlight') }}
                             </span>
                         </h2>
-                        <p class="features-subtitle mt-4 text-sm sm:text-base text-neutral-400 rtl:text-center">
+                        <p class="features-subtitle mt-4 text-sm sm:text-base text-neutral-500 dark:text-neutral-400 rtl:text-center">
                             {{ t('features.subtitle') }}
                         </p>
                     </div>
@@ -115,7 +115,7 @@ onUnmounted(() => {
                                 'h-full rounded-2xl border transition-all duration-300 p-6 md:p-7 group',
                                 accentClasses[featureMeta[key]?.accent ?? 'primary'].border,
                                 accentClasses[featureMeta[key]?.accent ?? 'primary'].hover,
-                                'bg-neutral-900/60'
+                                'bg-white dark:bg-neutral-900/60'
                             ]">
                                 <div class="flex items-start gap-4 rtl:flex-row-reverse">
                                     <!-- Icon -->
@@ -129,10 +129,10 @@ onUnmounted(() => {
                                             :size="18" />
                                     </div>
                                     <div>
-                                        <h3 class="text-base md:text-lg font-semibold text-white mb-1.5 rtl:text-right">
+                                        <h3 class="text-base md:text-lg font-semibold text-neutral-900 dark:text-white mb-1.5 rtl:text-right">
                                             {{ rt(feature.title) }}
                                         </h3>
-                                        <p class="text-sm text-neutral-400 leading-relaxed rtl:text-right">
+                                        <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed rtl:text-right">
                                             {{ rt(feature.description) }}
                                         </p>
                                     </div>

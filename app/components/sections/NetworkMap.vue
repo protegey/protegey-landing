@@ -127,7 +127,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="network-section relative py-24 bg-neutral-950 overflow-hidden border-t border-neutral-900">
+    <section class="network-section relative py-24 bg-neutral-50 dark:bg-neutral-950 overflow-hidden border-t border-neutral-200 dark:border-neutral-900">
         <!-- Canvas Background -->
         <div class="absolute inset-0 z-0 opacity-50">
             <canvas ref="canvasRef" class="w-full h-full"></canvas>
@@ -140,10 +140,10 @@ onUnmounted(() => {
                     <span class="w-2 h-2 rounded-full bg-secondary-500 animate-pulse"></span>
                     HOW IT WORKS
                 </div>
-                <h2 class="network-title text-3xl md:text-5xl font-bold text-white mb-6">
+                <h2 class="network-title text-3xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
                     A Shared Early-Warning Network
                 </h2>
-                <p class="text-neutral-400 text-lg">
+                <p class="text-neutral-500 dark:text-neutral-400 text-lg">
                     Protegey turns scattered events into actionable intelligence by aggregating signals from across the
                     ecosystem.
                 </p>
@@ -152,44 +152,44 @@ onUnmounted(() => {
             <div class="network-steps grid md:grid-cols-3 gap-8 relative">
                 <!-- Connecting Line (Desktop) -->
                 <div
-                    class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-neutral-800 to-transparent -z-10">
+                    class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-800 to-transparent -z-10">
                 </div>
 
                 <!-- Step 1 -->
                 <div
-                    class="network-step relative bg-neutral-900/80 backdrop-blur border border-neutral-800 p-8 rounded-2xl hover:border-primary-500/30 transition-colors group">
+                    class="network-step relative bg-white dark:bg-neutral-900/80 backdrop-blur border border-neutral-200 dark:border-neutral-800 p-8 rounded-2xl hover:border-primary-500/30 transition-colors group">
                     <div
-                        class="w-12 h-12 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-500/20 transition-colors">
+                        class="w-12 h-12 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-500/20 transition-colors">
                         <span class="text-2xl font-mono font-bold text-primary-500">01</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Aggregate Signals</h3>
-                    <p class="text-neutral-400">
+                    <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-3">Aggregate Signals</h3>
+                    <p class="text-neutral-500 dark:text-neutral-400">
                         Ingest data from fintechs, telcos, banks, and community reports in real-time.
                     </p>
                 </div>
 
                 <!-- Step 2 -->
                 <div
-                    class="network-step relative bg-neutral-900/80 backdrop-blur border border-neutral-800 p-8 rounded-2xl hover:border-secondary-500/30 transition-colors group">
+                    class="network-step relative bg-white dark:bg-neutral-900/80 backdrop-blur border border-neutral-200 dark:border-neutral-800 p-8 rounded-2xl hover:border-secondary-500/30 transition-colors group">
                     <div
-                        class="w-12 h-12 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary-500/20 transition-colors">
+                        class="w-12 h-12 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary-500/20 transition-colors">
                         <span class="text-2xl font-mono font-bold text-secondary-500">02</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Detect Patterns</h3>
-                    <p class="text-neutral-400">
+                    <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-3">Detect Patterns</h3>
+                    <p class="text-neutral-500 dark:text-neutral-400">
                         AI engine analyzes cross-institution patterns to identify emerging fraud vectors.
                     </p>
                 </div>
 
                 <!-- Step 3 -->
                 <div
-                    class="network-step relative bg-neutral-900/80 backdrop-blur border border-neutral-800 p-8 rounded-2xl hover:border-primary-500/30 transition-colors group">
+                    class="network-step relative bg-white dark:bg-neutral-900/80 backdrop-blur border border-neutral-200 dark:border-neutral-800 p-8 rounded-2xl hover:border-primary-500/30 transition-colors group">
                     <div
-                        class="w-12 h-12 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-500/20 transition-colors">
+                        class="w-12 h-12 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-500/20 transition-colors">
                         <span class="text-2xl font-mono font-bold text-primary-400">03</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Stop Fraud</h3>
-                    <p class="text-neutral-400">
+                    <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-3">Stop Fraud</h3>
+                    <p class="text-neutral-500 dark:text-neutral-400">
                         Instantly block threats and share intelligence across the network to prevent spread.
                     </p>
                 </div>

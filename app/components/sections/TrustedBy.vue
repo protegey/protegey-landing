@@ -15,7 +15,7 @@ const marqueeItems = computed(() => {
 </script>
 
 <template>
-    <section id="trustedby" class="py-12 bg-neutral-950 w-full border-t border-neutral-900">
+    <section id="trustedby" class="py-12 bg-neutral-50 dark:bg-neutral-950 w-full border-t border-neutral-200 dark:border-neutral-900">
         <!-- Title Text -->
         <!-- <div class="text-center mb-12 md:mb-16 lg:mb-20">
             <div class="text-neutral-400 font-bold mb-3 uppercase tracking-wider text-sm">
@@ -45,7 +45,7 @@ const marqueeItems = computed(() => {
         <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
             <!-- ISO 27001 Card -->
             <div
-                class="rounded-2xl bg-neutral-900 border border-neutral-800 shadow-lg p-7 flex flex-col items-start hover:border-secondary-500/30 transition-colors duration-300 rtl:items-end">
+                class="rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-lg p-7 flex flex-col items-start hover:border-secondary-500/30 transition-colors duration-300 rtl:items-end">
                 <div class="flex items-center gap-3 mb-3 rtl:flex-row-reverse">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-secondary-500" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
@@ -55,13 +55,13 @@ const marqueeItems = computed(() => {
                     <span class="font-semibold text-md text-secondary-400 rtl:text-right">{{ $t('trusted_by.iso.title')
                         }}</span>
                 </div>
-                <div class="text-neutral-400 rtl:text-right">
+                <div class="text-neutral-500 dark:text-neutral-400 rtl:text-right">
                     {{ $t('trusted_by.iso.text') }}
                 </div>
             </div>
             <!-- SOC2 Card -->
             <div
-                class="rounded-2xl bg-neutral-900 border border-neutral-800 shadow-lg p-7 flex flex-col items-start hover:border-primary-500/30 transition-colors duration-300 rtl:items-end">
+                class="rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-lg p-7 flex flex-col items-start hover:border-primary-500/30 transition-colors duration-300 rtl:items-end">
                 <div class="flex items-center gap-3 mb-3 rtl:flex-row-reverse">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-primary-500" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
@@ -71,7 +71,7 @@ const marqueeItems = computed(() => {
                     <span class="font-semibold text-md text-primary-400 rtl:text-right">{{ $t('trusted_by.soc2.title')
                         }}</span>
                 </div>
-                <div class="text-neutral-400 rtl:text-right">
+                <div class="text-neutral-500 dark:text-neutral-400 rtl:text-right">
                     {{ $t('trusted_by.soc2.text') }}
                 </div>
             </div>

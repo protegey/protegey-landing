@@ -1,5 +1,5 @@
 <template>
-    <section id="solution" ref="solutionSection" class="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-neutral-950 overflow-hidden">
+    <section id="solution" ref="solutionSection" class="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
 
         <!-- Background glows -->
         <div class="pointer-events-none absolute inset-0" aria-hidden="true">
@@ -17,14 +17,14 @@
                             <span class="w-6 h-px bg-primary-500"></span>
                             {{ $t('solution.badge') }}
                         </div>
-                        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white rtl:text-right">
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-neutral-900 dark:text-white rtl:text-right">
                             {{ $t('solution.title_main') }}
                             <span class="text-primary-400">{{ $t('solution.title_highlight') }}</span>
                         </h2>
-                        <p class="text-lg md:text-xl text-neutral-300 mb-6 leading-relaxed rtl:text-right">
+                        <p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed rtl:text-right">
                             {{ $t('solution.description') }}
                         </p>
-                        <p class="text-sm sm:text-base md:text-lg text-neutral-400 leading-relaxed mb-8 rtl:text-right">
+                        <p class="text-sm sm:text-base md:text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed mb-8 rtl:text-right">
                             {{ $t('solution.hero_text') }}
                         </p>
 
@@ -39,8 +39,8 @@
                                     </svg>
                                 </div>
                                 <div class="rtl:text-right">
-                                    <div class="font-semibold text-base mb-0.5 text-white">{{ rt(feature.title) }}</div>
-                                    <div class="text-sm text-neutral-400">{{ rt(feature.text) }}</div>
+                                    <div class="font-semibold text-base mb-0.5 text-neutral-900 dark:text-white">{{ rt(feature.title) }}</div>
+                                    <div class="text-sm text-neutral-500 dark:text-neutral-400">{{ rt(feature.text) }}</div>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                     <!-- Right: Protection card -->
                     <div class="flex justify-center lg:justify-end rtl:lg:justify-start">
                         <div class="main-card relative w-full max-w-md">
-                            <div class="relative bg-neutral-900 rounded-2xl border border-neutral-800 p-8 shadow-2xl shadow-neutral-950/50 hover:-translate-y-2 transition-all duration-300">
+                            <div class="relative bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 p-8 shadow-2xl shadow-neutral-200 dark:shadow-neutral-900 hover:-translate-y-2 transition-all duration-300">
 
                                 <!-- Card glow -->
                                 <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-500/5 to-secondary-500/5 pointer-events-none"></div>
@@ -64,7 +64,7 @@
                                             <div class="text-primary-400 font-bold text-lg leading-none mb-0.5">
                                                 {{ $t('solution.card.title') }}
                                             </div>
-                                            <div class="text-neutral-500 text-sm">{{ $t('solution.card.tagline') }}</div>
+                                            <div class="text-neutral-400 dark:text-neutral-500 text-sm">{{ $t('solution.card.tagline') }}</div>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-1.5 rtl:flex-row-reverse">
@@ -75,16 +75,16 @@
 
                                 <!-- Protection stats -->
                                 <div class="relative space-y-1">
-                                    <div class="flex justify-between items-center py-3 border-b border-neutral-800 rtl:flex-row-reverse">
-                                        <span class="text-neutral-400 text-sm rtl:text-right">{{ $t('solution.card.stat1_label') }}</span>
-                                        <span class="text-white font-bold text-lg rtl:text-left">{{ $t('solution.card.stat1_value') }}</span>
+                                    <div class="flex justify-between items-center py-3 border-b border-neutral-200 dark:border-neutral-800 rtl:flex-row-reverse">
+                                        <span class="text-neutral-500 dark:text-neutral-400 text-sm rtl:text-right">{{ $t('solution.card.stat1_label') }}</span>
+                                        <span class="text-neutral-900 dark:text-white font-bold text-lg rtl:text-left">{{ $t('solution.card.stat1_value') }}</span>
                                     </div>
-                                    <div class="flex justify-between items-center py-3 border-b border-neutral-800 rtl:flex-row-reverse">
-                                        <span class="text-neutral-400 text-sm rtl:text-right">{{ $t('solution.card.stat2_label') }}</span>
+                                    <div class="flex justify-between items-center py-3 border-b border-neutral-200 dark:border-neutral-800 rtl:flex-row-reverse">
+                                        <span class="text-neutral-500 dark:text-neutral-400 text-sm rtl:text-right">{{ $t('solution.card.stat2_label') }}</span>
                                         <span class="text-secondary-400 font-bold text-lg rtl:text-left">{{ $t('solution.card.stat2_value') }}</span>
                                     </div>
                                     <div class="flex justify-between items-center py-3 rtl:flex-row-reverse">
-                                        <span class="text-neutral-400 text-sm rtl:text-right">{{ $t('solution.card.stat3_label') }}</span>
+                                        <span class="text-neutral-500 dark:text-neutral-400 text-sm rtl:text-right">{{ $t('solution.card.stat3_label') }}</span>
                                         <span class="text-primary-400 font-bold text-lg rtl:text-left">{{ $t('solution.card.stat3_value') }}</span>
                                     </div>
                                 </div>
@@ -92,10 +92,10 @@
                                 <!-- Progress bar -->
                                 <div class="relative mt-6">
                                     <div class="flex justify-between text-sm mb-2 rtl:flex-row-reverse">
-                                        <span class="text-neutral-400 rtl:text-right">{{ $t('solution.card.protection_level') }}</span>
-                                        <span class="text-white font-semibold rtl:text-left">{{ $t('solution.card.protection_status') }}</span>
+                                        <span class="text-neutral-500 dark:text-neutral-400 rtl:text-right">{{ $t('solution.card.protection_level') }}</span>
+                                        <span class="text-neutral-900 dark:text-white font-semibold rtl:text-left">{{ $t('solution.card.protection_status') }}</span>
                                     </div>
-                                    <div class="w-full bg-neutral-800 rounded-full h-2">
+                                    <div class="w-full bg-neutral-100 dark:bg-neutral-800 rounded-full h-2">
                                         <div class="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full rtl:from-secondary-500 rtl:to-primary-500"
                                             style="width: 99.9%"></div>
                                     </div>

@@ -59,7 +59,7 @@ onUnmounted(() => observer?.disconnect())
 </script>
 
 <template>
-  <section id="signal-pipeline" class="relative py-20 md:py-28 bg-neutral-950 overflow-hidden">
+  <section id="signal-pipeline" class="relative py-20 md:py-28 bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
     <!-- Background grid -->
     <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary-500/3 to-transparent pointer-events-none" />
@@ -71,13 +71,13 @@ onUnmounted(() => observer?.disconnect())
           <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse" />
           {{ t('signal_pipeline.badge') }}
         </div>
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
           {{ t('signal_pipeline.title') }}
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
             {{ t('signal_pipeline.title_highlight') }}
           </span>
         </h2>
-        <p class="text-neutral-400 text-lg max-w-2xl mx-auto">
+        <p class="text-neutral-500 dark:text-neutral-400 text-lg max-w-2xl mx-auto">
           {{ t('signal_pipeline.subtitle') }}
         </p>
       </div>
@@ -105,7 +105,7 @@ onUnmounted(() => observer?.disconnect())
           <!-- Connector arrow (desktop) -->
           <div
             v-if="idx % 5 !== 4"
-            class="hidden lg:block absolute top-8 -right-3 z-20 text-neutral-600"
+            class="hidden lg:block absolute top-8 -right-3 z-20 text-neutral-400 dark:text-neutral-600"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -114,7 +114,7 @@ onUnmounted(() => observer?.disconnect())
 
           <div
             :class="[
-              'h-full p-5 rounded-2xl border bg-neutral-900/60 backdrop-blur-sm transition-all duration-300',
+              'h-full p-5 rounded-2xl border bg-white dark:bg-neutral-900/60 backdrop-blur-sm transition-all duration-300',
               'hover:scale-[1.03] hover:shadow-lg cursor-default',
               getColor(step.color).border,
               getColor(step.color).glow
@@ -122,7 +122,7 @@ onUnmounted(() => observer?.disconnect())
           >
             <!-- Step number + icon row -->
             <div class="flex items-center gap-3 mb-3">
-              <span class="text-xs font-mono font-bold text-neutral-500">{{ step.number }}</span>
+              <span class="text-xs font-mono font-bold text-neutral-400 dark:text-neutral-500">{{ step.number }}</span>
               <div :class="['p-2 rounded-lg', getColor(step.color).bg]">
                 <HugeiconsIcon
                   :icon="step.icon"
@@ -136,7 +136,7 @@ onUnmounted(() => observer?.disconnect())
               {{ t(`signal_pipeline.${step.key}.title`) }}
             </h3>
             <!-- Description -->
-            <p class="text-xs text-neutral-400 leading-relaxed">
+            <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
               {{ t(`signal_pipeline.${step.key}.desc`) }}
             </p>
           </div>

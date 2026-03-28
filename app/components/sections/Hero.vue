@@ -135,13 +135,13 @@ onUnmounted(() => {
 
 <template>
     <section id="hero"
-        class="relative min-h-screen bg-neutral-950 flex items-center justify-center overflow-hidden pt-20">
+        class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center overflow-hidden pt-20">
         <!-- Animated Background Grid -->
         <div class="absolute inset-0 z-0">
             <div
                 class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
             </div>
-            <div class="absolute inset-0 bg-gradient-to-b from-neutral-950 via-transparent to-neutral-950"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-neutral-50 dark:from-neutral-950 via-transparent to-neutral-50 dark:to-neutral-950"></div>
 
             <!-- Glowing Orbs -->
             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-pulse-glow">
@@ -167,7 +167,7 @@ onUnmounted(() => {
                     </div>
 
                     <h1
-                        class="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight">
+                        class="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-neutral-900 dark:text-white tracking-tight">
                         {{ $t('hero.title_part_1') }}
 
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
@@ -177,7 +177,7 @@ onUnmounted(() => {
                         {{ $t('hero.title_part_2') }}
                     </h1>
 
-                    <p class="hero-subtitle text-lg sm:text-xl text-neutral-400 max-w-2xl leading-relaxed"
+                    <p class="hero-subtitle text-lg sm:text-xl text-neutral-500 dark:text-neutral-400 max-w-2xl leading-relaxed"
                         v-html="$t('hero.subtitle', { action: typewriterText })">
                     </p>
 
@@ -194,12 +194,12 @@ onUnmounted(() => {
                     </div>
 
                     <!-- Trust Indicators -->
-                    <div class="hero-cta flex flex-wrap gap-6 pt-8 border-t border-neutral-800/50">
-                        <div class="flex items-center gap-2 text-neutral-400 text-sm">
+                    <div class="hero-cta flex flex-wrap gap-6 pt-8 border-t border-neutral-200/80 dark:border-neutral-800/50">
+                        <div class="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 text-sm">
                             <HugeiconsIcon :icon="LockComputerIcon" :size="16" class="text-primary-500" />
                             <span>{{ $t('hero.trust.security') }}</span>
                         </div>
-                        <div class="flex items-center gap-2 text-neutral-400 text-sm">
+                        <div class="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 text-sm">
                             <HugeiconsIcon :icon="Activity01Icon" :size="16" class="text-primary-500" />
                             <span>{{ $t('hero.trust.analysis') }}</span>
                         </div>
@@ -209,47 +209,47 @@ onUnmounted(() => {
                 <!-- Right Visual (Dashboard Mockup) -->
                 <div class="relative perspective-1000">
                     <div
-                        class="dashboard-card relative z-10 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl overflow-hidden">
+                        class="dashboard-card relative z-10 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-2xl overflow-hidden">
                         <!-- Header -->
                         <div
-                            class="flex items-center justify-between px-4 py-3 border-b border-neutral-800 bg-neutral-900/90 backdrop-blur">
+                            class="flex items-center justify-between px-4 py-3 border-b border-neutral-200 dark:border-neutral-800 bg-white/95 dark:bg-neutral-900/90 backdrop-blur">
                             <div class="flex items-center gap-2">
                                 <div class="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50"></div>
                                 <div class="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50"></div>
                                 <div class="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50"></div>
                             </div>
-                            <div class="text-xs font-mono text-neutral-500">PROTEGEY_INTELLIGENCE_V2.0</div>
+                            <div class="text-xs font-mono text-neutral-400 dark:text-neutral-500">PROTEGEY_INTELLIGENCE_V2.0</div>
                         </div>
 
                         <!-- Dashboard Content -->
-                        <div class="p-6 space-y-6 bg-neutral-900/50">
+                        <div class="p-6 space-y-6 bg-white/90 dark:bg-neutral-900/50">
                             <!-- Stats Row -->
                             <div class="grid grid-cols-2 gap-4">
-                                <div class="bg-neutral-800/50 p-4 rounded-lg border border-neutral-700/50">
-                                    <div class="text-xs text-neutral-400 uppercase tracking-wider mb-1">{{
+                                <div class="bg-neutral-100/80 dark:bg-neutral-800/50 p-4 rounded-lg border border-neutral-200/80 dark:border-neutral-700/50">
+                                    <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1">{{
                                         $t('hero.dashboard.threats_blocked') }}
                                     </div>
-                                    <div class="text-2xl font-mono font-bold text-white">84,291</div>
+                                    <div class="text-2xl font-mono font-bold text-neutral-900 dark:text-white">84,291</div>
                                     <div class="text-xs text-primary-400 mt-1 flex items-center gap-1">
                                         <span
                                             class="inline-block w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[6px] border-b-primary-400"></span>
                                         {{ $t('hero.dashboard.vs_last_week') }}
                                     </div>
                                 </div>
-                                <div class="bg-neutral-800/50 p-4 rounded-lg border border-neutral-700/50">
-                                    <div class="text-xs text-neutral-400 uppercase tracking-wider mb-1">{{
+                                <div class="bg-neutral-100/80 dark:bg-neutral-800/50 p-4 rounded-lg border border-neutral-200/80 dark:border-neutral-700/50">
+                                    <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1">{{
                                         $t('hero.dashboard.active_nodes') }}
                                     </div>
-                                    <div class="text-2xl font-mono font-bold text-white">1,402</div>
+                                    <div class="text-2xl font-mono font-bold text-neutral-900 dark:text-white">1,402</div>
                                     <div class="text-xs text-secondary-400 mt-1">{{ $t('hero.dashboard.uptime') }}</div>
                                 </div>
                             </div>
 
                             <!-- Live Feed -->
-                            <div class="bg-neutral-800/30 rounded-lg border border-neutral-700/30 overflow-hidden">
+                            <div class="bg-neutral-100/50 dark:bg-neutral-800/30 rounded-lg border border-neutral-200/50 dark:border-neutral-700/30 overflow-hidden">
                                 <div
-                                    class="px-4 py-2 border-b border-neutral-700/30 bg-neutral-800/50 flex justify-between items-center">
-                                    <span class="text-xs font-semibold text-neutral-300">{{
+                                    class="px-4 py-2 border-b border-neutral-200/50 dark:border-neutral-700/30 bg-neutral-100/80 dark:bg-neutral-800/50 flex justify-between items-center">
+                                    <span class="text-xs font-semibold text-neutral-600 dark:text-neutral-300">{{
                                         $t('hero.dashboard.live_feed') }}</span>
                                     <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                                 </div>
@@ -257,35 +257,35 @@ onUnmounted(() => {
                                     <div
                                         class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
                                         <span class="text-red-400">[{{ $t('hero.dashboard.critical') }}]</span>
-                                        <span class="text-neutral-300">{{ $t('hero.dashboard.sim_swap') }}</span>
-                                        <span class="text-neutral-400 ms-auto">00:01:23</span>
+                                        <span class="text-neutral-600 dark:text-neutral-300">{{ $t('hero.dashboard.sim_swap') }}</span>
+                                        <span class="text-neutral-500 dark:text-neutral-400 ms-auto">00:01:23</span>
                                     </div>
                                     <div
                                         class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
                                         <span class="text-yellow-400">[{{ $t('hero.dashboard.warning') }}]</span>
-                                        <span class="text-neutral-300">{{ $t('hero.dashboard.unusual_login') }}</span>
-                                        <span class="text-neutral-400 ms-auto">00:01:45</span>
+                                        <span class="text-neutral-600 dark:text-neutral-300">{{ $t('hero.dashboard.unusual_login') }}</span>
+                                        <span class="text-neutral-500 dark:text-neutral-400 ms-auto">00:01:45</span>
                                     </div>
                                     <div
                                         class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
                                         <span class="text-primary-400">[{{ $t('hero.dashboard.info') }}]</span>
-                                        <span class="text-neutral-300">{{ $t('hero.dashboard.new_node') }}</span>
-                                        <span class="text-neutral-400 ms-auto">00:02:10</span>
+                                        <span class="text-neutral-600 dark:text-neutral-300">{{ $t('hero.dashboard.new_node') }}</span>
+                                        <span class="text-neutral-500 dark:text-neutral-400 ms-auto">00:02:10</span>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Map Visualization Placeholder -->
                             <div
-                                class="h-32 bg-neutral-800/30 rounded-lg border border-neutral-700/30 relative overflow-hidden flex items-center justify-center group">
+                                class="h-32 bg-neutral-100/50 dark:bg-neutral-800/30 rounded-lg border border-neutral-200/50 dark:border-neutral-700/30 relative overflow-hidden flex items-center justify-center group">
                                 <div
                                     class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                 </div>
                                 <div class="text-center">
                                     <HugeiconsIcon :icon="Globe02Icon" :size="32"
-                                        class="text-neutral-600 mx-auto mb-2 group-hover:text-primary-400 transition-colors" />
+                                        class="text-neutral-400 dark:text-neutral-600 mx-auto mb-2 group-hover:text-primary-400 transition-colors" />
                                     <span
-                                        class="text-xs text-neutral-400 group-hover:text-neutral-300 transition-colors">{{
+                                        class="text-xs text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">{{
                                             $t('hero.dashboard.map_activity') }}</span>
                                 </div>
                             </div>

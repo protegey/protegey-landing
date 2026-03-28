@@ -1,5 +1,5 @@
 <template>
-    <div ref="pageRoot" class="bg-neutral-950 min-h-screen overflow-hidden">
+    <div ref="pageRoot" class="bg-neutral-50 dark:bg-neutral-950 min-h-screen overflow-hidden">
 
         <!-- ── Hero ──────────────────────────────────────────── -->
         <section class="relative pt-32 pb-16 md:pt-44 md:pb-24">
@@ -23,11 +23,11 @@
                 </div>
 
                 <div data-reveal class="mt-16 md:mt-24 relative max-w-5xl mx-auto" style="--delay:240ms">
-                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-neutral-950 to-transparent z-10 pointer-events-none rounded-b-2xl" />
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-neutral-50 dark:from-neutral-950 to-transparent z-10 pointer-events-none rounded-b-2xl" />
                     <img
                         src="/images/about-hero.png"
                         :alt="$t('about_page.hero.image_alt')"
-                        class="w-full rounded-2xl border border-neutral-800/50 shadow-2xl shadow-black/60"
+                        class="w-full rounded-2xl border border-neutral-200 dark:border-neutral-800/50 shadow-2xl shadow-black/20 dark:shadow-black/60"
                     />
                 </div>
             </div>
@@ -41,18 +41,18 @@
                     <!-- Narrative -->
                     <div class="space-y-10">
                         <div data-reveal>
-                            <p class="text-xs font-mono text-neutral-600 tracking-[0.25em] uppercase mb-5">
+                            <p class="text-xs font-mono text-neutral-500 dark:text-neutral-600 tracking-[0.25em] uppercase mb-5">
                                 01 — {{ $t('about_page.story.title') }}
                             </p>
-                            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-6 leading-tight">
                                 {{ $t('about_page.story.problem_title') }}
                             </h2>
-                            <p class="text-neutral-400 text-lg leading-relaxed">
+                            <p class="text-neutral-500 dark:text-neutral-400 text-lg leading-relaxed">
                                 {{ $t('about_page.story.problem_text') }}
                             </p>
                         </div>
 
-                        <div data-reveal class="h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent" style="--delay:60ms" />
+                        <div data-reveal class="h-px bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-800 to-transparent" style="--delay:60ms" />
 
                         <div data-reveal style="--delay:120ms">
                             <div class="flex items-center gap-3 mb-4">
@@ -61,7 +61,7 @@
                                 </div>
                                 <span class="text-secondary-300 font-bold">{{ $t('about_page.story.solution_title') }}</span>
                             </div>
-                            <p class="text-neutral-300 text-lg leading-relaxed">
+                            <p class="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed">
                                 {{ $t('about_page.story.solution_text') }}
                             </p>
                         </div>
@@ -70,20 +70,20 @@
                     <!-- Stat bento -->
                     <div class="grid grid-cols-2 gap-3">
                         <div data-reveal class="col-span-2 p-7 rounded-2xl border border-primary-500/25 bg-primary-500/5 group hover:bg-primary-500/8 transition-colors" style="--delay:60ms">
-                            <div class="text-4xl font-bold text-white font-mono mb-1">{{ $t('about_page.stats.realtime_value') }}</div>
-                            <div class="text-neutral-500 text-sm">{{ $t('about_page.stats.realtime_label') }}</div>
+                            <div class="text-4xl font-bold text-neutral-900 dark:text-white font-mono mb-1">{{ $t('about_page.stats.realtime_value') }}</div>
+                            <div class="text-neutral-400 dark:text-neutral-500 text-sm">{{ $t('about_page.stats.realtime_label') }}</div>
                         </div>
-                        <div data-reveal class="p-7 rounded-2xl border border-neutral-800 bg-neutral-900/40 hover:bg-neutral-900/80 transition-colors" style="--delay:120ms">
-                            <div class="text-3xl font-bold text-white font-mono mb-1">{{ $t('about_page.stats.pipeline_value') }}</div>
-                            <div class="text-neutral-500 text-sm">{{ $t('about_page.stats.pipeline_label') }}</div>
+                        <div data-reveal class="p-7 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/40 hover:bg-white dark:hover:bg-neutral-900/80 transition-colors" style="--delay:120ms">
+                            <div class="text-3xl font-bold text-neutral-900 dark:text-white font-mono mb-1">{{ $t('about_page.stats.pipeline_value') }}</div>
+                            <div class="text-neutral-400 dark:text-neutral-500 text-sm">{{ $t('about_page.stats.pipeline_label') }}</div>
                         </div>
-                        <div data-reveal class="p-7 rounded-2xl border border-neutral-800 bg-neutral-900/40 hover:bg-neutral-900/80 transition-colors" style="--delay:180ms">
-                            <div class="text-3xl font-bold text-white font-mono mb-1">{{ $t('about_page.stats.unified_value') }}</div>
-                            <div class="text-neutral-500 text-sm">{{ $t('about_page.stats.unified_label') }}</div>
+                        <div data-reveal class="p-7 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/40 hover:bg-white dark:hover:bg-neutral-900/80 transition-colors" style="--delay:180ms">
+                            <div class="text-3xl font-bold text-neutral-900 dark:text-white font-mono mb-1">{{ $t('about_page.stats.unified_value') }}</div>
+                            <div class="text-neutral-400 dark:text-neutral-500 text-sm">{{ $t('about_page.stats.unified_label') }}</div>
                         </div>
                         <div data-reveal class="col-span-2 p-7 rounded-2xl border border-secondary-500/20 bg-secondary-500/5 group hover:bg-secondary-500/8 transition-colors" style="--delay:240ms">
-                            <div class="text-3xl font-bold text-white font-mono mb-1">{{ $t('about_page.stats.crossborder_value') }}</div>
-                            <div class="text-neutral-500 text-sm">{{ $t('about_page.stats.crossborder_label') }}</div>
+                            <div class="text-3xl font-bold text-neutral-900 dark:text-white font-mono mb-1">{{ $t('about_page.stats.crossborder_value') }}</div>
+                            <div class="text-neutral-400 dark:text-neutral-500 text-sm">{{ $t('about_page.stats.crossborder_label') }}</div>
                         </div>
                     </div>
                 </div>
@@ -91,10 +91,10 @@
         </section>
 
         <!-- ── Mission & Vision ───────────────────────────────── -->
-        <section class="py-24 bg-neutral-900/25 border-y border-neutral-900">
+        <section class="py-24 bg-neutral-100/50 dark:bg-neutral-900/25 border-y border-neutral-200 dark:border-neutral-900">
             <div class="container mx-auto px-4 max-w-7xl">
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div data-reveal class="group p-10 rounded-3xl border border-neutral-800 bg-neutral-950 hover:border-primary-500/30 transition-colors duration-500 relative overflow-hidden">
+                    <div data-reveal class="group p-10 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 hover:border-primary-500/30 transition-colors duration-500 relative overflow-hidden">
                         <div class="absolute -top-2 -right-2 text-[9rem] leading-none font-bold text-primary-500/4 group-hover:text-primary-500/8 transition-colors select-none pointer-events-none">
                             <HugeiconsIcon :icon="QuotesIcon" :size="20" />
                         </div>
@@ -102,12 +102,12 @@
                             <HugeiconsIcon :icon="Target01Icon" :size="20" class="text-primary-400" />
                         </div>
                         <p class="text-xs font-mono text-primary-500 tracking-[0.2em] uppercase mb-5">{{ $t('about_page.mission_vision.mission_title') }}</p>
-                        <p class="text-white text-xl leading-relaxed font-light">
+                        <p class="text-neutral-900 dark:text-white text-xl leading-relaxed font-light">
                             {{ $t('about_page.mission_vision.mission_desc') }}
                         </p>
                     </div>
 
-                    <div data-reveal class="group p-10 rounded-3xl border border-neutral-800 bg-neutral-950 hover:border-secondary-500/30 transition-colors duration-500 relative overflow-hidden" style="--delay:80ms">
+                    <div data-reveal class="group p-10 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 hover:border-secondary-500/30 transition-colors duration-500 relative overflow-hidden" style="--delay:80ms">
                         <div class="absolute -top-2 -right-2 text-[9rem] leading-none font-bold text-secondary-500/4 group-hover:text-secondary-500/8 transition-colors select-none pointer-events-none">
                             <HugeiconsIcon :icon="QuotesIcon" :size="20" />
                         </div>
@@ -115,7 +115,7 @@
                             <HugeiconsIcon :icon="ViewIcon" :size="20" class="text-secondary-400" />
                         </div>
                         <p class="text-xs font-mono text-secondary-400 tracking-[0.2em] uppercase mb-5">{{ $t('about_page.mission_vision.vision_title') }}</p>
-                        <p class="text-white text-xl leading-relaxed font-light">
+                        <p class="text-neutral-900 dark:text-white text-xl leading-relaxed font-light">
                             {{ $t('about_page.mission_vision.vision_desc') }}
                         </p>
                     </div>
@@ -127,8 +127,8 @@
         <section class="py-24 md:py-32">
             <div class="container mx-auto px-4 max-w-7xl">
                 <div data-reveal class="text-center mb-16">
-                    <p class="text-xs font-mono text-neutral-600 tracking-[0.25em] uppercase mb-4">03 — Ethos</p>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white">{{ $t('about_page.values.title') }}</h2>
+                    <p class="text-xs font-mono text-neutral-500 dark:text-neutral-600 tracking-[0.25em] uppercase mb-4">03 — Ethos</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white">{{ $t('about_page.values.title') }}</h2>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-5">
@@ -136,14 +136,14 @@
                         v-for="(v, i) in values"
                         :key="v.key"
                         data-reveal
-                        class="group p-8 rounded-3xl border border-neutral-800 bg-neutral-900/40 hover:bg-neutral-900 transition-all duration-300"
+                        class="group p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/40 hover:bg-white dark:hover:bg-neutral-900 transition-all duration-300"
                         :style="`--delay:${i * 80}ms`"
                     >
                         <div :class="['w-12 h-12 rounded-2xl flex items-center justify-center mb-6', v.bgClass]">
                             <HugeiconsIcon :icon="v.icon" :size="22" :class="v.colorClass" />
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-3">{{ $t(`about_page.values.${v.key}_title`) }}</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">{{ $t(`about_page.values.${v.key}_desc`) }}</p>
+                        <h3 class="text-lg font-bold text-neutral-900 dark:text-white mb-3">{{ $t(`about_page.values.${v.key}_title`) }}</h3>
+                        <p class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{{ $t(`about_page.values.${v.key}_desc`) }}</p>
                     </div>
                 </div>
             </div>
@@ -153,8 +153,8 @@
         <section class="pb-32 px-4">
             <div data-reveal class="container mx-auto max-w-3xl">
                 <div class="p-10 md:p-14 rounded-[2.5rem] border border-primary-500/20 bg-gradient-to-br from-primary-500/5 via-transparent to-secondary-500/5">
-                    <h2 class="text-3xl font-bold text-white mb-4">{{ $t('about_page.cta.title') }}</h2>
-                    <p class="text-neutral-400 mb-8 text-lg">{{ $t('about_page.cta.subtitle') }}</p>
+                    <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-4">{{ $t('about_page.cta.title') }}</h2>
+                    <p class="text-neutral-500 dark:text-neutral-400 mb-8 text-lg">{{ $t('about_page.cta.subtitle') }}</p>
                     <NuxtLink
                         :to="localePath('/contact')"
                         class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-primary-400 hover:bg-primary-300 text-neutral-950 font-bold transition-all hover:scale-[1.03] active:scale-95"

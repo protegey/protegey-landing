@@ -1,20 +1,20 @@
 <template>
   <footer role="contentinfo" :aria-label="$t('footer.aria_footer')"
-    class="relative z-10 py-12 px-6 border-t border-neutral-900 bg-neutral-950">
+    class="relative z-10 py-12 px-6 border-t border-neutral-200 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950">
     <div class="container mx-auto max-w-6xl">
       <div class="grid md:grid-cols-5 gap-8 mb-8">
         <!-- Brand -->
         <div>
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2 mb-4 rtl:justify-end">
             <img src="~/assets/images/logo.png" :alt="$t('footer.logo_alt')" class="w-14 h-14 object-contain"></img>
-            <span class="text-lg font-bold text-white">PROTEGEY</span>
+            <span class="text-lg font-bold text-neutral-900 dark:text-white">PROTEGEY</span>
           </NuxtLink>
-          <p class="text-sm text-neutral-400 rtl:text-right">{{ $t('footer.slogan') }}</p>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400 rtl:text-right">{{ $t('footer.slogan') }}</p>
         </div>
 
         <div class="rtl:text-right">
-          <h3 class="font-semibold mb-4 text-white">{{ $t('footer.company') }}</h3>
-          <ul class="space-y-2 text-sm text-neutral-400">
+          <h3 class="font-semibold mb-4 text-neutral-900 dark:text-white">{{ $t('footer.company') }}</h3>
+          <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
             <li>
               <NuxtLink :to="localePath('about')" class="hover:text-primary-400 transition-colors"
                 data-testid="link-about">{{
@@ -35,8 +35,8 @@
         </div>
 
         <div class="rtl:text-right">
-          <h3 class="font-semibold mb-4 text-white">{{ $t('nav.products') }}</h3>
-          <ul class="space-y-2 text-sm text-neutral-400">
+          <h3 class="font-semibold mb-4 text-neutral-900 dark:text-white">{{ $t('nav.products') }}</h3>
+          <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
             <li>
               <NuxtLink :to="localePath('/products/signal')" class="hover:text-primary-400 transition-colors">
                 {{ $t('products.signal.title') }}
@@ -76,8 +76,8 @@
         </div>
 
         <div class="rtl:text-right">
-          <h3 class="font-semibold mb-4 text-white">{{ $t('footer.resources') }}</h3>
-          <ul class="space-y-2 text-sm text-neutral-400">
+          <h3 class="font-semibold mb-4 text-neutral-900 dark:text-white">{{ $t('footer.resources') }}</h3>
+          <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
             <li>
               <NuxtLink :to="localePath('api-docs')" class="hover:text-primary-400 transition-colors"
                 data-testid="link-api-docs">{{
@@ -98,10 +98,10 @@
 
         <!-- Social -->
         <div>
-          <h3 class="font-semibold mb-4 text-white">{{ $t('footer.connect') }}</h3>
+          <h3 class="font-semibold mb-4 text-neutral-900 dark:text-white">{{ $t('footer.connect') }}</h3>
           <div class="flex gap-4">
             <a href="https://www.linkedin.com/company/protegeyhq/" target="_blank" rel="noopener noreferrer"
-              class="text-neutral-400 hover:text-primary-400 transition-colors"
+              class="text-neutral-500 dark:text-neutral-400 hover:text-primary-400 transition-colors"
               :aria-label="$t('footer.social_linkedin')" data-testid="link-linkedin">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
@@ -109,7 +109,7 @@
               </svg>
             </a>
             <a href="https://x.com/ProtegeyHQ" target="_blank" rel="noopener noreferrer"
-              class="text-neutral-400 hover:text-primary-400 transition-colors"
+              class="text-neutral-500 dark:text-neutral-400 hover:text-primary-400 transition-colors"
               :aria-label="$t('footer.social_twitter')" data-testid="link-x">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
@@ -120,7 +120,7 @@
         </div>
       </div>
 
-      <div class="pt-8 border-t border-neutral-900 text-center text-sm text-neutral-400 rtl:text-right">
+      <div class="pt-8 border-t border-neutral-200 dark:border-neutral-900 text-center text-sm text-neutral-500 dark:text-neutral-400 rtl:text-right">
         <p>{{ $t('footer.copyright', { year: currentYear }) }}</p>
       </div>
     </div>

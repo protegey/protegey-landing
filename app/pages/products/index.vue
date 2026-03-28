@@ -58,7 +58,7 @@ if (import.meta.server) {
 </script>
 
 <template>
-    <div class="relative min-h-screen bg-neutral-950 overflow-hidden">
+    <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
         <ProductHero />
         <Products />
         <ProductSuiteDetails />

@@ -50,7 +50,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <section id="products" class="relative py-6 md:py-12 overflow-hidden bg-neutral-950">
+    <section id="products" class="relative py-6 md:py-12 overflow-hidden bg-neutral-50 dark:bg-neutral-950">
         <!-- Section Background Decor -->
         <div
             class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary-500/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2">
@@ -64,7 +64,7 @@ onMounted(async () => {
                     {{ $t('products.badge') }}
                 </div>
                 <h2
-                    class="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight capitalize leading-tight rtl:text-center">
+                    class="text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-8 tracking-tight capitalize leading-tight rtl:text-center">
                     {{ $t('products.title') }}
                 </h2>
                 <div class="h-1.5 w-24 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"></div>
@@ -73,19 +73,19 @@ onMounted(async () => {
             <div ref="cardsContainerRef" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 <!-- Signal -->
                 <NuxtLink :to="localePath('/products/signal')"
-                    class="product-card group relative p-8 md:p-10 rounded-[2.5rem] bg-neutral-900/40 border border-neutral-800 hover:border-primary-500/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
+                    class="product-card group relative p-8 md:p-10 rounded-[2.5rem] bg-white/80 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 hover:border-primary-500/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
 
                     <div class="relative z-10">
                         <div
-                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-800 text-primary-400 group-hover:scale-110 group-hover:bg-primary-500/20 transition-all duration-500 shadow-xl shadow-black/20">
+                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-primary-400 group-hover:scale-110 group-hover:bg-primary-500/20 transition-all duration-500 shadow-xl shadow-black/20">
                             <HugeiconsIcon :icon="Activity01Icon" :size="32" />
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4 rtl:text-right">{{ $t('products.signal.title') }}
+                        <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-right">{{ $t('products.signal.title') }}
                         </h3>
-                        <p class="text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
+                        <p class="text-neutral-500 dark:text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
                             {{ $t('products.signal.description') }}
                         </p>
                     </div>
@@ -99,19 +99,19 @@ onMounted(async () => {
 
                 <!-- Radar -->
                 <NuxtLink :to="localePath('/products/radar')"
-                    class="product-card group relative p-8 md:p-10 rounded-[2.5rem] bg-neutral-900/40 border border-neutral-800 hover:border-secondary-500/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
+                    class="product-card group relative p-8 md:p-10 rounded-[2.5rem] bg-white/80 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 hover:border-secondary-500/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-secondary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
 
                     <div class="relative z-10">
                         <div
-                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-800 text-secondary-400 group-hover:scale-110 group-hover:bg-secondary-500/20 transition-all duration-500 shadow-xl shadow-black/20">
+                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-secondary-400 group-hover:scale-110 group-hover:bg-secondary-500/20 transition-all duration-500 shadow-xl shadow-black/20">
                             <HugeiconsIcon :icon="ViewIcon" :size="32" />
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4 rtl:text-right">{{ $t('products.radar.title') }}
+                        <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-right">{{ $t('products.radar.title') }}
                         </h3>
-                        <p class="text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
+                        <p class="text-neutral-500 dark:text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
                             {{ $t('products.radar.description') }}
                         </p>
                     </div>
@@ -125,19 +125,19 @@ onMounted(async () => {
 
                 <!-- Gateway -->
                 <NuxtLink :to="localePath('/products/api')"
-                    class="product-card group relative p-8 md:p-10 rounded-[2.5rem] bg-neutral-900/40 border border-neutral-800 hover:border-accent-cyan-500/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
+                    class="product-card group relative p-8 md:p-10 rounded-[2.5rem] bg-white/80 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 hover:border-accent-cyan-500/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-accent-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
 
                     <div class="relative z-10">
                         <div
-                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-800 text-accent-cyan-400 group-hover:scale-110 group-hover:bg-accent-cyan-500/20 transition-all duration-500 shadow-xl shadow-black/20">
+                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-accent-cyan-400 group-hover:scale-110 group-hover:bg-accent-cyan-500/20 transition-all duration-500 shadow-xl shadow-black/20">
                             <HugeiconsIcon :icon="Settings01Icon" :size="32" />
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4 rtl:text-right">{{ $t('products.api.title') }}
+                        <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-right">{{ $t('products.api.title') }}
                         </h3>
-                        <p class="text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
+                        <p class="text-neutral-500 dark:text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
                             {{ $t('products.api.description') }}
                         </p>
                     </div>
@@ -151,19 +151,19 @@ onMounted(async () => {
 
                 <!-- Console -->
                 <NuxtLink :to="localePath('/products/console')"
-                    class="product-card group relative p-8 md:p-10 rounded-[2.5rem] bg-neutral-900/40 border border-neutral-800 hover:border-accent-orange-500/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
+                    class="product-card group relative p-8 md:p-10 rounded-[2.5rem] bg-white/80 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 hover:border-accent-orange-500/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-accent-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
 
                     <div class="relative z-10">
                         <div
-                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-800 text-accent-orange-400 group-hover:scale-110 group-hover:bg-accent-orange-500/20 transition-all duration-500 shadow-xl shadow-black/20">
+                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-accent-orange-400 group-hover:scale-110 group-hover:bg-accent-orange-500/20 transition-all duration-500 shadow-xl shadow-black/20">
                             <HugeiconsIcon :icon="DashboardSquare01Icon" :size="32" />
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4 rtl:text-right">{{ $t('products.console.title') }}
+                        <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-right">{{ $t('products.console.title') }}
                         </h3>
-                        <p class="text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
+                        <p class="text-neutral-500 dark:text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
                             {{ $t('products.console.description') }}
                         </p>
                     </div>
@@ -177,19 +177,19 @@ onMounted(async () => {
 
                 <!-- Risk & Compliance -->
                 <NuxtLink :to="localePath('/products/compliance')"
-                    class="product-card group relative p-8 md:p-10 rounded-[2.5rem] bg-neutral-900/40 border border-neutral-800 hover:border-secondary-500/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
+                    class="product-card group relative p-8 md:p-10 rounded-[2.5rem] bg-white/80 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 hover:border-secondary-500/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-secondary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
 
                     <div class="relative z-10">
                         <div
-                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-800 text-secondary-400 group-hover:scale-110 group-hover:bg-secondary-500/20 transition-all duration-500 shadow-xl shadow-black/20">
+                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-secondary-400 group-hover:scale-110 group-hover:bg-secondary-500/20 transition-all duration-500 shadow-xl shadow-black/20">
                             <HugeiconsIcon :icon="Shield01Icon" :size="32" />
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4 rtl:text-right">{{ $t('products.compliance.title')
+                        <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-right">{{ $t('products.compliance.title')
                             }}</h3>
-                        <p class="text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
+                        <p class="text-neutral-500 dark:text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
                             {{ $t('products.compliance.description') }}
                         </p>
                     </div>
@@ -203,7 +203,7 @@ onMounted(async () => {
 
                 <!-- Pan-ID -->
                 <NuxtLink :to="localePath('/products/panid')"
-                    class="product-card group relative p-8 md:p-10 rounded-[2.5rem] bg-neutral-900/40 border border-neutral-800 hover:border-accent-cyan-500/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
+                    class="product-card group relative p-8 md:p-10 rounded-[2.5rem] bg-white/80 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 hover:border-accent-cyan-500/30 transition-all duration-500 flex flex-col h-full overflow-hidden">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-accent-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
@@ -211,7 +211,7 @@ onMounted(async () => {
                     <div class="relative z-10">
                         <div class="flex items-center justify-between mb-8">
                             <div
-                                class="inline-flex p-4 rounded-2xl bg-neutral-800 text-accent-cyan-400 group-hover:scale-110 group-hover:bg-accent-cyan-500/20 transition-all duration-500 shadow-xl shadow-black/20">
+                                class="inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-accent-cyan-400 group-hover:scale-110 group-hover:bg-accent-cyan-500/20 transition-all duration-500 shadow-xl shadow-black/20">
                                 <HugeiconsIcon :icon="FingerPrintIcon" :size="32" />
                             </div>
                             <span
@@ -219,9 +219,9 @@ onMounted(async () => {
                                 {{ $t('products.coming_soon') }}
                             </span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4 rtl:text-right">{{ $t('products.panid.title') }}
+                        <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-right">{{ $t('products.panid.title') }}
                         </h3>
-                        <p class="text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
+                        <p class="text-neutral-500 dark:text-neutral-400 text-lg leading-relaxed mb-8 rtl:text-right">
                             {{ $t('products.panid.description') }}
                         </p>
                     </div>

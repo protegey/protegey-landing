@@ -102,17 +102,17 @@ onMounted(() => {
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
                 <!-- Mission -->
                 <div
-                    class="p-8 md:p-12 rounded-[2.5rem] bg-neutral-900/30 border border-neutral-800 group hover:border-primary-500/20 transition-all duration-500">
+                    class="p-8 md:p-12 rounded-[2.5rem] bg-white/70 dark:bg-neutral-900/30 border border-neutral-200 dark:border-neutral-800 group hover:border-primary-500/20 transition-all duration-500">
                     <div class="flex items-center gap-4 mb-8 rtl:flex-row-reverse">
                         <div
                             class="p-3 rounded-2xl bg-secondary-500/10 text-secondary-400 group-hover:scale-110 transition-transform duration-500">
                             <HugeiconsIcon :icon="Target02Icon" :size="32" />
                         </div>
-                        <h2 class="text-3xl font-bold text-white rtl:text-right">{{ $t('products.mission.title') }}</h2>
+                        <h2 class="text-3xl font-bold text-neutral-900 dark:text-white rtl:text-right">{{ $t('products.mission.title') }}</h2>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div v-for="(item, index) in tm('products.mission.items')" :key="index"
-                            class="flex items-start gap-3 p-4 rounded-xl bg-white/5 text-sm text-neutral-400 rtl:flex-row-reverse">
+                            class="flex items-start gap-3 p-4 rounded-xl bg-neutral-100/50 dark:bg-white/5 text-sm text-neutral-500 dark:text-neutral-400 rtl:flex-row-reverse">
                             <div
                                 class="mt-1 w-1.5 h-1.5 rounded-full bg-secondary-500 shadow-lg shadow-secondary-500/50 flex-shrink-0">
                             </div>
@@ -123,28 +123,28 @@ onMounted(() => {
 
                 <!-- Coverage -->
                 <div
-                    class="p-8 md:p-12 rounded-[2.5rem] bg-neutral-900/30 border border-neutral-800 group hover:border-primary-500/20 transition-all duration-500">
+                    class="p-8 md:p-12 rounded-[2.5rem] bg-white/70 dark:bg-neutral-900/30 border border-neutral-200 dark:border-neutral-800 group hover:border-primary-500/20 transition-all duration-500">
                     <div class="flex items-center gap-4 mb-8 rtl:flex-row-reverse">
                         <div
                             class="p-3 rounded-2xl bg-accent-cyan-500/10 text-accent-cyan-400 group-hover:scale-110 transition-transform duration-500">
                             <HugeiconsIcon :icon="GlobalIcon" :size="32" />
                         </div>
-                        <h2 class="text-3xl font-bold text-white rtl:text-right">{{
+                        <h2 class="text-3xl font-bold text-neutral-900 dark:text-white rtl:text-right">{{
                             $t('products.geographic_coverage.title') }}</h2>
                     </div>
-                    <p class="text-lg text-neutral-400 mb-8 rtl:text-right">{{
+                    <p class="text-lg text-neutral-500 dark:text-neutral-400 mb-8 rtl:text-right">{{
                         $t('products.geographic_coverage.description') }}</p>
 
                     <div class="space-y-4 mb-8">
                         <div v-for="(region, index) in tm('products.geographic_coverage.regions')" :key="index"
-                            class="flex items-center gap-4 p-4 rounded-2xl bg-neutral-950 border border-neutral-800/50 hover:border-accent-cyan-500/30 transition-colors rtl:flex-row-reverse">
+                            class="flex items-center gap-4 p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800/50 hover:border-accent-cyan-500/30 transition-colors rtl:flex-row-reverse">
                             <div class="w-2 h-10 bg-accent-cyan-500 rounded-full"></div>
-                            <span class="text-white font-medium rtl:text-right">{{ rt(region) }}</span>
+                            <span class="text-neutral-900 dark:text-white font-medium rtl:text-right">{{ rt(region) }}</span>
                         </div>
                     </div>
 
                     <div
-                        class="p-4 rounded-2xl bg-neutral-950/80 border border-neutral-800 italic text-sm text-neutral-500 rtl:text-right">
+                        class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800 italic text-sm text-neutral-400 dark:text-neutral-500 rtl:text-right">
                         {{ $t('products.geographic_coverage.note') }}
                     </div>
                 </div>

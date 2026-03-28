@@ -1,5 +1,5 @@
 <template>
-    <section id="who" ref="whoSection" class="who-protegey-section relative py-16 sm:py-20 md:py-24 lg:py-32 bg-neutral-950">
+    <section id="who" ref="whoSection" class="who-protegey-section relative py-16 sm:py-20 md:py-24 lg:py-32 bg-neutral-50 dark:bg-neutral-950">
         <!-- Background Elements -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl"></div>
@@ -13,21 +13,21 @@
                         <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
                         {{ $t('target.badge') }}
                     </div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white rtl:text-center">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-neutral-900 dark:text-white rtl:text-center">
                         {{ $t('target.title_main') }}
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400"> {{ $t('target.title_highlight') }} </span>
                         {{ $t('target.title_suffix') }}
                     </h2>
-                    <p class="text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto rtl:text-center">
+                    <p class="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-3xl mx-auto rtl:text-center">
                         {{ $t('target.subtitle') }}
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
                     <div v-for="(item, key) in tm('target.items')" :key="key"
-                        class="bg-neutral-900/40 border border-neutral-800 rounded-2xl p-8 text-center group hover:shadow-xl hover:border-primary-500/30 transition-all duration-300 fade-up">
+                        class="bg-white/80 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 text-center group hover:shadow-xl hover:border-primary-500/30 transition-all duration-300 fade-up">
                         <div
-                            class="w-16 h-16 bg-neutral-800 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
+                            class="w-16 h-16 bg-neutral-100 dark:bg-neutral-800 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
                             <!-- Switch icon based on key -->
                             <svg v-if="key === 'banks'" class="w-10 h-10 text-secondary-400" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
@@ -55,8 +55,8 @@
                                     d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-white rtl:text-center">{{ rt(item.title) }}</h3>
-                        <p class="text-neutral-400 text-sm rtl:text-center">{{ rt(item.description) }}</p>
+                        <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-white rtl:text-center">{{ rt(item.title) }}</h3>
+                        <p class="text-neutral-500 dark:text-neutral-400 text-sm rtl:text-center">{{ rt(item.description) }}</p>
                     </div>
                 </div>
             </div>
