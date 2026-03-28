@@ -7,13 +7,22 @@ export default defineNuxtConfig({
     defaultLocale: 'fr',
     templateTitle: '%s %separator %siteName',
   },
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/i18n', '@nuxtjs/seo'],
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/image'],
   seo: {
     redirectToCanonicalSiteUrl: true
   },
   routeRules: {
     // 1. Cache all pages by default (SWR - Stale While Revalidate)
-    '/**': { swr: 3600 },
+    '/**': {
+      swr: 3600,
+      headers: {
+        'X-Frame-Options': 'SAMEORIGIN',
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+        'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+        'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
+      }
+    },
 
     // 2. Explicitly dynamic for API
     '/api/**': { swr: false, cache: false },

@@ -2,6 +2,9 @@ import { Client } from '@notionhq/client'
 import { MailtrapClient } from 'mailtrap'
 
 export default defineEventHandler(async (event) => {
+    // 5 submissions per IP per 10 minutes
+    rateLimit(event, { max: 5, windowMs: 10 * 60_000 })
+
     const config = useRuntimeConfig()
     const body = await readBody(event)
 

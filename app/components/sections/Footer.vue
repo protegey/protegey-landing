@@ -6,7 +6,7 @@
         <!-- Brand -->
         <div>
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2 mb-4 rtl:justify-end">
-            <img src="~/assets/images/logo.png" :alt="$t('footer.logo_alt')" class="w-14 h-14 object-contain"></img>
+            <NuxtImg src="~/assets/images/logo.png" :alt="$t('footer.logo_alt')" width="56" height="56" class="w-14 h-14 object-contain" format="webp" />
             <span class="text-lg font-bold text-neutral-900 dark:text-white">PROTEGEY</span>
           </NuxtLink>
           <p class="text-sm text-neutral-500 dark:text-neutral-400 rtl:text-right">{{ $t('footer.slogan') }}</p>
