@@ -36,7 +36,7 @@ if (import.meta.server) {
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- SOC 2 -->
                     <div
-                        class="p-6 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 backdrop-blur-sm group hover:border-primary-500/50 transition-all"
+                        class="p-6 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 backdrop-blur-sm group hover:border-primary-500/50 transition-all">
                         <div class="mb-4 text-primary-500">
                             <HugeiconsIcon :icon="Shield01Icon" :size="40" />
                         </div>
@@ -46,7 +46,7 @@ if (import.meta.server) {
 
                     <!-- GDPR -->
                     <div
-                        class="p-6 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 backdrop-blur-sm group hover:border-primary-500/50 transition-all"
+                        class="p-6 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 backdrop-blur-sm group hover:border-primary-500/50 transition-all">
                         <div class="mb-4 text-primary-500">
                             <HugeiconsIcon :icon="CircleLock01Icon" :size="40" />
                         </div>
@@ -56,7 +56,7 @@ if (import.meta.server) {
 
                     <!-- ISO 27001 -->
                     <div
-                        class="p-6 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 backdrop-blur-sm group hover:border-primary-500/50 transition-all"
+                        class="p-6 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 backdrop-blur-sm group hover:border-primary-500/50 transition-all">
                         <div class="mb-4 text-primary-500">
                             <HugeiconsIcon :icon="Certificate01Icon" :size="40" />
                         </div>
