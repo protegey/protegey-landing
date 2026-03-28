@@ -17,92 +17,78 @@ export default {
         'xs': '475px',
       },
       fontFamily: {
-        sans: ['"IBM Plex Sans Arabic"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        // Primary: IBM Plex Sans Arabic (covers en/fr/ar)
+        // Secondary: Inter (body text, UI)
+        sans:      ['"IBM Plex Sans Arabic"', '"IBM Plex Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display:   ['"IBM Plex Sans Arabic"', '"IBM Plex Sans"', 'ui-sans-serif', 'sans-serif'],
+        body:      ['"Inter"', '"IBM Plex Sans Arabic"', 'ui-sans-serif', 'sans-serif'],
       },
       animation: {
-        first: "moveVertical 30s ease infinite",
-        second: "moveInCircle 20s reverse infinite",
-        third: "moveInCircle 40s linear infinite",
-        fourth: "moveHorizontal 40s ease infinite",
-        fifth: "moveInCircle 20s ease infinite",
-        'scan': 'scan 4s linear infinite',
+        first:        "moveVertical 30s ease infinite",
+        second:       "moveInCircle 20s reverse infinite",
+        third:        "moveInCircle 40s linear infinite",
+        fourth:       "moveHorizontal 40s ease infinite",
+        fifth:        "moveInCircle 20s ease infinite",
+        'scan':       'scan 4s linear infinite',
         'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         scan: {
-          '0%': { backgroundPosition: '0% 0%' },
+          '0%':   { backgroundPosition: '0% 0%' },
           '100%': { backgroundPosition: '0% 100%' },
         },
+        // Security Emerald: rgb(12, 185, 158)
         'pulse-glow': {
-          '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(163, 230, 53, 0.5)' },
-          '50%': { opacity: .5, boxShadow: '0 0 10px rgba(163, 230, 53, 0.2)' },
+          '0%, 100%': { opacity: 1,  boxShadow: '0 0 20px rgba(12, 185, 158, 0.5)' },
+          '50%':      { opacity: .5, boxShadow: '0 0 10px rgba(12, 185, 158, 0.2)' },
         },
         moveHorizontal: {
-          "0%": {
-            transform: "translateX(-50%) translateY(-10%)",
-          },
-          "50%": {
-            transform: "translateX(50%) translateY(10%)",
-          },
-          "100%": {
-            transform: "translateX(-50%) translateY(-10%)",
-          },
+          "0%":   { transform: "translateX(-50%) translateY(-10%)" },
+          "50%":  { transform: "translateX(50%) translateY(10%)" },
+          "100%": { transform: "translateX(-50%) translateY(-10%)" },
         },
         moveInCircle: {
-          "0%": {
-            transform: "rotate(0deg)",
-          },
-          "50%": {
-            transform: "rotate(180deg)",
-          },
-          "100%": {
-            transform: "rotate(360deg)",
-          },
+          "0%":   { transform: "rotate(0deg)" },
+          "50%":  { transform: "rotate(180deg)" },
+          "100%": { transform: "rotate(360deg)" },
         },
         moveVertical: {
-          "0%": {
-            transform: "translateY(-50%)",
-          },
-          "50%": {
-            transform: "translateY(50%)",
-          },
-          "100%": {
-            transform: "translateY(-50%)",
-          },
+          "0%":   { transform: "translateY(-50%)" },
+          "50%":  { transform: "translateY(50%)" },
+          "100%": { transform: "translateY(-50%)" },
         },
       },
       colors: {
-        // Primary brand colors
-        primary: theme.colors.primary,
-        // Secondary brand colors
+        // Brand color scales from theme.config.js
+        primary:   theme.colors.primary,
         secondary: theme.colors.secondary,
-        // Neutral colors
-        neutral: theme.colors.neutral,
-        // Accent colors
+        neutral:   theme.colors.neutral,
+        // Accent colors (Intelligence Cyan + Signal Orange)
         accent: {
-          yellow: theme.colors.accent.yellow,
-          blue: theme.colors.accent.blue,
+          cyan:   theme.colors.accent.cyan,
+          orange: theme.colors.accent.orange,
         },
-        // Semantic colors for easy reference
+        // Semantic shorthand tokens
         brand: {
-          primary: theme.colors.primary[400],
+          primary:   theme.colors.primary[500],
           secondary: theme.colors.secondary[500],
+          cyan:      theme.colors.accent.cyan[500],
+          orange:    theme.colors.accent.orange[500],
         },
-        // Text colors
+        // Text tokens
         text: {
-          primary: theme.colors.semantic.text.primary,
+          primary:   theme.colors.semantic.text.primary,
           secondary: theme.colors.semantic.text.secondary,
-          inverse: theme.colors.semantic.text.inverse,
+          inverse:   theme.colors.semantic.text.inverse,
         },
-        // Background colors
+        // Background tokens
         bg: {
-          primary: theme.colors.semantic.background.primary,
+          primary:   theme.colors.semantic.background.primary,
           secondary: theme.colors.semantic.background.secondary,
-          card: theme.colors.semantic.background.card,
+          card:      theme.colors.semantic.background.card,
         },
       },
     },
   },
   plugins: [],
 }
-

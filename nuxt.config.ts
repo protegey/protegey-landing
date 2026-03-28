@@ -86,7 +86,7 @@ export default defineNuxtConfig({
         { name: "mobile-web-app-capable", content: "yes" },
         { name: "mobile-web-app-status-bar-style", content: "black" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { name: "theme-color", content: "#0E1225" },
+        { name: "theme-color", content: "#0B1741" },
       ],
       script: [
         {
@@ -103,7 +103,7 @@ export default defineNuxtConfig({
         { rel: "preconnect", href: "https://www.tonyelumelufoundation.org" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
-        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" },
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" },
       ],
     },
   },

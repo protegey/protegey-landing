@@ -3,125 +3,110 @@
 @tailwind utilities;
 
 @layer base {
-  /* Smooth scrolling for the entire document */
+  /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
   }
 
-  :root {
-    /* Primary Colors */
-    --color-primary-50: #f7fee7;
-    --color-primary-100: #ecfccb;
-    --color-primary-200: #d9f99d;
-    --color-primary-300: #bef264;
-    --color-primary-400: #a3e635;
-    --color-primary-500: #84cc16;
-    --color-primary-600: #65a30d;
-    --color-primary-700: #4d7c0f;
-    --color-primary-800: #365314;
-    --color-primary-900: #1a2e05;
-
-    /* Secondary Colors */
-    --color-secondary-50: #faf5ff;
-    --color-secondary-100: #f3e8ff;
-    --color-secondary-200: #e9d5ff;
-    --color-secondary-300: #d8b4fe;
-    --color-secondary-400: #c084fc;
-    --color-secondary-500: #a855f7;
-    --color-secondary-600: #9333ea;
-    --color-secondary-700: #7e22ce;
-    --color-secondary-800: #6b21a8;
-    --color-secondary-900: #581c87;
-
-    /* Neutral Colors */
-    --color-neutral-50: #f9fafb;
-    --color-neutral-100: #f3f4f6;
-    --color-neutral-200: #e5e7eb;
-    --color-neutral-300: #d1d5db;
-    --color-neutral-400: #9ca3af;
-    --color-neutral-500: #6b7280;
-    --color-neutral-600: #4b5563;
-    --color-neutral-700: #374151;
-    --color-neutral-800: #1f2937;
-    --color-neutral-900: #111827;
-
-    /* Semantic Colors - Light (default) */
-    --color-text-primary: #111827; /* gray-900 */
-    --color-text-secondary: #374151; /* gray-700 */
-    --color-text-inverse: #ffffff; /* white */
-    --color-bg-primary: #ffffff; /* white */
-    --color-bg-secondary: #f3f4f6; /* gray-100 */
-    --color-bg-card: #ffffff; /* white */
+  /* Typography: Inter for body text, IBM Plex Sans for headings
+     Inter handles Latin/French/English; IBM Plex Sans Arabic handles Arabic
+     The browser selects per-character based on Unicode coverage. */
+  body {
+    font-family: 'Inter', 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif;
   }
 
-  /* Dark theme overrides */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', ui-sans-serif, sans-serif;
+  }
+
+  :root {
+    /* ─── Primary: Security Emerald ─── */
+    --color-primary-50:  #f0fdf9;
+    --color-primary-100: #ccfbf0;
+    --color-primary-200: #99f6e1;
+    --color-primary-300: #5ee8cc;
+    --color-primary-400: #2dd4b6;
+    --color-primary-500: #0cb99e; /* Security Emerald */
+    --color-primary-600: #0a9882;
+    --color-primary-700: #0a7a69;
+    --color-primary-800: #0b6056;
+    --color-primary-900: #0c5047;
+
+    /* ─── Secondary: Tech Blue ─── */
+    --color-secondary-50:  #eff6ff;
+    --color-secondary-100: #dbeafe;
+    --color-secondary-200: #bfdbfe;
+    --color-secondary-300: #93c5fd;
+    --color-secondary-400: #4a90d9;
+    --color-secondary-500: #1b59ae; /* Tech Blue */
+    --color-secondary-600: #1548a0;
+    --color-secondary-700: #103990;
+    --color-secondary-800: #0c2c78;
+    --color-secondary-900: #092060;
+
+    /* ─── Neutral: Deep Trust Blue family ─── */
+    --color-neutral-50:  #f1f4f8;
+    --color-neutral-100: #e2e7ef;
+    --color-neutral-200: #c5cedc;
+    --color-neutral-300: #9aacc5;
+    --color-neutral-400: #6b7ea3;
+    --color-neutral-500: #3a4e7a;
+    --color-neutral-600: #1e3169;
+    --color-neutral-700: #162558;
+    --color-neutral-800: #0f1f4a;
+    --color-neutral-900: #0b1741; /* Deep Trust Blue */
+    --color-neutral-950: #060d1c;
+
+    /* ─── Accent colors ─── */
+    --color-accent-cyan:   #22d3ee; /* Intelligence Cyan */
+    --color-accent-orange: #ff6b00; /* Signal Orange */
+
+    /* ─── Semantic tokens: Light mode ─── */
+    --color-text-primary:   #060d1c;
+    --color-text-secondary: #162558;
+    --color-text-inverse:   #f1f4f8;
+    --color-bg-primary:     #f1f4f8;
+    --color-bg-secondary:   #e2e7ef;
+    --color-bg-card:        #ffffff;
+  }
+
+  /* Dark theme (default for Protegey) */
   .dark {
-    --color-text-primary: #ffffff; /* white */
-    --color-text-secondary: #9ca3af; /* gray-400 */
-    --color-text-inverse: #000000; /* black */
-    --color-bg-primary: #000000; /* black */
-    --color-bg-secondary: #111827; /* gray-900 */
-    --color-bg-card: #1f2937; /* gray-800 */
+    --color-text-primary:   #f1f4f8;
+    --color-text-secondary: #9aacc5;
+    --color-text-inverse:   #060d1c;
+    --color-bg-primary:     #060d1c;
+    --color-bg-secondary:   #0b1741;
+    --color-bg-card:        #0f1f4a;
   }
 }
 
 @layer utilities {
-  /* Theme utility classes */
-  .text-brand-primary {
-    @apply text-primary-400;
-  }
-  
-  .text-brand-secondary {
-    @apply text-secondary-500;
-  }
-  
-  .bg-brand-primary {
-    @apply bg-primary-400;
-  }
-  
-  .bg-brand-secondary {
-    @apply bg-secondary-500;
-  }
-  
-  .border-brand-primary {
-    @apply border-primary-400;
-  }
-  
-  .border-brand-secondary {
-    @apply border-secondary-500;
-  }
-  
+  /* ─── Brand shorthand utilities ─── */
+  .text-brand-primary   { @apply text-primary-500; }
+  .text-brand-secondary { @apply text-secondary-500; }
+  .bg-brand-primary     { @apply bg-primary-500; }
+  .bg-brand-secondary   { @apply bg-secondary-500; }
+  .border-brand-primary  { @apply border-primary-500; }
+  .border-brand-secondary { @apply border-secondary-500; }
+
+  /* Brand gradient: Security Emerald → Tech Blue */
   .gradient-primary {
-    @apply bg-gradient-to-r from-primary-400 to-secondary-500;
+    @apply bg-gradient-to-r from-primary-400 to-secondary-400;
   }
-  
+
+  /* Dark card surface */
   .gradient-card {
-    @apply bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-900 dark:to-black;
+    @apply bg-gradient-to-br from-neutral-800 to-neutral-900;
   }
 
-  /* Semantic classes that work with dark mode */
-  .text-primary {
-    @apply text-gray-900 dark:text-white;
-  }
+  /* ─── Semantic utilities (dark-first) ─── */
+  .text-primary   { @apply text-neutral-950 dark:text-white; }
+  .text-secondary { @apply text-neutral-600 dark:text-neutral-300; }
+  .text-muted     { @apply text-neutral-500 dark:text-neutral-400; }
 
-  .text-secondary {
-    @apply text-gray-600 dark:text-gray-300;
-  }
+  .bg-surface           { @apply bg-neutral-50 dark:bg-neutral-900; }
+  .bg-surface-secondary { @apply bg-neutral-100 dark:bg-neutral-800; }
 
-  .text-muted {
-    @apply text-gray-500 dark:text-gray-400;
-  }
-
-  .bg-surface {
-    @apply bg-white dark:bg-gray-900;
-  }
-
-  .bg-surface-secondary {
-    @apply bg-gray-50 dark:bg-gray-800;
-  }
-
-  .border-default {
-    @apply border-gray-200 dark:border-gray-700;
-  }
+  .border-default { @apply border-neutral-200 dark:border-neutral-700; }
 }
-
