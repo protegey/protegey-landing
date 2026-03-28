@@ -32,49 +32,49 @@ if (import.meta.server) {
         <div class="space-y-16">
             <!-- Certifications Grid -->
             <section>
-                <h2 class="text-2xl font-bold text-white mb-8">{{ t('geo_pages.trust.certification_header') }}</h2>
+                <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-8">{{ t('geo_pages.trust.certification_header') }}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- SOC 2 -->
                     <div
-                        class="p-6 rounded-3xl border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm group hover:border-primary-500/50 transition-all">
+                        class="p-6 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 backdrop-blur-sm group hover:border-primary-500/50 transition-all"
                         <div class="mb-4 text-primary-500">
                             <HugeiconsIcon :icon="Shield01Icon" :size="40" />
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">{{ t('geo_pages.trust.soc2_title') }}</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">{{ t('geo_pages.trust.soc2_text') }}</p>
+                        <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-2">{{ t('geo_pages.trust.soc2_title') }}</h3>
+                        <p class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{{ t('geo_pages.trust.soc2_text') }}</p>
                     </div>
 
                     <!-- GDPR -->
                     <div
-                        class="p-6 rounded-3xl border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm group hover:border-primary-500/50 transition-all">
+                        class="p-6 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 backdrop-blur-sm group hover:border-primary-500/50 transition-all"
                         <div class="mb-4 text-primary-500">
                             <HugeiconsIcon :icon="CircleLock01Icon" :size="40" />
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">{{ t('geo_pages.trust.gdpr_title') }}</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">{{ t('geo_pages.trust.gdpr_text') }}</p>
+                        <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-2">{{ t('geo_pages.trust.gdpr_title') }}</h3>
+                        <p class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{{ t('geo_pages.trust.gdpr_text') }}</p>
                     </div>
 
                     <!-- ISO 27001 -->
                     <div
-                        class="p-6 rounded-3xl border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm group hover:border-primary-500/50 transition-all">
+                        class="p-6 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 backdrop-blur-sm group hover:border-primary-500/50 transition-all"
                         <div class="mb-4 text-primary-500">
                             <HugeiconsIcon :icon="Certificate01Icon" :size="40" />
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">{{ t('geo_pages.trust.iso_title') }}</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">{{ t('geo_pages.trust.iso_text') }}</p>
+                        <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-2">{{ t('geo_pages.trust.iso_title') }}</h3>
+                        <p class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{{ t('geo_pages.trust.iso_text') }}</p>
                     </div>
                 </div>
             </section>
 
             <!-- AI Transparency Statement -->
             <section>
-                <h2 class="text-2xl font-bold text-white mb-8">{{ t('geo_pages.trust.transparency_header') }}</h2>
+                <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-8">{{ t('geo_pages.trust.transparency_header') }}</h2>
                 <div
                     class="p-8 rounded-3xl border border-primary-500/20 bg-primary-500/5 backdrop-blur-sm relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
                         <HugeiconsIcon :icon="EyeIcon" :size="128" />
                     </div>
-                    <p class="text-lg text-neutral-300 relative z-10 font-medium leading-relaxed">
+                    <p class="text-lg text-neutral-700 dark:text-neutral-300 relative z-10 font-medium leading-relaxed">
                         {{ t('geo_pages.trust.transparency_text') }}
                     </p>
                 </div>

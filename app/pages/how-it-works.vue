@@ -63,7 +63,7 @@ if (import.meta.server) {
                 <!-- Right: card -->
                 <div class="pb-6 flex-1">
                     <div :class="[
-                        'p-5 rounded-2xl border bg-neutral-900/60 backdrop-blur-sm hover:bg-neutral-900/80 transition-colors',
+                        'p-5 rounded-2xl border bg-white dark:bg-neutral-900/60 backdrop-blur-sm hover:bg-neutral-50 dark:hover:bg-neutral-900/80 transition-colors',
                         step.color === 'primary'   ? 'border-primary-500/30 hover:border-primary-500/50'     : '',
                         step.color === 'secondary' ? 'border-secondary-500/30 hover:border-secondary-500/50' : '',
                         step.color === 'amber'     ? 'border-accent-orange-500/30 hover:border-accent-orange-500/50'         : '',
@@ -76,7 +76,7 @@ if (import.meta.server) {
                             step.color === 'amber'     ? 'text-accent-orange-300'     : '',
                             step.color === 'emerald'   ? 'text-accent-cyan-300'   : '',
                         ]">{{ step.title }}</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">{{ step.desc }}</p>
+                        <p class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{{ step.desc }}</p>
                     </div>
                 </div>
             </div>

@@ -83,12 +83,11 @@ onUnmounted(() => {
                 <!-- Section panel -->
                 <div class="relative rounded-3xl border border-neutral-200/80 dark:border-neutral-800/60 bg-white/80 dark:bg-neutral-900/40 backdrop-blur-sm px-6 sm:px-10 md:px-14 py-12 md:py-16 overflow-hidden">
 
-                    <!-- Inner grid texture -->
-                    <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-[0.03]" aria-hidden="true"
-                        style="background-image:
-                            linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px);
-                            background-size: 36px 36px;">
+                    <!-- Inner grid texture — dark uses white lines, light uses dark lines -->
+                    <div class="pointer-events-none absolute inset-0 rounded-3xl
+                        bg-[linear-gradient(rgba(0,0,0,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,.06)_1px,transparent_1px)]
+                        dark:bg-[linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)]
+                        bg-[size:36px_36px]" aria-hidden="true">
                     </div>
 
                     <!-- Header -->

@@ -1,10 +1,12 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, watch } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTheme } from '~/composables/useTheme';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const { isDark } = useTheme();
 const canvasRef = ref(null);
 let ctx = null;
 let animationFrameId = null;
@@ -54,10 +56,11 @@ const draw = () => {
         if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
         if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
 
-        // Draw node
+        // Draw node — colors adapt to theme
+        const nodeColor = isDark.value ? '#6b7ea3' : '#3a4e7a';
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.type === 'hub' ? 4 : 2, 0, Math.PI * 2);
-        ctx.fillStyle = node.type === 'hub' ? '#0cb99e' : '#1e3169';
+        ctx.fillStyle = node.type === 'hub' ? '#0cb99e' : nodeColor;
         ctx.fill();
 
         // Glow for hubs
@@ -82,7 +85,8 @@ const draw = () => {
                 ctx.moveTo(nodes[i].x, nodes[i].y);
                 ctx.lineTo(nodes[j].x, nodes[j].y);
                 const opacity = 1 - distance / 150;
-                ctx.strokeStyle = `rgba(12, 185, 158, ${opacity * 0.2})`;
+                const lineAlpha = isDark.value ? opacity * 0.2 : opacity * 0.35;
+                ctx.strokeStyle = `rgba(12, 185, 158, ${lineAlpha})`;
                 ctx.stroke();
             }
         }
