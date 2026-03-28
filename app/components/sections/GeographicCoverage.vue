@@ -46,7 +46,7 @@ onMounted(() => {
         <!-- Background Decor -->
         <div class="absolute inset-0 pointer-events-none">
             <div
-                class="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[120px] -translate-y-1/2">
+                class="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-accent-cyan-500/5 rounded-full blur-[120px] -translate-y-1/2">
             </div>
             <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary-500/5 rounded-full blur-[100px]">
             </div>
@@ -56,14 +56,14 @@ onMounted(() => {
             <div class="max-w-7xl mx-auto">
                 <div class="geo-content text-center mb-20">
                     <div
-                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-bold tracking-widest uppercase mb-6 rtl:flex-row-reverse">
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-cyan-500/10 text-accent-cyan-400 border border-accent-cyan-500/20 text-xs font-bold tracking-widest uppercase mb-6 rtl:flex-row-reverse">
                         <HugeiconsIcon :icon="GlobalIcon" :size="16" />
                         {{ $t('products.geographic_coverage.title') }}
                     </div>
                     <h2
                         class="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight capitalize leading-tight rtl:text-center">
                         {{ $t('products.geographic_coverage.heading_part1') }} <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-primary-400">{{
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan-400 to-primary-400">{{
                                 $t('products.geographic_coverage.heading_highlight') }}</span>
                     </h2>
                     <p class="text-neutral-400 text-xl max-w-3xl mx-auto leading-relaxed rtl:text-center">
@@ -73,13 +73,13 @@ onMounted(() => {
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div v-for="(region, index) in tm('products.geographic_coverage.regions')" :key="index"
-                        class="region-card p-10 rounded-[2.5rem] bg-neutral-900/40 border border-neutral-800 hover:border-cyan-500/30 transition-all duration-500 group">
+                        class="region-card p-10 rounded-[2.5rem] bg-neutral-900/40 border border-neutral-800 hover:border-accent-cyan-500/30 transition-all duration-500 group">
                         <div class="flex items-center gap-4 mb-6 rtl:flex-row-reverse">
                             <div
-                                class="w-1.5 h-12 bg-cyan-500 rounded-full group-hover:scale-y-110 transition-transform">
+                                class="w-1.5 h-12 bg-accent-cyan-500 rounded-full group-hover:scale-y-110 transition-transform">
                             </div>
                             <h3
-                                class="text-2xl font-bold text-white transition-colors group-hover:text-cyan-400 rtl:text-right">
+                                class="text-2xl font-bold text-white transition-colors group-hover:text-accent-cyan-400 rtl:text-right">
                                 {{ rt(region) }}
                             </h3>
                         </div>

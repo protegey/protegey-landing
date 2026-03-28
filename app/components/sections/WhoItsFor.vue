@@ -39,8 +39,8 @@ const cards = [
 const colorMap: Record<string, { border: string; text: string; bg: string; badge: string }> = {
   primary:   { border: 'border-primary-500/40',   text: 'text-primary-400',   bg: 'bg-primary-500/10',   badge: 'bg-primary-500/15 text-primary-300 border-primary-500/20' },
   secondary: { border: 'border-secondary-500/40', text: 'text-secondary-400', bg: 'bg-secondary-500/10', badge: 'bg-secondary-500/15 text-secondary-300 border-secondary-500/20' },
-  amber:     { border: 'border-amber-500/40',     text: 'text-amber-400',     bg: 'bg-amber-500/10',     badge: 'bg-amber-500/15 text-amber-300 border-amber-500/20' },
-  emerald:   { border: 'border-emerald-500/40',   text: 'text-emerald-400',   bg: 'bg-emerald-500/10',   badge: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/20' },
+  amber:     { border: 'border-accent-orange-500/40',     text: 'text-accent-orange-400',     bg: 'bg-accent-orange-500/10',     badge: 'bg-accent-orange-500/15 text-accent-orange-400 border-accent-orange-500/20' },
+  emerald:   { border: 'border-accent-cyan-500/40',   text: 'text-accent-cyan-400',   bg: 'bg-accent-cyan-500/10',   badge: 'bg-accent-cyan-500/15 text-accent-cyan-400 border-accent-cyan-500/20' },
 }
 
 const getColor = (color: string) => colorMap[color] ?? colorMap['primary']!

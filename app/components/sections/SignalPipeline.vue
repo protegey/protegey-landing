@@ -32,8 +32,8 @@ const steps = [
 const colorMap: Record<string, { border: string; text: string; bg: string; glow: string }> = {
   primary:   { border: 'border-primary-500/40',   text: 'text-primary-400',   bg: 'bg-primary-500/10',   glow: 'shadow-primary-500/20' },
   secondary: { border: 'border-secondary-500/40', text: 'text-secondary-400', bg: 'bg-secondary-500/10', glow: 'shadow-secondary-500/20' },
-  amber:     { border: 'border-amber-500/40',     text: 'text-amber-400',     bg: 'bg-amber-500/10',     glow: 'shadow-amber-500/20' },
-  emerald:   { border: 'border-emerald-500/40',   text: 'text-emerald-400',   bg: 'bg-emerald-500/10',   glow: 'shadow-emerald-500/20' },
+  amber:     { border: 'border-accent-orange-500/40', text: 'text-accent-orange-400', bg: 'bg-accent-orange-500/10', glow: 'shadow-accent-orange-500/20' },
+  emerald:   { border: 'border-accent-cyan-500/40',  text: 'text-accent-cyan-400',  bg: 'bg-accent-cyan-500/10',  glow: 'shadow-accent-cyan-500/20' },
 }
 
 const visible = ref(false)
@@ -145,8 +145,8 @@ onUnmounted(() => observer?.disconnect())
 
       <!-- Output label -->
       <div class="flex justify-center mt-8">
-        <div class="flex items-center gap-3 px-5 py-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 font-mono text-sm text-emerald-300">
-          <span class="w-2 h-2 rounded-full bg-emerald-400" />
+        <div class="flex items-center gap-3 px-5 py-2 rounded-full border border-primary-500/40 bg-primary-500/10 font-mono text-sm text-primary-300">
+          <span class="w-2 h-2 rounded-full bg-primary-400" />
           {{ t('signal_pipeline.output_label') }}
         </div>
       </div>

@@ -6,7 +6,7 @@ const { isDark, toggleTheme } = useTheme()
 
 <template>
   <button
-    class="inline-flex items-center gap-2 rounded-xl border border-gray-300 dark:border-gray-600 px-3 py-2 text-sm font-medium bg-white/90 dark:bg-gray-800/90 text-gray-900 dark:text-white shadow-sm hover:bg-white dark:hover:bg-gray-700 transition-all duration-200"
+    class="inline-flex items-center gap-2 rounded-xl border border-neutral-700 dark:border-neutral-600 px-3 py-2 text-sm font-medium bg-neutral-900/90 dark:bg-neutral-800/90 text-white shadow-sm hover:bg-neutral-800 dark:hover:bg-neutral-700 transition-all duration-200"
     type="button"
     aria-label="Toggle color theme"
     @click="toggleTheme()"

@@ -113,17 +113,17 @@ onMounted(async () => {
                     </div>
 
                     <div ref="cardRefs[2]"
-                        class="group bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col shadow-lg hover:shadow-emerald-500/10 hover:border-emerald-500/30 transition-all duration-300 relative overflow-hidden">
+                        class="group bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col shadow-lg hover:shadow-accent-cyan-500/10 hover:border-accent-cyan-500/30 transition-all duration-300 relative overflow-hidden">
                         <div
-                            class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            class="absolute inset-0 bg-gradient-to-br from-accent-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
                         <div class="relative z-10">
                             <div
-                                class="mb-6 inline-flex p-3 rounded-lg bg-neutral-800 text-emerald-400 group-hover:text-emerald-300 group-hover:scale-110 transition-all duration-300">
+                                class="mb-6 inline-flex p-3 rounded-lg bg-neutral-800 text-accent-cyan-400 group-hover:text-accent-cyan-500 group-hover:scale-110 transition-all duration-300">
                                 <HugeiconsIcon :icon="Shield01Icon" :size="32" />
                             </div>
                             <div class="text-4xl font-bold text-white mb-3 font-mono rtl:text-right">{{
-                                $t('why_protegey.card3.value') }} <span class="text-emerald-400 text-lg font-normal">{{
+                                $t('why_protegey.card3.value') }} <span class="text-accent-cyan-400 text-lg font-normal">{{
                                     $t('why_protegey.card3.title')
                                     }}</span></div>
                             <div class="text-neutral-400 text-base md:text-lg leading-relaxed rtl:text-right">
