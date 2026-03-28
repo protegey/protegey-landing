@@ -5,6 +5,7 @@ const props = defineProps({
 
 const { t } = useI18n()
 const localePath = useLocalePath()
+const { isDark } = useTheme()
 
 const handleError = () => clearError({ redirect: localePath('/') })
 
@@ -16,17 +17,18 @@ onMounted(() => {
   anomalyId.value = Math.random().toString(36).substring(7).toUpperCase()
 })
 
-useHead({
-  title: is404.value ? t('errors.title_404') : t('errors.title_500')
-})
+useHead(() => ({
+  title: is404.value ? t('errors.title_404') : t('errors.title_500'),
+  htmlAttrs: { class: isDark.value ? 'dark' : '' }
+}))
 </script>
 
 <template>
-  <div class="min-h-screen bg-neutral-950 text-white flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans" role="main">
+  <div class="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-white flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans" role="main">
     <!-- Grid Background -->
     <div class="absolute inset-0 z-0">
       <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-neutral-50 dark:from-neutral-950 via-transparent to-transparent"></div>
     </div>
 
     <!-- Scanning Radar Animation -->
@@ -38,7 +40,7 @@ useHead({
     <div class="relative z-10 max-w-2xl w-full text-center space-y-8 animate-fade-in">
       <!-- Status Code with Glow -->
       <div class="relative inline-block">
-        <h1 class="text-[7rem] sm:text-[10rem] md:text-[14rem] font-black text-white/5 leading-none select-none tracking-tighter">
+        <h1 class="text-[7rem] sm:text-[10rem] md:text-[14rem] font-black text-neutral-900/5 dark:text-white/8 leading-none select-none tracking-tighter">
           {{ statusCode }}
         </h1>
         <div class="absolute inset-0 flex items-center justify-center">
@@ -48,32 +50,32 @@ useHead({
 
       <!-- Messages -->
       <div class="space-y-4">
-        <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">
+        <h2 class="text-3xl md:text-5xl font-bold text-neutral-900 dark:text-white tracking-tight">
           {{ is404 ? $t('errors.title_404') : $t('errors.title_500') }}
         </h2>
-        <p class="text-neutral-400 text-lg md:text-xl max-w-md mx-auto leading-relaxed">
+        <p class="text-neutral-600 dark:text-neutral-400 text-lg md:text-xl max-w-md mx-auto leading-relaxed">
           {{ is404 ? $t('errors.desc_404') : $t('errors.desc_500') }}
         </p>
       </div>
 
       <!-- Actions -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-        <button 
+        <button
           @click="handleError"
           class="w-full sm:w-auto px-8 py-4 bg-primary-500 hover:bg-primary-400 text-neutral-950 font-bold rounded-2xl transition-all duration-300 shadow-lg shadow-primary-500/20 active:scale-95"
         >
           {{ $t('errors.back_to_home') }}
         </button>
-        <NuxtLink 
+        <NuxtLink
           :to="localePath('/contact')"
-          class="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-2xl border border-white/10 transition-all duration-300 backdrop-blur-sm"
+          class="w-full sm:w-auto px-8 py-4 bg-neutral-100 hover:bg-neutral-200 dark:bg-white/5 dark:hover:bg-white/10 text-neutral-700 dark:text-white font-semibold rounded-2xl border border-neutral-200 dark:border-white/10 transition-all duration-300 backdrop-blur-sm"
         >
           {{ $t('errors.contact_support') }}
         </NuxtLink>
       </div>
 
       <!-- System ID / Trace (Subtle) -->
-      <p v-if="anomalyId" class="text-neutral-600 text-xs font-mono pt-8">
+      <p v-if="anomalyId" class="text-neutral-400 dark:text-neutral-600 text-xs font-mono pt-8">
         PROTEGEY_SEC_NODE_ANOMALY_ID: {{ anomalyId }}
       </p>
     </div>
