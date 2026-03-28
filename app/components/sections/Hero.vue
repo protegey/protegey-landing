@@ -189,7 +189,7 @@ onUnmounted(() => {
                                 class="transition-colors" />
                             {{ $t('hero.cta.request_demo') }}
                             <HugeiconsIcon :icon="ArrowRight01Icon" :size="20"
-                                class="group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
+                                class="rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
                         </button>
                     </div>
 

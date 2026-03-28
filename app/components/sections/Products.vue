@@ -119,7 +119,7 @@ onMounted(async () => {
                     <div
                         class="mt-auto flex items-center text-secondary-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
                         {{ $t('products.explore') }}
-                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
+                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" class="rtl:rotate-180" />
                     </div>
                 </NuxtLink>
 
@@ -197,7 +197,7 @@ onMounted(async () => {
                     <div
                         class="mt-auto flex items-center text-secondary-400 font-bold text-sm tracking-widest uppercase gap-0 group-hover:gap-2 transition-all duration-300">
                         {{ $t('products.explore') }}
-                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
+                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" class="rtl:rotate-180" />
                     </div>
                 </NuxtLink>
 
