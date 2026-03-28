@@ -59,6 +59,7 @@ const scrollTo = (selector) => {
         </div>
 
         <div class="hidden md:flex items-center gap-4">
+          <ThemeToggle />
           <div class="flex items-center bg-neutral-100/80 dark:bg-neutral-800/50 rounded-lg p-1 border border-neutral-200/50 dark:border-neutral-700/30">
             <template v-for="l in ['en', 'fr', 'ar']" :key="l">
               <NuxtLink :to="switchLocalePath(l)"
@@ -82,7 +83,7 @@ const scrollTo = (selector) => {
         </div>
 
         <!-- Mobile -->
-        <div class="md:hidden flex items-center gap-4">
+        <div class="md:hidden flex items-center gap-2">
           <div class="flex items-center bg-neutral-100/80 dark:bg-neutral-800/50 rounded-lg p-1 border border-neutral-200/50 dark:border-neutral-700/30 mr-2">
             <template v-for="l in ['en', 'fr', 'ar']" :key="l">
               <NuxtLink :to="switchLocalePath(l)"
@@ -95,6 +96,7 @@ const scrollTo = (selector) => {
               </NuxtLink>
             </template>
           </div>
+          <ThemeToggle />
           <button @click="toggleMenu" :aria-expanded="isOpen"
             :aria-label="isOpen ? $t('nav.close_menu') : $t('nav.open_menu')"
             class="p-2 rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-300">
