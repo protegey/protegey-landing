@@ -17,10 +17,10 @@ export default {
         'xs': '475px',
       },
       fontFamily: {
-        // Primary: IBM Plex Sans Arabic (covers en/fr/ar)
-        // Secondary: Inter (body text, UI)
-        sans:      ['"IBM Plex Sans Arabic"', '"IBM Plex Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display:   ['"IBM Plex Sans Arabic"', '"IBM Plex Sans"', 'ui-sans-serif', 'sans-serif'],
+        // Headings: IBM Plex Sans (Latin), IBM Plex Sans Arabic (Arabic script)
+        // Body/UI: Inter
+        sans:      ['"IBM Plex Sans"', '"IBM Plex Sans Arabic"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display:   ['"IBM Plex Sans"', '"IBM Plex Sans Arabic"', 'ui-sans-serif', 'sans-serif'],
         body:      ['"Inter"', '"IBM Plex Sans Arabic"', 'ui-sans-serif', 'sans-serif'],
       },
       animation: {

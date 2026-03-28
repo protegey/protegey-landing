@@ -8,15 +8,15 @@
     scroll-behavior: smooth;
   }
 
-  /* Typography: Inter for body text, IBM Plex Sans for headings
-     Inter handles Latin/French/English; IBM Plex Sans Arabic handles Arabic
+  /* Typography: Inter for body text, IBM Plex Sans for headings.
+     IBM Plex Sans covers Latin (en/fr); IBM Plex Sans Arabic covers Arabic script.
      The browser selects per-character based on Unicode coverage. */
   body {
     font-family: 'Inter', 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', ui-sans-serif, sans-serif;
+    font-family: 'IBM Plex Sans', 'IBM Plex Sans Arabic', ui-sans-serif, sans-serif;
   }
 
   :root {
