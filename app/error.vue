@@ -40,7 +40,7 @@ useHead(() => ({
     <div class="relative z-10 max-w-2xl w-full text-center space-y-8 animate-fade-in">
       <!-- Status Code with Glow -->
       <div class="relative inline-block">
-        <h1 class="text-[7rem] sm:text-[10rem] md:text-[14rem] font-black text-neutral-900/5 dark:text-white/8 leading-none select-none tracking-tighter">
+        <h1 class="text-[7rem] sm:text-[10rem] md:text-[14rem] font-black text-neutral-900/5 dark:text-white/5 leading-none select-none tracking-tighter">
           {{ statusCode }}
         </h1>
         <div class="absolute inset-0 flex items-center justify-center">
