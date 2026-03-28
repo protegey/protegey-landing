@@ -92,7 +92,7 @@ export default defineNuxtConfig({
         {
           // Use innerHTML for inline script to satisfy types
           innerHTML:
-            "(function(){try{var stored=localStorage.getItem('theme');var dark=stored==='dark'||(!stored&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',dark);}catch(e){}})();",
+            "(function(){try{var match=document.cookie.match(/(?:^|;)\\s*theme=([^;]*)/);var dark=match?match[1]==='dark':true;document.documentElement.classList.toggle('dark',dark);}catch(e){document.documentElement.classList.add('dark');}})();",
           type: 'text/javascript'
         },
       ],

@@ -1,8 +1,8 @@
 <script setup>
 import HeaderNav from '~/components/sections/HeaderNav.vue'
 import Footer from '~/components/sections/Footer.vue'
-// Theme is auto-initialized in the composable
 
+const { isDark } = useTheme()
 const { t, locale } = useI18n()
 const route = useRoute()
 
@@ -66,7 +66,8 @@ useHead(() => ({
   },
   htmlAttrs: {
     lang: head.value.htmlAttrs.lang,
-    dir: head.value.htmlAttrs.dir
+    dir: head.value.htmlAttrs.dir,
+    class: isDark.value ? 'dark' : ''
   },
   meta: [
     { name: 'description', content: t('seo.global.description') },
