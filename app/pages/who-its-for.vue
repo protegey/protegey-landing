@@ -6,7 +6,9 @@ const { t } = useI18n()
 
 useSeoMeta({
     title: t('who_its_for.seo.title'),
+    ogTitle: t('who_its_for.seo.title'),
     description: t('who_its_for.seo.description'),
+    ogDescription: t('who_its_for.seo.description'),
 })
 
 if (import.meta.server) {

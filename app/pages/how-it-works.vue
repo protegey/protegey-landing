@@ -18,7 +18,9 @@ const pipelineSteps = computed(() => [
 
 useSeoMeta({
     title: t('geo_pages.how_it_works.title'),
+    ogTitle: t('geo_pages.how_it_works.title'),
     description: t('geo_pages.how_it_works.subtitle'),
+    ogDescription: t('geo_pages.how_it_works.subtitle'),
 })
 
 if (import.meta.server) {

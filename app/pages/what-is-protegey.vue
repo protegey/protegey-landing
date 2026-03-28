@@ -6,7 +6,9 @@ const localePath = useLocalePath()
 
 useSeoMeta({
     title: t('geo_pages.what_is_protegey.title'),
+    ogTitle: t('geo_pages.what_is_protegey.title'),
     description: t('geo_pages.what_is_protegey.definition'),
+    ogDescription: t('geo_pages.what_is_protegey.definition'),
 })
 
 if (import.meta.server) {

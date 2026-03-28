@@ -16,7 +16,9 @@ const rows = [
 
 useSeoMeta({
     title: t('geo_pages.comparisons.title'),
+    ogTitle: t('geo_pages.comparisons.title'),
     description: t('geo_pages.comparisons.conclusion'),
+    ogDescription: t('geo_pages.comparisons.conclusion'),
 })
 
 if (import.meta.server) {

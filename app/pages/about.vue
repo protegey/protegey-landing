@@ -249,11 +249,17 @@ if (import.meta.server) {
 </script>
 
 <style scoped>
+/* Light mode: deep blue → emerald — readable on white */
 .hero-headline {
-    background: linear-gradient(135deg, #ffffff 20%, #0cb99e 60%, #1b59ae 100%);
+    background: linear-gradient(135deg, #0B1741 20%, #0cb99e 60%, #1b59ae 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Dark mode: white → emerald → blue */
+:global(.dark) .hero-headline {
+    background: linear-gradient(135deg, #ffffff 20%, #0cb99e 60%, #1b59ae 100%);
 }
 
 /* Reveal system — no JS sets opacity:0, CSS owns the initial state */

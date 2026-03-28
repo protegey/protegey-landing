@@ -8,7 +8,7 @@ export const useSeoUtils = () => {
 
   const getCanonicalUrl = (path: string) => {
     const currentLocale = locale.locale.value
-    const localePrefix = currentLocale === 'en' ? '' : `/${currentLocale}`
+    const localePrefix = currentLocale === 'fr' ? '' : `/${currentLocale}`
     const cleanPath = path === '/' ? '' : path.replace(/^\/(en|fr|ar)/, '')
     return `${baseUrl}${localePrefix}${cleanPath}`
   }
@@ -19,7 +19,7 @@ export const useSeoUtils = () => {
     
     for (const loc of locales) {
       const cleanPath = path === '/' ? '' : path.replace(/^\/(en|fr|ar)/, '')
-      const localePrefix = loc === 'en' ? '' : `/${loc}`
+      const localePrefix = loc === 'fr' ? '' : `/${loc}`
       links.push({
         rel: 'alternate',
         hreflang: loc === 'en' ? 'en' : loc,
@@ -42,7 +42,7 @@ export const useSeoUtils = () => {
 
   const getSchemaUrl = (path: string) => {
     const currentLocale = locale.locale.value
-    const localePrefix = currentLocale === 'en' ? '' : `/${currentLocale}`
+    const localePrefix = currentLocale === 'fr' ? '' : `/${currentLocale}`
     const cleanPath = path.startsWith('/') ? path : `/${path}`
     return `${baseUrl}${localePrefix}${cleanPath}`
   }

@@ -8,7 +8,9 @@ const localePath = useLocalePath()
 
 useSeoMeta({
     title: t('geo_pages.trust.title'),
+    ogTitle: t('geo_pages.trust.title'),
     description: t('geo_pages.trust.subtitle'),
+    ogDescription: t('geo_pages.trust.subtitle'),
 })
 
 if (import.meta.server) {

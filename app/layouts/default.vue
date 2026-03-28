@@ -16,7 +16,8 @@ const baseUrl = 'https://www.protegey.com'
 
 const getCanonicalUrl = computed(() => {
   const currentLocale = locale.value
-  const localePrefix = currentLocale === 'en' ? '' : `/${currentLocale}`
+  // fr is default locale (no prefix); en and ar have prefixes
+  const localePrefix = currentLocale === 'fr' ? '' : `/${currentLocale}`
   const path = route.path === '/' ? '' : route.path.replace(/^\/(en|fr|ar)/, '')
   return `${baseUrl}${localePrefix}${path}`
 })
@@ -28,7 +29,8 @@ const alternateLinks = computed(() => {
   const links = locales.map(loc => ({
     rel: 'alternate',
     hreflang: loc,
-    href: `${baseUrl}${loc === 'en' ? '' : `/${loc}`}${cleanPath}`
+    // fr is default locale (no prefix); en and ar have prefixes
+    href: `${baseUrl}${loc === 'fr' ? '' : `/${loc}`}${cleanPath}`
   }))
   
   links.push({
@@ -78,6 +80,7 @@ useHead(() => ({
     { name: 'geo.position', content: '14.6925,-17.4467;-1.9403,29.8739;6.4969,3.3792;4.0518,9.7679;-1.2921,36.8219;-26.2041,28.0473' },
     { property: 'og:site_name', content: 'Protegey' },
     { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: getCanonicalUrl.value },
     { property: 'og:image', content: t('seo.global.image') },
     { property: 'og:image:alt', content: t('seo.global.image_alt') },
     { name: 'twitter:card', content: 'summary_large_image' },

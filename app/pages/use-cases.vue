@@ -13,7 +13,9 @@ const cases = [
 
 useSeoMeta({
     title: t('geo_pages.use_cases.title'),
+    ogTitle: t('geo_pages.use_cases.title'),
     description: t('geo_pages.use_cases.title'),
+    ogDescription: t('geo_pages.use_cases.title'),
 })
 
 if (import.meta.server) {
