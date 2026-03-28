@@ -186,7 +186,7 @@ onUnmounted(() => {
                         <button @click.prevent="scrollTo('waitlist')"
                             class="hero-cta-button group bg-primary-500 hover:bg-primary-400 text-neutral-950 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(12,185,158,0.3)] hover:shadow-[0_0_30px_rgba(12,185,158,0.5)]">
                             <HugeiconsIcon :icon="Shield01Icon" :size="20"
-                                class="text-white group-hover:text-white transition-colors" />
+                                class="transition-colors" />
                             {{ $t('hero.cta.request_demo') }}
                             <HugeiconsIcon :icon="ArrowRight01Icon" :size="20"
                                 class="group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
@@ -255,19 +255,19 @@ onUnmounted(() => {
                                 </div>
                                 <div class="p-2 space-y-2">
                                     <div
-                                        class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
+                                        class="flex items-center gap-3 p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/30 transition-colors text-xs font-mono">
                                         <span class="text-red-400">[{{ $t('hero.dashboard.critical') }}]</span>
                                         <span class="text-neutral-600 dark:text-neutral-300">{{ $t('hero.dashboard.sim_swap') }}</span>
                                         <span class="text-neutral-500 dark:text-neutral-400 ms-auto">00:01:23</span>
                                     </div>
                                     <div
-                                        class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
+                                        class="flex items-center gap-3 p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/30 transition-colors text-xs font-mono">
                                         <span class="text-yellow-400">[{{ $t('hero.dashboard.warning') }}]</span>
                                         <span class="text-neutral-600 dark:text-neutral-300">{{ $t('hero.dashboard.unusual_login') }}</span>
                                         <span class="text-neutral-500 dark:text-neutral-400 ms-auto">00:01:45</span>
                                     </div>
                                     <div
-                                        class="flex items-center gap-3 p-2 rounded hover:bg-neutral-700/30 transition-colors text-xs font-mono">
+                                        class="flex items-center gap-3 p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/30 transition-colors text-xs font-mono">
                                         <span class="text-primary-400">[{{ $t('hero.dashboard.info') }}]</span>
                                         <span class="text-neutral-600 dark:text-neutral-300">{{ $t('hero.dashboard.new_node') }}</span>
                                         <span class="text-neutral-500 dark:text-neutral-400 ms-auto">00:02:10</span>

@@ -17,7 +17,7 @@
                         {{ $t('about_page.hero.title') }}
                     </h1>
 
-                    <p data-reveal class="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed" style="--delay:160ms">
+                    <p data-reveal class="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed" style="--delay:160ms">
                         {{ $t('about_page.hero.subtitle') }}
                     </p>
                 </div>

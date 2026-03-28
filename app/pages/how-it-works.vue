@@ -57,7 +57,7 @@ if (import.meta.server) {
                         step.color === 'amber'     ? 'border-accent-orange-500     bg-accent-orange-500/20     text-accent-orange-300'     : '',
                         step.color === 'emerald'   ? 'border-accent-cyan-500   bg-accent-cyan-500/20   text-accent-cyan-300'   : '',
                     ]">{{ step.num }}</div>
-                    <div v-if="idx < 9" class="w-px flex-1 bg-neutral-800 my-1" />
+                    <div v-if="idx < 9" class="w-px flex-1 bg-neutral-200 dark:bg-neutral-800 my-1" />
                 </div>
 
                 <!-- Right: card -->

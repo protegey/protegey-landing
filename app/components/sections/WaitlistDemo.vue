@@ -224,7 +224,7 @@ onMounted(() => {
                     <div class="grid md:grid-cols-3 gap-6">
                         <div>
                             <label for="title"
-                                class="block text-sm font-semibold mb-2 text-neutral-600 dark:text-neutral-600 dark:text-neutral-300 rtl:text-right">{{
+                                class="block text-sm font-semibold mb-2 text-neutral-700 dark:text-neutral-300 rtl:text-right">{{
                                     $t('waitlist.form.title') }}</label>
                             <select id="title" v-model="formData.title"
                                 :aria-label="$t('waitlist.form.title')"
@@ -237,7 +237,7 @@ onMounted(() => {
                         </div>
                         <div class="md:col-span-2">
                             <label for="name"
-                                class="block text-sm font-semibold mb-2 text-neutral-600 dark:text-neutral-600 dark:text-neutral-300 rtl:text-right">{{
+                                class="block text-sm font-semibold mb-2 text-neutral-700 dark:text-neutral-300 rtl:text-right">{{
                                     $t('waitlist.form.name') }}</label>
                             <input id="name" v-model="formData.name" type="text" required
                                 :placeholder="$t('waitlist.form.name_placeholder')"
@@ -256,7 +256,7 @@ onMounted(() => {
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="phone"
-                                class="block text-sm font-semibold mb-2 text-neutral-600 dark:text-neutral-600 dark:text-neutral-300 rtl:text-right">{{
+                                class="block text-sm font-semibold mb-2 text-neutral-700 dark:text-neutral-300 rtl:text-right">{{
                                     $t('waitlist.form.phone') }}</label>
                             <input id="phone" v-model="formData.phone" type="tel"
                                 :placeholder="$t('waitlist.form.phone_placeholder')"
@@ -264,7 +264,7 @@ onMounted(() => {
                         </div>
                         <div>
                             <label for="country"
-                                class="block text-sm font-semibold mb-2 text-neutral-600 dark:text-neutral-600 dark:text-neutral-300 rtl:text-right">{{
+                                class="block text-sm font-semibold mb-2 text-neutral-700 dark:text-neutral-300 rtl:text-right">{{
                                     $t('waitlist.form.country') }}</label>
                             <input id="country" v-model="formData.country" type="text" required
                                 :placeholder="$t('waitlist.form.country_placeholder')"
@@ -296,7 +296,7 @@ onMounted(() => {
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="businessModel"
-                                class="block text-sm font-semibold mb-2 text-neutral-600 dark:text-neutral-600 dark:text-neutral-300 rtl:text-right">{{
+                                class="block text-sm font-semibold mb-2 text-neutral-700 dark:text-neutral-300 rtl:text-right">{{
                                     $t('waitlist.form.business_model') }}</label>
                             <select id="businessModel" v-model="formData.businessModel" required
                                 :aria-label="$t('waitlist.form.business_model')"
@@ -310,7 +310,7 @@ onMounted(() => {
                         </div>
                         <div>
                             <label for="stage"
-                                class="block text-sm font-semibold mb-2 text-neutral-600 dark:text-neutral-600 dark:text-neutral-300 rtl:text-right">{{
+                                class="block text-sm font-semibold mb-2 text-neutral-700 dark:text-neutral-300 rtl:text-right">{{
                                     $t('waitlist.form.stage') }}</label>
                             <select id="stage" v-model="formData.stage" required :aria-label="$t('waitlist.form.stage')"
                                 class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-white/90 dark:bg-neutral-800 text-neutral-900 dark:text-white rtl:text-right">
@@ -326,7 +326,7 @@ onMounted(() => {
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="sector"
-                                class="block text-sm font-semibold mb-2 text-neutral-600 dark:text-neutral-600 dark:text-neutral-300 rtl:text-right">{{
+                                class="block text-sm font-semibold mb-2 text-neutral-700 dark:text-neutral-300 rtl:text-right">{{
                                     $t('waitlist.form.sector') }}</label>
                             <select id="sector" v-model="formData.sector" required
                                 :aria-label="$t('waitlist.form.sector')"
@@ -340,7 +340,7 @@ onMounted(() => {
                         </div>
                         <div>
                             <label for="interestType"
-                                class="block text-sm font-semibold mb-2 text-neutral-600 dark:text-neutral-600 dark:text-neutral-300 rtl:text-right">{{
+                                class="block text-sm font-semibold mb-2 text-neutral-700 dark:text-neutral-300 rtl:text-right">{{
                                     $t('waitlist.form.interest') }}</label>
                             <select id="interestType" v-model="formData.interestType" required
                                 :aria-label="$t('waitlist.form.interest')"
