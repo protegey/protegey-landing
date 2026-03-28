@@ -50,7 +50,7 @@ if (import.meta.server) {
     <InfoPage :title="t('geo_pages.use_cases.title')">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <div v-for="c in cases" :key="c.id"
-                class="p-6 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 backdrop-blur-sm">
+                class="p-6 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 backdrop-blur-sm">
                 <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-3">{{ t(c.titleKey) }}</h3>
                 <p class="text-neutral-500 dark:text-neutral-400 mb-0 text-base leading-relaxed">{{ t(c.contentKey) }}</p>
             </div>

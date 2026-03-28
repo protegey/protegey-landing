@@ -30,7 +30,7 @@ if (import.meta.server) {
         </div>
 
         <!-- Closing note -->
-        <p class="text-center text-neutral-500 text-sm mt-14 max-w-xl mx-auto">
+        <p class="text-center text-neutral-500 dark:text-neutral-400 text-sm mt-14 max-w-xl mx-auto">
             {{ t('who_its_for.exclusion') }}
         </p>
     </InfoPage>

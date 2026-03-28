@@ -34,10 +34,10 @@ if (import.meta.server) {
 <template>
     <InfoPage :title="t('geo_pages.comparisons.title')">
         <div class="space-y-12">
-            <div class="overflow-x-auto rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/20">
+            <div class="overflow-x-auto rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
                 <table class="w-full text-left border-collapse">
                     <thead>
-                        <tr class="bg-neutral-50 dark:bg-neutral-900/50">
+                        <tr class="bg-neutral-50 dark:bg-neutral-800/60">
                             <th class="p-5 border-b border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-300 font-semibold w-1/4">{{ t('geo_pages.comparisons.table.feature') }}</th>
                             <th class="p-5 border-b border-neutral-200 dark:border-neutral-800 text-primary-500 dark:text-primary-400 font-bold bg-primary-500/5 w-1/4">{{ t('geo_pages.comparisons.table.protegey') }}</th>
                             <th class="p-5 border-b border-neutral-200 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400 w-1/4">{{ t('geo_pages.comparisons.table.legacy') }}</th>
@@ -60,7 +60,7 @@ if (import.meta.server) {
                 </table>
             </div>
 
-            <blockquote class="p-6 border-l-4 border-primary-500 bg-neutral-50 dark:bg-neutral-900/50 rounded-r-xl">
+            <blockquote class="p-6 border-l-4 border-primary-500 bg-neutral-50 dark:bg-neutral-800/50 rounded-r-xl">
                 <p class="text-xl text-neutral-900 dark:text-white font-medium leading-relaxed italic">"{{ t('geo_pages.comparisons.conclusion') }}"</p>
             </blockquote>
         </div>

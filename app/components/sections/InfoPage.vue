@@ -21,13 +21,13 @@ const localePath = useLocalePath()
 </script>
 
 <template>
-    <div class="relative min-h-screen bg-white dark:bg-neutral-900 pt-32 pb-16 overflow-hidden">
+    <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 pt-32 pb-16 overflow-hidden">
         <!-- Animated Background Grid -->
         <div class="absolute inset-0 z-0">
             <div
                 class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
             </div>
-            <div class="absolute inset-0 bg-gradient-to-b from-neutral-50 dark:from-neutral-950 via-transparent to-neutral-50 dark:to-neutral-950"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-neutral-50 dark:from-neutral-950 via-transparent to-neutral-50 dark:to-neutral-950 pointer-events-none"></div>
 
             <!-- Glowing Orbs -->
             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl animate-pulse-glow">
@@ -50,10 +50,10 @@ const localePath = useLocalePath()
                             :class="[
                                 route.path.endsWith(item.path)
                                     ? 'bg-primary-500/10 text-primary-400 border-primary-500/20 shadow-[0_0_20px_rgba(12,185,158,0.1)]'
-                                    : 'text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-white/5'
+                                    : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800'
                             ]">
                             <span class="w-1.5 h-1.5 rounded-full me-3 transition-colors"
-                                :class="route.path.endsWith(item.path) ? 'bg-primary-500' : 'bg-neutral-200 dark:bg-neutral-800 group-hover:bg-neutral-400 dark:group-hover:bg-neutral-600'"></span>
+                                :class="route.path.endsWith(item.path) ? 'bg-primary-500' : 'bg-neutral-300 dark:bg-neutral-600 group-hover:bg-neutral-400 dark:group-hover:bg-neutral-400'"></span>
                             {{ item.name }}
                         </NuxtLink>
                     </nav>
@@ -62,7 +62,7 @@ const localePath = useLocalePath()
                 <!-- Main Content -->
                 <main class="lg:col-span-9">
                     <div
-                        class="bg-neutral-50/80 dark:bg-neutral-950/40 backdrop-blur-sm border border-neutral-200/80 dark:border-neutral-800/50 rounded-3xl p-8 md:p-12 shadow-2xl">
+                        class="bg-white dark:bg-neutral-900 backdrop-blur-sm border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 md:p-12 shadow-2xl shadow-neutral-200/50 dark:shadow-black/30">
                         <div class="prose prose-invert prose-primary max-w-none">
                             <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-4 hero-title">
                                 {{ title }}
@@ -77,7 +77,7 @@ const localePath = useLocalePath()
                         </div>
 
                         <!-- Mobile Navigation -->
-                        <div class="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-900 lg:hidden text-left">
+                        <div class="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800 lg:hidden text-left">
                             <h2 class="text-lg font-semibold text-neutral-900 dark:text-white mb-4">{{
                                 t('geo_pages.common.explore_guides_label') }}
                             </h2>
@@ -97,7 +97,7 @@ const localePath = useLocalePath()
 
 <style scoped>
 .prose :deep(h2) {
-    @apply text-2xl font-bold text-neutral-900 dark:text-white mt-12 mb-6 border-s-4 border-primary-500 ps-4 bg-primary-500/5 py-2 rtl:text-right;
+    @apply text-2xl font-bold text-neutral-900 dark:text-white mt-12 mb-6 border-s-4 border-primary-500 ps-4 bg-primary-500/5 dark:bg-primary-500/10 py-2 rtl:text-right;
 }
 
 .prose :deep(p) {
@@ -130,7 +130,7 @@ const localePath = useLocalePath()
 }
 
 .prose :deep(blockquote) {
-    @apply ps-6 border-s-4 border-primary-500 italic text-neutral-600 dark:text-neutral-300 bg-primary-500/5 py-6 pe-6 rounded-e-2xl mb-12 text-xl rtl:text-right;
+    @apply ps-6 border-s-4 border-primary-500 italic text-neutral-600 dark:text-neutral-300 bg-primary-500/5 dark:bg-primary-500/10 py-6 pe-6 rounded-e-2xl mb-12 text-xl rtl:text-right;
 }
 
 .lead {
