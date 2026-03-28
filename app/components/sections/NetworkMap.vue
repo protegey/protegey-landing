@@ -133,7 +133,7 @@ onUnmounted(() => {
 <template>
     <section class="network-section relative py-24 bg-neutral-50 dark:bg-neutral-950 overflow-hidden border-t border-neutral-200 dark:border-neutral-900">
         <!-- Canvas Background -->
-        <div class="absolute inset-0 z-0 opacity-50">
+        <div class="absolute inset-0 z-0 opacity-50" aria-hidden="true">
             <canvas ref="canvasRef" class="w-full h-full"></canvas>
         </div>
 

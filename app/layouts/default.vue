@@ -109,9 +109,12 @@ useHead(() => ({
 </script>
 
 <template>
-  <div class="min-h-screen relative z-10 text-neutral-950 dark:text-white transition-colors duration-200">
+  <div class="relative z-10 text-neutral-950 dark:text-white transition-colors duration-200">
+    <a href="#main-content" class="skip-nav">{{ t('a11y.skip_to_content') }}</a>
     <HeaderNav />
-    <slot />
+    <main id="main-content">
+      <slot />
+    </main>
     <Footer />
   </div>
 </template>

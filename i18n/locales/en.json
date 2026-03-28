@@ -8,7 +8,8 @@
         "request_demo": "Request Demo",
         "home": "Home",
         "open_menu": "Open menu",
-        "close_menu": "Close menu"
+        "close_menu": "Close menu",
+        "mobile_menu_label": "Mobile navigation menu"
     },
     "hero": {
         "badge": "FRAUD INTELLIGENCE NETWORK",
@@ -958,5 +959,8 @@
         "desc_500": "An unexpected anomaly occurred in our core processing engine. Our engineers have been alerted.",
         "back_to_home": "Back to Neutral Ground",
         "contact_support": "Contact Security"
+    },
+    "a11y": {
+        "skip_to_content": "Skip to main content"
     }
 }

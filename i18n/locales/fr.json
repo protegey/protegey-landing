@@ -8,7 +8,8 @@
         "request_demo": "Demander une démo",
         "home": "Accueil",
         "open_menu": "Ouvrir le menu",
-        "close_menu": "Fermer le menu"
+        "close_menu": "Fermer le menu",
+        "mobile_menu_label": "Menu de navigation mobile"
     },
     "hero": {
         "badge": "RÉSEAU DE RENSEIGNEMENT SUR LA FRAUDE",
@@ -958,5 +959,8 @@
         "desc_500": "Une anomalie inattendue s'est produite dans notre moteur de traitement central. Nos ingénieurs ont été alertés.",
         "back_to_home": "Retour à l'Accueil",
         "contact_support": "Contacter la Sécurité"
+    },
+    "a11y": {
+        "skip_to_content": "Aller au contenu principal"
     }
 }

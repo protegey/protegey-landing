@@ -62,8 +62,9 @@ const toggle = (index: number) => {
                     class="group border border-neutral-200 dark:border-neutral-800 rounded-2xl bg-white dark:bg-neutral-900 overflow-hidden transition-all duration-300 hover:border-primary-500/30"
                     :class="{ 'ring-1 ring-primary-500/30 border-primary-500/30 bg-white/90 dark:bg-neutral-900/80': openIndex === index }">
                     <button @click="toggle(index)"
-                        class="w-full flex items-center justify-between p-6 text-left focus:outline-none rtl:text-right rtl:flex-row-reverse"
-                        :aria-expanded="openIndex === index">
+                        class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-inset rtl:text-right rtl:flex-row-reverse"
+                        :aria-expanded="openIndex === index"
+                        :aria-controls="`faq-answer-${index}`">
                         <span
                             class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-primary-400 transition-colors duration-200">{{
                             faq.q }}</span>
@@ -74,7 +75,7 @@ const toggle = (index: number) => {
                         </span>
                     </button>
 
-                    <div v-show="openIndex === index" class="px-6 pb-6 rtl:text-right">
+                    <div :id="`faq-answer-${index}`" v-show="openIndex === index" class="px-6 pb-6 rtl:text-right">
                         <p class="text-neutral-500 dark:text-neutral-400 leading-relaxed text-base md:text-lg">
                             {{ faq.a }}
                         </p>

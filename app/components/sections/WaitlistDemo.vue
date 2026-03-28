@@ -398,12 +398,12 @@ onMounted(() => {
                         </button>
                     </div>
 
-                    <div v-if="submitMessage"
+                    <div v-if="submitMessage" role="status" aria-live="polite"
                         class="text-center text-primary-400 font-medium mt-4 bg-primary-500/10 py-3 px-4 rounded-lg border border-primary-500/20">
                         {{ submitMessage }}
                     </div>
 
-                    <div v-if="submitError"
+                    <div v-if="submitError" role="alert" aria-live="assertive"
                         class="text-center text-red-400 font-medium mt-4 bg-red-500/10 py-3 px-4 rounded-lg border border-red-500/20">
                         {{ submitError }}
                     </div>

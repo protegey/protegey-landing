@@ -100,11 +100,11 @@ const scrollTo = (selector) => {
           <button @click="toggleMenu" :aria-expanded="isOpen"
             :aria-label="isOpen ? $t('nav.close_menu') : $t('nav.open_menu')"
             class="p-2 rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-300">
-            <svg v-if="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+            <svg v-if="!isOpen" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
               fill="currentColor">
               <path fill-rule="evenodd" d="M3 5h14v2H3V5zm0 4h14v2H3V9zm0 4h14v2H3v-2z" clip-rule="evenodd" />
             </svg>
-            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <svg v-else aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd"
                 d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                 clip-rule="evenodd" />
@@ -115,7 +115,8 @@ const scrollTo = (selector) => {
     </div>
 
     <!-- Mobile Menu -->
-    <div v-show="isOpen"
+    <div v-show="isOpen" role="navigation" :aria-label="$t('nav.mobile_menu_label')"
+      @keydown.escape="isOpen = false"
       class="md:hidden absolute left-0 right-0 top-full mt-2 mx-4 z-40 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300">
       <div class="px-4 py-4 flex flex-col gap-4">
         <NuxtLink :to="localePath('about')" @click="toggleMenu"

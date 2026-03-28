@@ -54,58 +54,50 @@
                     <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-6">{{ $t('contact.form.title') }}</h3>
                     <form @submit.prevent="handleSubmit" class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{ $t('contact.form.name')
-                                }}</label>
-                            <input v-model="formData.name" type="text" required
+                            <label for="contact-name" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{ $t('contact.form.name') }}</label>
+                            <input id="contact-name" v-model="formData.name" type="text" required
                                 class="w-full px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.name_placeholder')">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{ $t('contact.form.email')
-                                }}</label>
-                            <input v-model="formData.email" type="email" required
+                            <label for="contact-email" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{ $t('contact.form.email') }}</label>
+                            <input id="contact-email" v-model="formData.email" type="email" required
                                 class="w-full px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.email_placeholder')">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{
-                                $t('contact.form.phone')
-                                }}</label>
-                            <input v-model="formData.phone" type="tel"
+                            <label for="contact-phone" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{ $t('contact.form.phone') }}</label>
+                            <input id="contact-phone" v-model="formData.phone" type="tel"
                                 class="w-full px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.phone_placeholder')">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{
-                                $t('contact.form.country')
-                                }}</label>
-                            <input v-model="formData.country" type="text" required
+                            <label for="contact-country" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{ $t('contact.form.country') }}</label>
+                            <input id="contact-country" v-model="formData.country" type="text" required
                                 class="w-full px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.country_placeholder')">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{ $t('contact.form.message')
-                                }}</label>
-                            <textarea v-model="formData.message" rows="4" required
+                            <label for="contact-message" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{ $t('contact.form.message') }}</label>
+                            <textarea id="contact-message" v-model="formData.message" rows="4" required
                                 class="w-full px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors resize-none"
                                 :placeholder="$t('contact.form.message_placeholder')"></textarea>
                         </div>
                         <button type="submit" :disabled="isSubmitting"
                             class="w-full py-3 bg-primary-500 hover:bg-primary-400 text-neutral-950 font-bold rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                             <span>{{ isSubmitting ? $t('contact.form.submitting') : $t('contact.form.submit') }}</span>
-                            <svg v-if="!isSubmitting" class="w-4 h-4" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
+                            <svg v-if="!isSubmitting" class="w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                         </button>
 
-                        <div v-if="submitMessage"
+                        <div v-if="submitMessage" role="status" aria-live="polite"
                             class="p-4 rounded-lg bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm text-center">
                             {{ submitMessage }}
                         </div>
 
-                        <div v-if="submitError"
+                        <div v-if="submitError" role="alert" aria-live="assertive"
                             class="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm text-center">
                             {{ submitError }}
                         </div>

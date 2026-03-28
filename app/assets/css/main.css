@@ -70,6 +70,31 @@
     --color-bg-card:        #ffffff;
   }
 
+  /* Global focus-visible ring — keyboard navigation only, not mouse clicks */
+  :focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Skip navigation link for keyboard/screen reader users */
+  .skip-nav {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.5rem 1rem;
+    background: var(--color-primary-500);
+    color: #060d1c;
+    font-weight: 700;
+    border-radius: 0 0 4px 4px;
+    text-decoration: none;
+    transition: top 0.1s;
+  }
+  .skip-nav:focus {
+    top: 0;
+  }
+
   /* Dark theme (default for Protegey) */
   .dark {
     --color-text-primary:   #f1f4f8;
