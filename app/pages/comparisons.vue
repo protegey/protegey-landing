@@ -44,10 +44,10 @@ if (import.meta.server) {
                             <th class="p-5 border-b border-neutral-200 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400 w-1/4">{{ t('geo_pages.comparisons.table.global') }}</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-neutral-100 dark:divide-neutral-800/50">
+                    <tbody class="divide-y divide-neutral-100 dark:divide-neutral-700/50">
                         <tr v-for="row in rows" :key="row.key" class="group hover:bg-neutral-50 dark:hover:bg-white/5 transition-colors">
                             <td class="p-5 text-neutral-900 dark:text-white font-semibold text-sm">{{ t(`geo_pages.comparisons.table.${row.key}`) }}</td>
-                            <td class="p-5 bg-primary-500/5 text-sm">
+                            <td class="p-5 bg-primary-500/5 dark:bg-primary-500/10 text-sm">
                                 <span class="flex items-center gap-2 text-primary-300 font-medium">
                                     <span class="text-primary-400 text-base">✓</span>
                                     {{ t(`geo_pages.comparisons.table.${row.key}_protegey`) }}

@@ -112,7 +112,7 @@ onMounted(() => {
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div v-for="(item, index) in tm('products.mission.items')" :key="index"
-                            class="flex items-start gap-3 p-4 rounded-xl bg-neutral-100/50 dark:bg-white/5 text-sm text-neutral-500 dark:text-neutral-400 rtl:flex-row-reverse">
+                            class="flex items-start gap-3 p-4 rounded-xl bg-neutral-100/50 dark:bg-neutral-800/30 text-sm text-neutral-500 dark:text-neutral-400 rtl:flex-row-reverse">
                             <div
                                 class="mt-1 w-1.5 h-1.5 rounded-full bg-secondary-500 shadow-lg shadow-secondary-500/50 flex-shrink-0">
                             </div>

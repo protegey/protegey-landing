@@ -122,7 +122,7 @@ const localePath = useLocalePath()
 }
 
 .prose :deep(ol li) {
-    @apply flex items-start text-neutral-600 dark:text-neutral-300 text-lg bg-neutral-100/50 dark:bg-white/5 p-4 rounded-2xl border border-neutral-200/50 dark:border-white/5;
+    @apply flex items-start text-neutral-600 dark:text-neutral-300 text-lg bg-neutral-100/50 dark:bg-neutral-800/30 p-4 rounded-2xl border border-neutral-200/50 dark:border-neutral-700/30;
 }
 
 .prose :deep(ol li)::before {

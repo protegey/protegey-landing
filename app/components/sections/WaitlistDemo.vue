@@ -102,6 +102,11 @@ const handleSubmit = async () => {
         return
     }
 
+    if (!formData.value.country) {
+        submitError.value = t('waitlist.errors.country')
+        return
+    }
+
     // Company email validation
     const publicDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'protonmail.com', 'mail.com', 'zoho.com', 'yandex.com', 'live.com']
     const emailDomain = formData.value.email.split('@')[1]?.toLowerCase()
@@ -122,7 +127,13 @@ const handleSubmit = async () => {
             body: JSON.stringify(payload)
         })
 
-        if (!res.ok) throw new Error(await res.text())
+        if (!res.ok) {
+            if (res.status === 429) {
+                submitError.value = t('waitlist.errors.rate_limit')
+                return
+            }
+            throw new Error(await res.text())
+        }
 
         const data = await res.json()
 

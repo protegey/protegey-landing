@@ -80,7 +80,7 @@ onMounted(async () => {
 
                     <div class="relative z-10">
                         <div
-                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-primary-400 group-hover:scale-110 group-hover:bg-primary-500/20 transition-all duration-500 shadow-xl shadow-black/20">
+                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-primary-400 group-hover:scale-110 group-hover:bg-primary-500/20 transition-all duration-500 shadow-xl shadow-neutral-200/60 dark:shadow-black/20">
                             <HugeiconsIcon :icon="Activity01Icon" :size="32" />
                         </div>
                         <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-right">{{ $t('products.signal.title') }}
@@ -106,7 +106,7 @@ onMounted(async () => {
 
                     <div class="relative z-10">
                         <div
-                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-secondary-400 group-hover:scale-110 group-hover:bg-secondary-500/20 transition-all duration-500 shadow-xl shadow-black/20">
+                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-secondary-400 group-hover:scale-110 group-hover:bg-secondary-500/20 transition-all duration-500 shadow-xl shadow-neutral-200/60 dark:shadow-black/20">
                             <HugeiconsIcon :icon="ViewIcon" :size="32" />
                         </div>
                         <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-right">{{ $t('products.radar.title') }}
@@ -132,7 +132,7 @@ onMounted(async () => {
 
                     <div class="relative z-10">
                         <div
-                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-accent-cyan-400 group-hover:scale-110 group-hover:bg-accent-cyan-500/20 transition-all duration-500 shadow-xl shadow-black/20">
+                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-accent-cyan-400 group-hover:scale-110 group-hover:bg-accent-cyan-500/20 transition-all duration-500 shadow-xl shadow-neutral-200/60 dark:shadow-black/20">
                             <HugeiconsIcon :icon="Settings01Icon" :size="32" />
                         </div>
                         <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-right">{{ $t('products.api.title') }}
@@ -158,7 +158,7 @@ onMounted(async () => {
 
                     <div class="relative z-10">
                         <div
-                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-accent-orange-400 group-hover:scale-110 group-hover:bg-accent-orange-500/20 transition-all duration-500 shadow-xl shadow-black/20">
+                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-accent-orange-400 group-hover:scale-110 group-hover:bg-accent-orange-500/20 transition-all duration-500 shadow-xl shadow-neutral-200/60 dark:shadow-black/20">
                             <HugeiconsIcon :icon="DashboardSquare01Icon" :size="32" />
                         </div>
                         <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-right">{{ $t('products.console.title') }}
@@ -184,7 +184,7 @@ onMounted(async () => {
 
                     <div class="relative z-10">
                         <div
-                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-secondary-400 group-hover:scale-110 group-hover:bg-secondary-500/20 transition-all duration-500 shadow-xl shadow-black/20">
+                            class="mb-8 inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-secondary-400 group-hover:scale-110 group-hover:bg-secondary-500/20 transition-all duration-500 shadow-xl shadow-neutral-200/60 dark:shadow-black/20">
                             <HugeiconsIcon :icon="Shield01Icon" :size="32" />
                         </div>
                         <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-right">{{ $t('products.compliance.title')
@@ -211,7 +211,7 @@ onMounted(async () => {
                     <div class="relative z-10">
                         <div class="flex items-center justify-between mb-8">
                             <div
-                                class="inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-accent-cyan-400 group-hover:scale-110 group-hover:bg-accent-cyan-500/20 transition-all duration-500 shadow-xl shadow-black/20">
+                                class="inline-flex p-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-accent-cyan-400 group-hover:scale-110 group-hover:bg-accent-cyan-500/20 transition-all duration-500 shadow-xl shadow-neutral-200/60 dark:shadow-black/20">
                                 <HugeiconsIcon :icon="FingerPrintIcon" :size="32" />
                             </div>
                             <span

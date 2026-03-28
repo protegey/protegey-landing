@@ -146,7 +146,9 @@ const handleSubmit = async () => {
         }
     } catch (err) {
         console.error('Failed to submit contact form:', err)
-        submitError.value = t('contact.form.error')
+        submitError.value = (err && err.statusCode === 429)
+            ? t('contact.form.error_rate_limit')
+            : t('contact.form.error')
     } finally {
         isSubmitting.value = false
     }

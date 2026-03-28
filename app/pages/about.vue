@@ -29,7 +29,7 @@
                         :alt="$t('about_page.hero.image_alt')"
                         format="webp"
                         loading="lazy"
-                        class="w-full rounded-2xl border border-neutral-200 dark:border-neutral-800/50 shadow-2xl shadow-black/20 dark:shadow-black/60"
+                        class="w-full rounded-2xl border border-neutral-200 dark:border-neutral-800/50 shadow-2xl shadow-neutral-300/40 dark:shadow-black/60"
                     />
                 </div>
             </div>

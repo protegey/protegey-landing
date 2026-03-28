@@ -1,6 +1,6 @@
 <template>
   <footer role="contentinfo" :aria-label="$t('footer.aria_footer')"
-    class="relative z-10 py-12 px-6 border-t border-neutral-200 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950">
+    class="relative z-10 py-12 px-6 border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950">
     <div class="container mx-auto max-w-6xl">
       <div class="grid md:grid-cols-5 gap-8 mb-8">
         <!-- Brand -->
