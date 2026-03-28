@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     defaultLocale: 'fr',
     templateTitle: '%s %separator %siteName',
   },
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/image'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/image'],
   seo: {
     redirectToCanonicalSiteUrl: true
   },
