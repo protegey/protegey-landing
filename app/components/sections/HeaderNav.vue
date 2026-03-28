@@ -41,7 +41,7 @@ const scrollTo = (selector) => {
       <div class="flex items-center justify-between h-full">
         <div class="flex items-center gap-4">
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2">
-            <NuxtImg src="~/assets/images/logo.png" :alt="$t('footer.logo_alt')" width="32" height="32" class="w-8 h-8 object-contain" format="webp" />
+            <img src="/images/logo.png" :alt="$t('footer.logo_alt')" width="32" height="32" class="w-8 h-8 object-contain" />
             <span class="text-lg font-bold text-neutral-900 dark:text-white tracking-tight">Protegey</span>
           </NuxtLink>
         </div>

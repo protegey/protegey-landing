@@ -28,7 +28,7 @@ export default defineNuxtConfig({
         // Vercel Analytics script is loaded from same origin via the @vercel/analytics package.
         'Content-Security-Policy': [
           "default-src 'none'",
-          "script-src 'self' 'unsafe-inline'",
+          "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
           "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
           "font-src 'self' https://fonts.gstatic.com",
           "img-src 'self' data: blob: https://images.squarespace-cdn.com https://www.tonyelumelufoundation.org",
