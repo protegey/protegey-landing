@@ -13,7 +13,7 @@
                         {{ $t('about_page.hero.badge') }}
                     </div>
 
-                    <h1 data-reveal class="hero-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 leading-[0.95]" style="--delay:80ms">
+                    <h1 data-reveal class="hero-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 leading-[0.95]" style="--delay:80ms">
                         {{ $t('about_page.hero.title') }}
                     </h1>
 

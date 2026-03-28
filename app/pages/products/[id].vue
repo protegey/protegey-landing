@@ -143,7 +143,7 @@ useHead({
                         <p class="text-primary-500 font-bold tracking-[0.2em] uppercase text-sm mb-4">{{
                             $t(`products.${productId}.tagline`) }}</p>
                         <h1
-                            class="text-4xl sm:text-6xl md:text-8xl font-bold text-neutral-900 dark:text-white mb-8 tracking-tight capitalize leading-none">
+                            class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-neutral-900 dark:text-white mb-8 tracking-tight capitalize leading-none">
                             {{ $t(`products.${productId}.title`) }}
                         </h1>
                         <p

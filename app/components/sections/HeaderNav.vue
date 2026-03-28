@@ -99,7 +99,7 @@ const scrollTo = (selector) => {
           <ThemeToggle />
           <button @click="toggleMenu" :aria-expanded="isOpen"
             :aria-label="isOpen ? $t('nav.close_menu') : $t('nav.open_menu')"
-            class="p-2 rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-300">
+            class="p-2.5 rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-300">
             <svg v-if="!isOpen" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
               fill="currentColor">
               <path fill-rule="evenodd" d="M3 5h14v2H3V5zm0 4h14v2H3V9zm0 4h14v2H3v-2z" clip-rule="evenodd" />

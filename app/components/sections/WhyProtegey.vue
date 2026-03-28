@@ -70,7 +70,7 @@ onMounted(async () => {
                         $t('why_protegey.title') }}</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
                     <!-- Cards -->
                     <div ref="cardRefs[0]"
                         class="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 flex flex-col shadow-lg hover:shadow-primary-500/10 hover:border-primary-500/30 transition-all duration-300 relative overflow-hidden">

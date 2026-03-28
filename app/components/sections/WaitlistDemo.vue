@@ -214,7 +214,7 @@ onMounted(() => {
             </div>
 
             <div
-                class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl p-8 md:p-12 fade-up delay-200 relative overflow-hidden">
+                class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 fade-up delay-200 relative overflow-hidden">
                 <!-- Glow effect -->
                 <div
                     class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500">

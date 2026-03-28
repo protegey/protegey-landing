@@ -56,25 +56,25 @@
                         <div>
                             <label for="contact-name" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{ $t('contact.form.name') }}</label>
                             <input id="contact-name" v-model="formData.name" type="text" required
-                                class="w-full px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors"
+                                class="w-full px-4 py-3 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.name_placeholder')">
                         </div>
                         <div>
                             <label for="contact-email" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{ $t('contact.form.email') }}</label>
                             <input id="contact-email" v-model="formData.email" type="email" required
-                                class="w-full px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors"
+                                class="w-full px-4 py-3 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.email_placeholder')">
                         </div>
                         <div>
                             <label for="contact-phone" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{ $t('contact.form.phone') }}</label>
                             <input id="contact-phone" v-model="formData.phone" type="tel"
-                                class="w-full px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors"
+                                class="w-full px-4 py-3 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.phone_placeholder')">
                         </div>
                         <div>
                             <label for="contact-country" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">{{ $t('contact.form.country') }}</label>
                             <input id="contact-country" v-model="formData.country" type="text" required
-                                class="w-full px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors"
+                                class="w-full px-4 py-3 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-primary-500 transition-colors"
                                 :placeholder="$t('contact.form.country_placeholder')">
                         </div>
                         <div>
