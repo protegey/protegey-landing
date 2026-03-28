@@ -47,7 +47,7 @@ const organizationSchema = computed(() => ({
   "@type": "Organization",
   "name": "Protegey",
   "url": baseUrl,
-  "logo": `${baseUrl}/og-image.png`,
+  "logo": `${baseUrl}/og-image.jpg`,
   "sameAs": [
     "https://www.linkedin.com/company/protegeyhq/",
     "https://x.com/ProtegeyHQ"

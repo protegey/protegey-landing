@@ -24,9 +24,11 @@
 
                 <div data-reveal class="mt-16 md:mt-24 relative max-w-5xl mx-auto" style="--delay:240ms">
                     <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-neutral-50 dark:from-neutral-950 to-transparent z-10 pointer-events-none rounded-b-2xl" />
-                    <img
+                    <NuxtImg
                         src="/images/about-hero.png"
                         :alt="$t('about_page.hero.image_alt')"
+                        format="webp"
+                        loading="lazy"
                         class="w-full rounded-2xl border border-neutral-200 dark:border-neutral-800/50 shadow-2xl shadow-black/20 dark:shadow-black/60"
                     />
                 </div>

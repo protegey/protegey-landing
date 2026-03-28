@@ -22,7 +22,7 @@ useHead({
 </script>
 
 <template>
-  <div class="min-h-screen bg-neutral-950 text-white flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans">
+  <div class="min-h-screen bg-neutral-950 text-white flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans" role="main">
     <!-- Grid Background -->
     <div class="absolute inset-0 z-0">
       <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
@@ -31,14 +31,14 @@ useHead({
 
     <!-- Scanning Radar Animation -->
     <div class="absolute inset-0 z-0 pointer-events-none opacity-20">
-      <div class="scanner-line h-[1px] w-full bg-primary-500/50 absolute top-0 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
+      <div class="scanner-line h-[1px] w-full bg-primary-500/50 absolute top-0 shadow-[0_0_15px_rgba(12,185,158,0.5)]"></div>
     </div>
 
     <!-- Content -->
     <div class="relative z-10 max-w-2xl w-full text-center space-y-8 animate-fade-in">
       <!-- Status Code with Glow -->
       <div class="relative inline-block">
-        <h1 class="text-[12rem] md:text-[16rem] font-black text-white/5 leading-none select-none tracking-tighter">
+        <h1 class="text-[7rem] sm:text-[10rem] md:text-[14rem] font-black text-white/5 leading-none select-none tracking-tighter">
           {{ statusCode }}
         </h1>
         <div class="absolute inset-0 flex items-center justify-center">

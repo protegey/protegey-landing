@@ -16,11 +16,30 @@ export default defineNuxtConfig({
     '/**': {
       swr: 3600,
       headers: {
+        // Clickjacking — superseded by frame-ancestors in CSP but kept for older browsers
         'X-Frame-Options': 'SAMEORIGIN',
         'X-Content-Type-Options': 'nosniff',
         'Referrer-Policy': 'strict-origin-when-cross-origin',
         'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
         'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
+        // Content Security Policy
+        // script-src requires 'unsafe-inline' for Nuxt SSR hydration payload scripts.
+        // All external calls to Notion/Mailtrap are server-side only — not in connect-src.
+        // Vercel Analytics script is loaded from same origin via the @vercel/analytics package.
+        'Content-Security-Policy': [
+          "default-src 'none'",
+          "script-src 'self' 'unsafe-inline'",
+          "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+          "font-src 'self' https://fonts.gstatic.com",
+          "img-src 'self' data: blob: https://images.squarespace-cdn.com https://www.tonyelumelufoundation.org",
+          "connect-src 'self' https://vitals.vercel-insights.com",
+          "frame-src 'none'",
+          "frame-ancestors 'none'",
+          "base-uri 'self'",
+          "form-action 'self'",
+          "object-src 'none'",
+          "upgrade-insecure-requests",
+        ].join('; '),
       }
     },
 
@@ -80,7 +99,7 @@ export default defineNuxtConfig({
     notionDatabaseId: process.env.NOTION_DATABASE_ID,
     mailtrapToken: process.env.MAILTRAP_TOKEN,
     public: {
-      vercelAnalyticsEnabled: process.env.VERCEL_ANALYTICS_ENABLED !== 'true'
+      vercelAnalyticsEnabled: process.env.VERCEL_ANALYTICS_ENABLED === 'true'
     }
   },
   app: {
@@ -106,7 +125,8 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        { rel: "icon", type: "image/png", href: "/favicon.png" },
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96x96.png" },
         { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
         { rel: "preconnect", href: "https://images.squarespace-cdn.com" },
         { rel: "preconnect", href: "https://www.tonyelumelufoundation.org" },
