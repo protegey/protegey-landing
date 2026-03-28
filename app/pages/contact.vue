@@ -181,7 +181,7 @@ if (import.meta.server) {
     defineOgImageComponent('NuxtSeo', {
         title: t('seo.contact.title'),
         description: t('seo.contact.description'),
-        theme: '#0E1225',
+        theme: '#0B1741',
         colorMode: 'dark',
     })
 

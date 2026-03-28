@@ -69,7 +69,7 @@ if (import.meta.server) {
     defineOgImageComponent('NuxtSeo', {
         title: t('seo.product_detail.title', { name: t(`products.${productId}.title`) }),
         description: t(`products.${productId}.description`),
-        theme: '#0E1225',
+        theme: '#0B1741',
         colorMode: 'dark',
     })
 
@@ -158,7 +158,7 @@ useHead({
                     <!-- Why we built it -->
                     <div class="p-10 rounded-[2.5rem] bg-neutral-900/30 border border-neutral-800 flex flex-col">
                         <div
-                            class="w-12 h-12 rounded-2xl bg-violet-500/10 text-violet-400 flex items-center justify-center mb-6 rtl:self-end">
+                            class="w-12 h-12 rounded-2xl bg-secondary-500/10 text-secondary-400 flex items-center justify-center mb-6 rtl:self-end">
                             <HugeiconsIcon :icon="UserGroupIcon" :size="24" />
                         </div>
                         <h2 class="text-2xl font-bold text-white mb-6 rtl:text-right">{{ $t('products.why_built_title')
@@ -170,7 +170,7 @@ useHead({
                     <!-- What you can do -->
                     <div class="p-10 rounded-[2.5rem] bg-neutral-900/30 border border-neutral-800 flex flex-col">
                         <div
-                            class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6 rtl:self-end">
+                            class="w-12 h-12 rounded-2xl bg-accent-cyan-500/10 text-accent-cyan-400 flex items-center justify-center mb-6 rtl:self-end">
                             <HugeiconsIcon :icon="ZapIcon" :size="24" />
                         </div>
                         <h2 class="text-2xl font-bold text-white mb-6 rtl:text-right">{{
@@ -228,14 +228,14 @@ useHead({
                     <!-- Target Users -->
                     <div class="space-y-8">
                         <h2 class="text-4xl font-bold text-white mb-12 flex items-center gap-4 rtl:flex-row-reverse">
-                            <span class="w-1.5 h-10 bg-violet-500 rounded-full"></span>
+                            <span class="w-1.5 h-10 bg-secondary-500 rounded-full"></span>
                             {{ $t('products.target_users_title') }}
                         </h2>
                         <div class="grid gap-4">
                             <div v-for="(user, index) in tm(`products.${productId}.target_users`)" :key="index"
                                 class="flex items-center gap-4 p-5 rounded-2xl bg-neutral-900/40 border border-neutral-800/50 hover:bg-neutral-900 transition-colors group rtl:flex-row-reverse">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                                    class="w-10 h-10 rounded-xl bg-secondary-500/10 text-secondary-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                                     <HugeiconsIcon :icon="UserIcon" :size="20" />
                                 </div>
                                 <span class="text-neutral-300 font-medium rtl:text-right">{{ rt(user) }}</span>
@@ -300,7 +300,7 @@ useHead({
                 class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[150px] translate-x-1/3 -translate-y-1/3">
             </div>
             <div
-                class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-violet-500/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3">
+                class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary-500/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3">
             </div>
         </div>
     </div>

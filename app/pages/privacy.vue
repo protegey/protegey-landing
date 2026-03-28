@@ -68,7 +68,7 @@ if (import.meta.server) {
     defineOgImageComponent('NuxtSeo', {
         title: t('seo.privacy.title'),
         description: t('seo.privacy.description'),
-        theme: '#0E1225',
+        theme: '#0B1741',
         colorMode: 'dark',
     })
 

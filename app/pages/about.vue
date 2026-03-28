@@ -182,7 +182,7 @@ const localePath = useLocalePath()
 const values = [
     { key: 'trust',      icon: Shield01Icon, colorClass: 'text-primary-400',   bgClass: 'bg-primary-500/10' },
     { key: 'innovation', icon: ZapIcon,       colorClass: 'text-secondary-400', bgClass: 'bg-secondary-500/10' },
-    { key: 'impact',     icon: ChartIcon,     colorClass: 'text-emerald-400',   bgClass: 'bg-emerald-500/10' },
+    { key: 'impact',     icon: ChartIcon,     colorClass: 'text-accent-cyan-400',   bgClass: 'bg-accent-cyan-500/10' },
 ]
 
 const pageRoot = ref(null)
@@ -227,7 +227,7 @@ if (import.meta.server) {
     defineOgImageComponent('NuxtSeo', {
         title: t('seo.about_page.title'),
         description: t('seo.about_page.description'),
-        theme: '#0E1225',
+        theme: '#0B1741',
         colorMode: 'dark',
     })
 
@@ -250,7 +250,7 @@ if (import.meta.server) {
 
 <style scoped>
 .hero-headline {
-    background: linear-gradient(135deg, #ffffff 20%, #a3e635 60%, #a855f7 100%);
+    background: linear-gradient(135deg, #ffffff 20%, #0cb99e 60%, #1b59ae 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
