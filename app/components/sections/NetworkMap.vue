@@ -57,13 +57,13 @@ const draw = () => {
         // Draw node
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.type === 'hub' ? 4 : 2, 0, Math.PI * 2);
-        ctx.fillStyle = node.type === 'hub' ? '#a3e635' : '#4b5563';
+        ctx.fillStyle = node.type === 'hub' ? '#0cb99e' : '#1e3169';
         ctx.fill();
 
         // Glow for hubs
         if (node.type === 'hub') {
             ctx.shadowBlur = 10;
-            ctx.shadowColor = '#a3e635';
+            ctx.shadowColor = '#0cb99e';
         } else {
             ctx.shadowBlur = 0;
         }
@@ -82,7 +82,7 @@ const draw = () => {
                 ctx.moveTo(nodes[i].x, nodes[i].y);
                 ctx.lineTo(nodes[j].x, nodes[j].y);
                 const opacity = 1 - distance / 150;
-                ctx.strokeStyle = `rgba(163, 230, 53, ${opacity * 0.2})`;
+                ctx.strokeStyle = `rgba(12, 185, 158, ${opacity * 0.2})`;
                 ctx.stroke();
             }
         }
@@ -183,10 +183,10 @@ onUnmounted(() => {
 
                 <!-- Step 3 -->
                 <div
-                    class="network-step relative bg-neutral-900/80 backdrop-blur border border-neutral-800 p-8 rounded-2xl hover:border-emerald-500/30 transition-colors group">
+                    class="network-step relative bg-neutral-900/80 backdrop-blur border border-neutral-800 p-8 rounded-2xl hover:border-primary-500/30 transition-colors group">
                     <div
-                        class="w-12 h-12 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors">
-                        <span class="text-2xl font-mono font-bold text-emerald-500">03</span>
+                        class="w-12 h-12 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-500/20 transition-colors">
+                        <span class="text-2xl font-mono font-bold text-primary-400">03</span>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Stop Fraud</h3>
                     <p class="text-neutral-400">

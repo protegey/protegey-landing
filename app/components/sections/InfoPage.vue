@@ -49,7 +49,7 @@ const localePath = useLocalePath()
                             class="group flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all duration-300 border border-transparent"
                             :class="[
                                 route.path.endsWith(item.path)
-                                    ? 'bg-primary-500/10 text-primary-400 border-primary-500/20 shadow-[0_0_20px_rgba(132,204,22,0.1)]'
+                                    ? 'bg-primary-500/10 text-primary-400 border-primary-500/20 shadow-[0_0_20px_rgba(12,185,158,0.1)]'
                                     : 'text-neutral-500 hover:text-white hover:bg-white/5'
                             ]">
                             <span class="w-1.5 h-1.5 rounded-full me-3 transition-colors"

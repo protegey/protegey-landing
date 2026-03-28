@@ -184,7 +184,7 @@ onUnmounted(() => {
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <button @click.prevent="scrollTo('waitlist')"
-                            class="hero-cta-button group bg-primary-500 hover:bg-primary-400 text-neutral-950 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(132,204,22,0.3)] hover:shadow-[0_0_30px_rgba(132,204,22,0.5)]">
+                            class="hero-cta-button group bg-primary-500 hover:bg-primary-400 text-neutral-950 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(12,185,158,0.3)] hover:shadow-[0_0_30px_rgba(12,185,158,0.5)]">
                             <HugeiconsIcon :icon="Shield01Icon" :size="20"
                                 class="text-white group-hover:text-white transition-colors" />
                             {{ $t('hero.cta.request_demo') }}
