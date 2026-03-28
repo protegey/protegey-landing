@@ -105,7 +105,7 @@ useHead(() => ({
 </script>
 
 <template>
-  <div class="min-h-screen relative z-10 text-gray-900 dark:text-white transition-colors duration-200">
+  <div class="min-h-screen relative z-10 text-neutral-950 dark:text-white transition-colors duration-200">
     <HeaderNav />
     <slot />
     <Footer />
