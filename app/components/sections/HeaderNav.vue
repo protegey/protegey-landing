@@ -208,7 +208,12 @@ const getIndustries = () => {
           <div class="relative h-full flex items-center" 
                @mouseenter="openDropdown('solutions')" @mouseleave="closeDropdown">
             <button class="flex items-center gap-1 text-sm font-medium transition-colors"
-               :class="activeDropdown === 'solutions' ? 'text-primary-500' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white'">
+               :class="activeDropdown === 'solutions' ? 'text-primary-500' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white'"
+               @click="activeDropdown = activeDropdown === 'solutions' ? null : 'solutions'"
+               @focus="openDropdown('solutions')"
+               @blur="closeDropdown()"
+               aria-haspopup="true"
+               :aria-expanded="activeDropdown === 'solutions'">
                {{ $t('nav.solutions') }}
                <HugeiconsIcon :icon="ArrowDown01Icon" :size="12" class="transition-transform duration-300" :class="{ 'rotate-180': activeDropdown === 'solutions' }" />
             </button>

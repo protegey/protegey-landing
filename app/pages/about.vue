@@ -29,9 +29,10 @@
                     <div class="absolute inset-x-0 -bottom-1 h-32 bg-gradient-to-t from-neutral-50 dark:from-neutral-950 to-transparent z-10 pointer-events-none" />
                     <div class="relative rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800/50 shadow-2xl backdrop-blur-3xl">
                         <NuxtImg
-                            src="/images/about-hero.png"
+                            src="/images/about-hero.webp"
                             :alt="$t('about_page.hero.image_alt')"
-                            format="webp"
+                            width="640"
+                            height="640"
                             class="w-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]"
                         />
                     </div>
