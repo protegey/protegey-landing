@@ -136,23 +136,23 @@ onMounted(() => {
 </script>
 
 <template>
-    <div v-if="industryData" class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 pt-32 pb-24 overflow-hidden">
+    <div v-if="industryData" class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 pt-36 pb-24 md:pt-44 overflow-hidden">
         <div class="absolute inset-0 pointer-events-none overflow-hidden">
             <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[150px] translate-x-1/3 -translate-y-1/3"></div>
             <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary-500/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3"></div>
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <NuxtLink :to="localePath('/use-cases')" class="inline-flex items-center gap-2 text-sm font-bold text-neutral-500 hover:text-primary-500 transition-colors mb-12 group">
+            <NuxtLink :to="localePath('/use-cases')" class="inline-flex items-center gap-2 text-sm font-bold text-neutral-500 hover:text-primary-500 transition-colors mb-10 group">
                 <ClientOnly><HugeiconsIcon :icon="ArrowLeft01Icon" :size="18" class="group-hover:-translate-x-1 transition-transform" /></ClientOnly>
                 {{ $t('nav.industries') }}
             </NuxtLink>
 
             <div class="max-w-4xl mb-24 industry-hero">
-                <div class="w-16 h-16 rounded-2xl bg-neutral-100 dark:bg-neutral-900 text-primary-500 flex items-center justify-center mb-8 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+                <div class="w-16 h-16 rounded-2xl bg-neutral-100 dark:bg-neutral-900 text-primary-500 flex items-center justify-center mb-10 border border-neutral-200 dark:border-neutral-800 shadow-sm">
                     <ClientOnly><HugeiconsIcon :icon="industryData.icon" :size="32" /></ClientOnly>
                 </div>
-                <h1 class="text-4xl md:text-5xl font-black text-neutral-900 dark:text-white mb-6 tracking-tight leading-tight">
+                <h1 class="text-4xl md:text-5xl font-black text-neutral-900 dark:text-white mb-8 tracking-tight leading-tight">
                     {{ industryData.title }}
                 </h1>
                 <p class="text-xl text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-2xl">

@@ -45,7 +45,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 pt-24 pb-20 overflow-hidden">
+    <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 pt-28 pb-20 md:pt-36 overflow-hidden">
         <!-- Technical Background Grid -->
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808007_1px,transparent_1px),linear-gradient(to_bottom,#80808007_1px,transparent_1px)] bg-[size:64px_64px]"></div>

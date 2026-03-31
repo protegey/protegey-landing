@@ -2,7 +2,7 @@
     <div ref="pageRoot" class="bg-neutral-50 dark:bg-neutral-950 min-h-screen overflow-hidden">
 
         <!-- ── Hero ──────────────────────────────────────────── -->
-        <section class="relative pt-20 pb-10 md:pt-28 md:pb-20 overflow-hidden">
+        <section class="relative pt-28 pb-16 md:pt-40 md:pb-28 overflow-hidden">
             <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808007_1px,transparent_1px),linear-gradient(to_bottom,#80808007_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
             
             <!-- Animated Background Glows -->
@@ -11,12 +11,12 @@
 
             <div class="container mx-auto px-4 max-w-7xl relative z-10">
                 <div class="max-w-4xl mx-auto text-center">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary-500/20 bg-primary-500/5 text-primary-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-10">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary-500/20 bg-primary-500/5 text-primary-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-12">
                         <span class="w-1.5 h-1.5 rounded-full bg-primary-400 shadow-[0_0_10px_#22c55e]" />
                         {{ $t('about_page.hero.badge') }}
                     </div>
 
-                    <h1 class="hero-headline text-4xl sm:text-5xl lg:text-5xl font-bold tracking-tighter mb-6 leading-[1.1]">
+                    <h1 class="hero-headline text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter mb-8 leading-[1.1]">
                         {{ $t('about_page.hero.title') }}
                     </h1>
 

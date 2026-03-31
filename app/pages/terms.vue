@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-neutral-50 dark:bg-neutral-950 min-h-screen overflow-hidden relative pt-24 pb-20">
+    <div class="bg-neutral-50 dark:bg-neutral-950 min-h-screen overflow-hidden relative pt-28 pb-20 md:pt-36">
         <!-- Technical Background -->
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808007_1px,transparent_1px),linear-gradient(to_bottom,#80808007_1px,transparent_1px)] bg-[size:64px_64px]"></div>
@@ -7,11 +7,11 @@
         </div>
 
         <div class="container mx-auto px-4 max-w-4xl relative z-10">
-            <div data-reveal class="mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-500/20 bg-neutral-500/5 text-neutral-500 text-[10px] font-bold tracking-[0.2em] mb-8 uppercase">
+            <div data-reveal class="mb-20">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-500/20 bg-neutral-500/5 text-neutral-500 text-[10px] font-bold tracking-[0.2em] mb-10 uppercase">
                     Legal Documentation
                 </div>
-                <h1 class="hero-title text-4xl md:text-5xl font-bold tracking-tighter text-neutral-900 dark:text-white mb-6 leading-none">
+                <h1 class="hero-title text-4xl md:text-5xl font-bold tracking-tighter text-neutral-900 dark:text-white mb-8 leading-none">
                     {{ $t('terms.title') }}
                 </h1>
                 <p class="text-neutral-500 dark:text-neutral-500 font-mono text-sm uppercase tracking-widest">{{ $t('terms.last_updated') }}</p>

@@ -1,7 +1,7 @@
 <template>
     <div class="bg-neutral-50 dark:bg-neutral-950 min-h-screen overflow-hidden">
         <!-- ── Hero ──────────────────────────────────────────── -->
-        <section class="relative pt-20 pb-10 md:pt-28 md:pb-16 overflow-hidden">
+        <section class="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
             <!-- Grid background -->
             <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808007_1px,transparent_1px),linear-gradient(to_bottom,#80808007_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
             
@@ -12,14 +12,14 @@
             <div class="container mx-auto px-4 max-w-7xl relative z-10">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div>
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-[10px] font-bold tracking-[0.2em] mb-8 uppercase">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-[10px] font-bold tracking-[0.2em] mb-10 uppercase">
                             <span class="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse" />
                             Developer Hub v1.0
                         </div>
-                        <h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-6 leading-[1.1]">
+                        <h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-8 leading-[1.1]">
                             Built for <span class="text-primary-400">Builders</span>.
                         </h1>
-                        <p class="text-base md:text-lg text-neutral-600 dark:text-neutral-400 max-w-lg mb-8 leading-relaxed font-medium">
+                        <p class="text-base md:text-lg text-neutral-600 dark:text-neutral-400 max-w-lg mb-10 leading-relaxed font-medium">
                             Integrate Africa's most advanced fraud intelligence infrastructure with just a few lines of code. Flexible gRPC, REST, and mobile SDKs.
                         </p>
                         

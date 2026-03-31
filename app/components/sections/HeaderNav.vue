@@ -32,6 +32,7 @@ import {
 const { t, tm, rt, locale } = useI18n()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
+const { isDark } = useTheme()
 
 const isOpen = ref(false)
 const isScrolled = ref(false)
@@ -209,8 +210,8 @@ const getIndustries = () => {
         <!-- Logo -->
         <div class="flex items-center gap-4">
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2">
-            <img src="/images/logo-dark.svg" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none dark:hidden" />
-            <img src="/images/logo-light.svg" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none hidden dark:block" />
+            <img src="/images/logo-dark.svg" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none" :class="isDark ? 'hidden' : 'block'" />
+            <img src="/images/logo-light.svg" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none" :class="isDark ? 'block' : 'hidden'" />
             <!-- <span class="text-lg font-bold text-neutral-900 dark:text-white tracking-tight">Protegey</span> -->
           </NuxtLink>
         </div>
@@ -406,8 +407,8 @@ const getIndustries = () => {
           <!-- Header for Mobile Menu -->
           <div class="h-16 px-6 flex items-center justify-between border-b border-neutral-200 dark:border-neutral-900 shrink-0">
             <div class="flex items-center gap-2">
-              <img src="/images/logo-dark.svg" :alt="$t('footer.logo_alt')" class="w-7 h-7 object-contain dark:hidden" />
-              <img src="/images/logo-light.svg" :alt="$t('footer.logo_alt')" class="w-7 h-7 object-contain hidden dark:block" />
+              <img src="/images/logo-dark.svg" :alt="$t('footer.logo_alt')" class="h-6 w-auto max-w-none" :class="isDark ? 'hidden' : 'block'" />
+              <img src="/images/logo-light.svg" :alt="$t('footer.logo_alt')" class="h-6 w-auto max-w-none" :class="isDark ? 'block' : 'hidden'" />
               <span class="text-base font-bold text-neutral-900 dark:text-white tracking-tight">Protegey</span>
             </div>
             <button @click="toggleMenu" class="p-2 text-neutral-500 dark:text-neutral-400" :aria-label="$t('a11y.close_menu')">

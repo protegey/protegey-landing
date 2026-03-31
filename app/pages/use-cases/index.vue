@@ -78,7 +78,7 @@ usePageMeta({
 </script>
 
 <template>
-    <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 pt-32 pb-24 overflow-hidden">
+    <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 pt-36 pb-24 md:pt-44 overflow-hidden">
         <div class="absolute inset-0 pointer-events-none overflow-hidden">
             <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[150px] translate-x-1/3 -translate-y-1/3"></div>
             <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary-500/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3"></div>
@@ -86,10 +86,10 @@ usePageMeta({
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-4xl mx-auto text-center mb-24">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-bold tracking-widest uppercase mb-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-bold tracking-widest uppercase mb-8">
                     {{ $t('nav.industries') }}
                 </div>
-                <h1 class="text-4xl md:text-6xl font-black text-neutral-900 dark:text-white mb-6 tracking-tight leading-tight">
+                <h1 class="text-4xl md:text-6xl font-black text-neutral-900 dark:text-white mb-8 tracking-tight leading-tight">
                     {{ $t('industries.title') }}
                 </h1>
                 <p class="text-xl text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-2xl mx-auto">

@@ -67,15 +67,15 @@ if (import.meta.server) {
     <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
 
         <!-- Hero -->
-        <section class="relative pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
+        <section class="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[700px] bg-gradient-to-b from-primary-500/8 via-transparent to-transparent pointer-events-none"></div>
             <div class="container mx-auto px-6 relative z-10">
                 <div class="max-w-4xl mx-auto text-center">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-bold tracking-widest uppercase mb-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-bold tracking-widest uppercase mb-10">
                         <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
                         {{ $t('solutions.badge') }}
                     </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-neutral-900 dark:text-white mb-6 tracking-tight leading-tight">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-neutral-900 dark:text-white mb-8 tracking-tight leading-tight">
                         {{ $t('solutions.hero.title_start') }}
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
                             {{ $t('solutions.hero.title_highlight') }}

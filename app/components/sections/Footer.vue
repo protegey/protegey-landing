@@ -6,8 +6,8 @@
         <!-- Brand -->
         <div>
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2 mb-4 rtl:justify-end">
-            <img src="/images/logo-dark.svg" :alt="$t('footer.logo_alt')" class="block h-8 w-auto max-w-none shrink-0 dark:hidden" />
-            <img src="/images/logo-light.svg" :alt="$t('footer.logo_alt')" class="hidden h-8 w-auto max-w-none shrink-0 dark:block" />
+            <img src="/images/logo-dark.svg" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none shrink-0" :class="isDark ? 'hidden' : 'block'" />
+            <img src="/images/logo-light.svg" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none shrink-0" :class="isDark ? 'block' : 'hidden'" />
           </NuxtLink>
           <p class="text-sm text-neutral-500 dark:text-neutral-400 rtl:text-right">{{ $t('footer.slogan') }}</p>
         </div>
@@ -189,9 +189,8 @@
 
 <script setup>
 import { computed } from 'vue'
-import { HugeiconsIcon } from '@hugeicons/vue'
-import { Shield01Icon } from '@hugeicons/core-free-icons'
 
 const currentYear = computed(() => new Date().getFullYear())
 const localePath = useLocalePath()
+const { isDark } = useTheme()
 </script>

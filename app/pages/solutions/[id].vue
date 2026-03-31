@@ -101,12 +101,12 @@ if (import.meta.server) {
 </script>
 
 <template>
-    <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 pt-24 md:pt-32 pb-16 overflow-hidden">
+    <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 pt-28 md:pt-40 pb-16 overflow-hidden">
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-7xl mx-auto">
                 <!-- Back Link -->
                     <NuxtLink :to="localePath('/solutions')"
-                        class="inline-flex items-center gap-2 text-neutral-400 dark:text-neutral-500 hover:text-primary-400 mb-16 transition-colors group rtl:flex-row-reverse">
+                        class="inline-flex items-center gap-2 text-neutral-400 dark:text-neutral-500 hover:text-primary-400 mb-12 transition-colors group rtl:flex-row-reverse">
                         <span
                             class="group-hover:-translate-x-1 rtl:group-hover:translate-x-1 transition-transform rtl:rotate-180">←</span>
                         {{ $t('solutions.back_to_all')
@@ -118,7 +118,7 @@ if (import.meta.server) {
                         class="flex flex-col lg:flex-row gap-12 lg:items-start mb-32 rtl:lg:flex-row-reverse rtl:lg:items-start">
                         <div class="shrink-0 flex flex-col items-center lg:items-start rtl:lg:items-end">
                             <div
-                                class="inline-flex p-5 rounded-2xl bg-white/90 dark:bg-neutral-900/50 backdrop-blur-sm border border-neutral-200 dark:border-neutral-800 text-primary-400 shadow-2xl shadow-primary-500/10 mb-6">
+                                class="inline-flex p-5 rounded-2xl bg-white/90 dark:bg-neutral-900/50 backdrop-blur-sm border border-neutral-200 dark:border-neutral-800 text-primary-400 shadow-2xl shadow-primary-500/10 mb-8">
                                 <HugeiconsIcon :icon="productIcon" :size="64" />
                             </div>
                             <div v-if="$te(`solutions.modules.${productId}.status`)"
@@ -128,10 +128,10 @@ if (import.meta.server) {
                         </div>
     
                         <div class="flex-1 text-center lg:text-left rtl:lg:text-right">
-                            <p class="text-primary-500 font-bold tracking-[0.2em] uppercase text-sm mb-4">{{
+                            <p class="text-primary-500 font-bold tracking-[0.2em] uppercase text-sm mb-6">{{
                                 $t(`solutions.modules.${productId}.tagline`) }}</p>
                             <h1
-                                class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-6 tracking-tight capitalize leading-none">
+                                class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-8 tracking-tight capitalize leading-none">
                                 {{ $t(`solutions.modules.${productId}.title`) }}
                             </h1>
                             <p
