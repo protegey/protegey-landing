@@ -102,24 +102,17 @@ useHead({
 })
 
 onMounted(() => {
-  // Fix for accessibility issue where data-aria-hidden is incorrectly applied
-  const content = document.querySelector('.min-h-screen.bg-neutral-50')
-  if (content) {
-    content.removeAttribute('data-aria-hidden')
-    content.removeAttribute('aria-hidden')
-  }
-
-  const header = document.querySelector('header')
-  if (header) {
-    header.removeAttribute('data-aria-hidden')
-    header.removeAttribute('aria-hidden')
-  }
-
-  const footer = document.querySelector('footer')
-  if (footer) {
-    footer.removeAttribute('data-aria-hidden')
-    footer.removeAttribute('aria-hidden')
-  }
+  // GSAP ScrollTrigger incorrectly sets aria-hidden on semantic elements
+  // when pinning sections. This restores accessibility for screen readers.
+  // Root cause: ScrollTrigger.create({ pin: true }) adds data-aria-hidden
+  // to elements outside its target scope.
+  ;['.min-h-screen.bg-neutral-50', 'header', 'footer'].forEach(sel => {
+    const el = document.querySelector(sel)
+    if (el) {
+      el.removeAttribute('data-aria-hidden')
+      el.removeAttribute('aria-hidden')
+    }
+  })
 })
 </script>
 

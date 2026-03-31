@@ -59,6 +59,20 @@ const handleKeydown = (e) => {
     isOpen.value = false
     activeMobileSection.value = null
   }
+  if (e.key === 'Tab' && isOpen.value) {
+    const menu = document.querySelector('[role="dialog"]')
+    if (!menu) return
+    const focusable = menu.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault()
+      last.focus()
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault()
+      first.focus()
+    }
+  }
 }
 
 const openDropdown = (name) => {
@@ -248,7 +262,12 @@ const getIndustries = () => {
           <div class="relative h-full flex items-center" 
                @mouseenter="openDropdown('industries')" @mouseleave="closeDropdown">
             <button class="flex items-center gap-1 text-sm font-medium transition-colors"
-               :class="activeDropdown === 'industries' ? 'text-primary-500' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white'">
+               :class="activeDropdown === 'industries' ? 'text-primary-500' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white'"
+               @click="activeDropdown = activeDropdown === 'industries' ? null : 'industries'"
+               @focus="openDropdown('industries')"
+               @blur="closeDropdown()"
+               aria-haspopup="true"
+               :aria-expanded="activeDropdown === 'industries'">
                {{ $t('nav.industries') }}
                <HugeiconsIcon :icon="ArrowDown01Icon" :size="12" class="transition-transform duration-300" :class="{ 'rotate-180': activeDropdown === 'industries' }" />
             </button>
@@ -275,7 +294,12 @@ const getIndustries = () => {
           <div class="relative h-full flex items-center" 
                @mouseenter="openDropdown('resources')" @mouseleave="closeDropdown">
             <button class="flex items-center gap-1 text-sm font-medium transition-colors"
-               :class="activeDropdown === 'resources' ? 'text-primary-500' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white'">
+               :class="activeDropdown === 'resources' ? 'text-primary-500' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white'"
+               @click="activeDropdown = activeDropdown === 'resources' ? null : 'resources'"
+               @focus="openDropdown('resources')"
+               @blur="closeDropdown()"
+               aria-haspopup="true"
+               :aria-expanded="activeDropdown === 'resources'">
                {{ $t('nav.resources') }}
                <HugeiconsIcon :icon="ArrowDown01Icon" :size="12" class="transition-transform duration-300" :class="{ 'rotate-180': activeDropdown === 'resources' }" />
             </button>
@@ -293,7 +317,12 @@ const getIndustries = () => {
           <div class="relative h-full flex items-center" 
                @mouseenter="openDropdown('company')" @mouseleave="closeDropdown">
             <button class="flex items-center gap-1 text-sm font-medium transition-colors"
-               :class="activeDropdown === 'company' ? 'text-primary-500' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white'">
+               :class="activeDropdown === 'company' ? 'text-primary-500' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white'"
+               @click="activeDropdown = activeDropdown === 'company' ? null : 'company'"
+               @focus="openDropdown('company')"
+               @blur="closeDropdown()"
+               aria-haspopup="true"
+               :aria-expanded="activeDropdown === 'company'">
                {{ $t('nav.company') }}
                <HugeiconsIcon :icon="ArrowDown01Icon" :size="12" class="transition-transform duration-300" :class="{ 'rotate-180': activeDropdown === 'company' }" />
             </button>

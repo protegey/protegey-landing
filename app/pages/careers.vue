@@ -175,6 +175,18 @@ usePageMeta({
         }
     ]
 })
+
+if (import.meta.server) {
+    useSchemaOrg([
+        {
+            '@type': 'Organization',
+            '@id': `${baseUrl}#organization`,
+            name: 'Protegey',
+            url: baseUrl,
+            sameAs: ['https://www.linkedin.com/company/protegeyhq/', 'https://x.com/ProtegeyHQ']
+        }
+    ])
+}
 </script>
 
 <style scoped>
