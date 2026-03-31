@@ -959,9 +959,9 @@
         ],
         "non_categories": [
             "Pas un système bancaire de base",
-            "Not a payments processor",
-            "Not a consumer fraud app",
-            "Not a replacement for law enforcement"
+            "Pas un processeur de paiements",
+            "Pas une application anti-fraude grand public",
+            "Pas un remplacement des forces de l'ordre"
         ],
         "non_category_rule": "Protegey n'est pas conçu pour les consommateurs individuels."
     },

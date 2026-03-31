@@ -133,30 +133,30 @@
             "title": "كيف تعمل منتجات بروتجي معاً",
             "scenario": "محاولة الاستيلاء على حساب",
             "steps": [
-                "Radar detects unusual login behavior (new device, different location, abnormal timing)",
-                "Gateway API receives the elevated risk score and challenges the next transaction",
-                "Signal checks if this device/pattern has been flagged by other institutions",
-                "Ops Console creates a case for the fraud analyst to investigate",
-                "Risk & Compliance as a Service logs the incident for regulatory reporting",
-                "Pan-ID (future) verifies the user's identity through biometric re-authentication"
+                "يكشف Radar سلوك تسجيل دخول غير عادي (جهاز جديد، موقع مختلف، توقيت غير طبيعي)",
+                "يتلقى Gateway API درجة المخاطر المرتفعة ويتحدى المعاملة التالية",
+                "يتحقق Signal مما إذا كان هذا الجهاز/النمط قد تم الإبلاغ عنه من قبل مؤسسات أخرى",
+                "تنشئ Ops Console حالة لمحقق الاحتيال للتحقيق",
+                "تسجل خدمة Risk & Compliance as a Service الحادث للتقرير التنظيمي",
+                "يتحقق Pan-ID (مستقبلاً) من هوية المستخدم عبر إعادة المصادقة البيومترية"
             ],
             "better_together": [
-                "Gateway API + Radar: Transaction decisions informed by behavioral context",
-                "Radar + Signal: Account monitoring enhanced by cross-platform intelligence",
-                "All Solutions + Ops Console: Unified investigation and response",
-                "Gateway API + RCaaS: Transaction monitoring meets automated AML compliance"
+                "Gateway API + Radar: قرارات المعاملات مستنيرة بالسياق السلوكي",
+                "Radar + Signal: مراقبة الحسابات معززة بالاستخبارات المتقاطعة",
+                "جميع الحلول + Ops Console: تحقيق واستجابة موحدة",
+                "Gateway API + RCaaS: مراقبة المعاملات تلتقي بالامتثال الآلي لمكافحة غسل الأموال"
             ]
         },
         "mission": {
             "title": "هدفنا: مساعدة المستخدمين على الوصول للمستوى التالي",
             "items": [
-                "AML transaction monitoring",
-                "Internal and external fraud protection",
-                "Account takeover prevention",
-                "SIM swap fraud and money mulling detection",
-                "Investment scam detection",
-                "Duplicate account prevention",
-                "Credit scoring and risk intelligence"
+                "مراقبة معاملات مكافحة غسل الأموال",
+                "الحماية من الاحتيال الداخلي والخارجي",
+                "منع الاستيلاء على الحسابات",
+                "كشف احتيال تبديل الشريحة والحسابات الوسيطة",
+                "كشف الاحتيال الاستثماري",
+                "منع الحسابات المكررة",
+                "تقييم الائتمان والاستخبارات المخاطر"
             ]
         },
         "geographic_coverage": {
@@ -165,9 +165,9 @@
             "heading_highlight": "اقتصاد الرقمي الأفريقي",
             "description": "منتجاتنا مصممة خصيصاً للمناظر التنظيمية والاحتيالية الفريدة في أفريقيا، مما يوفر استخبارات محلية غالباً ما تفتقدها الأدوات العالمية.",
             "regions": [
-                "GIM-UEMOA zone (West African Economic and Monetary Union)",
-                "GIMAC zone (Central African Economic and Monetary Community)",
-                "Northern Africa (Maghreb region)"
+                "منطقة GIM-UEMOA (الاتحاد الاقتصادي والنقدي لغرب أفريقيا)",
+                "منطقة GIMAC (المجموعة الاقتصادية والنقدية لوسط أفريقيا)",
+                "شمال أفريقيا (منطقة المغرب العربي)"
             ],
             "region_text": "استخبارات احتيال شاملة وامتثال تنظيمي مصمم للمؤسسات في هذه المنطقة.",
             "note": "نحن نتفهم التحديات الفريدة للاحتيال عابر الحدود، وانتشار الأموال عبر الهاتف المحمول، والمتطلبات التنظيمية المتطورة في هذه الأسواق."
@@ -952,16 +952,16 @@
         "canonical_definition": "بروتجي هي منصة لاستخبارات الاحتيال ومشاركة التنبيهات في الوقت الفعلي تتيح للمؤسسات المالية، وشركات التكنولوجيا المالية، والهيئات التنظيمية في جميع أنحاء أفريقيا التعرف على الاحتيال والإبلاغ عنه والاستجابة له بشكل تعاوني بسرعة ورؤية مشتركة.",
         "primary_category": "منصة استخبارات الاحتيال",
         "secondary_categories": [
-            "Financial Crime Detection",
-            "Fraud Reporting & Alerts",
-            "Inter‑Institutional Risk Sharing",
-            "RegTech (Africa‑focused)"
+            "كشف الجرائم المالية",
+            "الإبلاغ عن الاحتيال والتنبيهات",
+            "تقاسم المخاطر بين المؤسسات",
+            "RegTech (مركز على أفريقيا)"
         ],
         "non_categories": [
-            "Not a core banking system",
-            "Not a payments processor",
-            "Not a consumer fraud app",
-            "Not a replacement for law enforcement"
+            "ليس نظاماً مصرفياً أساسياً",
+            "ليس معالج مدفوعات",
+            "ليس تطبيق احتيال للمستهلكين",
+            "ليس بديلاً عن إنفاذ القانون"
         ],
         "non_category_rule": "بروتجي غير مصمم للمستهلكين الأفراد."
     },
