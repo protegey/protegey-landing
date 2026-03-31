@@ -4,8 +4,10 @@
     <div class="relative">
       <Hero />
       <WhyProtegey :isDark="isDark" />
-      <!-- <Products />
-      <SignalPipeline /> -->
+      <Solutions />
+      <PANIDTeaser />
+      <ClosingAdvantage />
+      <!-- <SignalPipeline /> -->
       <!-- <TrustedBy /> -->
       <FAQ />
       <WaitlistDemo />
@@ -18,7 +20,9 @@ import { onMounted } from 'vue'
 import { useTheme } from '~/composables/useTheme'
 import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
-import Products from '~/components/sections/Products.vue'
+import Solutions from '~/components/sections/Solutions.vue'
+import PANIDTeaser from '~/components/sections/PANIDTeaser.vue'
+import ClosingAdvantage from '~/components/sections/ClosingAdvantage.vue'
 import SignalPipeline from '~/components/sections/SignalPipeline.vue'
 import TrustedBy from '~/components/sections/TrustedBy.vue'
 import FAQ from '~/components/sections/FAQ.vue'
@@ -56,7 +60,7 @@ if (import.meta.server) {
       '@type': 'Organization',
       name: 'Protegey',
       url: baseUrl,
-      logo: `${baseUrl}/logo.png`,
+      logo: `${baseUrl}/images/logo-light-mode.png`,
       sameAs: [
         'https://twitter.com/ProtegeyHQ',
         'https://www.linkedin.com/company/protegey'

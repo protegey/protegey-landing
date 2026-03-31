@@ -4,8 +4,12 @@
         "trusted_by": "Trusted By",
         "about": "About",
         "contact": "Contact",
-        "products": "Products",
+        "solutions": "Solutions",
+        "industries": "Use Cases",
+        "resources": "Resources",
+        "company": "Company",
         "request_demo": "Request Demo",
+        "speak_expert": "Speak with an Expert",
         "home": "Home",
         "open_menu": "Open menu",
         "close_menu": "Close menu",
@@ -13,18 +17,29 @@
     },
     "hero": {
         "badge": "FRAUD INTELLIGENCE NETWORK",
-        "title_part_1": "The Unified ",
-        "title_highlight": "Fraud Intelligence",
-        "title_part_2": " Engine for Francophone and Northern Africa, without the Enterprise Cost",
-        "subtitle": "Aggregate signals from banks, telcos, and regulators to <span class=\"text-primary-400 font-mono\">{action}<span class=\"animate-pulse\">_</span></span> fraud before it spreads. A shared early-warning network turning scattered events into actionable intelligence.",
+        "title_part_1": "Stop Fraud,",
+        "title_highlight": "",
+        "title_part_2": "Before it Scales.",
+        "title_line_1": {
+            "prefix": "Stop ",
+            "highlight": "Fraud",
+            "suffix": ","
+        },
+        "title_line_2": {
+            "prefix": "Before it ",
+            "highlight": "Scales",
+            "suffix": "."
+        },
+        "subtitle": "Join a growing network of banks, Fintechs, mobile money operators and regulators across Francophone Africa leveraging PROTEGEY to <span class=\"text-primary-400 font-mono font-bold\">{action}<span class=\"animate-pulse\">_</span></span> fraud in real-time.",
         "typewriter": {
-            "detect": "DETECT",
-            "analyze": "ANALYZE",
-            "monitor": "MONITOR",
-            "prevent": "PREVENT"
+            "detect": "detect",
+            "analyze": "analyze",
+            "monitor": "monitor",
+            "prevent": "prevent"
         },
         "cta": {
-            "request_demo": "Request Demo"
+            "request_demo": "Request a Demo",
+            "speak_expert": "Speak with an Expert"
         },
         "trust": {
             "security": "Bank-grade Security",
@@ -75,200 +90,46 @@
             "text": "Our platform maintains 99.7% uptime with redundant systems across multiple data centers, ensuring your security coverage never sleeps, even when you do."
         }
     },
-    "products": {
+    "solutions": {
         "badge": "OUR SOLUTIONS",
-        "title": "Integrated Security Products",
-        "subtitle": "Defense-in-depth fraud prevention and compliance platform for financial institutions across West, Central, and Northern Africa",
+        "title": "Five Integrated Layers of Protection",
+        "subtitle": "From real-time transaction detection to shared network intelligence — every layer works together so threats targeting your peers don't reach you.",
         "adoption_path": "Recommended Adoption Path: Start with Gateway API for immediate transaction protection → Add Radar for continuous account monitoring → Join the Signal network for cross-platform intelligence → Scale operations with Ops Console",
-        "api": {
-            "title": "Gateway API",
-            "tagline": "Real-Time Fraud & Risk Decisions",
-            "description": "The single entry point for all your transaction security needs. Integrate real-time risk scoring directly into your payment flows for instant, automated decisioning.",
-            "why_built": "Stop unauthorized and high-risk transactions. Detect merchant and payment fraud in real time. Reduce financial losses without slowing customers.",
-            "what_you_can_do": "Instant risk scoring for transactions, logins, and actions. Clear decisions: approve, review, or block. Seamless integration into existing systems.",
-            "features": {
-                "f1_title": "Real-time Transaction Scoring",
-                "f1_desc": "Process decisions in <100ms with 99.9% uptime. Evaluate card, mobile money, and bank transfer transactions with machine learning-powered risk models.",
-                "f2_title": "Merchant Fraud Detection",
-                "f2_desc": "Detect fake merchants, transaction laundering, velocity checks and spending pattern analysis with custom rule engine."
-            },
-            "capabilities": [
-                "Real-time transaction scoring (card, mobile money, bank transfer)",
-                "Merchant fraud detection (fake merchants, transaction laundering)",
-                "Velocity checks and spending pattern analysis",
-                "Custom rule engine with machine learning-powered risk models"
-            ],
-            "target_users": [
-                "Banks and digital banks",
-                "Fintechs and payment processors",
-                "Marketplaces and merchants"
-            ],
-            "results": [
-                "Reduce fraud losses by 60-80%",
-                "Cut false positives by 40%",
-                "Process decisions in <100ms with 99.9% uptime"
-            ]
-        },
-        "radar": {
-            "title": "Radar",
-            "tagline": "Behavioral Monitoring & Account Protection",
-            "description": "Prevent account takeovers before fraudsters can act. Continuous session monitoring with real-time anomaly detection for logins, device changes, and behavioral shifts.",
-            "why_built": "Prevent account takeovers. Detect SIM swap fraud and bot activity. Identify money mule behavior early.",
-            "what_you_can_do": "Continuous monitoring of user behavior. Detection of abnormal logins and sessions. Protection even when credentials appear valid.",
-            "features": {
-                "f1_title": "Session-Based Behavioral Analysis",
-                "f1_desc": "Analyze typing patterns, navigation, and timing. Device fingerprinting and geolocation tracking to detect anomalies in real-time.",
-                "f2_title": "SIM Swap & Money Mule Detection",
-                "f2_desc": "SIM swap detection through carrier signal monitoring. Money mule pattern recognition identifying rapid in-out transfers and unusual beneficiaries. Bot and automation detection."
-            },
-            "capabilities": [
-                "Session-based behavioral analysis (typing patterns, navigation, timing)",
-                "Device fingerprinting and geolocation tracking",
-                "SIM swap detection through carrier signal monitoring",
-                "Money mule pattern recognition (rapid in-out transfers, unusual beneficiaries)",
-                "Bot and automation detection"
-            ],
-            "target_users": [
-                "Banks and mobile money operators",
-                "Telcos",
-                "Super apps and wallets"
-            ],
-            "results": [
-                "Detect account takeovers 10x faster (minutes vs. hours)",
-                "Reduce SIM swap fraud by 75%",
-                "Identify money mule accounts before they move funds"
-            ]
-        },
-        "signal": {
-            "title": "Signal",
-            "tagline": "Shared Fraud Intelligence Network",
-            "description": "Leverage the power of Africa's first shared fraud intelligence network. Access real-time early warnings from 50+ institutions to stop known fraudsters before they hit your system.",
-            "why_built": "Stop repeat fraud across platforms. Detect organized and cross-border fraud rings across GIM-UEMOA, Northern Africa and GIMAC zones. Reduce blind spots in isolated systems.",
-            "what_you_can_do": "Shared fraud signals without exposing customer data. Early warnings from confirmed fraud cases. Network-driven risk scoring.",
-            "how_it_works": "Signal uses privacy-preserving technology to share fraud patterns across our network. What's shared: Anonymized device fingerprints, behavioral patterns, fraud typologies. What's NOT shared: Customer names, account numbers, transaction amounts, or any Personally Identifiable Information (PII). Who you're sharing with: Vetted financial institutions in the Signal consortium (banks, fintechs, telcos). Immediate value: Even as the first participant, you benefit from PROTEGEY's baseline fraud intelligence.",
-            "features": {
-                "f1_title": "Privacy-Preserving Intelligence Sharing",
-                "f1_desc": "Share anonymized device fingerprints and behavioral patterns without exposing Personally Identifiable Information (PII). Real-time fraud signal broadcasting across vetted financial institutions.",
-                "f2_title": "Cross-Border Fraud Detection",
-                "f2_desc": "Detect fraud rings operating across GIM-UEMOA, Northern Africa, and GIMAC zones. Regional fraud trend analysis and reporting."
-            },
-            "capabilities": [
-                "Real-time fraud signal broadcasting across the network",
-                "Cross-institution fraud pattern matching",
-                "Fraud ring detection and mapping",
-                "Regional fraud trend analysis and reporting"
-            ],
-            "target_users": [
-                "Banks and fintech ecosystems",
-                "Payment networks",
-                "Regulators and industry bodies"
-            ],
-            "results": [
-                "Detect fraud rings 5x faster through network intelligence",
-                "Stop repeat offenders before they reach your platform",
-                "Reduce fraud losses by 30-50% through early warnings"
-            ]
-        },
-        "console": {
-            "title": "Ops Console",
-            "tagline": "Unified Fraud Operations & Case Management",
-            "description": "Investigate fraud efficiently with centralized dashboard for all alerts. Complete case management from alert triage to resolution with audit trails for compliance.",
-            "why_built": "Investigate fraud efficiently and consistently. Detect and manage internal fraud. Maintain clear accountability and audit trails.",
-            "what_you_can_do": "Centralized case management. Evidence tracking and analyst workflows. Clear documentation of decisions.",
-            "features": {
-                "f1_title": "Unified Alert Management",
-                "f1_desc": "Centralized queue with intelligent prioritization. Investigation workflows with customizable stages. Evidence vault with secure storage and chain of custody.",
-                "f2_title": "Team Collaboration & Analytics",
-                "f2_desc": "Analyst productivity metrics and case resolution tracking. Integration with external tools (SIEM, ticketing systems). Audit log for all actions and decisions."
-            },
-            "capabilities": [
-                "Unified alert queue with intelligent prioritization",
-                "Investigation workflows with customizable stages",
-                "Evidence vault with secure storage and chain of custody",
-                "Analyst productivity metrics and case resolution tracking",
-                "Integration with external tools (SIEM, ticketing systems)",
-                "Audit log for all actions and decisions"
-            ],
-            "deployment_options": {
-                "standalone": "Works with your existing fraud tools, not just PROTEGEY",
-                "integrated": "Native integration with Gateway API, Radar, and Signal for seamless workflows"
-            },
-            "target_users": [
-                "Fraud operations teams",
-                "Compliance and risk units",
-                "Internal audit departments"
-            ],
-            "results": [
-                "Cut investigation time from hours to minutes",
-                "Improve case resolution rates by 40%",
-                "Reduce analyst training time with guided workflows"
-            ]
-        },
-        "compliance": {
-            "title": "Risk & Compliance as a Service (RCaaS)",
-            "tagline": "Powerful Risk & Compliance, out of the box",
-            "description": "Our RCaaS is a plug-and-play Risk and Compliance function for fintechs, digital lenders, MFIs, banks, and SACCOs operating across Francophone and Northern Africa. Instead of building internal teams, policies, tools, and workflows from scratch, organizations can activate a full risk and compliance stack in days, not months.",
-            "why_built": "Built for teams that can’t hire a risk & compliance department yet. Building a risk and compliance function traditionally requires specialized hires, expensive tooling, months of setup, and regulatory interpretation. RCaaS replaces all of that.",
-            "what_you_can_do": "A complete risk and compliance function, out of the box. No prior risk expertise required. PROTEGEY handles the complexity behind the scenes.",
-            "how_it_works": "Connect your payments, lending, or onboarding flows. Activate region-aware risk rules and AI models. Operate in autopilot or assisted-review mode. Scale when your team grows, without replatforming.\nPROTEGEY handles the complexity behind the scenes.",
-            "capabilities": [
-                "Automated fraud detection and prevention",
-                "Real-time transaction and behavior risk scoring",
-                "Cross-border identity and merchant verification",
-                "AML, KYC, and KYB-aligned controls",
-                "Audit trails, logs, and regulator-ready reports",
-                "Built-in case management and escalation workflows"
-            ],
-            "target_users": [
-                "Fintechs & Payment Processors",
-                "Digital Lenders & BNPL platforms",
-                "Microfinance Institutions (MFIs)",
-                "Banks & Neo-banks",
-                "Early-stage teams or scaling platforms"
-            ],
-            "results": [
-                "Instant coverage",
-                "Lower operational risk",
-                "Faster partner and regulator confidence",
-                "A clear path to internalization when ready"
-            ]
-        },
         "panid": {
             "title": "Pan-ID",
-            "tagline": "Cross-Border Identity Verification & Intelligence",
+            "tagline": "Pan-African Identity Verification, Connected to Fraud Intelligence",
             "status": "Coming Soon",
-            "description": "Prevent duplicate and synthetic identities across borders. Identity verification across Western, Central, and Northern Africa with biometric matching.",
-            "why_built": "Prevent duplicate and synthetic identities. Detect identity misuse across borders (Western, Central and Northern Africa). Support identity verification when documents are lost or unavailable.",
-            "what_you_can_do": "Identity existence and ID-type confirmation. Facial-assisted and biometric verification. Cross-jurisdiction identity reconciliation. Continuous identity risk monitoring.",
+            "description": "PAN-ID will bring eKYC, KYB, and identity document verification natively into the PROTEGEY platform — designed for Africa's document landscape, and connected directly to your existing risk scoring and AML infrastructure. No separate vendor. No fragmented data.",
+            "why_built": "Identity verification should strengthen your fraud workflow, not sit in a separate vendor stack. PAN-ID is being built to bring onboarding checks directly into the same platform that already handles risk scoring, AML, and shared fraud intelligence.",
+            "what_you_can_do": "Run eKYC and KYB checks inside the same workflow as risk scoring, connect identity signals to AML controls, and reduce the fragmentation created by separate onboarding vendors.",
             "features": {
-                "f1_title": "Multi-Country Identity Verification",
-                "f1_desc": "Verify individuals across multiple African countries from a single platform. Pan-ID connects national identity systems and applies biometric and document checks to confirm identities across fragmented and diverse ID environments.",
-                "f2_title": "Identity Graph & Risk Scoring",
-                "f2_desc": "Build a single identity view across borders. Pan-ID links records and activities to detect duplicates, synthetic identities, and fraud, delivering real-time risk scores for regional investigations."
+                "f1_title": "Native eKYC & KYB Workflows",
+                "f1_desc": "Verify individuals and businesses inside PROTEGEY instead of stitching together separate onboarding, AML, and fraud tools.",
+                "f2_title": "Identity Checks Connected to Risk",
+                "f2_desc": "Feed identity verification outcomes directly into your existing scoring, monitoring, and case workflows for better decisions with less operational friction."
             },
             "capabilities": [
-                "Multi-country identity database integration",
-                "Biometric matching (facial recognition, fingerprint)",
-                "Document authenticity verification",
-                "Identity graph mapping across jurisdictions",
-                "Real-time identity risk scoring"
+                "Native eKYC and KYB workflows",
+                "Identity document verification",
+                "Integrated risk scoring and AML handoff",
+                "Shared case context across onboarding and fraud review",
+                "Early access rollout for design partners"
             ],
             "target_users": [
-                "Immigration and border control authorities",
-                "National ID and civil registry agencies",
-                "Police and criminal investigation units",
-                "Passport offices, consulates, and embassies",
-                "Cross-border fintechs and remittance platforms",
-                "Hotels (for check-in purposes only)"
+                "Banks and digital lenders",
+                "Fintechs and payment platforms",
+                "Crypto and digital asset platforms",
+                "Compliance and onboarding teams",
+                "Design partners preparing for early access"
             ],
             "expected_outcomes": [
-                "Reduce identity fraud by 70%",
-                "Verify identities in seconds across borders",
-                "Detect duplicate accounts and synthetic identities"
+                "A single onboarding-to-risk workflow",
+                "Less vendor fragmentation across fraud and compliance",
+                "Earlier access to PAN-ID launch capabilities"
             ]
         },
         "integration_story": {
-            "title": "How PROTEGEY Products Work Together",
+            "title": "How PROTEGEY Solutions Work Together",
             "scenario": "Account Takeover Attempt",
             "steps": [
                 "Radar detects unusual login behavior (new device, different location, abnormal timing)",
@@ -276,12 +137,12 @@
                 "Signal checks if this device/pattern has been flagged by other institutions",
                 "Ops Console creates a case for the fraud analyst to investigate",
                 "Risk & Compliance as a Service logs the incident for regulatory reporting",
-                "Pan-ID (future) verifies the user's identity through biometric re-authentication"
+                "Pan-ID (future) extends onboarding and verification inside the same fraud workflow"
             ],
             "better_together": [
                 "Gateway API + Radar: Transaction decisions informed by behavioral context",
                 "Radar + Signal: Account monitoring enhanced by cross-platform intelligence",
-                "All Products + Ops Console: Unified investigation and response",
+                "All Solutions + Ops Console: Unified investigation and response",
                 "Gateway API + RCaaS: Transaction monitoring meets automated AML compliance"
             ]
         },
@@ -301,23 +162,23 @@
             "title": "Geographic Coverage",
             "heading_part1": "Securing the ",
             "heading_highlight": "African Digital Economy",
-            "description": "Our products are specifically tailored to the unique regulatory and fraud landscapes across Africa, providing localized intelligence that global tools often miss.",
+            "description": "Our solutions are specifically tailored to the unique regulatory and fraud landscapes across Africa, providing localized intelligence that global tools often miss.",
             "regions": [
                 "GIM-UEMOA zone (West African Economic and Monetary Union)",
                 "GIMAC zone (Central African Economic and Monetary Community)",
-                "Northern Africa (Maghreb region)"
+                "Regional payment ecosystems across Africa"
             ],
             "region_text": "Comprehensive fraud intelligence and regulatory compliance tailored for institutions in this zone.",
             "note": "We understand the unique challenges of cross-border fraud, mobile money proliferation, and evolving regulatory requirements in these markets."
         },
         "hero": {
-            "title_start": "Powering Africa's",
-            "title_highlight": "Security Infrastructure",
-            "subtitle": "A comprehensive suite of tools designed to detect, synchronize, and prevent fraud in real-time across the continent."
+            "title_start": "Five Integrated Layers of",
+            "title_highlight": "Protection",
+            "subtitle": "From real-time transaction detection to shared network intelligence — every layer works together so threats targeting your peers don't reach you."
         },
         "explore": "Explore",
         "coming_soon": "Coming Soon",
-        "back_to_all": "Back to All Products",
+        "back_to_all": "Back to All Solutions",
         "why_built_title": "Why we built it",
         "what_you_can_do_title": "What you can do with it",
         "core_capabilities": "Core Capabilities",
@@ -425,13 +286,239 @@
                     "description": "Secure mobile money services"
                 }
             }
+        },
+        "panid_teaser": {
+            "eyebrow": "COMING SOON",
+            "title": "PAN-ID",
+            "subtitle": "Pan-African identity verification, built into your fraud intelligence workflow.",
+            "description": "PAN-ID will bring eKYC, KYB, and identity document verification natively into the PROTEGEY platform — designed for Africa’s document landscape, and connected directly to your existing risk scoring and AML infrastructure. No separate vendor. No fragmented data.",
+            "cta": "Join the early access list"
+        },
+        "closing_advantage": {
+            "eyebrow": "THE PROTEGEY ADVANTAGE",
+            "title": "Every institution deserves the same intelligence that the largest banks have.",
+            "subtitle": "Without building it from scratch.",
+            "layers": [
+                {
+                    "name": "Transaction Monitoring",
+                    "desc": "Real-time detection on every payment"
+                },
+                {
+                    "name": "Account & Device Protection",
+                    "desc": "SIM swap, takeover, and session security"
+                },
+                {
+                    "name": "AML & Compliance",
+                    "desc": "Sanctions, PEP, SAR, and configurable rules"
+                },
+                {
+                    "name": "Risk Profiling",
+                    "desc": "Counterparty scoring, entity relationships, and network risk"
+                },
+                {
+                    "name": "Fraud Intelligence Network",
+                    "desc": "Shared signals, stronger protection for everyone"
+                }
+            ]
+        },
+        "modules": {
+            "transaction-monitoring": {
+                "title": "Transaction Monitoring",
+                "subtext": "Catch suspicious payments the moment they happen — before money moves.",
+                "features": [
+                    "Real-time fraud detection on every transaction",
+                    "Velocity and behavioural pattern analysis",
+                    "Structuring, round-number, and cross-border flagging",
+                    "Dormant account reactivation alerts"
+                ],
+                "tagline": "Stop Financial Crime at the Speed of Business",
+                "why_built": "Traditional monitoring systems are too slow and generate too many false positives. We built PROTEGEY to provide real-time, high-accuracy detection that keeps your business moving safely.",
+                "what_you_can_do": "Monitor every transaction in real-time, catch structuring and velocity attacks, and automatically flag suspicious cross-border payments without manual intervention.",
+                "capabilities": [
+                    "Real-time transaction scoring",
+                    "Velocity and frequency analysis",
+                    "Behavioural pattern matching",
+                    "Cross-border risk assessment",
+                    "Automated alert triaging"
+                ],
+                "target_users": [
+                    "Compliance Officers",
+                    "Fraud Analysts",
+                    "Risk Management Teams",
+                    "Operations leads"
+                ],
+                "results": [
+                    "95% reduction in false positives",
+                    "Real-time detection in under 100ms",
+                    "Zero manual intervention for low-risk payments"
+                ],
+                "how_it_works": "Our engine processes every transaction payload through a set of regional and institutional rules, combined with historical entity behaviour, to assign a risk score before the transaction is settled.",
+                "deployment_options": {
+                    "API": "Direct integration into your core banking switch via REST or gRPC.",
+                    "Hybrid": "On-premise data collection with cloud scoring."
+                },
+                "description": "Catch suspicious payments the moment they happen — before money moves."
+            },
+            "account-protection": {
+                "title": "Account & Device Protection",
+                "subtext": "Stop account takeovers, SIM swaps, and coordinated device attacks before they succeed.",
+                "features": [
+                    "Device fingerprinting and tracking",
+                    "SIM swap proximity detection",
+                    "Account takeover detection",
+                    "Session anomaly detection",
+                    "Impossible travel detection"
+                ],
+                "tagline": "Hardened Security for the Digital Edge",
+                "why_built": "Accounts are the front door to your institution. We built this module to stop account takeovers, SIM swaps, and device spoofing before they compromise your users' data.",
+                "what_you_can_do": "Track device fingerprints, detect SIM swaps instantly, and block session hijacking using advanced behavioural anomaly detection.",
+                "capabilities": [
+                    "Device fingerprinting & tracking",
+                    "SIM swap proximity alerts",
+                    "Session hijacking prevention",
+                    "Impossible travel detection",
+                    "Bot and emulator detection"
+                ],
+                "target_users": [
+                    "IT Security Teams",
+                    "Digital Banking Product Owners",
+                    "CISO Offices",
+                    "App Developers"
+                ],
+                "results": [
+                    "80% decrease in account takeover attempts",
+                    "Instant block on known fraudulent devices",
+                    "Seamless authentication for trusted users"
+                ],
+                "how_it_works": "By analyzing metadata from the user's device and connectivity, PROTEGEY identifies when an account access attempt differs from the true owner's established pattern.",
+                "deployment_options": {
+                    "SDK": "Mobile SDKs for iOS and Android integration.",
+                    "Web": "Lightweight JS snippet for browser-based protection."
+                },
+                "description": "Stop account takeovers, SIM swaps, and coordinated device attacks before they succeed."
+            },
+            "aml-compliance": {
+                "title": "AML & Compliance",
+                "subtext": "Automate your compliance obligations and reduce the cost of staying regulated.",
+                "features": [
+                    "Sanctions screening against UN, EU, and African Union lists",
+                    "Politically Exposed Person (PEP) detection",
+                    "Suspicious Activity Report (SAR) generation",
+                    "Configurable monitoring rules per institution",
+                    "Geographic risk assessment by FATF status",
+                    "Case management and investigation workflows"
+                ],
+                "tagline": "Frictionless Compliance for Global Standards",
+                "why_built": "Regulations are becoming more complex. PROTEGEY automates the heavy lifting of sanctions screening and PEP detection so you can focus on scale.",
+                "what_you_can_do": "Automate UN/EU/AU sanctions screening, generate SARs with one click, and manage investigations in a unified case management dashboard.",
+                "capabilities": [
+                    "Sanctions & PEP screening",
+                    "Automated SAR/STR generation",
+                    "Configurable monitoring rules",
+                    "Audit trail & lineage tracking",
+                    "Case management workflow"
+                ],
+                "target_users": [
+                    "MLROs & Compliance Staff",
+                    "Internal Audit Teams",
+                    "Legal & Regulatory Liaison",
+                    "Operations Managers"
+                ],
+                "results": [
+                    "100% audit-ready reporting",
+                    "60% faster investigation turnarounds",
+                    "Global regulatory alignment"
+                ],
+                "how_it_works": "PROTEGEY cross-references your entities against updated global and regional sanctions lists in real-time, providing immediate match alerts with evidence logs.",
+                "deployment_options": {
+                    "Cloud": "Fully managed compliance engine with daily list updates.",
+                    "Enterprise": "Dedicated instance for high-volume institutions."
+                },
+                "description": "Automate your compliance obligations and reduce the cost of staying regulated."
+            },
+            "risk-profiling": {
+                "title": "Risk Profiling",
+                "subtext": "Know exactly who you’re dealing with — and every account, device, and number they’re connected to.",
+                "features": [
+                    "Real-time risk scoring for any account, phone number, device, or counterparty",
+                    "Clear allow / review / block recommendations",
+                    "Fraud entity profiling and risk history",
+                    "Device, phone, and account relationship mapping",
+                    "Network-level risk propagation across linked accounts",
+                    "Evidence tracking and full audit lineage"
+                ],
+                "tagline": "360° Visibility into Every Identity",
+                "why_built": "Knowing your customer isn't enough; you need to know their network. We built Risk Profiling to reveal the hidden connections between entities.",
+                "what_you_can_do": "Score every entity in real-time, map complex relationships between accounts and devices, and propagate risk scores across entire fraud networks.",
+                "capabilities": [
+                    "Entity risk scoring",
+                    "Network relationship mapping",
+                    "Global reputation lookup",
+                    "Fraud entity profiling",
+                    "Risk propagation analysis"
+                ],
+                "target_users": [
+                    "Credit Risk Departments",
+                    "Underwriting Teams",
+                    "Special Investigations Units (SIU)",
+                    "Data Scientists"
+                ],
+                "results": [
+                    "Discovery of hidden fraud rings",
+                    "Unified risk score across all solutions",
+                    "Dynamic risk-based underwriting"
+                ],
+                "how_it_works": "The profiling engine aggregates historical data across the network to build a persistent reputation score for every phone, account, and device on the platform.",
+                "deployment_options": {
+                    "On-demand": "Lookup entities during onboarding or periodic review.",
+                    "Batch": "Full portfolio rescoring and relationship analysis."
+                },
+                "description": "Know exactly who you’re dealing with — and every account, device, and number they’re connected to."
+            },
+            "fraud-intelligence": {
+                "title": "Fraud Intelligence Network",
+                "subtext": "See the fraud that targets your peers today — before it reaches you tomorrow.",
+                "features": [
+                    "Cross-institution alert sharing with configurable privacy controls",
+                    "Intelligence sharing agreements between institutions",
+                    "Regional fraud signal network (ECOWAS and beyond)",
+                    "Shared regulatory advisories"
+                ],
+                "tagline": "Strength in Shared Intelligence",
+                "why_built": "No institution is an island. We built the shared network to allow peers to protect each other by sharing real-time fraud signals anonymously.",
+                "what_you_can_do": "Join the Pan-African fraud signal exchange, receive real-time alerts from peer institutions, and contribute to a safer financial ecosystem for everyone.",
+                "capabilities": [
+                    "Anonymous signal sharing",
+                    "Peer-to-peer fraud alerts",
+                    "Regional crime trend analysis",
+                    "Privacy-preserving data exchange",
+                    "Intelligence sharing agreements"
+                ],
+                "target_users": [
+                    "Regulatory Authorities",
+                    "Industry Associations",
+                    "Heads of Fraud Strategy",
+                    "C-Suite Executives"
+                ],
+                "results": [
+                    "Early warning on regional fraud trends",
+                    "Collaborative financial crime fighting",
+                    "Significant ecosystem-wide cost reduction"
+                ],
+                "how_it_works": "When one institution flags a fraud entity, the signal is propagated through the network to warn other members, without exposing the original data or identity.",
+                "deployment_options": {
+                    "Network Access": "Standard participation for all PROTEGEY enterprise customers.",
+                    "Institutional": "Private sub-networks for banking groups."
+                },
+                "description": "See the fraud that targets your peers today — before it reaches you tomorrow."
+            }
         }
     },
     "waitlist": {
         "title1": "Experience the future of",
         "title2": "fraud intelligence ",
         "title3": "today",
-        "subtitle": "Be among the first to experience Francophone and Northern Africa's next generation fraud detection platform",
+        "subtitle": "Be among the first to experience PROTEGEY's shared fraud intelligence network.",
         "form": {
             "title": "Title",
             "title_placeholder": "Select title",
@@ -526,11 +613,17 @@
         "slogan": "Secure. Intelligent. Unified.",
         "company": "Company",
         "resources": "Resources",
+        "legal": "Legal",
         "connect": "Connect",
         "links": {
             "about": "About",
             "contact": "Contact",
             "careers": "Careers",
+            "what_is_protegey": "What Is Protegey?",
+            "how_it_works": "How It Works",
+            "who_its_for": "Who It's For",
+            "comparisons": "Comparisons",
+            "trust": "Trust Center",
             "api_docs": "API Docs",
             "privacy": "Privacy",
             "terms": "Terms"
@@ -782,7 +875,7 @@
         "exclusion": "Protegey is not designed for individual consumers. Access is granted to vetted financial institutions and regulators only.",
         "seo": {
             "title": "Who It's For | Protegey Partner Network",
-            "description": "Banks, mobile money operators, fintechs, and regulators: discover how Protegey's shared fraud intelligence network serves each institution type."
+            "description": "Banks, fintechs, regulators, and digital platforms: discover how Protegey's shared fraud intelligence network serves each institution type."
         },
         "cards": {
             "banks": {
@@ -886,11 +979,48 @@
         "non_category_rule": "Protegey is not designed for individual consumers."
     },
     "careers": {
+        "eyebrow": "Careers",
+        "perks_eyebrow": "Perks",
         "title": "Join the Mission",
-        "subtitle": "Help us build the digital immune system for Africa's economy. We're looking for builders, breakers, and believers.",
-        "no_roles": "No Open Roles Currently",
-        "no_roles_desc": "We're not actively hiring at the moment, but we're always interested in meeting exceptional talent. Check back later for new opportunities.",
-        "cta": "Email us your resume"
+        "subtitle": "We are building the digital immune system for a continent. Help us secure the future of trade in Africa.",
+        "culture_title": "Our Culture",
+        "culture_subtitle": "We are a small, elite team of engineers, fraud analysts, and builders who care deeply about financial integrity.",
+        "pillars": [
+            {
+                "title": "Mission-First",
+                "desc": "Every line of code we write protects a real transaction for a real person."
+            },
+            {
+                "title": "Extreme Velocity",
+                "desc": "Fraud moves fast. We move faster. We ship early and iterate in real-time."
+            },
+            {
+                "title": "Ownership",
+                "desc": "You own your work from core engine logic to final deployment. No silos."
+            }
+        ],
+        "benefits_title": "Why Protegey?",
+        "benefits": [
+            {
+                "title": "Remote-First",
+                "desc": "Work from anywhere in Africa or beyond. We value output over office hours."
+            },
+            {
+                "title": "Health & Wellness",
+                "desc": "Comprehensive health coverage for you and your family."
+            },
+            {
+                "title": "Meaningful Equity",
+                "desc": "Every employee is an owner of the company and our shared success."
+            },
+            {
+                "title": "Growth Budget",
+                "desc": "Annual stipend for books, courses, and professional development."
+            }
+        ],
+        "no_roles": "Current Opportunities",
+        "no_roles_desc": "There are no active openings at this moment, but we are always hungry for world-class talent to join the Signal Network.",
+        "cta": "Drop us a line at careers{'@'}protegey.com"
     },
     "faq": {
         "title": "Frequently Asked Questions",
@@ -908,21 +1038,21 @@
     },
     "seo": {
         "global": {
-            "title": "Protegey — Unified Fraud Intelligence Engine for Francophone and Northern Africa",
-            "description": "Protegey is a real-time fraud intelligence and alert-sharing network. Financial institutions, fintechs, and regulators across Africa collaborate to identify, report, and stop mobile money fraud, account takeovers, and other threats with speed, AML compliance, and shared insight.",
-            "keywords": "fraud intelligence Africa, anti-fraud network, transaction monitoring, AML compliance, identity verification, Fintech security, banking fraud prevention, mobile money security, GIM-UEMOA, GIMAC, Northern Africa fraud detection, Francophone Africa fraud prevention, Senegal, Côte d'Ivoire, Cameroon, Gabon, Morocco, Algeria, Tunisia, Egypt, Democratic Republic of Congo, Benin, Togo, Mali, Burkina Faso, Central African Republic, fraud prevention WAEMU, CEMAC business security, shared intelligence network, sandbox for fintechs, African fraud taxonomy, cross-institution fraud detection, bank transaction monitoring Africa, SIM swap detection API",
+            "title": "Protegey — Shared Fraud Intelligence for Financial Institutions",
+            "description": "Protegey connects banks, lenders, fintechs, and regulators into a shared fraud intelligence network for transaction monitoring, account protection, AML compliance, risk profiling, and coordinated response.",
+            "keywords": "shared fraud intelligence, transaction monitoring, account takeover prevention, SIM swap detection, AML compliance, risk profiling, fraud intelligence network, cross-institution fraud detection, fintech security, banking fraud prevention, sanctions screening, PEP screening, suspicious activity reporting, counterparty risk scoring, device fingerprinting",
             "image": "https://www.protegey.com/og-image.jpg",
             "image_alt": "Protegey — Unified Fraud Intelligence Engine"
         },
         "index": {
             "title": "Protegey | Unified Fraud Intelligence for African Institutions",
-            "description": "Protegey is a real-time fraud intelligence and alert-sharing network. Financial institutions, fintechs, and regulators across Africa collaborate to identify, report, and stop mobile money fraud, account takeovers, and other threats with speed, AML compliance, and shared insight."
+            "description": "Protegey connects banks, lenders, and fintechs into a shared fraud intelligence network so they can detect, monitor, and regulate threats no single institution can see alone."
         },
-        "products": {
+        "solutions": {
             "title": "Security Solutions | Protegey Fraud Intelligence Infrastructure",
-            "description": "Comprehensive security suite combating mobile money fraud and enabling AML compliance for African financial ecosystems: Gateway API, Radar Behavioral Monitoring, Signal Intelligence Network, and Ops Console."
+            "description": "Explore PROTEGEY's five solution layers: Transaction Monitoring, Account & Device Protection, AML & Compliance, Risk Profiling, and the Fraud Intelligence Network."
         },
-        "product_detail": {
+        "solution_detail": {
             "title": "{name} | Protegey Security Infrastructure",
             "description": "{description}"
         },
@@ -965,5 +1095,206 @@
     },
     "a11y": {
         "skip_to_content": "Skip to main content"
-    }
+    },
+"industries": {
+    "title": "Fraud Intelligence Built for Real-World Financial Systems",
+    "subtitle": "Protegey adapts to fragmented identity systems, cross-platform fraud, and regulatory demands — delivering real-time risk intelligence across interconnected ecosystems.",
+    "challenge_badge": "Key Risks",
+    "solution_badge": "How Protegey Helps",
+    "challenge_heading": "Key Risks in {industry}",
+    "solution_heading": "How Protegey Supports {industry}",
+    
+    "sectors": {
+
+        "banks": {
+            "title": "Banks, Digital Lenders & BNPL Platforms",
+            "desc": "Commercial banks, digital lending apps, consumer finance platforms, and Buy Now Pay Later providers",
+            "challenge": "Fraudsters exploit the speed of instant credit decisions — creating synthetic identities, stacking loans across multiple lenders, and running coordinated rings that no single institution can detect on its own.",
+            "solution": "Protegey monitors transactions in real time, scores accounts and counterparties instantly, and surfaces cross-institution fraud signals so lenders and banks can act before losses spread.",
+            "risks": [
+                "Synthetic or stolen identities used to open accounts and access credit.",
+                "Account takeover, mule activity, and suspicious transfers moving across channels.",
+                "Fraud networks exploiting weak visibility between branches, apps, cards, and payment rails."
+            ],
+            "how_protegey_helps": [
+                "Monitors transactions, beneficiaries, and account behavior for real-time fraud indicators.",
+                "Scores accounts, devices, and counterparties with clear allow, review, or block recommendations.",
+                "Connects institution-level alerts to shared intelligence so coordinated fraud is caught earlier."
+            ]
+        },
+
+        "microfinance": {
+            "title": "Microfinance Banks, SACCOs & Credit Unions",
+            "desc": "Cooperative banks, microfinance institutions, and savings and credit cooperatives",
+            "challenge": "Community lenders play a critical role in expanding financial access, but often lack the tools larger banks have. The same device submitting multiple loan applications, insider collusion, and borrowers stacking credit across institutions are hard to catch without the right infrastructure.",
+            "solution": "Protegey brings enterprise-grade fraud detection to community lenders without the enterprise complexity. It helps teams detect repeated devices and numbers, monitor repayment patterns, and share fraud signals across trusted networks.",
+            "risks": [
+                "Multiple loan applications linked to the same device, phone number, or borrower trail.",
+                "Insider collusion and operational fraud inside cooperative lending networks.",
+                "Borrowers stacking credit across institutions before manual review can catch it."
+            ],
+            "how_protegey_helps": [
+                "Flags reused devices, numbers, and linked entities across loan applications.",
+                "Monitors repayment and transaction behaviour for red flags that suggest coordinated abuse.",
+                "Helps institutions share useful fraud signals across their networks so repeat actors are surfaced earlier."
+            ]
+        },
+
+        "lending": {
+            "title": "Lending Platforms (Banks, BNPL & Digital Credit)",
+            "desc": "Digital lenders, consumer finance apps, and buy-now-pay-later providers",
+            "challenge": "Synthetic identities, loan stacking, and coordinated fraud rings exploit instant credit decisions across multiple lenders.",
+            "solution": "Protegey detects high-risk applicants before disbursement using risk profiling and device intelligence, while exposing repeat offenders across institutions through shared signals.",
+            "risks": [
+                "Loan stacking across multiple lenders using the same borrower, device, or contact trail.",
+                "Synthetic identities and stolen credentials used to trigger instant credit approvals.",
+                "Fraud rings abusing low-friction checkout, salary advance, or BNPL flows."
+            ],
+            "how_protegey_helps": [
+                "Screens applicants with device, behavioral, and counterparty risk checks before disbursement.",
+                "Flags repeat applications and suspicious borrower relationships across internal and shared datasets.",
+                "Supports safer credit decisions with explainable scoring for manual review and automated policies."
+            ]
+        },
+
+        "fintechs": {
+            "title": "Fintechs, Neobanks & Payment Platforms",
+            "desc": "Wallet providers, payment gateways, and digital banking platforms",
+            "challenge": "Frictionless user experiences are exploited through account takeovers, SIM swaps, and fraudulent peer-to-peer transfers.",
+            "solution": "Protegey identifies compromised accounts in real time, flags high-risk devices before transactions complete, and delivers instant risk scores for onboarding and payments.",
+            "risks": [
+                "Account takeover attempts driven by SIM swaps, credential theft, and social engineering.",
+                "Fraudulent P2P, cash-out, or wallet top-up activity moving faster than manual review.",
+                "Abuse of fast onboarding flows through fake identities, emulators, or device farms."
+            ],
+            "how_protegey_helps": [
+                "Applies account, device, and network intelligence at signup, login, and payment initiation.",
+                "Detects risky sessions, linked devices, and abnormal transfer behavior in real time.",
+                "Provides network-aware fraud scoring so high-growth platforms can scale with tighter controls."
+            ]
+        },
+
+        "mobile_money": {
+            "title": "Mobile Money & Wallet Ecosystems",
+            "desc": "Mobile money operators, agent networks, and telco-backed wallets",
+            "challenge": "Distributed agent networks and SIM-based identity systems create vulnerabilities for fraud, account abuse, and unauthorized access.",
+            "solution": "Protegey detects SIM swap patterns, monitors agent activity, and identifies suspicious wallet behavior across large-scale distributed networks.",
+            "risks": [
+                "SIM swap abuse, wallet takeovers, and social-engineered cash-outs.",
+                "Agent collusion, rapid account cycling, and suspicious float movement.",
+                "Fraud activity hidden across large distributed networks with weak shared visibility."
+            ],
+            "how_protegey_helps": [
+                "Detects SIM-related risk, device anomalies, and wallet behavior shifts before funds move.",
+                "Monitors agent activity patterns to surface outliers, collusion, and suspicious settlement flows.",
+                "Builds a clearer view of linked accounts, numbers, and devices across the wallet ecosystem."
+            ]
+        },
+
+        "remittance": {
+            "title": "Remittance & Cross-Border Payments",
+            "desc": "Remittance providers, international transfer platforms, and payment corridors",
+            "challenge": "High-risk corridors are frequently targeted for laundering, structuring, and cross-border fraud schemes.",
+            "solution": "Protegey monitors transaction flows in real time, flags suspicious corridor activity, and ensures compliance with AML requirements.",
+            "risks": [
+                "Structuring, mule activity, and repeated transfers through high-risk corridors.",
+                "Sender or beneficiary identities reused across suspicious cross-border activity.",
+                "Compliance exposure from weak sanctions, AML, and transaction monitoring coverage."
+            ],
+            "how_protegey_helps": [
+                "Screens parties and payment flows with real-time compliance and fraud controls.",
+                "Detects corridor-level anomalies, repeated patterns, and linked counterparties.",
+                "Helps teams escalate suspicious activity faster with richer context for investigations."
+            ]
+        },
+
+        "ecommerce": {
+            "title": "E-commerce & Digital Marketplaces",
+            "desc": "Online marketplaces, merchants, and multi-vendor platforms",
+            "challenge": "Chargebacks, stolen credentials, and coordinated fraud rings increase losses and undermine platform trust.",
+            "solution": "Protegey detects suspicious purchasing patterns, tracks fraudulent devices, and scores counterparties before transactions are completed.",
+            "risks": [
+                "Card-not-present fraud, chargebacks, and abuse of compromised customer accounts.",
+                "Repeat fraud from device clusters targeting multiple merchants or storefronts.",
+                "Seller or buyer networks manipulating orders, payouts, or refund flows."
+            ],
+            "how_protegey_helps": [
+                "Identifies risky devices and linked shopper behavior before checkout is completed.",
+                "Monitors purchase, refund, and payout activity for suspicious patterns.",
+                "Extends visibility across merchants and marketplaces to expose coordinated fraud rings."
+            ]
+        },
+
+        "gaming": {
+            "title": "Gaming & Betting Platforms",
+            "desc": "Online casinos, sports betting apps, and fantasy gaming platforms",
+            "challenge": "Bonus abuse through fake accounts, coordinated collusion, and fraud rings exploiting promotional campaigns are persistent threats. A single ring can operate hundreds of fake accounts before traditional detection catches on.",
+            "solution": "Protegey detects coordinated device activity across accounts, flags suspicious registration behaviour, and maps the links between accounts that appear unrelated but share a device, number, or network fingerprint.",
+            "risks": [
+                "Bonus abuse driven by fake accounts and repeated sign-up activity.",
+                "Coordinated collusion between players using linked devices or contact trails.",
+                "Promotional fraud rings operating at a scale manual review cannot catch quickly."
+            ],
+            "how_protegey_helps": [
+                "Flags suspicious registration behaviour and repeated device reuse across accounts.",
+                "Maps connections between accounts that share devices, numbers, or network fingerprints.",
+                "Helps fraud teams escalate coordinated gaming abuse earlier with clearer relationship evidence."
+            ]
+        },
+
+        "crypto": {
+            "title": "Crypto & Digital Asset Platforms",
+            "desc": "Exchanges, wallets, and blockchain-based financial services",
+            "challenge": "Fast, irreversible transactions combined with regulatory pressure make fraud detection and compliance difficult.",
+            "solution": "Protegey screens transactions and counterparties in real time, detects suspicious activity patterns, and delivers risk scoring before execution.",
+            "risks": [
+                "Rapid movement of funds through wallets linked to laundering, scams, or sanctions exposure.",
+                "Cross-platform fraud actors exploiting weak identity ties between users and wallet activity.",
+                "Regulatory pressure around AML controls, suspicious activity reporting, and high-risk counterparties."
+            ],
+            "how_protegey_helps": [
+                "Combines onboarding controls, transaction screening, and compliance checks for higher-risk flows.",
+                "Surfaces suspicious wallet relationships, recurring patterns, and abnormal counterparty activity.",
+                "Supports investigations and reporting with clearer evidence for fraud and AML teams."
+            ]
+        },
+
+        "regulators": {
+            "title": "Regulators & Financial Intelligence Units",
+            "desc": "Central banks, FIUs, and supervisory institutions",
+            "challenge": "Fraud signals are fragmented across institutions, delaying visibility into systemic risks and coordinated networks.",
+            "solution": "Protegey aggregates anonymised intelligence across institutions, revealing emerging fraud patterns and enabling early intervention.",
+            "risks": [
+                "Emerging fraud trends staying hidden until losses have already spread across institutions.",
+                "Weak cross-institution visibility into coordinated actors, mule networks, and repeat abuse.",
+                "Slow supervisory response caused by fragmented reporting and inconsistent risk signals."
+            ],
+            "how_protegey_helps": [
+                "Aggregates institution-level intelligence into a clearer system-wide view of fraud activity.",
+                "Highlights repeat entities, connected patterns, and fast-growing risk clusters earlier.",
+                "Strengthens supervisory analysis with actionable signals that support intervention and coordination."
+            ]
+        },
+
+        "mobility": {
+            "title": "Mobility & Hospitality",
+            "desc": "Ride-hailing platforms, delivery networks, hotels, and travel platforms",
+            "challenge": "These platforms depend on trust between the platform, service providers, and customers. Fraudulent driver accounts, multi-account abuse, and suspicious booking or payment patterns create both financial loss and safety risk.",
+            "solution": "Protegey detects when multiple accounts originate from the same device, flags unusual booking and payment behaviour, and scores counterparties before onboarding so platforms can reduce operational losses and improve trust.",
+            "risks": [
+                "Fraudulent service-provider accounts and repeated multi-account abuse on the same platform.",
+                "Suspicious booking, payout, and payment activity that blends financial and operational risk.",
+                "Weak visibility into risky counterparties before they reach customers or critical workflows."
+            ],
+            "how_protegey_helps": [
+                "Detects when multiple accounts originate from the same device or linked signals.",
+                "Flags unusual booking and payment behaviour before it escalates into loss or safety issues.",
+                "Scores counterparties before onboarding to help teams block higher-risk actors earlier."
+            ]
+        }
+
+    },
+
+    "closing_statement": "Fraud doesn’t operate in silos — and neither should your defenses. Protegey connects the signals so you can act before losses happen."
+}
 }

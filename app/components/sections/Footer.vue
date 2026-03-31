@@ -2,12 +2,12 @@
   <footer role="contentinfo" :aria-label="$t('footer.aria_footer')"
     class="relative z-10 py-12 px-6 border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950">
     <div class="container mx-auto max-w-6xl">
-      <div class="grid md:grid-cols-5 gap-8 mb-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 mb-8">
         <!-- Brand -->
         <div>
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2 mb-4 rtl:justify-end">
-            <img src="/images/logo.png" :alt="$t('footer.logo_alt')" width="56" height="56" class="w-14 h-14 object-contain" />
-            <span class="text-lg font-bold text-neutral-900 dark:text-white">PROTEGEY</span>
+            <img src="/images/logo-light-mode.png" :alt="$t('footer.logo_alt')" class="block h-8 w-auto max-w-none shrink-0 dark:hidden" />
+            <img src="/images/logo-dark-mode.png" :alt="$t('footer.logo_alt')" class="hidden h-8 w-auto max-w-none shrink-0 dark:block" />
           </NuxtLink>
           <p class="text-sm text-neutral-500 dark:text-neutral-400 rtl:text-right">{{ $t('footer.slogan') }}</p>
         </div>
@@ -35,40 +35,40 @@
         </div>
 
         <div class="rtl:text-right">
-          <h3 class="font-semibold mb-4 text-neutral-900 dark:text-white">{{ $t('nav.products') }}</h3>
+          <h3 class="font-semibold mb-4 text-neutral-900 dark:text-white">{{ $t('nav.solutions') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
             <li>
-              <NuxtLink :to="localePath('/products/signal')" class="hover:text-primary-400 transition-colors">
-                {{ $t('products.signal.title') }}
+              <NuxtLink :to="localePath('/solutions/transaction-monitoring')" class="hover:text-primary-400 transition-colors">
+                {{ $t('solutions.modules.transaction-monitoring.title') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/products/radar')" class="hover:text-primary-400 transition-colors">
-                {{ $t('products.radar.title') }}
+              <NuxtLink :to="localePath('/solutions/account-protection')" class="hover:text-primary-400 transition-colors">
+                {{ $t('solutions.modules.account-protection.title') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/products/api')" class="hover:text-primary-400 transition-colors">
-                {{ $t('products.api.title') }}
+              <NuxtLink :to="localePath('/solutions/aml-compliance')" class="hover:text-primary-400 transition-colors">
+                {{ $t('solutions.modules.aml-compliance.title') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/products/console')" class="hover:text-primary-400 transition-colors">
-                {{ $t('products.console.title') }}
+              <NuxtLink :to="localePath('/solutions/risk-profiling')" class="hover:text-primary-400 transition-colors">
+                {{ $t('solutions.modules.risk-profiling.title') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/products/compliance')" class="hover:text-primary-400 transition-colors">
-                {{ $t('products.compliance.title') }}
+              <NuxtLink :to="localePath('/solutions/fraud-intelligence')" class="hover:text-primary-400 transition-colors">
+                {{ $t('solutions.modules.fraud-intelligence.title') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/products/panid')"
+              <NuxtLink :to="localePath('/solutions')"
                 class="hover:text-primary-400 transition-colors flex items-center gap-2 rtl:justify-end">
-                {{ $t('products.panid.title') }}
+                {{ $t('solutions.panid_teaser.title') }}
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary-500/10 text-primary-400 border border-primary-500/20 leading-none">
-                  {{ $t('products.panid.status') }}
+                  {{ $t('solutions.coming_soon') }}
                 </span>
               </NuxtLink>
             </li>
@@ -79,10 +79,50 @@
           <h3 class="font-semibold mb-4 text-neutral-900 dark:text-white">{{ $t('footer.resources') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
             <li>
+              <NuxtLink :to="localePath('what-is-protegey')" class="hover:text-primary-400 transition-colors">
+                {{ $t('footer.links.what_is_protegey') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('how-it-works')" class="hover:text-primary-400 transition-colors">
+                {{ $t('footer.links.how_it_works') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('who-its-for')" class="hover:text-primary-400 transition-colors">
+                {{ $t('footer.links.who_its_for') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('comparisons')" class="hover:text-primary-400 transition-colors">
+                {{ $t('footer.links.comparisons') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('trust')" class="hover:text-primary-400 transition-colors">
+                {{ $t('footer.links.trust') }}
+              </NuxtLink>
+            </li>
+            <li>
               <NuxtLink :to="localePath('api-docs')" class="hover:text-primary-400 transition-colors"
                 data-testid="link-api-docs">{{
                   $t('footer.links.api_docs') }}</NuxtLink>
             </li>
+          </ul>
+        </div>
+
+        <div class="rtl:text-right">
+          <h3 class="font-semibold mb-4 text-neutral-900 dark:text-white">{{ $t('nav.industries') }}</h3>
+          <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+            <li>
+              <NuxtLink :to="localePath('use-cases')" class="hover:text-primary-400 transition-colors">
+                {{ $t('nav.industries') }}
+              </NuxtLink>
+            </li>
+          </ul>
+
+          <h3 class="font-semibold mt-8 mb-4 text-neutral-900 dark:text-white">{{ $t('footer.legal') }}</h3>
+          <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
             <li>
               <NuxtLink :to="localePath('privacy')" class="hover:text-primary-400 transition-colors"
                 data-testid="link-privacy">

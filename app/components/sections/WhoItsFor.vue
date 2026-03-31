@@ -52,7 +52,7 @@ const getColor = (color: string) => colorMap[color] ?? colorMap['primary']!
       v-for="card in cards"
       :key="card.key"
       :class="[
-        'group relative p-8 rounded-3xl border bg-white/90 dark:bg-neutral-900/50 backdrop-blur-sm',
+        'group relative p-6 rounded-2xl border bg-white/90 dark:bg-neutral-900/50 backdrop-blur-sm',
         'hover:scale-[1.02] transition-all duration-300 hover:shadow-xl',
         getColor(card.color).border,
       ]"
@@ -63,11 +63,11 @@ const getColor = (color: string) => colorMap[color] ?? colorMap['primary']!
       <div class="relative z-10">
         <!-- Icon + title -->
         <div class="flex items-center gap-4 mb-5">
-          <div :class="['p-3 rounded-xl', getColor(card.color).bg]">
-            <HugeiconsIcon :icon="card.icon" :size="28" :class="getColor(card.color).text" />
+          <div :class="['p-2.5 rounded-xl', getColor(card.color).bg]">
+            <HugeiconsIcon :icon="card.icon" :size="24" :class="getColor(card.color).text" />
           </div>
           <div>
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-white">{{ t(`who_its_for.cards.${card.key}.title`) }}</h3>
+            <h3 class="text-lg font-bold text-neutral-900 dark:text-white">{{ t(`who_its_for.cards.${card.key}.title`) }}</h3>
             <p :class="['text-sm font-medium', getColor(card.color).text]">{{ t(`who_its_for.cards.${card.key}.subtitle`) }}</p>
           </div>
         </div>

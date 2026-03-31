@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import InfoPage from '~/components/sections/InfoPage.vue'
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 const pipelineSteps = computed(() => [
   { num: '01', color: 'primary',   title: t('signal_pipeline.step1.title'),  desc: t('signal_pipeline.step1.desc') },
@@ -59,41 +60,51 @@ if (import.meta.server) {
                         step.color === 'amber'     ? 'border-accent-orange-500     bg-accent-orange-500/20     text-accent-orange-300'     : '',
                         step.color === 'emerald'   ? 'border-accent-cyan-500   bg-accent-cyan-500/20   text-accent-cyan-300'   : '',
                     ]">{{ step.num }}</div>
-                    <div v-if="idx < 9" class="w-px flex-1 bg-neutral-200 dark:bg-neutral-800 my-1" />
+                    <div v-if="idx < pipelineSteps.length - 1" class="w-px flex-1 bg-neutral-200 dark:bg-neutral-800 my-1" />
                 </div>
 
                 <!-- Right: card -->
-                <div class="pb-6 flex-1">
+                <div class="pb-10 flex-1">
                     <div :class="[
-                        'p-5 rounded-2xl border bg-white dark:bg-neutral-900/60 backdrop-blur-sm hover:bg-neutral-50 dark:hover:bg-neutral-900/80 transition-colors',
-                        step.color === 'primary'   ? 'border-primary-500/30 hover:border-primary-500/50'     : '',
-                        step.color === 'secondary' ? 'border-secondary-500/30 hover:border-secondary-500/50' : '',
-                        step.color === 'amber'     ? 'border-accent-orange-500/30 hover:border-accent-orange-500/50'         : '',
-                        step.color === 'emerald'   ? 'border-accent-cyan-500/30 hover:border-accent-cyan-500/50'     : '',
+                        'p-5 md:p-6 rounded-2xl border bg-white/50 dark:bg-neutral-900/40 backdrop-blur-md hover:bg-white dark:hover:bg-neutral-900 transition-all duration-500 shadow-xl shadow-black/5 dark:shadow-black/20',
+                        step.color === 'primary'   ? 'border-primary-500/20 hover:border-primary-500/40'     : '',
+                        step.color === 'secondary' ? 'border-secondary-500/20 hover:border-secondary-500/40' : '',
+                        step.color === 'amber'     ? 'border-accent-orange-500/20 hover:border-accent-orange-500/40'         : '',
+                        step.color === 'emerald'   ? 'border-accent-cyan-500/20 hover:border-accent-cyan-500/40'     : '',
                     ]">
                         <h3 :class="[
-                            'font-bold text-base mb-1',
-                            step.color === 'primary'   ? 'text-primary-300'   : '',
-                            step.color === 'secondary' ? 'text-secondary-300' : '',
-                            step.color === 'amber'     ? 'text-accent-orange-300'     : '',
-                            step.color === 'emerald'   ? 'text-accent-cyan-300'   : '',
+                            'font-bold text-lg mb-2 tracking-tight',
+                            step.color === 'primary'   ? 'text-primary-400'   : '',
+                            step.color === 'secondary' ? 'text-secondary-400' : '',
+                            step.color === 'amber'     ? 'text-accent-orange-400'     : '',
+                            step.color === 'emerald'   ? 'text-accent-cyan-400'   : '',
                         ]">{{ step.title }}</h3>
-                        <p class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{{ step.desc }}</p>
+                        <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed font-semibold">{{ step.desc }}</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Output label -->
-        <div class="flex justify-center mt-4">
+        <div class="flex justify-center mt-12">
             <div class="flex items-center gap-3 px-5 py-2 rounded-full border border-primary-500/40 bg-primary-500/10 font-mono text-sm text-primary-300">
                 <span class="w-2 h-2 rounded-full bg-primary-400" />
                 {{ t('signal_pipeline.output_label') }}
             </div>
         </div>
 
+        <!-- Mini CTA -->
+        <div class="mt-16 text-center p-6 md:p-8 rounded-[2rem] border border-primary-500/20 bg-primary-500/5 relative overflow-hidden">
+            <div class="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
+            <h2 class="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tighter leading-none">Ready to secure your institution?</h2>
+            <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-400 mb-8 max-w-md mx-auto font-medium">Connect with our team to start your integration pilot.</p>
+            <NuxtLink :to="localePath('/contact')" class="px-6 py-3 rounded-xl bg-primary-400 hover:bg-primary-300 text-neutral-950 font-bold transition-all transform hover:scale-[1.03] inline-block shadow-xl shadow-primary-500/20">
+                Request Integration Access
+            </NuxtLink>
+        </div>
+
         <!-- Footer note -->
-        <p class="text-center text-neutral-500 text-sm mt-10 max-w-xl mx-auto">
+        <p class="text-center text-neutral-500 text-sm mt-12 max-w-xl mx-auto font-medium">
             {{ t('geo_pages.how_it_works.footer_note') }}
         </p>
     </InfoPage>

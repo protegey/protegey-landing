@@ -58,21 +58,21 @@ onMounted(() => {
                     <div
                         class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-cyan-500/10 text-accent-cyan-400 border border-accent-cyan-500/20 text-xs font-bold tracking-widest uppercase mb-6 rtl:flex-row-reverse">
                         <HugeiconsIcon :icon="GlobalIcon" :size="16" />
-                        {{ $t('products.geographic_coverage.title') }}
+                        {{ $t('solutions.geographic_coverage.title') }}
                     </div>
                     <h2
                         class="text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-8 tracking-tight capitalize leading-tight rtl:text-center">
-                        {{ $t('products.geographic_coverage.heading_part1') }} <span
+                        {{ $t('solutions.geographic_coverage.heading_part1') }} <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan-400 to-primary-400">{{
-                                $t('products.geographic_coverage.heading_highlight') }}</span>
+                                $t('solutions.geographic_coverage.heading_highlight') }}</span>
                     </h2>
                     <p class="text-neutral-500 dark:text-neutral-400 text-xl max-w-3xl mx-auto leading-relaxed rtl:text-center">
-                        {{ $t('products.geographic_coverage.description') }}
+                        {{ $t('solutions.geographic_coverage.description') }}
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div v-for="(region, index) in tm('products.geographic_coverage.regions')" :key="index"
+                    <div v-for="(region, index) in tm('solutions.geographic_coverage.regions')" :key="index"
                         class="region-card p-10 rounded-[2.5rem] bg-white/80 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 hover:border-accent-cyan-500/30 transition-all duration-500 group">
                         <div class="flex items-center gap-4 mb-6 rtl:flex-row-reverse">
                             <div
@@ -84,7 +84,7 @@ onMounted(() => {
                             </h3>
                         </div>
                         <p class="text-neutral-500 dark:text-neutral-400 leading-relaxed font-light rtl:text-right">
-                            {{ $t('products.geographic_coverage.region_text') }}
+                            {{ $t('solutions.geographic_coverage.region_text') }}
                         </p>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ onMounted(() => {
                 <div
                     class="mt-16 p-8 rounded-[2rem] bg-neutral-50/50 dark:bg-neutral-900/20 border border-neutral-200/80 dark:border-neutral-800/50 backdrop-blur-sm text-center">
                     <p class="text-neutral-400 dark:text-neutral-500 italic text-lg rtl:text-center">
-                        {{ $t('products.geographic_coverage.note') }}
+                        {{ $t('solutions.geographic_coverage.note') }}
                     </p>
                 </div>
             </div>

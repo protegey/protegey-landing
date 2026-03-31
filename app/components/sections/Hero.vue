@@ -6,41 +6,41 @@ import { ArrowRight01Icon, Shield01Icon, Activity01Icon, Globe02Icon, LockComput
 
 defineProps({ isDark: Boolean });
 
-const { t, locale } = useI18n();
+const { t, te, locale } = useI18n();
 
 let tl;
 let typewriterTimeout = null;
 
 const typewriterText = ref('');
-const showCursor = ref(true);
 
 const texts = computed(() => [
     t('hero.typewriter.detect'),
     t('hero.typewriter.analyze'),
     t('hero.typewriter.monitor'),
-    t('hero.typewriter.prevent')
+    t('hero.typewriter.prevent'),
 ]);
 
-const typingSpeed = 50;
-const deletingSpeed = 30;
-const pauseDelay = 2000;
-const startDelay = 1500;
+const useSplitHeroTitle = computed(() => te('hero.title_line_1.prefix'));
 
-// Reset typewriter when locale changes
-watch(locale, () => {
-    if (typewriterTimeout) clearTimeout(typewriterTimeout);
-    startTypewriter();
-});
+const typingSpeed = 55;
+const deletingSpeed = 35;
+const pauseDelay = 1200;
+
+const scrollTo = (selector) => {
+    const el = document.getElementById(selector)
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 
 const startTypewriter = () => {
+    if (typewriterTimeout) clearTimeout(typewriterTimeout);
+
     typewriterText.value = '';
-    showCursor.value = true;
     let currentTextIndex = 0;
     let currentIndex = 0;
     let isDeleting = false;
 
     const type = () => {
-        const currentText = texts.value[currentTextIndex];
+        const currentText = texts.value[currentTextIndex] || '';
 
         if (!isDeleting) {
             if (currentIndex < currentText.length) {
@@ -51,29 +51,23 @@ const startTypewriter = () => {
                 isDeleting = true;
                 typewriterTimeout = setTimeout(type, pauseDelay);
             }
+        } else if (typewriterText.value.length > 0) {
+            typewriterText.value = typewriterText.value.slice(0, -1);
+            typewriterTimeout = setTimeout(type, deletingSpeed);
         } else {
-            if (typewriterText.value.length > 0) {
-                typewriterText.value = typewriterText.value.slice(0, -1);
-                typewriterTimeout = setTimeout(type, deletingSpeed);
-            } else {
-                isDeleting = false;
-                currentIndex = 0;
-                currentTextIndex = (currentTextIndex + 1) % texts.value.length;
-                typewriterTimeout = setTimeout(type, typingSpeed);
-            }
+            isDeleting = false;
+            currentIndex = 0;
+            currentTextIndex = (currentTextIndex + 1) % texts.value.length;
+            typewriterTimeout = setTimeout(type, typingSpeed);
         }
     };
 
-    // Small delay to ensure texts are ready
-    setTimeout(() => {
-        type();
-    }, 100);
+    type();
 };
 
-const scrollTo = (selector) => {
-    const el = document.getElementById(selector)
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-}
+watch(locale, () => {
+    startTypewriter();
+});
 
 onMounted(() => {
     try {
@@ -167,29 +161,49 @@ onUnmounted(() => {
                     </div>
 
                     <h1
-                        class="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-neutral-900 dark:text-white tracking-tight">
-                        {{ $t('hero.title_part_1') }}
-
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
-                            {{ $t('hero.title_highlight') }}
-                        </span>
-
-                        {{ $t('hero.title_part_2') }}
+                        class="hero-title text-4xl lg:text-5xl font-bold leading-[1.1] text-neutral-900 dark:text-white tracking-tight">
+                        <template v-if="useSplitHeroTitle">
+                            <span class="block">
+                                {{ $t('hero.title_line_1.prefix') }}
+                                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
+                                    {{ $t('hero.title_line_1.highlight') }}
+                                </span>
+                                {{ $t('hero.title_line_1.suffix') }}
+                            </span>
+                            <span class="block">
+                                {{ $t('hero.title_line_2.prefix') }}
+                                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
+                                    {{ $t('hero.title_line_2.highlight') }}
+                                </span>
+                                {{ $t('hero.title_line_2.suffix') }}
+                            </span>
+                        </template>
+                        <template v-else>
+                            <span class="block">{{ $t('hero.title_part_1') }}</span>
+                            <span v-if="$t('hero.title_highlight')" class="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
+                                {{ $t('hero.title_highlight') }}
+                            </span>
+                            <span class="block">{{ $t('hero.title_part_2') }}</span>
+                        </template>
                     </h1>
 
-                    <p class="hero-subtitle text-lg sm:text-xl text-neutral-500 dark:text-neutral-400 max-w-2xl leading-relaxed"
+                    <p class="hero-subtitle text-base text-neutral-500 dark:text-neutral-400 max-w-2xl leading-relaxed"
                         v-html="$t('hero.subtitle', { action: typewriterText })">
                     </p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <button @click.prevent="scrollTo('waitlist')"
-                            class="hero-cta-button group bg-primary-500 hover:bg-primary-400 text-neutral-950 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(12,185,158,0.3)] hover:shadow-[0_0_30px_rgba(12,185,158,0.5)]">
-                            <HugeiconsIcon :icon="Shield01Icon" :size="20"
+                            class="hero-cta-button group bg-primary-500 hover:bg-primary-400 text-neutral-950 px-5 py-2.5 rounded-lg font-bold text-base transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(12,185,158,0.3)] hover:shadow-[0_0_30px_rgba(12,185,158,0.5)]">
+                            <HugeiconsIcon :icon="Shield01Icon" :size="18"
                                 class="transition-colors" />
                             {{ $t('hero.cta.request_demo') }}
-                            <HugeiconsIcon :icon="ArrowRight01Icon" :size="20"
+                            <HugeiconsIcon :icon="ArrowRight01Icon" :size="18"
                                 class="rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
+                        </button>
+                        <button @click.prevent="scrollTo('waitlist')"
+                            class="hero-cta-button group border border-neutral-300 dark:border-neutral-700 hover:border-primary-500/50 text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white px-5 py-2.5 rounded-lg font-bold text-base transition-all duration-300 flex items-center justify-center gap-2 bg-white/50 dark:bg-neutral-900/50 hover:bg-white dark:hover:bg-neutral-800 backdrop-blur-sm">
+                            {{ $t('hero.cta.speak_expert') }}
                         </button>
                     </div>
 
@@ -222,14 +236,14 @@ onUnmounted(() => {
                         </div>
 
                         <!-- Dashboard Content -->
-                        <div class="p-6 space-y-6 bg-white/90 dark:bg-neutral-900/50">
+                        <div class="p-5 space-y-5 bg-white/90 dark:bg-neutral-900/50">
                             <!-- Stats Row -->
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="bg-neutral-100/80 dark:bg-neutral-800/50 p-4 rounded-lg border border-neutral-200/80 dark:border-neutral-700/50">
                                     <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1">{{
                                         $t('hero.dashboard.threats_blocked') }}
                                     </div>
-                                    <div class="text-2xl font-mono font-bold text-neutral-900 dark:text-white">84,291</div>
+                                    <div class="text-xl font-mono font-bold text-neutral-900 dark:text-white">84,291</div>
                                     <div class="text-xs text-primary-400 mt-1 flex items-center gap-1">
                                         <span
                                             class="inline-block w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[6px] border-b-primary-400"></span>
@@ -240,7 +254,7 @@ onUnmounted(() => {
                                     <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1">{{
                                         $t('hero.dashboard.active_nodes') }}
                                     </div>
-                                    <div class="text-2xl font-mono font-bold text-neutral-900 dark:text-white">1,402</div>
+                                    <div class="text-xl font-mono font-bold text-neutral-900 dark:text-white">1,402</div>
                                     <div class="text-xs text-secondary-400 mt-1">{{ $t('hero.dashboard.uptime') }}</div>
                                 </div>
                             </div>

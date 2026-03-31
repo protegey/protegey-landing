@@ -16,23 +16,23 @@ const localePath = useLocalePath()
 
         <div class="container mx-auto max-w-5xl relative z-10 text-center rtl:text-center">
             <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-8 tracking-tight rtl:text-center">
-                {{ $t('products.cta.title') }}
+                {{ $t('solutions.cta.title') }}
             </h2>
             <p class="text-xl md:text-2xl text-neutral-500 dark:text-neutral-400 mb-12 max-w-2xl mx-auto leading-relaxed rtl:text-center">
-                {{ $t('products.cta.subtitle') }}
+                {{ $t('solutions.cta.subtitle') }}
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6 rtl:flex-row-reverse">
                 <!-- Join Waitlist -->
                 <NuxtLink :to="localePath('/#waitlist')"
                     class="w-full sm:w-auto px-10 py-4 rounded-xl bg-primary-500 text-neutral-950 font-bold text-lg hover:bg-primary-400 transition-all hover:scale-105 shadow-lg shadow-primary-500/20">
-                    {{ $t('products.cta.request_demo') }}
+                    {{ $t('solutions.cta.request_demo') }}
                 </NuxtLink>
 
                 <!-- Contact Sales -->
                 <NuxtLink :to="localePath('contact')"
                     class="w-full sm:w-auto px-10 py-4 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white font-bold text-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all hover:border-neutral-400 dark:hover:border-neutral-600">
-                    {{ $t('products.cta.contact_us') }}
+                    {{ $t('solutions.cta.contact_us') }}
                 </NuxtLink>
             </div>
         </div>

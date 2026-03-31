@@ -48,7 +48,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <section id="why-protegey" class="why-protegey-section relative py-16 sm:py-20 md:py-24 lg:py-32 bg-neutral-50 dark:bg-neutral-950">
+    <section id="why-protegey" class="why-protegey-section relative py-12 md:py-16 bg-neutral-50 dark:bg-neutral-950">
         <!-- Background Elements -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl">
@@ -66,67 +66,67 @@ onMounted(async () => {
                         <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
                         {{ $t('why_protegey.badge') }}
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-center">{{
+                    <h2 class="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-center">{{
                         $t('why_protegey.title') }}</h2>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
                     <!-- Cards -->
                     <div ref="cardRefs[0]"
-                        class="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 flex flex-col shadow-lg hover:shadow-primary-500/10 hover:border-primary-500/30 transition-all duration-300 relative overflow-hidden">
+                        class="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 flex flex-col shadow-lg hover:shadow-primary-500/10 hover:border-primary-500/30 transition-all duration-300 relative overflow-hidden">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
                         <div class="relative z-10">
                             <div
                                 class="mb-6 inline-flex p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-primary-400 group-hover:text-primary-300 group-hover:scale-110 transition-all duration-300">
-                                <HugeiconsIcon :icon="ZapIcon" :size="32" />
+                                <HugeiconsIcon :icon="ZapIcon" :size="28" />
                             </div>
-                            <div class="text-4xl font-bold text-neutral-900 dark:text-white mb-3 font-mono rtl:text-right">{{
-                                $t('why_protegey.card1.value') }} <span class="text-primary-400 text-lg font-normal">{{
+                            <div class="text-2xl font-bold text-neutral-900 dark:text-white mb-3 font-mono rtl:text-right">{{
+                                $t('why_protegey.card1.value') }} <span class="text-primary-400 text-base font-normal">{{
                                     $t('why_protegey.card1.title')
                                     }}</span></div>
-                            <div class="text-neutral-500 dark:text-neutral-400 text-base md:text-lg leading-relaxed rtl:text-right">
+                            <div class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed rtl:text-right">
                                 {{ $t('why_protegey.card1.text') }}
                             </div>
                         </div>
                     </div>
 
                     <div ref="cardRefs[1]"
-                        class="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 flex flex-col shadow-lg hover:shadow-secondary-500/10 hover:border-secondary-500/30 transition-all duration-300 relative overflow-hidden">
+                        class="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 flex flex-col shadow-lg hover:shadow-secondary-500/10 hover:border-secondary-500/30 transition-all duration-300 relative overflow-hidden">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-secondary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
                         <div class="relative z-10">
                             <div
                                 class="mb-6 inline-flex p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-secondary-400 group-hover:text-secondary-300 group-hover:scale-110 transition-all duration-300">
-                                <HugeiconsIcon :icon="ChartDownIcon" :size="32" />
+                                <HugeiconsIcon :icon="ChartDownIcon" :size="28" />
                             </div>
-                            <div class="text-4xl font-bold text-neutral-900 dark:text-white mb-3 font-mono rtl:text-right">{{
+                            <div class="text-2xl font-bold text-neutral-900 dark:text-white mb-3 font-mono rtl:text-right">{{
                                 $t('why_protegey.card2.value') }} <span
-                                    class="text-secondary-400 text-lg font-normal">{{ $t('why_protegey.card2.title')
+                                    class="text-secondary-400 text-base font-normal">{{ $t('why_protegey.card2.title')
                                     }}</span></div>
-                            <div class="text-neutral-500 dark:text-neutral-400 text-base md:text-lg leading-relaxed rtl:text-right">
+                            <div class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed rtl:text-right">
                                 {{ $t('why_protegey.card2.text') }}
                             </div>
                         </div>
                     </div>
 
                     <div ref="cardRefs[2]"
-                        class="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 flex flex-col shadow-lg hover:shadow-accent-cyan-500/10 hover:border-accent-cyan-500/30 transition-all duration-300 relative overflow-hidden">
+                        class="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 flex flex-col shadow-lg hover:shadow-accent-cyan-500/10 hover:border-accent-cyan-500/30 transition-all duration-300 relative overflow-hidden">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-accent-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
                         <div class="relative z-10">
                             <div
                                 class="mb-6 inline-flex p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-accent-cyan-400 group-hover:text-accent-cyan-500 group-hover:scale-110 transition-all duration-300">
-                                <HugeiconsIcon :icon="Shield01Icon" :size="32" />
+                                <HugeiconsIcon :icon="Shield01Icon" :size="28" />
                             </div>
-                            <div class="text-4xl font-bold text-neutral-900 dark:text-white mb-3 font-mono rtl:text-right">{{
-                                $t('why_protegey.card3.value') }} <span class="text-accent-cyan-400 text-lg font-normal">{{
+                            <div class="text-2xl font-bold text-neutral-900 dark:text-white mb-3 font-mono rtl:text-right">{{
+                                $t('why_protegey.card3.value') }} <span class="text-accent-cyan-400 text-base font-normal">{{
                                     $t('why_protegey.card3.title')
                                     }}</span></div>
-                            <div class="text-neutral-500 dark:text-neutral-400 text-base md:text-lg leading-relaxed rtl:text-right">
+                            <div class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed rtl:text-right">
                                 {{ $t('why_protegey.card3.text') }}
                             </div>
                         </div>

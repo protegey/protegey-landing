@@ -15,10 +15,10 @@ export default defineEventHandler(async () => {
     'privacy',
     'careers',
     'api-docs',
-    'products'
+    'solutions'
   ]
-  
-  const products = ['signal', 'radar', 'api', 'console', 'compliance', 'panid']
+
+  const solutions = ['transaction-monitoring', 'account-protection', 'aml-compliance', 'risk-profiling', 'fraud-intelligence']
   
   const urls = []
   
@@ -45,8 +45,8 @@ export default defineEventHandler(async () => {
       }
     }
     
-    for (const product of products) {
-      const path = `${localePrefix}/products/${product}`
+    for (const solution of solutions) {
+      const path = `${localePrefix}/solutions/${solution}`
       urls.push({
         loc: `${baseUrl}${path}`,
         changefreq: 'weekly',
@@ -60,7 +60,7 @@ export default defineEventHandler(async () => {
       for (const altLocale of locales) {
         if (altLocale !== locale) {
           const altPrefix = altLocale === 'en' ? '' : `/${altLocale}`
-          urls[currentIndex].alternates.languages[altLocale] = `${baseUrl}${altPrefix}/products/${product}`
+          urls[currentIndex].alternates.languages[altLocale] = `${baseUrl}${altPrefix}/solutions/${solution}`
         }
       }
     }

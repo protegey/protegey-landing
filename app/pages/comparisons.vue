@@ -2,6 +2,7 @@
 import InfoPage from '~/components/sections/InfoPage.vue'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 const rows = [
   { key: 'speed' },
@@ -33,36 +34,45 @@ if (import.meta.server) {
 
 <template>
     <InfoPage :title="t('geo_pages.comparisons.title')">
-        <div class="space-y-12">
-            <div class="overflow-x-auto rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
+        <div class="space-y-16">
+            <div class="overflow-x-auto rounded-[2rem] border border-neutral-200 dark:border-white/10 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-2xl shadow-2xl shadow-black/5 dark:shadow-black/20">
                 <table class="w-full text-left border-collapse">
                     <thead>
-                        <tr class="bg-neutral-50 dark:bg-neutral-800/60">
-                            <th class="p-5 border-b border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-300 font-semibold w-1/4">{{ t('geo_pages.comparisons.table.feature') }}</th>
-                            <th class="p-5 border-b border-neutral-200 dark:border-neutral-800 text-primary-500 dark:text-primary-400 font-bold bg-primary-500/5 w-1/4">{{ t('geo_pages.comparisons.table.protegey') }}</th>
-                            <th class="p-5 border-b border-neutral-200 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400 w-1/4">{{ t('geo_pages.comparisons.table.legacy') }}</th>
-                            <th class="p-5 border-b border-neutral-200 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400 w-1/4">{{ t('geo_pages.comparisons.table.global') }}</th>
+                        <tr class="bg-neutral-50/50 dark:bg-white/5">
+                            <th class="p-4 md:p-5 border-b border-neutral-200 dark:border-white/10 text-neutral-500 dark:text-neutral-400 font-bold text-xs uppercase tracking-widest w-1/4">{{ t('geo_pages.comparisons.table.feature') }}</th>
+                            <th class="p-4 md:p-5 border-b border-neutral-200 dark:border-white/10 text-primary-400 font-black bg-primary-500/5 w-1/4 text-sm tracking-tight">{{ t('geo_pages.comparisons.table.protegey') }}</th>
+                            <th class="p-4 md:p-5 border-b border-neutral-200 dark:border-white/10 text-neutral-500 dark:text-neutral-400 w-1/4 text-xs font-bold uppercase tracking-widest">{{ t('geo_pages.comparisons.table.legacy') }}</th>
+                            <th class="p-4 md:p-5 border-b border-neutral-200 dark:border-white/10 text-neutral-500 dark:text-neutral-400 w-1/4 text-xs font-bold uppercase tracking-widest">{{ t('geo_pages.comparisons.table.global') }}</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-neutral-100 dark:divide-neutral-700/50">
-                        <tr v-for="row in rows" :key="row.key" class="group hover:bg-neutral-50 dark:hover:bg-white/5 transition-colors">
-                            <td class="p-5 text-neutral-900 dark:text-white font-semibold text-sm">{{ t(`geo_pages.comparisons.table.${row.key}`) }}</td>
-                            <td class="p-5 bg-primary-500/5 dark:bg-primary-500/10 text-sm">
-                                <span class="flex items-center gap-2 text-primary-300 font-medium">
-                                    <span class="text-primary-400 text-base">✓</span>
+                    <tbody class="divide-y divide-neutral-100 dark:divide-white/5">
+                        <tr v-for="row in rows" :key="row.key" class="group hover:bg-neutral-50 dark:hover:bg-white/5 transition-all duration-300">
+                            <td class="p-4 md:p-5 text-neutral-900 dark:text-white font-bold text-sm tracking-tight">{{ t(`geo_pages.comparisons.table.${row.key}`) }}</td>
+                            <td class="p-4 md:p-5 bg-primary-500/5 dark:bg-primary-500/10 text-xs">
+                                <span class="flex items-center gap-3 text-primary-400 font-bold">
+                                    <div class="w-5 h-5 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
+                                        <span class="text-[10px]">✓</span>
+                                    </div>
                                     {{ t(`geo_pages.comparisons.table.${row.key}_protegey`) }}
                                 </span>
                             </td>
-                            <td class="p-5 text-neutral-500 text-sm">{{ t(`geo_pages.comparisons.table.${row.key}_legacy`) }}</td>
-                            <td class="p-5 text-neutral-500 text-sm">{{ t(`geo_pages.comparisons.table.${row.key}_global`) }}</td>
+                            <td class="p-4 md:p-5 text-neutral-500 dark:text-neutral-500 text-[10px] md:text-xs font-medium">{{ t(`geo_pages.comparisons.table.${row.key}_legacy`) }}</td>
+                            <td class="p-4 md:p-5 text-neutral-500 dark:text-neutral-500 text-[10px] md:text-xs font-medium">{{ t(`geo_pages.comparisons.table.${row.key}_global`) }}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <blockquote class="p-6 border-l-4 border-primary-500 bg-neutral-50 dark:bg-neutral-800/50 rounded-r-xl">
-                <p class="text-xl text-neutral-900 dark:text-white font-medium leading-relaxed italic">"{{ t('geo_pages.comparisons.conclusion') }}"</p>
-            </blockquote>
+            <div class="relative p-8 rounded-[2rem] bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 overflow-hidden shadow-2xl">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary-500/20 rounded-full blur-[80px] -mr-32 -mt-32" />
+                <p class="text-lg md:text-xl font-bold tracking-tighter leading-[1.1] mb-6 relative z-10">
+                    "{{ t('geo_pages.comparisons.conclusion') }}"
+                </p>
+                <NuxtLink :to="localePath('/contact')" class="inline-flex items-center gap-2 text-primary-400 dark:text-primary-600 font-bold hover:gap-3 transition-all relative z-10">
+                    See our comparative advantages
+                    <span class="text-xl">→</span>
+                </NuxtLink>
+            </div>
         </div>
     </InfoPage>
 </template>

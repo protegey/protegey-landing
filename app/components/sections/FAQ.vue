@@ -37,7 +37,7 @@ const toggle = (index: number) => {
 </script>
 
 <template>
-    <section class="py-16 sm:py-20 md:py-24 lg:py-32 bg-neutral-50 dark:bg-neutral-950 relative overflow-hidden">
+    <section class="py-16 md:py-24 bg-neutral-50 dark:bg-neutral-950 relative overflow-hidden">
         <!-- Background Elements -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl">
@@ -53,8 +53,8 @@ const toggle = (index: number) => {
                     <HugeiconsIcon :icon="HelpCircleIcon" :size="16" />
                     <span>FAQ</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-center">{{ t('faq.title') }}</h2>
-                <p class="text-neutral-500 dark:text-neutral-400 text-lg rtl:text-center">{{ t('faq.subtitle') }}</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-center">{{ t('faq.title') }}</h2>
+                <p class="text-base text-neutral-500 dark:text-neutral-400 rtl:text-center">{{ t('faq.subtitle') }}</p>
             </div>
 
             <div class="space-y-4">
@@ -66,7 +66,7 @@ const toggle = (index: number) => {
                         :aria-expanded="openIndex === index"
                         :aria-controls="`faq-answer-${index}`">
                         <span
-                            class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-primary-400 transition-colors duration-200">{{
+                            class="text-base font-bold text-neutral-900 dark:text-white group-hover:text-primary-400 transition-colors duration-200">{{
                             faq.q }}</span>
                         <span
                             class="ms-6 flex-shrink-0 text-neutral-500 dark:text-neutral-400 transition-transform duration-300 rtl:ms-0 rtl:me-6"
@@ -76,7 +76,7 @@ const toggle = (index: number) => {
                     </button>
 
                     <div :id="`faq-answer-${index}`" v-show="openIndex === index" class="px-6 pb-6 rtl:text-right">
-                        <p class="text-neutral-500 dark:text-neutral-400 leading-relaxed text-base md:text-lg">
+                        <p class="text-neutral-500 dark:text-neutral-400 leading-relaxed text-sm md:text-base">
                             {{ faq.a }}
                         </p>
                     </div>
