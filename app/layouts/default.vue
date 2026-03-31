@@ -50,7 +50,6 @@ useHead(() => ({
   htmlAttrs: {
     lang: head.value.htmlAttrs.lang,
     dir: head.value.htmlAttrs.dir,
-    class: isDark.value ? 'dark' : ''
   },
   meta: [
     { name: 'description', content: t('seo.global.description') },

@@ -989,19 +989,23 @@
         "benefits": [
             {
                 "title": "Télétravail par Défaut",
-                "desc": "Travaillez de n’importe où en Afrique ou ailleurs. Nous privilégions les résultats aux heures de bureau."
+                "desc": "Travaillez de n'importe où en Afrique ou ailleurs. Nous privilégions les résultats aux heures de bureau."
             },
             {
-                "title": "Santé et Bien-être",
-                "desc": "Couverture santé complète pour vous et votre famille."
+                "title": "Horaires Flexibles",
+                "desc": "Définissez votre propre emploi du temps. Nous mesurons l'impact, pas le temps passé."
             },
             {
                 "title": "Actions (Equity)",
-                "desc": "Chaque employé est copropriétaire de l’entreprise et de notre succès commun."
+                "desc": "Chaque employé est copropriétaire de l'entreprise et de notre succès commun."
             },
             {
-                "title": "Budget Formation",
-                "desc": "Indemnité annuelle pour les livres, les cours et le développement professionnel."
+                "title": "Mission Porteuse de Sens",
+                "desc": "Protégez des millions de personnes contre la fraude financière en Afrique. Impact réel, enjeux réels."
+            },
+            {
+                "title": "Accès à l'Équipe Fondatrice",
+                "desc": "Travaillez directement avec les fondateurs. Façonnez le produit, la stratégie et la culture dès le premier jour."
             }
         ],
         "no_roles": "Opportunités Actuelles",
