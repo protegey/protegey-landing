@@ -15,29 +15,31 @@ export const useSeoUtils = () => {
 
   const getAlternateLinks = (path: string) => {
     const locales = ['en', 'fr', 'ar']
+    const localeCodes = ['en-US', 'fr-FR', 'ar-EG']
     const links = []
-    
-    for (const loc of locales) {
-      const cleanPath = path === '/' ? '' : path.replace(/^\/(en|fr|ar)/, '')
+    const cleanPath = path === '/' ? '' : path.replace(/^\/(en|fr|ar)/, '')
+
+    for (let i = 0; i < locales.length; i++) {
+      const loc = locales[i]
       const localePrefix = loc === 'fr' ? '' : `/${loc}`
       links.push({
         rel: 'alternate',
-        hreflang: loc === 'en' ? 'en' : loc,
+        hreflang: localeCodes[i],
         href: `${baseUrl}${localePrefix}${cleanPath}`
       })
     }
-    
+
     links.push({
       rel: 'alternate',
       hreflang: 'x-default',
-      href: `${baseUrl}`
+      href: `${baseUrl}${cleanPath}`
     })
-    
+
     return links
   }
 
-  const getLocalizedPath = (name: string, params?: Record<string, string>) => {
-    return localePath(name, params)
+  const getLocalizedPath = (name: string) => {
+    return localePath(name)
   }
 
   const getSchemaUrl = (path: string) => {

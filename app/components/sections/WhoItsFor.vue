@@ -67,7 +67,7 @@ const getColor = (color: string) => colorMap[color] ?? colorMap['primary']!
             <HugeiconsIcon :icon="card.icon" :size="24" :class="getColor(card.color).text" />
           </div>
           <div>
-            <h3 class="text-lg font-bold text-neutral-900 dark:text-white">{{ t(`who_its_for.cards.${card.key}.title`) }}</h3>
+            <h2 class="text-lg font-bold text-neutral-900 dark:text-white">{{ t(`who_its_for.cards.${card.key}.title`) }}</h2>
             <p :class="['text-sm font-medium', getColor(card.color).text]">{{ t(`who_its_for.cards.${card.key}.subtitle`) }}</p>
           </div>
         </div>

@@ -115,8 +115,28 @@
           <h3 class="font-semibold mb-4 text-neutral-900 dark:text-white">{{ $t('nav.industries') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
             <li>
-              <NuxtLink :to="localePath('use-cases')" class="hover:text-primary-400 transition-colors">
-                {{ $t('nav.industries') }}
+              <NuxtLink :to="localePath('/use-cases/banks')" class="hover:text-primary-400 transition-colors">
+                {{ $t('industries.sectors.banks.title') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/use-cases/fintechs')" class="hover:text-primary-400 transition-colors">
+                {{ $t('industries.sectors.fintechs.title') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/use-cases/mobile_money')" class="hover:text-primary-400 transition-colors">
+                {{ $t('industries.sectors.mobile_money.title') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/use-cases/ecommerce')" class="hover:text-primary-400 transition-colors">
+                {{ $t('industries.sectors.ecommerce.title') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/use-cases')" class="hover:text-primary-400 transition-colors font-medium">
+                {{ $t('industries.view_all') }}
               </NuxtLink>
             </li>
           </ul>

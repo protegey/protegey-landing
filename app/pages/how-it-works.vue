@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import InfoPage from '~/components/sections/InfoPage.vue'
 const { t } = useI18n()
+const baseUrl = 'https://www.protegey.com'
 const localePath = useLocalePath()
 
 const pipelineSteps = computed(() => [
@@ -17,21 +18,31 @@ const pipelineSteps = computed(() => [
   { num: '10', color: 'primary',   title: t('signal_pipeline.step10.title'), desc: t('signal_pipeline.step10.desc') },
 ])
 
-useSeoMeta({
+usePageMeta({
     title: t('geo_pages.how_it_works.title'),
-    ogTitle: t('geo_pages.how_it_works.title'),
     description: t('geo_pages.how_it_works.subtitle'),
-    ogDescription: t('geo_pages.how_it_works.subtitle'),
-})
-
-if (import.meta.server) {
-    useSchemaOrg([
+    schemaOrg: [
         {
             '@type': 'WebPage',
             name: t('geo_pages.how_it_works.title'),
+            description: t('geo_pages.how_it_works.subtitle'),
+        },
+        {
+            '@type': 'TechArticle',
+            name: t('geo_pages.how_it_works.title'),
+            description: t('geo_pages.how_it_works.subtitle'),
+            author: { '@type': 'Organization', name: 'Protegey' },
+            articleSection: 'Fraud Detection Pipeline',
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('geo_pages.how_it_works.title'), item: `${baseUrl}/how-it-works` }
+            ]
         }
-    ])
-}
+    ]
+})
 </script>
 
 <template>
@@ -72,13 +83,13 @@ if (import.meta.server) {
                         step.color === 'amber'     ? 'border-accent-orange-500/20 hover:border-accent-orange-500/40'         : '',
                         step.color === 'emerald'   ? 'border-accent-cyan-500/20 hover:border-accent-cyan-500/40'     : '',
                     ]">
-                        <h3 :class="[
+                        <h2 :class="[
                             'font-bold text-lg mb-2 tracking-tight',
                             step.color === 'primary'   ? 'text-primary-400'   : '',
                             step.color === 'secondary' ? 'text-secondary-400' : '',
                             step.color === 'amber'     ? 'text-accent-orange-400'     : '',
                             step.color === 'emerald'   ? 'text-accent-cyan-400'   : '',
-                        ]">{{ step.title }}</h3>
+                        ]">{{ step.title }}</h2>
                         <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed font-semibold">{{ step.desc }}</p>
                     </div>
                 </div>

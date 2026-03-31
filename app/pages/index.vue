@@ -60,7 +60,7 @@ if (import.meta.server) {
       '@type': 'Organization',
       name: 'Protegey',
       url: baseUrl,
-      logo: `${baseUrl}/images/logo-light-mode.png`,
+      logo: `${baseUrl}/images/logo.svg`,
       sameAs: [
         'https://twitter.com/ProtegeyHQ',
         'https://www.linkedin.com/company/protegey'
@@ -79,7 +79,7 @@ if (import.meta.server) {
       description: t('geo.canonical_definition'),
       offers: {
         '@type': 'Offer',
-        price: '0.00',
+        price: 0,
         priceCurrency: 'USD',
       }
     },

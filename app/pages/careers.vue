@@ -118,6 +118,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const { t } = useI18n()
+const baseUrl = 'https://www.protegey.com'
 
 const getBenefitIcon = (index) => {
     const icons = [GlobalIcon, HealthIcon, ChartIcon, RocketIcon]
@@ -154,15 +155,25 @@ onMounted(() => {
     })
 })
 
-useSeoMeta({
+usePageMeta({
     title: t('seo.careers.title'),
-    ogTitle: t('seo.careers.title'),
     description: t('seo.careers.description'),
-    ogDescription: t('seo.careers.description'),
-    ogImage: '/images/careers-hero.png',
-    twitterCard: 'summary_large_image',
-    twitterTitle: t('seo.careers.title'),
-    twitterDescription: t('seo.careers.description')
+    ogImage: t('seo.careers.image'),
+    schemaOrg: [
+        {
+            '@type': 'WebPage',
+            name: t('seo.careers.title'),
+            description: t('seo.careers.description'),
+            publisher: { '@type': 'Organization', name: 'Protegey' },
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('footer.links.careers'), item: `${baseUrl}/careers` }
+            ]
+        }
+    ]
 })
 </script>
 

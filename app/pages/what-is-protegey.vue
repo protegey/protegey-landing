@@ -4,23 +4,27 @@ import { HugeiconsIcon } from '@hugeicons/vue'
 import { GlobalIcon, DatabaseIcon, AlertCircleIcon, Shield01Icon } from '@hugeicons/core-free-icons'
 
 const { t } = useI18n()
+const baseUrl = 'https://www.protegey.com'
 const localePath = useLocalePath()
 
-useSeoMeta({
+usePageMeta({
     title: t('geo_pages.what_is_protegey.title'),
-    ogTitle: t('geo_pages.what_is_protegey.title'),
     description: t('geo_pages.what_is_protegey.definition'),
-})
-
-if (import.meta.server) {
-    useSchemaOrg([
+    schemaOrg: [
         {
             '@type': 'WebPage',
             name: t('geo_pages.what_is_protegey.title'),
             description: t('geo_pages.what_is_protegey.definition'),
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('geo_pages.what_is_protegey.title'), item: `${baseUrl}/what-is-protegey` }
+            ]
         }
-    ])
-}
+    ]
+})
 </script>
 
 <template>

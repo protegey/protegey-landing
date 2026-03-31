@@ -10,16 +10,23 @@ import {
     Building01Icon,
     GameController01Icon,
     Location01Icon,
-    ArrowRight01Icon
+    ArrowRight01Icon,
+    MoneySend01Icon,
+    SmartPhone01Icon,
+    GlobalIcon
 } from '@hugeicons/core-free-icons'
 
 const { t } = useI18n()
+const baseUrl = 'https://www.protegey.com'
 const localePath = useLocalePath()
 
 const industryIcons = {
     banks: BankIcon,
+    lending: MoneySend01Icon,
     microfinance: Building01Icon,
     fintechs: Wallet02Icon,
+    mobile_money: SmartPhone01Icon,
+    remittance: GlobalIcon,
     ecommerce: ShoppingBag01Icon,
     gaming: GameController01Icon,
     crypto: BitcoinCircleIcon,
@@ -28,14 +35,17 @@ const industryIcons = {
 }
 
 const SECTOR_KEYS = [
-  'banks',
-  'microfinance',
-  'fintechs',
-  'ecommerce',
-  'gaming',
-  'crypto',
-  'regulators',
-  'mobility'
+    'banks',
+    'lending',
+    'microfinance',
+    'fintechs',
+    'mobile_money',
+    'remittance',
+    'ecommerce',
+    'gaming',
+    'crypto',
+    'regulators',
+    'mobility'
 ]
 
 const industriesList = computed(() => {
@@ -47,10 +57,23 @@ const industriesList = computed(() => {
     }))
 })
 
-useSeoMeta({
-    title: () => t('industries.title') + ' | PROTEGEY',
-    ogTitle: () => t('industries.title') + ' | PROTEGEY',
-    description: () => t('industries.subtitle')
+usePageMeta({
+    title: () => t('industries.title'),
+    description: () => t('industries.subtitle'),
+    schemaOrg: [
+        {
+            '@type': 'CollectionPage',
+            name: t('industries.title'),
+            description: t('industries.subtitle'),
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('nav.industries'), item: `${baseUrl}/use-cases` }
+            ]
+        }
+    ]
 })
 </script>
 
@@ -83,9 +106,9 @@ useSeoMeta({
                         </ClientOnly>
                     </div>
 
-                    <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight">
+                    <h2 class="text-xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight">
                         {{ industry.title }}
-                    </h3>
+                    </h2>
 
                     <p class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed mb-8 flex-1">
                         {{ industry.desc }}
@@ -107,7 +130,7 @@ useSeoMeta({
                     <p class="text-neutral-400 mb-8 max-w-lg mx-auto">
                         Speak with our risk architects. We can customize a detection pipeline for your exact compliance needs.
                     </p>
-                    <NuxtLink :to="localePath('/#waitlist')"
+                    <NuxtLink :to="localePath('/demo')"
                         class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-neutral-950 bg-primary-500 hover:bg-primary-400 transition-all duration-300 shadow-lg shadow-primary-500/20">
                         Speak with an Expert
                         <HugeiconsIcon :icon="ArrowRight01Icon" :size="18" />

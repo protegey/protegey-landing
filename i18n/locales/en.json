@@ -179,6 +179,7 @@
         "explore": "Explore",
         "coming_soon": "Coming Soon",
         "back_to_all": "Back to All Solutions",
+        "related_solutions": "Explore Other Solutions",
         "why_built_title": "Why we built it",
         "what_you_can_do_title": "What you can do with it",
         "core_capabilities": "Core Capabilities",
@@ -1083,6 +1084,10 @@
         "terms": {
             "title": "Terms of Service | Protegey Legal & Compliance",
             "description": "Protegey Terms of Service. Review the legal framework governing our fraud intelligence platform and services."
+        },
+        "demo": {
+            "title": "Request a Demo | Protegey Fraud Intelligence",
+            "description": "See how Protegey's shared fraud intelligence network can protect your institution. Request a personalized demo with our risk architects."
         }
     },
     "errors": {
@@ -1094,7 +1099,10 @@
         "contact_support": "Contact Security"
     },
     "a11y": {
-        "skip_to_content": "Skip to main content"
+        "skip_to_content": "Skip to main content",
+        "main_navigation": "Main navigation",
+        "mobile_menu": "Mobile menu",
+        "close_menu": "Close menu"
     },
 "industries": {
     "title": "Fraud Intelligence Built for Real-World Financial Systems",
@@ -1103,7 +1111,8 @@
     "solution_badge": "How Protegey Helps",
     "challenge_heading": "Key Risks in {industry}",
     "solution_heading": "How Protegey Supports {industry}",
-    
+    "related_industries": "Related Industries",
+    "view_all": "View all industries →",
     "sectors": {
 
         "banks": {

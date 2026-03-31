@@ -42,25 +42,6 @@ const alternateLinks = computed(() => {
   return links
 })
 
-const organizationSchema = computed(() => ({
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Protegey",
-  "url": baseUrl,
-  "logo": `${baseUrl}/og-image.jpg`,
-  "sameAs": [
-    "https://www.linkedin.com/company/protegeyhq/",
-    "https://x.com/ProtegeyHQ"
-  ]
-}))
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Protegey",
-  "url": baseUrl
-}
-
 useHead(() => ({
   titleTemplate: (titleChunk) => {
     if (!titleChunk) return t('seo.global.title')
@@ -83,6 +64,7 @@ useHead(() => ({
     { property: 'og:url', content: getCanonicalUrl.value },
     { property: 'og:image', content: t('seo.global.image') },
     { property: 'og:image:alt', content: t('seo.global.image_alt') },
+    { property: 'og:locale', content: head.value.htmlAttrs.lang || locale.value },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: '@ProtegeyHQ' },
     { name: 'twitter:image', content: t('seo.global.image') },
@@ -92,18 +74,6 @@ useHead(() => ({
     { rel: 'canonical', href: getCanonicalUrl.value },
     ...alternateLinks.value,
     ...(head.value.link || [])
-  ],
-  script: [
-    {
-      key: 'ldjson-org',
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(organizationSchema.value)
-    },
-    {
-      key: 'ldjson-website',
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(websiteSchema)
-    }
   ]
 }))
 </script>

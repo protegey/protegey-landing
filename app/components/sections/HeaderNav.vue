@@ -54,6 +54,13 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
 }
 
+const handleKeydown = (e) => {
+  if (e.key === 'Escape' && isOpen.value) {
+    isOpen.value = false
+    activeMobileSection.value = null
+  }
+}
+
 const openDropdown = (name) => {
   clearTimeout(dropdownTimeout)
   activeDropdown.value = name
@@ -67,11 +74,13 @@ const closeDropdown = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  window.addEventListener('keydown', handleKeydown)
   handleScroll()
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('keydown', handleKeydown)
 })
 
 // GSAP Animations for Mobile Menu
@@ -150,8 +159,11 @@ const industryIcons = {
 
 const INDUSTRY_ORDER = [
   'banks',
+  'lending',
   'microfinance',
   'fintechs',
+  'mobile_money',
+  'remittance',
   'ecommerce',
   'gaming',
   'crypto',
@@ -190,7 +202,7 @@ const getIndustries = () => {
         </div>
 
         <!-- Desktop Navigation Mega Menu -->
-        <div class="hidden md:flex items-center h-full gap-8">
+        <nav class="hidden md:flex items-center h-full gap-8" role="navigation" :aria-label="$t('a11y.main_navigation')">
           
           <!-- Solutions Dropdown -->
           <div class="relative h-full flex items-center" 
@@ -297,7 +309,7 @@ const getIndustries = () => {
               </div>
             </transition>
           </div>
-        </div>
+        </nav>
 
         <!-- Desktop Controls -->
         <div class="hidden md:flex items-center gap-4">
@@ -315,7 +327,7 @@ const getIndustries = () => {
               </NuxtLink>
             </template>
           </div>
-          <NuxtLink :to="localePath('/#waitlist')" :class="[
+          <NuxtLink :to="localePath('/demo')" :class="[
             'transition-all duration-300 font-bold text-sm',
             isScrolled
               ? 'bg-primary-500 text-neutral-950 px-5 py-2 rounded-lg hover:bg-primary-400'
@@ -352,16 +364,19 @@ const getIndustries = () => {
         leave-active-class="transition-all duration-300 ease-in" leave-from-class="opacity-100 translate-y-0"
         leave-to-class="opacity-0 -translate-y-4">
         <div v-if="isOpen"
-          class="fixed inset-0 z-[100] bg-white dark:bg-neutral-950 overflow-hidden flex flex-col md:hidden">
+          class="fixed inset-0 z-[100] bg-white dark:bg-neutral-950 overflow-hidden flex flex-col md:hidden"
+          role="dialog"
+          aria-modal="true"
+          :aria-label="$t('a11y.mobile_menu')">
           
           <!-- Header for Mobile Menu -->
           <div class="h-16 px-6 flex items-center justify-between border-b border-neutral-200 dark:border-neutral-900 shrink-0">
             <div class="flex items-center gap-2">
-              <img src="/images/logo-icon-light-mode.png" :alt="$t('footer.logo_alt')" class="w-7 h-7 object-contain dark:hidden" />
-              <img src="/images/logo-icon-dark-mode.png" :alt="$t('footer.logo_alt')" class="w-7 h-7 object-contain hidden dark:block" />
+              <img src="/images/logo.svg" :alt="$t('footer.logo_alt')" class="w-7 h-7 object-contain dark:hidden text-[#0B1741]" />
+              <img src="/images/logo.svg" :alt="$t('footer.logo_alt')" class="w-7 h-7 object-contain hidden dark:block text-white" />
               <span class="text-base font-bold text-neutral-900 dark:text-white tracking-tight">Protegey</span>
             </div>
-            <button @click="toggleMenu" class="p-2 text-neutral-500 dark:text-neutral-400">
+            <button @click="toggleMenu" class="p-2 text-neutral-500 dark:text-neutral-400" :aria-label="$t('a11y.close_menu')">
               <svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
               </svg>
@@ -458,7 +473,7 @@ const getIndustries = () => {
               </div>
               <NuxtLink
                 class="w-full bg-primary-500 text-neutral-950 px-6 py-4 rounded-2xl font-black text-center shadow-2xl shadow-primary-500/20 active:scale-[0.98] transition-transform"
-                :to="localePath('/#waitlist')" @click="toggleMenu">{{ $t('nav.request_demo') }}</NuxtLink>
+                :to="localePath('/demo')" @click="toggleMenu">{{ $t('nav.request_demo') }}</NuxtLink>
             </div>
           </div>
         </div>

@@ -3,23 +3,26 @@ import InfoPage from '~/components/sections/InfoPage.vue'
 import WhoItsFor from '~/components/sections/WhoItsFor.vue'
 
 const { t } = useI18n()
+const baseUrl = 'https://www.protegey.com'
 
-useSeoMeta({
+usePageMeta({
     title: t('who_its_for.seo.title'),
-    ogTitle: t('who_its_for.seo.title'),
     description: t('who_its_for.seo.description'),
-    ogDescription: t('who_its_for.seo.description'),
-})
-
-if (import.meta.server) {
-    useSchemaOrg([
+    schemaOrg: [
         {
             '@type': 'WebPage',
             name: t('who_its_for.seo.title'),
             description: t('who_its_for.seo.description'),
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('who_its_for.seo.title'), item: `${baseUrl}/who-its-for` }
+            ]
         }
-    ])
-}
+    ]
+})
 </script>
 
 <template>

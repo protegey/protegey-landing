@@ -28,7 +28,7 @@
                             <div class="w-12 h-12 rounded-2xl bg-primary-500/10 flex items-center justify-center mb-6">
                                 <HugeiconsIcon :icon="Mail01Icon" :size="24" class="text-primary-400" />
                             </div>
-                            <h3 class="text-neutral-900 dark:text-white font-bold text-lg mb-2">{{ $t('contact.email') }}</h3>
+                            <h2 class="text-neutral-900 dark:text-white font-bold text-lg mb-2">{{ $t('contact.email') }}</h2>
                             <a href="mailto:hello@protegey.com" class="text-neutral-500 dark:text-neutral-400 hover:text-primary-400 transition-colors text-base font-medium">
                                 hello@protegey.com
                             </a>
@@ -38,7 +38,7 @@
                             <div class="w-12 h-12 rounded-2xl bg-secondary-500/10 flex items-center justify-center mb-6">
                                 <HugeiconsIcon :icon="Location01Icon" :size="24" class="text-secondary-400" />
                             </div>
-                            <h3 class="text-neutral-900 dark:text-white font-bold text-lg mb-2">{{ $t('contact.location') }}</h3>
+                            <h2 class="text-neutral-900 dark:text-white font-bold text-lg mb-2">{{ $t('contact.location') }}</h2>
                             <p class="text-neutral-500 dark:text-neutral-400 text-base font-medium">
                                 651 N Broad St, Middletown, 19709 Delaware, United States.
                             </p>
@@ -49,7 +49,7 @@
                     <div data-reveal class="bg-white/80 dark:bg-neutral-900/60 backdrop-blur-2xl border border-neutral-200 dark:border-white/10 rounded-[2rem] shadow-2xl p-6 md:p-10 relative overflow-hidden" style="--delay:200ms">
                         <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary-500/0 via-primary-500 to-primary-500/0 opacity-50" />
                         
-                        <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-8">{{ $t('contact.form.title') }}</h3>
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-white mb-8">{{ $t('contact.form.title') }}</h2>
                         
                         <form @submit.prevent="handleSubmit" class="space-y-5">
                             <div class="grid sm:grid-cols-2 gap-5">
@@ -100,13 +100,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { HugeiconsIcon } from '@hugeicons/vue'
 import { Mail01Icon, Location01Icon, ArrowRight01Icon } from '@hugeicons/core-free-icons'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const { t, locale } = useI18n()
+const baseUrl = 'https://www.protegey.com'
 
 const formData = ref({
     name: '',
@@ -143,39 +142,29 @@ const handleSubmit = async () => {
     }
 }
 
-onMounted(() => {
-    gsap.registerPlugin(ScrollTrigger)
-
-    gsap.from('.hero-headline', {
-        y: 60,
-        opacity: 0,
-        duration: 1.2,
-        ease: 'power4.out',
-        delay: 0.2
-    })
-
-    const reveals = gsap.utils.toArray('[data-reveal]')
-    reveals.forEach((el) => {
-        gsap.from(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: 'top 90%',
-                toggleActions: 'play none none none'
-            },
-            y: 40,
-            opacity: 0,
-            duration: 1,
-            ease: 'power3.out',
-            delay: el.dataset.delay ? parseFloat(el.dataset.delay) / 1000 : 0
-        })
-    })
-})
-
-useSeoMeta({
+usePageMeta({
     title: t('seo.contact.title'),
-    ogTitle: t('seo.contact.title'),
-    description: t('seo.contact.description')
+    description: t('seo.contact.description'),
+    schemaOrg: [
+        {
+            '@type': 'ContactPage',
+            name: t('seo.contact.title'),
+            description: t('seo.contact.description'),
+        }
+    ]
 })
+
+if (import.meta.server) {
+    useSchemaOrg([
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('footer.links.contact'), item: `${baseUrl}/contact` }
+            ]
+        }
+    ])
+}
 </script>
 
 <style scoped>
@@ -187,6 +176,20 @@ useSeoMeta({
 }
 
 [data-reveal] {
-    will-change: transform, opacity;
+    animation: fade-in-up 0.8s ease-out both;
+}
+[data-reveal][data-delay="100"] { animation-delay: 100ms; }
+[data-reveal][data-delay="200"] { animation-delay: 200ms; }
+[data-reveal][data-delay="300"] { animation-delay: 300ms; }
+[data-reveal][data-delay="400"] { animation-delay: 400ms; }
+
+.hero-headline {
+    animation: fade-in-up 1s ease-out both;
+    animation-delay: 200ms;
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 </style>

@@ -26,6 +26,7 @@ const route = useRoute()
 const { t, tm, rt } = useI18n()
 const localePath = useLocalePath()
 const slug = computed(() => String(route.params.slug))
+const baseUrl = 'https://www.protegey.com'
 
 const industryIcons = {
     banks: BankIcon,
@@ -81,9 +82,37 @@ const industryData = computed(() => {
     }
 })
 
-useSeoMeta({
-    title: () => (industryData.value?.title || 'Use Case') + ' | PROTEGEY',
-    description: () => industryData.value?.desc || ''
+const relatedIndustries = computed(() => {
+    if (!industryData.value) return []
+    const allKeys = VALID_SLUGS.filter(k => k !== industryData.value.key)
+    const shuffled = allKeys.sort(() => 0.5 - Math.random())
+    return shuffled.slice(0, 4).map(key => ({
+        key,
+        icon: industryIcons[key] || BankIcon,
+        title: t('industries.sectors.' + key + '.title')
+    }))
+})
+
+usePageMeta({
+    title: () => (industryData.value?.title || 'Use Case') + ' | Protegey',
+    description: () => industryData.value?.desc || '',
+    schemaOrg: industryData.value ? [
+        {
+            '@type': 'Article',
+            headline: industryData.value.title,
+            description: industryData.value.desc,
+            author: { '@type': 'Organization', name: 'Protegey' },
+            articleSection: industryData.value.title,
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('nav.industries'), item: `${baseUrl}/use-cases` },
+                { '@type': 'ListItem', position: 3, name: industryData.value.title, item: `${baseUrl}/use-cases/${industryData.value.key}` }
+            ]
+        }
+    ] : []
 })
 
 onMounted(() => {
@@ -199,6 +228,18 @@ onMounted(() => {
                         <h3 class="text-lg font-bold text-neutral-900 dark:text-white">Network Effect</h3>
                         <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">Turn isolated signals into shared defense. A threat blocked by one is an alert for all.</p>
                     </div>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto mt-32">
+                <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-8 text-center">{{ $t('industries.related_industries') }}</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <NuxtLink v-for="ind in relatedIndustries" :key="ind.key"
+                        :to="localePath(`/use-cases/${ind.key}`)"
+                        class="flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/40 hover:border-primary-500/30 transition-all group">
+                        <HugeiconsIcon :icon="ind.icon" :size="20" class="text-neutral-400 group-hover:text-primary-500 shrink-0 transition-colors" />
+                        <span class="text-sm font-bold text-neutral-700 dark:text-neutral-300 group-hover:text-primary-400 transition-colors">{{ ind.title }}</span>
+                    </NuxtLink>
                 </div>
             </div>
 

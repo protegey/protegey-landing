@@ -78,7 +78,7 @@ response = client.<span class="text-white">score_transaction</span>({
                         <div class="w-12 h-12 rounded-2xl bg-primary-500/10 flex items-center justify-center mb-6">
                             <HugeiconsIcon :icon="Activity01Icon" :size="24" class="text-primary-400" />
                         </div>
-                        <h3 class="text-lg font-bold text-neutral-900 dark:text-white">Low Latency</h3>
+                        <h2 class="text-lg font-bold text-neutral-900 dark:text-white">Low Latency</h2>
                         <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
                             Under 100ms response time globally. Engineered for the speed of modern payments.
                         </p>
@@ -87,7 +87,7 @@ response = client.<span class="text-white">score_transaction</span>({
                         <div class="w-12 h-12 rounded-2xl bg-secondary-500/10 flex items-center justify-center mb-6">
                             <HugeiconsIcon :icon="Shield01Icon" :size="24" class="text-secondary-400" />
                         </div>
-                        <h3 class="text-lg font-bold text-neutral-900 dark:text-white">Explainable AI</h3>
+                        <h2 class="text-lg font-bold text-neutral-900 dark:text-white">Explainable AI</h2>
                         <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
                             Every risk score comes with structured reason codes. No black-box decisions.
                         </p>
@@ -96,7 +96,7 @@ response = client.<span class="text-white">score_transaction</span>({
                         <div class="w-12 h-12 rounded-2xl bg-accent-cyan-500/10 flex items-center justify-center mb-6">
                             <HugeiconsIcon :icon="Settings01Icon" :size="24" class="text-accent-cyan-400" />
                         </div>
-                        <h3 class="text-lg font-bold text-neutral-900 dark:text-white">Multilingual Errors</h3>
+                        <h2 class="text-lg font-bold text-neutral-900 dark:text-white">Multilingual Errors</h2>
                         <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
                             Structured error object with localized messages in English, French, and Arabic.
                         </p>
@@ -129,58 +129,60 @@ response = client.<span class="text-white">score_transaction</span>({
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
 import { HugeiconsIcon } from '@hugeicons/vue'
 import {
     Activity01Icon, Shield01Icon, Settings01Icon, 
     DashboardSquare01Icon, CodeIcon, BookOpen01Icon
 } from '@hugeicons/core-free-icons'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
+const baseUrl = 'https://www.protegey.com'
 
-onMounted(() => {
-    gsap.registerPlugin(ScrollTrigger)
-
-    // Fade-in animations
-    const reveals = gsap.utils.toArray('[data-reveal]')
-    reveals.forEach((el) => {
-        gsap.from(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: 'top 90%',
-                toggleActions: 'play none none none'
-            },
-            y: 40,
-            opacity: 0,
-            duration: 1.2,
-            ease: 'power3.out',
-            delay: el.dataset.delay ? parseFloat(el.dataset.delay) / 1000 : 0
-        })
-    })
-
-    // Animation for hero content
-    gsap.from('h1, p', {
-        y: 40,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power3.out'
-    })
-})
-
-useSeoMeta({
+usePageMeta({
     title: t('seo.api_docs.title'),
-    ogTitle: t('seo.api_docs.title'),
-    description: t('seo.api_docs.description')
+    description: t('seo.api_docs.description'),
+    schemaOrg: [
+        {
+            '@type': 'TechArticle',
+            name: t('seo.api_docs.title'),
+            description: t('seo.api_docs.description'),
+            author: { '@type': 'Organization', name: 'Protegey' },
+            articleSection: 'API Documentation',
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('footer.links.api_docs'), item: `${baseUrl}/api-docs` }
+            ]
+        }
+    ]
 })
 </script>
 
 <style scoped>
-/* Technical styling */
 h1 span {
     text-shadow: 0 0 30px rgba(74, 222, 128, 0.2);
+}
+
+[data-reveal] {
+    animation: fade-in-up 0.8s ease-out both;
+}
+[data-reveal][data-delay="100"] { animation-delay: 100ms; }
+[data-reveal][data-delay="200"] { animation-delay: 200ms; }
+[data-reveal][data-delay="300"] { animation-delay: 300ms; }
+
+.stat-card {
+    animation: fade-in-up 0.8s ease-out both;
+}
+.stat-card:nth-child(1) { animation-delay: 100ms; }
+.stat-card:nth-child(2) { animation-delay: 200ms; }
+.stat-card:nth-child(3) { animation-delay: 300ms; }
+.stat-card:nth-child(4) { animation-delay: 400ms; }
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 </style>

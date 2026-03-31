@@ -180,6 +180,7 @@
         "explore": "Explorer",
         "coming_soon": "Bientôt Disponible",
         "back_to_all": "Retour aux Produits",
+        "related_solutions": "Explorer les Autres Solutions",
         "why_built_title": "Pourquoi nous l'avons construit",
         "what_you_can_do_title": "Ce que vous pouvez en faire",
         "core_capabilities": "Capacités de base",
@@ -1068,6 +1069,10 @@
         "terms": {
             "title": "Conditions d'utilisation | Protegey Légal & Conformité",
             "description": "Conditions d'utilisation de Protegey. Consultez le cadre juridique régissant notre plateforme et nos services d'intelligence sur la fraude."
+        },
+        "demo": {
+            "title": "Demander une Démo | Protegey Intelligence Fraude",
+            "description": "Découvrez comment le réseau partagé d'intelligence sur la fraude de Protegey peut protéger votre institution. Demandez une démo personnalisée avec nos architectes de risque."
         }
     },
     "errors": {
@@ -1079,7 +1084,10 @@
         "contact_support": "Contacter la Sécurité"
     },
     "a11y": {
-        "skip_to_content": "Aller au contenu principal"
+        "skip_to_content": "Aller au contenu principal",
+        "main_navigation": "Navigation principale",
+        "mobile_menu": "Menu mobile",
+        "close_menu": "Fermer le menu"
     },
     "industries": {
         "title": "Une intelligence adaptée à chaque secteur",
@@ -1088,6 +1096,8 @@
         "solution_badge": "Comment PROTEGEY aide",
         "challenge_heading": "Risques clés dans le secteur {industry}",
         "solution_heading": "Comment PROTEGEY soutient le secteur {industry}",
+        "related_industries": "Secteurs Connexes",
+        "view_all": "Voir tous les secteurs →",
         "sectors": {
             "banks": {
                 "title": "Banques, Prêteurs Digitaux et Plateformes BNPL",

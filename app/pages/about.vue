@@ -252,16 +252,38 @@ useSeoMeta({
 })
 
 if (import.meta.server) {
-    const baseUrl = 'https://www.protegey.com'
-    const currentLocale = locale.value
-    const localePrefix = currentLocale === 'en' ? '' : `/${currentLocale}`
+const baseUrl = 'https://www.protegey.com'
+const currentLocale = locale.value
+const localePrefix = currentLocale === 'fr' ? '' : `/${currentLocale}`
 
+usePageMeta({
+    title: t('seo.about.title'),
+    description: t('seo.about.description'),
+    ogImage: t('seo.about.image'),
+    schemaOrg: [
+        {
+            '@type': 'AboutPage',
+            name: t('seo.about.title'),
+            description: t('seo.about.description'),
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('footer.links.about'), item: `${baseUrl}${localePrefix}/about` }
+            ]
+        }
+    ]
+})
+
+if (import.meta.server) {
     defineOgImageComponent('NuxtSeo', {
-        title: t('seo.about_page.title'),
-        description: t('seo.about_page.description'),
+        title: t('seo.about.title'),
+        description: t('seo.about.description'),
         theme: '#0B1741',
         colorMode: 'dark',
     })
+}
 
     useSchemaOrg([
         {

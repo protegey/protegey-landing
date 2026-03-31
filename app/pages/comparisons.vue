@@ -2,6 +2,7 @@
 import InfoPage from '~/components/sections/InfoPage.vue'
 
 const { t } = useI18n()
+const baseUrl = 'https://www.protegey.com'
 const localePath = useLocalePath()
 
 const rows = [
@@ -15,21 +16,24 @@ const rows = [
   { key: 'sandbox' },
 ]
 
-useSeoMeta({
+usePageMeta({
     title: t('geo_pages.comparisons.title'),
-    ogTitle: t('geo_pages.comparisons.title'),
     description: t('geo_pages.comparisons.conclusion'),
-    ogDescription: t('geo_pages.comparisons.conclusion'),
-})
-
-if (import.meta.server) {
-    useSchemaOrg([
+    schemaOrg: [
         {
             '@type': 'WebPage',
             name: t('geo_pages.comparisons.title'),
+            description: t('geo_pages.comparisons.conclusion'),
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('geo_pages.comparisons.title'), item: `${baseUrl}/comparisons` }
+            ]
         }
-    ])
-}
+    ]
+})
 </script>
 
 <template>

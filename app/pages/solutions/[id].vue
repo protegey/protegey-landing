@@ -39,16 +39,25 @@ const iconMap = {
     'fraud-intelligence': Share08Icon
 }
 
-const productIcon = iconMap[productId] || Activity01Icon
+const allSolutions = [
+    { key: 'transaction-monitoring', icon: Activity01Icon, color: 'text-primary-400' },
+    { key: 'account-protection', icon: SmartPhone01Icon, color: 'text-secondary-400' },
+    { key: 'aml-compliance', icon: ShieldIcon, color: 'text-accent-cyan-400' },
+    { key: 'risk-profiling', icon: UserStar01Icon, color: 'text-accent-orange-400' },
+    { key: 'fraud-intelligence', icon: Share08Icon, color: 'text-primary-400' },
+]
+
+const relatedSolutions = computed(() =>
+    allSolutions.filter(s => s.key !== productId).slice(0, 4)
+)
 
 const baseUrl = 'https://www.protegey.com'
 const currentLocale = locale.value
-const localePrefix = currentLocale === 'en' ? '' : `/${currentLocale}`
+const localePrefix = currentLocale === 'fr' ? '' : `/${currentLocale}`
 const collectionUrl = `${baseUrl}${localePrefix}/solutions`
 const canonicalUrl = `${collectionUrl}/${productId}`
 
 const solutionSchema = computed(() => ({
-    "@context": "https://schema.org",
     "@type": "Product",
     "name": t(`solutions.modules.${productId}.title`),
     "description": t(`solutions.modules.${productId}.description`),
@@ -59,22 +68,26 @@ const solutionSchema = computed(() => ({
     "offers": {
         "@type": "Offer",
         "url": canonicalUrl,
+        "price": "0",
+        "priceCurrency": "USD",
         "availability": "https://schema.org/InStock"
     }
 }))
 
-useSeoMeta({
-    title: t('seo.solution_detail.title', { name: t(`solutions.modules.${productId}.title`) }),
-    ogTitle: t('seo.solution_detail.title', { name: t(`solutions.modules.${productId}.title`) }),
-    description: t(`solutions.modules.${productId}.description`),
-    ogDescription: t(`solutions.modules.${productId}.description`),
-    ogUrl: canonicalUrl,
-    ogImage: t('seo.global.image'),
-    twitterCard: 'summary_large_image',
-    twitterTitle: t('seo.solution_detail.title', { name: t(`solutions.modules.${productId}.title`) }),
-    twitterDescription: t(`solutions.modules.${productId}.description`),
-    twitterImage: t('seo.global.image'),
-    twitterSite: '@ProtegeyHQ'
+usePageMeta({
+    title: () => t('seo.solution_detail.title', { name: t(`solutions.modules.${productId}.title`) }),
+    description: () => t(`solutions.modules.${productId}.description`),
+    schemaOrg: [
+        solutionSchema.value,
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('nav.solutions'), item: collectionUrl },
+                { '@type': 'ListItem', position: 3, name: t(`solutions.modules.${productId}.title`), item: canonicalUrl }
+            ]
+        }
+    ]
 })
 
 if (import.meta.server) {
@@ -84,47 +97,7 @@ if (import.meta.server) {
         theme: '#0B1741',
         colorMode: 'dark',
     })
-
-    useSchemaOrg([
-        solutionSchema.value,
-        {
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-                {
-                    '@type': 'ListItem',
-                    position: 1,
-                    name: t('nav.home'),
-                    item: baseUrl
-                },
-                {
-                    '@type': 'ListItem',
-                    position: 2,
-                    name: t('nav.solutions'),
-                    item: collectionUrl
-                },
-                {
-                    '@type': 'ListItem',
-                    position: 3,
-                    name: t(`solutions.modules.${productId}.title`),
-                    item: canonicalUrl
-                }
-            ]
-        }
-    ])
 }
-
-useHead({
-    link: [
-        { rel: 'canonical', href: canonicalUrl }
-    ],
-    meta: [
-        { name: 'geo.region', content: 'SN;CI;CM;MA;DZ;TN;EG;GH;NG;KE;ZA;ET;RW;TZ;UG;DZ;LY;SD;SS;MA;GW;SN;BF;ML;NE;TD;CF;GA;CG;CD;AO;ZM;ZW;MW;MZ;BI;DJ;ER;KM;MU;NA;SC;SO;SD' },
-        { name: 'geo.placename', content: 'Dakar;Abidjan;Douala;Casablanca;Algiers;Tunis;Cairo;Accra;Lagos;Nairobi;Johannesburg;Addis Ababa;Kigali;Dodoma;Kampala;Tripoli;Khartoum;Rabat;Bissau;Ouagadougou;Bamako;Niamey;N;Djamena;Libreville;Brazzaville;Kinshasa;Luanda;Lusaka;Harare;Lilongwe;Maputo;Bujumbura;Djibouti;Asmara;Moroni;Port Louis;Windhoek;Victoria;Mogadishu' },
-        { name: 'ICBM', content: '14.6925, -17.4467' },
-        { name: 'geo.position', content: '14.6925,-17.4467;-1.9403,29.8739;6.4969,3.3792;4.0518,9.7679;-1.2921,36.8219;-26.2041,28.0473' },
-        { name: 'keywords', content: t('seo.global.keywords') }
-    ]
-})
 </script>
 
 <template>
@@ -314,6 +287,25 @@ useHead({
                             </div>
                         </div>
                     </div>
+
+                <!-- Related Solutions -->
+                <div class="mb-32">
+                    <h2 class="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-10 text-center">{{
+                        $t('solutions.related_solutions') }}</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <NuxtLink v-for="mod in relatedSolutions" :key="mod.key"
+                            :to="localePath(`/solutions/${mod.key}`)"
+                            class="p-6 rounded-2xl bg-white/70 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 hover:border-primary-500/30 transition-all group">
+                            <div class="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center mb-4 group-hover:bg-primary-500/10 transition-colors">
+                                <HugeiconsIcon :icon="mod.icon" :size="20" :class="mod.color" />
+                            </div>
+                            <h3 class="text-sm font-bold text-neutral-900 dark:text-white mb-1 group-hover:text-primary-400 transition-colors">{{
+                                $t(`solutions.modules.${mod.key}.title`) }}</h3>
+                            <p class="text-xs text-neutral-500 dark:text-neutral-400 line-clamp-2">{{
+                                $t(`solutions.modules.${mod.key}.subtext`) }}</p>
+                        </NuxtLink>
+                    </div>
+                </div>
 
                 <!-- CTA -->
                 <SolutionCTA />

@@ -21,32 +21,36 @@ gsap.registerPlugin(ScrollTrigger)
 const { t, tm, rt, locale } = useI18n()
 const localePath = useLocalePath()
 const baseUrl = 'https://www.protegey.com'
-const localePrefix = locale.value === 'en' ? '' : `/${locale.value}`
+const localePrefix = locale.value === 'fr' ? '' : `/${locale.value}`
 const canonicalUrl = `${baseUrl}${localePrefix}/solutions`
 
 const activeModule = ref(0)
 const sectionRef = ref(null)
 
 const modules = [
-    { key: 'transaction-monitoring', icon: Activity01Icon, colorClass: 'text-primary-400', bgClass: 'bg-primary-500/10', borderClass: 'border-primary-500/30', gradientClass: 'from-primary-500/5' },
-    { key: 'account-protection', icon: SmartPhone01Icon, colorClass: 'text-secondary-400', bgClass: 'bg-secondary-500/10', borderClass: 'border-secondary-500/30', gradientClass: 'from-secondary-500/5' },
-    { key: 'aml-compliance', icon: Shield01Icon, colorClass: 'text-accent-cyan-400', bgClass: 'bg-accent-cyan-500/10', borderClass: 'border-accent-cyan-500/30', gradientClass: 'from-accent-cyan-500/5' },
-    { key: 'risk-profiling', icon: UserStar01Icon, colorClass: 'text-accent-orange-400', bgClass: 'bg-accent-orange-500/10', borderClass: 'border-accent-orange-500/30', gradientClass: 'from-accent-orange-500/5' },
-    { key: 'fraud-intelligence', icon: Share08Icon, colorClass: 'text-primary-400', bgClass: 'bg-primary-500/10', borderClass: 'border-primary-500/30', gradientClass: 'from-primary-500/5' },
+    { key: 'transaction-monitoring', icon: Activity01Icon, colorClass: 'text-primary-400', bgClass: 'bg-primary-500/10', borderClass: 'border-primary-500/20', gradientClass: 'from-primary-500/10' },
+    { key: 'account-protection', icon: SmartPhone01Icon, colorClass: 'text-secondary-400', bgClass: 'bg-secondary-500/10', borderClass: 'border-secondary-500/20', gradientClass: 'from-secondary-500/10' },
+    { key: 'aml-compliance', icon: Shield01Icon, colorClass: 'text-accent-cyan-400', bgClass: 'bg-accent-cyan-500/10', borderClass: 'border-accent-cyan-500/20', gradientClass: 'from-accent-cyan-500/10' },
+    { key: 'risk-profiling', icon: UserStar01Icon, colorClass: 'text-accent-orange-400', bgClass: 'bg-accent-orange-500/10', borderClass: 'border-accent-orange-500/20', gradientClass: 'from-accent-orange-500/10' },
+    { key: 'fraud-intelligence', icon: Share08Icon, colorClass: 'text-primary-400', bgClass: 'bg-primary-500/10', borderClass: 'border-primary-500/20', gradientClass: 'from-primary-500/10' },
 ]
 
 const activeData = () => modules[activeModule.value]
-const moduleKey = () => activeData().key
+const moduleKey = () => modules[activeModule.value].key
 
-onMounted(async () => {
-    if (typeof window === 'undefined') return
-    await nextTick()
-    if (sectionRef.value) {
-        gsap.fromTo(sectionRef.value.querySelectorAll('.module-tab'),
-            { x: -20, opacity: 0 },
-            { scrollTrigger: { trigger: sectionRef.value, start: 'top 80%' }, x: 0, opacity: 1, duration: 0.6, stagger: 0.08, ease: 'power3.out' }
-        )
-    }
+usePageMeta({
+    title: t('seo.solutions.title'),
+    description: t('seo.solutions.description'),
+    schemaOrg: [
+        { '@type': 'CollectionPage', name: t('seo.solutions.title') },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('nav.solutions'), item: canonicalUrl }
+            ]
+        }
+    ]
 })
 
 if (import.meta.server) {
@@ -56,37 +60,7 @@ if (import.meta.server) {
         theme: '#0B1741',
         colorMode: 'dark',
     })
-    useSchemaOrg([
-        { '@type': 'CollectionPage', name: t('seo.solutions.title') },
-        {
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
-                { '@type': 'ListItem', position: 2, name: t('nav.solutions'), item: canonicalUrl }
-            ]
-        }
-    ])
 }
-
-useSeoMeta({
-    title: t('seo.solutions.title'),
-    ogTitle: t('seo.solutions.title'),
-    description: t('seo.solutions.description'),
-    ogDescription: t('seo.solutions.description'),
-    ogUrl: canonicalUrl,
-    ogImage: t('seo.global.image'),
-    twitterCard: 'summary_large_image',
-    twitterTitle: t('seo.solutions.title'),
-    twitterDescription: t('seo.solutions.description'),
-    twitterImage: t('seo.global.image'),
-    twitterSite: '@ProtegeyHQ'
-})
-
-useHead({
-    link: [
-        { rel: 'canonical', href: canonicalUrl }
-    ]
-})
 </script>
 
 <template>

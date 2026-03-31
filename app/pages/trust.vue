@@ -4,29 +4,27 @@ import { HugeiconsIcon } from '@hugeicons/vue'
 import { Shield01Icon, CircleLock01Icon, Certificate01Icon, EyeIcon, ArrowRight01Icon } from '@hugeicons/core-free-icons'
 
 const { t } = useI18n()
+const baseUrl = 'https://www.protegey.com'
 const localePath = useLocalePath()
 
-useSeoMeta({
+usePageMeta({
     title: t('geo_pages.trust.title'),
-    ogTitle: t('geo_pages.trust.title'),
     description: t('geo_pages.trust.subtitle'),
-    ogDescription: t('geo_pages.trust.subtitle'),
-})
-
-if (import.meta.server) {
-    useSchemaOrg([
+    schemaOrg: [
         {
             '@type': 'WebPage',
             name: t('geo_pages.trust.title'),
             description: t('geo_pages.trust.subtitle'),
-            mainEntity: {
-                '@type': 'Organization',
-                name: 'Protegey',
-                iso6523Code: 'ISO 27001'
-            }
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('geo_pages.trust.title'), item: `${baseUrl}/trust` }
+            ]
         }
-    ])
-}
+    ]
+})
 </script>
 
 <template>

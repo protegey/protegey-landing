@@ -24,42 +24,42 @@
 
                 <div class="space-y-12">
                     <section>
-                        <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">{{ $t('privacy.sections.info_collect') }}</h3>
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">{{ $t('privacy.sections.info_collect') }}</h2>
                         <p class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed font-medium">
                             {{ $t('privacy.sections.info_collect_text') }}
                         </p>
                     </section>
 
                     <section>
-                        <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">{{ $t('privacy.sections.data_processor') }}</h3>
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">{{ $t('privacy.sections.data_processor') }}</h2>
                         <p class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed font-medium">
                             {{ $t('privacy.sections.data_processor_text') }}
                         </p>
                     </section>
 
                     <section>
-                        <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">{{ $t('privacy.sections.data_sharing') }}</h3>
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">{{ $t('privacy.sections.data_sharing') }}</h2>
                         <p class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed font-medium">
                             {{ $t('privacy.sections.data_sharing_text') }}
                         </p>
                     </section>
 
                     <section>
-                        <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">{{ $t('privacy.sections.retention') }}</h3>
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">{{ $t('privacy.sections.retention') }}</h2>
                         <p class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed font-medium">
                             {{ $t('privacy.sections.retention_text') }}
                         </p>
                     </section>
 
                     <section>
-                        <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">{{ $t('privacy.sections.security') }}</h3>
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">{{ $t('privacy.sections.security') }}</h2>
                         <p class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed font-medium">
                             {{ $t('privacy.sections.security_text') }}
                         </p>
                     </section>
 
                     <section>
-                        <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">{{ $t('privacy.sections.contact') }}</h3>
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">{{ $t('privacy.sections.contact') }}</h2>
                         <p class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed font-medium">
                             {{ $t('privacy.sections.contact_text') }} 
                             <a href="mailto:privacy@protegey.com" class="text-primary-400 hover:text-primary-300 font-bold underline underline-offset-8 transition-colors">privacy@protegey.com</a>
@@ -72,66 +72,29 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 const { t, locale } = useI18n()
+const baseUrl = 'https://www.protegey.com'
+const currentLocale = locale.value
+const localePrefix = currentLocale === 'fr' ? '' : `/${currentLocale}`
 
-onMounted(() => {
-    gsap.registerPlugin(ScrollTrigger)
-    
-    gsap.from('[data-reveal]', {
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 0.2
-    })
-})
-
-useSeoMeta({
+usePageMeta({
     title: t('seo.privacy.title'),
-    ogTitle: t('seo.privacy.title'),
-    description: t('seo.privacy.description')
-})
-
-if (import.meta.server) {
-    const baseUrl = 'https://www.protegey.com'
-    const currentLocale = locale.value
-    const localePrefix = currentLocale === 'en' ? '' : `/${currentLocale}`
-
-    defineOgImageComponent('NuxtSeo', {
-        title: t('seo.privacy.title'),
-        description: t('seo.privacy.description'),
-        theme: '#0B1741',
-        colorMode: 'dark',
-    })
-
-    useSchemaOrg([
+    description: t('seo.privacy.description'),
+    schemaOrg: [
         {
             '@type': 'WebPage',
             name: t('seo.privacy.title'),
+            description: t('seo.privacy.description'),
         },
         {
             '@type': 'BreadcrumbList',
             itemListElement: [
-                {
-                    '@type': 'ListItem',
-                    position: 1,
-                    name: t('nav.home'),
-                    item: baseUrl
-                },
-                {
-                    '@type': 'ListItem',
-                    position: 2,
-                    name: t('footer.links.privacy'),
-                    item: `${baseUrl}${localePrefix}/privacy`
-                }
+                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
+                { '@type': 'ListItem', position: 2, name: t('footer.links.privacy'), item: `${baseUrl}${localePrefix}/privacy` }
             ]
         }
-    ])
-}
+    ]
+})
 </script>
 
 <style scoped>

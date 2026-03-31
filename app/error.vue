@@ -19,7 +19,7 @@ onMounted(() => {
 
 useHead(() => ({
   title: is404.value ? t('errors.title_404') : t('errors.title_500'),
-  htmlAttrs: { class: isDark.value ? 'dark' : '' }
+  htmlAttrs: { class: isDark.value ? 'dark' : '', lang: 'fr', dir: 'ltr' }
 }))
 </script>
 
