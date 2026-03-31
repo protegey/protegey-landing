@@ -952,13 +952,13 @@
         "canonical_definition": "Protegey est une plateforme d'intelligence sur la fraude et de partage d'alertes en temps réel qui permet aux institutions financières, aux fintechs et aux régulateurs à travers l'Afrique d'identifier, de signaler et de répondre collaborativement à la fraude avec rapidité et une vision partagée.",
         "primary_category": "Plateforme d'intelligence contre la Fraude",
         "secondary_categories": [
-            "Financial Crime Detection",
-            "Fraud Reporting & Alerts",
-            "Inter‑Institutional Risk Sharing",
-            "RegTech (Africa‑focused)"
+            "Détection des crimes financiers",
+            "Signalement et alertes de fraude",
+            "Partage de risque inter-institutions",
+            "RegTech (axé sur l'Afrique)"
         ],
         "non_categories": [
-            "Not a core banking system",
+            "Pas un système bancaire de base",
             "Not a payments processor",
             "Not a consumer fraud app",
             "Not a replacement for law enforcement"
