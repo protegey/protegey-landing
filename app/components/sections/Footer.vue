@@ -6,8 +6,8 @@
         <!-- Brand -->
         <div>
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2 mb-4 rtl:justify-end">
-            <img src="/images/logo-light-mode.png" :alt="$t('footer.logo_alt')" class="block h-8 w-auto max-w-none shrink-0 dark:hidden" />
-            <img src="/images/logo-dark-mode.png" :alt="$t('footer.logo_alt')" class="hidden h-8 w-auto max-w-none shrink-0 dark:block" />
+            <img src="/images/logo.svg" :alt="$t('footer.logo_alt')" class="block h-8 w-auto max-w-none shrink-0 dark:hidden text-[#0B1741]" />
+            <img src="/images/logo.svg" :alt="$t('footer.logo_alt')" class="hidden h-8 w-auto max-w-none shrink-0 dark:block text-white" />
           </NuxtLink>
           <p class="text-sm text-neutral-500 dark:text-neutral-400 rtl:text-right">{{ $t('footer.slogan') }}</p>
         </div>

@@ -183,8 +183,8 @@ const getIndustries = () => {
         <!-- Logo -->
         <div class="flex items-center gap-4">
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2">
-            <img src="/images/logo-light-mode.png" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none dark:hidden" />
-            <img src="/images/logo-dark-mode.png" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none hidden dark:block" />
+            <img src="/images/logo.svg" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none dark:hidden text-[#0B1741]" />
+            <img src="/images/logo.svg" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none hidden dark:block text-white" />
             <!-- <span class="text-lg font-bold text-neutral-900 dark:text-white tracking-tight">Protegey</span> -->
           </NuxtLink>
         </div>

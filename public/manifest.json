@@ -1,0 +1,23 @@
+{
+  "name": "Protegey",
+  "short_name": "Protegey",
+  "description": "Unified Fraud Intelligence Engine for Francophone and Northern Africa",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060D1C",
+  "theme_color": "#0B1741",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
