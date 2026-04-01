@@ -22,7 +22,7 @@ export default defineEventHandler(async () => {
   ]
 
   const solutionSlugs = ['transaction-monitoring', 'account-protection', 'aml-compliance', 'risk-profiling', 'fraud-intelligence']
-  const useCaseSlugs = ['banks', 'lending', 'microfinance', 'fintechs', 'mobile_money', 'remittance', 'ecommerce', 'gaming', 'crypto', 'regulators', 'mobility']
+  const useCaseSlugs = ['banks', 'lending', 'microfinance', 'fintechs', 'mobile_money', 'remittance', 'crypto', 'regulators']
 
   const urls: { loc: string; lastmod: string; changefreq: string; priority: number; alternates: { languages: Record<string, string> } }[] = []
 

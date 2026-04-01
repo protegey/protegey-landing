@@ -683,8 +683,13 @@
     "contact": {
         "title": "Contact Us",
         "subtitle": "Have questions about Protegey? We'd love to hear from you.",
+        "eyebrow": "Get in Touch",
         "email": "Email",
-        "location": "Location",
+        "location": "Offices",
+        "hq": "Headquarters",
+        "us_office": "U.S. Office",
+        "hours": "Business Hours",
+        "hours_desc": "Mon – Fri, 9:00 AM – 6:00 PM (WAT)",
         "form": {
             "title": "Send us a message",
             "name": "Name",
@@ -718,15 +723,18 @@
             "problem": "Traditionally, fraud intelligence is siloed within individual institutions. When a fraudster attacks one bank, others remain unaware until they are also hit. Protegey eliminates this delay."
         },
         "how_it_works": {
-            "badge": "SIGNAL PROCESSING PIPELINE",
-            "title": "How Protegey Works",
-            "subtitle": "Every fraud signal submitted to Protegey flows through a 10-step automated detection pipeline before triggering alerts.",
-            "step1": "1. Fraud Event Occurs: An institution detects a fraudulent transaction, device, or identity pattern.",
-            "step2": "2. Institution Reports: The event is reported to the Protegey network via API or Ops Console.",
-            "step3": "3. Validation & Anonymization: Protegey validates the signal and anonymizes sensitive data using privacy-preserving technology.",
-            "step4": "4. Alert Propagation: Real-time alerts are instantly broadcast to all relevant partners in the network.",
-            "step5": "5. Faster Response: Institutions receive early warnings and can block the threat before it reaches their systems.",
-            "footer_note": "This sequential logic ensures that intelligence propagates through the network faster than the fraud itself, enabling proactive defense for all participants."
+            "title": "How It Works",
+            "subtitle": "Protegey processes every signal through a three-stage pipeline — from ingestion to intelligent alert — in under 100 milliseconds.",
+            "badge": "SIGNAL PIPELINE",
+            "collect_title": "Collect",
+            "collect_desc": "Signals flow in from your transactions, devices, and network peers — enriched with device fingerprints, behavioral patterns, and cross-institution intelligence.",
+            "analyze_title": "Analyze",
+            "analyze_desc": "ML models score every signal against known fraud typologies, behavioral baselines, and network-wide threat patterns — producing a clear risk score with reason codes.",
+            "alert_title": "Alert & Act",
+            "alert_desc": "High-risk signals trigger instant alerts, automated blocks, or review queues — while confirmed threats propagate across the network as early warnings for all participants.",
+            "cta_title": "Ready to secure your institution?",
+            "cta_subtitle": "Connect with our team to start your integration pilot.",
+            "cta_button": "Request Integration Access"
         },
         "who_its_for": {
             "title": "Who It's For",
@@ -746,7 +754,24 @@
             "mule_title": "Mule Account Networks",
             "mule": "Identify coordinated mule account networks moving funds across multiple institutions.",
             "repeat_actors_title": "Repeat Fraud Actors",
-            "repeat_actors": "Stop repeat fraud actors who move from one platform to another to exploit the same vulnerabilities."
+            "repeat_actors": "Stop repeat fraud actors who move from one platform to another to exploit the same vulnerabilities.",
+            "slug": {
+                "seamless_title": "Seamless Integration",
+                "seamless_desc": "Direct API connectivity into your existing switch or core banking system. No infrastructure overhead.",
+                "explainable_title": "Explainable Risk",
+                "explainable_desc": "Every score comes with human-readable reason codes, making compliance audits and SAR generation effortless.",
+                "network_title": "Network Effect",
+                "network_desc": "Turn isolated signals into shared defense. A threat blocked by one is an alert for all.",
+                "cta_title": "Built for {industry}",
+                "cta_subtitle": "Contact our risk architects to see how Protegey integrates with your specific compliance workflow.",
+                "cta_demo": "Request a Demo",
+                "cta_expert": "Speak with an Expert"
+            },
+            "index": {
+                "cta_title": "Not sure where you fit?",
+                "cta_subtitle": "Every institution is different. Let's discuss your specific fraud challenges and find the right solution.",
+                "cta_expert": "Speak with an Expert"
+            }
         },
         "comparisons": {
             "title": "Protegey vs Alternatives",
@@ -801,16 +826,23 @@
         },
         "trust": {
             "title": "Trust Center",
-            "subtitle": "Our commitment to security, privacy, and ethical AI.",
-            "certification_header": "Certifications & Compliance",
-            "transparency_header": "AI Transparency Statement",
-            "transparency_text": "At Protegey, we believe in ethical AI. Our fraud detection models are designed to be explainable, fair, and unbiased. We do not use black-box models for critical decisions. Every risk score is accompanied by clear reason codes, ensuring transparency for compliance and auditing purposes.",
+            "subtitle": "How we approach security, privacy, and regulatory compliance.",
+            "compliance_badge": "COMPLIANCE APPROACH",
+            "certification_header": "Our Compliance Commitment",
+            "compliance_intro": "Protegey is an early-stage platform. We do not yet hold formal certifications — and we will never claim otherwise. What we can tell you is that compliance is not an afterthought: every architectural decision is made with international security standards and African regulatory requirements in mind. Certifications are on our roadmap.",
+            "soc2_badge": "On our roadmap",
             "soc2_title": "SOC 2 Type II",
-            "soc2_text": "We are SOC 2 Type II compliant, verifying our rigorous controls for security, availability, and confidentiality.",
-            "gdpr_title": "GDPR & Data Privacy",
-            "gdpr_text": "We adhere to strict data protection standards, ensuring all personal data is handled with the highest level of privacy and security.",
+            "soc2_text": "We are architecting our infrastructure to meet SOC 2 Type II requirements across security, availability, and confidentiality. A formal third-party audit is planned as part of our growth roadmap.",
+            "gdpr_badge": "Actively applied",
+            "gdpr_title": "Data Privacy",
+            "gdpr_text": "We follow data protection principles aligned with GDPR and applicable African data privacy frameworks. Personal and financial data is handled with strict access controls, minimisation practices, and clear retention policies.",
+            "iso_badge": "Our reference framework",
             "iso_title": "ISO 27001",
-            "iso_text": "Our information security management systems are ISO 27001 certified, the global standard for information security."
+            "iso_text": "ISO 27001 principles guide how we design and operate our information security management. We use this global standard as our reference framework while working toward formal certification.",
+            "transparency_badge": "AI ETHICS",
+            "transparency_header": "AI Transparency Statement",
+            "transparency_text": "Our fraud detection models are designed to be explainable, fair, and auditable. We do not use black-box models for critical decisions. Every risk score is accompanied by clear reason codes — ensuring transparency for compliance teams, auditors, and regulators.",
+            "transparency_cta": "Inquire about our AI Ethics Framework"
         },
         "common": {
             "who_for_header": "Who It Is For",
@@ -1067,7 +1099,8 @@
         },
         "about": {
             "title": "Our Mission | Building Africa's Digital Immune System",
-            "description": "Learn how Protegey is eliminating fraud as a barrier to digital commerce in Africa through a unified, real-time intelligence network."
+            "description": "Learn how Protegey is eliminating fraud as a barrier to digital commerce in Africa through a unified, real-time intelligence network.",
+            "image": "/images/about-hero.webp"
         },
         "contact": {
             "title": "Partner with Us | Protegey Enterprise Fraud Prevention",
@@ -1075,7 +1108,8 @@
         },
         "careers": {
             "title": "Join the Mission | Careers at Protegey",
-            "description": "Help us secure the future of African commerce. We're looking for passionate individuals to build the continent's digital infrastructure."
+            "description": "Help us secure the future of African commerce. We're looking for passionate individuals to build the continent's digital infrastructure.",
+            "image": "/images/careers-hero.png"
         },
         "api_docs": {
             "title": "Developer Hub | Protegey API Documentation",
@@ -1120,12 +1154,12 @@
     "sectors": {
 
         "banks": {
-            "title": "Banks, Digital Lenders & BNPL Platforms",
-            "desc": "Commercial banks, digital lending apps, consumer finance platforms, and Buy Now Pay Later providers",
-            "challenge": "Fraudsters exploit the speed of instant credit decisions — creating synthetic identities, stacking loans across multiple lenders, and running coordinated rings that no single institution can detect on its own.",
-            "solution": "Protegey monitors transactions in real time, scores accounts and counterparties instantly, and surfaces cross-institution fraud signals so lenders and banks can act before losses spread.",
+            "title": "Banks & Digital Banks",
+            "desc": "Commercial banks, digital banks, and neo-banks",
+            "challenge": "Fraudsters exploit the speed of instant transactions — creating synthetic identities, running coordinated rings, and moving funds across channels faster than any single institution can detect.",
+            "solution": "Protegey monitors transactions in real time, scores accounts and counterparties instantly, and surfaces cross-institution fraud signals so banks can act before losses spread.",
             "risks": [
-                "Synthetic or stolen identities used to open accounts and access credit.",
+                "Synthetic or stolen identities used to open accounts and access banking services.",
                 "Account takeover, mule activity, and suspicious transfers moving across channels.",
                 "Fraud networks exploiting weak visibility between branches, apps, cards, and payment rails."
             ],
@@ -1154,8 +1188,8 @@
         },
 
         "lending": {
-            "title": "Lending Platforms (Banks, BNPL & Digital Credit)",
-            "desc": "Digital lenders, consumer finance apps, and buy-now-pay-later providers",
+            "title": "Digital Lenders & BNPL Platforms",
+            "desc": "Digital lending apps, BNPL providers, and consumer finance platforms",
             "challenge": "Synthetic identities, loan stacking, and coordinated fraud rings exploit instant credit decisions across multiple lenders.",
             "solution": "Protegey detects high-risk applicants before disbursement using risk profiling and device intelligence, while exposing repeat offenders across institutions through shared signals.",
             "risks": [

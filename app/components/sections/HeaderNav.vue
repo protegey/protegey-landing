@@ -179,11 +179,8 @@ const INDUSTRY_ORDER = [
   'fintechs',
   'mobile_money',
   'remittance',
-  'ecommerce',
-  'gaming',
   'crypto',
-  'regulators',
-  'mobility'
+  'regulators'
 ]
 
 const getIndustries = () => {

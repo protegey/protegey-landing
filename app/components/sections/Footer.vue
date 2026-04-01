@@ -130,8 +130,8 @@
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/use-cases/ecommerce')" class="hover:text-primary-400 transition-colors">
-                {{ $t('industries.sectors.ecommerce.title') }}
+              <NuxtLink :to="localePath('/use-cases/regulators')" class="hover:text-primary-400 transition-colors">
+                {{ $t('industries.sectors.regulators.title') }}
               </NuxtLink>
             </li>
             <li>

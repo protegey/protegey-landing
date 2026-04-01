@@ -1,5 +1,5 @@
 <script setup>
-import { useI18n, useSeoMeta } from '#imports'
+import { useI18n } from '#imports'
 import { HugeiconsIcon } from '@hugeicons/vue'
 import {
     BankIcon,
@@ -41,11 +41,8 @@ const SECTOR_KEYS = [
     'fintechs',
     'mobile_money',
     'remittance',
-    'ecommerce',
-    'gaming',
     'crypto',
-    'regulators',
-    'mobility'
+    'regulators'
 ]
 
 const industriesList = computed(() => {
@@ -126,14 +123,11 @@ usePageMeta({
             <div class="max-w-4xl mx-auto mt-32 text-center p-12 rounded-[3rem] bg-neutral-900 border border-neutral-800 relative overflow-hidden">
                 <div class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-transparent pointer-events-none"></div>
                 <div class="relative z-10">
-                    <h2 class="text-3xl font-bold text-white mb-4">Not sure where you fit?</h2>
-                    <p class="text-neutral-400 mb-8 max-w-lg mx-auto">
-                        Speak with our risk architects. We can customize a detection pipeline for your exact compliance needs.
-                    </p>
-                    <NuxtLink :to="localePath('/demo')"
-                        class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-neutral-950 bg-primary-500 hover:bg-primary-400 transition-all duration-300 shadow-lg shadow-primary-500/20">
-                        Speak with an Expert
-                        <HugeiconsIcon :icon="ArrowRight01Icon" :size="18" />
+                    <h2 class="text-3xl font-bold text-white mb-4">{{ $t('geo_pages.use_cases.index.cta_title') }}</h2>
+                    <p class="text-neutral-400 mb-8 max-w-lg mx-auto">{{ $t('geo_pages.use_cases.index.cta_subtitle') }}</p>
+                    <NuxtLink :to="localePath('/contact')"
+                        class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-neutral-900 dark:text-white border border-neutral-300 dark:border-neutral-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300">
+                        {{ $t('geo_pages.use_cases.index.cta_expert') }}
                     </NuxtLink>
                 </div>
             </div>

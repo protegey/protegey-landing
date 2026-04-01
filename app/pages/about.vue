@@ -239,20 +239,6 @@ onMounted(() => {
     })
 })
 
-useSeoMeta({
-    title: t('seo.about_page.title'),
-    ogTitle: t('seo.about_page.title'),
-    description: t('seo.about_page.description'),
-    ogDescription: t('seo.about_page.description'),
-    ogImage: '/images/about-hero.png',
-    twitterCard: 'summary_large_image',
-    twitterTitle: t('seo.about_page.title'),
-    twitterDescription: t('seo.about_page.description'),
-    twitterImage: '/images/about-hero.png',
-    twitterSite: '@ProtegeyHQ'
-})
-
-if (import.meta.server) {
 const baseUrl = 'https://www.protegey.com'
 const currentLocale = locale.value
 const localePrefix = currentLocale === 'fr' ? '' : `/${currentLocale}`
@@ -284,22 +270,6 @@ if (import.meta.server) {
         theme: '#0B1741',
         colorMode: 'dark',
     })
-}
-
-    useSchemaOrg([
-        {
-            '@type': 'AboutPage',
-            name: t('seo.about_page.title'),
-            description: t('geo.canonical_definition'),
-        },
-        {
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-                { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
-                { '@type': 'ListItem', position: 2, name: t('footer.links.about'), item: `${baseUrl}${localePrefix}/about` }
-            ]
-        }
-    ])
 }
 </script>
 

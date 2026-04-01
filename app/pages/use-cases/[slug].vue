@@ -1,5 +1,5 @@
 <script setup>
-import { useRoute, useI18n, useSeoMeta, useLocalePath } from '#imports'
+import { useRoute, useI18n, useLocalePath } from '#imports'
 import { HugeiconsIcon } from '@hugeicons/vue'
 import {
     BankIcon,
@@ -211,22 +211,22 @@ onMounted(() => {
                         <div class="w-10 h-10 rounded-xl bg-white dark:bg-neutral-800 flex items-center justify-center text-primary-500 shadow-sm">
                             <ClientOnly><HugeiconsIcon :icon="CheckmarkCircle01Icon" :size="20" /></ClientOnly>
                         </div>
-                        <h3 class="text-lg font-bold text-neutral-900 dark:text-white">Seamless Integration</h3>
-                        <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">Direct API connectivity into your existing switch or core banking system. No infrastructure overhead.</p>
+                        <h3 class="text-lg font-bold text-neutral-900 dark:text-white">{{ $t('geo_pages.use_cases.slug.seamless_title') }}</h3>
+                        <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{{ $t('geo_pages.use_cases.slug.seamless_desc') }}</p>
                     </div>
                     <div class="flex flex-col gap-4">
                         <div class="w-10 h-10 rounded-xl bg-white dark:bg-neutral-800 flex items-center justify-center text-primary-500 shadow-sm">
                             <ClientOnly><HugeiconsIcon :icon="AiCloud01Icon" :size="20" /></ClientOnly>
                         </div>
-                        <h3 class="text-lg font-bold text-neutral-900 dark:text-white">Explainable Risk</h3>
-                        <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">Every score comes with human-readable reason codes, making compliance audits and SAR generation effortless.</p>
+                        <h3 class="text-lg font-bold text-neutral-900 dark:text-white">{{ $t('geo_pages.use_cases.slug.explainable_title') }}</h3>
+                        <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{{ $t('geo_pages.use_cases.slug.explainable_desc') }}</p>
                     </div>
                     <div class="flex flex-col gap-4">
                         <div class="w-10 h-10 rounded-xl bg-white dark:bg-neutral-800 flex items-center justify-center text-primary-500 shadow-sm">
                             <ClientOnly><HugeiconsIcon :icon="ChartEvaluationIcon" :size="20" /></ClientOnly>
                         </div>
-                        <h3 class="text-lg font-bold text-neutral-900 dark:text-white">Network Effect</h3>
-                        <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">Turn isolated signals into shared defense. A threat blocked by one is an alert for all.</p>
+                        <h3 class="text-lg font-bold text-neutral-900 dark:text-white">{{ $t('geo_pages.use_cases.slug.network_title') }}</h3>
+                        <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{{ $t('geo_pages.use_cases.slug.network_desc') }}</p>
                     </div>
                 </div>
             </div>
@@ -244,20 +244,19 @@ onMounted(() => {
             </div>
 
             <div class="max-w-4xl mx-auto mt-32 text-center">
-                <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-6">Built for {{ industryData.title }}</h2>
+                <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-6">{{ $t('geo_pages.use_cases.slug.cta_title', { industry: industryData.title }) }}</h2>
                 <p class="text-neutral-500 dark:text-neutral-400 mb-10 max-w-lg mx-auto">
-                    Contact our risk architects to see how Protegey integrates with your specific compliance workflow.
+                    {{ $t('geo_pages.use_cases.slug.cta_subtitle') }}
                 </p>
                 <div class="flex flex-wrap items-center justify-center gap-4">
-                    <NuxtLink :to="localePath('/#waitlist')"
+                    <NuxtLink :to="localePath('/demo')"
                         class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-neutral-950 bg-primary-500 hover:bg-primary-400 transition-all duration-300 shadow-lg shadow-primary-500/20">
-                        Request a Demo
-                        <ClientOnly><HugeiconsIcon :icon="ArrowRight01Icon" :size="18" /></ClientOnly>
+                        {{ $t('geo_pages.use_cases.slug.cta_demo') }}
                     </NuxtLink>
                     <NuxtLink :to="localePath('/contact')"
-                        class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-neutral-900 dark:text-white border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all duration-300">
-                        Speak with an Expert
-                    </NuxtLink>
+                        class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-neutral-900 dark:text-white border border-neutral-300 dark:border-neutral-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300">
+                        {{ $t('geo_pages.use_cases.slug.cta_expert') }}
+                    </NuxtLink> 
                 </div>
             </div>
         </div>

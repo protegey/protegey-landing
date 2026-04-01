@@ -40,27 +40,15 @@ if (import.meta.server) {
   })
 }
 
-useSeoMeta({
+usePageMeta({
   title: t('seo.index.title'),
-  ogTitle: t('seo.index.title'),
   description: t('seo.index.description'),
-  ogDescription: t('seo.index.description'),
-  ogImage: t('seo.global.image'),
-  twitterCard: 'summary_large_image',
-  twitterTitle: t('seo.index.title'),
-  twitterDescription: t('seo.index.description'),
-  twitterImage: t('seo.global.image'),
-  twitterSite: '@ProtegeyHQ'
-})
-
-if (import.meta.server) {
-  const baseUrl = 'https://www.protegey.com'
-  useSchemaOrg([
+  schemaOrg: [
     {
       '@type': 'Organization',
       name: 'Protegey',
-      url: baseUrl,
-      logo: `${baseUrl}/images/logo.svg`,
+      url: 'https://www.protegey.com',
+      logo: 'https://www.protegey.com/images/logo.svg',
       sameAs: [
         'https://twitter.com/ProtegeyHQ',
         'https://www.linkedin.com/company/protegey'
@@ -86,10 +74,10 @@ if (import.meta.server) {
     {
       '@type': 'WebSite',
       name: 'Protegey',
-      url: baseUrl
+      url: 'https://www.protegey.com'
     }
-  ])
-}
+  ]
+})
 
 useHead({
     meta: [
