@@ -8,15 +8,18 @@ export function usePageMeta(opts: {
   const globalImage = t('seo.global.image')
   const ogImage = opts.ogImage ?? globalImage
 
+  const title = typeof opts.title === 'function' ? opts.title() : opts.title
+  const description = typeof opts.description === 'function' ? opts.description() : opts.description
+
   useSeoMeta({
-    title: opts.title,
-    ogTitle: opts.title,
-    description: opts.description,
-    ogDescription: opts.description,
+    title,
+    ogTitle: title,
+    description,
+    ogDescription: description,
     ogImage,
     twitterCard: 'summary_large_image',
-    twitterTitle: opts.title,
-    twitterDescription: opts.description,
+    twitterTitle: title,
+    twitterDescription: description,
     twitterImage: ogImage,
     twitterSite: '@ProtegeyHQ',
   })
@@ -27,8 +30,8 @@ export function usePageMeta(opts: {
 
   if (import.meta.server && opts.ogImage) {
     defineOgImageComponent('NuxtSeo', {
-      title: typeof opts.title === 'function' ? opts.title() : opts.title,
-      description: typeof opts.description === 'function' ? opts.description() : opts.description,
+      title,
+      description,
       theme: '#0B1741',
       colorMode: 'dark',
     })
