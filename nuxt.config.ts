@@ -56,13 +56,7 @@ export default defineNuxtConfig({
     allow: ['/'],
   },
   ogImage: {
-    defaults: {
-      component: 'NuxtSeo',
-      props: {
-        title: 'Protegey',
-        description: 'Unified Fraud Intelligence Engine for Francophone and Northern Africa',
-      }
-    }
+    enabled: false,
   },
   linkChecker: {
     enabled: true,

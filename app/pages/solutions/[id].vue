@@ -90,14 +90,6 @@ usePageMeta({
     ]
 })
 
-if (import.meta.server) {
-    defineOgImageComponent('NuxtSeo', {
-        title: t('seo.solution_detail.title', { name: t(`solutions.modules.${productId}.title`) }),
-        description: t(`solutions.modules.${productId}.description`),
-        theme: '#0B1741',
-        colorMode: 'dark',
-    })
-}
 </script>
 
 <template>

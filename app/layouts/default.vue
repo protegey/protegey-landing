@@ -61,12 +61,14 @@ useHead(() => ({
     { property: 'og:site_name', content: 'Protegey' },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: getCanonicalUrl.value },
-    { property: 'og:image', content: t('seo.global.image') },
+    { property: 'og:image', content: 'https://www.protegey.com/og-image.jpg' },
+    { property: 'og:image:width', content: '1200' },
+    { property: 'og:image:height', content: '630' },
     { property: 'og:image:alt', content: t('seo.global.image_alt') },
     { property: 'og:locale', content: head.value.htmlAttrs.lang || locale.value },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: '@ProtegeyHQ' },
-    { name: 'twitter:image', content: t('seo.global.image') },
+    { name: 'twitter:image', content: 'https://www.protegey.com/og-image.jpg' },
     ...(head.value.meta || [])
   ],
   link: [

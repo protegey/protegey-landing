@@ -31,15 +31,6 @@ import WaitlistDemo from '~/components/sections/WaitlistDemo.vue'
 const { isDark } = useTheme()
 const { t } = useI18n()
 
-if (import.meta.server) {
-  defineOgImageComponent('NuxtSeo', {
-    title: t('seo.index.title'),
-    description: t('seo.index.description'),
-    theme: '#0B1741',
-    colorMode: 'dark',
-  })
-}
-
 usePageMeta({
   title: t('seo.index.title'),
   description: t('seo.index.description'),

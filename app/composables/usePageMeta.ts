@@ -27,13 +27,4 @@ export function usePageMeta(opts: {
   if (import.meta.server && opts.schemaOrg) {
     useSchemaOrg(opts.schemaOrg)
   }
-
-  if (import.meta.server && opts.ogImage) {
-    defineOgImageComponent('NuxtSeo', {
-      title,
-      description,
-      theme: '#0B1741',
-      colorMode: 'dark',
-    })
-  }
 }
