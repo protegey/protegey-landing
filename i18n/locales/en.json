@@ -161,8 +161,8 @@
         "geographic_coverage": {
             "title": "Geographic Coverage",
             "heading_part1": "Securing the ",
-            "heading_highlight": "African Digital Economy",
-            "description": "Our solutions are specifically tailored to the unique regulatory and fraud landscapes across Africa, providing localized intelligence that global tools often miss.",
+            "heading_highlight": "Francophone African Digital Economy",
+            "description": "Our solutions are specifically tailored to the unique regulatory and fraud landscapes across Francophone and Northern Africa, providing localized intelligence that global tools often miss.",
             "regions": [
                 "GIM-UEMOA zone (West African Economic and Monetary Union)",
                 "GIMAC zone (Central African Economic and Monetary Community)",
@@ -223,7 +223,7 @@
             "badge": "The Solution",
             "title_main": "Protect What",
             "title_highlight": "Matters Most",
-            "description": "Protegey's advanced fraud detection technology safeguards Africa's financial ecosystem in real-time.",
+            "description": "Protegey's advanced fraud detection technology safeguards Francophone Africa's financial ecosystem in real-time.",
             "hero_text": "Next-Generation Fraud Prevention — Built with ML and real-time analytics, Protegey seamlessly integrates with telecoms, banks, and fintech APIs to protect millions of transactions.",
             "features": [
                 {
@@ -236,7 +236,7 @@
                 },
                 {
                     "title": "Get ahead faster with AI-powered insights",
-                    "text": "Built specifically for the unique challenges of African financial systems"
+                    "text": "Built specifically for the unique challenges of Francophone African financial systems"
                 }
             ],
             "card": {
@@ -638,8 +638,8 @@
     "about_page": {
         "hero": {
             "title": "Unified Defense for a Digital Continent",
-            "subtitle": "Fragmented systems are easy targets. We unify Africa's financial signals to create a real-time, cross-border digital immune system.",
-            "image_alt": "The Protegey Collective Defense Network: A high-tech visualization of interconnected intelligence nodes across Africa.",
+            "subtitle": "Fragmented systems are easy targets. We unify Francophone Africa's financial signals to create a real-time, cross-border digital immune system.",
+            "image_alt": "The Protegey Collective Defense Network: A high-tech visualization of interconnected intelligence nodes across Francophone Africa.",
             "badge": "ABOUT US"
         },
         "story": {
@@ -647,11 +647,11 @@
             "problem_title": "The Isolation Trap",
             "problem_text": "Fraudsters thrive in the gaps between institutions. In a siloed digital economy, a single bad actor can exploit multiple platforms undetected because intelligence isn't shared. When data is fragmented, defense is reactive, and the ecosystem remains vulnerable.",
             "solution_title": "Collective Intelligence",
-            "solution_text": "Protegey was built to break these silos. We've engineered Africa's first real-time, decentralized early-warning network. By turning individual signals into shared intelligence, a threat detected by one becomes an instant defense for all—creating a 'herd immunity' effect for the entire financial backbone."
+            "solution_text": "Protegey was built to break these silos. We've engineered Francophone Africa's first real-time, decentralized early-warning network. By turning individual signals into shared intelligence, a threat detected by one becomes an instant defense for all—creating a 'herd immunity' effect for the entire financial backbone."
         },
         "mission_vision": {
             "mission_title": "Our Mission",
-            "mission_desc": "To forge a unified digital frontier by turning scattered fraud data into a shared, actionable shield for every institution in Africa.",
+            "mission_desc": "To forge a unified digital frontier by turning scattered fraud data into a shared, actionable shield for every institution in Francophone Africa.",
             "vision_title": "Our Vision",
             "vision_desc": "A continent where trust is the default, and digital commerce flows without the friction of systemic fraud."
         },
@@ -660,7 +660,7 @@
             "trust_title": "Impenetrable Integrity",
             "trust_desc": "We maintain the highest standards of data security, using privacy-preserving engineering to ensure trust is never compromised.",
             "innovation_title": "Contextual Innovation",
-            "innovation_desc": "We build with a deep understanding of Africa's unique payment flows and user behaviors—innovation that fits the reality on the ground.",
+            "innovation_desc": "We build with a deep understanding of Francophone Africa's unique payment flows and user behaviors—innovation that fits the reality on the ground.",
             "impact_title": "Systemic Resilience",
             "impact_desc": "Every signal we process strengthens the entire continent's financial infrastructure, making the collective harder to hit."
         },
@@ -718,7 +718,7 @@
     "geo_pages": {
         "what_is_protegey": {
             "title": "What is Protegey?",
-            "definition": "Protegey is a real-time fraud intelligence and alert-sharing platform that allows financial institutions, fintechs, and regulators across Africa to collaboratively identify, report, and respond to fraud with speed and shared insight.",
+            "definition": "Protegey is a real-time fraud intelligence and alert-sharing platform that allows financial institutions, fintechs, and regulators across Francophone Africa to collaboratively identify, report, and respond to fraud with speed and shared insight.",
             "who_for": "It is designed for risk and compliance teams at banks, payment processors, mobile money operators, and financial regulators who need early warning signals about emerging fraud patterns.",
             "problem": "Traditionally, fraud intelligence is siloed within individual institutions. When a fraudster attacks one bank, others remain unaware until they are also hit. Protegey eliminates this delay."
         },
@@ -781,7 +781,7 @@
             "siloed": "Manual reporting is slow and reactive. Protegey is automated and real-time.",
             "global_header": "Global Generic Tools",
             "global": "Global tools often lack the specific localized signals and connector coverage (GIM-UEMOA, GIMAC) that Protegey provides.",
-            "conclusion": "Protegey is the only platform providing zero-delay, network-wide intelligence specifically tailored for the African financial landscape.",
+            "conclusion": "Protegey is the only platform providing zero-delay, network-wide intelligence specifically tailored for the Francophone African financial landscape.",
             "table": {
                 "feature": "Feature",
                 "protegey": "Protegey",
@@ -814,7 +814,7 @@
                 "multilingual_protegey": "✓ Full 3-language support",
                 "multilingual_legacy": "❌ None",
                 "multilingual_global": "Rare — English only",
-                "taxonomy": "Africa Fraud Taxonomy",
+                "taxonomy": "Francophone Africa Fraud Taxonomy",
                 "taxonomy_protegey": "✓ SIM swap, mobile money, OSINT",
                 "taxonomy_legacy": "❌ None",
                 "taxonomy_global": "❌ Generic global taxonomy",
@@ -882,7 +882,7 @@
         },
         "step6": {
             "title": "Taxonomy Assignment",
-            "desc": "The signal is classified using Protegey's Africa-specific fraud taxonomy: account_takeover, mobile_money_fraud, sim_swap, social_engineering, phishing, fake_investment, and more."
+            "desc": "The signal is classified using Protegey's Francophone Africa-specific fraud taxonomy: account_takeover, mobile_money_fraud, sim_swap, social_engineering, phishing, fake_investment, and more."
         },
         "step7": {
             "title": "Graph Update",
@@ -904,7 +904,7 @@
     "who_its_for": {
         "badge": "TARGET PARTICIPANTS",
         "title": "Built for Every Institution Type",
-        "subtitle": "Protegey is designed for the financial institutions that form Africa's fraud defense network — each with purpose-built capabilities.",
+            "subtitle": "Protegey is designed for the financial institutions that form Francophone Africa's fraud defense network — each with purpose-built capabilities.",
         "exclusion": "Protegey is not designed for individual consumers. Access is granted to vetted financial institutions and regulators only.",
         "seo": {
             "title": "Who It's For | Protegey Partner Network",
@@ -995,13 +995,13 @@
         }
     },
     "geo": {
-        "canonical_definition": "Protegey is a real-time fraud intelligence and alert-sharing platform that allows financial institutions, fintechs, and regulators across Africa to collaboratively identify, report, and respond to fraud with speed and shared insight.",
+        "canonical_definition": "Protegey is a real-time fraud intelligence and alert-sharing platform that allows financial institutions, fintechs, and regulators across Francophone Africa to collaboratively identify, report, and respond to fraud with speed and shared insight.",
         "primary_category": "Fraud Intelligence Platform",
         "secondary_categories": [
             "Financial Crime Detection",
             "Fraud Reporting & Alerts",
             "Inter‑Institutional Risk Sharing",
-            "RegTech (Africa‑focused)"
+                "RegTech (Francophone Africa‑focused)"
         ],
         "non_categories": [
             "Not a core banking system",
@@ -1015,7 +1015,7 @@
         "eyebrow": "Careers",
         "perks_eyebrow": "Perks",
         "title": "Join the Mission",
-        "subtitle": "We are building the digital immune system for a continent. Help us secure the future of trade in Africa.",
+        "subtitle": "We are building the digital immune system for Francophone Africa. Help us secure the future of trade across the region.",
         "culture_title": "Our Culture",
         "culture_subtitle": "We are a small, elite team of engineers, fraud analysts, and builders who care deeply about financial integrity.",
         "pillars": [
@@ -1048,7 +1048,7 @@
             },
             {
                 "title": "Mission-Driven Work",
-                "desc": "Protect millions from financial fraud across Africa. Real impact, real stakes."
+                "desc": "Protect millions from financial fraud across Francophone Africa. Real impact, real stakes."
             },
             {
                 "title": "Founding Team Access",
@@ -1070,8 +1070,8 @@
         "a3": "Internal systems only analyze your own data. Protegey provides a cross-institutional view, alerting you to threats that have been detected by other partners in the network, giving you a wider and more proactive defense.",
         "q4": "Can multiple institutions share alerts?",
         "a4": "Yes. Our Signal network specifically enables secure, privacy-preserving sharing of fraud signals between verified participants. This allows the entire ecosystem to benefit from collective intelligence.",
-        "q5": "Is Protegey Africa‑focused?",
-        "a5": "Yes. Protegey is purpose-built for the unique challenges of the African financial landscape, with deep integration and coverage for regional systems like GIM-UEMOA and GIMAC."
+        "q5": "Is Protegey focused on Francophone Africa?",
+        "a5": "Yes. Protegey is purpose-built for the unique challenges of the Francophone African financial landscape, with deep integration and coverage for regional systems like GIM-UEMOA and GIMAC."
     },
     "seo": {
         "global": {
@@ -1079,10 +1079,11 @@
             "description": "Protegey connects banks, lenders, fintechs, and regulators into a shared fraud intelligence network for transaction monitoring, account protection, AML compliance, risk profiling, and coordinated response.",
             "keywords": "shared fraud intelligence, transaction monitoring, account takeover prevention, SIM swap detection, AML compliance, risk profiling, fraud intelligence network, cross-institution fraud detection, fintech security, banking fraud prevention, sanctions screening, PEP screening, suspicious activity reporting, counterparty risk scoring, device fingerprinting",
             "image": "https://www.protegey.com/og-image.jpg",
-            "image_alt": "Protegey — Unified Fraud Intelligence Engine"
+            "image_alt": "Protegey — Unified Fraud Intelligence Engine",
+            "og_tagline": "Fraud Intelligence · Africa"
         },
         "index": {
-            "title": "Protegey | Unified Fraud Intelligence for African Institutions",
+            "title": "Protegey | Unified Fraud Intelligence for Francophone African Institutions",
             "description": "Protegey connects banks, lenders, and fintechs into a shared fraud intelligence network so they can detect, monitor, and regulate threats no single institution can see alone."
         },
         "solutions": {
@@ -1094,12 +1095,12 @@
             "description": "{description}"
         },
         "about_page": {
-            "title": "Our Mission | Building Africa's Digital Immune System",
-            "description": "Learn how Protegey is eliminating fraud as a barrier to digital commerce in Africa through a unified, real-time intelligence network."
+            "title": "Our Mission | Building Francophone Africa's Digital Immune System",
+            "description": "Learn how Protegey is eliminating fraud as a barrier to digital commerce in Francophone Africa through a unified, real-time intelligence network."
         },
         "about": {
-            "title": "Our Mission | Building Africa's Digital Immune System",
-            "description": "Learn how Protegey is eliminating fraud as a barrier to digital commerce in Africa through a unified, real-time intelligence network.",
+            "title": "Our Mission | Building Francophone Africa's Digital Immune System",
+            "description": "Learn how Protegey is eliminating fraud as a barrier to digital commerce in Francophone Africa through a unified, real-time intelligence network.",
             "image": "/images/about-hero.webp"
         },
         "contact": {

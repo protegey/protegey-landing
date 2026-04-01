@@ -2,79 +2,62 @@
 withDefaults(defineProps<{
   title: string
   description?: string
+  tagline?: string
+  siteName?: string
 }>(), {
   description: 'Shared Fraud Intelligence for African Financial Institutions',
+  tagline: 'Fraud Intelligence · Africa',
+  siteName: 'protegey.com',
 })
 </script>
 
 <template>
+  <!-- Root: flex row — accent bar left, content right -->
   <div :style="{
     display: 'flex',
+    flexDirection: 'row',
     width: '1200px',
     height: '630px',
     backgroundColor: '#060D1C',
     overflow: 'hidden',
-    position: 'relative',
-    fontFamily: '\'Inter\', sans-serif',
+    fontFamily: 'Inter, sans-serif',
   }">
 
-    <!-- Teal glow — top right -->
+    <!-- Left accent bar -->
     <div :style="{
-      position: 'absolute',
-      top: '-160px',
-      right: '-160px',
-      width: '520px',
-      height: '520px',
-      borderRadius: '50%',
-      background: 'radial-gradient(circle, rgba(12,185,158,0.18) 0%, transparent 70%)',
-    }" />
-
-    <!-- Subtle secondary glow — bottom left -->
-    <div :style="{
-      position: 'absolute',
-      bottom: '-120px',
-      left: '-80px',
-      width: '360px',
-      height: '360px',
-      borderRadius: '50%',
-      background: 'radial-gradient(circle, rgba(27,89,174,0.15) 0%, transparent 70%)',
-    }" />
-
-    <!-- Left teal accent bar -->
-    <div :style="{
-      position: 'absolute',
-      left: '0',
-      top: '0',
-      width: '5px',
-      height: '100%',
+      display: 'flex',
+      width: '6px',
+      height: '630px',
       background: 'linear-gradient(to bottom, #0CB99E, #1B59AE)',
+      flexShrink: '0',
     }" />
 
-    <!-- Main content -->
+    <!-- Main content column -->
     <div :style="{
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
-      padding: '56px 72px 52px 80px',
+      padding: '56px 72px 52px 74px',
       width: '100%',
       height: '100%',
     }">
 
-      <!-- Header row: logo + badge -->
+      <!-- Header row: wordmark + badge -->
       <div :style="{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }">
+        <!-- Logo -->
         <img
-          src="https://www.protegey.com/images/logo-light-mode.png"
-          width="180"
-          height="36"
-          :style="{ objectFit: 'contain', objectPosition: 'left center' }"
+          src="/images/logo-light-mode.png"
+          :style="{ height: '36px', width: 'auto' }"
         />
+
+        <!-- Tagline badge -->
         <div :style="{
           display: 'flex',
           alignItems: 'center',
           gap: '8px',
-          border: '1px solid rgba(12,185,158,0.25)',
+          border: '1px solid rgba(12,185,158,0.30)',
           borderRadius: '20px',
-          padding: '8px 16px',
+          padding: '8px 18px',
           backgroundColor: 'rgba(12,185,158,0.08)',
         }">
           <div :style="{
@@ -89,12 +72,12 @@ withDefaults(defineProps<{
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
             color: '#0CB99E',
-          }">Fraud Intelligence · Africa</span>
+          }">{{ tagline }}</span>
         </div>
       </div>
 
       <!-- Title + description -->
-      <div :style="{ display: 'flex', flexDirection: 'column', gap: '18px' }">
+      <div :style="{ display: 'flex', flexDirection: 'column', gap: '20px' }">
         <div :style="{
           fontSize: '52px',
           fontWeight: '800',
@@ -131,20 +114,14 @@ withDefaults(defineProps<{
             fontWeight: '500',
             color: '#3A4E7A',
             letterSpacing: '0.04em',
-          }">protegey.com</span>
+          }">{{ siteName }}</span>
         </div>
 
-        <div :style="{
-          display: 'flex',
-          gap: '8px',
-        }">
-          <div v-for="c in ['#0CB99E', '#1B59AE', '#3A4E7A']" :key="c" :style="{
-            width: '8px',
-            height: '8px',
-            borderRadius: '50%',
-            backgroundColor: c,
-            opacity: c === '#3A4E7A' ? 0.4 : 1,
-          }" />
+        <!-- Three static dots -->
+        <div :style="{ display: 'flex', gap: '8px', alignItems: 'center' }">
+          <div :style="{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#0CB99E' }" />
+          <div :style="{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1B59AE' }" />
+          <div :style="{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#3A4E7A', opacity: 0.4 }" />
         </div>
       </div>
 
