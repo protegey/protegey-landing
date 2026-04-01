@@ -67,24 +67,18 @@ useHead(() => ({
   ]
 }))
 
-// All OG / Twitter meta in one place — pages override these via usePageMeta()
+// Default OG meta — pages override title/description/image via usePageMeta()
 useSeoMeta(() => ({
   ogSiteName: 'Protegey',
   ogType: 'website',
   ogUrl: getCanonicalUrl.value,
   ogTitle: t('seo.global.title'),
   ogDescription: t('seo.global.description'),
-  ogImage: 'https://www.protegey.com/og-image.jpg',
-  ogImageWidth: 1200,
-  ogImageHeight: 630,
-  ogImageType: 'image/jpeg',
-  ogImageAlt: t('seo.global.image_alt'),
   ogLocale: head.value.htmlAttrs.lang || locale.value,
   twitterCard: 'summary_large_image',
   twitterSite: '@ProtegeyHQ',
   twitterTitle: t('seo.global.title'),
   twitterDescription: t('seo.global.description'),
-  twitterImage: 'https://www.protegey.com/og-image.jpg',
 }))
 </script>
 

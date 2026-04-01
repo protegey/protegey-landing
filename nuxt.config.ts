@@ -56,7 +56,12 @@ export default defineNuxtConfig({
     allow: ['/'],
   },
   ogImage: {
-    enabled: false,
+    enabled: true,
+    fonts: [
+      'Inter:400',
+      'Inter:700',
+      'Inter:800',
+    ],
   },
   linkChecker: {
     enabled: true,

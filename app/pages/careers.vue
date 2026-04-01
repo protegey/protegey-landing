@@ -158,7 +158,6 @@ onMounted(() => {
 usePageMeta({
     title: t('seo.careers.title'),
     description: t('seo.careers.description'),
-    ogImage: t('seo.careers.image'),
     schemaOrg: [
         {
             '@type': 'WebPage',

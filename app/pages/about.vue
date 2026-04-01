@@ -246,7 +246,6 @@ const localePrefix = currentLocale === 'fr' ? '' : `/${currentLocale}`
 usePageMeta({
     title: t('seo.about.title'),
     description: t('seo.about.description'),
-    ogImage: t('seo.about.image'),
     schemaOrg: [
         {
             '@type': 'AboutPage',
