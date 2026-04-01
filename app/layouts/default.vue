@@ -64,10 +64,12 @@ useHead(() => ({
     { property: 'og:image', content: 'https://www.protegey.com/og-image.jpg' },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
+    { property: 'og:image:type', content: 'image/jpeg' },
     { property: 'og:image:alt', content: t('seo.global.image_alt') },
     { property: 'og:locale', content: head.value.htmlAttrs.lang || locale.value },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: '@ProtegeyHQ' },
+    { name: 'twitter:image', content: 'https://www.protegey.com/og-image.jpg' },
     { name: 'twitter:image', content: 'https://www.protegey.com/og-image.jpg' },
     ...(head.value.meta || [])
   ],
@@ -77,6 +79,14 @@ useHead(() => ({
     ...(head.value.link || [])
   ]
 }))
+
+useSeoMeta({
+  ogImage: 'https://www.protegey.com/og-image.jpg',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: t('seo.global.image_alt'),
+  twitterImage: 'https://www.protegey.com/og-image.jpg',
+})
 </script>
 
 <template>
