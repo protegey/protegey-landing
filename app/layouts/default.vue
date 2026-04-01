@@ -58,19 +58,6 @@ useHead(() => ({
     { name: 'geo.placename', content: "Dakar;Abidjan;Douala;Casablanca;Algiers;Tunis;Cairo;Accra;Lagos;Nairobi;Johannesburg;Addis Ababa;Kigali;Dodoma;Kampala;Tripoli;Khartoum;Rabat;Bissau;Ouagadougou;Bamako;Niamey;N'Djamena;Libreville;Brazzaville;Kinshasa;Luanda;Lusaka;Harare;Lilongwe;Maputo;Bujumbura;Djibouti;Asmara;Moroni;Port Louis;Windhoek;Victoria;Mogadishu" },
     { name: 'ICBM', content: '14.6925, -17.4467' },
     { name: 'geo.position', content: '14.6925,-17.4467;-1.9403,29.8739;6.4969,3.3792;4.0518,9.7679;-1.2921,36.8219;-26.2041,28.0473' },
-    { property: 'og:site_name', content: 'Protegey' },
-    { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: getCanonicalUrl.value },
-    { property: 'og:image', content: 'https://www.protegey.com/og-image.jpg' },
-    { property: 'og:image:width', content: '1200' },
-    { property: 'og:image:height', content: '630' },
-    { property: 'og:image:type', content: 'image/jpeg' },
-    { property: 'og:image:alt', content: t('seo.global.image_alt') },
-    { property: 'og:locale', content: head.value.htmlAttrs.lang || locale.value },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: '@ProtegeyHQ' },
-    { name: 'twitter:image', content: 'https://www.protegey.com/og-image.jpg' },
-    { name: 'twitter:image', content: 'https://www.protegey.com/og-image.jpg' },
     ...(head.value.meta || [])
   ],
   link: [
@@ -80,13 +67,25 @@ useHead(() => ({
   ]
 }))
 
-useSeoMeta({
+// All OG / Twitter meta in one place — pages override these via usePageMeta()
+useSeoMeta(() => ({
+  ogSiteName: 'Protegey',
+  ogType: 'website',
+  ogUrl: getCanonicalUrl.value,
+  ogTitle: t('seo.global.title'),
+  ogDescription: t('seo.global.description'),
   ogImage: 'https://www.protegey.com/og-image.jpg',
   ogImageWidth: 1200,
   ogImageHeight: 630,
+  ogImageType: 'image/jpeg',
   ogImageAlt: t('seo.global.image_alt'),
+  ogLocale: head.value.htmlAttrs.lang || locale.value,
+  twitterCard: 'summary_large_image',
+  twitterSite: '@ProtegeyHQ',
+  twitterTitle: t('seo.global.title'),
+  twitterDescription: t('seo.global.description'),
   twitterImage: 'https://www.protegey.com/og-image.jpg',
-})
+}))
 </script>
 
 <template>
