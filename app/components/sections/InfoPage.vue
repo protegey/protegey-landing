@@ -58,7 +58,7 @@ onMounted(() => {
             <div class="lg:grid lg:grid-cols-12 lg:gap-12">
                 <!-- Sidebar Navigation -->
                 <aside class="hidden lg:block lg:col-span-3 aside-nav">
-                    <nav class="sticky top-32 space-y-2">
+                    <nav class="sticky top-32 space-y-2" :aria-label="t('a11y.sidebar_navigation')">
                         <div
                             class="text-xs font-mono text-primary-500 uppercase tracking-widest mb-4 px-3 rtl:text-right">
                             {{ t('geo_pages.common.resources_label') }}

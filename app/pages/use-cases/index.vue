@@ -5,11 +5,8 @@ import {
     BankIcon,
     Wallet02Icon,
     BitcoinCircleIcon,
-    ShoppingBag01Icon,
     Building03Icon,
     Building01Icon,
-    GameController01Icon,
-    Location01Icon,
     ArrowRight01Icon,
     MoneySend01Icon,
     SmartPhone01Icon,
@@ -27,11 +24,8 @@ const industryIcons = {
     fintechs: Wallet02Icon,
     mobile_money: SmartPhone01Icon,
     remittance: GlobalIcon,
-    ecommerce: ShoppingBag01Icon,
-    gaming: GameController01Icon,
     crypto: BitcoinCircleIcon,
     regulators: Building03Icon,
-    mobility: Location01Icon
 }
 
 const SECTOR_KEYS = [
@@ -42,7 +36,7 @@ const SECTOR_KEYS = [
     'mobile_money',
     'remittance',
     'crypto',
-    'regulators'
+    'regulators',
 ]
 
 const industriesList = computed(() => {

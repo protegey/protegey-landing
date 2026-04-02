@@ -1,15 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import HeaderNav from '~/components/sections/HeaderNav.vue'
 import Footer from '~/components/sections/Footer.vue'
 
-const { isDark } = useTheme()
 const { t, locale } = useI18n()
 const route = useRoute()
 
 const head = useLocaleHead({
-  addDirAttribute: true,
-  identifierAttribute: 'id',
-  addSeoAttributes: true
+  dir: true,
+  lang: true,
+  seo: false
 })
 
 const baseUrl = 'https://www.protegey.com'
@@ -26,9 +25,10 @@ const alternateLinks = computed(() => {
   const locales = ['en', 'fr', 'ar']
   const cleanPath = route.path === '/' ? '' : route.path.replace(/^\/(en|fr|ar)/, '')
   
+  const isoMap: Record<string, string> = { en: 'en-US', fr: 'fr-FR', ar: 'ar-EG' }
   const links = locales.map(loc => ({
     rel: 'alternate',
-    hreflang: loc,
+    hreflang: isoMap[loc] ?? loc,
     // fr is default locale (no prefix); en and ar have prefixes
     href: `${baseUrl}${loc === 'fr' ? '' : `/${loc}`}${cleanPath}`
   }))
@@ -49,7 +49,7 @@ useHead(() => ({
   },
   htmlAttrs: {
     lang: head.value.htmlAttrs.lang,
-    dir: head.value.htmlAttrs.dir,
+    dir: head.value.htmlAttrs.dir as 'auto' | 'ltr' | 'rtl' | undefined,
   },
   meta: [
     { name: 'description', content: t('seo.global.description') },
@@ -68,18 +68,20 @@ useHead(() => ({
 }))
 
 // Default OG meta — pages override title/description/image via usePageMeta()
-useSeoMeta(() => ({
+const ogLocale = computed(() => ({ en: 'en_US', fr: 'fr_FR', ar: 'ar_EG' } as Record<string, string>)[locale.value] ?? locale.value)
+
+useSeoMeta({
   ogSiteName: 'Protegey',
   ogType: 'website',
-  ogUrl: getCanonicalUrl.value,
+  ogUrl: getCanonicalUrl,
   ogTitle: t('seo.global.title'),
   ogDescription: t('seo.global.description'),
-  ogLocale: head.value.htmlAttrs.lang || locale.value,
+  ogLocale,
   twitterCard: 'summary_large_image',
   twitterSite: '@ProtegeyHQ',
   twitterTitle: t('seo.global.title'),
   twitterDescription: t('seo.global.description'),
-}))
+})
 </script>
 
 <template>

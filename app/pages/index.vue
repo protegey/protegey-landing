@@ -37,12 +37,13 @@ usePageMeta({
   schemaOrg: [
     {
       '@type': 'Organization',
+      '@id': 'https://www.protegey.com/#organization',
       name: 'Protegey',
       url: 'https://www.protegey.com',
       logo: 'https://www.protegey.com/images/logo.svg',
       sameAs: [
-        'https://twitter.com/ProtegeyHQ',
-        'https://www.linkedin.com/company/protegey'
+        'https://x.com/ProtegeyHQ',
+        'https://www.linkedin.com/company/protege yhq/'
       ],
       areaServed: [
         'Senegal', 'Ivory Coast', 'Cameroon', 'Morocco', 'Algeria', 'Tunisia', 'Egypt', 'Democratic Republic of Congo'

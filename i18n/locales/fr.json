@@ -1,15 +1,8 @@
 {
     "nav": {
-        "why_protegey": "Pourquoi Protegey",
-        "trusted_by": "Ils nous font confiance",
-        "about": "À Propos",
-        "contact": "Contact",
         "solutions": "Solutions",
         "request_demo": "Demander une démo",
         "home": "Accueil",
-        "open_menu": "Ouvrir le menu",
-        "close_menu": "Fermer le menu",
-        "mobile_menu_label": "Menu de navigation mobile",
         "industries": "Cas d'usage",
         "resources": "Ressources",
         "company": "Entreprise",
@@ -92,92 +85,26 @@
     },
     "solutions": {
         "badge": "NOS SOLUTIONS",
-        "title": "Produits de Sécurité Intégrés",
-        "subtitle": "Plateforme de prévention de la fraude et de conformité en profondeur pour les institutions financières d'Afrique de l'Ouest, Centrale et du Nord",
-        "adoption_path": "Parcours d'adoption recommandé : Commencez avec Gateway API pour une protection immédiate des transactions → Ajoutez Radar pour la surveillance continue des comptes → Rejoignez le réseau Signal pour l'intelligence inter-plateformes → Évoluez vos opérations avec Ops Console",
-        "panid": {
-            "title": "Pan-ID",
-            "tagline": "Vérification d'Identité & Renseignement Transfrontalier",
-            "status": "Bientôt Disponible",
-            "description": "Prévenez les identités multiples et synthétiques au-delà des frontières. Vérification d'identité en Afrique de l'Ouest, Centrale et du Nord avec correspondance biométrique.",
-            "why_built": "Prévenez les identités multiples et synthétiques. Détectez l'usurpation d'identité au-delà des frontières (Afrique de l'Ouest, Centrale et du Nord). Soutenez la vérification d'identité en cas de perte ou d'indisponibilité des documents.",
-            "what_you_can_do": "Confirmation de l'existence de l'identité et du type de pièce. Vérification faciale et biométrique. Réconciliation d'identité trans-juridictionnelle. Surveillance continue des risques liés à l'identité.",
-            "features": {
-                "f1_title": "Vérification d'Identité Multi-Pays",
-                "f1_desc": "Vérifiez l'identité des personnes dans plusieurs pays africains depuis une plateforme unique. Pan-ID connecte les systèmes d'identité nationaux et effectue des contrôles biométriques et documentaires pour confirmer les identités dans des environnements d'identification fragmentés et diversifiés.",
-                "f2_title": "Graphe d'Identité & Scoring de Risque",
-                "f2_desc": "Créez une vision unifiée de l'identité au-delà des frontières. Pan-ID relie les enregistrements et les activités pour détecter les doublons, les identités synthétiques et les fraudes, et fournit des scores de risque en temps réel pour les enquêtes régionales."
-            },
-            "capabilities": [
-                "Intégration de base de données d'identité multi-pays",
-                "Vérification biométrique (reconnaissance faciale, empreinte digitale)",
-                "Vérification d'authenticité des documents",
-                "Cartographie du graphe d'identité entre juridictions",
-                "Score de risque d'identité en temps réel"
-            ],
-            "target_users": [
-                "Autorités frontalières et d'immigration",
-                "Agences d'identité nationale et d'état civil",
-                "Police et unités d'investigation criminelle",
-                "Ambassades, consulats et bureaux de passeport",
-                "Fintechs transfrontalières et plateformes de transfert",
-                "Hôtels (pour l'enregistrement uniquement)"
-            ],
-            "expected_outcomes": [
-                "Réduction de 70% de la fraude d'identité",
-                "Vérification d'identité en secondes à travers les frontières",
-                "Détection des comptes en double et identités synthétiques"
-            ]
-        },
-        "integration_story": {
-            "title": "Comment les Produits PROTEGEY Fonctionnent Ensemble",
-            "scenario": "Tentative de Prise de Contrôle de Compte",
-            "steps": [
-                "Radar détecte un comportement de connexion inhabituel (nouvel appareil, localisation différente, timing anormal)",
-                "Gateway API reçoit le score de risque élevé et challenge la transaction suivante",
-                "Signal vérifie si cet appareil/modèle a été signalé par d'autres institutions",
-                "Ops Console crée un dossier pour l'analyste fraude à investiguer",
-                "Risk & Compliance as a Service consigne l'incident pour le rapport réglementaire",
-                "Pan-ID (futur) vérifie l'identité de l'utilisateur via une ré-authentification biométrique"
-            ],
-            "better_together": [
-                "Gateway API + Radar : Décisions de transaction informées par le contexte comportemental",
-                "Radar + Signal : Surveillance des comptes améliorée par l'intelligence inter-plateformes",
-                "Toutes les Solutions + Ops Console : Investigation et réponse unifiées",
-                "Gateway API + RCaaS : Surveillance des transactions conforme à la LBC automatisée"
-            ]
-        },
-        "mission": {
-            "title": "Notre Objectif : Aider nos Utilisateurs à Atteindre le Niveau Supérieur",
-            "items": [
-                "Surveillance des transactions LBC",
-                "Protection contre la fraude interne et externe",
-                "Prévention de la prise de contrôle de compte",
-                "Détection de la fraude par échange de SIM et des mules financières",
-                "Détection des arnaques aux investissements",
-                "Prévention des comptes en double",
-                "Score de crédit et intelligence risque"
-            ]
-        },
+        "title": "Cinq Couches de Protection Intégrées",
+        "subtitle": "De la détection des transactions en temps réel à l'intelligence réseau partagée — chaque couche travaille ensemble pour que les menaces ciblant vos pairs ne vous atteignent pas.",
         "geographic_coverage": {
             "title": "Couverture Géographique",
             "heading_part1": "Sécuriser l' ",
-            "heading_highlight": "Économie Numérique Africaine",
+            "heading_highlight": "L'Économie Numérique de l'Afrique Francophone",
             "description": "Nos produits sont spécifiquement adaptés aux paysages réglementaires et de fraude uniques à travers l'Afrique, fournissant une intelligence localisée que les outils mondiaux manquent souvent.",
             "regions": [
                 "Zone GIM-UEMOA (Union Économique et Monétaire Ouest Africaine)",
                 "Zone GIMAC (Communauté Économique et Monétaire de l'Afrique Centrale)",
-                "Afrique du Nord (Région du Maghreb)"
+                "Écosystèmes de paiement régionaux à travers l'Afrique"
             ],
             "region_text": "Intelligence complète sur la fraude et conformité réglementaire adaptée aux institutions de cette zone.",
             "note": "Nous comprenons les défis uniques de la fraude transfrontalière, de la prolifération du mobile money et des exigences réglementaires en évolution dans ces marchés."
         },
         "hero": {
-            "title_start": "Propulser l'Infrastructure",
-            "title_highlight": "de Sécurité en Afrique",
-            "subtitle": "Une suite complète d'outils conçus pour détecter, synchroniser et prévenir la fraude en temps réel sur tout le continent."
+            "title_start": "Cinq Couches Intégrées de",
+            "title_highlight": "Protection",
+            "subtitle": "De la détection des transactions en temps réel à l'intelligence réseau partagée — chaque couche travaille ensemble pour que les menaces ciblant vos pairs ne vous atteignent pas."
         },
-        "explore": "Explorer",
         "coming_soon": "Bientôt Disponible",
         "back_to_all": "Retour aux Produits",
         "related_solutions": "Explorer les Autres Solutions",
@@ -188,106 +115,11 @@
         "results_title": "Résultats escomptés",
         "how_it_works_title": "Comment ça fonctionne",
         "deployment_suffix": "Déploiement",
-        "features": {
-            "badge": "Caractéristiques",
-            "title_main": "Libérez la Puissance : Des fonctionnalités qui",
-            "title_highlight": "Transcendent l'Ordinaire !",
-            "subtitle": "Dévoilement du meilleur arsenal : des capacités puissantes qui élèvent votre protection financière vers de nouveaux sommets.",
-            "items": {
-                "fraud": {
-                    "title": "Détection et Score de Fraude",
-                    "description": "Algorithmes de ML avancés qui analysent les modèles de transaction et fournissent des scores de risque en temps réel avec une précision de 99,9 %."
-                },
-                "behavioral": {
-                    "title": "Analyses Comportementales",
-                    "description": "Aperçu approfondi des modèles de comportement des utilisateurs pour identifier les anomalies et prévenir les tentatives de fraude sophistiquées."
-                },
-                "compliance": {
-                    "title": "Outils de Conformité & AML",
-                    "description": "Fonctionnalités complètes de lutte contre le blanchiment d'argent avec rapports automatisés et conformité réglementaire."
-                },
-                "monitoring": {
-                    "title": "Surveillance des Transactions",
-                    "description": "Surveillance en temps réel de toutes les transactions financières avec des systèmes d'alerte et de réponse intelligents."
-                },
-                "alerts": {
-                    "title": "Alertes en Temps Réel & Gestion de Cas",
-                    "description": "Notifications instantanées et outils complets de gestion de cas pour les équipes d'investigation sur la fraude."
-                },
-                "api": {
-                    "title": "Intégration API",
-                    "description": "Intégration transparente avec les systèmes existants grâce à des API robustes et un support webhook."
-                }
-            }
-        },
-        "solution": {
-            "badge": "La Solution",
-            "title_main": "Protégez ce qui",
-            "title_highlight": "Compte le Plus",
-            "description": "La technologie avancée de détection de fraude de Protegey sauvegarde l'écosystème financier de l'Afrique en temps réel.",
-            "hero_text": "Prévention de la Fraude de Nouvelle Génération — Construit avec le ML et des analyses en temps réel, Protegey s'intègre parfaitement aux API des télécoms, des banques et des fintechs pour protéger des millions de transactions.",
-            "features": [
-                {
-                    "title": "Keep company organized with budgets and expense policies",
-                    "text": "ML algorithms analyze patterns and provide real-time risk scores with 99.9% accuracy"
-                },
-                {
-                    "title": "Issue corporate cards for greater spend control",
-                    "text": "Seamless API connections with existing telco, banking, and fintech infrastructure"
-                },
-                {
-                    "title": "Get ahead faster with AI-powered insights",
-                    "text": "Built specifically for the unique challenges of African financial systems"
-                }
-            ],
-            "card": {
-                "title": "BOUCLIER PROTEGEY",
-                "tagline": "Protection en Temps Réel",
-                "status": "ACTIF",
-                "stat1_label": "Menaces bloquées aujourd'hui",
-                "stat1_value": "2 847",
-                "stat2_label": "Temps de réponse",
-                "stat2_value": "<50ms",
-                "stat3_label": "Score de risque",
-                "stat3_value": "99,9 % sûr",
-                "protection_level": "Niveau de protection",
-                "protection_status": "Maximum"
-            }
-        },
         "cta": {
             "title": "Prêt à Sécuriser Votre Réseau ?",
             "subtitle": "Rejoignez la liste d'attente pour un accès anticipé ou contactez notre équipe commerciale pour une intégration entreprise.",
             "request_demo": "Demander un Demo",
             "contact_us": "Contactez-Nous"
-        },
-        "target": {
-            "badge": "Qui nous servons",
-            "title_main": "Des startups en phase de démarrage aux",
-            "title_highlight": "leaders",
-            "title_suffix": "mondiaux de l'industrie",
-            "subtitle": "Approuvé par les banques, les fintechs et les plateformes numériques protégeant des millions de transactions",
-            "items": {
-                "banks": {
-                    "title": "Banques",
-                    "description": "Protection de classe entreprise pour la banque traditionnelle"
-                },
-                "fintechs": {
-                    "title": "Startups Fintech",
-                    "description": "Évoluez en toute sécurité avec une prévention de la fraude robuste"
-                },
-                "payments": {
-                    "title": "Plateformes de Paiement",
-                    "description": "Sécurisez chaque transaction de paiement"
-                },
-                "ecommerce": {
-                    "title": "Commerce électronique",
-                    "description": "Protégez les transactions en ligne et les clients"
-                },
-                "telecoms": {
-                    "title": "Opérateurs Télécom",
-                    "description": "Sécurisez les services de mobile money"
-                }
-            }
         },
         "modules": {
             "transaction-monitoring": {
@@ -418,10 +250,10 @@
                     "Analyse de propagation des risques"
                 ],
                 "target_users": [
-                    "Analystes de risques seniors",
-                    "Responsables KYC / CDD",
-                    "Équipes d’investigation avancées",
-                    "Unités de renseignement financier"
+                    "Départements Risque Crédit",
+                    "Équipes de Souscription",
+                    "Unités d'Investigations Spéciales (SIU)",
+                    "Data Scientists"
                 ],
                 "results": [
                     "Identification des réseaux de fraude cachés",
@@ -523,8 +355,7 @@
     "waitlist": {
         "title1": "Découvrez le futur du",
         "title2": "renseignement fraude ",
-        "title3": "aujourd'hui",
-        "subtitle": "Soyez parmi les premiers à découvrir la plateforme de détection de fraude de nouvelle génération pour l'Afrique Francophone et du Nord",
+        "subtitle": "Soyez parmi les premiers à découvrir le réseau d'intelligence fraude partagée de PROTEGEY.",
         "form": {
             "title": "Civilité",
             "title_placeholder": "Sélectionnez",
@@ -568,9 +399,7 @@
         },
         "titles": {
             "mr": "M.",
-            "mrs": "Mme",
-            "ms": "Mlle",
-            "dr": "Dr."
+            "mrs": "Mme"
         },
         "roles": {
             "ceo": "PDG / Fondateur",
@@ -703,8 +532,6 @@
             "email_placeholder": "Entrez votre adresse e-mail",
             "phone": "Numéro de téléphone (Optionnel)",
             "phone_placeholder": "Entrez votre numéro de téléphone",
-            "country": "Pays",
-            "country_placeholder": "Entrez votre pays",
             "message": "Message",
             "message_placeholder": "Entrez votre message",
             "submit": "Envoyer",
@@ -717,8 +544,7 @@
     "api_docs": {
         "title": "Documentation API",
         "coming_soon": "Bientôt disponible",
-        "intro": "Nous finalisons actuellement notre documentation API publique. L'API Protegey vous permettra d'intégrer la détection de fraude en temps réel directement dans vos applications.",
-        "status": "v1.0.0 en développement"
+        "intro": "Nous finalisons actuellement notre documentation API publique. L'API Protegey vous permettra d'intégrer la détection de fraude en temps réel directement dans vos applications."
     },
     "geo_pages": {
         "what_is_protegey": {
@@ -743,23 +569,9 @@
         },
         "who_its_for": {
             "title": "À qui s'adresse-t-il ?",
-            "banks": "Banques commerciales et numériques cherchant à réduire les pertes liées à la fraude inter-institutionnelle.",
-            "fintechs": "Processeurs de paiement et portefeuilles ayant besoin d'un scoring de risque en temps réel et d'un partage d'alertes.",
-            "telcos": "Opérateurs de mobile money ciblant la fraude par SIM swap et par dépôt.",
-            "regulators": "Banques centrales et organismes de surveillance nécessitant une vue macroscopique des tendances du crime financier.",
-            "benefits": "Réduction des faux positifs, intelligence partagée en temps réel et intégration transparente avec les systèmes financiers régionaux.",
             "exclusion": "Protegey n'est pas conçu pour les consommateurs individuels."
         },
         "use_cases": {
-            "title": "Cas d'utilisation",
-            "sim_swap_title": "Fraude par SIM Swap",
-            "sim_swap": "Détecter et bloquer la fraude coordonnée par SIM swap sur différents réseaux mobiles.",
-            "ato_title": "Prise de Contrôle de Compte (ATO)",
-            "ato": "Prévenir la prise de contrôle de compte (ATO) en identifiant les appareils à haut risque déjà vus dans le réseau.",
-            "mule_title": "Réseaux de Comptes Mules",
-            "mule": "Identifier les réseaux coordonnés de comptes mules déplaçant des fonds à travers plusieurs institutions.",
-            "repeat_actors_title": "Acteurs Récidivistes",
-            "repeat_actors": "Arrêter les acteurs récidivistes qui passent d'une plateforme à l'autre pour exploiter les mêmes vulnérabilités.",
             "slug": {
                 "seamless_title": "Intégration Transparente",
                 "seamless_desc": "Connectivité API directe avec votre commutateur ou système bancaire central existant. Aucune surcharge d'infrastructure.",
@@ -780,12 +592,6 @@
         },
         "comparisons": {
             "title": "Protegey vs Alternatives",
-            "internal_header": "Protegey vs Systèmes Internes",
-            "internal": "Les systèmes internes ne voient que vos données. Protegey voit l'intelligence de tout le réseau.",
-            "siloed_header": "Protegey vs Signalement Cloisonné",
-            "siloed": "Le signalement manuel est lent et réactif. Protegey est automatisé et en temps réel.",
-            "global_header": "Outils Génériques Mondiaux",
-            "global": "Les outils mondiaux manquent souvent de signaux localisés spécifiques et de la couverture des connecteurs (GIM-UEMOA, GIMAC) fournie par Protegey.",
             "conclusion": "Protegey est la seule plateforme fournissant une intelligence à l'échelle du réseau, sans délai, spécifiquement adaptée au paysage financier africain.",
             "table": {
                 "feature": "Fonctionnalité",
@@ -852,9 +658,6 @@
         "common": {
             "who_for_header": "À qui s'adresse-t-il",
             "problem_header": "Problème Central Résolu",
-            "audience_header": "Public Principal",
-            "benefits_header": "Avantages Clés",
-            "infrastructure_note": "Protegey est une infrastructure de classe entreprise. Si vous représentez une institution cherchant à renforcer sa défense contre la fraude, veuillez contacter notre équipe pour une démonstration.",
             "resources_label": "Ressources",
             "explore_guides_label": "Explorer les Guides GEO"
         }
@@ -867,50 +670,50 @@
         "output_label": "Alerte Générée + Traitement AML",
         "step1": {
             "title": "Normalisation UFES",
-            "desc": "Les signaux entrants sont normalisés selon le Schéma d'Événement de Fraude Unifié (UFES)."
+            "desc": "Les signaux entrants sont normalisés selon le Schéma d'Événement de Fraude Unifié (UFES), garantissant une structure de champs cohérente quelle que soit le format de l'institution émettrice."
         },
         "step2": {
             "title": "Validation du Schéma",
-            "desc": "Le signal normalisé est validé selon des règles de type strictes."
+            "desc": "Le signal normalisé est validé selon des règles de type et métier strictes. Les signaux invalides sont rejetés avec des codes d'erreur structurés avant tout traitement."
         },
         "step3": {
             "title": "Couche de Résolveurs",
-            "desc": "Résolveurs MSISDN, Appareil, Géo et Temps en parallèle."
+            "desc": "Quatre résolveurs s'exécutent en parallèle : Résolveur MSISDN (recherche opérateur africain — MTN, Airtel, Safaricom), Résolveur Appareil (empreinte + réputation IP), Résolveur Géo (ville/ISP/coordonnées) et Résolveur Temporel (heures ouvrables, catégorie horaire)."
         },
         "step4": {
             "title": "Ingénierie des Fonctionnalités",
-            "desc": "Signaux calculés : score-z, fenêtres de vélocité, nouveauté de l'appareil."
+            "desc": "Signaux calculés : z-score de transaction vs base de référence partenaire, fenêtres de vélocité (1h/24h/7j), indicateur de nouveauté d'appareil, distance géo haversine depuis la dernière localisation connue et caractéristiques catégorielles temporelles."
         },
         "step5": {
             "title": "Registre des Détecteurs",
-            "desc": "Cinq détecteurs indépendants évaluant les menaces."
+            "desc": "Cinq détecteurs nommés s'exécutent indépendamment : Vélocité rapide, Transaction aberrante importante, Proximité d'échange de SIM, Accès nouveau appareil et Voyage impossible (seuils de vitesse > 900/500/200 km/h)."
         },
         "step6": {
             "title": "Attribution de Taxonomie",
-            "desc": "Classification selon la taxonomie de la fraude spécifique à l'Afrique."
+            "desc": "Le signal est classifié selon la taxonomie de fraude spécifique à l'Afrique Francophone de Protegey : prise de contrôle de compte, fraude mobile money, échange de SIM, ingénierie sociale, hameçonnage, faux investissement, et plus encore."
         },
         "step7": {
             "title": "Mise à jour du Graphe",
-            "desc": "Connexions entité-appareil-compte sauvegardées dans le graphe actif."
+            "desc": "Le graphe actif (Postgres + Redis) est mis à jour avec de nouvelles relations entre entités — appareil ↔ acteur ↔ compte ↔ transaction — permettant la détection multi-sauts de réseaux de fraude."
         },
         "step8": {
             "title": "Fusion des Risques Pondérés",
-            "desc": "Fusion des catégories Comportementale, Réseau, Contextuelle et Historique."
+            "desc": "Quatre dimensions de score sont fusionnées : Comportementale (35 %), Réseau (40 %), Contextuelle (15 %), Historique (10 %). Chaque dimension correspond à des caractéristiques et sorties de détecteurs spécifiques."
         },
         "step9": {
             "title": "Évaluation de la Politique",
-            "desc": "Règles pour déterminer les décisions de blocage, de révision ou d'approbation."
+            "desc": "Le score de risque fusionné est évalué par rapport au moteur de politique configuré par le partenaire. Des règles basées sur des seuils déterminent les décisions de blocage, révision ou passage."
         },
         "step10": {
             "title": "Génération d'Alertes + AML",
-            "desc": "Alertes structurées générées avec un lignage complet des détecteurs."
+            "desc": "Si les seuils sont dépassés, des alertes structurées sont générées avec la traçabilité complète des détecteurs. Le traitement AML/conformité s'exécute en parallèle de manière non bloquante pour les partenaires Enterprise."
         }
     },
     "who_its_for": {
         "badge": "PARTICIPANTS CIBLES",
         "title": "Conçu pour Tous les Types d'Institutions",
-        "subtitle": "Protegey est conçu pour les institutions financières qui forment le réseau de défense contre la fraude en Afrique.",
-        "exclusion": "L'accès est accordé uniquement aux institutions financières et régulateurs approuvés.",
+        "subtitle": "Protegey est conçu pour les institutions financières qui forment le réseau de défense contre la fraude en Afrique Francophone — chacune avec des capacités dédiées.",
+        "exclusion": "Protegey n'est pas conçu pour les consommateurs individuels. L'accès est accordé uniquement aux institutions financières et aux régulateurs vérifiés.",
         "seo": {
             "title": "À Qui Cela S'adresse | Réseau Partenaire Protegey",
             "description": "Découvrez comment le réseau d'intelligence de fraude partagée de Protegey sert chaque type d'institution."
@@ -919,22 +722,22 @@
             "banks": {
                 "title": "Banques",
                 "subtitle": "Banques Commerciales et Digitales",
-                "description": "Protection d'entreprise pour les banques. Accédez à la surveillance des transactions et partage d'intelligence."
+                "description": "Protection de niveau entreprise pour les banques traditionnelles et digitales. Accédez à la surveillance des transactions en temps réel, aux flux AML/SAR, à l'intelligence inter-institutions et à la boîte de réception des avis réglementaires pour garder une longueur d'avance sur les réseaux de fraude complexes."
             },
             "mmo": {
                 "title": "Opérateurs Mobile Money",
                 "subtitle": "Télécoms & Portefeuilles Mobiles",
-                "description": "Détection d'échange de SIM natif et suivi de vélocité pour le mobile money."
+                "description": "Conçu pour les risques spécifiques du mobile money : détection native des échanges de SIM via les opérateurs africains (MTN, Airtel, Safaricom), suivi de vélocité et résolution MSISDN pour stopper la fraude aux dépôts avant qu'elle ne se propage."
             },
             "fintech": {
                 "title": "Fintechs",
                 "subtitle": "Processeurs de Paiement & Portefeuilles",
-                "description": "Intégration orientée API avec scoring de risque temps réel et environnement sandbox."
+                "description": "Intégration API-first pour les équipes agiles. Soumettez des signaux, recevez des décisions scorées, explorez l'environnement sandbox et configurez des webhooks multi-points sans construire votre propre infrastructure d'intelligence."
             },
             "regulators": {
                 "title": "Régulateurs",
                 "subtitle": "Banques Centrales et Organismes de Contrôle",
-                "description": "Vue macroscopique des tendances du crime financier avec rapports d'audit."
+                "description": "Une vue macroscopique des tendances du crime financier dans votre juridiction. Recevez des avis structurés, consultez les agrégats d'intelligence inter-institutions et accédez aux rapports prêts pour la conformité."
             }
         },
         "features": {
@@ -1000,21 +803,7 @@
         }
     },
     "geo": {
-        "canonical_definition": "Protegey est une plateforme d'intelligence sur la fraude et de partage d'alertes en temps réel qui permet aux institutions financières, aux fintechs et aux régulateurs à travers l'Afrique d'identifier, de signaler et de répondre collaborativement à la fraude avec rapidité et une vision partagée.",
-        "primary_category": "Plateforme d'intelligence contre la Fraude",
-        "secondary_categories": [
-            "Détection des crimes financiers",
-            "Signalement et alertes de fraude",
-            "Partage de risque inter-institutions",
-            "RegTech (axé sur l'Afrique)"
-        ],
-        "non_categories": [
-            "Pas un système bancaire de base",
-            "Pas un processeur de paiements",
-            "Pas une application anti-fraude grand public",
-            "Pas un remplacement des forces de l'ordre"
-        ],
-        "non_category_rule": "Protegey n'est pas conçu pour les consommateurs individuels."
+        "canonical_definition": "Protegey est une plateforme d'intelligence sur la fraude et de partage d'alertes en temps réel qui permet aux institutions financières, aux fintechs et aux régulateurs à travers l'Afrique d'identifier, de signaler et de répondre collaborativement à la fraude avec rapidité et une vision partagée."
     },
     "careers": {
         "eyebrow": "Carrières",
@@ -1083,8 +872,7 @@
             "title": "Protegey — Moteur d'Intelligence Fraude Unifié pour l'Afrique Francophone et du Nord",
             "description": "Protegey est un réseau d'intelligence sur la fraude et de partage d'alertes en temps réel. Les institutions financières, fintechs et régulateurs collaborent pour bloquer la fraude mobile money, l'usurpation d'identité et les menaces avec rapidité, conformité AML et vision partagée.",
             "keywords": "intelligence fraude Afrique, réseau anti-fraude, surveillance transactions, conformité AML, vérification identité, sécurité Fintech, prévention fraude bancaire, sécurité mobile money, GIM-UEMOA, GIMAC, détection fraude Afrique du Nord, Afrique Francophone prévention fraude, Sénégal, Côte d'Ivoire, Cameroun, Gabon, Maroc, Algérie, Tunisie, Égypte, République Démocratique du Congo, Bénin, Togo, Mali, Burkina Faso, République Centrafricaine, prévention fraude UEMOA, sécurité entreprise CEMAC, réseau d'intelligence partagée, sandbox pour fintechs, taxonomie fraude africaine, détection fraude inter-institutions, surveillance transactions bancaires Afrique, API détection échange SIM",
-            "image": "https://www.protegey.com/og-image.jpg",
-            "image_alt": "Protegey — Moteur d'Intelligence Fraude Unifié"
+            "og_tagline": "Intelligence Fraude · Afrique"
         },
         "index": {
             "title": "Protegey | Renseignement Fraude Unifié pour les Institutions Africaines",
@@ -1095,12 +883,7 @@
             "description": "Découvrez les cinq couches de solutions de PROTEGEY : surveillance des transactions, protection des comptes et des appareils, AML et conformité, profilage du risque et réseau d’intelligence fraude."
         },
         "solution_detail": {
-            "title": "{name} | Infrastructure de Sécurité Protegey",
-            "description": "{description}"
-        },
-        "about_page": {
-            "title": "Notre Mission | Construire le Système Immunitaire Numérique de l'Afrique",
-            "description": "Découvrez comment Protegey élimine la fraude comme obstacle au commerce numérique en Afrique grâce à un réseau d'intelligence unifié et en temps réel."
+            "title": "{name} | Infrastructure de Sécurité Protegey"
         },
         "about": {
             "title": "Notre Mission | Construire le Système Immunitaire Numérique de l'Afrique",
@@ -1113,8 +896,7 @@
         },
         "careers": {
             "title": "Rejoignez la Mission | Carrières chez Protegey",
-            "description": "Aidez-nous à sécuriser l'avenir du commerce africain. Nous recherchons des passionnés pour construire l'infrastructure numérique du continent.",
-            "image": "/images/careers-hero.png"
+            "description": "Aidez-nous à sécuriser l'avenir du commerce africain. Nous recherchons des passionnés pour construire l'infrastructure numérique du continent."
         },
         "api_docs": {
             "title": "Centre Développeurs | Documentation API Protegey",
@@ -1145,11 +927,15 @@
         "skip_to_content": "Aller au contenu principal",
         "main_navigation": "Navigation principale",
         "mobile_menu": "Menu mobile",
-        "close_menu": "Fermer le menu"
+        "close_menu": "Fermer le menu",
+        "open_menu": "Ouvrir le menu de navigation",
+        "theme_light": "Passer en mode clair",
+        "theme_dark": "Passer en mode sombre",
+        "sidebar_navigation": "Guides de ressources"
     },
     "industries": {
-        "title": "Une intelligence adaptée à chaque secteur",
-        "subtitle": "Que vous soyez une banque traditionnelle ou un opérateur de monnaie mobile, PROTEGEY s’adapte à votre profil de risque spécifique et à votre environnement réglementaire.",
+        "title": "L'intelligence contre la fraude, conçue pour les systèmes financiers réels",
+        "subtitle": "Protegey s'adapte aux systèmes d'identité fragmentés, à la fraude multiplateforme et aux exigences réglementaires — fournissant une intelligence des risques en temps réel à travers des écosystèmes interconnectés.",
         "challenge_badge": "Risques clés",
         "solution_badge": "Comment PROTEGEY aide",
         "challenge_heading": "Risques clés dans le secteur {industry}",
@@ -1284,66 +1070,7 @@
                     "Détecte les anomalies au niveau du corridor, les schémas répétés et les contreparties liées.",
                     "Aide les équipes à escalader les activités suspectes plus rapidement avec un contexte enrichi pour les investigations."
                 ]
-            },
-            "ecommerce": {
-                "title": "E-commerce et Marketplaces Numériques",
-                "desc": "Marketplaces en ligne, marchands et plateformes multi-vendeurs",
-                "challenge": "Les rétrofacturations, les identifiants volés et les réseaux de fraude coordonnés augmentent les pertes et fragilisent la confiance dans la plateforme.",
-                "solution": "Protegey détecte les schémas d'achat suspects, suit les appareils frauduleux et score les contreparties avant que les transactions ne soient finalisées.",
-                "risks": [
-                    "Fraude sans carte physique, rétrofacturations et abus de comptes clients compromis.",
-                    "Fraude répétée provenant de clusters d'appareils ciblant plusieurs marchands ou boutiques.",
-                    "Réseaux de vendeurs ou d'acheteurs manipulant les commandes, paiements ou flux de remboursement."
-                ],
-                "how_protegey_helps": [
-                    "Identifie les appareils risqués et le comportement lié des acheteurs avant la finalisation du checkout.",
-                    "Surveille les activités d'achat, de remboursement et de paiement pour détecter les schémas suspects.",
-                    "Étend la visibilité entre marchands et marketplaces pour exposer les réseaux de fraude coordonnés."
-                ]
-            },
-            "gaming": {
-                "title": "Plateformes de Jeux et Paris",
-                "desc": "Casinos en ligne, applications de paris sportifs et plateformes de jeux fantasy",
-                "challenge": "L'abus de bonus via de faux comptes, la collusion coordonnée et les réseaux de fraude exploitant les campagnes promotionnelles sont des menaces persistantes. Un seul réseau peut opérer des centaines de faux comptes avant que la détection traditionnelle ne s'en aperçoive.",
-                "solution": "Protegey détecte l'activité coordonnée des appareils entre comptes, signale les comportements d'inscription suspects et cartographie les liens entre des comptes apparemment sans rapport mais partageant un appareil, un numéro ou une empreinte réseau.",
-                "risks": [
-                    "Abus de bonus provenant de faux comptes et d'inscriptions répétées.",
-                    "Collusion coordonnée entre joueurs utilisant des appareils ou des trails de contact liés.",
-                    "Réseaux de fraude promotionnelle opérant à une échelle que la revue manuelle ne peut pas détecter rapidement."
-                ],
-                "how_protegey_helps": [
-                    "Signale les comportements d'inscription suspects et la réutilisation répétée d'appareils entre comptes.",
-                    "Cartographie les connexions entre comptes partageant des appareils, numéros ou empreintes réseau.",
-                    "Aide les équipes fraude à escalader les abus de jeux coordonnés plus tôt avec des preuves de relations plus claires."
-                ]
-            },
-            "mobility": {
-                "title": "Mobilité et Hôtellerie",
-                "desc": "Plateformes de VTC, réseaux de livraison, hôtels et plateformes de voyage",
-                "challenge": "Ces plateformes dépendent de la confiance entre la plateforme, les prestataires de services et les clients. Les comptes de chauffeurs frauduleux, les abus multi-comptes et les schémas suspects de réservation ou de paiement créent à la fois des pertes financières et des risques de sécurité.",
-                "solution": "Protegey détecte quand plusieurs comptes proviennent du même appareil, signale les comportements inhabituels de réservation et de paiement, et score les contreparties avant l'intégration pour réduire les pertes opérationnelles et améliorer la confiance.",
-                "risks": [
-                    "Comptes de prestataires frauduleux et abus répétés de multi-comptes sur la même plateforme.",
-                    "Activité suspecte de réservation, paiement et règlement qui mêle risque financier et opérationnel.",
-                    "Faible visibilité sur les contreparties risquées avant qu'elles n'atteignent les clients ou les flux critiques."
-                ],
-                "how_protegey_helps": [
-                    "Détecte quand plusieurs comptes proviennent du même appareil ou de signaux liés.",
-                    "Signale les comportements inhabituels de réservation et de paiement avant qu'ils n'escaladent en pertes ou problèmes de sécurité.",
-                    "Score les contreparties avant l'intégration pour aider les équipes à bloquer plus tôt les acteurs à haut risque."
-                ]
             }
-        },
-        "closing_statement": "La fraude n'opère pas en silos — et vos défenses non plus. Protegey connecte les signaux pour que vous puissiez agir avant que les pertes ne surviennent."
-    },
-    "headers": {
-        "home": {
-            "title": "Protegey | Réseau d’Intelligence Partagé contre la Fraude en Afrique",
-            "description": "Infrastructure de prévention de la fraude en temps réel et conforme à la LBC pour les écosystèmes financiers africains : API, surveillance comportementale et réseau d’intelligence."
-        },
-        "industries": {
-            "title": "Solutions de Sécurité | Infrastructure d’Intelligence contre la Fraude Protegey",
-            "description": "Suite de sécurité complète luttant contre la fraude à la monnaie mobile et permettant la conformité LBC."
         }
     }
 }

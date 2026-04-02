@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   seo: {
     redirectToCanonicalSiteUrl: true
   },
+  // @ts-expect-error routeRules is a valid top-level Nuxt config option (type definition gap in @nuxt/schema)
   routeRules: {
     // 1. Cache all pages by default (SWR - Stale While Revalidate)
     '/**': {

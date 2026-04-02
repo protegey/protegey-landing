@@ -30,7 +30,7 @@
                                     <HugeiconsIcon :icon="Mail01Icon" :size="24" class="text-primary-400" />
                                 </div>
                                 <div>
-                                    <h2 class="text-neutral-900 dark:text-white font-bold mb-1">{{ $t('contact.email') }}</h2>
+                                    <p class="text-neutral-900 dark:text-white font-bold mb-1">{{ $t('contact.email') }}</p>
                                     <a href="mailto:hello@protegey.com" class="text-neutral-500 dark:text-neutral-400 hover:text-primary-400 transition-colors text-sm font-medium">
                                         hello@protegey.com
                                     </a>
@@ -44,7 +44,7 @@
                                     <HugeiconsIcon :icon="Location01Icon" :size="24" class="text-secondary-400" />
                                 </div>
                                 <div>
-                                    <h2 class="text-neutral-900 dark:text-white font-bold mb-3">{{ $t('contact.location') }}</h2>
+                                    <p class="text-neutral-900 dark:text-white font-bold mb-3">{{ $t('contact.location') }}</p>
                                     <div class="space-y-3">
                                         <div class="p-3 rounded-xl bg-neutral-50 dark:bg-neutral-800/50">
                                             <p class="text-xs font-bold text-primary-400 uppercase tracking-wider mb-1">{{ $t('contact.hq') }}</p>
@@ -73,7 +73,7 @@
                                     <HugeiconsIcon :icon="Clock01Icon" :size="24" class="text-primary-400" />
                                 </div>
                                 <div>
-                                    <h2 class="text-neutral-900 dark:text-white font-bold mb-1">{{ $t('contact.hours') }}</h2>
+                                    <p class="text-neutral-900 dark:text-white font-bold mb-1">{{ $t('contact.hours') }}</p>
                                     <p class="text-neutral-500 dark:text-neutral-400 text-sm font-medium leading-relaxed">
                                         {{ $t('contact.hours_desc') }}
                                     </p>
@@ -122,10 +122,10 @@
                                 <HugeiconsIcon :icon="ArrowRight01Icon" :size="20" v-if="!isSubmitting" />
                             </button>
 
-                            <div v-if="submitMessage" class="p-4 rounded-xl bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm font-bold text-center mt-4">
+                            <div v-if="submitMessage" role="status" aria-live="polite" class="p-4 rounded-xl bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm font-bold text-center mt-4">
                                 {{ submitMessage }}
                             </div>
-                            <div v-if="submitError" class="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-bold text-center mt-4">
+                            <div v-if="submitError" role="alert" aria-live="assertive" class="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-bold text-center mt-4">
                                 {{ submitError }}
                             </div>
                         </form>

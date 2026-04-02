@@ -30,7 +30,7 @@ setInterval(() => {
 
 export function rateLimit(event: any, opts: RateLimitOptions): void {
     const ip =
-        getRequestHeader(event, 'x-forwarded-for')?.split(',')[0].trim() ||
+        getRequestHeader(event, 'x-forwarded-for')?.split(',')?.[0]?.trim() ||
         getRequestHeader(event, 'x-real-ip') ||
         event.node?.req?.socket?.remoteAddress ||
         'unknown'

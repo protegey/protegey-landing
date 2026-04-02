@@ -188,6 +188,7 @@ onUnmounted(() => {
                     </h1>
 
                     <p class="hero-subtitle text-base text-neutral-500 dark:text-neutral-400 max-w-2xl leading-relaxed"
+                        aria-live="off"
                         v-html="$t('hero.subtitle', { action: typewriterText })">
                     </p>
 

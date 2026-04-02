@@ -23,10 +23,11 @@ import {
 import { gsap } from 'gsap'
 
 const route = useRoute()
-const { t, tm, rt } = useI18n()
+const { t, tm, rt, locale } = useI18n()
 const localePath = useLocalePath()
 const slug = computed(() => String(route.params.slug))
 const baseUrl = 'https://www.protegey.com'
+const localePrefix = locale.value === 'fr' ? '' : `/${locale.value}`
 
 const industryIcons = {
     banks: BankIcon,
@@ -94,22 +95,20 @@ const relatedIndustries = computed(() => {
 })
 
 usePageMeta({
-    title: () => (industryData.value?.title || 'Use Case') + ' | Protegey',
+    title: () => industryData.value?.title || 'Use Case',
     description: () => industryData.value?.desc || '',
     schemaOrg: industryData.value ? [
         {
-            '@type': 'Article',
-            headline: industryData.value.title,
+            '@type': 'WebPage',
+            name: industryData.value.title,
             description: industryData.value.desc,
-            author: { '@type': 'Organization', name: 'Protegey' },
-            articleSection: industryData.value.title,
         },
         {
             '@type': 'BreadcrumbList',
             itemListElement: [
                 { '@type': 'ListItem', position: 1, name: t('nav.home'), item: baseUrl },
-                { '@type': 'ListItem', position: 2, name: t('nav.industries'), item: `${baseUrl}/use-cases` },
-                { '@type': 'ListItem', position: 3, name: industryData.value.title, item: `${baseUrl}/use-cases/${industryData.value.key}` }
+                { '@type': 'ListItem', position: 2, name: t('nav.industries'), item: `${baseUrl}${localePrefix}/use-cases` },
+                { '@type': 'ListItem', position: 3, name: industryData.value.title, item: `${baseUrl}${localePrefix}/use-cases/${industryData.value.key}` }
             ]
         }
     ] : []

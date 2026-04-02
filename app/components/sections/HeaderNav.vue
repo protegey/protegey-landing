@@ -16,11 +16,8 @@ import {
   MoneySend01Icon,
   GlobalIcon,
   BitcoinCircleIcon,
-  ShoppingBag01Icon,
   Building03Icon,
   Building01Icon,
-  GameController01Icon,
-  Location01Icon,
   BookOpen01Icon,
   LockKeyIcon,
   DocumentValidationIcon,
@@ -165,11 +162,8 @@ const industryIcons = {
   fintechs: Wallet02Icon, 
   mobile_money: SmartPhone01Icon,
   remittance: GlobalIcon,
-  ecommerce: ShoppingBag01Icon, 
-  gaming: GameController01Icon,
-  crypto: BitcoinCircleIcon, 
+  crypto: BitcoinCircleIcon,
   regulators: Building03Icon,
-  mobility: Location01Icon
 }
 
 const INDUSTRY_ORDER = [
@@ -180,7 +174,7 @@ const INDUSTRY_ORDER = [
   'mobile_money',
   'remittance',
   'crypto',
-  'regulators'
+  'regulators',
 ]
 
 const getIndustries = () => {
@@ -207,8 +201,8 @@ const getIndustries = () => {
         <!-- Logo -->
         <div class="flex items-center gap-4">
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2">
-            <img src="/images/logo-dark.svg" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none" :class="isDark ? 'hidden' : 'block'" />
-            <img src="/images/logo-light.svg" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none" :class="isDark ? 'block' : 'hidden'" />
+            <img src="/images/logo-dark.svg" :alt="isDark ? '' : $t('footer.logo_alt')" class="h-8 w-auto max-w-none" :class="isDark ? 'hidden' : 'block'" />
+            <img src="/images/logo-light.svg" :alt="isDark ? $t('footer.logo_alt') : ''" class="h-8 w-auto max-w-none" :class="isDark ? 'block' : 'hidden'" />
             <!-- <span class="text-lg font-bold text-neutral-900 dark:text-white tracking-tight">Protegey</span> -->
           </NuxtLink>
         </div>
@@ -224,7 +218,7 @@ const getIndustries = () => {
                @click="activeDropdown = activeDropdown === 'solutions' ? null : 'solutions'"
                @focus="openDropdown('solutions')"
                @blur="closeDropdown()"
-               aria-haspopup="true"
+               aria-haspopup="listbox"
                :aria-expanded="activeDropdown === 'solutions'">
                {{ $t('nav.solutions') }}
                <HugeiconsIcon :icon="ArrowDown01Icon" :size="12" class="transition-transform duration-300" :class="{ 'rotate-180': activeDropdown === 'solutions' }" />
@@ -264,7 +258,7 @@ const getIndustries = () => {
                @click="activeDropdown = activeDropdown === 'industries' ? null : 'industries'"
                @focus="openDropdown('industries')"
                @blur="closeDropdown()"
-               aria-haspopup="true"
+               aria-haspopup="listbox"
                :aria-expanded="activeDropdown === 'industries'">
                {{ $t('nav.industries') }}
                <HugeiconsIcon :icon="ArrowDown01Icon" :size="12" class="transition-transform duration-300" :class="{ 'rotate-180': activeDropdown === 'industries' }" />
@@ -296,7 +290,7 @@ const getIndustries = () => {
                @click="activeDropdown = activeDropdown === 'resources' ? null : 'resources'"
                @focus="openDropdown('resources')"
                @blur="closeDropdown()"
-               aria-haspopup="true"
+               aria-haspopup="listbox"
                :aria-expanded="activeDropdown === 'resources'">
                {{ $t('nav.resources') }}
                <HugeiconsIcon :icon="ArrowDown01Icon" :size="12" class="transition-transform duration-300" :class="{ 'rotate-180': activeDropdown === 'resources' }" />
@@ -319,7 +313,7 @@ const getIndustries = () => {
                @click="activeDropdown = activeDropdown === 'company' ? null : 'company'"
                @focus="openDropdown('company')"
                @blur="closeDropdown()"
-               aria-haspopup="true"
+               aria-haspopup="listbox"
                :aria-expanded="activeDropdown === 'company'">
                {{ $t('nav.company') }}
                <HugeiconsIcon :icon="ArrowDown01Icon" :size="12" class="transition-transform duration-300" :class="{ 'rotate-180': activeDropdown === 'company' }" />
@@ -373,13 +367,14 @@ const getIndustries = () => {
         <div class="md:hidden flex items-center gap-3">
           <ThemeToggle />
           <button @click="toggleMenu" :aria-expanded="isOpen"
+            :aria-label="isOpen ? $t('a11y.close_menu') : $t('a11y.open_menu')"
             class="relative z-[60] p-2.5 rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-300 overflow-hidden group">
             <div
               class="absolute inset-0 bg-primary-500 transform translate-y-full group-active:translate-y-0 transition-transform duration-300" />
-            <svg v-if="!isOpen" class="h-5 w-5 relative z-10" viewBox="0 0 20 20" fill="currentColor">
+            <svg v-if="!isOpen" aria-hidden="true" class="h-5 w-5 relative z-10" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M3 5h14v2H3V5zm0 4h14v2H3V9zm0 4h14v2H3v-2z" clip-rule="evenodd" />
             </svg>
-            <svg v-else class="h-5 w-5 relative z-10" viewBox="0 0 20 20" fill="currentColor">
+            <svg v-else aria-hidden="true" class="h-5 w-5 relative z-10" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd"
                 d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                 clip-rule="evenodd" />
@@ -404,8 +399,8 @@ const getIndustries = () => {
           <!-- Header for Mobile Menu -->
           <div class="h-16 px-6 flex items-center justify-between border-b border-neutral-200 dark:border-neutral-900 shrink-0">
             <div class="flex items-center gap-2">
-              <img src="/images/logo-dark.svg" :alt="$t('footer.logo_alt')" class="h-6 w-auto max-w-none" :class="isDark ? 'hidden' : 'block'" />
-              <img src="/images/logo-light.svg" :alt="$t('footer.logo_alt')" class="h-6 w-auto max-w-none" :class="isDark ? 'block' : 'hidden'" />
+              <img src="/images/logo-dark.svg" :alt="isDark ? '' : $t('footer.logo_alt')" class="h-6 w-auto max-w-none" :class="isDark ? 'hidden' : 'block'" />
+              <img src="/images/logo-light.svg" :alt="isDark ? $t('footer.logo_alt') : ''" class="h-6 w-auto max-w-none" :class="isDark ? 'block' : 'hidden'" />
               <span class="text-base font-bold text-neutral-900 dark:text-white tracking-tight">Protegey</span>
             </div>
             <button @click="toggleMenu" class="p-2 text-neutral-500 dark:text-neutral-400" :aria-label="$t('a11y.close_menu')">
@@ -421,11 +416,13 @@ const getIndustries = () => {
               <!-- Accordion: Solutions -->
               <div class="flex flex-col mobile-nav-item">
                 <button @click="toggleMobileSection('solutions')"
+                  :aria-expanded="activeMobileSection === 'solutions'"
+                  aria-controls="mobile-solutions-panel"
                   class="flex items-center justify-between py-2 text-neutral-400 dark:text-neutral-500 uppercase tracking-[0.2em] text-[10px] font-bold w-full">
                   <span>{{ $t('nav.solutions') }}</span>
                   <HugeiconsIcon :icon="ArrowDown01Icon" :size="14" class="transition-transform duration-300" :class="{ 'rotate-180': activeMobileSection === 'solutions' }" />
                 </button>
-                <div v-show="activeMobileSection === 'solutions'" class="mt-4 grid gap-4 pl-2">
+                <div id="mobile-solutions-panel" v-show="activeMobileSection === 'solutions'" class="mt-4 grid gap-4 pl-2">
                   <NuxtLink v-for="mod in solutionItems" :key="mod.key" :to="localePath(`/solutions/${mod.key}`)" @click="toggleMenu" class="flex items-start gap-4 p-2 rounded-xl group active:bg-neutral-100 dark:active:bg-neutral-900 mobile-solution-item">
                     <div class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white">
                       <HugeiconsIcon :icon="mod.icon" :size="18" :class="mod.color" />
@@ -441,11 +438,13 @@ const getIndustries = () => {
               <!-- Accordion: Industries -->
               <div class="flex flex-col mobile-nav-item">
                 <button @click="toggleMobileSection('industries')"
+                  :aria-expanded="activeMobileSection === 'industries'"
+                  aria-controls="mobile-industries-panel"
                   class="flex items-center justify-between py-2 text-neutral-400 dark:text-neutral-500 uppercase tracking-[0.2em] text-[10px] font-bold w-full">
                   <span>{{ $t('nav.industries') }}</span>
                   <HugeiconsIcon :icon="ArrowDown01Icon" :size="14" class="transition-transform duration-300" :class="{ 'rotate-180': activeMobileSection === 'industries' }" />
                 </button>
-                <div v-show="activeMobileSection === 'industries'" class="mt-4 grid grid-cols-2 gap-2 pl-2">
+                <div id="mobile-industries-panel" v-show="activeMobileSection === 'industries'" class="mt-4 grid grid-cols-2 gap-2 pl-2">
                   <NuxtLink v-for="ind in getIndustries()" :key="ind.key" :to="localePath(`/use-cases/${ind.key}`)" @click="toggleMenu" class="flex items-center gap-3 p-3 rounded-xl border border-neutral-100 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-900/50 mobile-industry-item">
                     <HugeiconsIcon :icon="ind.icon" :size="16" class="text-primary-500 shrink-0" />
                     <span class="text-xs font-bold text-neutral-900 dark:text-white leading-tight">{{ ind.title }}</span>

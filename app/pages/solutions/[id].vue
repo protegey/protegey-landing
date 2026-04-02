@@ -64,13 +64,6 @@ const solutionSchema = computed(() => ({
     "brand": {
         "@type": "Brand",
         "name": "Protegey"
-    },
-    "offers": {
-        "@type": "Offer",
-        "url": canonicalUrl,
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
     }
 }))
 
