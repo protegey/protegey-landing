@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HeaderNav from '~/components/sections/HeaderNav.vue'
 import Footer from '~/components/sections/Footer.vue'
+import SplashOverlay from '~/components/sections/SplashOverlay.vue'
 
 const { t, locale } = useI18n()
 const route = useRoute()
@@ -85,6 +86,7 @@ useSeoMeta({
 </script>
 
 <template>
+  <SplashOverlay />
   <div class="relative z-10 text-neutral-950 dark:text-white transition-colors duration-200">
     <a href="#main-content" class="skip-nav">{{ t('a11y.skip_to_content') }}</a>
     <HeaderNav />
