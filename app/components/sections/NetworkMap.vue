@@ -142,14 +142,13 @@ onUnmounted(() => {
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary-500/30 bg-secondary-500/10 text-secondary-400 text-sm font-mono tracking-wide mb-4">
                     <span class="w-2 h-2 rounded-full bg-secondary-500 animate-pulse"></span>
-                    HOW IT WORKS
+                    {{ $t('network_map.badge') }}
                 </div>
                 <h2 class="network-title text-3xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
-                    A Shared Early-Warning Network
+                    {{ $t('network_map.title') }}
                 </h2>
                 <p class="text-neutral-500 dark:text-neutral-400 text-lg">
-                    Protegey turns scattered events into actionable intelligence by aggregating signals from across the
-                    ecosystem.
+                    {{ $t('network_map.subtitle') }}
                 </p>
             </div>
 
@@ -166,9 +165,9 @@ onUnmounted(() => {
                         class="w-12 h-12 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-500/20 transition-colors">
                         <span class="text-2xl font-mono font-bold text-primary-500">01</span>
                     </div>
-                    <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-3">Aggregate Signals</h3>
+                    <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-3">{{ $t('network_map.step1.title') }}</h3>
                     <p class="text-neutral-500 dark:text-neutral-400">
-                        Ingest data from fintechs, telcos, banks, and community reports in real-time.
+                        {{ $t('network_map.step1.desc') }}
                     </p>
                 </div>
 
@@ -179,9 +178,9 @@ onUnmounted(() => {
                         class="w-12 h-12 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary-500/20 transition-colors">
                         <span class="text-2xl font-mono font-bold text-secondary-500">02</span>
                     </div>
-                    <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-3">Detect Patterns</h3>
+                    <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-3">{{ $t('network_map.step2.title') }}</h3>
                     <p class="text-neutral-500 dark:text-neutral-400">
-                        AI engine analyzes cross-institution patterns to identify emerging fraud vectors.
+                        {{ $t('network_map.step2.desc') }}
                     </p>
                 </div>
 
@@ -192,9 +191,9 @@ onUnmounted(() => {
                         class="w-12 h-12 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-500/20 transition-colors">
                         <span class="text-2xl font-mono font-bold text-primary-400">03</span>
                     </div>
-                    <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-3">Stop Fraud</h3>
+                    <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-3">{{ $t('network_map.step3.title') }}</h3>
                     <p class="text-neutral-500 dark:text-neutral-400">
-                        Instantly block threats and share intelligence across the network to prevent spread.
+                        {{ $t('network_map.step3.desc') }}
                     </p>
                 </div>
             </div>

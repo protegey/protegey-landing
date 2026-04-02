@@ -207,7 +207,7 @@ const moduleKey = () => activeData().key;
                                     <div>
                                         <div class="text-xs font-bold tracking-widest uppercase mb-1"
                                             :class="activeData().colorClass">
-                                            Module {{ activeModule + 1 }} of 5
+                                            {{ $t('solutions.module_counter', { n: activeModule + 1, total: modules.length }) }}
                                         </div>
                                         <h3 class="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white">
                                             {{ $t(`solutions.modules.${moduleKey()}.title`) }}
@@ -244,13 +244,13 @@ const moduleKey = () => activeData().key;
                                                     ? `w-6 ${activeData().bgClass.replace('/10', '/80')}`
                                                     : 'w-1.5 bg-neutral-200 dark:bg-neutral-700 hover:bg-neutral-300 dark:hover:bg-neutral-600'
                                             ]"
-                                            :aria-label="`Go to module ${i + 1}`">
+                                            :aria-label="$t('solutions.go_to_module', { n: i + 1 })">
                                         </button>
                                     </div>
                                     <NuxtLink :to="localePath(`/solutions/${moduleKey()}`)"
                                         class="flex items-center gap-2 text-sm font-bold transition-all hover:gap-3"
                                         :class="activeData().colorClass">
-                                        Learn more about {{ $t(`solutions.modules.${moduleKey()}.title`) }} &rarr;
+                                        {{ $t('solutions.learn_more_about', { title: $t(`solutions.modules.${moduleKey()}.title`) }) }} &rarr;
                                     </NuxtLink>
                                 </div>
                             </div>

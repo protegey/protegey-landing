@@ -243,7 +243,7 @@ const getIndustries = () => {
                         {{ $t('solutions.panid_teaser.title') }}
                         <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-primary-500/20 text-primary-500 leading-none uppercase">{{ $t('solutions.coming_soon') }}</span>
                     </div>
-                    <div class="text-[11px] text-neutral-500 dark:text-neutral-400 mt-1 line-clamp-2 leading-tight">Pan-African identity verification and eKYC natively built-in.</div>
+                    <div class="text-[11px] text-neutral-500 dark:text-neutral-400 mt-1 line-clamp-2 leading-tight">{{ $t('nav.solutions_panid_description') }}</div>
                   </div>
                 </NuxtLink>
               </div>
@@ -275,7 +275,7 @@ const getIndustries = () => {
                 </div>
                 <div class="pt-4 mt-2 border-t border-neutral-100 dark:border-neutral-800">
                     <NuxtLink :to="localePath('/use-cases')" class="text-sm text-primary-500 font-bold hover:text-primary-400 flex items-center gap-1 w-fit mx-auto">
-                        View all use cases &rarr;
+                        {{ $t('nav.view_all_use_cases') }} &rarr;
                     </NuxtLink>
                 </div>
               </div>

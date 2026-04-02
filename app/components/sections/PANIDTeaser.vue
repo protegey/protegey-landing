@@ -104,15 +104,15 @@ const scrollTo = (selector) => {
                                 <!-- Floating tags -->
                                 <div
                                     class="absolute -top-4 -right-6 px-3 py-1.5 rounded-full bg-neutral-800 border border-accent-cyan-500/30 text-xs font-bold text-accent-cyan-400 whitespace-nowrap shadow-xl">
-                                    eKYC
+                                    {{ $t('solutions.panid_teaser.tag_ekyc') }}
                                 </div>
                                 <div
                                     class="absolute -bottom-4 -left-6 px-3 py-1.5 rounded-full bg-neutral-800 border border-primary-500/30 text-xs font-bold text-primary-400 whitespace-nowrap shadow-xl">
-                                    KYB
+                                    {{ $t('solutions.panid_teaser.tag_kyb') }}
                                 </div>
                                 <div
                                     class="absolute top-1/2 -right-16 -translate-y-1/2 px-3 py-1.5 rounded-full bg-neutral-800 border border-secondary-500/30 text-xs font-bold text-secondary-400 whitespace-nowrap shadow-xl">
-                                    Pan-African
+                                    {{ $t('solutions.panid_teaser.tag_pan_african') }}
                                 </div>
                             </div>
                         </div>

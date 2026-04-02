@@ -179,7 +179,7 @@ onMounted(() => {
         <div class="max-w-4xl mx-auto relative z-10">
             <div class="text-center mb-16 px-4">
                 <div data-reveal class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary-500/20 bg-primary-500/5 text-primary-400 text-[10px] font-bold tracking-[0.2em] mb-8 uppercase">
-                    Partner with Us
+                    {{ $t('waitlist.badge') }}
                 </div>
                 <h2 data-reveal class="text-3xl md:text-4xl font-bold mb-6 text-neutral-900 dark:text-white leading-tight">
                     {{ $t('waitlist.title1') }}
@@ -372,15 +372,15 @@ onMounted(() => {
                     <div class="flex flex-wrap items-center justify-center gap-8 mt-10 opacity-30 grayscale contrast-125">
                         <div class="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase">
                             <HugeiconsIcon :icon="Shield01Icon" :size="14" />
-                            GDPR Compliant
+                            {{ $t('waitlist.trust.gdpr') }}
                         </div>
                         <div class="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase">
                             <HugeiconsIcon :icon="ZapIcon" :size="14" />
-                            ISO 27001 Certified
+                            {{ $t('waitlist.trust.iso') }}
                         </div>
                         <div class="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase">
                             <HugeiconsIcon :icon="CheckmarkCircle01Icon" :size="14" />
-                            Bank-Grade Security
+                            {{ $t('waitlist.trust.bank_grade') }}
                         </div>
                     </div>
 

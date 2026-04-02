@@ -59,7 +59,7 @@ const toggle = (index: number) => {
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary-500/30 bg-primary-500/10 text-primary-400 text-sm font-mono tracking-wide mb-4">
                     <HugeiconsIcon :icon="HelpCircleIcon" :size="16" />
-                    <span>FAQ</span>
+                    <span>{{ t('faq.badge') }}</span>
                 </div>
                 <h2 class="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4 rtl:text-center">{{ t('faq.title') }}</h2>
                 <p class="text-base text-neutral-500 dark:text-neutral-400 rtl:text-center">{{ t('faq.subtitle') }}</p>
