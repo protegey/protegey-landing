@@ -1,5 +1,6 @@
 <template>
   <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950">
+    <SplashOverlay />
     <!-- Content -->
     <div class="relative">
       <Hero />
@@ -18,6 +19,7 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useTheme } from '~/composables/useTheme'
+import SplashOverlay from '~/components/sections/SplashOverlay.vue'
 import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
 import Solutions from '~/components/sections/Solutions.vue'
