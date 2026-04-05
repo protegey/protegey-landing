@@ -86,7 +86,7 @@ usePageMeta({
 </script>
 
 <template>
-    <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 pt-28 md:pt-40 pb-16 overflow-hidden">
+    <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 pt-32 md:pt-40 pb-16 overflow-hidden">
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-7xl mx-auto">
                 <!-- Back Link -->

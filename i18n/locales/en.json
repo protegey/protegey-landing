@@ -50,7 +50,6 @@
       "sim_swap": "SIM Swap Detected",
       "unusual_login": "Unusual Login Pattern",
       "new_node": "New Node Connected",
-      "map_activity": "Network Activity Map",
       "uptime": "99.9% Uptime",
       "vs_last_week": "+12.5% vs last week"
     }

@@ -1,7 +1,7 @@
 <template>
     <div class="bg-neutral-50 dark:bg-neutral-950 min-h-screen overflow-hidden">
         <!-- ── Hero ──────────────────────────────────────────── -->
-        <section class="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+        <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
             <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808007_1px,transparent_1px),linear-gradient(to_bottom,#80808007_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
             
             <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary-500/10 rounded-full blur-[140px] pointer-events-none animate-pulse" />

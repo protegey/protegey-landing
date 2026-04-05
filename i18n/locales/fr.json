@@ -50,7 +50,6 @@
       "sim_swap": "Détournement de SIM détecté",
       "unusual_login": "Schéma de connexion inhabituel",
       "new_node": "Nouveau noeud connecté",
-      "map_activity": "Carte d'activité réseau",
       "uptime": "Disponibilité 99,9%",
       "vs_last_week": "+12,5% vs semaine dernière"
     }

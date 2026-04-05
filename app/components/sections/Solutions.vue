@@ -117,7 +117,7 @@ const moduleKey = () => activeData().key;
 
 <template>
     <section id="solutions" ref="sectionRef"
-        class="relative py-16 md:py-24 overflow-hidden bg-neutral-50 dark:bg-neutral-950">
+        class="relative py-12 md:py-24 overflow-hidden bg-neutral-50 dark:bg-neutral-950">
         <!-- Background -->
         <div class="absolute inset-0 pointer-events-none overflow-hidden">
             <div
@@ -125,7 +125,7 @@ const moduleKey = () => activeData().key;
             </div>
         </div>
 
-        <div class="container mx-auto px-6 relative z-10">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
             <!-- Header -->
             <div class="max-w-3xl mx-auto text-center mb-14">
                 <div
@@ -142,10 +142,10 @@ const moduleKey = () => activeData().key;
             </div>
 
             <!-- Tab + Detail layout -->
-            <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-6 lg:gap-10 items-start">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10 items-start">
 
                 <!-- Left: Module Tabs -->
-                <div class="lg:col-span-2 flex flex-col gap-3">
+                <div class="lg:col-span-2 flex flex-col gap-3 order-2 lg:order-1">
                     <button v-for="(mod, idx) in modules" :key="mod.key"
                         @click="setActive(idx)"
                         :id="`module-tab-${idx}`"
@@ -185,10 +185,10 @@ const moduleKey = () => activeData().key;
                 </div>
 
                 <!-- Right: Module Detail Panel -->
-                <div class="lg:col-span-3">
+                <div class="lg:col-span-3 order-1 lg:order-2">
                     <transition name="fade-slide" mode="out-in">
                         <div :key="activeModule"
-                            class="module-detail bg-white dark:bg-neutral-900 border rounded-3xl p-6 md:p-8 shadow-xl overflow-hidden relative"
+                            class="module-detail bg-white dark:bg-neutral-900 border rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-xl overflow-hidden relative"
                             :class="activeData().borderClass">
                             <!-- Glow top-right -->
                             <div

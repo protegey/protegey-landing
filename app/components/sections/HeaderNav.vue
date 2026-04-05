@@ -196,14 +196,13 @@ const getIndustries = () => {
       ? 'top-0 w-full bg-white/95 dark:bg-neutral-950/90 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800'
       : 'top-4 w-[95%] max-w-7xl bg-white/80 dark:bg-neutral-900/40 backdrop-blur-xl border border-neutral-200/50 dark:border-neutral-700/30 rounded-3xl shadow-2xl'
   ]">
-    <div class="container mx-auto px-6 transition-all duration-500" :class="isScrolled ? 'h-16' : 'h-14'">
+    <div class="container mx-auto px-4 md:px-6 transition-all duration-500" :class="isScrolled ? 'h-16' : 'h-14'">
       <div class="flex items-center justify-between h-full">
         <!-- Logo -->
         <div class="flex items-center gap-4">
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2">
-            <img src="/images/logo-dark.svg" :alt="isDark ? '' : $t('footer.logo_alt')" class="h-8 w-auto max-w-none" :class="isDark ? 'hidden' : 'block'" />
-            <img src="/images/logo-light.svg" :alt="isDark ? $t('footer.logo_alt') : ''" class="h-8 w-auto max-w-none" :class="isDark ? 'block' : 'hidden'" />
-            <!-- <span class="text-lg font-bold text-neutral-900 dark:text-white tracking-tight">Protegey</span> -->
+            <img src="/images/logo-dark.svg" :alt="isDark ? '' : $t('footer.logo_alt')" class="h-7 w-auto max-w-none md:h-8" :class="isDark ? 'hidden' : 'block'" />
+            <img src="/images/logo-light.svg" :alt="isDark ? $t('footer.logo_alt') : ''" class="h-7 w-auto max-w-none md:h-8" :class="isDark ? 'block' : 'hidden'" />
           </NuxtLink>
         </div>
 
@@ -401,7 +400,6 @@ const getIndustries = () => {
             <div class="flex items-center gap-2">
               <img src="/images/logo-dark.svg" :alt="isDark ? '' : $t('footer.logo_alt')" class="h-6 w-auto max-w-none" :class="isDark ? 'hidden' : 'block'" />
               <img src="/images/logo-light.svg" :alt="isDark ? $t('footer.logo_alt') : ''" class="h-6 w-auto max-w-none" :class="isDark ? 'block' : 'hidden'" />
-              <span class="text-base font-bold text-neutral-900 dark:text-white tracking-tight">Protegey</span>
             </div>
             <button @click="toggleMenu" class="p-2 text-neutral-500 dark:text-neutral-400" :aria-label="$t('a11y.close_menu')">
               <svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">

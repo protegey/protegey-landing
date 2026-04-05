@@ -59,7 +59,7 @@ usePageMeta({
     <div class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
 
         <!-- Hero -->
-        <section class="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+        <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[700px] bg-gradient-to-b from-primary-500/8 via-transparent to-transparent pointer-events-none"></div>
             <div class="container mx-auto px-6 relative z-10">
                 <div class="max-w-4xl mx-auto text-center">
