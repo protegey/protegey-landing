@@ -43,13 +43,13 @@
     "dashboard": {
       "threats_blocked": "Threats Blocked",
       "active_nodes": "Active Nodes",
-      "live_feed": "LIVE THREAT FEED",
+      "live_feed": "LIVE FEED",
       "critical": "CRITICAL",
       "warning": "WARNING",
       "info": "INFO",
-      "sim_swap": "SIM Swap Detected",
-      "unusual_login": "Unusual Login Pattern",
-      "new_node": "New Node Connected",
+      "sim_swap": "SIM Swap",
+      "unusual_login": "Unusual Login",
+      "new_node": "New Node",
       "uptime": "99.9% Uptime",
       "vs_last_week": "+12.5% vs last week"
     }

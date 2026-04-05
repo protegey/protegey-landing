@@ -43,13 +43,13 @@
     "dashboard": {
       "threats_blocked": "Menaces bloquées",
       "active_nodes": "Noeuds actifs",
-      "live_feed": "FLUX DE MENACES EN DIRECT",
+      "live_feed": "FLUX EN DIRECT",
       "critical": "CRITIQUE",
-      "warning": "AVERTISSEMENT",
+      "warning": "ALERTE",
       "info": "INFO",
-      "sim_swap": "Détournement de SIM détecté",
-      "unusual_login": "Schéma de connexion inhabituel",
-      "new_node": "Nouveau noeud connecté",
+      "sim_swap": "Détournement SIM",
+      "unusual_login": "Connexion inhabituelle",
+      "new_node": "Nouveau noeud",
       "uptime": "Disponibilité 99,9%",
       "vs_last_week": "+12,5% vs semaine dernière"
     }

@@ -43,13 +43,13 @@
     "dashboard": {
       "threats_blocked": "التهديدات المحجوبة",
       "active_nodes": "العقد النشطة",
-      "live_feed": "بث مباشر للتهديدات",
+      "live_feed": "بث مباشر",
       "critical": "خطير",
       "warning": "تحذير",
       "info": "معلومات",
-      "sim_swap": "تم اكتشاف تبديل شريحة (SIM Swap)",
-      "unusual_login": "نمط تسجيل دخول غير عادي",
-      "new_node": "اتصال عقدة جديدة",
+      "sim_swap": "تبديل الشريحة",
+      "unusual_login": "تسجيل غير عادي",
+      "new_node": "عقدة جديدة",
       "uptime": "99.9% وقت تشغيل",
       "vs_last_week": "+12.5% مقارنة بالأسبوع الماضي"
     }
