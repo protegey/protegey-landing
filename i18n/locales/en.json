@@ -924,6 +924,52 @@
     "demo": {
       "title": "Request a Demo | Protegey Fraud Intelligence",
       "description": "See how Protegey's shared fraud intelligence network can protect your institution. Request a personalized demo with our risk architects."
+    },
+    "expert": {
+      "title": "Speak with an Expert | Protegey",
+      "description": "Contact our fraud prevention experts to discuss your specific needs. Get personalized consultation with our risk architects."
+    }
+  },
+  "expert": {
+    "eyebrow": "EXPERT CONSULTATION",
+    "title": "Speak with an Expert",
+    "subtitle": "Chat with our fraud prevention experts to understand how Protegey can protect your institution.",
+    "email": "Email",
+    "location": "Our Offices",
+    "hq": "Headquarters",
+    "africa_office": "Africa Office",
+    "availability": "Availability",
+    "availability_desc": "Our experts are available Monday through Friday, 9 AM – 6 PM (WAT). We respond within 24 hours.",
+    "form": {
+      "title": "Request a Consultation",
+      "name": "Full Name",
+      "name_placeholder": "Enter your full name",
+      "email": "Email Address",
+      "email_placeholder": "Enter your professional email",
+      "company": "Company",
+      "company_placeholder": "Your company name",
+      "role": "Role",
+      "role_placeholder": "Your job title",
+      "topic": "Topic",
+      "topic_placeholder": "Select a topic",
+      "message": "Message",
+      "message_placeholder": "How can we help you?",
+      "submit": "Submit Request",
+      "submitting": "Submitting..."
+    },
+    "topics": {
+      "demo": "Product Demo",
+      "technical": "Technical Discussion",
+      "partnership": "Partnership Opportunity",
+      "pricing": "Pricing & Plans",
+      "other": "Other"
+    },
+    "success_message": "Thank you for your request! Our experts will contact you within 24 hours.",
+    "errors": {
+      "name_email": "Please provide your name and email address",
+      "topic": "Please select a topic",
+      "submit_error": "An error occurred. Please try again.",
+      "rate_limit": "Too many submissions. Please wait a few minutes."
     }
   },
   "errors": {

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
+import { ref, onMounted, onUnmounted, computed, watch, nextTick } from 'vue';
 import { gsap } from 'gsap';
 import { HugeiconsIcon } from '@hugeicons/vue';
 import { ArrowRight01Icon, Shield01Icon, Activity01Icon, LockComputerIcon } from '@hugeicons/core-free-icons';
@@ -7,6 +7,7 @@ import { ArrowRight01Icon, Shield01Icon, Activity01Icon, LockComputerIcon } from
 defineProps({ isDark: Boolean });
 
 const { t, te, locale } = useI18n();
+const localePath = useLocalePath();
 
 const mapCanvasRef = ref(null);
 let mapCtx = null;
@@ -345,8 +346,19 @@ onMounted(() => {
     
     requestAnimationFrame(drawMap);
     
-    try {
-        setTimeout(() => {
+    nextTick(() => {
+        try {
+            const heroTitle = document.querySelector('.hero-title');
+            const heroSubtitle = document.querySelector('.hero-subtitle');
+            const heroCtaButton = document.querySelector('.hero-cta-button');
+            const heroBadge = document.querySelector('.hero-badge');
+            const dashboardCard = document.querySelector('.dashboard-card');
+            
+            if (!heroTitle || !heroSubtitle || !heroCtaButton || !heroBadge || !dashboardCard) {
+                console.warn('Hero animation elements not found, skipping GSAP animation');
+                return;
+            }
+            
             gsap.set('.hero-title', { opacity: 0, y: 40 });
             gsap.set('.hero-subtitle', { opacity: 0, y: 20 });
             gsap.set('.hero-cta-button', { opacity: 0, y: 20 });
@@ -390,10 +402,10 @@ onMounted(() => {
 
             startTypewriter();
 
-        }, 200);
-    } catch (error) {
-        console.warn('GSAP animation failed:', error);
-    }
+        } catch (error) {
+            console.warn('GSAP animation failed:', error);
+        }
+    });
 });
 
 onUnmounted(() => {
@@ -468,18 +480,18 @@ onUnmounted(() => {
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button @click.prevent="scrollTo('waitlist')"
+                        <NuxtLink :to="localePath('/#waitlist')"
                             class="hero-cta-button group bg-primary-500 hover:bg-primary-400 text-neutral-950 px-5 py-2.5 rounded-lg font-bold text-base transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(12,185,158,0.3)] hover:shadow-[0_0_30px_rgba(12,185,158,0.5)]">
                             <HugeiconsIcon :icon="Shield01Icon" :size="18"
                                 class="transition-colors" />
                             {{ $t('hero.cta.request_demo') }}
                             <HugeiconsIcon :icon="ArrowRight01Icon" :size="18"
                                 class="rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
-                        </button>
-                        <button @click.prevent="scrollTo('waitlist')"
+                        </NuxtLink>
+                        <NuxtLink :to="localePath('/expert')"
                             class="hero-cta-button group border border-neutral-300 dark:border-neutral-700 hover:border-primary-500/50 text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white px-5 py-2.5 rounded-lg font-bold text-base transition-all duration-300 flex items-center justify-center gap-2 bg-white/50 dark:bg-neutral-900/50 hover:bg-white dark:hover:bg-neutral-800 backdrop-blur-sm">
                             {{ $t('hero.cta.speak_expert') }}
-                        </button>
+                        </NuxtLink>
                     </div>
 
                     <!-- Trust Indicators -->

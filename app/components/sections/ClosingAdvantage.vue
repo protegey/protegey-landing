@@ -14,6 +14,8 @@ import {
 
 gsap.registerPlugin(ScrollTrigger);
 
+const localePath = useLocalePath();
+
 const sectionRef = ref(null);
 
 const layerIcons = [Activity01Icon, SmartPhone01Icon, Shield01Icon, UserStar01Icon, Share08Icon];
@@ -80,16 +82,16 @@ const scrollTo = (selector) => {
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button @click.prevent="scrollTo('waitlist')"
+                        <NuxtLink :to="localePath('/#waitlist')"
                             class="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-neutral-950 bg-primary-500 hover:bg-primary-400 transition-all duration-300 shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40">
                             {{ $t('nav.request_demo') }}
                             <HugeiconsIcon :icon="ArrowRight01Icon" :size="18"
                                 class="group-hover:translate-x-1 transition-transform" />
-                        </button>
-                        <button @click.prevent="scrollTo('waitlist')"
+                        </NuxtLink>
+                        <NuxtLink :to="localePath('/expert')"
                             class="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-neutral-700 dark:text-neutral-300 border border-neutral-300 dark:border-neutral-700 hover:border-primary-500/40 bg-white/60 dark:bg-neutral-900/60 hover:bg-white dark:hover:bg-neutral-800 transition-all duration-300">
                             {{ $t('nav.speak_expert') }}
-                        </button>
+                        </NuxtLink>
                     </div>
                 </div>
 

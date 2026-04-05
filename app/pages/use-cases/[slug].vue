@@ -248,7 +248,7 @@ onMounted(() => {
                     {{ $t('geo_pages.use_cases.slug.cta_subtitle') }}
                 </p>
                 <div class="flex flex-wrap items-center justify-center gap-4">
-                    <NuxtLink :to="localePath('/demo')"
+                    <NuxtLink :to="localePath('/#waitlist')"
                         class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-neutral-950 bg-primary-500 hover:bg-primary-400 transition-all duration-300 shadow-lg shadow-primary-500/20">
                         {{ $t('geo_pages.use_cases.slug.cta_demo') }}
                     </NuxtLink>

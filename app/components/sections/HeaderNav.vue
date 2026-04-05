@@ -352,7 +352,7 @@ const getIndustries = () => {
               </NuxtLink>
             </template>
           </div>
-          <NuxtLink :to="localePath('/demo')" :class="[
+          <NuxtLink :to="localePath('/#waitlist')" :class="[
             'transition-all duration-300 font-bold text-sm',
             isScrolled
               ? 'bg-primary-500 text-neutral-950 px-5 py-2 rounded-lg hover:bg-primary-400'
@@ -502,7 +502,7 @@ const getIndustries = () => {
               </div>
               <NuxtLink
                 class="w-full bg-primary-500 text-neutral-950 px-6 py-4 rounded-2xl font-black text-center shadow-2xl shadow-primary-500/20 active:scale-[0.98] transition-transform"
-                :to="localePath('/demo')" @click="toggleMenu">{{ $t('nav.request_demo') }}</NuxtLink>
+                :to="localePath('/#waitlist')" @click="toggleMenu">{{ $t('nav.request_demo') }}</NuxtLink>
             </div>
           </div>
         </div>
