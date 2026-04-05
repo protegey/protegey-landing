@@ -537,29 +537,29 @@ onUnmounted(() => {
                             <!-- Live Feed -->
                             <div class="bg-neutral-100/50 dark:bg-neutral-800/30 rounded-lg border border-neutral-200/50 dark:border-neutral-700/30 overflow-hidden">
                                 <div
-                                    class="px-4 py-2 border-b border-neutral-200/50 dark:border-neutral-700/30 bg-neutral-100/80 dark:bg-neutral-800/50 flex justify-between items-center">
-                                    <span class="text-xs font-semibold text-neutral-600 dark:text-neutral-300">{{
+                                    class="px-3 py-2 md:px-4 md:py-2 border-b border-neutral-200/50 dark:border-neutral-700/30 bg-neutral-100/80 dark:bg-neutral-800/50 flex justify-between items-center">
+                                    <span class="text-[10px] md:text-xs font-semibold text-neutral-600 dark:text-neutral-300">{{
                                         $t('hero.dashboard.live_feed') }}</span>
                                     <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                                 </div>
-                                <div class="p-2 space-y-2">
+                                <div class="p-1.5 md:p-2 space-y-1.5 md:space-y-2">
                                     <div
-                                        class="flex items-center gap-3 p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/30 transition-colors text-xs font-mono">
+                                        class="flex items-center gap-2 md:gap-3 p-1.5 md:p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/30 transition-colors text-[9px] md:text-xs font-mono">
                                         <span class="text-red-400">[{{ $t('hero.dashboard.critical') }}]</span>
-                                        <span class="text-neutral-600 dark:text-neutral-300">{{ $t('hero.dashboard.sim_swap') }}</span>
-                                        <span class="text-neutral-500 dark:text-neutral-400 ms-auto">00:01:23</span>
+                                        <span class="text-neutral-600 dark:text-neutral-300 truncate">{{ $t('hero.dashboard.sim_swap') }}</span>
+                                        <span class="text-neutral-500 dark:text-neutral-400 ms-auto shrink-0">00:01:23</span>
                                     </div>
                                     <div
-                                        class="flex items-center gap-3 p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/30 transition-colors text-xs font-mono">
+                                        class="flex items-center gap-2 md:gap-3 p-1.5 md:p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/30 transition-colors text-[9px] md:text-xs font-mono">
                                         <span class="text-yellow-400">[{{ $t('hero.dashboard.warning') }}]</span>
-                                        <span class="text-neutral-600 dark:text-neutral-300">{{ $t('hero.dashboard.unusual_login') }}</span>
-                                        <span class="text-neutral-500 dark:text-neutral-400 ms-auto">00:01:45</span>
+                                        <span class="text-neutral-600 dark:text-neutral-300 truncate">{{ $t('hero.dashboard.unusual_login') }}</span>
+                                        <span class="text-neutral-500 dark:text-neutral-400 ms-auto shrink-0">00:01:45</span>
                                     </div>
                                     <div
-                                        class="flex items-center gap-3 p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/30 transition-colors text-xs font-mono">
+                                        class="flex items-center gap-2 md:gap-3 p-1.5 md:p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700/30 transition-colors text-[9px] md:text-xs font-mono">
                                         <span class="text-primary-400">[{{ $t('hero.dashboard.info') }}]</span>
-                                        <span class="text-neutral-600 dark:text-neutral-300">{{ $t('hero.dashboard.new_node') }}</span>
-                                        <span class="text-neutral-500 dark:text-neutral-400 ms-auto">00:02:10</span>
+                                        <span class="text-neutral-600 dark:text-neutral-300 truncate">{{ $t('hero.dashboard.new_node') }}</span>
+                                        <span class="text-neutral-500 dark:text-neutral-400 ms-auto shrink-0">00:02:10</span>
                                     </div>
                                 </div>
                             </div>

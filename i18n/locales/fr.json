@@ -534,9 +534,10 @@
     "email": "E-mail",
     "location": "Bureaux",
     "hq": "Siège Social",
-    "us_office": "Bureau U.S.",
+    "africa_office": "Bureau Afrique",
     "hours": "Heures d'Ouverture",
     "hours_desc": "Lun – Ven, 9h00 – 18h00 (WAT)",
+    "follow_us": "Suivez-nous",
     "form": {
       "title": "Envoyez-nous un message",
       "name": "Nom",

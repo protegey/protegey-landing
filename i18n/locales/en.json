@@ -530,9 +530,10 @@
     "email": "Email",
     "location": "Offices",
     "hq": "Headquarters",
-    "us_office": "U.S. Office",
+    "africa_office": "Africa Office",
     "hours": "Business Hours",
     "hours_desc": "Mon – Fri, 9:00 AM – 6:00 PM (WAT)",
+    "follow_us": "Follow Us",
     "form": {
       "title": "Send us a message",
       "name": "Name",
