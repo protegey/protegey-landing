@@ -932,6 +932,10 @@
     "expert": {
       "title": "Parler à un Expert | Protegey",
       "description": "Contactez nos experts en prévention de la fraude pour discuter de vos besoins spécifiques. Obtenez une consultation personnalisée avec nos architectes de risque."
+    },
+    "panid": {
+      "title": "PAN-ID | Verification d'Identite Panafricaine",
+      "description": "PAN-ID apporte la verification d'identite eKYC et KYB integree a la plateforme PROTEGEY. Concu pour le paysage documentaire africain."
     }
   },
   "expert": {
@@ -974,6 +978,53 @@
       "topic": "Veuillez sélectionner un sujet",
       "submit_error": "Une erreur est survenue. Veuillez réessayer.",
       "rate_limit": "Trop de soumissions. Veuillez attendre quelques minutes."
+    }
+  },
+  "panid": {
+    "eyebrow": "Bientot Disponible",
+    "title": "PAN-ID",
+    "subtitle": "Verification d'identite panafricaine, integree a votre flux de renseignement sur la fraude.",
+    "feature_ekyc": {
+      "title": "eKYC",
+      "desc": "Verification d'identite en temps reel pour l'Afrique — carte nationale, passeport, permis de conduire."
+    },
+    "feature_kyb": {
+      "title": "KYB",
+      "desc": "Verification d'entreprise pour les partenaires commerciaux et les marchands."
+    },
+    "feature_documents": {
+      "title": "Verification de Documents",
+      "desc": "Authentification des documents d'identite avec IA contextuelle pour l'Afrique."
+    },
+    "why": {
+      "title": "Pourquoi PAN-ID",
+      "desc": "L'Afrique a plus de 150 systemes d'identification nationaux et regionaux. PAN-ID unifie ces identites pour vous permettre de verifier n'importe qui, n'importe quand.",
+      "point1": "Concu pour les documents africains — NRICA, CNI, Passeport, Permis",
+      "point2": "Integre nativement a votre infrastructure AML et Risk Scoring",
+      "point3": "Pas de fournisseur separe — tout dans PROTEGEY"
+    },
+    "early_access": {
+      "badge": "Acces Anticipe",
+      "title": "Rejoignez la liste d'acces anticipé",
+      "subtitle": "Soyez parmi les premiers a acceder a PAN-ID"
+    },
+    "form": {
+      "name": "Nom Complet",
+      "name_placeholder": "Entrez votre nom",
+      "email": "Email",
+      "email_placeholder": "votre{'@'}email.com",
+      "company": "Entreprise",
+      "company_placeholder": "Nom de votre entreprise",
+      "phone": "Telephone",
+      "phone_placeholder": "+212 6XX XXX XXX",
+      "submit": "Rejoindre la Liste",
+      "submitting": "Envoi..."
+    },
+    "success_message": "Merci ! Vous etes sur la liste d'acces anticipé.",
+    "errors": {
+      "name_email": "Veuillez fournir votre nom et email",
+      "submit_error": "Une erreur est survenue. Veuillez reessayer.",
+      "rate_limit": "Trop de soumissions. Veuillez patienter."
     }
   },
   "errors": {

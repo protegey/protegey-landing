@@ -233,7 +233,7 @@ const getIndustries = () => {
                     <div class="text-[11px] text-neutral-500 dark:text-neutral-400 line-clamp-2 leading-tight">{{ $t(`solutions.modules.${mod.key}.subtext`) }}</div>
                   </div>
                 </NuxtLink>
-                <NuxtLink :to="localePath('/solutions')" class="flex items-start gap-3 p-3 rounded-2xl bg-primary-500/5 hover:bg-primary-500/10 transition-colors group">
+                <NuxtLink :to="localePath('/panid')" class="flex items-start gap-3 p-3 rounded-2xl bg-primary-500/5 hover:bg-primary-500/10 transition-colors group">
                   <div class="p-2 rounded-xl bg-primary-500/10 text-primary-500">
                     <HugeiconsIcon :icon="FingerPrintIcon" :size="20" />
                   </div>

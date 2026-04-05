@@ -63,7 +63,7 @@
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/solutions')"
+              <NuxtLink :to="localePath('/panid')"
                 class="hover:text-primary-400 transition-colors flex items-center gap-2 rtl:justify-end">
                 {{ $t('solutions.panid_teaser.title') }}
                 <span
