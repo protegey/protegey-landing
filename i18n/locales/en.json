@@ -25,7 +25,7 @@
       "highlight": "Scales",
       "suffix": "."
     },
-    "subtitle": "Join a growing network of banks, Fintechs, mobile money operators and regulators across Francophone Africa leveraging PROTEGEY to <span class=\"text-primary-400 font-mono font-bold\">{action}<span class=\"animate-pulse\">_</span></span> fraud in real-time.",
+    "subtitle": "Join a growing network of financial institutions across Francophone Africa leveraging PROTEGEY to <span class=\"text-primary-400 font-mono font-bold\">{action}<span class=\"animate-pulse\">_</span></span> fraud in real-time.",
     "typewriter": {
       "detect": "detect",
       "analyze": "analyze",
