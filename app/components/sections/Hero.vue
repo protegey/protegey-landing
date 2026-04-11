@@ -423,7 +423,7 @@ onUnmounted(() => {
 
 <template>
     <section id="hero"
-        class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center overflow-hidden pt-36 sm:pt-32 md:pt-20">
+        class="relative min-h-screen bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32">
         <!-- Animated Background Grid -->
         <div class="absolute inset-0 z-0">
             <div
@@ -495,7 +495,7 @@ onUnmounted(() => {
                     </div>
 
                     <!-- Trust Indicators -->
-                    <div class="hero-cta flex flex-wrap gap-6 pt-8 border-t border-neutral-200/80 dark:border-neutral-800/50">
+                    <div class="hero-cta flex flex-wrap gap-6 pt-12 border-t border-neutral-200/80 dark:border-neutral-800/50">
                         <div class="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 text-sm">
                             <HugeiconsIcon :icon="LockComputerIcon" :size="16" class="text-primary-500" />
                             <span>{{ $t('hero.trust.security') }}</span>

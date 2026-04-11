@@ -473,6 +473,7 @@
       "comparisons": "Comparaisons",
       "trust": "Centre de confiance",
       "api_docs": "Docs API",
+      "regulatory_alignment": "Conformité Réglementaire",
       "privacy": "Confidentialité",
       "terms": "Conditions"
     },
@@ -668,6 +669,73 @@
       "transparency_header": "Déclaration de Transparence IA",
       "transparency_text": "Nos modèles de détection de fraude sont conçus pour être explicables, équitables et auditables. Nous n'utilisons pas de modèles 'boîte noire' pour les décisions critiques. Chaque score de risque est accompagné de codes de raison clairs — garantissant la transparence pour les équipes de conformité, les auditeurs et les régulateurs.",
       "transparency_cta": "Renseignez-vous sur notre Cadre d'Éthique IA"
+    },
+    "regulatory_alignment": {
+      "badge": "CONFORMITÉ RÉGLEMENTAIRE",
+      "title": "Conçu pour le Paysage Réglementaire Africain",
+      "subtitle": "Protegey est conçu de fond en comble pour aider les institutions financières à naviguer dans les exigences réglementaires complexes et multi-juridictionnelles de l'Afrique francophone et du Nord.",
+      "challenge_badge": "LE DÉFI",
+      "challenge_title": "Un Continent de Mandats Enchevêtrés",
+      "challenge_desc": "Les régulateurs financiers d'Afrique francophone opèrent dans des zones monétaires distinctes — chacune avec ses propres cadres LBC/FT, ses délais de déclaration et ses règles de souveraineté des données. Les institutions opérant à l'échelle transfrontalière font face à la tâche quasi impossible de réconcilier manuellement de multiples obligations de conformité, avec des outils rarement conçus pour le contexte africain.",
+      "frameworks_badge": "COUVERTURE RÉGLEMENTAIRE",
+      "frameworks_title": "Organismes de Régulation Couverts",
+      "frameworks_subtitle": "La couche d'intelligence de Protegey est construite autour des exigences de déclaration et de surveillance des principales autorités réglementaires de la région.",
+      "frameworks": [
+        {
+          "name": "BCEAO",
+          "full": "Banque Centrale des États de l'Afrique de l'Ouest",
+          "zone": "Zone UEMOA · 8 pays",
+          "desc": "Banque centrale régissant la politique monétaire pour le Bénin, le Burkina Faso, la Côte d'Ivoire, la Guinée-Bissau, le Mali, le Niger, le Sénégal et le Togo. Les structures d'alerte et les formats de déclaration de Protegey sont alignés sur les exigences de la BCEAO."
+        },
+        {
+          "name": "COBAC",
+          "full": "Commission Bancaire de l'Afrique Centrale",
+          "zone": "Zone CEMAC · 6 pays",
+          "desc": "Superviseur bancaire du Cameroun, de la RCA, du Tchad, du Congo, de la Guinée équatoriale et du Gabon. Protegey prend en charge les obligations LBC/FT de la COBAC et la déclaration d'activités suspectes inter-institutions."
+        },
+        {
+          "name": "Bank Al-Maghrib",
+          "full": "Banque Centrale du Maroc",
+          "zone": "Maroc",
+          "desc": "Banque centrale et superviseur prudentiel du Maroc. Protegey s'aligne sur le cadre LBC de Bank Al-Maghrib et ses directives de supervision de la finance numérique."
+        },
+        {
+          "name": "Banque d'Algérie",
+          "full": "Banque Centrale d'Algérie",
+          "zone": "Algérie",
+          "desc": "Autorité monétaire et régulateur bancaire de l'Algérie. Protegey prend en charge les obligations de surveillance LBC et de déclaration de fraude applicables aux banques et fintechs sous la supervision de la Banque d'Algérie."
+        },
+        {
+          "name": "BCT",
+          "full": "Banque Centrale de Tunisie",
+          "zone": "Tunisie",
+          "desc": "Banque centrale et superviseur financier de la Tunisie. La plateforme Protegey prend en charge les exigences de conformité BCT pour les prestataires de paiement numérique et la surveillance des transactions transfrontalières."
+        },
+        {
+          "name": "FATF / GAFI",
+          "full": "Groupe d'Action Financière",
+          "zone": "Norme Internationale",
+          "desc": "Le normalisateur mondial en matière de LBC/FT. La taxonomie de fraude, la méthodologie de scoring et la génération de déclarations de Protegey sont structurées autour des Recommandations du GAFI — notamment la R.20 sur les déclarations de transactions suspectes et la R.40 sur la coopération internationale."
+        }
+      ],
+      "capabilities_badge": "COMMENT NOUS AIDONS",
+      "capabilities_title": "La Conformité comme Sous-Produit de la Détection",
+      "capabilities_subtitle": "Protegey fait de la conformité réglementaire un résultat naturel de la détection de fraude — et non un flux de travail manuel supplémentaire.",
+      "cap_sar_title": "Déclarations Prêtes à Soumettre",
+      "cap_sar_desc": "Chaque alerte à haut risque génère un rapport d'activité suspecte structuré et pré-formaté pour soumission directe à l'autorité réglementaire compétente.",
+      "cap_aml_title": "Surveillance des Transactions LBC/FT",
+      "cap_aml_desc": "Surveillance continue des transactions en temps réel face aux typologies du GAFI, aux indicateurs d'alerte régionaux et aux comportements inter-institutions.",
+      "cap_audit_title": "Pistes d'Audit Immuables",
+      "cap_audit_desc": "Chaque score, décision et action est enregistré avec une traçabilité complète — fournissant des preuves explicables et auditables pour les équipes conformité, les régulateurs et les auditeurs internes.",
+      "cap_crossborder_title": "Support des Déclarations Transfrontalières",
+      "cap_crossborder_desc": "Les flux de transactions multi-juridictionnels sont signalés et associés à l'autorité de déclaration compétente, réduisant la complexité des obligations transfrontalières.",
+      "cap_privacy_title": "Architecture Respectueuse de la Vie Privée",
+      "cap_privacy_desc": "Aucun PII en clair n'est partagé entre institutions. La corrélation utilise le hachage cryptographique — garantissant la conformité avec les exigences locales de souveraineté des données.",
+      "cap_retention_title": "Rétention des Données Configurable",
+      "cap_retention_desc": "Les durées de conservation sont configurables par juridiction, alignées sur les exigences réglementaires de chaque pays — ni sur-rétention, ni suppression prématurée.",
+      "cta_title": "Prêt à simplifier votre posture de conformité ?",
+      "cta_subtitle": "Parlez à notre équipe pour découvrir comment Protegey s'intègre dans le flux de déclaration réglementaire de votre institution.",
+      "cta_button": "Parler à un Expert Conformité"
     },
     "common": {
       "who_for_header": "À qui s'adresse-t-il",
@@ -1001,6 +1069,10 @@
     "panid": {
       "title": "PAN-ID | Verification d'Identite Panafricaine",
       "description": "PAN-ID apporte la verification d'identite eKYC et KYB integree a la plateforme PROTEGEY. Concu pour le paysage documentaire africain."
+    },
+    "regulatory_alignment": {
+      "title": "Conformité Réglementaire | Protegey pour l'Afrique Francophone",
+      "description": "Comment Protegey aide les banques, fintechs et opérateurs mobile money à rester alignés avec la BCEAO, la COBAC, le GAFI et d'autres cadres réglementaires régionaux en Afrique francophone et du Nord."
     }
   },
   "expert": {

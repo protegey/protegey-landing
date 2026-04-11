@@ -108,6 +108,11 @@
                 data-testid="link-api-docs">{{
                   $t('footer.links.api_docs') }}</NuxtLink>
             </li>
+            <li>
+              <NuxtLink :to="localePath('regulatory-alignment')" class="hover:text-primary-400 transition-colors">
+                {{ $t('footer.links.regulatory_alignment') }}
+              </NuxtLink>
+            </li>
           </ul>
         </div>
 

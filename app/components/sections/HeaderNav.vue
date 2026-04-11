@@ -23,7 +23,8 @@ import {
   DocumentValidationIcon,
   InformationCircleIcon,
   UserGroupIcon,
-  Briefcase02Icon
+  Briefcase02Icon,
+  JusticeScale01Icon
 } from '@hugeicons/core-free-icons'
 
 const { t, tm, rt, locale } = useI18n()
@@ -153,6 +154,7 @@ const resourceItems = [
   { key: 'comparisons', to: 'comparisons', icon: DocumentValidationIcon },
   { key: 'trust', to: 'trust', icon: Shield01Icon },
   { key: 'api_docs', to: 'api-docs', icon: BookOpen01Icon },
+  { key: 'regulatory_alignment', to: 'regulatory-alignment', icon: JusticeScale01Icon },
 ]
 
 const industryIcons = {

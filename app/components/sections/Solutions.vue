@@ -127,7 +127,7 @@ const moduleKey = () => activeData().key;
 
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <!-- Header -->
-            <div class="max-w-3xl mx-auto text-center mb-14">
+            <div class="max-w-3xl mx-auto text-center mb-16 md:mb-20">
                 <div
                     class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-bold tracking-widest uppercase mb-6">
                     <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
@@ -222,7 +222,7 @@ const moduleKey = () => activeData().key;
                                 </p>
 
                                 <!-- Features list -->
-                                <ul class="space-y-3">
+                                <ul class="space-y-4">
                                     <li v-for="(feature, fi) in $tm(`solutions.modules.${moduleKey()}.features`)"
                                         :key="fi"
                                         class="flex items-start gap-3 text-neutral-700 dark:text-neutral-300">

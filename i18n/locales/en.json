@@ -469,6 +469,7 @@
       "comparisons": "Comparisons",
       "trust": "Trust Center",
       "api_docs": "API Docs",
+      "regulatory_alignment": "Regulatory Alignment",
       "privacy": "Privacy",
       "terms": "Terms"
     },
@@ -664,6 +665,73 @@
       "transparency_header": "AI Transparency Statement",
       "transparency_text": "Our fraud detection models are designed to be explainable, fair, and auditable. We do not use black-box models for critical decisions. Every risk score is accompanied by clear reason codes — ensuring transparency for compliance teams, auditors, and regulators.",
       "transparency_cta": "Inquire about our AI Ethics Framework"
+    },
+    "regulatory_alignment": {
+      "badge": "REGULATORY ALIGNMENT",
+      "title": "Built for Africa's Regulatory Landscape",
+      "subtitle": "Protegey is designed from the ground up to help financial institutions navigate the complex, multi-jurisdictional regulatory requirements across Francophone and Northern Africa.",
+      "challenge_badge": "THE CHALLENGE",
+      "challenge_title": "A Continent of Overlapping Mandates",
+      "challenge_desc": "Francophone Africa's financial regulators operate across distinct monetary zones — each with its own AML/CFT frameworks, reporting timelines, and data sovereignty rules. Institutions operating cross-border face the near-impossible task of reconciling multiple compliance obligations manually, with limited tooling built for the African context.",
+      "frameworks_badge": "FRAMEWORK COVERAGE",
+      "frameworks_title": "Regulatory Bodies We're Aligned With",
+      "frameworks_subtitle": "Protegey's intelligence layer is built around the reporting and monitoring requirements of the region's key regulatory authorities.",
+      "frameworks": [
+        {
+          "name": "BCEAO",
+          "full": "Banque Centrale des États de l'Afrique de l'Ouest",
+          "zone": "UEMOA Zone · 8 countries",
+          "desc": "Central bank governing monetary policy and financial stability for Benin, Burkina Faso, Côte d'Ivoire, Guinea-Bissau, Mali, Niger, Senegal, and Togo. Protegey's alert structures and SAR formats align with BCEAO reporting requirements."
+        },
+        {
+          "name": "COBAC",
+          "full": "Commission Bancaire de l'Afrique Centrale",
+          "zone": "CEMAC Zone · 6 countries",
+          "desc": "Banking supervisor for Cameroon, CAR, Chad, Congo, Equatorial Guinea, and Gabon. Protegey supports COBAC's AML/CFT compliance requirements and cross-institution suspicious activity reporting."
+        },
+        {
+          "name": "Bank Al-Maghrib",
+          "full": "Central Bank of Morocco",
+          "zone": "Morocco",
+          "desc": "Morocco's central bank and prudential supervisor. Protegey aligns with Bank Al-Maghrib's AML framework and digital finance oversight guidelines for institutions operating under its mandate."
+        },
+        {
+          "name": "Banque d'Algérie",
+          "full": "Central Bank of Algeria",
+          "zone": "Algeria",
+          "desc": "Algeria's monetary authority and banking regulator. Protegey supports the AML monitoring and fraud reporting obligations applicable to banks and fintechs operating under Banque d'Algérie oversight."
+        },
+        {
+          "name": "BCT",
+          "full": "Banque Centrale de Tunisie",
+          "zone": "Tunisia",
+          "desc": "Tunisia's central bank and financial supervisor. Protegey's platform supports BCT compliance requirements for digital payment providers and cross-border transaction monitoring."
+        },
+        {
+          "name": "FATF / GAFI",
+          "full": "Financial Action Task Force",
+          "zone": "Global Standard",
+          "desc": "The global standard-setter for AML/CFT. Protegey's fraud taxonomy, risk scoring methodology, and SAR generation are structured around FATF Recommendations — particularly R.20 on suspicious transaction reporting and R.40 on international cooperation."
+        }
+      ],
+      "capabilities_badge": "HOW WE HELP",
+      "capabilities_title": "Compliance as a By-Product of Detection",
+      "capabilities_subtitle": "Protegey makes regulatory compliance a natural output of fraud detection — not a separate, manual workflow.",
+      "cap_sar_title": "SAR-Ready Alert Packages",
+      "cap_sar_desc": "Every high-risk alert generates a structured suspicious activity report pre-formatted for submission to the relevant regulatory authority.",
+      "cap_aml_title": "AML/CFT Transaction Monitoring",
+      "cap_aml_desc": "Continuous monitoring of transactions against FATF typologies, regional red-flag indicators, and cross-institution behavioral patterns in real time.",
+      "cap_audit_title": "Immutable Audit Trails",
+      "cap_audit_desc": "Every score, decision, and action is logged with full lineage — providing explainable, auditable records for compliance reviews, regulators, and internal audit teams.",
+      "cap_crossborder_title": "Cross-Border Reporting Support",
+      "cap_crossborder_desc": "Multi-jurisdictional transaction flows are flagged and mapped to the correct reporting authority, reducing the complexity of cross-border compliance obligations.",
+      "cap_privacy_title": "Privacy-Preserving Architecture",
+      "cap_privacy_desc": "No plaintext PII is shared across institutions. Correlation uses cryptographic hashing — ensuring compliance with local data sovereignty requirements while enabling collective intelligence.",
+      "cap_retention_title": "Configurable Data Retention",
+      "cap_retention_desc": "Retention periods are configurable per jurisdiction, aligned with each country's regulatory requirements — no over-retention, no premature deletion.",
+      "cta_title": "Ready to simplify your compliance posture?",
+      "cta_subtitle": "Talk to our team about how Protegey fits into your institution's regulatory reporting workflow.",
+      "cta_button": "Speak with a Compliance Expert"
     },
     "common": {
       "who_for_header": "Who It Is For",
@@ -997,6 +1065,10 @@
     "panid": {
       "title": "PAN-ID | Pan-African Identity Verification",
       "description": "PAN-ID brings eKYC and KYB identity verification natively into the PROTEGEY platform. Built for Africa's document landscape."
+    },
+    "regulatory_alignment": {
+      "title": "Regulatory Alignment | Protegey Compliance for Francophone Africa",
+      "description": "How Protegey helps banks, fintechs, and mobile money operators stay aligned with BCEAO, COBAC, FATF, and other regional regulatory frameworks across Francophone and Northern Africa."
     }
   },
   "expert": {

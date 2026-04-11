@@ -24,7 +24,7 @@ onMounted(() => {
 
 <template>
     <section id="panid-teaser" ref="sectionRef"
-        class="relative py-16 md:py-20 overflow-hidden bg-neutral-950">
+        class="relative py-20 md:py-28 overflow-hidden bg-neutral-950">
 
         <div class="absolute inset-0 pointer-events-none">
             <div

@@ -63,7 +63,7 @@
         </section>
 
         <!-- ── Benefits ──────────────────────────────────────── -->
-        <section class="py-16 md:py-24 bg-neutral-100/50 dark:bg-neutral-900/20 border-y border-neutral-200 dark:border-neutral-900">
+        <section class="py-20 md:py-28 bg-neutral-100/50 dark:bg-neutral-900/20 border-y border-neutral-200 dark:border-neutral-900">
             <div class="container mx-auto px-4 max-w-7xl">
                 <div data-reveal class="text-center mb-16">
                     <p class="text-xs font-mono text-neutral-500 dark:text-neutral-600 tracking-[0.25em] uppercase mb-4">02 — {{ $t('careers.perks_eyebrow') }}</p>

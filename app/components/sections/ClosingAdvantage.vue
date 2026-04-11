@@ -55,7 +55,7 @@ const scrollTo = (selector) => {
 
 <template>
     <section id="advantage" ref="sectionRef"
-        class="relative py-16 md:py-24 overflow-hidden bg-neutral-50 dark:bg-neutral-950">
+        class="relative py-20 md:py-28 overflow-hidden bg-neutral-50 dark:bg-neutral-950">
 
         <!-- BG orbs -->
         <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -64,7 +64,7 @@ const scrollTo = (selector) => {
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
 
                 <!-- Left: headline + CTA -->
                 <div class="adv-header">
@@ -96,7 +96,7 @@ const scrollTo = (selector) => {
                 </div>
 
                 <!-- Right: layered list -->
-                <div class="space-y-3">
+                <div class="space-y-4">
                     <div v-for="(layer, idx) in $tm('solutions.closing_advantage.layers')"
                         :key="idx"
                         class="adv-layer group flex items-center gap-5 p-5 rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 hover:border-primary-500/30 dark:hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/5">
