@@ -863,8 +863,73 @@
         "desc": "Travaillez directement avec les fondateurs. Façonnez le produit, la stratégie et la culture dès le premier jour."
       }
     ],
-    "no_roles": "Opportunités Actuelles",
-    "no_roles_desc": "Il n’y a pas de postes ouverts pour le moment, mais nous sommes toujours à la recherche de talents de classe mondiale pour rejoindre le réseau Signal.",
+    "view_roles_btn": "Voir les Postes Ouverts",
+    "roles_eyebrow": "Postes Ouverts",
+    "roles_title": "Opportunités Actives",
+    "roles_subtitle": "Nous nous développons en Afrique francophone et du Nord. Rejoignez-nous en tant que Partenaire Pays.",
+    "cp_badge": "EN RECRUTEMENT",
+    "cp_title": "Partenaire Pays",
+    "cp_region": "Afrique Francophone & du Nord",
+    "cp_type": "Partenariat à la Performance",
+    "cp_about": "Nous nous associons à des opérateurs intégrés dans leur écosystème financier local — des individus capables d’ouvrir des portes, de bâtir la confiance et d’assurer l’exécution sur le terrain. Ce n’est pas un rôle traditionnel.",
+    "cp_markets_label": "Marchés Prioritaires",
+    "cp_markets": ["Côte d’Ivoire", "Bénin", "Togo", "Mali", "Burkina Faso", "Niger", "Tchad", "Guinée-E.", "RDC", "RCA", "Rwanda", "Sénégal", "Cameroun", "Tunisie", "Algérie", "Mauritanie", "Maroc", "G.-Bissau", "Gabon", "Congo"],
+    "cp_mission_title": "Votre Mission",
+    "cp_mission": [
+      "Établir la présence de Protegey dans votre marché",
+      "Ouvrir des portes aux décideurs clés (banques, fintechs, telcos)",
+      "Décrocher des réunions, des démos et des opportunités de pilotes",
+      "Construire et gérer des relations stratégiques",
+      "Concrétiser les deals et favoriser l’adoption locale",
+      "Fournir une veille marché sur la réglementation, les tendances de fraude et l’écosystème"
+    ],
+    "cp_success_title": "Les Critères de Succès",
+    "cp_success": [
+      "Accès aux principales institutions financières de votre marché",
+      "Un pipeline constant d’opportunités et de leads qualifiés",
+      "Conversion des pilotes en contrats long terme",
+      "Positionnement fort de Protegey sur le marché local"
+    ],
+    "cp_profile_title": "Votre Profil",
+    "cp_profile": [
+      "Actif au sein de l’écosystème financier de votre pays (associations bancaires ou fintech)",
+      "Bien connecté aux décideurs dans les banques, les fintechs et les opérateurs de mobile money",
+      "Capable d’obtenir des réunions — pas seulement d’envoyer des e-mails",
+      "Bonne compréhension du risque, de la conformité ou des paiements",
+      "Entrepreneurial, proactif et orienté résultats"
+    ],
+    "cp_not_for_title": "Ce Rôle N’est PAS Pour Vous Si",
+    "cp_not_for": [
+      "Vous dépendez des leads entrants",
+      "Vous avez besoin d’une supervision constante",
+      "Vous ne disposez pas d’un réseau existant",
+      "Vous cherchez un rôle avec salaire fixe"
+    ],
+    "cp_comp_title": "Rémunération & Potentiel",
+    "cp_comp": [
+      "15 % de commission sur les deals conclus (Année 1)",
+      "8 % de commission sur les renouvellements",
+      "Prime de conversion pilote (500–2 000 $ selon le type de client)",
+      "Retainers mensuels basés sur la performance (après traction)",
+      "Évolution vers un rôle de Country Manager"
+    ],
+    "cp_growth_title": "Évolution de Carrière",
+    "cp_growth": "Les partenaires les plus performants évoluent vers des rôles de Country Manager dans les 12 mois. Cela inclut la direction de l’entité locale de Protegey, la responsabilité opérationnelle du développement marché et une participation au capital (jusqu’à 10 % de notre filiale dans votre pays).",
+    "cp_apply_title": "Comment Postuler",
+    "cp_apply_intro": "Envoyez les informations suivantes à",
+    "cp_apply_email": "lamya{'@'}protegey.com",
+    "cp_apply_items": [
+      "Votre profil LinkedIn ou votre CV",
+      "Votre rôle actuel",
+      "Votre réseau au sein de l’écosystème financier de votre pays",
+      "Un exemple concret d’une porte ouverte ou d’un deal conclu",
+      "Ce que vous espérez accomplir en tant que Partenaire Pays de Protegey dans vos 90 premiers jours"
+    ],
+    "cp_apply_btn": "Postuler",
+    "cp_expand": "Voir les Détails",
+    "cp_collapse": "Réduire les Détails",
+    "no_roles": "Pas de poste correspondant ?",
+    "no_roles_desc": "Nous sommes toujours à la recherche de talents de classe mondiale pour rejoindre le réseau Signal.",
     "cta": "Écrivez-nous à careers{'@'}protegey.com"
   },
   "faq": {

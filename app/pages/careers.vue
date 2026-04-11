@@ -17,9 +17,15 @@
                         {{ $t('careers.title') }}
                     </h1>
 
-                    <p class="text-base md:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto font-medium leading-relaxed">
+                    <p class="text-base md:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto font-medium leading-relaxed mb-10">
                         {{ $t('careers.subtitle') }}
                     </p>
+
+                    <button @click="scrollToRoles"
+                        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-primary-500/30 bg-primary-500/5 text-primary-400 hover:bg-primary-500/10 hover:border-primary-500/50 font-semibold text-sm transition-all">
+                        {{ $t('careers.view_roles_btn') }}
+                        <HugeiconsIcon :icon="ArrowDown01Icon" :size="16" class="animate-bounce" />
+                    </button>
                 </div>
             </div>
         </section>
@@ -80,27 +86,160 @@
             </div>
         </section>
 
-        <!-- ── Open Roles / Talent Pool ──────────────────────── -->
-        <section class="py-24 px-4">
+        <!-- ── Open Roles ────────────────────────────────────── -->
+        <section id="open-roles" class="py-24 px-4">
             <div class="container mx-auto max-w-5xl">
-                <div data-reveal class="relative p-10 md:p-14 rounded-[2rem] border border-secondary-500/30 bg-neutral-900 dark:bg-neutral-900 overflow-hidden group">
-                    <!-- Background decorative element -->
-                    <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-secondary-500/10 rounded-full blur-[80px] group-hover:scale-125 transition-transform duration-1000" />
-                    
-                    <div class="relative z-10 max-w-2xl">
-                        <div class="text-secondary-400 font-bold text-sm mb-6 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-secondary-400 animate-bounce" />
-                            {{ $t('careers.no_roles') }}
+                <!-- Section header -->
+                <div data-reveal class="text-center mb-14">
+                    <p class="text-xs font-mono text-neutral-500 dark:text-neutral-600 tracking-[0.25em] uppercase mb-4">03 — {{ $t('careers.roles_eyebrow') }}</p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white">{{ $t('careers.roles_title') }}</h2>
+                    <p class="mt-4 text-neutral-600 dark:text-neutral-400 max-w-xl mx-auto leading-relaxed">{{ $t('careers.roles_subtitle') }}</p>
+                </div>
+
+                <!-- Country Partner listing card -->
+                <div data-reveal class="rounded-[2rem] border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 overflow-hidden">
+                    <!-- Card header -->
+                    <div class="p-8 md:p-10">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-[10px] font-bold tracking-[0.2em] uppercase">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse" />
+                                    {{ $t('careers.cp_badge') }}
+                                </span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full border border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 text-[10px] font-semibold tracking-widest uppercase">
+                                    {{ $t('careers.cp_type') }}
+                                </span>
+                            </div>
                         </div>
-                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
-                            {{ $t('careers.no_roles_desc') }}
-                        </h2>
-                        <a href="mailto:careers@protegey.com" 
-                            class="inline-flex items-center gap-3 text-lg md:text-xl font-bold text-secondary-400 hover:text-white transition-all hover:gap-5">
-                            {{ $t('careers.cta') }}
-                            <HugeiconsIcon :icon="ArrowRight01Icon" :size="24" />
-                        </a>
+
+                        <h3 class="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-1">{{ $t('careers.cp_title') }}</h3>
+                        <p class="text-primary-400 font-semibold mb-5">{{ $t('careers.cp_region') }}</p>
+                        <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-8 max-w-2xl">{{ $t('careers.cp_about') }}</p>
+
+                        <!-- Priority Markets -->
+                        <div class="mb-8">
+                            <p class="text-[10px] font-semibold text-neutral-500 dark:text-neutral-500 uppercase tracking-[0.2em] mb-3">{{ $t('careers.cp_markets_label') }}</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span v-for="market in $tm('careers.cp_markets')" :key="$rt(market)"
+                                    class="px-3 py-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 text-xs font-medium">
+                                    {{ $rt(market) }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- CTA row -->
+                        <div class="flex flex-wrap items-center gap-4 pt-6 border-t border-neutral-200 dark:border-neutral-800">
+                            <a :href="`mailto:${$t('careers.cp_apply_email')}?subject=Country Partner Application`"
+                                class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-500 hover:bg-primary-400 text-white font-bold text-sm transition-colors">
+                                {{ $t('careers.cp_apply_btn') }}
+                                <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
+                            </a>
+                            <button @click="expanded = !expanded"
+                                class="inline-flex items-center gap-2 text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+                                {{ expanded ? $t('careers.cp_collapse') : $t('careers.cp_expand') }}
+                                <HugeiconsIcon :icon="ArrowDown01Icon" :size="16" class="transition-transform duration-300" :class="{ 'rotate-180': expanded }" />
+                            </button>
+                        </div>
                     </div>
+
+                    <!-- Expandable details -->
+                    <Transition name="expand">
+                        <div v-if="expanded" class="border-t border-neutral-200 dark:border-neutral-800">
+                            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-neutral-200 dark:divide-neutral-800">
+                                <!-- Left col: Mission + Success -->
+                                <div class="p-8 space-y-8">
+                                    <div>
+                                        <h4 class="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 tracking-[0.2em] uppercase mb-4">{{ $t('careers.cp_mission_title') }}</h4>
+                                        <ul class="space-y-2.5">
+                                            <li v-for="(item, i) in $tm('careers.cp_mission')" :key="i"
+                                                class="flex items-start gap-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-primary-500 mt-1.5 shrink-0" />
+                                                {{ $rt(item) }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 tracking-[0.2em] uppercase mb-4">{{ $t('careers.cp_success_title') }}</h4>
+                                        <ul class="space-y-2.5">
+                                            <li v-for="(item, i) in $tm('careers.cp_success')" :key="i"
+                                                class="flex items-start gap-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-primary-500 mt-1.5 shrink-0" />
+                                                {{ $rt(item) }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 tracking-[0.2em] uppercase mb-4">{{ $t('careers.cp_not_for_title') }}</h4>
+                                        <ul class="space-y-2.5">
+                                            <li v-for="(item, i) in $tm('careers.cp_not_for')" :key="i"
+                                                class="flex items-start gap-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-accent-orange-500 mt-1.5 shrink-0" />
+                                                {{ $rt(item) }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Right col: Profile + Compensation + Growth -->
+                                <div class="p-8 space-y-8">
+                                    <div>
+                                        <h4 class="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 tracking-[0.2em] uppercase mb-4">{{ $t('careers.cp_profile_title') }}</h4>
+                                        <ul class="space-y-2.5">
+                                            <li v-for="(item, i) in $tm('careers.cp_profile')" :key="i"
+                                                class="flex items-start gap-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-secondary-400 mt-1.5 shrink-0" />
+                                                {{ $rt(item) }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 tracking-[0.2em] uppercase mb-4">{{ $t('careers.cp_comp_title') }}</h4>
+                                        <ul class="space-y-2.5">
+                                            <li v-for="(item, i) in $tm('careers.cp_comp')" :key="i"
+                                                class="flex items-start gap-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-primary-500 mt-1.5 shrink-0" />
+                                                {{ $rt(item) }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-5 rounded-2xl bg-primary-500/5 border border-primary-500/15">
+                                        <h4 class="text-[10px] font-mono text-primary-400 tracking-[0.2em] uppercase mb-3">{{ $t('careers.cp_growth_title') }}</h4>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">{{ $t('careers.cp_growth') }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- How to Apply footer -->
+                            <div class="p-8 border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950/50">
+                                <h4 class="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 tracking-[0.2em] uppercase mb-4">{{ $t('careers.cp_apply_title') }}</h4>
+                                <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+                                    {{ $t('careers.cp_apply_intro') }}
+                                    <a :href="`mailto:${$t('careers.cp_apply_email')}`" class="text-primary-400 hover:text-primary-500 font-semibold transition-colors">{{ $t('careers.cp_apply_email') }}</a>:
+                                </p>
+                                <ul class="space-y-2.5 mb-6">
+                                    <li v-for="(item, i) in $tm('careers.cp_apply_items')" :key="i"
+                                        class="flex items-start gap-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                        <span class="w-5 h-5 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-[10px] font-bold text-neutral-500 dark:text-neutral-400 shrink-0 mt-0.5">{{ i + 1 }}</span>
+                                        {{ $rt(item) }}
+                                    </li>
+                                </ul>
+                                <a :href="`mailto:${$t('careers.cp_apply_email')}?subject=Country Partner Application`"
+                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-500 hover:bg-primary-400 text-white font-bold text-sm transition-colors">
+                                    {{ $t('careers.cp_apply_btn') }}
+                                    <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
+                                </a>
+                            </div>
+                        </div>
+                    </Transition>
+                </div>
+
+                <!-- Talent pool fallback -->
+                <div data-reveal class="mt-6 p-6 rounded-2xl border border-dashed border-neutral-300 dark:border-neutral-800 text-center">
+                    <p class="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-1">{{ $t('careers.no_roles') }}</p>
+                    <p class="text-sm text-neutral-500 dark:text-neutral-500">
+                        {{ $t('careers.no_roles_desc') }}
+                        <a href="mailto:careers@protegey.com" class="text-primary-400 hover:text-primary-500 transition-colors ml-1">{{ $t('careers.cta') }}</a>
+                    </p>
                 </div>
             </div>
         </section>
@@ -108,16 +247,21 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { HugeiconsIcon } from '@hugeicons/vue'
 import {
-    GlobalIcon, ArrowRight01Icon,
+    GlobalIcon, ArrowRight01Icon, ArrowDown01Icon,
     Briefcase02Icon, RocketIcon, HealthIcon, ChartIcon
 } from '@hugeicons/core-free-icons'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const { t } = useI18n()
+const expanded = ref(false)
+
+const scrollToRoles = () => {
+    document.getElementById('open-roles')?.scrollIntoView({ behavior: 'smooth' })
+}
 const baseUrl = 'https://www.protegey.com'
 
 const getBenefitIcon = (index) => {
@@ -202,5 +346,16 @@ if (import.meta.server) {
 
 [data-reveal] {
     will-change: transform, opacity;
+}
+
+.expand-enter-active,
+.expand-leave-active {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.expand-enter-from,
+.expand-leave-to {
+    opacity: 0;
+    transform: translateY(-8px);
 }
 </style>

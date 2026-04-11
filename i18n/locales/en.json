@@ -859,9 +859,74 @@
         "desc": "Work directly with founders. Shape product, strategy, and culture from day one."
       }
     ],
-    "no_roles": "Current Opportunities",
-    "no_roles_desc": "There are no active openings at this moment, but we are always hungry for world-class talent to join the Signal Network.",
-    "cta": "Drop us a line at careers{'@'}protegey.com"
+    "view_roles_btn": "View Open Roles",
+    "roles_eyebrow": "Open Roles",
+    "roles_title": "Active Opportunities",
+    "roles_subtitle": "We are expanding across Francophone and Northern Africa. Join us as a Country Partner.",
+    "cp_badge": "NOW HIRING",
+    "cp_title": "Country Partner",
+    "cp_region": "Francophone & Northern Africa",
+    "cp_type": "Performance-Based Partnership",
+    "cp_about": "We are partnering with operators embedded in their local financial ecosystems — individuals who can open doors, build trust, and drive execution on the ground. This is not a traditional role.",
+    "cp_markets_label": "Priority Markets",
+    "cp_markets": ["Côte d'Ivoire", "Benin", "Togo", "Mali", "Burkina Faso", "Niger", "Tchad", "Guinea-E.", "DRC", "CAR", "Rwanda", "Senegal", "Cameroun", "Tunisia", "Algeria", "Mauritania", "Morocco", "G.-Bissau", "Gabon", "Congo"],
+    "cp_mission_title": "Your Mission",
+    "cp_mission": [
+      "Establish Protegey's presence in your market",
+      "Open doors to key decision-makers (banks, fintechs, telcos)",
+      "Secure meetings, demos, and pilot opportunities",
+      "Build and manage strategic relationships",
+      "Drive deal execution and local adoption",
+      "Provide market intelligence on regulation, fraud trends, and ecosystem insights"
+    ],
+    "cp_success_title": "What Success Looks Like",
+    "cp_success": [
+      "Access to leading financial institutions in your market",
+      "A consistent pipeline of qualified opportunities and leads",
+      "Conversion of pilots into long-term contracts",
+      "Strong local positioning of Protegey"
+    ],
+    "cp_profile_title": "Who You Are",
+    "cp_profile": [
+      "Active within your country's financial ecosystem (banking or fintech associations)",
+      "Well-connected to decision-makers in banks, fintechs, and mobile money operators",
+      "Able to secure meetings — not just send emails",
+      "Strong understanding of risk, compliance, or payments",
+      "Entrepreneurial, proactive, and execution-focused"
+    ],
+    "cp_not_for_title": "This Role Is NOT For You If",
+    "cp_not_for": [
+      "You rely on inbound leads",
+      "You need constant supervision",
+      "You do not have an existing network",
+      "You are looking for a fixed salary role"
+    ],
+    "cp_comp_title": "Compensation & Upside",
+    "cp_comp": [
+      "15% commission on closed deals (Year 1)",
+      "8% commission on renewals",
+      "Pilot conversion bonus ($500–$2,000 depending on client type)",
+      "Performance-based monthly retainers (post-traction)",
+      "Path to Country Manager role"
+    ],
+    "cp_growth_title": "Growth Path",
+    "cp_growth": "Top-performing partners transition to Country Manager roles within 12 months. This includes leadership of Protegey's local entity, operational ownership of market expansion, and equity participation (up to 10% of our subsidiary in your country).",
+    "cp_apply_title": "How to Apply",
+    "cp_apply_intro": "Send the following to",
+    "cp_apply_email": "lamya{'@'}protegey.com",
+    "cp_apply_items": [
+      "Your LinkedIn profile or CV",
+      "Your current role",
+      "Your network within the financial ecosystem in your country",
+      "One example of how you've opened doors or closed a deal",
+      "What you hope to achieve as Protegey's Country Partner in your first 90 days"
+    ],
+    "cp_apply_btn": "Apply Now",
+    "cp_expand": "View Full Details",
+    "cp_collapse": "Collapse Details",
+    "no_roles": "Don't see a fit?",
+    "no_roles_desc": "We are always looking for world-class talent to join the Signal Network.",
+    "cta": "Reach out at careers{'@'}protegey.com"
   },
   "faq": {
     "title": "Frequently Asked Questions",
