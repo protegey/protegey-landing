@@ -129,11 +129,6 @@
 
                         <!-- CTA row -->
                         <div class="flex flex-wrap items-center gap-4 pt-6 border-t border-neutral-200 dark:border-neutral-800">
-                            <a :href="`mailto:${$t('careers.cp_apply_email')}?subject=Country Partner Application`"
-                                class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-500 hover:bg-primary-400 text-white font-bold text-sm transition-colors">
-                                {{ $t('careers.cp_apply_btn') }}
-                                <HugeiconsIcon :icon="ArrowRight01Icon" :size="16" />
-                            </a>
                             <button @click="expanded = !expanded"
                                 class="inline-flex items-center gap-2 text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
                                 {{ expanded ? $t('careers.cp_collapse') : $t('careers.cp_expand') }}
