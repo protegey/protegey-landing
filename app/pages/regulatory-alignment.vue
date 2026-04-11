@@ -107,14 +107,20 @@ const capabilityKeys = [
                     <div
                         v-for="(fw, i) in (tm('geo_pages.regulatory_alignment.frameworks') as any[])"
                         :key="i"
-                        class="group p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:border-secondary-500/30 transition-all duration-300"
+                        class="group flex flex-col p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:border-secondary-500/30 transition-all duration-300"
                     >
-                        <div class="flex items-start justify-between gap-3 mb-4">
+                        <div class="flex items-start justify-between gap-3 mb-3">
                             <span class="text-xl font-black text-neutral-900 dark:text-white tracking-tight">{{ rt(fw.name) }}</span>
-                            <span class="text-[10px] font-semibold text-secondary-400 bg-secondary-500/10 px-2 py-1 rounded-full whitespace-nowrap rtl:text-right">{{ rt(fw.zone) }}</span>
+                            <span class="text-[10px] font-semibold text-secondary-400 bg-secondary-500/10 px-2 py-1 rounded-full whitespace-nowrap rtl:text-right shrink-0">{{ rt(fw.zone) }}</span>
                         </div>
                         <p class="text-xs text-neutral-500 dark:text-neutral-500 mb-3 font-medium">{{ rt(fw.full) }}</p>
-                        <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">{{ rt(fw.desc) }}</p>
+                        <div v-if="fw.law" class="mb-3">
+                            <span class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-primary-500/8 border border-primary-500/15 text-[10px] font-bold text-primary-400 tracking-wide uppercase">
+                                <span class="w-1 h-1 rounded-full bg-primary-400 shrink-0" />
+                                {{ rt(fw.law) }}
+                            </span>
+                        </div>
+                        <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mt-auto">{{ rt(fw.desc) }}</p>
                     </div>
                 </div>
             </div>

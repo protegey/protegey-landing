@@ -362,7 +362,7 @@
     "waitlist": {
         "title1": "Découvrez le futur du",
         "title2": "renseignement fraude ",
-        "subtitle": "Soyez parmi les premiers à découvrir le réseau d'intelligence fraude partagée de PROTEGEY.",
+        "subtitle": "Experimentez le réseau d'intelligence partagé contre la fraude de Protegey.",
         "form": {
             "title": "Civilité",
             "title_placeholder": "Sélectionnez",
@@ -617,37 +617,62 @@
                     "name": "BCEAO",
                     "full": "Banque Centrale des États de l'Afrique de l'Ouest",
                     "zone": "Zone UEMOA · 8 pays",
-                    "desc": "Banque centrale régissant la politique monétaire pour le Bénin, le Burkina Faso, la Côte d'Ivoire, la Guinée-Bissau, le Mali, le Niger, le Sénégal et le Togo. Les structures d'alerte et les formats de déclaration de Protegey sont alignés sur les exigences de la BCEAO."
+                    "law": "Loi LBC/FT BCEAO (UEMOA)",
+                    "desc": "PROTEGEY aide les institutions de la zone UEMOA à se conformer à la Loi LBC/FT de la BCEAO en fournissant une surveillance des transactions en temps réel, un scoring du risque client et des déclarations d'activités suspectes structurées, couvrant le Bénin, le Burkina Faso, la Côte d'Ivoire, la Guinée-Bissau, le Mali, le Niger, le Sénégal et le Togo."
                 },
                 {
                     "name": "COBAC",
                     "full": "Commission Bancaire de l'Afrique Centrale",
                     "zone": "Zone CEMAC · 6 pays",
-                    "desc": "Superviseur bancaire du Cameroun, de la RCA, du Tchad, du Congo, de la Guinée équatoriale et du Gabon. Protegey prend en charge les obligations LBC/FT de la COBAC et la déclaration d'activités suspectes inter-institutions."
+                    "law": "Règlement COBAC R-2023/01",
+                    "desc": "PROTEGEY accompagne les institutions financières de la zone CEMAC — Cameroun, RCA, Tchad, Congo, Guinée équatoriale et Gabon — dans le respect des obligations LBC/FT du Règlement COBAC R-2023/01, notamment la surveillance des transactions, la diligence raisonnable client et la déclaration d'activités suspectes inter-institutions."
+                },
+                {
+                    "name": "BCC",
+                    "full": "Banque Centrale du Congo",
+                    "zone": "RDC",
+                    "law": "Instruction n°15",
+                    "desc": "PROTEGEY permet aux institutions financières en RDC de se conformer aux exigences LBC/FT de la Banque Centrale du Congo, notamment l'Instruction n°15, en fournissant une surveillance des transactions en temps réel, un scoring du risque client, le filtrage des sanctions et des déclarations de transactions suspectes structurées."
+                },
+                {
+                    "name": "BCRG",
+                    "full": "Banque Centrale de la République de Guinée",
+                    "zone": "République de Guinée",
+                    "law": "Loi L/2006/010/AN",
+                    "desc": "PROTEGEY accompagne les institutions financières en Guinée dans le respect des obligations LBC/FT relevant du cadre de la BCRG, notamment la Loi L/2006/010/AN et les instructions connexes portant sur la surveillance des transactions, la vigilance client et la déclaration d'activités suspectes."
+                },
+                {
+                    "name": "BCM",
+                    "full": "Banque Centrale de Mauritanie",
+                    "zone": "Mauritanie",
+                    "law": "Instruction n°022/GR/2024",
+                    "desc": "PROTEGEY permet aux institutions financières en Mauritanie de se conformer aux obligations LBC/FT de la Banque Centrale de Mauritanie, notamment l'Instruction n°022/GR/2024, en fournissant une surveillance des transactions en temps réel, une détection automatisée des seuils et des déclarations de transactions suspectes structurées."
                 },
                 {
                     "name": "Bank Al-Maghrib",
                     "full": "Banque Centrale du Maroc",
                     "zone": "Maroc",
-                    "desc": "Banque centrale et superviseur prudentiel du Maroc. Protegey s'aligne sur le cadre LBC de Bank Al-Maghrib et ses directives de supervision de la finance numérique."
+                    "law": "Loi 43-05 LBC",
+                    "desc": "PROTEGEY permet aux institutions financières au Maroc de se conformer aux exigences LBC/FT de la Loi 43-05 et aux directives de Bank Al-Maghrib en fournissant une surveillance des transactions en temps réel, un scoring client basé sur le risque, le filtrage des sanctions et des déclarations de transactions suspectes structurées."
                 },
                 {
                     "name": "Banque d'Algérie",
                     "full": "Banque Centrale d'Algérie",
                     "zone": "Algérie",
-                    "desc": "Autorité monétaire et régulateur bancaire de l'Algérie. Protegey prend en charge les obligations de surveillance LBC et de déclaration de fraude applicables aux banques et fintechs sous la supervision de la Banque d'Algérie."
+                    "desc": "PROTEGEY prend en charge les obligations de surveillance LBC et de déclaration de fraude applicables aux banques et fintechs sous la supervision de la Banque d'Algérie, aligné sur le cadre réglementaire LBC/FT algérien."
                 },
                 {
                     "name": "BCT",
                     "full": "Banque Centrale de Tunisie",
                     "zone": "Tunisie",
-                    "desc": "Banque centrale et superviseur financier de la Tunisie. La plateforme Protegey prend en charge les exigences de conformité BCT pour les prestataires de paiement numérique et la surveillance des transactions transfrontalières."
+                    "desc": "PROTEGEY prend en charge les exigences de conformité BCT pour les prestataires de paiement numérique et la surveillance des transactions transfrontalières, permettant des déclarations structurées et un scoring du risque en temps réel selon les réglementations LBC/FT tunisiennes."
                 },
                 {
                     "name": "FATF / GAFI",
                     "full": "Groupe d'Action Financière",
                     "zone": "Norme Internationale",
-                    "desc": "Le normalisateur mondial en matière de LBC/FT. La taxonomie de fraude, la méthodologie de scoring et la génération de déclarations de Protegey sont structurées autour des Recommandations du GAFI — notamment la R.20 sur les déclarations de transactions suspectes et la R.40 sur la coopération internationale."
+                    "law": "Recommandations R.20 & R.40",
+                    "desc": "Le normalisateur mondial en matière de LBC/FT. La taxonomie de fraude, la méthodologie de scoring et la génération de déclarations de PROTEGEY sont structurées autour des Recommandations du GAFI — notamment la R.20 sur les déclarations de transactions suspectes et la R.40 sur la coopération internationale."
                 }
             ],
             "capabilities_badge": "COMMENT NOUS AIDONS",

@@ -358,7 +358,7 @@
     "waitlist": {
         "title1": "Experience the future of",
         "title2": "fraud intelligence ",
-        "subtitle": "Be among the first to experience PROTEGEY's shared fraud intelligence network.",
+        "subtitle": "Experience Protegey's shared fraud intelligence network.",
         "form": {
             "title": "Title",
             "title_placeholder": "Select title",
@@ -613,37 +613,62 @@
                     "name": "BCEAO",
                     "full": "Banque Centrale des États de l'Afrique de l'Ouest",
                     "zone": "UEMOA Zone · 8 countries",
-                    "desc": "Central bank governing monetary policy and financial stability for Benin, Burkina Faso, Côte d'Ivoire, Guinea-Bissau, Mali, Niger, Senegal, and Togo. Protegey's alert structures and SAR formats align with BCEAO reporting requirements."
+                    "law": "BCEAO AML Law (UEMOA)",
+                    "desc": "PROTEGEY helps institutions in the UEMOA zone comply with the BCEAO AML/CFT Law by providing real-time transaction monitoring, customer risk scoring, and structured suspicious activity reporting aligned with BCEAO directives covering Benin, Burkina Faso, Côte d'Ivoire, Guinea-Bissau, Mali, Niger, Senegal, and Togo."
                 },
                 {
                     "name": "COBAC",
                     "full": "Commission Bancaire de l'Afrique Centrale",
                     "zone": "CEMAC Zone · 6 countries",
-                    "desc": "Banking supervisor for Cameroon, CAR, Chad, Congo, Equatorial Guinea, and Gabon. Protegey supports COBAC's AML/CFT compliance requirements and cross-institution suspicious activity reporting."
+                    "law": "COBAC R-2023/01",
+                    "desc": "PROTEGEY supports financial institutions in the CEMAC zone — Cameroon, CAR, Chad, Congo, Equatorial Guinea, and Gabon — in meeting AML/CFT obligations under COBAC Regulation R-2023/01, including transaction monitoring, customer due diligence, and cross-institution suspicious activity reporting."
+                },
+                {
+                    "name": "BCC",
+                    "full": "Banque Centrale du Congo",
+                    "zone": "DRC",
+                    "law": "Instruction n°15",
+                    "desc": "PROTEGEY enables financial institutions in the DRC to comply with AML/CFT requirements issued by the Banque Centrale du Congo, including Instruction n°15, by providing real-time transaction monitoring, customer risk scoring, sanctions screening, and structured suspicious transaction reporting."
+                },
+                {
+                    "name": "BCRG",
+                    "full": "Banque Centrale de la République de Guinée",
+                    "zone": "Republic of Guinea",
+                    "law": "Loi L/2006/010/AN",
+                    "desc": "PROTEGEY supports financial institutions in Guinea in meeting AML/CFT obligations under the framework of the BCRG, including Loi L/2006/010/AN and related instructions on transaction monitoring, customer due diligence, and suspicious activity reporting."
+                },
+                {
+                    "name": "BCM",
+                    "full": "Banque Centrale de Mauritanie",
+                    "zone": "Mauritania",
+                    "law": "Instruction n°022/GR/2024",
+                    "desc": "PROTEGEY enables financial institutions in Mauritania to comply with AML/CFT obligations issued by the Banque Centrale de Mauritanie, including Instruction n°022/GR/2024, by providing real-time transaction monitoring, automated threshold detection, and structured suspicious transaction reporting."
                 },
                 {
                     "name": "Bank Al-Maghrib",
                     "full": "Central Bank of Morocco",
                     "zone": "Morocco",
-                    "desc": "Morocco's central bank and prudential supervisor. Protegey aligns with Bank Al-Maghrib's AML framework and digital finance oversight guidelines for institutions operating under its mandate."
+                    "law": "Law 43-05 AML",
+                    "desc": "PROTEGEY enables financial institutions in Morocco to comply with AML/CFT requirements under Law 43-05 and Bank Al-Maghrib directives by providing real-time transaction monitoring, risk-based customer scoring, sanctions screening, and structured suspicious transaction reporting."
                 },
                 {
                     "name": "Banque d'Algérie",
                     "full": "Central Bank of Algeria",
                     "zone": "Algeria",
-                    "desc": "Algeria's monetary authority and banking regulator. Protegey supports the AML monitoring and fraud reporting obligations applicable to banks and fintechs operating under Banque d'Algérie oversight."
+                    "desc": "PROTEGEY supports the AML monitoring and fraud reporting obligations applicable to banks and fintechs operating under Banque d'Algérie oversight, aligned with Algeria's AML/CFT regulatory framework."
                 },
                 {
                     "name": "BCT",
                     "full": "Banque Centrale de Tunisie",
                     "zone": "Tunisia",
-                    "desc": "Tunisia's central bank and financial supervisor. Protegey's platform supports BCT compliance requirements for digital payment providers and cross-border transaction monitoring."
+                    "desc": "PROTEGEY's platform supports BCT compliance requirements for digital payment providers and cross-border transaction monitoring, enabling structured reporting and real-time risk scoring under Tunisian AML/CFT regulations."
                 },
                 {
                     "name": "FATF / GAFI",
                     "full": "Financial Action Task Force",
                     "zone": "Global Standard",
-                    "desc": "The global standard-setter for AML/CFT. Protegey's fraud taxonomy, risk scoring methodology, and SAR generation are structured around FATF Recommendations — particularly R.20 on suspicious transaction reporting and R.40 on international cooperation."
+                    "law": "Recommendations R.20 & R.40",
+                    "desc": "The global standard-setter for AML/CFT. PROTEGEY's fraud taxonomy, risk scoring methodology, and SAR generation are structured around FATF Recommendations — particularly R.20 on suspicious transaction reporting and R.40 on international cooperation."
                 }
             ],
             "capabilities_badge": "HOW WE HELP",
