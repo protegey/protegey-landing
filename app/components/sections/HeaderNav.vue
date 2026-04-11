@@ -148,12 +148,9 @@ const solutionItems = [
 ]
 
 const resourceItems = [
-  { key: 'what_is_protegey', to: 'what-is-protegey', icon: InformationCircleIcon },
-  { key: 'how_it_works', to: 'how-it-works', icon: Activity01Icon },
   { key: 'who_its_for', to: 'who-its-for', icon: UserGroupIcon },
-  { key: 'comparisons', to: 'comparisons', icon: DocumentValidationIcon },
-  { key: 'trust', to: 'trust', icon: Shield01Icon },
   { key: 'api_docs', to: 'api-docs', icon: BookOpen01Icon },
+  { key: 'trust', to: 'trust', icon: Shield01Icon },
   { key: 'regulatory_alignment', to: 'regulatory-alignment', icon: JusticeScale01Icon },
 ]
 

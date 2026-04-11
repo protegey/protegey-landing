@@ -79,28 +79,8 @@
           <h3 class="font-semibold mb-4 text-neutral-900 dark:text-white">{{ $t('footer.resources') }}</h3>
           <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
             <li>
-              <NuxtLink :to="localePath('what-is-protegey')" class="hover:text-primary-400 transition-colors">
-                {{ $t('footer.links.what_is_protegey') }}
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink :to="localePath('how-it-works')" class="hover:text-primary-400 transition-colors">
-                {{ $t('footer.links.how_it_works') }}
-              </NuxtLink>
-            </li>
-            <li>
               <NuxtLink :to="localePath('who-its-for')" class="hover:text-primary-400 transition-colors">
                 {{ $t('footer.links.who_its_for') }}
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink :to="localePath('comparisons')" class="hover:text-primary-400 transition-colors">
-                {{ $t('footer.links.comparisons') }}
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink :to="localePath('trust')" class="hover:text-primary-400 transition-colors">
-                {{ $t('footer.links.trust') }}
               </NuxtLink>
             </li>
             <li>
@@ -109,9 +89,27 @@
                   $t('footer.links.api_docs') }}</NuxtLink>
             </li>
             <li>
+              <NuxtLink :to="localePath('trust')" class="hover:text-primary-400 transition-colors">
+                {{ $t('footer.links.trust') }}
+              </NuxtLink>
+            </li>
+            <li>
               <NuxtLink :to="localePath('regulatory-alignment')" class="hover:text-primary-400 transition-colors">
                 {{ $t('footer.links.regulatory_alignment') }}
               </NuxtLink>
+            </li>
+          </ul>
+
+          <h3 class="font-semibold mt-8 mb-4 text-neutral-900 dark:text-white">{{ $t('footer.legal') }}</h3>
+          <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+            <li>
+              <NuxtLink :to="localePath('privacy')" class="hover:text-primary-400 transition-colors"
+                data-testid="link-privacy">
+                {{ $t('footer.links.privacy') }}</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('terms')" class="hover:text-primary-400 transition-colors">
+                {{ $t('footer.links.terms') }}</NuxtLink>
             </li>
           </ul>
         </div>
@@ -143,20 +141,6 @@
               <NuxtLink :to="localePath('/use-cases')" class="hover:text-primary-400 transition-colors font-medium">
                 {{ $t('industries.view_all') }}
               </NuxtLink>
-            </li>
-          </ul>
-
-          <h3 class="font-semibold mt-8 mb-4 text-neutral-900 dark:text-white">{{ $t('footer.legal') }}</h3>
-          <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
-            <li>
-              <NuxtLink :to="localePath('privacy')" class="hover:text-primary-400 transition-colors"
-                data-testid="link-privacy">
-                {{ $t('footer.links.privacy') }}</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink :to="localePath('terms')" class="hover:text-primary-400 transition-colors"
-                data-testid="link-terms">
-                {{ $t('footer.links.terms') }}</NuxtLink>
             </li>
           </ul>
         </div>

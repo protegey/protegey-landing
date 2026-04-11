@@ -13,9 +13,7 @@ defineProps<{
 const route = useRoute()
 
 const geoNav = [
-    { name: t('geo_pages.what_is_protegey.title'), path: '/what-is-protegey' },
     { name: t('geo_pages.who_its_for.title'), path: '/who-its-for' },
-    { name: t('geo_pages.comparisons.title'), path: '/comparisons' },
     { name: t('geo_pages.trust.title'), path: '/trust' }
 ]
 
