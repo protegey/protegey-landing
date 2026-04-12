@@ -948,16 +948,6 @@
             "You do not have an existing network",
             "You are looking for a fixed salary role"
         ],
-        "cp_comp_title": "Compensation & Upside",
-        "cp_comp": [
-            "15% commission on closed deals (Year 1)",
-            "8% commission on renewals",
-            "Pilot conversion bonus ($500–$2,000 depending on client type)",
-            "Performance-based monthly retainers (post-traction)",
-            "Path to Country Manager role"
-        ],
-        "cp_growth_title": "Growth Path",
-        "cp_growth": "Top-performing partners transition to Country Manager roles within 12 months. This includes leadership of Protegey's local entity, operational ownership of market expansion, and equity participation (up to 10% of our subsidiary in your country).",
         "cp_apply_title": "How to Apply",
         "cp_apply_intro": "Send the following to",
         "cp_apply_email": "lamya{'@'}protegey.com",
