@@ -952,6 +952,16 @@
             "Vous ne disposez pas d’un réseau existant",
             "Vous cherchez un rôle avec salaire fixe"
         ],
+        "cp_comp_title": "Rémunération & Potentiel",
+        "cp_comp": [
+            "15 % de commission sur les deals conclus (Année 1)",
+            "8 % de commission sur les renouvellements",
+            "Prime de conversion pilote (500–2 000 $ selon le type de client)",
+            "Retainers mensuels basés sur la performance (après traction)",
+            "Évolution vers un rôle de Country Manager"
+        ],
+        "cp_growth_title": "Évolution de Carrière",
+        "cp_growth": "Les partenaires les plus performants évoluent vers des rôles de Country Manager dans les 12 mois. Cela inclut la direction de l’entité locale de Protegey, la responsabilité opérationnelle du développement marché et une participation au capital (jusqu’à 10 % de notre filiale dans votre pays).",
         "cp_apply_title": "Comment Postuler",
         "cp_apply_intro": "Envoyez les informations suivantes à",
         "cp_apply_email": "lamya{'@'}protegey.com",

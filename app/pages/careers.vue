@@ -163,9 +163,19 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    <div>
+                                        <h4 class="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 tracking-[0.2em] uppercase mb-4">{{ $t('careers.cp_not_for_title') }}</h4>
+                                        <ul class="space-y-2.5">
+                                            <li v-for="(item, i) in $tm('careers.cp_not_for')" :key="i"
+                                                class="flex items-start gap-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-accent-orange-500 mt-1.5 shrink-0" />
+                                                {{ $rt(item) }}
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <!-- Right col: Profile + Not For You -->
+                                <!-- Right col: Profile + Compensation + Growth -->
                                 <div class="p-8 space-y-8">
                                     <div>
                                         <h4 class="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 tracking-[0.2em] uppercase mb-4">{{ $t('careers.cp_profile_title') }}</h4>
@@ -178,14 +188,18 @@
                                         </ul>
                                     </div>
                                     <div>
-                                        <h4 class="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 tracking-[0.2em] uppercase mb-4">{{ $t('careers.cp_not_for_title') }}</h4>
+                                        <h4 class="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 tracking-[0.2em] uppercase mb-4">{{ $t('careers.cp_comp_title') }}</h4>
                                         <ul class="space-y-2.5">
-                                            <li v-for="(item, i) in $tm('careers.cp_not_for')" :key="i"
+                                            <li v-for="(item, i) in $tm('careers.cp_comp')" :key="i"
                                                 class="flex items-start gap-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-accent-orange-500 mt-1.5 shrink-0" />
+                                                <span class="w-1.5 h-1.5 rounded-full bg-primary-500 mt-1.5 shrink-0" />
                                                 {{ $rt(item) }}
                                             </li>
                                         </ul>
+                                    </div>
+                                    <div class="p-5 rounded-2xl bg-primary-500/5 border border-primary-500/15">
+                                        <h4 class="text-[10px] font-mono text-primary-400 tracking-[0.2em] uppercase mb-3">{{ $t('careers.cp_growth_title') }}</h4>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">{{ $t('careers.cp_growth') }}</p>
                                     </div>
                                 </div>
                             </div>
