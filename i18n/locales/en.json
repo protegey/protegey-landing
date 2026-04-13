@@ -950,9 +950,6 @@
         ],
         "cp_comp_title": "Compensation & Upside",
         "cp_comp": [
-            "15% commission on closed deals (Year 1)",
-            "8% commission on renewals",
-            "Pilot conversion bonus ($500–$2,000 depending on client type)",
             "Performance-based monthly retainers (post-traction)",
             "Path to Country Manager role"
         ],
@@ -962,7 +959,8 @@
         "cp_apply_intro": "Send the following to",
         "cp_apply_email": "lamya{'@'}protegey.com",
         "cp_apply_items": [
-            "Your LinkedIn profile or CV",
+            "Your LinkedIn profile and CV",
+            "The country you are applying for (note: this is an onsite role — you must be based in the country you apply for)",
             "Your current role",
             "Your network within the financial ecosystem in your country",
             "One example of how you've opened doors or closed a deal",

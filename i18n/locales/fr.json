@@ -954,9 +954,6 @@
         ],
         "cp_comp_title": "Rémunération & Potentiel",
         "cp_comp": [
-            "15 % de commission sur les deals conclus (Année 1)",
-            "8 % de commission sur les renouvellements",
-            "Prime de conversion pilote (500–2 000 $ selon le type de client)",
             "Retainers mensuels basés sur la performance (après traction)",
             "Évolution vers un rôle de Country Manager"
         ],
@@ -966,7 +963,8 @@
         "cp_apply_intro": "Envoyez les informations suivantes à",
         "cp_apply_email": "lamya{'@'}protegey.com",
         "cp_apply_items": [
-            "Votre profil LinkedIn ou votre CV",
+            "Votre profil LinkedIn et votre CV",
+            "Le pays pour lequel vous postulez (note : ce poste est en présentiel — vous devez résider dans le pays concerné)",
             "Votre rôle actuel",
             "Votre réseau au sein de l’écosystème financier de votre pays",
             "Un exemple concret d’une porte ouverte ou d’un deal conclu",
