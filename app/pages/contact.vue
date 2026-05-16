@@ -64,8 +64,8 @@
                                                 {{ $t('contact.hq') }}</p>
                                             <p
                                                 class="text-neutral-500 dark:text-neutral-400 text-sm font-medium leading-relaxed">
-                                                651 N Broad St<br>
-                                                Middletown, DE 19709<br>
+                                                141 Continental Dr, Suite 305<br>
+                                                City of Newark, New Castle, Delaware 19713<br>
                                                 United States
                                             </p>
                                         </div>
