@@ -1069,11 +1069,16 @@
             "submitting": "Envoi en cours..."
         },
         "topics": {
-            "demo": "Démo Produit",
-            "technical": "Discussion Technique",
-            "partnership": "Opportunité de Partenariat",
-            "pricing": "Tarification & Plans",
-            "other": "Autre"
+            "aml": "AML & Conformité Réglementaire",
+            "aml_desc": "Politiques, obligations, attentes des régulateurs, préparation aux audits (ex: préparation aux audits réglementaires, mise à jour des cadres AML locaux)",
+            "transaction": "Surveillance des Transactions & Règles Anti-Fraude",
+            "transaction_desc": "Seuils, scénarios, ajustement des alertes, typologies de fraude (ex: réduction des faux positifs, calibrage des seuils d'alerte)",
+            "kyc": "KYC, KYB & Évaluations des Risques Clients",
+            "kyc_desc": "Contrôles d'onboarding, scoring des risques, due diligence, préoccupations d'identité (ex: filtrage des Sanctions & PEP, structures KYB complexes)",
+            "fraud": "Enquêtes sur la Fraude & Gestion des Cas",
+            "fraud_desc": "Révisions des activités suspectes, flux d'escalade, processus SAR/STR (ex: rédaction de SAR efficaces, rationalisation des flux de travail)",
+            "risk": "Évaluation des Risques & Conception du Programme de Conformité",
+            "risk_desc": "Configuration du cadre, lacunes de contrôle, revues des risques, préparation opérationnelle (ex: planification de la reprise après sinistre, analyse des écarts)"
         },
         "success_message": "Merci pour votre demande ! Nos experts vous contacteront sous 24 heures.",
         "errors": {

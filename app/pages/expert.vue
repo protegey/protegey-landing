@@ -35,16 +35,17 @@ const formData = ref({
 })
 
 const topicOptions = computed(() => [
-    { value: 'Product Demo', label: t('expert.topics.demo') },
-    { value: 'Technical Discussion', label: t('expert.topics.technical') },
-    { value: 'Partnership Opportunity', label: t('expert.topics.partnership') },
-    { value: 'Pricing & Plans', label: t('expert.topics.pricing') },
-    { value: 'Other', label: t('expert.topics.other') }
+    { value: 'AML & Regulatory Compliance', label: t('expert.topics.aml'), description: t('expert.topics.aml_desc') },
+    { value: 'Transaction Monitoring & Fraud Rules', label: t('expert.topics.transaction'), description: t('expert.topics.transaction_desc') },
+    { value: 'KYC, KYB & Customer Risk Reviews', label: t('expert.topics.kyc'), description: t('expert.topics.kyc_desc') },
+    { value: 'Fraud Investigation & Case Management', label: t('expert.topics.fraud'), description: t('expert.topics.fraud_desc') },
+    { value: 'Risk Assessment & Compliance Program Design', label: t('expert.topics.risk'), description: t('expert.topics.risk_desc') }
 ])
 
 const isSubmitting = ref(false)
 const submitMessage = ref('')
 const submitError = ref('')
+const topicDropdownOpen = ref(false)
 
 const handleSubmit = async () => {
     submitMessage.value = ''
@@ -207,12 +208,26 @@ const handleSubmit = async () => {
                                 </div>
                             </div>
                             <div>
-                                <label for="expert-topic" class="block text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-2">{{ $t('expert.form.topic') }}</label>
-                                <select id="expert-topic" v-model="formData.topic" required
-                                    class="w-full px-4 py-3 bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 rounded-xl text-neutral-900 dark:text-white text-sm focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all outline-none">
-                                    <option value="" disabled>{{ $t('expert.form.topic_placeholder') }}</option>
-                                    <option v-for="opt in topicOptions" :key="opt.value" :value="opt.value">{{ opt.label }}</option>
-                                </select>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-2">{{ $t('expert.form.topic') }}</label>
+                                <div class="relative">
+                                    <button type="button" @click="topicDropdownOpen = !topicDropdownOpen"
+                                        class="w-full px-4 py-3 bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 rounded-xl text-left focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all outline-none flex items-center justify-between">
+                                        <span :class="formData.topic ? 'text-neutral-900 dark:text-white' : 'text-neutral-400'">
+                                            {{ formData.topic ? formData.topic : $t('expert.form.topic_placeholder') }}
+                                        </span>
+                                        <svg class="w-5 h-5 text-neutral-400 transition-transform" :class="{ 'rotate-180': topicDropdownOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    <div v-if="topicDropdownOpen" class="absolute z-50 w-full mt-2 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-xl overflow-hidden">
+                                        <button v-for="opt in topicOptions" :key="opt.value" type="button"
+                                            @click="formData.topic = opt.value; topicDropdownOpen = false"
+                                            class="w-full px-4 py-3 text-left hover:bg-neutral-50 dark:hover:bg-neutral-700 border-b border-neutral-100 dark:border-neutral-700 last:border-b-0 transition-colors">
+                                            <div class="font-medium text-neutral-900 dark:text-white text-sm">{{ opt.value }}</div>
+                                            <div class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">{{ opt.description }}</div>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                             <div>
                                 <label for="expert-message" class="block text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-2">{{ $t('expert.form.message') }}</label>

@@ -1065,11 +1065,16 @@
             "submitting": "Submitting..."
         },
         "topics": {
-            "demo": "Product Demo",
-            "technical": "Technical Discussion",
-            "partnership": "Partnership Opportunity",
-            "pricing": "Pricing & Plans",
-            "other": "Other"
+            "aml": "AML & Regulatory Compliance",
+            "aml_desc": "Policies, obligations, regulator expectations, audit readiness (e.g., preparing for regulatory audits, updating local AML frameworks)",
+            "transaction": "Transaction Monitoring & Fraud Rules",
+            "transaction_desc": "Thresholds, scenarios, alert tuning, fraud typologies (e.g., reducing false positives, calibrating alert thresholds)",
+            "kyc": "KYC, KYB & Customer Risk Reviews",
+            "kyc_desc": "Onboarding controls, risk scoring, due diligence, identity concerns (e.g., Sanctions & PEPs screening, complex KYB structures)",
+            "fraud": "Fraud Investigation & Case Management",
+            "fraud_desc": "Suspicious activity reviews, escalation workflows, SAR/STR processes (e.g., drafting effective SARs, streamlining workflows)",
+            "risk": "Risk Assessment & Compliance Program Design",
+            "risk_desc": "Framework setup, control gaps, risk reviews, operational readiness (e.g., Disaster Recovery planning, gap analysis)"
         },
         "success_message": "Thank you for your request! Our experts will contact you within 24 hours.",
         "errors": {
