@@ -177,7 +177,7 @@ onUnmounted(() => {
         </div>
 
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-[5fr_6fr] gap-12 lg:gap-16 items-center">
 
                 <!-- Left Content -->
                 <div class="text-left rtl:text-right space-y-8">
@@ -247,55 +247,55 @@ onUnmounted(() => {
 
                 <!-- Right Visual (Signal Terminal) -->
                 <div class="relative perspective-1000">
-                    <div class="dashboard-card relative z-10 bg-neutral-950 border border-white/10 rounded-xl overflow-hidden">
+                    <div class="dashboard-card relative z-10 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-white/10 rounded-xl overflow-hidden shadow-xl dark:shadow-none">
                         <!-- Title bar -->
-                        <div class="flex items-center gap-2.5 px-3.5 py-2.5 bg-black/40 border-b border-white/[0.07]">
+                        <div class="flex items-center gap-2.5 px-3.5 py-2.5 bg-neutral-100 dark:bg-black/40 border-b border-neutral-200 dark:border-white/[0.07]">
                             <div class="flex gap-1.5 shrink-0">
                                 <span class="w-2 h-2 rounded-full bg-accent-orange-500/80" />
                                 <span class="w-2 h-2 rounded-full bg-yellow-400/80" />
                                 <span class="w-2 h-2 rounded-full bg-primary-500/80" />
                             </div>
-                            <span class="flex-1 font-mono text-[0.6rem] tracking-[0.1em] text-white/30">PROTEGEY // SIGNAL FEED</span>
-                            <span class="font-mono text-[0.6rem] tracking-[0.06em] text-primary-400 terminal-live">● LIVE</span>
+                            <span class="flex-1 font-mono text-[0.6rem] tracking-[0.1em] text-neutral-400 dark:text-white/30">PROTEGEY // SIGNAL FEED</span>
+                            <span class="font-mono text-[0.6rem] tracking-[0.06em] text-primary-500 dark:text-primary-400 terminal-live">● LIVE</span>
                         </div>
                         <!-- Column legend -->
-                        <div class="terminal-grid px-3.5 py-1.5 bg-neutral-900/60 border-b border-white/[0.05] font-mono text-[0.55rem] tracking-[0.12em] text-white/25">
+                        <div class="terminal-grid px-3.5 py-1.5 bg-neutral-50 dark:bg-neutral-900/60 border-b border-neutral-200 dark:border-white/[0.05] font-mono text-[0.55rem] tracking-[0.12em] text-neutral-400 dark:text-white/25">
                             <span>TIME</span>
                             <span>DETECTOR</span>
                             <span>ENTITY</span>
                             <span>ACTION</span>
                         </div>
                         <!-- Scrolling feed -->
-                        <div class="relative h-[296px] overflow-hidden">
-                            <div class="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-neutral-950 to-transparent z-10 pointer-events-none" />
-                            <div class="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-neutral-950 to-transparent z-10 pointer-events-none" />
+                        <div class="relative h-[340px] overflow-hidden">
+                            <div class="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-white dark:from-neutral-950 to-transparent z-10 pointer-events-none" />
+                            <div class="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-white dark:from-neutral-950 to-transparent z-10 pointer-events-none" />
                             <div class="terminal-track">
                                 <div
                                     v-for="(s, i) in terminalSignals"
                                     :key="`${s.time}-${i}`"
-                                    class="terminal-grid items-center px-3.5 py-[7px] border-b border-white/[0.04] font-mono text-[0.65rem] hover:bg-white/[0.02] transition-colors"
+                                    class="terminal-grid items-center px-3.5 py-[7px] border-b border-neutral-100 dark:border-white/[0.04] font-mono text-[0.65rem] hover:bg-neutral-50 dark:hover:bg-white/[0.02] transition-colors"
                                     :class="s.risk === 'HIGH' ? 'border-l-2 border-l-accent-orange-500' : 'border-l-2 border-l-primary-500/50'"
                                 >
-                                    <span class="text-white/30 text-[0.6rem]">{{ s.time }}</span>
-                                    <span class="text-white/65 tracking-[0.02em] truncate">{{ s.type }}</span>
-                                    <span class="text-white/45 truncate">{{ s.entity }}</span>
+                                    <span class="text-neutral-400 dark:text-white/30 text-[0.6rem]">{{ s.time }}</span>
+                                    <span class="text-neutral-700 dark:text-white/65 tracking-[0.02em] truncate">{{ s.type }}</span>
+                                    <span class="text-neutral-500 dark:text-white/45 truncate">{{ s.entity }}</span>
                                     <span
                                         class="text-[0.55rem] font-semibold tracking-[0.08em] px-1.5 py-0.5 rounded-[2px] text-center"
                                         :class="{
-                                            'bg-accent-orange-500/15 text-accent-orange-400': s.action === 'BLOCK',
-                                            'bg-primary-500/15 text-primary-400':             s.action === 'FLAG',
-                                            'bg-white/[0.06] text-white/45':                  s.action === 'REVIEW',
+                                            'bg-accent-orange-500/10 text-accent-orange-500 dark:bg-accent-orange-500/15 dark:text-accent-orange-400': s.action === 'BLOCK',
+                                            'bg-primary-500/10 text-primary-600 dark:bg-primary-500/15 dark:text-primary-400':                        s.action === 'FLAG',
+                                            'bg-neutral-100 text-neutral-500 dark:bg-white/[0.06] dark:text-white/45':                                s.action === 'REVIEW',
                                         }"
                                     >{{ s.action }}</span>
                                 </div>
                             </div>
                         </div>
                         <!-- Footer -->
-                        <div class="flex items-center gap-2 px-3.5 py-2 bg-black/40 border-t border-white/[0.06] font-mono text-[0.55rem] tracking-[0.08em] text-white/20">
+                        <div class="flex items-center gap-2 px-3.5 py-2 bg-neutral-100 dark:bg-black/40 border-t border-neutral-200 dark:border-white/[0.06] font-mono text-[0.55rem] tracking-[0.08em] text-neutral-400 dark:text-white/20">
                             <span>ENGINE v2.1.0</span>
-                            <span class="text-white/15">·</span>
+                            <span class="text-neutral-300 dark:text-white/15">·</span>
                             <span>E2E ENCRYPTED</span>
-                            <span class="text-white/15">·</span>
+                            <span class="text-neutral-300 dark:text-white/15">·</span>
                             <span>PII MASKED</span>
                         </div>
                     </div>
