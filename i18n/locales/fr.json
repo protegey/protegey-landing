@@ -899,27 +899,16 @@
         "cp_about": "Nous nous associons à des opérateurs intégrés dans leur écosystème financier local — des individus capables d’ouvrir des portes, de bâtir la confiance et d’assurer l’exécution sur le terrain. Ce n’est pas un rôle traditionnel.",
         "cp_markets_label": "Marchés Prioritaires",
         "cp_markets": [
-            "République de Guinée",
-            "Côte d'Ivoire",
             "Bénin",
-            "Togo",
-            "Mali",
-            "Burkina Faso",
             "Niger",
-            "Tchad",
             "Guinée équatoriale",
-            "République Démocratique du Congo",
             "République Centrafricaine",
             "Rwanda",
             "Sénégal",
-            "Cameroun",
             "Tunisie",
             "Algérie",
-            "Mauritanie",
             "Maroc",
-            "Guinée-Bissau",
-            "Gabon",
-            "République du Congo"
+            "Guinée-Bissau"
         ],
         "cp_mission_title": "Votre Mission",
         "cp_mission": [

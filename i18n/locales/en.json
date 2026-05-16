@@ -895,27 +895,16 @@
         "cp_about": "We are partnering with operators embedded in their local financial ecosystems — individuals who can open doors, build trust, and drive execution on the ground. This is not a traditional role.",
         "cp_markets_label": "Priority Markets",
         "cp_markets": [
-            "Republic of Guinea",
-            "Côte d'Ivoire",
             "Benin",
-            "Togo",
-            "Mali",
-            "Burkina Faso",
             "Niger",
-            "Chad",
             "Equatorial Guinea",
-            "Democratic Republic of the Congo",
             "Central African Republic",
             "Rwanda",
             "Senegal",
-            "Cameroon",
             "Tunisia",
             "Algeria",
-            "Mauritania",
             "Morocco",
-            "Guinea-Bissau",
-            "Gabon",
-            "Republic of the Congo"
+            "Guinea-Bissau"
         ],
         "cp_mission_title": "Your Mission",
         "cp_mission": [
