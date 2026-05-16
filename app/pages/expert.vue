@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, nextTick, onMounted, onUnmounted } from 'vue'
 import { HugeiconsIcon } from '@hugeicons/vue'
 import { Mail01Icon, Location01Icon, ArrowRight01Icon, Clock01Icon, LinkedinIcon } from '@hugeicons/core-free-icons'
 
@@ -46,6 +46,57 @@ const isSubmitting = ref(false)
 const submitMessage = ref('')
 const submitError = ref('')
 const topicDropdownOpen = ref(false)
+const topicButtonRef = ref<HTMLElement | null>(null)
+const topicDropdownRef = ref<HTMLElement | null>(null)
+const dropdownPosition = ref({ top: 0, left: 0, width: 0 })
+
+const selectedTopicLabel = computed(() =>
+    topicOptions.value.find(o => o.value === formData.value.topic)?.label ?? ''
+)
+
+const updateDropdownPosition = () => {
+    if (topicButtonRef.value) {
+        const rect = topicButtonRef.value.getBoundingClientRect()
+        dropdownPosition.value = {
+            top: rect.bottom + 8,
+            left: rect.left,
+            width: rect.width
+        }
+    }
+}
+
+const handleClickOutside = (e: MouseEvent) => {
+    if (!topicDropdownOpen.value) return
+    const target = e.target as Node
+    const insideButton = topicButtonRef.value?.contains(target)
+    const insideDropdown = topicDropdownRef.value?.contains(target)
+    if (!insideButton && !insideDropdown) {
+        topicDropdownOpen.value = false
+    }
+}
+
+const handleRepositionDropdown = () => {
+    if (topicDropdownOpen.value) updateDropdownPosition()
+}
+
+onMounted(() => {
+    document.addEventListener('click', handleClickOutside)
+    window.addEventListener('scroll', handleRepositionDropdown, true)
+    window.addEventListener('resize', handleRepositionDropdown)
+})
+
+onUnmounted(() => {
+    document.removeEventListener('click', handleClickOutside)
+    window.removeEventListener('scroll', handleRepositionDropdown, true)
+    window.removeEventListener('resize', handleRepositionDropdown)
+})
+
+const toggleTopicDropdown = () => {
+    topicDropdownOpen.value = !topicDropdownOpen.value
+    if (topicDropdownOpen.value) {
+        nextTick(() => updateDropdownPosition())
+    }
+}
 
 const handleSubmit = async () => {
     submitMessage.value = ''
@@ -173,7 +224,7 @@ const handleSubmit = async () => {
                         </div>
                     </div>
 
-                    <div class="lg:col-span-3 bg-white dark:bg-neutral-900/60 backdrop-blur-2xl border border-neutral-200 dark:border-white/10 rounded-[2rem] shadow-2xl p-6 md:p-10 relative overflow-hidden">
+                    <div class="lg:col-span-3 bg-white dark:bg-neutral-900/60 backdrop-blur-2xl border border-neutral-200 dark:border-white/10 rounded-[2rem] shadow-2xl p-6 md:p-10 relative">
                         <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary-500/0 via-primary-500 to-primary-500/0 opacity-50" />
                         
                         <h2 class="text-xl font-bold text-neutral-900 dark:text-white mb-8">{{ $t('expert.form.title') }}</h2>
@@ -210,23 +261,25 @@ const handleSubmit = async () => {
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-2">{{ $t('expert.form.topic') }}</label>
                                 <div class="relative">
-                                    <button type="button" @click="topicDropdownOpen = !topicDropdownOpen"
+                                    <button type="button" ref="topicButtonRef" @click="toggleTopicDropdown"
                                         class="w-full px-4 py-3 bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 rounded-xl text-left focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all outline-none flex items-center justify-between">
                                         <span :class="formData.topic ? 'text-neutral-900 dark:text-white' : 'text-neutral-400'">
-                                            {{ formData.topic ? formData.topic : $t('expert.form.topic_placeholder') }}
+                                            {{ formData.topic ? selectedTopicLabel : $t('expert.form.topic_placeholder') }}
                                         </span>
                                         <svg class="w-5 h-5 text-neutral-400 transition-transform" :class="{ 'rotate-180': topicDropdownOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                         </svg>
                                     </button>
-                                    <div v-if="topicDropdownOpen" class="absolute z-50 w-full mt-2 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-xl overflow-hidden">
-                                        <button v-for="opt in topicOptions" :key="opt.value" type="button"
-                                            @click="formData.topic = opt.value; topicDropdownOpen = false"
-                                            class="w-full px-4 py-3 text-left hover:bg-neutral-50 dark:hover:bg-neutral-700 border-b border-neutral-100 dark:border-neutral-700 last:border-b-0 transition-colors">
-                                            <div class="font-medium text-neutral-900 dark:text-white text-sm">{{ opt.value }}</div>
-                                            <div class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">{{ opt.description }}</div>
-                                        </button>
-                                    </div>
+                                    <Teleport to="body">
+                                        <div v-if="topicDropdownOpen" ref="topicDropdownRef" class="fixed z-[9999] bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-xl overflow-y-auto max-h-80" :style="{ top: dropdownPosition.top + 'px', left: dropdownPosition.left + 'px', width: dropdownPosition.width + 'px' }">
+                                            <button v-for="opt in topicOptions" :key="opt.value" type="button"
+                                                @click="formData.topic = opt.value; topicDropdownOpen = false"
+                                                class="w-full px-4 py-4 text-left hover:bg-neutral-50 dark:hover:bg-neutral-700 border-b border-neutral-100 dark:border-neutral-700 last:border-b-0 transition-colors">
+                                                <div class="font-medium text-neutral-900 dark:text-white text-sm">{{ opt.label }}</div>
+                                                <div class="text-xs text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">{{ opt.description }}</div>
+                                            </button>
+                                        </div>
+                                    </Teleport>
                                 </div>
                             </div>
                             <div>
