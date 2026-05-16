@@ -224,12 +224,7 @@ onUnmounted(() => {
 
                 <!-- Right Visual (Signal Terminal) -->
                 <div class="relative perspective-1000">
-                    <ClientOnly>
-                        <SignalTerminal />
-                        <template #fallback>
-                            <div class="dashboard-card bg-neutral-950 border border-white/10 rounded-xl h-[420px] animate-pulse" />
-                        </template>
-                    </ClientOnly>
+                    <SignalTerminal />
 
                     <!-- Decorative glow blobs behind terminal -->
                     <div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary-500/20 rounded-full blur-3xl -z-10" />
