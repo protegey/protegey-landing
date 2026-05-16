@@ -196,14 +196,6 @@ const handleSubmit = async () => {
                                                 United States
                                             </p>
                                         </div>
-                                        <div class="p-3 rounded-xl bg-neutral-50 dark:bg-neutral-800/50">
-                                            <p class="text-xs font-bold text-secondary-400 uppercase tracking-wider mb-1">{{ $t('expert.africa_office') }}</p>
-                                            <p class="text-neutral-500 dark:text-neutral-400 text-sm font-medium leading-relaxed">
-                                                16 Rue des Asphodèles<br>
-                                                Bd Ghandi, Casablanca 20250<br>
-                                                Morocco
-                                            </p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
