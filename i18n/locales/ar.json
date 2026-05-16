@@ -52,6 +52,21 @@
             "new_node": "عقدة جديدة",
             "uptime": "99.9% وقت تشغيل",
             "vs_last_week": "+12.5% مقارنة بالأسبوع الماضي"
+        },
+        "terminal": {
+            "title": "PROTEGEY // تغذية الإشارات",
+            "live": "مباشر",
+            "legend": {
+                "time": "الوقت",
+                "detector": "الكاشف",
+                "entity": "الكيان",
+                "action": "الإجراء"
+            },
+            "footer": {
+                "version": "المحرك v2.1.0",
+                "encryption": "مشفر E2E",
+                "pii": "بيانات مخفية"
+            }
         }
     },
     "trusted_by": {

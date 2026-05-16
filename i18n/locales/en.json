@@ -52,6 +52,21 @@
             "new_node": "New Node",
             "uptime": "99.9% Uptime",
             "vs_last_week": "+12.5% vs last week"
+        },
+        "terminal": {
+            "title": "PROTEGEY // SIGNAL FEED",
+            "live": "LIVE",
+            "legend": {
+                "time": "TIME",
+                "detector": "DETECTOR",
+                "entity": "ENTITY",
+                "action": "ACTION"
+            },
+            "footer": {
+                "version": "ENGINE v2.1.0",
+                "encryption": "E2E ENCRYPTED",
+                "pii": "PII MASKED"
+            }
         }
     },
     "trusted_by": {

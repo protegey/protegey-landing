@@ -52,6 +52,21 @@
             "new_node": "Nouveau noeud",
             "uptime": "Disponibilité 99,9%",
             "vs_last_week": "+12,5% vs semaine dernière"
+        },
+        "terminal": {
+            "title": "PROTEGEY // FLUX DE SIGNAUX",
+            "live": "EN DIRECT",
+            "legend": {
+                "time": "HEURE",
+                "detector": "DÉTECTEUR",
+                "entity": "ENTITÉ",
+                "action": "ACTION"
+            },
+            "footer": {
+                "version": "MOTEUR v2.1.0",
+                "encryption": "CHIFFRÉ E2E",
+                "pii": "PII MASQUÉ"
+            }
         }
     },
     "trusted_by": {
