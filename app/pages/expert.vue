@@ -191,7 +191,7 @@ const handleSubmit = async () => {
                                         <div class="p-3 rounded-xl bg-neutral-50 dark:bg-neutral-800/50">
                                             <p class="text-xs font-bold text-primary-400 uppercase tracking-wider mb-1">{{ $t('expert.hq') }}</p>
                                             <p class="text-neutral-500 dark:text-neutral-400 text-sm font-medium leading-relaxed">
-                                                141 Continental Dr, Suite 305<br>
+                                                131 Continental Dr, Suite 305<br>
                                                 City of Newark, New Castle, Delaware 19713<br>
                                                 United States
                                             </p>

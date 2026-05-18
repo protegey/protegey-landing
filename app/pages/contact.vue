@@ -64,7 +64,7 @@
                                                 {{ $t('contact.hq') }}</p>
                                             <p
                                                 class="text-neutral-500 dark:text-neutral-400 text-sm font-medium leading-relaxed">
-                                                141 Continental Dr, Suite 305<br>
+                                                131 Continental Dr, Suite 305<br>
                                                 City of Newark, New Castle, Delaware 19713<br>
                                                 United States
                                             </p>
