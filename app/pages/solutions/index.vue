@@ -14,7 +14,6 @@ import {
     FingerPrintIcon,
 } from '@hugeicons/core-free-icons'
 import SolutionCTA from '~/components/solutions/SolutionCTA.vue'
-import PANIDTeaser from '~/components/sections/PANIDTeaser.vue'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -33,6 +32,7 @@ const modules = [
     { key: 'aml-compliance', icon: Shield01Icon, colorClass: 'text-accent-cyan-400', bgClass: 'bg-accent-cyan-500/10', borderClass: 'border-accent-cyan-500/20', gradientClass: 'from-accent-cyan-500/10' },
     { key: 'risk-profiling', icon: UserStar01Icon, colorClass: 'text-accent-orange-400', bgClass: 'bg-accent-orange-500/10', borderClass: 'border-accent-orange-500/20', gradientClass: 'from-accent-orange-500/10' },
     { key: 'fraud-intelligence', icon: Share08Icon, colorClass: 'text-primary-400', bgClass: 'bg-primary-500/10', borderClass: 'border-primary-500/20', gradientClass: 'from-primary-500/10' },
+    { key: 'pan-id', icon: FingerPrintIcon, colorClass: 'text-secondary-400', bgClass: 'bg-secondary-500/10', borderClass: 'border-secondary-500/20', gradientClass: 'from-secondary-500/10'},
 ]
 
 const activeData = () => modules[activeModule.value]
@@ -136,7 +136,7 @@ usePageMeta({
                                         </div>
                                         <div>
                                             <div class="text-xs font-bold tracking-widest uppercase mb-1" :class="activeData().colorClass">
-                                                Module {{ activeModule + 1 }} of 5
+                                                Module {{ activeModule + 1 }} of {{ modules.length }}
                                             </div>
                                             <h2 class="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white">
                                                 {{ $t(`solutions.modules.${moduleKey()}.title`) }}
@@ -204,8 +204,6 @@ usePageMeta({
             </div>
         </section>
 
-        <!-- PAN-ID Teaser -->
-        <PANIDTeaser />
 
         <!-- CTA -->
         <div class="bg-neutral-50 dark:bg-neutral-950 py-16">

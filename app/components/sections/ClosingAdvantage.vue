@@ -9,6 +9,7 @@ import {
     Shield01Icon,
     UserStar01Icon,
     Share08Icon,
+    FingerPrintIcon,
     ArrowRight01Icon,
 } from '@hugeicons/core-free-icons';
 
@@ -18,13 +19,21 @@ const localePath = useLocalePath();
 
 const sectionRef = ref(null);
 
-const layerIcons = [Activity01Icon, SmartPhone01Icon, Shield01Icon, UserStar01Icon, Share08Icon];
+const layerIcons = [
+    Activity01Icon,
+    SmartPhone01Icon,
+    Shield01Icon,
+    UserStar01Icon,
+    Share08Icon,
+    FingerPrintIcon
+];
 const layerColors = [
     'text-primary-400 bg-primary-500/10 border-primary-500/20',
     'text-secondary-400 bg-secondary-500/10 border-secondary-500/20',
     'text-accent-cyan-400 bg-accent-cyan-500/10 border-accent-cyan-500/20',
     'text-accent-orange-400 bg-accent-orange-500/10 border-accent-orange-500/20',
     'text-primary-400 bg-primary-500/10 border-primary-500/20',
+    'text-purple-400 bg-purple-500/10 border-purple-500/20',
 ];
 
 onMounted(() => {

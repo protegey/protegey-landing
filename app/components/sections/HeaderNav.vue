@@ -145,6 +145,7 @@ const solutionItems = [
   { key: 'aml-compliance', icon: Shield01Icon, color: 'text-accent-cyan-400' },
   { key: 'risk-profiling', icon: UserStar01Icon, color: 'text-accent-orange-400' },
   { key: 'fraud-intelligence', icon: Share08Icon, color: 'text-primary-400' },
+  { key: 'pan-id', icon: FingerPrintIcon, color: 'text-secondary-400' },
 ]
 
 const resourceItems = [
@@ -232,18 +233,6 @@ const getIndustries = () => {
                     <div class="text-[11px] text-neutral-500 dark:text-neutral-400 line-clamp-2 leading-tight">{{ $t(`solutions.modules.${mod.key}.subtext`) }}</div>
                   </div>
                 </NuxtLink>
-                <NuxtLink :to="localePath('/panid')" class="flex items-start gap-3 p-3 rounded-2xl bg-primary-500/5 hover:bg-primary-500/10 transition-colors group">
-                  <div class="p-2 rounded-xl bg-primary-500/10 text-primary-500">
-                    <HugeiconsIcon :icon="FingerPrintIcon" :size="20" />
-                  </div>
-                  <div>
-                    <div class="text-sm font-bold text-primary-500 flex items-center gap-2">
-                        {{ $t('solutions.panid_teaser.title') }}
-                        <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-primary-500/20 text-primary-500 leading-none uppercase">{{ $t('solutions.coming_soon') }}</span>
-                    </div>
-                    <div class="text-[11px] text-neutral-500 dark:text-neutral-400 mt-1 line-clamp-2 leading-tight">{{ $t('nav.solutions_panid_description') }}</div>
-                  </div>
-                </NuxtLink>
               </div>
             </transition>
           </div>
@@ -270,11 +259,6 @@ const getIndustries = () => {
                     </div>
                     <div class="text-sm font-medium text-neutral-800 dark:text-neutral-200 group-hover:text-primary-400">{{ ind.title }}</div>
                   </NuxtLink>
-                </div>
-                <div class="pt-4 mt-2 border-t border-neutral-100 dark:border-neutral-800">
-                    <NuxtLink :to="localePath('/use-cases')" class="text-sm text-primary-500 font-bold hover:text-primary-400 flex items-center gap-1 w-fit mx-auto">
-                        {{ $t('nav.view_all_use_cases') }} &rarr;
-                    </NuxtLink>
                 </div>
               </div>
             </transition>

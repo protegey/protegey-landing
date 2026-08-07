@@ -31,20 +31,21 @@ const iconMap = {
     api: Settings01Icon,
     console: DashboardSquare01Icon,
     compliance: Shield01Icon,
-    panid: FingerPrintIcon,
+    'pan-id': FingerPrintIcon,
     'transaction-monitoring': Activity01Icon,
     'account-protection': SmartPhone01Icon,
     'aml-compliance': ShieldIcon,
     'risk-profiling': UserStar01Icon,
     'fraud-intelligence': Share08Icon
 }
-
+const productIcon = computed(() => iconMap[productId] || FingerPrintIcon)
 const allSolutions = [
     { key: 'transaction-monitoring', icon: Activity01Icon, color: 'text-primary-400' },
     { key: 'account-protection', icon: SmartPhone01Icon, color: 'text-secondary-400' },
     { key: 'aml-compliance', icon: ShieldIcon, color: 'text-accent-cyan-400' },
     { key: 'risk-profiling', icon: UserStar01Icon, color: 'text-accent-orange-400' },
     { key: 'fraud-intelligence', icon: Share08Icon, color: 'text-primary-400' },
+    {key: 'pan-id', icon: FingerPrintIcon, color: 'text-secondary-400'},
 ]
 
 const relatedSolutions = computed(() =>
@@ -99,8 +100,87 @@ usePageMeta({
                     </NuxtLink>
     
                     <!-- Hero Section -->
-                    <div
-                        class="flex flex-col lg:flex-row gap-12 lg:items-start mb-32 rtl:lg:flex-row-reverse rtl:lg:items-start">
+                    <div v-if="productId === 'pan-id'" class="flex flex-col lg:flex-row gap-12 lg:items-center mb-32">
+
+                        <!-- Text Content -->
+                        <div class="flex-1 text-center lg:text-left rtl:lg:text-right">
+
+                            <p class="text-accent-cyan-400 font-bold tracking-[0.2em] uppercase text-sm mb-6">
+                                {{ $t('solutions.modules.pan-id.tagline') }}
+                            </p>
+
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-8 tracking-tight capitalize leading-none">
+                                {{ $t('solutions.modules.pan-id.title') }}
+                            </h1>
+
+                            <p class="text-lg sm:text-xl md:text-2xl text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-4xl font-light">
+                                {{ $t('solutions.modules.pan-id.description') }}
+                            </p>
+
+                        </div>
+
+
+                        <!-- Pan-ID Visual -->
+                        <div class="shrink-0 flex justify-center lg:justify-end lg:w-1/3">
+                            <div class="panid-hero-visual shrink-0 flex justify-center lg:justify-end w-full">
+
+                                <div class="relative w-64 h-64 flex items-center justify-center animate-panid-float">
+
+                                    <!-- Outer rotating ring -->
+                                    <div class="absolute inset-0 rounded-full border border-dashed border-accent-cyan-500/30 animate-ring-spin" />
+
+                                    <!-- Glow ring -->
+                                    <div class="absolute inset-5 rounded-full border border-accent-cyan-500/20 shadow-[0_0_40px_rgba(34,211,238,0.15)]" />
+
+                                    <!-- Inner counter ring -->
+                                    <div class="absolute inset-12 rounded-full border border-dashed border-accent-cyan-500/20 animate-ring-counter" />
+
+                                    <!-- Fingerprint -->
+                                    <HugeiconsIcon
+                                        :icon="FingerPrintIcon"
+                                        :size="90"
+                                        class="text-accent-cyan-400 fp-glow animate-pulse"
+                                    />
+
+                                    <!-- Orbit dot -->
+                                    <div class="absolute inset-0 animate-ring-spin" style="animation-duration:5s">
+                                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-accent-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
+                                    </div>
+                                    <!-- Floating verification tags -->
+                                    <div class="panid-hero-tag absolute -top-2 -right-8 px-3 py-1.5 rounded-full 
+                                                bg-white dark:bg-neutral-800 
+                                                border border-accent-cyan-500/30 
+                                                text-xs font-bold text-accent-cyan-400 
+                                                whitespace-nowrap shadow-xl">
+                                        {{ $t('solutions.panid_teaser.tag_ekyc') }}
+                                    </div>
+
+                                    <div class="panid-hero-tag absolute -bottom-2 -left-8 px-3 py-1.5 rounded-full 
+                                                bg-white dark:bg-neutral-800 
+                                                border border-primary-500/30 
+                                                text-xs font-bold text-primary-400 
+                                                whitespace-nowrap shadow-xl">
+                                        {{ $t('solutions.panid_teaser.tag_kyb') }}
+                                    </div>
+
+                                    <div class="panid-hero-tag absolute top-1/2 -translate-y-1/2 -right-12 px-3 py-1.5 rounded-full 
+                                                bg-white dark:bg-neutral-800 
+                                                border border-secondary-500/30 
+                                                text-xs font-bold text-secondary-400 
+                                                whitespace-nowrap shadow-xl">
+                                        {{ $t('solutions.panid_teaser.tag_pan_african') }}
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div v-else class="flex flex-col lg:flex-row gap-12 lg:items-start mb-32 rtl:lg:flex-row-reverse rtl:lg:items-start">
+                        
                         <div class="shrink-0 flex flex-col items-center lg:items-start rtl:lg:items-end">
                             <div
                                 class="inline-flex p-5 rounded-2xl bg-white/90 dark:bg-neutral-900/50 backdrop-blur-sm border border-neutral-200 dark:border-neutral-800 text-primary-400 shadow-2xl shadow-primary-500/10 mb-8">
@@ -110,12 +190,12 @@ usePageMeta({
                                 class="px-4 py-1.5 rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 text-xs font-bold uppercase tracking-widest">
                                 {{ $t(`solutions.modules.${productId}.status`) }}
                             </div>
+                                
                         </div>
-    
                         <div class="flex-1 text-center lg:text-left rtl:lg:text-right">
                             <p class="text-primary-500 font-bold tracking-[0.2em] uppercase text-sm mb-6">{{
                                 $t(`solutions.modules.${productId}.tagline`) }}</p>
-                            <h1
+                             <h1
                                 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-8 tracking-tight capitalize leading-none">
                                 {{ $t(`solutions.modules.${productId}.title`) }}
                             </h1>
@@ -124,8 +204,8 @@ usePageMeta({
                                 {{ $t(`solutions.modules.${productId}.description`) }}
                             </p>
                         </div>
+                        
                     </div>
-    
                     <!-- Two Pillar Sections -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-32">
                         <!-- Why we built it -->
@@ -153,42 +233,7 @@ usePageMeta({
                             </p>
                         </div>
                     </div>
-    
-                    <!-- Features Grid -->
-                    <!-- Handle new array-based features -->
-                    <div v-if="tm(`solutions.modules.${productId}.features`) && Array.isArray(tm(`solutions.modules.${productId}.features`))" 
-                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
-                        <div v-for="(feature, fi) in tm(`solutions.modules.${productId}.features`)" :key="fi"
-                            class="p-6 md:p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all group">
-                            <p class="text-base md:text-lg text-neutral-900 dark:text-white leading-relaxed rtl:text-right font-bold">
-                                {{ rt(feature) }}
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Handle legacy object-based features -->
-                    <div v-else-if="$te(`solutions.modules.${productId}.features`)" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
-                        <div
-                            class="p-8 md:p-12 rounded-[2.5rem] bg-white/80 dark:bg-neutral-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all group">
-                            <h3
-                                class="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white mb-4 group-hover:text-primary-400 transition-colors rtl:text-right">
-                                {{ $t(`solutions.modules.${productId}.features.f1_title`) }}
-                            </h3>
-                            <p class="text-base md:text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed rtl:text-right">
-                                {{ $t(`solutions.modules.${productId}.features.f1_desc`) }}
-                            </p>
-                        </div>
-                        <div
-                            class="p-8 md:p-12 rounded-[2.5rem] bg-white/80 dark:bg-neutral-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all group">
-                            <h3
-                                class="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white mb-4 group-hover:text-primary-400 transition-colors rtl:text-right">
-                                {{ $t(`solutions.modules.${productId}.features.f2_title`) }}
-                            </h3>
-                            <p class="text-base md:text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed rtl:text-right">
-                                {{ $t(`solutions.modules.${productId}.features.f2_desc`) }}
-                            </p>
-                        </div>
-                    </div>
-    
+   
                     <!-- Detailed Lists: Capabilities & Target Users -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-32">
                         <!-- Capabilities -->
@@ -308,3 +353,56 @@ usePageMeta({
         </div>
     </div>
 </template>
+<style scoped>
+
+@keyframes ring-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-ring-spin {
+    animation: ring-spin 5s linear infinite;
+}
+
+
+@keyframes ring-counter {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.animate-ring-counter {
+    animation: ring-counter 8s linear infinite;
+}
+
+
+@keyframes panid-float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.animate-panid-float {
+    animation: panid-float 4s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(34,211,238,0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 25px rgba(34,211,238,0.8));
+    }
+}
+
+</style>
+

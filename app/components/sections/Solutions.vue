@@ -73,6 +73,14 @@ const modules = [
         glowClass: 'shadow-primary-500/10',
         gradientClass: 'from-primary-500/5',
     },
+    {
+        key: 'pan-id',
+        icon: FingerPrintIcon,
+        colorClass: 'text-accent-cyan-400',
+        bgClass: 'bg-accent-cyan-500/10',
+        borderClass: 'border-accent-cyan-500/30',
+        gradientClass: 'from-accent-cyan-500'
+    },
 ];
 
 onMounted(async () => {

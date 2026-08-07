@@ -35,43 +35,67 @@
         </div>
 
         <div class="rtl:text-right">
-          <h3 class="font-semibold mb-4 text-neutral-900 dark:text-white">{{ $t('nav.solutions') }}</h3>
+          <h3 class="font-semibold mb-4 text-neutral-900 dark:text-white">
+            {{ $t('nav.solutions') }}
+          </h3>
+
           <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+
             <li>
-              <NuxtLink :to="localePath('/solutions/transaction-monitoring')" class="hover:text-primary-400 transition-colors">
+              <NuxtLink
+                :to="localePath('/solutions/transaction-monitoring')"
+                class="hover:text-primary-400 transition-colors"
+              >
                 {{ $t('solutions.modules.transaction-monitoring.title') }}
               </NuxtLink>
             </li>
+
             <li>
-              <NuxtLink :to="localePath('/solutions/account-protection')" class="hover:text-primary-400 transition-colors">
+              <NuxtLink
+                :to="localePath('/solutions/account-protection')"
+                class="hover:text-primary-400 transition-colors"
+              >
                 {{ $t('solutions.modules.account-protection.title') }}
               </NuxtLink>
             </li>
+
             <li>
-              <NuxtLink :to="localePath('/solutions/aml-compliance')" class="hover:text-primary-400 transition-colors">
+              <NuxtLink
+                :to="localePath('/solutions/aml-compliance')"
+                class="hover:text-primary-400 transition-colors"
+              >
                 {{ $t('solutions.modules.aml-compliance.title') }}
               </NuxtLink>
             </li>
+
             <li>
-              <NuxtLink :to="localePath('/solutions/risk-profiling')" class="hover:text-primary-400 transition-colors">
+              <NuxtLink
+                :to="localePath('/solutions/risk-profiling')"
+                class="hover:text-primary-400 transition-colors"
+              >
                 {{ $t('solutions.modules.risk-profiling.title') }}
               </NuxtLink>
             </li>
+
             <li>
-              <NuxtLink :to="localePath('/solutions/fraud-intelligence')" class="hover:text-primary-400 transition-colors">
+              <NuxtLink
+                :to="localePath('/solutions/fraud-intelligence')"
+                class="hover:text-primary-400 transition-colors"
+              >
                 {{ $t('solutions.modules.fraud-intelligence.title') }}
               </NuxtLink>
             </li>
+
+            <!-- Pan-ID -->
             <li>
-              <NuxtLink :to="localePath('/panid')"
-                class="hover:text-primary-400 transition-colors flex items-center gap-2 rtl:justify-end">
-                {{ $t('solutions.panid_teaser.title') }}
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary-500/10 text-primary-400 border border-primary-500/20 leading-none">
-                  {{ $t('solutions.coming_soon') }}
-                </span>
+              <NuxtLink
+                :to="localePath('/solutions/pan-id')"
+                class="hover:text-primary-400 transition-colors"
+              >
+                {{ $t('solutions.modules.pan-id.title') }}
               </NuxtLink>
             </li>
+
           </ul>
         </div>
 

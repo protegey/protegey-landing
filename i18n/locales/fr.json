@@ -14,18 +14,18 @@
         "badge": "RÉSEAU DE RENSEIGNEMENT SUR LA FRAUDE",
         "title_part_1": "Freinez la Fraude.",
         "title_highlight": "",
-        "title_part_2": "Avant qu'elle ne se Propage!",
+        "title_part_2": "Avant la survenance de pertes!",
         "title_line_1": {
             "prefix": "Freinez la ",
             "highlight": "Fraude",
             "suffix": "."
         },
         "title_line_2": {
-            "prefix": "Avant qu'elle ne se ",
-            "highlight": "Propage",
+            "prefix": "Avant ",
+            "highlight": "La survenance de pertes",
             "suffix": "!"
         },
-        "subtitle": "Rejoignez un réseau croissant d'institutions financières à travers l'Afrique Francophone utilisant PROTEGEY pour <span class=\"text-primary-400 font-mono font-bold\">{action}<span class=\"animate-pulse\">_</span></span> la fraude en temps réel.",
+        "subtitle": "Rejoignez un réseau croissant d'institutions financières à travers l'Afrique  utilisant PROTEGEY pour <span class=\"text-primary-400 font-mono font-bold\">{action}<span class=\"animate-pulse\">_</span></span> la fraude en temps réel.",
         "typewriter": {
             "detect": "détecter",
             "analyze": "analyser",
@@ -101,12 +101,12 @@
     },
     "solutions": {
         "badge": "NOS SOLUTIONS",
-        "title": "Cinq Couches de Protection Intégrées",
+        "title": "Six Couches de Protection Intégrées",
         "subtitle": "De la détection des transactions en temps réel à l'intelligence réseau partagée — chaque couche travaille ensemble pour que les menaces ciblant vos pairs ne vous atteignent pas.",
         "geographic_coverage": {
             "title": "Couverture Géographique",
             "heading_part1": "Sécuriser l' ",
-            "heading_highlight": "L'Économie Numérique de l'Afrique Francophone",
+            "heading_highlight": "L'Économie Numérique de l'Afrique ",
             "description": "Nos produits sont spécifiquement adaptés aux paysages réglementaires et de fraude uniques à travers l'Afrique, fournissant une intelligence localisée que les outils mondiaux manquent souvent.",
             "regions": [
                 "Zone GIM-UEMOA (Union Économique et Monétaire Ouest Africaine)",
@@ -331,7 +331,59 @@
                     "Institutional": "Sous-réseaux privés pour les groupes bancaires."
                 },
                 "description": "Bénéficiez de l’intelligence collective. Lorsque la fraude frappe une institution, tout le réseau en est informé."
-            }
+            },
+            "pan-id": {
+                "title": "Pan-ID™",
+                "tagline": "Vérification d'identité biométrique à l'épreuve des deepfakes",
+                "description": "Vérification d'identité biométrique à l'épreuve des deepfakes, avec analyse de l'intégrité de l'appareil, détection des injections par IA et intelligence avancée de détection de présence.",
+
+                "subtext": "Instaurer la confiance dans l'identité et l'environnement avant l'entrée en relation.",
+
+                "why_built": "La vérification d'identité doit commencer par l'établissement de la confiance, tant envers la personne qu'envers son environnement. Pan-ID vérifie les identités tout en détectant les appareils altérés, les attaques générées par IA et les tentatives de falsification sophistiquées avant d'accorder cette confiance.",
+
+                "what_you_can_do":"Effectuez le e-KYC biométrique, la détection de présence 3D, la détection des deepfakes, la vérification KYB & KYA et l'authentification sécurisée des identités.",
+
+                "features": [
+                    "e-KYC biométrique combinant reconnaissance faciale et vérification des pièces d'identité",
+                    "Détection de présence 3D avancée contre les tentatives de falsification",
+                    "Détection des deepfakes et des attaques d'identité générées par IA",
+                    "Analyse de l'intégrité des appareils pour identifier les environnements compromis",
+                    "Flux de travail d'authentification et de vérification d'identité"
+                ],
+
+                "capabilities": [
+                    "Détection de présence biométrique 3D",
+                    "Détection des deepfakes et des attaques par présentation",
+                    "Détection des injections par IA",
+                    "Analyse de l'intégrité de l'appareil",
+                    "Correspondance visage et pièce d'identité",
+                    "Vérification des documents d'identité",
+                    "Vérification KYC, KYB et KYA",
+                    "Indicateurs de risque de fraude"
+                ],
+                "target_users": [
+                    "Banques",
+                    "Fintechs",
+                    "Opérateurs télécoms",
+                    "Compagnies d'assurance",
+                    "Institutions de microfinance",
+                    "Régulateurs",
+                    "Plateformes numériques"
+                ],
+                "results": [
+                    "Détecter la fraude d'identité complexe avant l'intégration",
+                    "Bloquer les attaques de vérification générées par IA",
+                    "Empêcher la création de comptes depuis des appareils compromis",
+                    "Accélérer un onboarding numérique conforme avec un niveau de garantie supérieur",
+                    "Filtrer les clients selon les listes de surveillance mondiales et le réseau d'intelligence contre la fraude continentale PROTEGEY"
+                ],
+                "how_it_works": "Pan-ID combine l'intelligence biométrique, la détection de présence, l'analyse de l'intégrité des appareils et les indicateurs de fraude pour établir des identités de confiance avant d'accorder l'accès.",
+                "deployment_options": {
+                    "cloud": "Déploiement cloud sécurisé pour une vérification d'identité évolutive.",
+                    "enterprise": "Options de déploiement dédiées pour les organisations exigeant un contrôle renforcé et la souveraineté des données."
+                }
+                }
+
         },
         "panid_teaser": {
             "eyebrow": "BIENTÔT SUR PROTEGEY",
@@ -381,9 +433,9 @@
         "form": {
             "title": "Civilité",
             "title_placeholder": "Sélectionnez",
-            "name": "Nom complet",
+            "name": "Nom complet*",
             "name_placeholder": "Entrez votre nom complet",
-            "email": "Adresse email",
+            "email": "Adresse email*",
             "email_placeholder": "Saisissez votre adresse courriel professionnelle",
             "phone": "Numéro de téléphone (Optionnel)",
             "phone_placeholder": "Entrez votre numéro de téléphone",
@@ -395,8 +447,8 @@
             "role_placeholder": "Sélectionnez votre poste",
             "business_model": "Modèle d'affaires",
             "business_model_placeholder": "Sélectionnez le modèle",
-            "stage": "Étape / Nombre d'utilisateurs",
-            "stage_placeholder": "Sélectionnez la tranche",
+            "stage": "Volume transactionnelle mensuels moyenne",
+            "stage_placeholder": "Sélectionnez votre volume transactionnelle",
             "sector": "Secteur",
             "sector_placeholder": "Sélectionnez le secteur",
             "interest": "Type d'intérêt",
@@ -438,9 +490,10 @@
         },
         "stages": {
             "range_1": "1-1000",
-            "range_2": "1001 à 5000",
-            "range_3": "5001 à 10 000",
-            "range_4": "+10 000"
+            "range_2": "1001 to 10,000",
+            "range_3": "10,001 to 50,000",
+            "range_4": "50,001 to 250,000",
+            "range_5": "+ 250,000"
         },
         "sectors": {
             "fintech": "Fintech",
@@ -448,7 +501,7 @@
             "mfi": "IMF",
             "digital_lender": "Prêteur digital",
             "ecommerce": "E-commerce",
-            "govt": "Agence gouvernementale",
+            "govt": "Regulateur",
             "other": "Autre"
         },
         "pain_points": {
@@ -620,10 +673,10 @@
         "regulatory_alignment": {
             "badge": "CONFORMITÉ RÉGLEMENTAIRE",
             "title": "Conçu pour le Paysage Réglementaire Africain",
-            "subtitle": "Protegey est conçu de fond en comble pour aider les institutions financières à naviguer dans les exigences réglementaires complexes et multi-juridictionnelles de l'Afrique francophone et du Nord.",
+            "subtitle": "Protegey est conçu de fond en comble pour aider les institutions financières à naviguer dans les exigences réglementaires complexes et multi-juridictionnelles de l'Afrique et du Nord.",
             "challenge_badge": "LE DÉFI",
             "challenge_title": "Un Continent de Mandats Enchevêtrés",
-            "challenge_desc": "Les régulateurs financiers d'Afrique francophone opèrent dans des zones monétaires distinctes — chacune avec ses propres cadres LBC/FT, ses délais de déclaration et ses règles de souveraineté des données. Les institutions opérant à l'échelle transfrontalière font face à la tâche quasi impossible de réconcilier manuellement de multiples obligations de conformité, avec des outils rarement conçus pour le contexte africain.",
+            "challenge_desc": "Les régulateurs financiers d'Afrique opèrent dans des zones monétaires distinctes — chacune avec ses propres cadres LBC/FT, ses délais de déclaration et ses règles de souveraineté des données. Les institutions opérant à l'échelle transfrontalière font face à la tâche quasi impossible de réconcilier manuellement de multiples obligations de conformité, avec des outils rarement conçus pour le contexte africain.",
             "frameworks_badge": "COUVERTURE RÉGLEMENTAIRE",
             "frameworks_title": "Organismes de Régulation Couverts",
             "frameworks_subtitle": "La couche d'intelligence de Protegey est construite autour des exigences de déclaration et de surveillance des principales autorités réglementaires de la région.",
@@ -744,7 +797,7 @@
         },
         "step6": {
             "title": "Attribution de Taxonomie",
-            "desc": "Le signal est classifié selon la taxonomie de fraude spécifique à l'Afrique Francophone de Protegey : prise de contrôle de compte, fraude mobile money, échange de SIM, ingénierie sociale, hameçonnage, faux investissement, et plus encore."
+            "desc": "Le signal est classifié selon la taxonomie de fraude spécifique à l'Afrique de Protegey : prise de contrôle de compte, fraude mobile money, échange de SIM, ingénierie sociale, hameçonnage, faux investissement, et plus encore."
         },
         "step7": {
             "title": "Mise à jour du Graphe",
@@ -766,7 +819,7 @@
     "who_its_for": {
         "badge": "PARTICIPANTS CIBLES",
         "title": "Conçu pour Tous les Types d'Institutions",
-        "subtitle": "Protegey est conçu pour les institutions financières qui forment le réseau de défense contre la fraude en Afrique Francophone — chacune avec des capacités dédiées.",
+        "subtitle": "Protegey est conçu pour les institutions financières qui forment le réseau de défense contre la fraude en Afrique chacune avec des capacités dédiées.",
         "exclusion": "Protegey n'est pas conçu pour les consommateurs individuels. L'accès est accordé uniquement aux institutions financières et aux régulateurs vérifiés.",
         "seo": {
             "title": "À Qui Cela S'adresse | Réseau Partenaire Protegey",
@@ -906,24 +959,26 @@
         "view_roles_btn": "Voir les Postes Ouverts",
         "roles_eyebrow": "Postes Ouverts",
         "roles_title": "Opportunités Actives",
-        "roles_subtitle": "Nous nous développons en Afrique francophone et du Nord. Rejoignez-nous en tant que Partenaire Pays.",
+        "roles_subtitle": "Nous nous développons en Afrique. Rejoignez-nous en tant que Partenaire Pays.",
         "cp_badge": "EN RECRUTEMENT",
         "cp_title": "Partenaire Pays",
-        "cp_region": "Afrique Francophone & du Nord",
+        "cp_region": "Afrique ",
         "cp_type": "Partenariat à la Performance",
         "cp_about": "Nous nous associons à des opérateurs intégrés dans leur écosystème financier local — des individus capables d’ouvrir des portes, de bâtir la confiance et d’assurer l’exécution sur le terrain. Ce n’est pas un rôle traditionnel.",
         "cp_markets_label": "Marchés Prioritaires",
         "cp_markets": [
-            "Bénin",
-            "Niger",
-            "Guinée équatoriale",
-            "République Centrafricaine",
-            "Rwanda",
-            "Sénégal",
-            "Tunisie",
-            "Algérie",
-            "Maroc",
-            "Guinée-Bissau"
+            "Benin",
+            "Sudan",
+            "Kenya",
+            "Uganda",
+            "South Africa",
+            "Ghana",
+            "Tanzania",
+            "Zimbabwe",
+            " Zambia",
+            "Malawi",
+            "Namibia",
+            "Rwanda","Gambia","Liberia","Angola", "Egypt", "Ethiopia", "Seychelles", "Comoros", "Mauritius", "Botswana", "Sudan"
         ],
         "cp_mission_title": "Votre Mission",
         "cp_mission": [
@@ -965,7 +1020,7 @@
         "cp_growth": "Les partenaires les plus performants évoluent vers des rôles de Country Manager dans les 12 mois. Cela inclut la direction de l’entité locale de Protegey, la responsabilité opérationnelle du développement marché et une participation au capital (jusqu’à 10 % de notre filiale dans votre pays).",
         "cp_apply_title": "Comment Postuler",
         "cp_apply_intro": "Envoyez les informations suivantes à",
-        "cp_apply_email": "lamya{'@'}protegey.com",
+        "cp_apply_email": "Faten{'@'}protegey.com",
         "cp_apply_items": [
             "Votre profil LinkedIn et votre CV",
             "Le pays pour lequel vous postulez (note : ce poste est en présentiel — vous devez résider dans le pays concerné)",
@@ -998,9 +1053,9 @@
     },
     "seo": {
         "global": {
-            "title": "Protegey — Moteur d'Intelligence Fraude Unifié pour l'Afrique Francophone et du Nord",
+            "title": "Protegey — Moteur d'Intelligence Fraude Unifié pour l'Afrique",
             "description": "Protegey est un réseau d'intelligence sur la fraude et de partage d'alertes en temps réel. Les institutions financières, fintechs et régulateurs collaborent pour bloquer la fraude mobile money, l'usurpation d'identité et les menaces avec rapidité, conformité AML et vision partagée.",
-            "keywords": "intelligence fraude Afrique, réseau anti-fraude, surveillance transactions, conformité AML, vérification identité, sécurité Fintech, prévention fraude bancaire, sécurité mobile money, GIM-UEMOA, GIMAC, détection fraude Afrique du Nord, Afrique Francophone prévention fraude, Sénégal, Côte d'Ivoire, Cameroun, Gabon, Maroc, Algérie, Tunisie, Égypte, République Démocratique du Congo, Bénin, Togo, Mali, Burkina Faso, République Centrafricaine, prévention fraude UEMOA, sécurité entreprise CEMAC, réseau d'intelligence partagée, sandbox pour fintechs, taxonomie fraude africaine, détection fraude inter-institutions, surveillance transactions bancaires Afrique, API détection échange SIM",
+            "keywords": "intelligence fraude Afrique, réseau anti-fraude, surveillance transactions, conformité AML, vérification identité, sécurité Fintech, prévention fraude bancaire, sécurité mobile money, GIM-UEMOA, GIMAC, détection fraude Afrique du Nord, Afrique  prévention fraude, Sénégal, Côte d'Ivoire, Cameroun, Gabon, Maroc, Algérie, Tunisie, Égypte, République Démocratique du Congo, Bénin, Togo, Mali, Burkina Faso, République Centrafricaine, prévention fraude UEMOA, sécurité entreprise CEMAC, réseau d'intelligence partagée, sandbox pour fintechs, taxonomie fraude africaine, détection fraude inter-institutions, surveillance transactions bancaires Afrique, API détection échange SIM",
             "og_tagline": "Intelligence Fraude · Afrique"
         },
         "index": {
@@ -1052,8 +1107,8 @@
             "description": "PAN-ID apporte la verification d'identite eKYC et KYB integree a la plateforme PROTEGEY. Concu pour le paysage documentaire africain."
         },
         "regulatory_alignment": {
-            "title": "Conformité Réglementaire | Protegey pour l'Afrique Francophone",
-            "description": "Comment Protegey aide les banques, fintechs et opérateurs mobile money à rester alignés avec la BCEAO, la COBAC, le GAFI et d'autres cadres réglementaires régionaux en Afrique francophone et du Nord."
+            "title": "Conformité Réglementaire | Protegey pour l'Afrique ",
+            "description": "Comment Protegey aide les banques, fintechs et opérateurs mobile money à rester alignés avec la BCEAO, la COBAC, le GAFI et d'autres cadres réglementaires régionaux en Afrique."
         }
     },
     "expert": {
@@ -1103,53 +1158,7 @@
             "rate_limit": "Trop de soumissions. Veuillez attendre quelques minutes."
         }
     },
-    "panid": {
-        "eyebrow": "Bientot Disponible",
-        "title": "PAN-ID",
-        "subtitle": "Verification d'identite panafricaine, integree a votre flux de renseignement sur la fraude.",
-        "feature_ekyc": {
-            "title": "eKYC",
-            "desc": "Verification d'identite en temps reel pour l'Afrique — carte nationale, passeport, permis de conduire."
-        },
-        "feature_kyb": {
-            "title": "KYB",
-            "desc": "Verification d'entreprise pour les partenaires commerciaux et les marchands."
-        },
-        "feature_documents": {
-            "title": "Verification de Documents",
-            "desc": "Authentification des documents d'identite avec IA contextuelle pour l'Afrique."
-        },
-        "why": {
-            "title": "Pourquoi PAN-ID",
-            "desc": "L'Afrique a plus de 150 systemes d'identification nationaux et regionaux. PAN-ID unifie ces identites pour vous permettre de verifier n'importe qui, n'importe quand.",
-            "point1": "Concu pour les documents africains — NRICA, CNI, Passeport, Permis",
-            "point2": "Integre nativement a votre infrastructure AML et Risk Scoring",
-            "point3": "Pas de fournisseur separe — tout dans PROTEGEY"
-        },
-        "early_access": {
-            "badge": "Acces Anticipe",
-            "title": "Rejoignez la liste d'acces anticipé",
-            "subtitle": "Soyez parmi les premiers a acceder a PAN-ID"
-        },
-        "form": {
-            "name": "Nom Complet",
-            "name_placeholder": "Entrez votre nom",
-            "email": "Email",
-            "email_placeholder": "votre{'@'}email.com",
-            "company": "Entreprise",
-            "company_placeholder": "Nom de votre entreprise",
-            "phone": "Telephone",
-            "phone_placeholder": "+212 6XX XXX XXX",
-            "submit": "Rejoindre la Liste",
-            "submitting": "Envoi..."
-        },
-        "success_message": "Merci ! Vous etes sur la liste d'acces anticipé.",
-        "errors": {
-            "name_email": "Veuillez fournir votre nom et email",
-            "submit_error": "Une erreur est survenue. Veuillez reessayer.",
-            "rate_limit": "Trop de soumissions. Veuillez patienter."
-        }
-    },
+ 
     "errors": {
         "title_404": "Signal Perdu",
         "desc_404": "La page que vous recherchez a été déplacée ou cryptée au-delà de toute reconnaissance. Nos scanners ne la trouvent pas.",

@@ -6,7 +6,6 @@
       <Hero />
       <WhyProtegey :isDark="isDark" />
       <Solutions />
-      <PANIDTeaser />
       <ClosingAdvantage />
       <!-- <SignalPipeline /> -->
       <!-- <TrustedBy /> -->
@@ -23,7 +22,6 @@ import SplashOverlay from '~/components/sections/SplashOverlay.vue'
 import Hero from '~/components/sections/Hero.vue'
 import WhyProtegey from '~/components/sections/WhyProtegey.vue'
 import Solutions from '~/components/sections/Solutions.vue'
-import PANIDTeaser from '~/components/sections/PANIDTeaser.vue'
 import ClosingAdvantage from '~/components/sections/ClosingAdvantage.vue'
 import SignalPipeline from '~/components/sections/SignalPipeline.vue'
 import TrustedBy from '~/components/sections/TrustedBy.vue'
