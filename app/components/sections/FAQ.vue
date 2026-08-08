@@ -22,19 +22,6 @@ if (import.meta.server) {
         { q: t('faq.q4'), a: t('faq.a4') },
         { q: t('faq.q5'), a: t('faq.a5') }
     ]
-    useSchemaOrg([
-        {
-            '@type': 'FAQPage',
-            mainEntity: faqs.map(faq => ({
-                '@type': 'Question',
-                name: faq.q,
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: faq.a
-                }
-            }))
-        }
-    ])
 }
 
 const openIndex = ref<number | null>(null)

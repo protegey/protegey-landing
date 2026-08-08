@@ -121,7 +121,6 @@
             "title_highlight": "Protection",
             "subtitle": "From real-time transaction detection to shared network intelligence — every layer works together so threats targeting your peers don't reach you."
         },
-        "coming_soon": "Coming Soon",
         "back_to_all": "Back to All Solutions",
         "related_solutions": "Explore Other Solutions",
         "why_built_title": "Why we built it",
@@ -1157,53 +1156,6 @@
             "topic": "Please select a topic",
             "submit_error": "An error occurred. Please try again.",
             "rate_limit": "Too many submissions. Please wait a few minutes."
-        }
-    },
-    "panid": {
-        "eyebrow": "Coming Soon",
-        "title": "PAN-ID",
-        "subtitle": "Pan-African identity verification, integrated into your fraud intelligence workflow.",
-        "feature_ekyc": {
-            "title": "eKYC",
-            "desc": "Real-time identity verification for Africa — national ID, passport, driver's license."
-        },
-        "feature_kyb": {
-            "title": "KYB",
-            "desc": "Business verification for commercial partners and merchants."
-        },
-        "feature_documents": {
-            "title": "Document Verification",
-            "desc": "AI-powered identity document authentication built for Africa's document landscape."
-        },
-        "why": {
-            "title": "Why PAN-ID",
-            "desc": "Africa has 150+ national and regional identification systems. PAN-ID unifies these identities so you can verify anyone, anytime.",
-            "point1": "Built for African documents — NRICA, National ID, Passport, Driver's License",
-            "point2": "Natively integrated with your AML and Risk Scoring infrastructure",
-            "point3": "No separate vendor — everything in PROTEGEY"
-        },
-        "early_access": {
-            "badge": "Early Access",
-            "title": "Join the Early Access List",
-            "subtitle": "Be among the first to access PAN-ID"
-        },
-        "form": {
-            "name": "Full Name",
-            "name_placeholder": "Enter your name",
-            "email": "Email",
-            "email_placeholder": "your{'@'}email.com",
-            "company": "Company",
-            "company_placeholder": "Your company name",
-            "phone": "Phone",
-            "phone_placeholder": "+1 234 567 890",
-            "submit": "Join the List",
-            "submitting": "Submitting..."
-        },
-        "success_message": "Thank you! You're on the early access list.",
-        "errors": {
-            "name_email": "Please provide your name and email",
-            "submit_error": "An error occurred. Please try again.",
-            "rate_limit": "Too many submissions. Please wait."
         }
     },
     "errors": {

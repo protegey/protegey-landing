@@ -14,7 +14,7 @@
         "badge": "RÉSEAU DE RENSEIGNEMENT SUR LA FRAUDE",
         "title_part_1": "Freinez la Fraude.",
         "title_highlight": "",
-        "title_part_2": "Avant la survenance de pertes!",
+        "title_part_2": "Avant la survenance de pertes.",
         "title_line_1": {
             "prefix": "Freinez la ",
             "highlight": "Fraude",
@@ -23,7 +23,7 @@
         "title_line_2": {
             "prefix": "Avant ",
             "highlight": "La survenance de pertes",
-            "suffix": "!"
+            "suffix": "."
         },
         "subtitle": "Rejoignez un réseau croissant d'institutions financières à travers l'Afrique  utilisant PROTEGEY pour <span class=\"text-primary-400 font-mono font-bold\">{action}<span class=\"animate-pulse\">_</span></span> la fraude en temps réel.",
         "typewriter": {
@@ -121,7 +121,6 @@
             "title_highlight": "Protection",
             "subtitle": "De la détection des transactions en temps réel à l'intelligence réseau partagée — chaque couche travaille ensemble pour que les menaces ciblant vos pairs ne vous atteignent pas."
         },
-        "coming_soon": "Bientôt Disponible",
         "back_to_all": "Retour aux Produits",
         "related_solutions": "Explorer les Autres Solutions",
         "why_built_title": "Pourquoi nous l'avons construit",
@@ -419,6 +418,12 @@
                 {
                     "name": "Réseau de Renseignements sur la Fraude",
                     "desc": "Signaux partagés, protection renforcée pour tous"
+                },
+                {
+                    "name":"Pan ID",
+                    "desc":"Vérification d'identité biométrique à l'épreuve des deepfakes, avec analyse de l'intégrité de l'appareil, détection des injections par IA et intelligence avancée de détection de présence."
+
+
                 }
             ]
         },
@@ -1114,7 +1119,7 @@
     "expert": {
         "eyebrow": "CONSULTATION EXPERT",
         "title": "Parler à un Expert",
-        "subtitle": "Discutez avec nos experts en prévention de la fraude pour comprendre comment Protegey peut protéger votre institution.",
+        "subtitle": "Discutez avec nos experts en risque et conformité pour comprendre comment Protegey peut protéger votre institution.",
         "email": "E-mail",
         "location": "Nos Bureaux",
         "hq": "Siège Social",
