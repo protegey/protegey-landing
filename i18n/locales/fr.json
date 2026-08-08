@@ -86,7 +86,7 @@
         "card1": {
             "value": "67%",
             "title": "Plus Rapide",
-            "text": "Nos clients détectent et neutralisent les menaces 67% plus rapidement que la moyenne du secteur dans la région, réduisant considérablement les dommages potentiels et minimisant les interruptions d'activité."
+            "text": "Nos clients détectent et neutralisent les menaces 67% plus rapidement que la moyenne du secteur dans le continent , réduisant considérablement les dommages potentiels et minimisant les interruptions d'activité."
         },
         "card2": {
             "value": "40%",
@@ -117,7 +117,7 @@
             "note": "Nous comprenons les défis uniques de la fraude transfrontalière, de la prolifération du mobile money et des exigences réglementaires en évolution dans ces marchés."
         },
         "hero": {
-            "title_start": "Cinq Couches Intégrées de",
+            "title_start": "Six Couches Intégrées de",
             "title_highlight": "Protection",
             "subtitle": "De la détection des transactions en temps réel à l'intelligence réseau partagée — chaque couche travaille ensemble pour que les menaces ciblant vos pairs ne vous atteignent pas."
         },
@@ -132,7 +132,7 @@
         "deployment_suffix": "Déploiement",
         "cta": {
             "title": "Prêt à Sécuriser Votre Réseau ?",
-            "subtitle": "Rejoignez la liste d'attente pour un accès anticipé ou contactez notre équipe commerciale pour une intégration entreprise.",
+            "subtitle": "Contactez notre équipe commerciale pour votre intégration.",
             "request_demo": "Demander un Demo",
             "contact_us": "Contactez-Nous"
         },
@@ -167,7 +167,7 @@
                     "Détection en temps réel en moins de 100 ms",
                     "Zéro intervention manuelle pour les paiements à faible risque"
                 ],
-                "how_it_works": "Notre moteur traite chaque flux de transaction à travers un ensemble de règles régionales et institutionnelles, combinées au comportement historique de l’entité, pour attribuer un score de risque avant le règlement de la transaction.",
+                "how_it_works": "Notre moteur traite chaque flux de transaction à travers un ensemble de règles institutionnelles, combinées au comportement historique de l’entité, pour attribuer un score de risque avant le règlement de la transaction.",
                 "deployment_options": {
                     "API": "Intégration directe dans votre système bancaire central via REST ou gRPC.",
                     "Hybrid": "Collecte de données sur site avec scoring dans le cloud."
@@ -244,7 +244,7 @@
                     "Traitement des investigations 60 % plus rapide",
                     "Alignement réglementaire mondial"
                 ],
-                "how_it_works": "PROTEGEY croise vos entités avec les listes de sanctions mondiales et régionales mises à jour en temps réel, fournissant des alertes immédiates avec des journaux de preuves.",
+                "how_it_works": "PROTEGEY croise vos entités avec les listes de sanctions mondiales et africainnes mises à jour en temps réel, fournissant des alertes immédiates avec des journaux de preuves.",
                 "deployment_options": {
                     "Cloud": "Moteur de conformité entièrement géré avec mises à jour quotidiennes des listes.",
                     "Enterprise": "Instance dédiée pour les institutions à gros volume."
@@ -678,13 +678,13 @@
         "regulatory_alignment": {
             "badge": "CONFORMITÉ RÉGLEMENTAIRE",
             "title": "Conçu pour le Paysage Réglementaire Africain",
-            "subtitle": "Protegey est conçu de fond en comble pour aider les institutions financières à naviguer dans les exigences réglementaires complexes et multi-juridictionnelles de l'Afrique et du Nord.",
+            "subtitle": "Protegey est conçu de fond en comble pour aider les institutions financières à naviguer dans les exigences réglementaires complexes et multi-juridictionnelles de l'Afrique.",
             "challenge_badge": "LE DÉFI",
             "challenge_title": "Un Continent de Mandats Enchevêtrés",
             "challenge_desc": "Les régulateurs financiers d'Afrique opèrent dans des zones monétaires distinctes — chacune avec ses propres cadres LBC/FT, ses délais de déclaration et ses règles de souveraineté des données. Les institutions opérant à l'échelle transfrontalière font face à la tâche quasi impossible de réconcilier manuellement de multiples obligations de conformité, avec des outils rarement conçus pour le contexte africain.",
             "frameworks_badge": "COUVERTURE RÉGLEMENTAIRE",
             "frameworks_title": "Organismes de Régulation Couverts",
-            "frameworks_subtitle": "La couche d'intelligence de Protegey est construite autour des exigences de déclaration et de surveillance des principales autorités réglementaires de la région.",
+            "frameworks_subtitle": "La couche d'intelligence de Protegey est construite autour des exigences de déclaration et de surveillance des principales autorités réglementaires de le continent .",
             "frameworks": [
                 {
                     "name": "BCEAO",
@@ -715,30 +715,30 @@
                     "desc": "PROTEGEY accompagne les institutions financières en Guinée dans le respect des obligations LBC/FT relevant du cadre de la BCRG, notamment la Loi L/2006/010/AN et les instructions connexes portant sur la surveillance des transactions, la vigilance client et la déclaration d'activités suspectes."
                 },
                 {
-                    "name": "BCM",
-                    "full": "Banque Centrale de Mauritanie",
-                    "zone": "Mauritanie",
-                    "law": "Instruction n°022/GR/2024",
-                    "desc": "PROTEGEY permet aux institutions financières en Mauritanie de se conformer aux obligations LBC/FT de la Banque Centrale de Mauritanie, notamment l'Instruction n°022/GR/2024, en fournissant une surveillance des transactions en temps réel, une détection automatisée des seuils et des déclarations de transactions suspectes structurées."
+                    "name": "NBE",
+                    "full": "National Bank of Ethiopia",
+                    "zone": "Éthiopie",
+                    "law": "Proclamation No. 780/2013",
+                    "desc": "PROTEGEY permet aux institutions financières en Éthiopie de se conformer à leurs obligations en matière de LBC/FT conformément à la Prevention and Suppression of Money Laundering and Financing of Terrorism Proclamation No. 780/2013 et aux directives de la National Bank of Ethiopia (NBE). La solution fournit une surveillance des transactions en temps réel, une détection automatisée des seuils et la génération structurée de déclarations d’opérations suspectes à destination de l’Ethiopia Financial Intelligence Service."
                 },
                 {
-                    "name": "Bank Al-Maghrib",
-                    "full": "Banque Centrale du Maroc",
-                    "zone": "Maroc",
-                    "law": "Loi 43-05 LBC",
-                    "desc": "PROTEGEY permet aux institutions financières au Maroc de se conformer aux exigences LBC/FT de la Loi 43-05 et aux directives de Bank Al-Maghrib en fournissant une surveillance des transactions en temps réel, un scoring client basé sur le risque, le filtrage des sanctions et des déclarations de transactions suspectes structurées."
+                    "name": "BoT",
+                    "full": "Bank of Tanzania",
+                    "zone": "Tanzanie",
+                    "law": "l’Anti-Money Laundering Act, Cap. 423",
+                    "desc": "PROTEGEY permet aux institutions financières en Tanzanie de se conformer aux exigences en matière de LBC/FT prévues par l’Anti-Money Laundering Act, Cap. 423 et les directives de la Bank of Tanzania (BoT). La solution fournit une surveillance des transactions en temps réel, une évaluation du risque client fondée sur le niveau de risque, un filtrage des sanctions et la génération structurée de déclarations d’opérations suspectes à destination de la Financial Intelligence Unit de Tanzanie."
                 },
                 {
-                    "name": "Banque d'Algérie",
-                    "full": "Banque Centrale d'Algérie",
-                    "zone": "Algérie",
-                    "desc": "PROTEGEY prend en charge les obligations de surveillance LBC et de déclaration de fraude applicables aux banques et fintechs sous la supervision de la Banque d'Algérie, aligné sur le cadre réglementaire LBC/FT algérien."
+                    "name": "CBN",
+                    "full": "Banque Centrale de Nigeria",
+                    "zone": "Nigeria",
+                    "desc": "PROTEGEY accompagne les banques et fintechs opérant sous la supervision de la Central Bank of Nigeria (CBN) dans le respect de leurs obligations en matière de surveillance LBC/FT et de déclaration des fraudes. La solution est alignée sur le Money Laundering (Prevention and Prohibition) Act, 2022 ainsi que sur les réglementations LBC/FT/CPF de la CBN, et permet la génération structurée de déclarations d’opérations suspectes à destination de la Nigerian Financial Intelligence Unit (NFIU)."
                 },
                 {
-                    "name": "BCT",
-                    "full": "Banque Centrale de Tunisie",
-                    "zone": "Tunisie",
-                    "desc": "PROTEGEY prend en charge les exigences de conformité BCT pour les prestataires de paiement numérique et la surveillance des transactions transfrontalières, permettant des déclarations structurées et un scoring du risque en temps réel selon les réglementations LBC/FT tunisiennes."
+                    "name": "CBK",
+                    "full": "Banque Centrale de Kenya",
+                    "zone": "Kenya",
+                    "desc": " PROTEGEY permet aux institutions financières au Kenya de se conformer à leurs obligations en matière de lutte contre le blanchiment de capitaux et le financement du terrorisme (LBC/FT), conformément au Proceeds of Crime and Anti-Money Laundering Act (POCAMLA) et aux directives de la Central Bank of Kenya (CBK). La solution fournit une surveillance des transactions en temps réel, une détection automatisée des seuils et la génération structurée de déclarations d’opérations suspectes à destination du Financial Reporting Centre (FRC)."
                 },
                 {
                     "name": "FATF / GAFI",
@@ -764,7 +764,7 @@
             "cap_retention_title": "Rétention des Données Configurable",
             "cap_retention_desc": "Les durées de conservation sont configurables par juridiction, alignées sur les exigences réglementaires de chaque pays — ni sur-rétention, ni suppression prématurée.",
             "cta_title": "Prêt à simplifier votre posture de conformité ?",
-            "cta_subtitle": "Parlez à notre équipe pour découvrir comment Protegey s'intègre dans le flux de déclaration réglementaire de votre institution.",
+            "cta_subtitle": "Parlez à notre équipe risque et conformité pour découvrir comment Protegey s'intègre dans le flux de déclaration réglementaire de votre institution.",
             "cta_button": "Parler à un Expert Conformité"
         },
         "common": {
@@ -876,7 +876,7 @@
     },
     "privacy": {
         "title": "Politique de Confidentialité",
-        "last_updated": "Dernière mise à jour : 10 mars 2026",
+        "last_updated": "Dernière mise à jour : 08/08/2026",
         "intro": "Chez Protegey, nous prenons votre vie privée au sérieux. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous visitez notre site web ou utilisez nos services.",
         "sections": {
             "info_collect": "1. Informations que nous collectons",
@@ -895,7 +895,7 @@
     },
     "terms": {
         "title": "Conditions d'utilisation",
-        "last_updated": "Dernière mise à jour : 10 mars 2026",
+        "last_updated": "Dernière mise à jour : 08/08/2026",
         "intro": "Ces conditions d'utilisation ('Conditions') régissent votre accès et votre utilisation de la plateforme et des services Protegey. En utilisant nos services, vous acceptez d'être lié par ces Conditions.",
         "sections": {
             "definitions": "1. Définitions",
@@ -1061,7 +1061,7 @@
             "title": "Protegey — Moteur d'Intelligence Fraude Unifié pour l'Afrique",
             "description": "Protegey est un réseau d'intelligence sur la fraude et de partage d'alertes en temps réel. Les institutions financières, fintechs et régulateurs collaborent pour bloquer la fraude mobile money, l'usurpation d'identité et les menaces avec rapidité, conformité AML et vision partagée.",
             "keywords": "intelligence fraude Afrique, réseau anti-fraude, surveillance transactions, conformité AML, vérification identité, sécurité Fintech, prévention fraude bancaire, sécurité mobile money, GIM-UEMOA, GIMAC, détection fraude Afrique du Nord, Afrique  prévention fraude, Sénégal, Côte d'Ivoire, Cameroun, Gabon, Maroc, Algérie, Tunisie, Égypte, République Démocratique du Congo, Bénin, Togo, Mali, Burkina Faso, République Centrafricaine, prévention fraude UEMOA, sécurité entreprise CEMAC, réseau d'intelligence partagée, sandbox pour fintechs, taxonomie fraude africaine, détection fraude inter-institutions, surveillance transactions bancaires Afrique, API détection échange SIM",
-            "og_tagline": "Intelligence Fraude · Afrique"
+            "og_tagline": "Intelligence Fraude Pour L'Afrique"
         },
         "index": {
             "title": "Protegey | Renseignement Fraude Unifié pour les Institutions Africaines",
@@ -1069,7 +1069,7 @@
         },
         "solutions": {
             "title": "Solutions de Sécurité | Infrastructure Anti-Fraude Protegey",
-            "description": "Découvrez les cinq couches de solutions de PROTEGEY : surveillance des transactions, protection des comptes et des appareils, AML et conformité, profilage du risque et réseau d’intelligence fraude."
+            "description": "Découvrez les six couches de solutions de PROTEGEY : surveillance des transactions, protection des comptes et des appareils, AML et conformité, profilage du risque, Pan ID et réseau d’intelligence fraude."
         },
         "solution_detail": {
             "title": "{name} | Infrastructure de Sécurité Protegey"

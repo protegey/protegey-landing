@@ -49,7 +49,7 @@ const allSolutions = [
 ]
 
 const relatedSolutions = computed(() =>
-    allSolutions.filter(s => s.key !== productId).slice(0, 4)
+    allSolutions.filter(s => s.key !== productId).slice(0, 5)
 )
 
 const baseUrl = 'https://www.protegey.com'
