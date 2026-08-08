@@ -14,7 +14,7 @@
         "badge": "FRAUD INTELLIGENCE NETWORK",
         "title_part_1": "Stop Fraud,",
         "title_highlight": "",
-        "title_part_2": "Before Losses occur",
+        "title_part_2": "Before Losses Occur",
         "title_line_1": {
             "prefix": "Stop ",
             "highlight": "Fraud",
@@ -22,7 +22,7 @@
         },
         "title_line_2": {
             "prefix": "Before",
-            "highlight": " Losses occur",
+            "highlight": " Losses Occur",
             "suffix": "."
         },
         "subtitle": "Join a growing network of financial institutions across Africa leveraging PROTEGEY to <span class=\"text-primary-400 font-mono font-bold\">{action}<span class=\"animate-pulse\">_</span></span> fraud in real-time.",
