@@ -734,7 +734,8 @@
                     "name": "CBK",
                     "full": "Central Bank of Kenya",
                     "zone": "Kenya",
-                    "desc": "PROTEGEY's platform supports BCT compliance requirements for digital payment providers and cross-border transaction monitoring, enabling structured reporting and real-time risk scoring under Tunisian AML/CFT regulations."
+                    "law" :"Proceeds of Crime and Anti-Money Laundering Act",
+                    "desc": "PROTEGEY enables financial institutions in Kenya to comply with AML/CFT obligations under the Proceeds of Crime and Anti-Money Laundering Act (POCAMLA) and Central Bank of Kenya (CBK) directives, by providing real-time transaction monitoring, automated threshold detection, and structured suspicious transaction reporting to the Financial Reporting Centre (FRC)."
                 },
                 {
                     "name": "FATF / GAFI",
