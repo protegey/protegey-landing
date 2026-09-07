@@ -11,21 +11,21 @@
         "solutions_panid_description": "Vérification d'identité panafricaine et eKYC intégrés nativement."
     },
     "hero": {
-        "badge": "RÉSEAU DE RENSEIGNEMENT SUR LA FRAUDE",
-        "title_part_1": "Freinez la Fraude.",
+        "badge": "INFRASTRUCTURE INTERINSTITUTIONNELLE DE RENSEIGNEMENT ANTIFRAUDE",
+        "title_part_1": "Protection antifraude tout-en-un.",
         "title_highlight": "",
-        "title_part_2": "Avant la survenance de pertes.",
+        "title_part_2": "Intelligence interinstitutionnelle.",
         "title_line_1": {
-            "prefix": "Freinez la ",
-            "highlight": "Fraude",
+            "prefix": "Protection antifraude",
+            "highlight": " Tout-en-un",
             "suffix": "."
         },
         "title_line_2": {
-            "prefix": "Avant ",
-            "highlight": "La survenance de pertes",
+            "prefix": "Intelligence ",
+            "highlight": "Interinstitutionnelle",
             "suffix": "."
         },
-        "subtitle": "Rejoignez un réseau croissant d'institutions financières à travers l'Afrique  utilisant PROTEGEY pour <span class=\"text-primary-400 font-mono font-bold\">{action}<span class=\"animate-pulse\">_</span></span> la fraude en temps réel.",
+        "subtitle": "Protegey relie banques, fintechs et opérateurs de mobile money en Afrique grâce au renseignement antifraude partagé. La détection en temps réel et les signaux respectueux de la vie privée aident vos équipes à <span class=\"text-primary-400 font-mono font-bold\">{action}<span class=\"animate-pulse\">_</span></span> la fraude au-delà de leurs propres systèmes, avant que les pertes ne se propagent.",
         "typewriter": {
             "detect": "détecter",
             "analyze": "analyser",
@@ -117,9 +117,9 @@
             "note": "Nous comprenons les défis uniques de la fraude transfrontalière, de la prolifération du mobile money et des exigences réglementaires en évolution dans ces marchés."
         },
         "hero": {
-            "title_start": "Six Couches Intégrées de",
-            "title_highlight": "Protection",
-            "subtitle": "De la détection des transactions en temps réel à l'intelligence réseau partagée — chaque couche travaille ensemble pour que les menaces ciblant vos pairs ne vous atteignent pas."
+            "title_start": "Protection antifraude",
+            "title_highlight": "tout-en-un.",
+            "subtitle": "Six fonctionnalités connectées. Une infrastructure partagée. Protégez votre institution grâce à une intelligence interinstitutionnelle à travers l’Afrique."
         },
         "back_to_all": "Retour aux Produits",
         "related_solutions": "Explorer les Autres Solutions",
@@ -335,13 +335,9 @@
                 "title": "Pan-ID™",
                 "tagline": "Vérification d'identité biométrique à l'épreuve des deepfakes",
                 "description": "Vérification d'identité biométrique à l'épreuve des deepfakes, avec analyse de l'intégrité de l'appareil, détection des injections par IA et intelligence avancée de détection de présence.",
-
                 "subtext": "Instaurer la confiance dans l'identité et l'environnement avant l'entrée en relation.",
-
                 "why_built": "La vérification d'identité doit commencer par l'établissement de la confiance, tant envers la personne qu'envers son environnement. Pan-ID vérifie les identités tout en détectant les appareils altérés, les attaques générées par IA et les tentatives de falsification sophistiquées avant d'accorder cette confiance.",
-
-                "what_you_can_do":"Effectuez le e-KYC biométrique, la détection de présence 3D, la détection des deepfakes, la vérification KYB & KYA et l'authentification sécurisée des identités.",
-
+                "what_you_can_do": "Effectuez le e-KYC biométrique, la détection de présence 3D, la détection des deepfakes, la vérification KYB & KYA et l'authentification sécurisée des identités.",
                 "features": [
                     "e-KYC biométrique combinant reconnaissance faciale et vérification des pièces d'identité",
                     "Détection de présence 3D avancée contre les tentatives de falsification",
@@ -349,7 +345,6 @@
                     "Analyse de l'intégrité des appareils pour identifier les environnements compromis",
                     "Flux de travail d'authentification et de vérification d'identité"
                 ],
-
                 "capabilities": [
                     "Détection de présence biométrique 3D",
                     "Détection des deepfakes et des attaques par présentation",
@@ -381,8 +376,7 @@
                     "cloud": "Déploiement cloud sécurisé pour une vérification d'identité évolutive.",
                     "enterprise": "Options de déploiement dédiées pour les organisations exigeant un contrôle renforcé et la souveraineté des données."
                 }
-                }
-
+            }
         },
         "panid_teaser": {
             "eyebrow": "BIENTÔT SUR PROTEGEY",
@@ -396,8 +390,8 @@
         },
         "closing_advantage": {
             "eyebrow": "L'AVANTAGE PROTEGEY",
-            "title": "Chaque institution mérite le même niveau de renseignement que les plus grandes banques.",
-            "subtitle": "Sans avoir à tout construire de zéro.",
+            "title": "La fraude circule entre les institutions. Votre renseignement doit suivre.",
+            "subtitle": "Une infrastructure partagée aide les institutions à relier les signaux, à repérer les menaces coordonnées et à renforcer leurs défenses.",
             "layers": [
                 {
                     "name": "Surveillance des Transactions",
@@ -420,10 +414,8 @@
                     "desc": "Signaux partagés, protection renforcée pour tous"
                 },
                 {
-                    "name":"Pan ID",
-                    "desc":"Vérification d'identité biométrique à l'épreuve des deepfakes, avec analyse de l'intégrité de l'appareil, détection des injections par IA et intelligence avancée de détection de présence."
-
-
+                    "name": "Pan ID",
+                    "desc": "Vérification d'identité biométrique à l'épreuve des deepfakes, avec analyse de l'intégrité de l'appareil, détection des injections par IA et intelligence avancée de détection de présence."
                 }
             ]
         },
@@ -983,7 +975,17 @@
             " Zambia",
             "Malawi",
             "Namibia",
-            "Rwanda","Gambia","Liberia","Angola", "Egypt", "Ethiopia", "Seychelles", "Comoros", "Mauritius", "Botswana", "Sudan"
+            "Rwanda",
+            "Gambia",
+            "Liberia",
+            "Angola",
+            "Egypt",
+            "Ethiopia",
+            "Seychelles",
+            "Comoros",
+            "Mauritius",
+            "Botswana",
+            "Sudan"
         ],
         "cp_mission_title": "Votre Mission",
         "cp_mission": [
@@ -1163,7 +1165,6 @@
             "rate_limit": "Trop de soumissions. Veuillez attendre quelques minutes."
         }
     },
- 
     "errors": {
         "title_404": "Signal Perdu",
         "desc_404": "La page que vous recherchez a été déplacée ou cryptée au-delà de toute reconnaissance. Nos scanners ne la trouvent pas.",
@@ -1338,5 +1339,21 @@
             "title": "Arrêter la Fraude",
             "desc": "Bloquer instantanément les menaces et partager le renseignement sur le réseau pour prévenir la propagation."
         }
+    },
+    "newsletter": {
+        "title": "Restez informé.",
+        "description": "Conseils antifraude et actualités Protegey, directement dans votre boîte mail.",
+        "email": "Adresse email",
+        "subscribe": "S’inscrire",
+        "submitting": "Inscription…",
+        "consent": "J’accepte de recevoir la newsletter Protegey par email.",
+        "unsubscribe": "Désabonnez-vous à tout moment.",
+        "privacy": "Politique de confidentialité",
+        "success": "Merci. Vous êtes inscrit à la newsletter Protegey.",
+        "consent_required": "Veuillez accepter de recevoir la newsletter.",
+        "too_many": "Trop de tentatives. Réessayez dans quelques minutes.",
+        "unavailable": "L’inscription est temporairement indisponible. Veuillez réessayer plus tard.",
+        "contact_support": "Contactez-nous pour gérer cet abonnement.",
+        "error": "Votre inscription n’a pas pu être finalisée. Veuillez réessayer."
     }
 }

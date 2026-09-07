@@ -95,6 +95,9 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
+    brevoApiKey: process.env.BREVO_API_KEY || '',
+    brevoNewsletterListId: process.env.BREVO_NEWSLETTER_LIST_ID || '',
+    notionNewsletterDataSourceId: process.env.NOTION_NEWSLETTER_DATA_SOURCE_ID || '',
     notionApiKey: process.env.NOTION_API_KEY,
     notionDatabaseId: process.env.NOTION_DATABASE_ID,
     mailtrapToken: process.env.MAILTRAP_TOKEN,

@@ -2,6 +2,7 @@
   <footer role="contentinfo" :aria-label="$t('footer.aria_footer')"
     class="relative z-10 py-12 px-6 border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950">
     <div class="container mx-auto max-w-6xl">
+      <NewsletterSignup />
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 mb-8">
         <!-- Brand -->
         <div>
@@ -209,6 +210,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import NewsletterSignup from '~/components/sections/NewsletterSignup.vue'
 
 const currentYear = computed(() => new Date().getFullYear())
 const localePath = useLocalePath()

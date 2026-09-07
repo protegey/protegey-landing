@@ -74,7 +74,7 @@ usePageMeta({
                         </span>
                     </h1>
                     <p class="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-2xl mx-auto">
-                        {{ $t('solutions.subtitle') }}
+                        {{ $t('solutions.hero.subtitle') }}
                     </p>
                 </div>
             </div>
