@@ -11,21 +11,21 @@
         "solutions_panid_description": "Pan-African identity verification and eKYC natively built-in."
     },
     "hero": {
-        "badge": "FRAUD INTELLIGENCE NETWORK",
-        "title_part_1": "Stop Fraud,",
+        "badge": "CROSS-INSTITUTION FRAUD INTELLIGENCE INFRASTRUCTURE",
+        "title_part_1": "All-in-one fraud protection Platform.",
         "title_highlight": "",
-        "title_part_2": "Before Losses Occur",
+        "title_part_2": "Cross-institution intelligence.",
         "title_line_1": {
-            "prefix": "Stop ",
-            "highlight": "Fraud",
-            "suffix": ","
-        },
-        "title_line_2": {
-            "prefix": "Before",
-            "highlight": " Losses Occur",
+            "prefix": "All-in-one ",
+            "highlight": "fraud protection Platform",
             "suffix": "."
         },
-        "subtitle": "Join a growing network of financial institutions across Africa leveraging PROTEGEY to <span class=\"text-primary-400 font-mono font-bold\">{action}<span class=\"animate-pulse\">_</span></span> fraud in real-time.",
+        "title_line_2": {
+            "prefix": "Cross-institution  ",
+            "highlight": "intelligence",
+            "suffix": "."
+        },
+        "subtitle": "Protegey connects banks, fintechs, and mobile money providers across Africa through shared fraud intelligence. Real-time detection and privacy-preserving signals help your team <span class=\"text-primary-400 font-mono font-bold\">{action}<span class=\"animate-pulse\">_</span></span> fraud beyond your own systems—before losses spread.",
         "typewriter": {
             "detect": "detect",
             "analyze": "analyze",
@@ -117,9 +117,9 @@
             "note": "We understand the unique challenges of cross-border fraud, mobile money proliferation, and evolving regulatory requirements in these markets."
         },
         "hero": {
-            "title_start": "Six Integrated Layers of",
-            "title_highlight": "Protection",
-            "subtitle": "From real-time transaction detection to shared network intelligence — every layer works together so threats targeting your peers don't reach you."
+            "title_start": "All-in-one fraud",
+            "title_highlight": "protection.",
+            "subtitle": "Six connected capabilities. One shared infrastructure. Protect your institution with cross-institution intelligence from across Africa."
         },
         "back_to_all": "Back to All Solutions",
         "related_solutions": "Explore Other Solutions",
@@ -138,8 +138,8 @@
         },
         "closing_advantage": {
             "eyebrow": "THE PROTEGEY ADVANTAGE",
-            "title": "Every institution deserves the same intelligence that the largest banks have.",
-            "subtitle": "Without building it from scratch.",
+            "title": "Fraud moves across institutions. Your intelligence should too.",
+            "subtitle": "Shared infrastructure helps institutions connect signals, recognize coordinated threats, and strengthen their defenses.",
             "layers": [
                 {
                     "name": "Transaction Monitoring",
@@ -162,10 +162,8 @@
                     "desc": "Shared signals, stronger protection for everyone"
                 },
                 {
-                    "name":"Pan ID",
-                    "desc":"Deepfake-resistant biometric identity verification with device integrity analysis, AI injection detection and advanced liveness intelligence."
-
-
+                    "name": "Pan ID",
+                    "desc": "Deepfake-resistant biometric identity verification with device integrity analysis, AI injection detection and advanced liveness intelligence."
                 }
             ]
         },
@@ -364,13 +362,9 @@
                 "title": "Pan-ID™",
                 "tagline": "Deepfake-Resistant Biometric Identity Verification",
                 "description": "Deepfake-resistant biometric identity verification with device integrity analysis, AI injection detection and advanced liveness intelligence.",
-
                 "subtext": "Establish trust in both the identity and the environment before onboarding.",
-
                 "why_built": "Identity verification should begin by establishing trust in both the person and the environment. Pan-ID verifies identities while detecting tampered devices, AI-generated attacks and sophisticated spoofing attempts before trust is established.",
-
-                "what_you_can_do":"Perform biometric e-KYC, 3D liveness detection, deepfake detection, KYB & KYA verification and secure identity authentication.",
-
+                "what_you_can_do": "Perform biometric e-KYC, 3D liveness detection, deepfake detection, KYB & KYA verification and secure identity authentication.",
                 "features": [
                     "Biometric e-KYC combining facial recognition and identity documents",
                     "Advanced 3D liveness detection against spoofing attempts",
@@ -378,7 +372,6 @@
                     "Device integrity analysis to identify compromised environments",
                     "Identity authentication and verification workflows"
                 ],
-
                 "capabilities": [
                     "3D Biometric Liveness Detection",
                     "Deepfake & Presentation Attack Detection",
@@ -389,7 +382,6 @@
                     "KYC, KYB & KYA Verification",
                     "Fraud Risk Signals"
                 ],
-
                 "target_users": [
                     "Banks",
                     "Fintechs",
@@ -399,7 +391,6 @@
                     "Regulators",
                     "Digital Platforms"
                 ],
-
                 "results": [
                     "Detect sophisticated identity fraud before onboarding",
                     "Block AI-generated verification attacks",
@@ -407,14 +398,12 @@
                     "Accelerate compliant digital onboarding with higher assurance",
                     "Screen customers against global watchlists and the PROTEGEY continental fraud intelligence network"
                 ],
-
                 "how_it_works": "Pan-ID combines biometric intelligence, liveness detection, device integrity analysis and fraud signals to establish trusted identities before access is granted.",
-
                 "deployment_options": {
                     "cloud": "Secure cloud deployment for scalable identity verification.",
                     "enterprise": "Dedicated deployment options for organizations requiring enhanced control and data sovereignty."
                 }
-                }
+            }
         },
         "panid_teaser": {
             "tag_ekyc": "eKYC ",
@@ -493,7 +482,6 @@
             "range_3": "10,001 to 50,000",
             "range_4": "50,001 to 250,000",
             "range_5": "+ 250,000"
-
         },
         "sectors": {
             "fintech": "Fintech",
@@ -727,14 +715,14 @@
                     "name": "CBN",
                     "full": "Central Bank of Nigeria",
                     "zone": "Nigeria",
-                    "law":  "Money Laundering (Prevention and Prohibition) Act, 2022 ",
+                    "law": "Money Laundering (Prevention and Prohibition) Act, 2022 ",
                     "desc": "PROTEGEY supports the AML monitoring and fraud reporting obligations applicable to banks and fintechs operating under Central Bank of Nigeria (CBN) oversight, aligned with the Money Laundering (Prevention and Prohibition) Act, 2022 and CBN AML/CFT/CPF Regulations, enabling structured suspicious transaction reporting to the Nigerian Financial Intelligence Unit (NFIU)."
                 },
                 {
                     "name": "CBK",
                     "full": "Central Bank of Kenya",
                     "zone": "Kenya",
-                    "law" :"Proceeds of Crime and Anti-Money Laundering Act",
+                    "law": "Proceeds of Crime and Anti-Money Laundering Act",
                     "desc": "PROTEGEY enables financial institutions in Kenya to comply with AML/CFT obligations under the Proceeds of Crime and Anti-Money Laundering Act (POCAMLA) and Central Bank of Kenya (CBK) directives, by providing real-time transaction monitoring, automated threshold detection, and structured suspicious transaction reporting to the Financial Reporting Centre (FRC)."
                 },
                 {
@@ -980,7 +968,17 @@
             " Zambia",
             "Malawi",
             "Namibia",
-            "Rwanda","Gambia","Liberia","Angola", "Egypt", "Ethiopia", "Seychelles", "Comoros", "Mauritius", "Botswana", "Sudan"
+            "Rwanda",
+            "Gambia",
+            "Liberia",
+            "Angola",
+            "Egypt",
+            "Ethiopia",
+            "Seychelles",
+            "Comoros",
+            "Mauritius",
+            "Botswana",
+            "Sudan"
         ],
         "cp_mission_title": "Your Mission",
         "cp_mission": [
@@ -1160,7 +1158,6 @@
             "rate_limit": "Too many submissions. Please wait a few minutes."
         }
     },
-
     "errors": {
         "title_404": "Signal Lost",
         "desc_404": "The page you are looking for has been moved or encrypted beyond recognition. Our scanners can't find it.",
@@ -1335,5 +1332,21 @@
             "title": "Stop Fraud",
             "desc": "Instantly block threats and share intelligence across the network to prevent spread."
         }
+    },
+    "newsletter": {
+        "title": "Stay informed.",
+        "description": "Fraud insights and Protegey updates, delivered to your inbox.",
+        "email": "Email address",
+        "subscribe": "Subscribe",
+        "submitting": "Subscribing…",
+        "consent": "I agree to receive the Protegey newsletter by email.",
+        "unsubscribe": "Unsubscribe at any time.",
+        "privacy": "Privacy policy",
+        "success": "Thank you. You’re subscribed to the Protegey newsletter.",
+        "consent_required": "Please agree to receive the newsletter.",
+        "too_many": "Too many attempts. Please try again in a few minutes.",
+        "unavailable": "Newsletter signup is temporarily unavailable. Please try again later.",
+        "contact_support": "Please contact us to manage this subscription.",
+        "error": "We couldn’t complete your signup. Please try again."
     }
 }
