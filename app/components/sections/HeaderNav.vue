@@ -18,7 +18,6 @@ import {
   BitcoinCircleIcon,
   Building03Icon,
   Building01Icon,
-  BookOpen01Icon,
   LockKeyIcon,
   DocumentValidationIcon,
   InformationCircleIcon,
@@ -150,7 +149,6 @@ const solutionItems = [
 
 const resourceItems = [
   { key: 'who_its_for', to: 'who-its-for', icon: UserGroupIcon },
-  { key: 'api_docs', to: 'api-docs', icon: BookOpen01Icon },
   { key: 'trust', to: 'trust', icon: Shield01Icon },
   { key: 'regulatory_alignment', to: 'regulatory-alignment', icon: JusticeScale01Icon },
 ]
