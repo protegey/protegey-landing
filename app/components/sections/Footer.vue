@@ -61,15 +61,6 @@
 
             <li>
               <NuxtLink
-                :to="localePath('/solutions/aml-compliance')"
-                class="hover:text-primary-400 transition-colors"
-              >
-                {{ $t('solutions.modules.aml-compliance.title') }}
-              </NuxtLink>
-            </li>
-
-            <li>
-              <NuxtLink
                 :to="localePath('/solutions/risk-profiling')"
                 class="hover:text-primary-400 transition-colors"
               >
@@ -79,10 +70,19 @@
 
             <li>
               <NuxtLink
-                :to="localePath('/solutions/fraud-intelligence')"
+                :to="localePath('/solutions/pan-risk')"
                 class="hover:text-primary-400 transition-colors"
               >
-                {{ $t('solutions.modules.fraud-intelligence.title') }}
+                {{ $t('solutions.modules.pan-risk.title') }}
+              </NuxtLink>
+            </li>
+
+            <li>
+              <NuxtLink
+                :to="localePath('/solutions/pan-studio')"
+                class="hover:text-primary-400 transition-colors"
+              >
+                {{ $t('solutions.modules.pan-studio.title') }}
               </NuxtLink>
             </li>
 

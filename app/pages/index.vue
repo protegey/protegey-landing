@@ -4,11 +4,20 @@
     <!-- Content -->
     <div class="relative">
       <Hero />
-      <WhyProtegey :isDark="isDark" />
-      <Solutions />
-      <ClosingAdvantage />
-      <!-- <SignalPipeline /> -->
-      <!-- <TrustedBy /> -->
+      <FrictionStrip />
+      <Challenge />
+      <ConnectedPlatform />
+      <KycKybSpotlight />
+      <HowItWorks2 />
+      <IntelligenceLayer />
+      <Workflows2 />
+      <Industries2 />
+      <Testimonials />
+      <SdkStrip />
+      <Integration2 />
+      <Regulated2 />
+      <Insights2 />
+      <FinalCta2 />
       <FAQ />
       <WaitlistDemo />
     </div>
@@ -17,18 +26,25 @@
 
 <script setup>
 import { onMounted } from 'vue'
-import { useTheme } from '~/composables/useTheme'
 import SplashOverlay from '~/components/sections/SplashOverlay.vue'
 import Hero from '~/components/sections/Hero.vue'
-import WhyProtegey from '~/components/sections/WhyProtegey.vue'
-import Solutions from '~/components/sections/Solutions.vue'
-import ClosingAdvantage from '~/components/sections/ClosingAdvantage.vue'
-import SignalPipeline from '~/components/sections/SignalPipeline.vue'
-import TrustedBy from '~/components/sections/TrustedBy.vue'
+import FrictionStrip from '~/components/sections/FrictionStrip.vue'
+import Challenge from '~/components/sections/Challenge.vue'
+import ConnectedPlatform from '~/components/sections/ConnectedPlatform.vue'
+import KycKybSpotlight from '~/components/sections/KycKybSpotlight.vue'
+import HowItWorks2 from '~/components/sections/HowItWorks2.vue'
+import IntelligenceLayer from '~/components/sections/IntelligenceLayer.vue'
+import Workflows2 from '~/components/sections/Workflows2.vue'
+import Industries2 from '~/components/sections/Industries2.vue'
+import Testimonials from '~/components/sections/Testimonials.vue'
+import SdkStrip from '~/components/sections/SdkStrip.vue'
+import Integration2 from '~/components/sections/Integration2.vue'
+import Regulated2 from '~/components/sections/Regulated2.vue'
+import Insights2 from '~/components/sections/Insights2.vue'
+import FinalCta2 from '~/components/sections/FinalCta2.vue'
 import FAQ from '~/components/sections/FAQ.vue'
 import WaitlistDemo from '~/components/sections/WaitlistDemo.vue'
 
-const { isDark } = useTheme()
 const { t } = useI18n()
 
 usePageMeta({
@@ -43,7 +59,7 @@ usePageMeta({
       logo: 'https://www.protegey.com/images/logo.svg',
       sameAs: [
         'https://x.com/ProtegeyHQ',
-        'https://www.linkedin.com/company/protege yhq/'
+        'https://www.linkedin.com/company/protegeyhq/'
       ],
       areaServed: [
         'Senegal', 'Ivory Coast', 'Cameroon', 'Morocco', 'Algeria', 'Tunisia', 'Egypt', 'Democratic Republic of Congo'

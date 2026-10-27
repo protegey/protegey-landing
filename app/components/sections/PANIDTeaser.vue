@@ -59,7 +59,7 @@ onMounted(() => {
                                 {{ $t('solutions.panid_teaser.description') }}
                             </p>
 
-                            <NuxtLink :to="localePath('/panid')"
+                            <NuxtLink :to="localePath('/solutions/pan-id')"
                                 class="group w-fit flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-neutral-950 bg-accent-cyan-400 hover:bg-accent-cyan-300 transition-all duration-300 shadow-lg shadow-accent-cyan-500/20 hover:shadow-accent-cyan-500/40">
                                 {{ $t('solutions.panid_teaser.cta') }}
                                 <HugeiconsIcon :icon="ArrowRight01Icon" :size="18"

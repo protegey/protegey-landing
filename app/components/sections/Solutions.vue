@@ -6,12 +6,12 @@ import { HugeiconsIcon } from '@hugeicons/vue';
 import {
     Activity01Icon,
     SmartPhone01Icon,
-    Shield01Icon,
     UserStar01Icon,
-    Share08Icon,
     CheckmarkCircle01Icon,
     ArrowRight01Icon,
     FingerPrintIcon,
+    Shield01Icon as PanRiskIcon,
+    Settings01Icon as PanStudioIcon,
 } from '@hugeicons/core-free-icons';
 
 const { t } = useI18n();
@@ -44,16 +44,6 @@ const modules = [
         gradientClass: 'from-secondary-500/5',
     },
     {
-        key: 'aml-compliance',
-        icon: Shield01Icon,
-        color: 'accent-cyan',
-        colorClass: 'text-accent-cyan-400',
-        bgClass: 'bg-accent-cyan-500/10',
-        borderClass: 'border-accent-cyan-500/30',
-        glowClass: 'shadow-accent-cyan-500/10',
-        gradientClass: 'from-accent-cyan-500/5',
-    },
-    {
         key: 'risk-profiling',
         icon: UserStar01Icon,
         color: 'accent-orange',
@@ -64,22 +54,30 @@ const modules = [
         gradientClass: 'from-accent-orange-500/5',
     },
     {
-        key: 'fraud-intelligence',
-        icon: Share08Icon,
-        color: 'primary',
-        colorClass: 'text-primary-400',
-        bgClass: 'bg-primary-500/10',
-        borderClass: 'border-primary-500/30',
-        glowClass: 'shadow-primary-500/10',
-        gradientClass: 'from-primary-500/5',
-    },
-    {
         key: 'pan-id',
         icon: FingerPrintIcon,
         colorClass: 'text-accent-cyan-400',
         bgClass: 'bg-accent-cyan-500/10',
         borderClass: 'border-accent-cyan-500/30',
         gradientClass: 'from-accent-cyan-500'
+    },
+    {
+        key: 'pan-risk',
+        icon: PanRiskIcon,
+        colorClass: 'text-accent-cyan-400',
+        bgClass: 'bg-accent-cyan-500/10',
+        borderClass: 'border-accent-cyan-500/30',
+        glowClass: 'shadow-accent-cyan-500/10',
+        gradientClass: 'from-accent-cyan-500/5',
+    },
+    {
+        key: 'pan-studio',
+        icon: PanStudioIcon,
+        colorClass: 'text-accent-orange-400',
+        bgClass: 'bg-accent-orange-500/10',
+        borderClass: 'border-accent-orange-500/30',
+        glowClass: 'shadow-accent-orange-500/10',
+        gradientClass: 'from-accent-orange-500/5',
     },
 ];
 

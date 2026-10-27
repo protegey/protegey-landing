@@ -9,7 +9,7 @@ import {
   SmartPhone01Icon,
   Shield01Icon,
   UserStar01Icon,
-  Share08Icon,
+  Settings01Icon,
   FingerPrintIcon,
   BankIcon,
   Wallet02Icon,
@@ -142,10 +142,10 @@ const scrollTo = (selector) => {
 const solutionItems = [
   { key: 'transaction-monitoring', icon: Activity01Icon, color: 'text-primary-400' },
   { key: 'account-protection', icon: SmartPhone01Icon, color: 'text-secondary-400' },
-  { key: 'aml-compliance', icon: Shield01Icon, color: 'text-accent-cyan-400' },
   { key: 'risk-profiling', icon: UserStar01Icon, color: 'text-accent-orange-400' },
-  { key: 'fraud-intelligence', icon: Share08Icon, color: 'text-primary-400' },
   { key: 'pan-id', icon: FingerPrintIcon, color: 'text-secondary-400' },
+  { key: 'pan-risk', icon: Shield01Icon, color: 'text-accent-cyan-400' },
+  { key: 'pan-studio', icon: Settings01Icon, color: 'text-accent-orange-400' },
 ]
 
 const resourceItems = [

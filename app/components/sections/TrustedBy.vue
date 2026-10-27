@@ -43,7 +43,7 @@ const marqueeItems = computed(() => {
                 class="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-neutral-950 to-transparent" /> -->
         <!-- </div> -->
         <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
-            <!-- ISO 27001 Card -->
+            <!-- Privacy architecture card -->
             <div
                 class="rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-lg p-7 flex flex-col items-start hover:border-secondary-500/30 transition-colors duration-300 rtl:items-end">
                 <div class="flex items-center gap-3 mb-3 rtl:flex-row-reverse">

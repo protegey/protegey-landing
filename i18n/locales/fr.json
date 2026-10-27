@@ -72,12 +72,12 @@
     "trusted_by": {
         "title": "Ils nous font confiance",
         "iso": {
-            "title": "Conformité ISO 27001",
-            "text": "Notre système de gestion de la sécurité de l'information (ISMS) est conforme à la norme ISO 27001, garantissant une gestion rigoureuse de la sécurité de vos données."
+            "title": "Architecture axée sur la confidentialité",
+            "text": "Les identifiants sensibles ne sont jamais stockés en clair. PROTEGEY hache les données personnelles avec HMAC-SHA256 et chiffre les champs sensibles en AES-256 dès la conception."
         },
         "soc2": {
-            "title": "Conformité SOC 2 Type II",
-            "text": "PROTEGEY est conforme aux exigences SOC 2 Type II, démontrant l'efficacité de nos contrôles en matière de sécurité, disponibilité, intégrité du traitement, confidentialité et protection de la vie privée."
+            "title": "Gestion des données conforme RGPD",
+            "text": "Les durées de rétention et l'anonymisation suivent un calendrier défini, et chaque flux de données entre partenaires respecte des contrôles d'accès explicites."
         }
     },
     "why_protegey": {
@@ -212,45 +212,6 @@
                 },
                 "description": "Arrêtez les prises de contrôle de comptes, les échanges de cartes SIM et les attaques d’appareils coordonnées avant qu’elles n’aboutissent."
             },
-            "aml-compliance": {
-                "title": "LBC et Conformité",
-                "subtext": "Automatisez vos obligations de conformité et réduisez le coût de la régulation.",
-                "features": [
-                    "Filtrage des sanctions contre les listes de l’ONU, de l’UE et de l’Union Africaine",
-                    "Détection des Personnes Politiquement Exposées (PPE)",
-                    "Génération de rapports d’activité suspecte (SAR)",
-                    "Règles de surveillance configurables par institution",
-                    "Évaluation des risques géographiques par statut GAFI",
-                    "Flux de travail de gestion des cas et d’investigation"
-                ],
-                "tagline": "Conformité sans friction pour les normes mondiales",
-                "why_built": "Les réglementations deviennent de plus en plus complexes. PROTEGEY automatise le filtrage des sanctions et la détection des PPE afin que vous puissiez vous concentrer sur la croissance.",
-                "what_you_can_do": "Automatisez le filtrage des sanctions ONU/UE/UA, générez des SAR en un clic et gérez les investigations dans un tableau de bord unifié de gestion des cas.",
-                "capabilities": [
-                    "Filtrage des sanctions et des PPE",
-                    "Génération automatisée de SAR/STR",
-                    "Règles de surveillance configurables",
-                    "Piste d’audit et suivi du lignage",
-                    "Flux de travail de gestion des cas"
-                ],
-                "target_users": [
-                    "Responsables LBC et personnel de conformité",
-                    "Équipes d’audit interne",
-                    "Liaison juridique et réglementaire",
-                    "Responsables des opérations"
-                ],
-                "results": [
-                    "Reporting prêt pour l’audit à 100 %",
-                    "Traitement des investigations 60 % plus rapide",
-                    "Alignement réglementaire mondial"
-                ],
-                "how_it_works": "PROTEGEY croise vos entités avec les listes de sanctions mondiales et africainnes mises à jour en temps réel, fournissant des alertes immédiates avec des journaux de preuves.",
-                "deployment_options": {
-                    "Cloud": "Moteur de conformité entièrement géré avec mises à jour quotidiennes des listes.",
-                    "Enterprise": "Instance dédiée pour les institutions à gros volume."
-                },
-                "description": "Automatisez vos obligations de conformité et réduisez le coût de la régulation."
-            },
             "risk-profiling": {
                 "title": "Profilage de Risque",
                 "subtext": "Sachez exactement à qui vous avez affaire — et chaque compte, appareil et numéro auquel ils sont connectés.",
@@ -292,56 +253,13 @@
                 },
                 "description": "Sachez exactement à qui vous avez affaire — et chaque compte, appareil et numéro auquel ils sont connectés."
             },
-            "fraud-intelligence": {
-                "title": "Renseignement sur la Fraude",
-                "subtext": "Bénéficiez de l’intelligence collective. Lorsque la fraude frappe une institution, tout le réseau en est informé.",
-                "tagline": "Puissance collective contre le crime financier",
-                "why_built": "La fraude ne s’arrête pas aux frontières des institutions. Nous avons construit le réseau de renseignement PROTEGEY pour donner à chaque partenaire l’avantage de la vision collective.",
-                "what_you_can_do": "Accédez à des flux de renseignements sur la fraude en temps réel, contribuez à la base de connaissance partagée et recevez des alertes précoces sur les menaces émergentes.",
-                "capabilities": [
-                    "Signaux de fraude partagés",
-                    "Alertes précoces sur les menaces réseau",
-                    "Base de données de réputation africaine",
-                    "Indicateurs de compromission transactionnels",
-                    "Renseignement collaboratif"
-                ],
-                "target_users": [
-                    "Responsables de la stratégie anti-fraude",
-                    "Équipes SOC/Cyber",
-                    "Associations du secteur financier",
-                    "Banques Centrales et Régulateurs"
-                ],
-                "results": [
-                    "Réponse proactive aux nouvelles attaques",
-                    "Renforcement de la résilience de l’écosystème",
-                    "Action unifiée contre les syndicats de fraude"
-                ],
-                "how_it_works": "Lorsqu’un partenaire signale une fraude vérifiée, le réseau PROTEGEY propage instantanément anonymement un indicateur de risque, protégeant ainsi l’ensemble de l’écosystème.",
-                "features": [
-                    "Partage d'alertes inter-institutions avec contrôles de confidentialité configurables",
-                    "Accords de partage d'intelligence entre institutions",
-                    "Réseau de signaux de fraude régional (CEDEAO et au-delà)",
-                    "Bulletins réglementaires partagés"
-                ],
-                "deployment_options": {
-                    "Feed": "Flux de renseignements sur la fraude en temps réel.",
-                    "Network": "Participation active au partage de données de confiance.",
-                    "Network Access": "Participation standard pour tous les clients entreprise PROTEGEY.",
-                    "Institutional": "Sous-réseaux privés pour les groupes bancaires."
-                },
-                "description": "Bénéficiez de l’intelligence collective. Lorsque la fraude frappe une institution, tout le réseau en est informé."
-            },
             "pan-id": {
                 "title": "Pan-ID™",
                 "tagline": "Vérification d'identité biométrique à l'épreuve des deepfakes",
                 "description": "Vérification d'identité biométrique à l'épreuve des deepfakes, avec analyse de l'intégrité de l'appareil, détection des injections par IA et intelligence avancée de détection de présence.",
-
                 "subtext": "Instaurer la confiance dans l'identité et l'environnement avant l'entrée en relation.",
-
                 "why_built": "La vérification d'identité doit commencer par l'établissement de la confiance, tant envers la personne qu'envers son environnement. Pan-ID vérifie les identités tout en détectant les appareils altérés, les attaques générées par IA et les tentatives de falsification sophistiquées avant d'accorder cette confiance.",
-
-                "what_you_can_do":"Effectuez le e-KYC biométrique, la détection de présence 3D, la détection des deepfakes, la vérification KYB & KYA et l'authentification sécurisée des identités.",
-
+                "what_you_can_do": "Effectuez le e-KYC biométrique, la détection de présence 3D, la détection des deepfakes, la vérification KYB & KYA et l'authentification sécurisée des identités.",
                 "features": [
                     "e-KYC biométrique combinant reconnaissance faciale et vérification des pièces d'identité",
                     "Détection de présence 3D avancée contre les tentatives de falsification",
@@ -349,7 +267,6 @@
                     "Analyse de l'intégrité des appareils pour identifier les environnements compromis",
                     "Flux de travail d'authentification et de vérification d'identité"
                 ],
-
                 "capabilities": [
                     "Détection de présence biométrique 3D",
                     "Détection des deepfakes et des attaques par présentation",
@@ -381,15 +298,104 @@
                     "cloud": "Déploiement cloud sécurisé pour une vérification d'identité évolutive.",
                     "enterprise": "Options de déploiement dédiées pour les organisations exigeant un contrôle renforcé et la souveraineté des données."
                 }
+            },
+            "pan-risk": {
+                "title": "Pan-Risk™",
+                "tagline": "Intelligence de conformité et de risque à l'échelle continentale",
+                "description": "Criblage sanctions et PPE, déclaration d'activités suspectes, et un réseau de renseignement de fraude partagé — une seule plateforme pour respecter vos obligations AML et voir au-delà de vos propres murs.",
+                "subtext": "Restez conforme sur chaque marché où vous opérez, et sachez ce que vos pairs savent déjà.",
+                "why_built": "Les réglementations se multiplient d'un marché à l'autre, et la fraude ne reste rarement confinée à une seule institution. Pan-Risk™ automatise la charge de conformité — criblage sanctions, détection PPE, gestion de dossiers — tout en vous connectant à un réseau continental d'institutions qui partagent ce qu'elles ont déjà détecté.",
+                "what_you_can_do": "Criblez vos clients contre les listes de sanctions ONU, UE et Union africaine, détectez les Personnes Politiquement Exposées, générez des déclarations d'activités suspectes (DAS) et des déclarations de transactions en espèces en un clic, gérez les revues de vigilance renforcée, et vérifiez si un client a déjà été signalé ailleurs dans le réseau Pan-Risk™.",
+                "features": [
+                    "Criblage sanctions contre les listes ONU, UE et Union africaine",
+                    "Détection des Personnes Politiquement Exposées (PPE)",
+                    "Génération de Déclarations d'Activités Suspectes (DAS) et de déclarations de transactions en espèces",
+                    "Workflows de revue de Vigilance Renforcée (EDD)",
+                    "Règles de surveillance configurables par institution et par devise",
+                    "Réseau de partage de signaux de fraude inter-institutions",
+                    "Gestion de dossiers et workflows d'investigation"
+                ],
+                "capabilities": [
+                    "Criblage sanctions ONU / UE / UA",
+                    "Détection PPE",
+                    "Génération DAS et déclarations de transactions en espèces",
+                    "Workflows de vigilance renforcée (EDD)",
+                    "Réseau de signaux de fraude partagés",
+                    "Évaluation du risque géographique (GAFI)",
+                    "Gestion de dossiers"
+                ],
+                "target_users": [
+                    "Banques",
+                    "Fintechs",
+                    "Télécoms",
+                    "Institutions de microfinance",
+                    "Prestataires de services de paiement",
+                    "Régulateurs"
+                ],
+                "results": [
+                    "Respectez automatiquement vos obligations de criblage sanctions et PPE",
+                    "Réduisez le temps de préparation des DAS de plusieurs heures à quelques minutes",
+                    "Détectez une fraude que votre institution n'avait jamais vue, signalée par une institution partenaire",
+                    "Réduisez les faux positifs grâce à des seuils propres à votre institution",
+                    "Restez prêt pour l'audit grâce à un historique d'investigation complet"
+                ],
+                "how_it_works": "Pan-Risk™ crible chaque client et chaque transaction contre les listes de sanctions et de PPE, applique vos propres seuils configurables, et vérifie le réseau de signaux partagés à la recherche de signalements antérieurs — puis route tout élément suspect vers un dossier structuré avec piste d'audit intégrée.",
+                "deployment_options": {
+                    "cloud": "Déploiement cloud sécurisé pour un criblage de conformité à l'échelle continentale.",
+                    "enterprise": "Options de déploiement dédiées pour les institutions nécessitant un contrôle renforcé et une souveraineté des données."
                 }
-
+            },
+            "pan-studio": {
+                "title": "Pan Studio",
+                "tagline": "Vos règles, vos seuils, sans code",
+                "description": "Un moteur de règles configurable qui permet à votre propre équipe conformité d'ajuster les seuils de détection de fraude, de créer de nouvelles règles, et même de décrire un scénario en langage naturel pour le transformer en règle fonctionnelle — sans ticket pour l'équipe technique.",
+                "subtext": "Contrôlez la façon dont Protegey décide, sans attendre un cycle de déploiement.",
+                "why_built": "L'appétit au risque de chaque institution est différent, et il évolue. Pan Studio met les commandes entre les mains de votre propre équipe conformité, au lieu d'enfermer la logique de détection dans le calendrier de livraison d'un fournisseur.",
+                "what_you_can_do": "Activez ou désactivez des règles de détection, ajustez les seuils par devise et par marché, créez de nouvelles règles à partir d'une bibliothèque de blocs de construction, et décrivez un scénario de fraude en langage naturel pour qu'un assistant IA rédige la règle pour vous.",
+                "features": [
+                    "Règles de détection et seuils configurables par partenaire",
+                    "Ajustement des seuils multi-devises par marché",
+                    "Assistant de génération de règles en langage naturel",
+                    "Versionnage des règles et piste d'audit",
+                    "Test en bac à sable avant mise en production d'une règle",
+                    "Accès à la gestion des règles basé sur les rôles"
+                ],
+                "capabilities": [
+                    "Moteur de règles configurable",
+                    "Seuils multi-devises",
+                    "Génération de règles assistée par IA",
+                    "Versionnage et piste d'audit des règles",
+                    "Test de règles en bac à sable",
+                    "Contrôle d'accès basé sur les rôles"
+                ],
+                "target_users": [
+                    "Banques",
+                    "Fintechs",
+                    "Télécoms",
+                    "Prestataires de services de paiement",
+                    "Équipes conformité",
+                    "Analystes risque"
+                ],
+                "results": [
+                    "Ajustez les seuils de détection sans ticket pour l'équipe technique",
+                    "Lancez une nouvelle règle le jour même où un nouveau schéma de fraude apparaît",
+                    "Décrivez un scénario en langage naturel et obtenez une règle fonctionnelle",
+                    "Testez chaque modification de règle en toute sécurité avant mise en production",
+                    "Conservez un historique complet de qui a modifié quoi, et quand"
+                ],
+                "how_it_works": "Pan Studio expose chaque règle de détection comme un objet configurable — seuils, devises, conditions — modifiable par votre propre équipe via une interface visuelle, testé en bac à sable, et versionné avec un historique de modifications complet.",
+                "deployment_options": {
+                    "cloud": "Déploiement cloud sécurisé avec mise à jour instantanée des règles.",
+                    "enterprise": "Options de déploiement dédiées pour les institutions nécessitant un contrôle renforcé et une souveraineté des données."
+                }
+            }
         },
         "panid_teaser": {
-            "eyebrow": "BIENTÔT SUR PROTEGEY",
-            "title": "PAN-ID",
-            "subtitle": "Vérification d'identité panafricaine, intégrée à votre flux de renseignement sur la fraude.",
-            "description": "PAN-ID apportera l'eKYC, le KYB et la vérification des documents d'identité nativement dans la plateforme PROTEGEY — conçu pour le paysage documentaire de l'Afrique, et connecté directement à votre infrastructure existante de notation des risques et de lutte contre le blanchiment d'argent. Pas de fournisseur séparé. Pas de données fragmentées.",
-            "cta": "Rejoindre la liste d'accès anticipé",
+            "eyebrow": "VÉRIFICATION D'IDENTITÉ CONTINENTALE",
+            "title": "Pan-ID™",
+            "subtitle": "Vérification d'identité biométrique à l'épreuve des deepfakes",
+            "description": "Combinez eKYC biométrique, détection de vivacité 3D et analyse de l'intégrité de l'appareil pour établir une confiance réelle avant l'onboarding — sur tout le continent.",
+            "cta": "Découvrir Pan-ID™",
             "tag_ekyc": "eKYC",
             "tag_kyb": "KYB",
             "tag_pan_african": "Panafricain"
@@ -420,16 +426,34 @@
                     "desc": "Signaux partagés, protection renforcée pour tous"
                 },
                 {
-                    "name":"Pan ID",
-                    "desc":"Vérification d'identité biométrique à l'épreuve des deepfakes, avec analyse de l'intégrité de l'appareil, détection des injections par IA et intelligence avancée de détection de présence."
-
-
+                    "name": "Pan ID",
+                    "desc": "Vérification d'identité biométrique à l'épreuve des deepfakes, avec analyse de l'intégrité de l'appareil, détection des injections par IA et intelligence avancée de détection de présence."
                 }
             ]
         },
         "module_counter": "Module {n} sur {total}",
         "learn_more_about": "En savoir plus sur {title}",
-        "go_to_module": "Aller au module {n}"
+        "go_to_module": "Aller au module {n}",
+        "panrisk_teaser": {
+            "eyebrow": "INTELLIGENCE DE RISQUE CONTINENTALE",
+            "title": "Pan-Risk™",
+            "subtitle": "Une conformité qui voit au-delà de vos propres murs",
+            "description": "Criblage sanctions et PPE, génération de DAS, et un réseau de renseignement de fraude partagé entre toutes les institutions sur Pan-Risk™ — restez conforme et voyez ce que vos pairs ont déjà détecté.",
+            "cta": "Découvrir Pan-Risk™",
+            "tag_sanctions": "Sanctions & PPE",
+            "tag_sar": "DAS",
+            "tag_network": "Réseau partagé"
+        },
+        "panstudio_teaser": {
+            "eyebrow": "CONFIGURABLE PAR VOTRE ÉQUIPE",
+            "title": "Pan Studio",
+            "subtitle": "Vos règles, vos seuils, sans ticket technique",
+            "description": "Ajustez les seuils de détection, créez de nouvelles règles, ou décrivez un scénario de fraude en langage naturel et laissez l'assistant de Pan Studio le transformer en règle fonctionnelle — sans attendre un cycle de déploiement.",
+            "cta": "Découvrir Pan Studio",
+            "tag_rules": "Moteur de règles",
+            "tag_ai": "Assisté par IA",
+            "tag_sandbox": "Test en bac à sable"
+        }
     },
     "waitlist": {
         "title1": "Découvrez le futur du",
@@ -526,7 +550,7 @@
         "badge": "Devenez Partenaire",
         "trust": {
             "gdpr": "Conforme RGPD",
-            "iso": "Certifié ISO 27001",
+            "iso": "Chiffrement AES-256",
             "bank_grade": "Sécurité Bancaire"
         }
     },
@@ -667,9 +691,9 @@
             "gdpr_badge": "Activement appliqué",
             "gdpr_title": "Confidentialité des Données",
             "gdpr_text": "Nous suivons les principes de protection des données alignés sur le RGPD et les cadres africains applicables en matière de confidentialité. Les données personnelles et financières sont traitées avec des contrôles d'accès stricts, des pratiques de minimisation et des politiques de rétention claires.",
-            "iso_badge": "Notre cadre de référence",
-            "iso_title": "ISO 27001",
-            "iso_text": "Les principes ISO 27001 guident la conception et l'exploitation de notre gestion de la sécurité de l'information. Nous utilisons cette norme mondiale comme cadre de référence tout en travaillant à l'obtention d'une certification formelle.",
+            "iso_badge": "Intégré dès la conception",
+            "iso_title": "Architecture axée sur la confidentialité",
+            "iso_text": "Aucune donnée personnelle en clair dans les colonnes interrogeables. Numéros de téléphone, emails et identifiants de compte sont stockés sous forme de hachages HMAC-SHA256, avec les champs sensibles chiffrés en AES-256.",
             "transparency_badge": "ÉTHIQUE IA",
             "transparency_header": "Déclaration de Transparence IA",
             "transparency_text": "Nos modèles de détection de fraude sont conçus pour être explicables, équitables et auditables. Nous n'utilisons pas de modèles 'boîte noire' pour les décisions critiques. Chaque score de risque est accompagné de codes de raison clairs — garantissant la transparence pour les équipes de conformité, les auditeurs et les régulateurs.",
@@ -923,7 +947,7 @@
         "title": "Rejoignez la Mission",
         "subtitle": "Nous bâtissons le système immunitaire numérique de tout un continent. Aidez-nous à sécuriser l’avenir du commerce en Afrique.",
         "culture_title": "Notre Culture",
-        "culture_subtitle": "Nous sommes une petite équipe d’élite composée d’ingénieurs, d’analystes de fraude et de bâtisseurs passionnés par l’intégrité financière.",
+        "culture_subtitle": "Nous sommes une équipe d’élite composée d’ingénieurs, d’analystes de fraude et de bâtisseurs passionnés par l’intégrité financière.",
         "pillars": [
             {
                 "title": "La Mission d’Abord",
@@ -983,7 +1007,17 @@
             " Zambia",
             "Malawi",
             "Namibia",
-            "Rwanda","Gambia","Liberia","Angola", "Egypt", "Ethiopia", "Seychelles", "Comoros", "Mauritius", "Botswana", "Sudan"
+            "Rwanda",
+            "Gambia",
+            "Liberia",
+            "Angola",
+            "Egypt",
+            "Ethiopia",
+            "Seychelles",
+            "Comoros",
+            "Mauritius",
+            "Botswana",
+            "Sudan"
         ],
         "cp_mission_title": "Votre Mission",
         "cp_mission": [
@@ -1163,7 +1197,6 @@
             "rate_limit": "Trop de soumissions. Veuillez attendre quelques minutes."
         }
     },
- 
     "errors": {
         "title_404": "Signal Perdu",
         "desc_404": "La page que vous recherchez a été déplacée ou cryptée au-delà de toute reconnaissance. Nos scanners ne la trouvent pas.",
@@ -1337,6 +1370,267 @@
         "step3": {
             "title": "Arrêter la Fraude",
             "desc": "Bloquer instantanément les menaces et partager le renseignement sur le réseau pour prévenir la propagation."
+        }
+    },
+    "hero2": {
+        "badge": "SUPER INTELLIGENCE POUR LA FRAUDE, LE RISQUE ET LA CONFORMITÉ",
+        "title": "De contrôles fragmentés à une intelligence connectée.",
+        "subtitle": "Du KYC et KYB aux signaux de fraude et à l'intelligence partagée — la criminalité financière n'agit pas en silos. Vos défenses non plus ne devraient pas.",
+        "cta_primary": "Demander une démo",
+        "cta_secondary": "Explorer la plateforme",
+        "footnote": "Conçu pour les réalités des services financiers modernes, en Afrique et au-delà.",
+        "photo_alt": "Un professionnel des opérations de risque consultant un compte sur son ordinateur portable",
+        "alert_card": {
+            "title": "Schéma inhabituel détecté",
+            "description": "Signaux d'appareil et de transaction liés. À transmettre pour revue.",
+            "cta": "Escalader"
+        },
+        "connected_flow": "FLUX CONNECTÉ",
+        "flow_steps": [
+            "Identité",
+            "Risque appareil & compte",
+            "Transactions",
+            "Criblage",
+            "Intelligence",
+            "Action"
+        ]
+    },
+    "friction_strip": {
+        "fragmented_visibility": {
+            "title": "Visibilité fragmentée",
+            "body": "Les informations d'identité, de transaction, de compte et de conformité se trouvent souvent dans des outils séparés, rendant difficile l'obtention d'une vue d'ensemble complète."
+        },
+        "operational_friction": {
+            "title": "Friction opérationnelle",
+            "body": "Des processus déconnectés créent des revues répétitives, des transmissions manuelles et une complexité inutile pour les équipes risque et conformité."
+        },
+        "inconsistent_decisions": {
+            "title": "Décisions incohérentes",
+            "body": "Différents systèmes pondèrent le même signal différemment, rendant plus difficile l'application d'une approche de risque cohérente tout au long du parcours client."
+        }
+    },
+    "challenge2": {
+        "eyebrow": "LE DÉFI",
+        "title": "La criminalité financière traverse les systèmes. Votre intelligence devrait faire de même.",
+        "body_1": "Un client passe l'onboarding. Un compte commence à se comporter différemment. Des transactions révèlent un schéma inhabituel. Un nom déclenche une alerte de criblage.",
+        "quote": "L'objectif n'est pas simplement d'avoir plus d'alertes. C'est d'avoir un meilleur contexte pour les décisions qui comptent.",
+        "body_2": "Lorsque ces signaux vivent dans des systèmes déconnectés, les équipes doivent reconstituer manuellement la vue d'ensemble. PROTEGEY aide à rassembler les signaux, contrôles et workflows pertinents dans un environnement opérationnel plus connecté."
+    },
+    "platform2": {
+        "eyebrow": "UNE PLATEFORME CONNECTÉE",
+        "title": "Les capacités dont vous avez besoin. Connectées autour des risques que vous affrontez.",
+        "subtitle": "PROTEGEY rassemble les capacités essentielles de fraude, de risque et de conformité au sein d'une architecture unifiée. Déployez les capacités pertinentes pour vos opérations et connectez-les à mesure que vos besoins évoluent.",
+        "cards": {
+            "identity": {
+                "badge": "ID",
+                "title": "Identité & Onboarding",
+                "body": "Sachez qui vous intégrez. Vérifiez les individus, structurez l'onboarding des entreprises et construisez des workflows KYB autour de vos propres exigences.",
+                "cta": "Découvrir Pan-ID"
+            },
+            "fraud": {
+                "badge": "FM",
+                "title": "Fraude & Surveillance",
+                "body": "Comprenez le comportement, pas seulement les événements individuels. Intégrez les signaux de risque de compte et d'appareil, la surveillance des transactions et l'intelligence de fraude autorisée dans vos workflows de détection et d'investigation.",
+                "cta": "Découvrir Fraude & Surveillance"
+            },
+            "risk": {
+                "badge": "RC",
+                "title": "Risque & Conformité",
+                "body": "Transformez les processus de criblage et de conformité en workflows actionnables. Soutenez le criblage des risques et les déclarations réglementaires grâce à des capacités connectées et des workflows configurables.",
+                "cta": "Découvrir Pan-Risk"
+            }
+        },
+        "platform_layer": {
+            "label": "COUCHE PLATEFORME",
+            "title": "Pan-Studio",
+            "body": "Configurez les règles et workflows pris en charge autour de vos exigences opérationnelles.",
+            "cta": "Découvrir Pan-Studio"
+        }
+    },
+    "how_it_works2": {
+        "eyebrow": "COMMENT PROTEGEY FONCTIONNE",
+        "title": "Des signaux individuels aux décisions éclairées.",
+        "steps": {
+            "s1": {
+                "title": "Collecter les signaux pertinents",
+                "body": "Connectez les données d'identité, de compte, d'appareil, de transaction et de criblage prises en charge via les intégrations appropriées."
+            },
+            "s2": {
+                "title": "Appliquer vos contrôles",
+                "body": "Utilisez la vérification, le criblage, la surveillance et les règles configurées disponibles pour évaluer l'activité selon vos exigences."
+            },
+            "s3": {
+                "title": "Construire le contexte",
+                "body": "Rassemblez les résultats pertinents et l'intelligence de fraude autorisée pour aider les équipes à comprendre les risques potentiels et les schémas récurrents."
+            },
+            "s4": {
+                "title": "Appuyer la prochaine action",
+                "body": "Routez les résultats vers votre workflow opérationnel pour revue, escalade ou autres actions configurées."
+            }
+        },
+        "body": "PROTEGEY soutient votre processus de décision. Votre institution garde le contrôle de ses politiques, seuils et décisions finales.",
+        "cta": "Voir comment fonctionne la plateforme"
+    },
+    "intelligence_layer2": {
+        "eyebrow": "LA COUCHE D'INTELLIGENCE",
+        "title": "Un signal de fraude peut signifier davantage lorsqu'il est connecté au bon contexte.",
+        "body": "La fraude respecte rarement les frontières institutionnelles ou géographiques. Un schéma qui paraît isolé dans un environnement peut devenir plus significatif lorsqu'il est considéré aux côtés d'autres signaux pertinents. PROTEGEY est conçu pour aider les institutions participantes à identifier les schémas de fraude récurrents grâce à des signaux autorisés, non biométriques, et des accords de partage de données autorisés. Selon les intégrations et permissions en place, les indicateurs pertinents peuvent inclure des signaux de risque d'appareil, des schémas de compte et des signaux de fraude liés aux transactions.",
+        "what_this_means": "CE QUE CELA SIGNIFIE",
+        "points": [
+            "Un meilleur contexte pour investiguer une activité suspecte.",
+            "La capacité d'identifier des schémas récurrents pertinents entre institutions participantes.",
+            "Une vue plus connectée du risque, sous réserve de la disponibilité des données, des permissions et des configurations des institutions participantes."
+        ],
+        "cta": "Découvrir l'intelligence connectée"
+    },
+    "workflows2": {
+        "eyebrow": "CONÇU POUR DE VRAIS WORKFLOWS",
+        "title": "Votre activité n'est pas un modèle type. Vos contrôles ne devraient pas l'être non plus.",
+        "subtitle": "Les institutions financières diffèrent par leur base de clients, leurs produits, leur appétit pour le risque et leurs obligations réglementaires. PROTEGEY est conçu pour s'adapter à des workflows configurables plutôt que de supposer que chaque institution opère de la même façon.",
+        "cards": {
+            "onboarding": {
+                "title": "Configurer l'onboarding",
+                "body": "Construisez des questionnaires KYB autour de votre type d'activité, des exigences documentaires et des questions obligatoires ou optionnelles."
+            },
+            "rules": {
+                "title": "Définir les règles de surveillance",
+                "body": "Appliquez des règles de surveillance et des seuils adaptés aux politiques de votre institution."
+            },
+            "capabilities": {
+                "title": "Connecter les capacités pertinentes",
+                "body": "Intégrez les modules et intégrations pris en charge dans une vue opérationnelle plus cohérente."
+            }
+        },
+        "cta": "Découvrir Pan-Studio"
+    },
+    "industries2": {
+        "eyebrow": "CONÇU POUR LES SERVICES FINANCIERS",
+        "title": "Une infrastructure pour les institutions opérant dans des environnements de risque complexes.",
+        "cards": {
+            "banks": {
+                "title": "Banques",
+                "body": "Connectez la vérification client, la surveillance des transactions, le criblage des risques et les workflows de conformité."
+            },
+            "microfinance": {
+                "title": "Institutions de microfinance",
+                "body": "Construisez des processus d'onboarding et de surveillance plus cohérents, adaptés à votre base de clients et à votre modèle opérationnel."
+            },
+            "mobile_money": {
+                "title": "Opérateurs de mobile money",
+                "body": "Traitez les risques liés à l'identité, au compte et aux transactions grâce à des intégrations prises en charge et des contrôles configurés."
+            },
+            "fintechs": {
+                "title": "Fintechs et services financiers digitaux",
+                "body": "Intégrez des capacités de risque et de conformité dans les parcours clients digitaux sans ajouter de friction inutile pour chaque client."
+            },
+            "payment_providers": {
+                "title": "Prestataires de paiement",
+                "body": "Soutenez la surveillance des risques et l'investigation sur l'activité de paiement et les workflows opérationnels pertinents."
+            }
+        },
+        "cta": "Explorer les secteurs"
+    },
+    "integration2": {
+        "eyebrow": "INTÉGRATION & DÉPLOIEMENT",
+        "title": "Travaillez avec votre architecture existante.",
+        "body": "L'infrastructure de risque doit s'adapter aux systèmes et processus sur lesquels les institutions financières comptent déjà. PROTEGEY est conçu pour s'intégrer à des systèmes pris en charge et des workflows configurables. Le chemin d'implémentation approprié dépend de votre environnement technique, des modules requis, de l'accès aux données et des besoins de déploiement.",
+        "points": [
+            "Intégration basée sur API, lorsque prise en charge.",
+            "Workflows configurables alignés sur vos exigences opérationnelles.",
+            "Évaluation technique des flux de données, de la sécurité et du périmètre d'implémentation.",
+            "Discussions de déploiement adaptées aux besoins institutionnels."
+        ],
+        "cta": "Discuter de votre intégration"
+    },
+    "regulated2": {
+        "eyebrow": "CONÇU POUR LES ENVIRONNEMENTS RÉGULÉS",
+        "title": "L'intelligence doit être utile, gouvernée et responsable.",
+        "body": "Les services financiers exigent davantage que des capacités de détection. Ils exigent une clarté sur les données, l'accès, les décisions et la responsabilité opérationnelle.",
+        "box_title": "PROTEGEY ABORDE L'IMPLÉMENTATION EN PRÊTANT ATTENTION À :",
+        "points": [
+            "Des cas d'usage et flux de données définis.",
+            "Un accès et des permissions appropriés.",
+            "Des responsabilités opérationnelles claires.",
+            "Des workflows et processus de décision révisables, lorsque pris en charge.",
+            "Les exigences légales, réglementaires et contractuelles applicables."
+        ],
+        "cta": "Visiter le centre de confiance"
+    },
+    "insights2": {
+        "eyebrow": "CONNAISSANCE & PERSPECTIVE",
+        "title": "Comprendre les risques qui façonnent les services financiers modernes.",
+        "subtitle": "Explorez des perspectives pratiques sur l'intelligence de fraude, l'identité numérique, le criblage de données et la conformité contre la criminalité financière.",
+        "cards": {
+            "signals_context": {
+                "title": "Pourquoi les signaux de fraude ont besoin de contexte."
+            },
+            "onboarding_complexity": {
+                "title": "La complexité négligée de l'onboarding des entreprises."
+            },
+            "cross_border": {
+                "title": "Quand les noms traversent les frontières, le criblage suit-il ?"
+            },
+            "transaction_workflows": {
+                "title": "Connecter la surveillance des transactions à des workflows de risque plus larges."
+            }
+        },
+        "cta": "Explorer les perspectives"
+    },
+    "final_cta2": {
+        "title": "Construisez une approche plus connectée de la fraude, du risque et de la conformité.",
+        "subtitle": "Découvrez comment la plateforme PROTEGEY peut soutenir les exigences opérationnelles et réglementaires de votre institution.",
+        "cta_primary": "Demander une démo",
+        "cta_secondary": "Parler à notre équipe"
+    },
+    "kyc_spotlight": {
+        "eyebrow": "IDENTITÉ & CONFORMITÉ",
+        "title": "Une vérification d'identité qui ne s'arrête pas à l'onboarding.",
+        "subtitle": "Pan-ID couvre aussi bien les particuliers que les entreprises, du premier contrôle de document jusqu'à la surveillance continue — pour qu'un profil de risque reste à jour, et non figé au moment de l'inscription.",
+        "points": [
+            "KYC en temps réel — vérification des documents et de l'identité dès l'onboarding.",
+            "KYC dynamique — des profils de risque qui évoluent avec le comportement, plutôt qu'un contrôle ponctuel qui se périme.",
+            "KYB configurable — questionnaires, exigences documentaires et workflows d'approbation adaptés à chaque type d'entreprise.",
+            "Criblage AML — vérifications sanctions et PEP avec déclenchement automatique de la vigilance renforcée.",
+            "Rédaction automatique de SAR/STR corrélés à partir des activités signalées, prêts pour validation."
+        ],
+        "cta": "Découvrir Pan-ID",
+        "illustration_alt": "Diagramme abstrait d'un document d'identité en cours de vérification, relié aux contrôles entreprise et conformité"
+    },
+    "testimonials": {
+        "eyebrow": "PARTENAIRES EN ACCÈS ANTICIPÉ",
+        "title": "Ce que nous disent les équipes risque et conformité.",
+        "people": {
+            "t1": {
+                "name": "Aminata Diallo",
+                "role": "Responsable Risque & Conformité, Banque commerciale — Accès anticipé",
+                "quote": "Pan-Risk a donné à notre équipe un endroit unique pour examiner les correspondances sanctions et PEP, au lieu de trois outils séparés. Le temps d'investigation a nettement baissé dès le premier mois."
+            },
+            "t2": {
+                "name": "Kwame Mensah",
+                "role": "Directeur Prévention de la Fraude, Opérateur mobile money — Accès anticipé",
+                "quote": "Ce qui nous a marqués, c'est Pan-Studio — nous pouvions ajuster nos seuils de surveillance nous-mêmes, sans attendre un ticket fournisseur à chaque changement de notre appétit pour le risque."
+            },
+            "t3": {
+                "name": "Fatima Benali",
+                "role": "Directrice Conformité, Établissement de crédit digital — Accès anticipé",
+                "quote": "Le générateur de questionnaires KYB nous a permis d'adapter l'onboarding à chaque type d'entreprise que nous servons, au lieu d'imposer le même formulaire générique à tous."
+            },
+            "t4": {
+                "name": "Chidi Okafor",
+                "role": "Responsable Produit, Systèmes de risque — Accès anticipé",
+                "quote": "Avoir les signaux d'appareil, de transaction et d'identité dans une seule vue a changé la façon dont nos analystes travaillent réellement — moins d'onglets, des décisions plus rapides."
+            }
+        }
+    },
+    "sdk_strip": {
+        "eyebrow": "SDK disponibles pour une intégration serveur-à-serveur",
+        "languages": {
+            "java": "Java",
+            "php": "PHP",
+            "dotnet": ".NET",
+            "js": "JavaScript / Node",
+            "flutter": "Flutter",
+            "react_native": "React Native"
         }
     }
 }

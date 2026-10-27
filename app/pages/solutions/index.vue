@@ -8,7 +8,7 @@ import {
     SmartPhone01Icon,
     Shield01Icon,
     UserStar01Icon,
-    Share08Icon,
+    Settings01Icon,
     CheckmarkCircle01Icon,
     ArrowRight01Icon,
     FingerPrintIcon,
@@ -29,10 +29,10 @@ const sectionRef = ref(null)
 const modules = [
     { key: 'transaction-monitoring', icon: Activity01Icon, colorClass: 'text-primary-400', bgClass: 'bg-primary-500/10', borderClass: 'border-primary-500/20', gradientClass: 'from-primary-500/10' },
     { key: 'account-protection', icon: SmartPhone01Icon, colorClass: 'text-secondary-400', bgClass: 'bg-secondary-500/10', borderClass: 'border-secondary-500/20', gradientClass: 'from-secondary-500/10' },
-    { key: 'aml-compliance', icon: Shield01Icon, colorClass: 'text-accent-cyan-400', bgClass: 'bg-accent-cyan-500/10', borderClass: 'border-accent-cyan-500/20', gradientClass: 'from-accent-cyan-500/10' },
     { key: 'risk-profiling', icon: UserStar01Icon, colorClass: 'text-accent-orange-400', bgClass: 'bg-accent-orange-500/10', borderClass: 'border-accent-orange-500/20', gradientClass: 'from-accent-orange-500/10' },
-    { key: 'fraud-intelligence', icon: Share08Icon, colorClass: 'text-primary-400', bgClass: 'bg-primary-500/10', borderClass: 'border-primary-500/20', gradientClass: 'from-primary-500/10' },
     { key: 'pan-id', icon: FingerPrintIcon, colorClass: 'text-secondary-400', bgClass: 'bg-secondary-500/10', borderClass: 'border-secondary-500/20', gradientClass: 'from-secondary-500/10'},
+    { key: 'pan-risk', icon: Shield01Icon, colorClass: 'text-accent-cyan-400', bgClass: 'bg-accent-cyan-500/10', borderClass: 'border-accent-cyan-500/20', gradientClass: 'from-accent-cyan-500/10' },
+    { key: 'pan-studio', icon: Settings01Icon, colorClass: 'text-accent-orange-400', bgClass: 'bg-accent-orange-500/10', borderClass: 'border-accent-orange-500/20', gradientClass: 'from-accent-orange-500/10' },
 ]
 
 const activeData = () => modules[activeModule.value]

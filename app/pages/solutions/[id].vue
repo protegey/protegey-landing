@@ -16,7 +16,6 @@ import {
     SmartPhone01Icon,
     Shield01Icon as ShieldIcon,
     UserStar01Icon,
-    Share08Icon
 } from '@hugeicons/core-free-icons'
 import SolutionCTA from '~/components/solutions/SolutionCTA.vue'
 
@@ -34,18 +33,18 @@ const iconMap = {
     'pan-id': FingerPrintIcon,
     'transaction-monitoring': Activity01Icon,
     'account-protection': SmartPhone01Icon,
-    'aml-compliance': ShieldIcon,
     'risk-profiling': UserStar01Icon,
-    'fraud-intelligence': Share08Icon
+    'pan-risk': ShieldIcon,
+    'pan-studio': Settings01Icon,
 }
 const productIcon = computed(() => iconMap[productId] || FingerPrintIcon)
 const allSolutions = [
     { key: 'transaction-monitoring', icon: Activity01Icon, color: 'text-primary-400' },
     { key: 'account-protection', icon: SmartPhone01Icon, color: 'text-secondary-400' },
-    { key: 'aml-compliance', icon: ShieldIcon, color: 'text-accent-cyan-400' },
     { key: 'risk-profiling', icon: UserStar01Icon, color: 'text-accent-orange-400' },
-    { key: 'fraud-intelligence', icon: Share08Icon, color: 'text-primary-400' },
-    {key: 'pan-id', icon: FingerPrintIcon, color: 'text-secondary-400'},
+    { key: 'pan-id', icon: FingerPrintIcon, color: 'text-secondary-400' },
+    { key: 'pan-risk', icon: ShieldIcon, color: 'text-accent-cyan-400' },
+    { key: 'pan-studio', icon: Settings01Icon, color: 'text-accent-orange-400' },
 ]
 
 const relatedSolutions = computed(() =>

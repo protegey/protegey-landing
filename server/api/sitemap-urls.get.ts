@@ -21,7 +21,7 @@ export default defineEventHandler(async () => {
     'demo',
   ]
 
-  const solutionSlugs = ['transaction-monitoring', 'account-protection', 'aml-compliance', 'risk-profiling', 'fraud-intelligence']
+  const solutionSlugs = ['transaction-monitoring', 'account-protection', 'risk-profiling', 'pan-id', 'pan-risk', 'pan-studio']
   const useCaseSlugs = ['banks', 'lending', 'microfinance', 'fintechs', 'mobile_money', 'remittance', 'crypto', 'regulators']
 
   const isoMap: Record<string, string> = { en: 'en-US', fr: 'fr-FR', ar: 'ar-EG' }

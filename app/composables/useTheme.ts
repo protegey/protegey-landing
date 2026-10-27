@@ -13,9 +13,9 @@ export function useTheme() {
     sameSite: 'lax',
   })
 
-  // Default to dark when no cookie exists — but don't write a Set-Cookie header
+  // Default to light when no cookie exists — but don't write a Set-Cookie header
   // on the server (which would conflict with SWR cached responses)
-  const isDark = computed(() => (themeCookie.value ?? 'dark') === 'dark')
+  const isDark = computed(() => (themeCookie.value ?? 'light') === 'dark')
 
   const setTheme = (mode: ThemeMode) => {
     themeCookie.value = mode

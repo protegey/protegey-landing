@@ -7,7 +7,13 @@ export default defineNuxtConfig({
     defaultLocale: 'fr',
     templateTitle: '%s %separator %siteName',
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/image'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n', 'nuxt-schema-org', '@nuxtjs/seo', '@nuxt/image'],
+  // IPX's sharp-based transform pipeline hangs indefinitely on this machine (confirmed: sharp
+  // loads fine standalone, but every /_ipx/* request never resolves). Serve images unprocessed
+  // instead of fighting that — this is a static marketing site with pre-optimized assets anyway.
+  image: {
+    provider: 'none',
+  },
   seo: {
     redirectToCanonicalSiteUrl: true
   },
@@ -122,7 +128,7 @@ export default defineNuxtConfig({
         {
           // Use innerHTML for inline script to satisfy types
           innerHTML:
-            "(function(){try{var match=document.cookie.match(/(?:^|;)\\s*theme=([^;]*)/);var dark=match?match[1]==='dark':true;document.documentElement.classList.toggle('dark',dark);}catch(e){document.documentElement.classList.add('dark');}})();",
+            "(function(){try{var match=document.cookie.match(/(?:^|;)\\s*theme=([^;]*)/);var dark=match?match[1]==='dark':false;document.documentElement.classList.toggle('dark',dark);}catch(e){}})();",
           type: 'text/javascript'
         },
       ],

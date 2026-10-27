@@ -71,7 +71,7 @@ usePageMeta({
                         <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed font-medium">{{ t('geo_pages.trust.gdpr_text') }}</p>
                     </div>
 
-                    <!-- ISO 27001 -->
+                    <!-- Privacy architecture -->
                     <div class="group p-6 rounded-2xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-900/40 hover:bg-white dark:hover:bg-neutral-900 transition-all duration-500 shadow-xl shadow-black/5 dark:shadow-black/20">
                         <div class="flex items-start justify-between mb-8">
                             <div class="w-12 h-12 rounded-2xl bg-accent-cyan-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">

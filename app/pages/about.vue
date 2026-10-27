@@ -25,16 +25,9 @@
                     </p>
                 </div>
 
-                <div class="mt-20 md:mt-32 relative max-w-6xl mx-auto hero-image-wrap">
-                    <div class="absolute inset-x-0 -bottom-1 h-32 bg-gradient-to-t from-neutral-50 dark:from-neutral-950 to-transparent z-10 pointer-events-none" />
-                    <div class="relative rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800/50 shadow-2xl backdrop-blur-3xl">
-                        <NuxtImg
-                            src="/images/about-hero.webp"
-                            :alt="$t('about_page.hero.image_alt')"
-                            width="640"
-                            height="640"
-                            class="w-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]"
-                        />
+                <div class="mt-16 md:mt-20 relative max-w-5xl mx-auto hero-image-wrap">
+                    <div class="relative rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800/50 shadow-xl bg-neutral-950 aspect-[12/5]">
+                        <SignalNetworkIllustration />
                     </div>
                 </div>
             </div>
@@ -185,6 +178,7 @@ import {
 } from '@hugeicons/core-free-icons'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SignalNetworkIllustration from '~/components/illustrations/SignalNetworkIllustration.vue'
 
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
