@@ -108,6 +108,11 @@
               </NuxtLink>
             </li>
             <li>
+              <NuxtLink :to="localePath('blog')" class="hover:text-primary-400 transition-colors">
+                {{ $t('footer.links.blog') }}
+              </NuxtLink>
+            </li>
+            <li>
               <NuxtLink :to="localePath('trust')" class="hover:text-primary-400 transition-colors">
                 {{ $t('footer.links.trust') }}
               </NuxtLink>

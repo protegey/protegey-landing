@@ -52,6 +52,13 @@ export default defineNuxtConfig({
 
     // 2. Explicitly dynamic for API
     '/api/**': { swr: false, cache: false },
+    // 3. Blog content changes rarely — cache listings/posts briefly to avoid
+    //    re-hitting Notion (and re-resolving image URLs) on every request.
+    '/api/blog/posts': { swr: 1800 },
+    '/api/blog/featured': { swr: 1800 },
+    '/api/blog/post/**': { swr: 1800 },
+    '/api/blog/cover/**': { swr: 3600 },
+    '/api/blog/image/**': { swr: 3600 },
   },
   sitemap: {
     strictNuxtContentPaths: true,
@@ -103,6 +110,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     notionApiKey: process.env.NOTION_API_KEY,
     notionDatabaseId: process.env.NOTION_DATABASE_ID,
+    notionBlogDatabaseId: process.env.NOTION_BLOG_DATABASE_ID,
     mailtrapToken: process.env.MAILTRAP_TOKEN,
     resendApiKey: process.env.RESEND_API_KEY,
     public: {

@@ -13,6 +13,7 @@ export default defineEventHandler(async () => {
     'what-is-protegey',
     'how-it-works',
     'who-its-for',
+    'blog',
     'privacy',
     'careers',
     'api-docs',

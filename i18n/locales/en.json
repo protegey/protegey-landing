@@ -565,6 +565,7 @@
             "contact": "Contact",
             "careers": "Careers",
             "who_its_for": "Who It's For",
+            "blog": "Blog",
             "trust": "Trust Center",
             "api_docs": "API Docs",
             "regulatory_alignment": "Regulatory Alignment",
@@ -1634,5 +1635,69 @@
             "flutter": "Flutter",
             "react_native": "React Native"
         }
+    },
+    "blog": {
+        "nav_label": "Blog",
+        "seo": {
+            "title": "The Protegey Blog",
+            "description": "Practical insights on fraud intelligence, digital identity and financial crime compliance across Africa and beyond."
+        },
+        "hero": {
+            "eyebrow": "THE PROTEGEY BLOG",
+            "title": "Perspectives on fraud, risk and compliance.",
+            "subtitle": "Practical insights on the threats, technologies and operational challenges shaping financial services across Africa and beyond.",
+            "description": "Explore ideas on fraud intelligence, digital identity, financial crime compliance and the infrastructure needed to connect them.",
+            "cta_primary": "Explore Articles",
+            "cta_secondary": "Discover the Platform"
+        },
+        "featured": {
+            "label": "Featured",
+            "read_article": "Read Article"
+        },
+        "topics": {
+            "eyebrow": "BROWSE BY TOPIC",
+            "title": "Browse by Topic",
+            "categories": {
+                "fraud_intelligence": {
+                    "title": "Fraud Intelligence",
+                    "description": "Explore recurring fraud patterns, cross-institution signals, account risk and the role of context in fraud investigation."
+                },
+                "identity_onboarding": {
+                    "title": "Identity & Onboarding",
+                    "description": "Read about digital identity verification, KYB, beneficial ownership and building onboarding workflows around different business types."
+                },
+                "risk_compliance": {
+                    "title": "Risk & Compliance",
+                    "description": "Explore sanctions screening, PEP identification, adverse media, transaction monitoring and regulatory reporting workflows."
+                },
+                "financial_services_africa": {
+                    "title": "Financial Services in Africa",
+                    "description": "Examine the operational realities, emerging challenges and technology opportunities shaping financial services across African markets."
+                },
+                "product_technology": {
+                    "title": "Product & Technology",
+                    "description": "Learn about the design principles, technical considerations and product capabilities behind connected fraud, risk and compliance infrastructure."
+                }
+            }
+        },
+        "latest": {
+            "eyebrow": "LATEST ARTICLES",
+            "title": "Latest Articles",
+            "read_article": "Read Article",
+            "empty_state": "We're preparing our first collection of articles on fraud intelligence, digital identity, risk and compliance. Check back soon for practical insights from PROTEGEY."
+        },
+        "team": {
+            "title": "From the PROTEGEY Team",
+            "body_1": "Our work is shaped by the challenges financial institutions face when identity, fraud and compliance controls operate in isolation.",
+            "body_2": "Through this blog, we'll share practical perspectives, explain complex risk challenges and explore how connected infrastructure can support better-informed decisions."
+        },
+        "closing": {
+            "title": "Interested in what we're building?",
+            "subtitle": "Explore PROTEGEY's platform and discover how its fraud, risk and compliance capabilities fit together.",
+            "cta_primary": "Explore the Platform",
+            "cta_secondary": "Request a Demo"
+        },
+        "min_read": "{n} min read",
+        "back_to_blog": "Back to Blog"
     }
 }

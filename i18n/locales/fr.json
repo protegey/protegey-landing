@@ -567,6 +567,7 @@
             "contact": "Contact",
             "careers": "Carrières",
             "who_its_for": "Pour qui c'est conçu",
+            "blog": "Blog",
             "trust": "Centre de confiance",
             "api_docs": "Docs API",
             "regulatory_alignment": "Conformité Réglementaire",
@@ -1634,5 +1635,69 @@
             "flutter": "Flutter",
             "react_native": "React Native"
         }
+    },
+    "blog": {
+        "nav_label": "Blog",
+        "seo": {
+            "title": "Le Blog Protegey",
+            "description": "Perspectives pratiques sur l'intelligence de fraude, l'identité numérique et la conformité contre la criminalité financière en Afrique et au-delà."
+        },
+        "hero": {
+            "eyebrow": "LE BLOG PROTEGEY",
+            "title": "Perspectives sur la fraude, le risque et la conformité.",
+            "subtitle": "Des éclairages pratiques sur les menaces, technologies et défis opérationnels qui façonnent les services financiers en Afrique et au-delà.",
+            "description": "Explorez nos réflexions sur l'intelligence de fraude, l'identité numérique, la conformité contre la criminalité financière et l'infrastructure nécessaire pour les relier.",
+            "cta_primary": "Explorer les articles",
+            "cta_secondary": "Découvrir la plateforme"
+        },
+        "featured": {
+            "label": "À la une",
+            "read_article": "Lire l'article"
+        },
+        "topics": {
+            "eyebrow": "PARCOURIR PAR THÈME",
+            "title": "Parcourir par thème",
+            "categories": {
+                "fraud_intelligence": {
+                    "title": "Intelligence de fraude",
+                    "description": "Explorez les schémas de fraude récurrents, les signaux inter-institutions, le risque de compte et le rôle du contexte dans l'investigation."
+                },
+                "identity_onboarding": {
+                    "title": "Identité & Onboarding",
+                    "description": "Découvrez la vérification d'identité numérique, le KYB, les bénéficiaires effectifs et la construction de workflows d'onboarding selon le type d'entreprise."
+                },
+                "risk_compliance": {
+                    "title": "Risque & Conformité",
+                    "description": "Explorez le criblage des sanctions, l'identification des PEP, les médias défavorables, la surveillance des transactions et les workflows de déclaration réglementaire."
+                },
+                "financial_services_africa": {
+                    "title": "Services financiers en Afrique",
+                    "description": "Examinez les réalités opérationnelles, les défis émergents et les opportunités technologiques qui façonnent les services financiers sur les marchés africains."
+                },
+                "product_technology": {
+                    "title": "Produit & Technologie",
+                    "description": "Découvrez les principes de conception, les considérations techniques et les capacités produit derrière une infrastructure connectée de fraude, risque et conformité."
+                }
+            }
+        },
+        "latest": {
+            "eyebrow": "DERNIERS ARTICLES",
+            "title": "Derniers articles",
+            "read_article": "Lire l'article",
+            "empty_state": "Nous préparons notre première collection d'articles sur l'intelligence de fraude, l'identité numérique, le risque et la conformité. Revenez bientôt pour des éclairages pratiques de PROTEGEY."
+        },
+        "team": {
+            "title": "De la part de l'équipe PROTEGEY",
+            "body_1": "Notre travail est façonné par les défis que rencontrent les institutions financières lorsque les contrôles d'identité, de fraude et de conformité fonctionnent en silos.",
+            "body_2": "À travers ce blog, nous partagerons des perspectives pratiques, expliquerons des enjeux de risque complexes et explorerons comment une infrastructure connectée peut soutenir des décisions mieux informées."
+        },
+        "closing": {
+            "title": "Intéressé par ce que nous construisons ?",
+            "subtitle": "Explorez la plateforme PROTEGEY et découvrez comment ses capacités de fraude, de risque et de conformité s'articulent ensemble.",
+            "cta_primary": "Explorer la plateforme",
+            "cta_secondary": "Demander une démo"
+        },
+        "min_read": "{n} min de lecture",
+        "back_to_blog": "Retour au blog"
     }
 }
