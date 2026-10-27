@@ -93,8 +93,8 @@ onUnmounted(() => {
                         <img
                             src="/images/hero-person-cutout.webp"
                             :alt="$t('hero2.photo_alt')"
-                            width="575"
-                            height="716"
+                            width="836"
+                            height="954"
                             class="w-full h-auto object-contain drop-shadow-2xl"
                         />
                     </div>
@@ -133,8 +133,8 @@ onUnmounted(() => {
 
         <!-- Decorative wave transition -->
         <svg class="absolute bottom-0 left-0 w-full h-10 sm:h-14 pointer-events-none" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,36 C240,0 480,56 720,28 C960,0 1200,48 1440,20 L1440,56 L0,56 Z" fill="#FF6B00" opacity="0.55" />
-            <path d="M0,44 C240,16 480,60 720,36 C960,12 1200,52 1440,30 L1440,56 L0,56 Z" fill="#0B1741" class="dark:fill-neutral-950" />
+            <path d="M0,28 C60,6 180,50 240,28 C300,6 420,50 480,28 C540,6 660,50 720,28 C780,6 900,50 960,28 C1020,6 1140,50 1200,28 C1260,6 1380,50 1440,28 L1440,56 L0,56 Z" fill="#FF6B00" opacity="0.55" />
+            <path d="M0,34 C60,14 180,54 240,34 C300,14 420,54 480,34 C540,14 660,54 720,34 C780,14 900,54 960,34 C1020,14 1140,54 1200,34 C1260,14 1380,54 1440,34 L1440,56 L0,56 Z" fill="#0B1741" class="dark:fill-neutral-950" />
         </svg>
     </section>
 </template>

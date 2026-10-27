@@ -4,6 +4,7 @@ import { HugeiconsIcon } from '@hugeicons/vue'
 import { Shield01Icon, ZapIcon, CheckmarkCircle01Icon, ArrowRight01Icon } from '@hugeicons/core-free-icons'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import CountrySelect from '~/components/ui/CountrySelect.vue'
 
 const { locale } = useI18n()
 defineProps({ isDark: Boolean })
@@ -160,9 +161,8 @@ onMounted(() => {
                             <label for="country"
                                 class="block text-xs font-bold uppercase tracking-widest mb-2 text-neutral-500 dark:text-neutral-400 rtl:text-right">{{
                                     $t('waitlist.form.country') }}</label>
-                            <input id="country" v-model="formData.country" type="text" required
-                                :placeholder="$t('waitlist.form.country_placeholder')"
-                                class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all bg-white/90 dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 rtl:text-right" />
+                            <CountrySelect v-model="formData.country" input-id="country"
+                                :placeholder="$t('waitlist.form.country_placeholder')" />
                         </div>
                     </div>
 

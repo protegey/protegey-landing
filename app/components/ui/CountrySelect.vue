@@ -22,9 +22,13 @@ const selected = computed(() => countries.value.find((c) => c.name === props.mod
 
 const filtered = computed(() => {
     if (!query.value.trim()) return countries.value
-    const q = query.value.trim().toLowerCase()
-    return countries.value.filter((c) => c.name.toLowerCase().includes(q))
+    const q = normalize(query.value)
+    return countries.value.filter((c) => normalize(c.name).includes(q))
 })
+
+function normalize(str) {
+    return str.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+}
 
 function open() {
     isOpen.value = true

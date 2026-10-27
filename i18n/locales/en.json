@@ -467,7 +467,9 @@
             "phone": "Phone Number (Optional)",
             "phone_placeholder": "Enter your phone number",
             "country": "Country",
-            "country_placeholder": "Enter your country",
+            "country_placeholder": "Select your country",
+            "country_search_placeholder": "Search for a country...",
+            "country_no_results": "No country found",
             "company": "Company Name",
             "company_placeholder": "Enter your company name",
             "role": "Position",
@@ -1517,7 +1519,7 @@
             },
             "mobile_money": {
                 "title": "Mobile money operators",
-                "body": "Address identity, account and transaction-related risks through supported integrations and configured controls."
+                "body": "Built for ecosystems like Orange Money, MTN MoMo and Moov Money — address identity, account and transaction-related risks through supported integrations and configured controls."
             },
             "fintechs": {
                 "title": "Fintechs and digital financial services",

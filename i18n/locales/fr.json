@@ -469,7 +469,9 @@
             "phone": "Numéro de téléphone (Optionnel)",
             "phone_placeholder": "Entrez votre numéro de téléphone",
             "country": "Pays",
-            "country_placeholder": "Entrez votre pays",
+            "country_placeholder": "Sélectionnez votre pays",
+            "country_search_placeholder": "Rechercher un pays...",
+            "country_no_results": "Aucun pays trouvé",
             "company": "Nom de l'entreprise",
             "company_placeholder": "Entrez le nom de votre entreprise",
             "role": "Poste",
@@ -1388,7 +1390,7 @@
         "connected_flow": "FLUX CONNECTÉ",
         "flow_steps": [
             "Identité",
-            "Risque appareil & compte",
+            "Risque appareil",
             "Transactions",
             "Criblage",
             "Intelligence",
@@ -1517,7 +1519,7 @@
             },
             "mobile_money": {
                 "title": "Opérateurs de mobile money",
-                "body": "Traitez les risques liés à l'identité, au compte et aux transactions grâce à des intégrations prises en charge et des contrôles configurés."
+                "body": "Conçu pour des écosystèmes comme Orange Money, MTN MoMo et Moov Money — traitez les risques liés à l'identité, au compte et aux transactions grâce à des intégrations prises en charge et des contrôles configurés."
             },
             "fintechs": {
                 "title": "Fintechs et services financiers digitaux",
