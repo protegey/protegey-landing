@@ -2,6 +2,7 @@
 import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import WaveDivider from '~/components/illustrations/WaveDivider.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +21,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <section id="final-cta" class="relative bg-neutral-900 dark:bg-neutral-950 py-24 md:py-28">
+    <section id="final-cta" class="relative bg-neutral-900 dark:bg-neutral-950 pt-24 md:pt-28 pb-28 md:pb-36">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-2xl mx-auto text-center">
                 <h2 class="final-cta-reveal text-3xl md:text-4xl font-bold text-white mb-5 tracking-tight leading-tight">
@@ -41,5 +42,6 @@ onMounted(() => {
                 </div>
             </div>
         </div>
+        <WaveDivider />
     </section>
 </template>

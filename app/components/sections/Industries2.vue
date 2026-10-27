@@ -3,17 +3,16 @@ import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HugeiconsIcon } from '@hugeicons/vue';
-import { BankIcon, PiggyBankIcon, SmartPhone01Icon, CreditCardIcon, Wallet01Icon } from '@hugeicons/core-free-icons';
-
+import { BankIcon, PiggyBankIcon, MoneySendFlow01Icon, Rocket01Icon, CreditCardPosIcon } from '@hugeicons/core-free-icons';
 gsap.registerPlugin(ScrollTrigger);
 
 const localePath = useLocalePath();
 const cards = [
-    { key: 'banks', icon: BankIcon, accent: 'border-primary-500', photo: '/images/persona-banks.webp', glow: 'bg-primary-500/10' },
-    { key: 'microfinance', icon: PiggyBankIcon, accent: 'border-secondary-500', photo: '/images/persona-microfinance.webp', glow: 'bg-secondary-500/10' },
-    { key: 'mobile_money', icon: SmartPhone01Icon, accent: 'border-accent-cyan-500', photo: '/images/persona-mobile-money.webp', glow: 'bg-accent-cyan-500/10' },
-    { key: 'fintechs', icon: CreditCardIcon, accent: 'border-accent-orange-500', photo: '/images/persona-fintechs.webp', glow: 'bg-accent-orange-500/10' },
-    { key: 'payment_providers', icon: Wallet01Icon, accent: 'border-primary-500', photo: '/images/persona-payment-providers.webp', glow: 'bg-primary-500/10' },
+    { key: 'banks', icon: BankIcon, accent: 'border-primary-500', glow: 'bg-primary-500/10', badge: 'bg-primary-500 text-white' },
+    { key: 'microfinance', icon: PiggyBankIcon, accent: 'border-secondary-500', glow: 'bg-secondary-500/10', badge: 'bg-secondary-500 text-white' },
+    { key: 'mobile_money', icon: MoneySendFlow01Icon, accent: 'border-accent-cyan-500', glow: 'bg-accent-cyan-500/10', badge: 'bg-accent-cyan-500 text-neutral-900' },
+    { key: 'fintechs', icon: Rocket01Icon, accent: 'border-accent-orange-500', glow: 'bg-accent-orange-500/10', badge: 'bg-accent-orange-500 text-white' },
+    { key: 'payment_providers', icon: CreditCardPosIcon, accent: 'border-primary-500', glow: 'bg-primary-500/10', badge: 'bg-primary-500 text-white' },
 ];
 
 onMounted(() => {
@@ -44,12 +43,13 @@ onMounted(() => {
                 <div v-for="card in cards" :key="card.key"
                     class="industry-card bg-white dark:bg-neutral-900 border-l-4 rounded-xl overflow-hidden"
                     :class="card.accent">
-                    <div class="relative h-32 flex items-end justify-center overflow-hidden" :class="card.glow">
-                        <img :src="card.photo" :alt="$t(`industries2.cards.${card.key}.title`)"
-                            class="h-full w-auto object-contain object-bottom" loading="lazy" />
+                    <div class="relative h-32 flex items-center justify-center" :class="card.glow">
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md"
+                            :class="card.badge">
+                            <HugeiconsIcon :icon="card.icon" :size="30" />
+                        </div>
                     </div>
                     <div class="p-5">
-                        <HugeiconsIcon :icon="card.icon" :size="18" class="text-neutral-400 dark:text-neutral-500 mb-2" />
                         <h3 class="font-bold text-neutral-900 dark:text-white text-sm mb-2 leading-snug">
                             {{ $t(`industries2.cards.${card.key}.title`) }}
                         </h3>

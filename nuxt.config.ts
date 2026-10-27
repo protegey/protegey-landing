@@ -104,6 +104,7 @@ export default defineNuxtConfig({
     notionApiKey: process.env.NOTION_API_KEY,
     notionDatabaseId: process.env.NOTION_DATABASE_ID,
     mailtrapToken: process.env.MAILTRAP_TOKEN,
+    resendApiKey: process.env.RESEND_API_KEY,
     public: {
       vercelAnalyticsEnabled: process.env.VERCEL_ANALYTICS_ENABLED === 'true'
     }

@@ -3,6 +3,8 @@ import { onMounted, onUnmounted } from 'vue';
 import { gsap } from 'gsap';
 import { HugeiconsIcon } from '@hugeicons/vue';
 import { ArrowRight01Icon } from '@hugeicons/core-free-icons';
+import WaveDivider from '~/components/illustrations/WaveDivider.vue';
+import SignalFeedTerminal from '~/components/illustrations/SignalFeedTerminal.vue';
 
 defineProps({ isDark: Boolean });
 
@@ -41,7 +43,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section id="hero" class="relative bg-neutral-50 dark:bg-neutral-950 overflow-hidden pt-28 sm:pt-32 md:pt-40 pb-28 md:pb-36">
+    <section id="hero" class="relative bg-neutral-50 dark:bg-neutral-950 overflow-hidden pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-20">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-gradient-to-b from-primary-500/5 via-transparent to-transparent"></div>
             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/8 rounded-full blur-3xl"></div>
@@ -90,17 +92,11 @@ onUnmounted(() => {
                 <!-- Right Visual -->
                 <div class="relative perspective-1000">
                     <div class="dashboard-card relative z-10 mx-auto lg:mx-0 lg:ml-auto w-full max-w-[420px]">
-                        <img
-                            src="/images/hero-person-cutout.webp"
-                            :alt="$t('hero2.photo_alt')"
-                            width="836"
-                            height="954"
-                            class="w-full h-auto object-contain drop-shadow-2xl"
-                        />
+                        <SignalFeedTerminal />
                     </div>
 
                     <!-- Floating alert card -->
-                    <div class="alert-float-card absolute top-6 sm:-top-4 right-0 sm:-right-6 z-20 w-72 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-2xl p-4">
+                    <div class="alert-float-card absolute -top-6 right-2 sm:-top-8 sm:-right-6 z-20 w-72 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-2xl p-4">
                         <div class="flex items-center gap-2 mb-1.5">
                             <span class="w-2 h-2 rounded-full bg-accent-orange-500 flex-shrink-0"></span>
                             <p class="text-sm font-bold text-neutral-900 dark:text-white leading-snug">{{ $t('hero2.alert_card.title') }}</p>
@@ -112,7 +108,7 @@ onUnmounted(() => {
                         </NuxtLink>
                     </div>
 
-                    <div class="connected-flow-tag absolute -bottom-8 sm:-bottom-10 -left-4 sm:-left-10 z-20 w-64 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-2xl p-4">
+                    <div class="connected-flow-tag absolute -bottom-6 left-2 sm:-bottom-10 sm:-left-10 z-20 w-64 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-2xl p-4">
                         <p class="text-[0.6rem] font-bold tracking-[0.12em] uppercase text-secondary-600 dark:text-secondary-400 mb-2.5">
                             {{ $t('hero2.connected_flow') }}
                         </p>
@@ -132,10 +128,7 @@ onUnmounted(() => {
         </div>
 
         <!-- Decorative wave transition -->
-        <svg class="absolute bottom-0 left-0 w-full h-10 sm:h-14 pointer-events-none" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,28 C60,6 180,50 240,28 C300,6 420,50 480,28 C540,6 660,50 720,28 C780,6 900,50 960,28 C1020,6 1140,50 1200,28 C1260,6 1380,50 1440,28 L1440,56 L0,56 Z" fill="#FF6B00" opacity="0.55" />
-            <path d="M0,34 C60,14 180,54 240,34 C300,14 420,54 480,34 C540,14 660,54 720,34 C780,14 900,54 960,34 C1020,14 1140,54 1200,34 C1260,14 1380,54 1440,34 L1440,56 L0,56 Z" fill="#0B1741" class="dark:fill-neutral-950" />
-        </svg>
+        <WaveDivider />
     </section>
 </template>
 

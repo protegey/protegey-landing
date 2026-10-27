@@ -1,5 +1,6 @@
 import { Client } from '@notionhq/client'
 import { MailtrapClient } from 'mailtrap'
+import { Resend } from 'resend'
 
 export default defineEventHandler(async (event) => {
     // 5 submissions per IP per 10 minutes
@@ -32,6 +33,7 @@ export default defineEventHandler(async (event) => {
 
     const notion = new Client({ auth: config.notionApiKey })
     const mailtrap = config.mailtrapToken ? new MailtrapClient({ token: config.mailtrapToken }) : null
+    const resend = config.resendApiKey ? new Resend(config.resendApiKey) : null
 
     try {
         // ... Check for duplicates logic ...
@@ -182,6 +184,21 @@ export default defineEventHandler(async (event) => {
             }
         }
 
+        // Notify the internal team of the new submission via Resend
+        if (resend) {
+            try {
+                await resend.emails.send({
+                    from: 'Protegey Website <notifications@protegey.com>',
+                    to: ['hello@protegey.com'],
+                    replyTo: body.email,
+                    subject: `New waitlist submission: ${body.name}`,
+                    html: buildInternalNotificationHtml(body),
+                })
+            } catch (notifyError) {
+                console.error('Failed to send internal notification email via Resend:', notifyError)
+            }
+        }
+
         return { success: true, id: response.id }
     } catch (error: any) {
         console.error('Notion API Error:', error)
@@ -191,6 +208,25 @@ export default defineEventHandler(async (event) => {
         })
     }
 })
+
+function buildInternalNotificationHtml(body: any): string {
+    const row = (label: string, value?: string) =>
+        value ? `<tr><td style="padding:6px 12px 6px 0;color:#6b7280;font-size:13px;white-space:nowrap;vertical-align:top;">${escapeHtml(label)}</td><td style="padding:6px 0;color:#111827;font-size:13px;">${escapeHtml(value)}</td></tr>` : ''
+
+    return `
+        <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 560px; margin: 0 auto; color: #111827;">
+            <h2 style="font-size: 16px; margin-bottom: 16px;">New waitlist submission</h2>
+            <table style="border-collapse: collapse; width: 100%;">
+                ${row('Name', body.name)}
+                ${row('Email', body.email)}
+                ${row('Company', body.company)}
+                ${row('Country', body.country)}
+                ${row('Message', body.message)}
+                ${row('Language', body.lang)}
+            </table>
+        </div>
+    `
+}
 
 function escapeHtml(str: string): string {
     return String(str)

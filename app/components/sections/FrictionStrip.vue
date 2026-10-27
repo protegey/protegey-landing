@@ -26,7 +26,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="relative z-20 -mt-16 md:-mt-20 px-4 sm:px-6 lg:px-8">
+    <div class="relative z-20 -mt-3 md:-mt-4 px-4 sm:px-6 lg:px-8">
         <div class="friction-strip max-w-6xl mx-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-xl grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-neutral-200 dark:divide-neutral-800">
             <div v-for="item in items" :key="item.key" class="friction-card p-6 md:p-7">
                 <HugeiconsIcon :icon="item.icon" :size="20" class="text-primary-500 mb-3" />

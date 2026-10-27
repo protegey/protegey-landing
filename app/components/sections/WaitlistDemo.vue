@@ -150,19 +150,19 @@ onMounted(() => {
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
+                            <label for="country"
+                                class="block text-xs font-bold uppercase tracking-widest mb-2 text-neutral-500 dark:text-neutral-400 rtl:text-right">{{
+                                    $t('waitlist.form.country') }}</label>
+                            <CountrySelect v-model="formData.country" input-id="country"
+                                :placeholder="$t('waitlist.form.country_placeholder')" />
+                        </div>
+                        <div>
                             <label for="company"
                                 class="block text-xs font-bold uppercase tracking-widest mb-2 text-neutral-500 dark:text-neutral-400 rtl:text-right">{{
                                     $t('waitlist.form.company') }}</label>
                             <input id="company" v-model="formData.company" type="text"
                                 :placeholder="$t('waitlist.form.company_placeholder')"
                                 class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all bg-white/90 dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 rtl:text-right" />
-                        </div>
-                        <div>
-                            <label for="country"
-                                class="block text-xs font-bold uppercase tracking-widest mb-2 text-neutral-500 dark:text-neutral-400 rtl:text-right">{{
-                                    $t('waitlist.form.country') }}</label>
-                            <CountrySelect v-model="formData.country" input-id="country"
-                                :placeholder="$t('waitlist.form.country_placeholder')" />
                         </div>
                     </div>
 

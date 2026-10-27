@@ -25,7 +25,7 @@ onMounted(() => {
 <template>
     <section id="intelligence-layer" class="relative bg-neutral-900 dark:bg-neutral-950 py-24 md:py-32">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mb-14">
+            <div class="max-w-3xl mx-auto mb-14">
                 <div class="intel-reveal text-xs font-bold tracking-widest uppercase text-accent-cyan-400 mb-5">
                     {{ $t('intelligence_layer2.eyebrow') }}
                 </div>
@@ -34,7 +34,7 @@ onMounted(() => {
                 </h2>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-10 max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
                 <p class="intel-reveal text-base text-neutral-400 leading-relaxed">
                     {{ $t('intelligence_layer2.body') }}
                 </p>
