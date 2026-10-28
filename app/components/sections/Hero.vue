@@ -4,7 +4,6 @@ import { gsap } from 'gsap';
 import { HugeiconsIcon } from '@hugeicons/vue';
 import { ArrowRight01Icon } from '@hugeicons/core-free-icons';
 import WaveDivider from '~/components/illustrations/WaveDivider.vue';
-import SignalFeedTerminal from '~/components/illustrations/SignalFeedTerminal.vue';
 
 defineProps({ isDark: Boolean });
 
@@ -91,8 +90,14 @@ onUnmounted(() => {
 
                 <!-- Right Visual -->
                 <div class="relative perspective-1000">
-                    <div class="dashboard-card relative z-10 mx-auto lg:mx-0 lg:ml-auto w-full max-w-[420px]">
-                        <SignalFeedTerminal />
+                    <div class="dashboard-card relative z-10 mx-auto lg:mx-0 lg:ml-auto w-full max-w-[420px] aspect-[4/5] rounded-2xl overflow-hidden border border-neutral-200 dark:border-white/10 shadow-xl">
+                        <img
+                            src="/images/hero-two-men.webp"
+                            :alt="$t('hero2.photo_alt')"
+                            width="1000"
+                            height="1500"
+                            class="w-full h-full object-cover"
+                        />
                     </div>
 
                     <!-- Floating alert card -->
