@@ -74,25 +74,43 @@ export function mapPostSummary(page: any, readingTime = 0): BlogPostSummary {
     }
 }
 
+// Simple in-process TTL cache. Nitro route-rule ISR config is deliberately
+// avoided for /api/blog/** — giving those exact-path routes their own
+// Vercel-preset build config collides with Nitro's function bundling at
+// build time. This process-local cache gets most of the same benefit
+// (fewer Notion round-trips) without touching the build pipeline.
+const memoCache = new Map<string, { value: any, expiresAt: number }>()
+
+async function cached<T>(key: string, ttlMs: number, fn: () => Promise<T>): Promise<T> {
+    const hit = memoCache.get(key)
+    if (hit && hit.expiresAt > Date.now()) return hit.value as T
+    const value = await fn()
+    memoCache.set(key, { value, expiresAt: Date.now() + ttlMs })
+    return value
+}
+
 export async function queryPublishedPosts(options: { category?: string, featuredOnly?: boolean } = {}) {
-    const notion = getNotionBlogClient()
-    const databaseId = getBlogDatabaseId()
+    const cacheKey = `posts:${options.category || ''}:${options.featuredOnly ? 1 : 0}`
+    return cached(cacheKey, 30 * 60_000, async () => {
+        const notion = getNotionBlogClient()
+        const databaseId = getBlogDatabaseId()
 
-    const andFilters: any[] = [{ property: 'Status', select: { equals: 'Published' } }]
-    if (options.category) {
-        andFilters.push({ property: 'Category', select: { equals: options.category } })
-    }
-    if (options.featuredOnly) {
-        andFilters.push({ property: 'Featured', checkbox: { equals: true } })
-    }
+        const andFilters: any[] = [{ property: 'Status', select: { equals: 'Published' } }]
+        if (options.category) {
+            andFilters.push({ property: 'Category', select: { equals: options.category } })
+        }
+        if (options.featuredOnly) {
+            andFilters.push({ property: 'Featured', checkbox: { equals: true } })
+        }
 
-    const response = await notion.databases.query({
-        database_id: databaseId,
-        filter: { and: andFilters },
-        sorts: [{ property: 'Published Date', direction: 'descending' }],
+        const response = await notion.databases.query({
+            database_id: databaseId,
+            filter: { and: andFilters },
+            sorts: [{ property: 'Published Date', direction: 'descending' }],
+        })
+
+        return response.results
     })
-
-    return response.results
 }
 
 export async function findPostBySlug(slug: string) {
@@ -142,6 +160,10 @@ function richTextToHtml(rich: any[]): string {
 // Renders a flat list of top-level Notion blocks into article HTML.
 // Supports the common block types an editor would use for a blog post.
 export async function renderBlocksToHtml(pageId: string): Promise<{ html: string, wordCount: number }> {
+    return cached(`blocks:${pageId}`, 30 * 60_000, () => renderBlocksToHtmlUncached(pageId))
+}
+
+async function renderBlocksToHtmlUncached(pageId: string): Promise<{ html: string, wordCount: number }> {
     const notion = getNotionBlogClient()
     let cursor: string | undefined
     const blocks: any[] = []

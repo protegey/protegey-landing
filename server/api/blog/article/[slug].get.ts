@@ -14,7 +14,8 @@ export default defineEventHandler(async (event) => {
             },
         }
     } catch (error: any) {
-        if (error?.statusCode) throw error
+        // Any failure here (Notion not configured yet, article missing, API
+        // error) surfaces the same "not found" state to the visitor.
         console.error('Failed to load blog post:', error?.message || error)
         throw createError({ statusCode: 404, message: 'Article not found.' })
     }

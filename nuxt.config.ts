@@ -51,14 +51,10 @@ export default defineNuxtConfig({
     },
 
     // 2. Explicitly dynamic for API
+    //    (blog routes cache in-process instead — see server/utils/notionBlog.ts —
+    //    since giving them their own Vercel route-rule ISR config collides with
+    //    Nitro's vercel preset function bundling)
     '/api/**': { swr: false, cache: false },
-    // 3. Blog content changes rarely — cache listings/posts briefly to avoid
-    //    re-hitting Notion (and re-resolving image URLs) on every request.
-    '/api/blog/posts': { swr: 1800 },
-    '/api/blog/featured': { swr: 1800 },
-    '/api/blog/post/**': { swr: 1800 },
-    '/api/blog/cover/**': { swr: 3600 },
-    '/api/blog/image/**': { swr: 3600 },
   },
   sitemap: {
     strictNuxtContentPaths: true,

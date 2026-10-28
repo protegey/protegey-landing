@@ -25,7 +25,7 @@ function formatDate(dateStr) {
 
 onMounted(async () => {
     try {
-        const res = await $fetch(`/api/blog/post/${route.params.slug}`)
+        const res = await $fetch(`/api/blog/article/${route.params.slug}`)
         post.value = res.post
     } catch {
         notFound.value = true
