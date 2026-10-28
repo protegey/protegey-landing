@@ -9,15 +9,6 @@ export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig()
     const body = await readBody(event)
 
-    // Validate configuration
-    if (!config.notionApiKey || !config.notionDatabaseId) {
-        console.error('Notion API Key or Database ID is missing in server config.')
-        throw createError({
-            statusCode: 500,
-            message: 'Server configuration error. Please contact support.'
-        })
-    }
-
     // Validate body
     if (!body.email || !body.name || !body.country) {
         throw createError({
@@ -31,142 +22,153 @@ export default defineEventHandler(async (event) => {
         throw createError({ statusCode: 400, message: 'Invalid email address.' })
     }
 
-    const notion = new Client({ auth: config.notionApiKey })
+    const notionConfigured = !!(config.notionApiKey && config.notionDatabaseId)
     const mailtrap = config.mailtrapToken ? new MailtrapClient({ token: config.mailtrapToken }) : null
     const resend = config.resendApiKey ? new Resend(config.resendApiKey) : null
 
-    try {
-        // ... Check for duplicates logic ...
-        // (existing code remains same)
-        const existing: any = await $fetch(`https://api.notion.com/v1/databases/${config.notionDatabaseId}/query`, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${config.notionApiKey}`,
-                'Notion-Version': '2022-06-28',
-                'Content-Type': 'application/json'
-            },
-            body: {
-                filter: {
-                    property: 'Email',
-                    email: {
-                        equals: body.email
+    // Logging to Notion and sending the confirmation/notification emails are
+    // independent concerns — a missing or failing Notion config must never
+    // block the emails from going out, and vice versa.
+    let notionPageId: string | null = null
+    let isDuplicate = false
+
+    if (notionConfigured) {
+        try {
+            const notion = new Client({ auth: config.notionApiKey as string })
+
+            const existing: any = await $fetch(`https://api.notion.com/v1/databases/${config.notionDatabaseId}/query`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${config.notionApiKey}`,
+                    'Notion-Version': '2022-06-28',
+                    'Content-Type': 'application/json'
+                },
+                body: {
+                    filter: {
+                        property: 'Email',
+                        email: {
+                            equals: body.email
+                        }
                     }
                 }
-            }
-        })
+            })
 
-        if (existing.results && existing.results.length > 0) {
-            return {
-                success: true,
-                message: 'You are already on the waitlist!',
-                id: existing.results[0].id,
-                isDuplicate: true
-            }
-        }
+            if (existing.results && existing.results.length > 0) {
+                notionPageId = existing.results[0].id
+                isDuplicate = true
+            } else {
+                // Helper to sanitize multi-select options (remove commas and truncate to 100 chars)
+                const sanitizeOption = (val: string) => (val || '').replace(/,/g, '').substring(0, 100)
 
-        // Helper to sanitize multi-select options (remove commas and truncate to 100 chars)
-        const sanitizeOption = (val: string) => (val || '').replace(/,/g, '').substring(0, 100)
+                // Helper to truncate text to Notion limits (2000 chars)
+                const truncate = (str: string, length: number = 2000) => (str || '').substring(0, length)
 
-        // Helper to truncate text to Notion limits (2000 chars)
-        const truncate = (str: string, length: number = 2000) => (str || '').substring(0, length)
-
-        const response = await notion.pages.create({
-            parent: { database_id: config.notionDatabaseId },
-            properties: {
-                Name: {
-                    title: [
-                        {
-                            text: {
-                                content: truncate(body.name),
+                const response = await notion.pages.create({
+                    parent: { database_id: config.notionDatabaseId as string },
+                    properties: {
+                        Name: {
+                            title: [
+                                {
+                                    text: {
+                                        content: truncate(body.name),
+                                    },
+                                },
+                            ],
+                        },
+                        Email: {
+                            email: body.email,
+                        },
+                        Phone: {
+                            phone_number: body.phone || null,
+                        },
+                        Country: {
+                            rich_text: [
+                                {
+                                    text: {
+                                        content: truncate(body.country),
+                                    },
+                                },
+                            ],
+                        },
+                        Company: {
+                            rich_text: [
+                                {
+                                    text: {
+                                        content: truncate(body.company || 'N/A'),
+                                    },
+                                },
+                            ],
+                        },
+                        Role: {
+                            multi_select: [
+                                {
+                                    name: sanitizeOption(body.role ? body.role : 'Other'),
+                                },
+                            ],
+                        },
+                        'Business Model': {
+                            multi_select: body.businessModel ? [{ name: sanitizeOption(body.businessModel) }] : [],
+                        },
+                        'Stage': {
+                            multi_select: body.stage ? [{ name: sanitizeOption(body.stage) }] : [],
+                        },
+                        'Sector': {
+                            multi_select: body.sector ? [{ name: sanitizeOption(body.sector) }] : [],
+                        },
+                        'Pain Points': {
+                            multi_select: (Array.isArray(body.painPoints) ? body.painPoints : []).map((p: string) => ({ name: sanitizeOption(String(p)) })),
+                        },
+                        'Other Pain Point': {
+                            rich_text: [
+                                {
+                                    text: {
+                                        content: truncate(body.otherPainPoint || ''),
+                                    },
+                                },
+                            ],
+                        },
+                        Interest: {
+                            multi_select: [
+                                {
+                                    name: sanitizeOption(body.interestType || 'Other'),
+                                },
+                            ],
+                        },
+                        Message: {
+                            rich_text: [
+                                {
+                                    text: {
+                                        content: truncate(body.message || ''),
+                                    },
+                                },
+                            ],
+                        },
+                        Date: {
+                            date: {
+                                start: new Date().toISOString(),
                             },
                         },
-                    ],
-                },
-                Email: {
-                    email: body.email,
-                },
-                Phone: {
-                    phone_number: body.phone || null,
-                },
-                Country: {
-                    rich_text: [
-                        {
-                            text: {
-                                content: truncate(body.country),
-                            },
+                        Title: {
+                            rich_text: [
+                                {
+                                    text: {
+                                        content: body.title || 'N/A',
+                                    },
+                                },
+                            ],
                         },
-                    ],
-                },
-                Company: {
-                    rich_text: [
-                        {
-                            text: {
-                                content: truncate(body.company || 'N/A'),
-                            },
-                        },
-                    ],
-                },
-                Role: {
-                    multi_select: [
-                        {
-                            name: sanitizeOption(body.role ? body.role : 'Other'),
-                        },
-                    ],
-                },
-                'Business Model': {
-                    multi_select: body.businessModel ? [{ name: sanitizeOption(body.businessModel) }] : [],
-                },
-                'Stage': {
-                    multi_select: body.stage ? [{ name: sanitizeOption(body.stage) }] : [],
-                },
-                'Sector': {
-                    multi_select: body.sector ? [{ name: sanitizeOption(body.sector) }] : [],
-                },
-                'Pain Points': {
-                    multi_select: (Array.isArray(body.painPoints) ? body.painPoints : []).map((p: string) => ({ name: sanitizeOption(String(p)) })),
-                },
-                'Other Pain Point': {
-                    rich_text: [
-                        {
-                            text: {
-                                content: truncate(body.otherPainPoint || ''),
-                            },
-                        },
-                    ],
-                },
-                Interest: {
-                    multi_select: [
-                        {
-                            name: sanitizeOption(body.interestType || 'Other'),
-                        },
-                    ],
-                },
-                Message: {
-                    rich_text: [
-                        {
-                            text: {
-                                content: truncate(body.message || ''),
-                            },
-                        },
-                    ],
-                },
-                Date: {
-                    date: {
-                        start: new Date().toISOString(),
                     },
-                },
-                Title: {
-                    rich_text: [
-                        {
-                            text: {
-                                content: body.title || 'N/A',
-                            },
-                        },
-                    ],
-                },
-            },
-        })
+                })
+                notionPageId = response.id
+            }
+        } catch (error: any) {
+            console.error('Notion API error (submission will still be emailed):', error)
+        }
+    } else {
+        console.warn('Notion is not configured — skipping the waitlist database write, emails will still be sent.')
+    }
 
+    if (!isDuplicate) {
         // Send Confirmation Email via Mailtrap
         if (mailtrap) {
             try {
@@ -198,14 +200,13 @@ export default defineEventHandler(async (event) => {
                 console.error('Failed to send internal notification email via Resend:', notifyError)
             }
         }
+    }
 
-        return { success: true, id: response.id }
-    } catch (error: any) {
-        console.error('Notion API Error:', error)
-        throw createError({
-            statusCode: 500,
-            message: 'Failed to submit. Please try again later.'
-        })
+    return {
+        success: true,
+        id: notionPageId,
+        isDuplicate,
+        message: isDuplicate ? 'You are already on the waitlist!' : undefined,
     }
 })
 
