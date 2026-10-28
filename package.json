@@ -25,7 +25,6 @@
     "@vercel/speed-insights": "^1.2.0",
     "clsx": "^2.1.1",
     "gsap": "^3.13.0",
-    "mailtrap": "^4.4.0",
     "nuxt": "^4.0.0",
     "resend": "^6.34.1",
     "shadcn-nuxt": "^2.3.2",

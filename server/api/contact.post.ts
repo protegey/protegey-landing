@@ -1,5 +1,5 @@
 import { Client } from '@notionhq/client'
-import { MailtrapClient } from 'mailtrap'
+import { Resend } from 'resend'
 
 export default defineEventHandler(async (event) => {
     // 3 submissions per IP per 10 minutes
@@ -7,15 +7,6 @@ export default defineEventHandler(async (event) => {
 
     const config = useRuntimeConfig()
     const body = await readBody(event)
-
-    // Validate configuration
-    if (!config.notionApiKey || !config.notionDatabaseId) {
-        console.error('Notion API Key or Database ID is missing in server config.')
-        throw createError({
-            statusCode: 500,
-            message: 'Server configuration error. Please contact support.'
-        })
-    }
 
     // Validate body
     if (!body.email || !body.name || !body.message || !body.country) {
@@ -30,108 +21,115 @@ export default defineEventHandler(async (event) => {
         throw createError({ statusCode: 400, message: 'Invalid email address.' })
     }
 
-    const notion = new Client({ auth: config.notionApiKey })
-    const mailtrap = config.mailtrapToken ? new MailtrapClient({ token: config.mailtrapToken }) : null
+    const notionConfigured = !!(config.notionApiKey && config.notionDatabaseId)
+    const resend = config.resendApiKey ? new Resend(config.resendApiKey as string) : null
 
-    try {
-        // Check for duplicate submissions by email
-        const existing: any = await $fetch(`https://api.notion.com/v1/databases/${config.notionDatabaseId}/query`, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${config.notionApiKey}`,
-                'Notion-Version': '2022-06-28',
-                'Content-Type': 'application/json'
-            },
-            body: {
-                filter: {
-                    property: 'Email',
-                    email: { equals: body.email }
+    let notionPageId: string | null = null
+    let isDuplicate = false
+
+    if (notionConfigured) {
+        try {
+            const notion = new Client({ auth: config.notionApiKey as string })
+
+            // Check for duplicate submissions by email
+            const existing: any = await $fetch(`https://api.notion.com/v1/databases/${config.notionDatabaseId}/query`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${config.notionApiKey}`,
+                    'Notion-Version': '2022-06-28',
+                    'Content-Type': 'application/json'
+                },
+                body: {
+                    filter: {
+                        property: 'Email',
+                        email: { equals: body.email }
+                    }
                 }
-            }
-        })
-        if (existing.results && existing.results.length > 0) {
-            return { success: true, isDuplicate: true }
-        }
+            })
 
-        // Helper to truncate text to Notion limits (2000 chars)
-        const truncate = (str: string, length: number = 2000) => (str || '').substring(0, length)
+            if (existing.results && existing.results.length > 0) {
+                notionPageId = existing.results[0].id
+                isDuplicate = true
+            } else {
+                // Helper to truncate text to Notion limits (2000 chars)
+                const truncate = (str: string, length: number = 2000) => (str || '').substring(0, length)
 
-        const response = await notion.pages.create({
-            parent: { database_id: config.notionDatabaseId },
-            properties: {
-                Name: {
-                    title: [
-                        {
-                            text: {
-                                content: truncate(body.name),
+                const response = await notion.pages.create({
+                    parent: { database_id: config.notionDatabaseId as string },
+                    properties: {
+                        Name: {
+                            title: [
+                                {
+                                    text: {
+                                        content: truncate(body.name),
+                                    },
+                                },
+                            ],
+                        },
+                        Email: {
+                            email: body.email,
+                        },
+                        Phone: {
+                            phone_number: body.phone || null,
+                        },
+                        Country: {
+                            rich_text: [
+                                {
+                                    text: {
+                                        content: truncate(body.country),
+                                    },
+                                },
+                            ],
+                        },
+                        Interest: {
+                            multi_select: [
+                                {
+                                    name: 'Contact Form',
+                                }
+                            ],
+                        },
+                        Message: {
+                            rich_text: [
+                                {
+                                    text: {
+                                        content: truncate(body.message),
+                                    },
+                                },
+                            ],
+                        },
+                        Date: {
+                            date: {
+                                start: new Date().toISOString(),
                             },
                         },
-                    ],
-                },
-                Email: {
-                    email: body.email,
-                },
-                Phone: {
-                    phone_number: body.phone || null,
-                },
-                Country: {
-                    rich_text: [
-                        {
-                            text: {
-                                content: truncate(body.country),
-                            },
-                        },
-                    ],
-                },
-                Interest: {
-                    multi_select: [
-                        {
-                            name: 'Contact Form',
-                        }
-                    ],
-                },
-                Message: {
-                    rich_text: [
-                        {
-                            text: {
-                                content: truncate(body.message),
-                            },
-                        },
-                    ],
-                },
-                Date: {
-                    date: {
-                        start: new Date().toISOString(),
                     },
-                },
-            },
-        })
-
-        // Send Notification Email via Mailtrap
-        if (mailtrap) {
-            try {
-                const lang = body.lang || 'fr'
-                const emailContent = getEmailContent(lang, body.name, body.message)
-
-                await mailtrap.send({
-                    from: { name: 'PROTEGEY.', email: 'no-reply@mail.protegey.com' },
-                    to: [{ email: body.email }],
-                    subject: emailContent.subject,
-                    html: emailContent.html
                 })
-            } catch (emailError) {
-                console.error('Failed to send contact confirmation email via Mailtrap:', emailError)
+                notionPageId = response.id
             }
+        } catch (error: any) {
+            console.error('Notion API error (contact form will still be emailed):', error)
         }
-
-        return { success: true, id: response.id }
-    } catch (error: any) {
-        console.error('Notion API Error (Contact):', error)
-        throw createError({
-            statusCode: 500,
-            message: 'Failed to submit contact form. Please try again later.'
-        })
+    } else {
+        console.warn('Notion is not configured — skipping the contact database write, emails will still be sent.')
     }
+
+    if (!isDuplicate && resend) {
+        try {
+            const lang = body.lang || 'fr'
+            const emailContent = getEmailContent(lang, body.name, body.message)
+
+            await resend.emails.send({
+                from: 'PROTEGEY <no-reply@protegey.com>',
+                to: [body.email],
+                subject: emailContent.subject,
+                html: emailContent.html
+            })
+        } catch (emailError) {
+            console.error('Failed to send contact confirmation email via Resend:', emailError)
+        }
+    }
+
+    return { success: true, id: notionPageId, isDuplicate }
 })
 
 function escapeHtml(str: string): string {

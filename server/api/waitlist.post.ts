@@ -1,5 +1,4 @@
 import { Client } from '@notionhq/client'
-import { MailtrapClient } from 'mailtrap'
 import { Resend } from 'resend'
 
 export default defineEventHandler(async (event) => {
@@ -23,8 +22,7 @@ export default defineEventHandler(async (event) => {
     }
 
     const notionConfigured = !!(config.notionApiKey && config.notionDatabaseId)
-    const mailtrap = config.mailtrapToken ? new MailtrapClient({ token: config.mailtrapToken }) : null
-    const resend = config.resendApiKey ? new Resend(config.resendApiKey) : null
+    const resend = config.resendApiKey ? new Resend(config.resendApiKey as string) : null
 
     // Logging to Notion and sending the confirmation/notification emails are
     // independent concerns — a missing or failing Notion config must never
@@ -169,20 +167,20 @@ export default defineEventHandler(async (event) => {
     }
 
     if (!isDuplicate) {
-        // Send Confirmation Email via Mailtrap
-        if (mailtrap) {
+        // Send Confirmation Email via Resend
+        if (resend) {
             try {
                 const lang = body.lang || 'fr'
                 const emailContent = getEmailContent(lang, body.name, body.title)
 
-                await mailtrap.send({
-                    from: { name: 'PROTEGEY.', email: 'no-reply@mail.protegey.com' },
-                    to: [{ email: body.email }],
+                await resend.emails.send({
+                    from: 'PROTEGEY <no-reply@protegey.com>',
+                    to: [body.email],
                     subject: emailContent.subject,
                     html: emailContent.html
                 })
             } catch (emailError) {
-                console.error('Failed to send confirmation email via Mailtrap:', emailError)
+                console.error('Failed to send confirmation email via Resend:', emailError)
             }
         }
 
