@@ -42,7 +42,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section id="hero" class="relative bg-neutral-50 dark:bg-neutral-950 overflow-hidden pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-20">
+    <section id="hero" class="relative bg-neutral-50 dark:bg-neutral-950 overflow-hidden pt-28 sm:pt-32 md:pt-40 pb-24 md:pb-28">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-gradient-to-b from-primary-500/5 via-transparent to-transparent"></div>
             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/8 rounded-full blur-3xl"></div>
@@ -90,7 +90,7 @@ onUnmounted(() => {
 
                 <!-- Right Visual -->
                 <div class="relative perspective-1000">
-                    <div class="dashboard-card relative z-10 mx-auto lg:mx-0 lg:ml-auto w-full max-w-[420px] aspect-[4/5] rounded-2xl overflow-hidden border border-neutral-200 dark:border-white/10 shadow-xl">
+                    <div class="dashboard-card relative z-10 mx-auto lg:mx-0 lg:ml-auto w-full max-w-[400px] aspect-[1/1] rounded-2xl overflow-hidden border border-neutral-200 dark:border-white/10 shadow-xl">
                         <img
                             src="/images/hero-two-men.webp"
                             :alt="$t('hero2.photo_alt')"
@@ -113,7 +113,7 @@ onUnmounted(() => {
                         </NuxtLink>
                     </div>
 
-                    <div class="connected-flow-tag absolute -bottom-6 left-2 sm:-bottom-10 sm:-left-10 z-20 w-64 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-2xl p-4">
+                    <div class="connected-flow-tag absolute -bottom-4 left-2 sm:-bottom-6 sm:-left-10 z-20 w-64 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-2xl p-4">
                         <p class="text-[0.6rem] font-bold tracking-[0.12em] uppercase text-secondary-600 dark:text-secondary-400 mb-2.5">
                             {{ $t('hero2.connected_flow') }}
                         </p>
