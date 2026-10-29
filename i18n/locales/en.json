@@ -1529,6 +1529,10 @@
             "payment_providers": {
                 "title": "Payment providers",
                 "body": "Support risk monitoring and investigation across relevant payment activity and operational workflows."
+            },
+            "ecommerce": {
+                "title": "E-commerce",
+                "body": "Protect online checkout and cash-on-delivery transactions against card fraud, account takeover and refund abuse, without slowing down the buying journey."
             }
         },
         "cta": "Explore Industries"

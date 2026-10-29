@@ -1529,6 +1529,10 @@
             "payment_providers": {
                 "title": "Prestataires de paiement",
                 "body": "Soutenez la surveillance des risques et l'investigation sur l'activité de paiement et les workflows opérationnels pertinents."
+            },
+            "ecommerce": {
+                "title": "E-commerce",
+                "body": "Protégez les paiements en ligne et les transactions cash-on-delivery contre la fraude à la carte, le compte compromis et les abus de remboursement, sans ralentir le parcours d'achat."
             }
         },
         "cta": "Explorer les secteurs"

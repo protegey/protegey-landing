@@ -3,7 +3,7 @@ import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HugeiconsIcon } from '@hugeicons/vue';
-import { BankIcon, PiggyBankIcon, MoneySendFlow01Icon, Rocket01Icon, CreditCardPosIcon } from '@hugeicons/core-free-icons';
+import { BankIcon, PiggyBankIcon, MoneySendFlow01Icon, Rocket01Icon, CreditCardPosIcon, ShoppingCart01Icon } from '@hugeicons/core-free-icons';
 gsap.registerPlugin(ScrollTrigger);
 
 const localePath = useLocalePath();
@@ -13,6 +13,7 @@ const cards = [
     { key: 'mobile_money', icon: MoneySendFlow01Icon, accent: 'border-accent-cyan-500', glow: 'bg-accent-cyan-500/10', badge: 'bg-accent-cyan-500 text-neutral-900' },
     { key: 'fintechs', icon: Rocket01Icon, accent: 'border-accent-orange-500', glow: 'bg-accent-orange-500/10', badge: 'bg-accent-orange-500 text-white' },
     { key: 'payment_providers', icon: CreditCardPosIcon, accent: 'border-primary-500', glow: 'bg-primary-500/10', badge: 'bg-primary-500 text-white' },
+    { key: 'ecommerce', icon: ShoppingCart01Icon, accent: 'border-secondary-500', glow: 'bg-secondary-500/10', badge: 'bg-secondary-500 text-white' },
 ];
 
 onMounted(() => {
@@ -39,7 +40,7 @@ onMounted(() => {
                 </h2>
             </div>
 
-            <div class="industries-grid grid sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-6xl mx-auto mb-12">
+            <div class="industries-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto mb-12">
                 <div v-for="card in cards" :key="card.key"
                     class="industry-card bg-white dark:bg-neutral-900 border-l-4 rounded-xl overflow-hidden"
                     :class="card.accent">
