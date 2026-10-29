@@ -31,7 +31,7 @@ export default defineNuxtConfig({
         'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
         // Content Security Policy
         // script-src requires 'unsafe-inline' for Nuxt SSR hydration payload scripts.
-        // All external calls to Notion/Resend are server-side only — not in connect-src.
+        // All external calls to Notion (blog CMS) / Resend (forms) are server-side only — not in connect-src.
         // Vercel Analytics script is loaded from same origin via the @vercel/analytics package.
         'Content-Security-Policy': [
           "default-src 'none'",
@@ -105,7 +105,6 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     notionApiKey: process.env.NOTION_API_KEY,
-    notionDatabaseId: process.env.NOTION_DATABASE_ID,
     notionBlogDatabaseId: process.env.NOTION_BLOG_DATABASE_ID,
     resendApiKey: process.env.RESEND_API_KEY,
     public: {
