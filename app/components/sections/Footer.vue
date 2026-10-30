@@ -6,8 +6,8 @@
         <!-- Brand -->
         <div>
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2 mb-4 rtl:justify-end">
-            <img src="/images/logo-dark.svg" :alt="isDark ? '' : $t('footer.logo_alt')" class="h-8 w-auto max-w-none shrink-0" :class="isDark ? 'hidden' : 'block'" />
-            <img src="/images/logo-light.svg" :alt="isDark ? $t('footer.logo_alt') : ''" class="h-8 w-auto max-w-none shrink-0" :class="isDark ? 'block' : 'hidden'" />
+            <img src="/images/logo-dark.svg" :alt="$t('footer.logo_alt')" class="h-8 w-auto max-w-none shrink-0 block dark:hidden" />
+            <img src="/images/logo-light.svg" alt="" class="h-8 w-auto max-w-none shrink-0 hidden dark:block" />
           </NuxtLink>
           <p class="text-sm text-neutral-500 dark:text-neutral-400 rtl:text-right">{{ $t('footer.slogan') }}</p>
         </div>
@@ -219,5 +219,4 @@ import { computed } from 'vue'
 
 const currentYear = computed(() => new Date().getFullYear())
 const localePath = useLocalePath()
-const { isDark } = useTheme()
 </script>
