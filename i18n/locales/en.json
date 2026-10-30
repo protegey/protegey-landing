@@ -1387,11 +1387,11 @@
         "connected_flow": "CONNECTED FLOW",
         "flow_steps": [
             "Identity",
-            "Account & Device Risk",
+            "Device",
             "Transactions",
-            "Screening",
+            "AML",
             "Intelligence",
-            "Action"
+            "Screening"
         ]
     },
     "friction_strip": {

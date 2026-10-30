@@ -1387,11 +1387,11 @@
         "connected_flow": "FLUX CONNECTÉ",
         "flow_steps": [
             "Identité",
-            "Risque appareil",
+            "Appareil",
             "Transactions",
-            "Criblage",
+            "AML",
             "Intelligence",
-            "Action"
+            "Criblage"
         ]
     },
     "friction_strip": {
