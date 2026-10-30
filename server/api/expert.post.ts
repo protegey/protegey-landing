@@ -45,7 +45,7 @@ export default defineEventHandler(async (event) => {
         try {
             await resend.emails.send({
                 from: 'Protegey Website <notifications@assistance.protegey.com>',
-                to: ['hello@protegey.com'],
+                to: ['sales@protegey.com'],
                 replyTo: body.email,
                 subject: `New expert consultation request: ${body.name}`,
                 html: buildInternalNotificationHtml(body),

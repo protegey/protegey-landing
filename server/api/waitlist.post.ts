@@ -40,9 +40,9 @@ export default defineEventHandler(async (event) => {
         try {
             await resend.emails.send({
                 from: 'Protegey Website <notifications@assistance.protegey.com>',
-                to: ['hello@protegey.com'],
+                to: ['sales@protegey.com'],
                 replyTo: body.email,
-                subject: `New waitlist submission: ${body.name}`,
+                subject: 'New Demo Request submission',
                 html: buildInternalNotificationHtml(body),
             })
         } catch (notifyError) {
@@ -111,27 +111,14 @@ function getEmailContent(lang: string, name: string, title?: string) {
 
                     <p>Un membre de notre équipe prendra contact avec vous dans les plus brefs délais afin d’organiser une démonstration personnalisée de la plateforme.</p>
 
-                    <p>Cette session nous permettra de vous présenter de manière détaillée les fonctionnalités de PROTEGEY ainsi que ses cas d’usage adaptés à votre environnement opérationnel. La plateforme accompagne notamment ses partenaires dans les domaines suivants :</p>
-
-                    <ul style="margin: 20px 0; padding-left: 20px;">
-                        <li>Monitoring des transactions et filtrage LBC/FT (AML)</li>
-                        <li>Gestion des cas et reporting réglementaire</li>
-                        <li>Scoring de risque et automatisation des processus décisionnels</li>
-                        <li>Filtrage des sanctions et surveillance des médias défavorables</li>
-                        <li>Détection de fraude et gestion des risques liés à l’identité</li>
-                    </ul>
-
-                    <p>Cette démonstration sera également l’occasion de mieux comprendre vos enjeux spécifiques en matière de risque, de conformité et de sécurité financière, afin d’évaluer ensemble les modalités de collaboration les plus adaptées.</p>
-
-                    <p>Pour toute question préalable, nous restons à votre disposition à l’adresse suivante : <a href="mailto:partners@protegey.com" style="color: #1a365d; text-decoration: underline;">partners@protegey.com</a></p>
+                    <p>Pour toute question préalable, nous restons à votre disposition à l’adresse suivante : <a href="mailto:sales@protegey.com" style="color: #1a365d; text-decoration: underline;">sales@protegey.com</a></p>
 
                     <p>Nous serons ravis d’échanger avec vous très prochainement.</p>
 
                     <p style="margin-top: 30px;">
                         Cordialement,<br><br>
-                        <strong>Lamyaa Chaibni</strong><br>
-                        Senior Account Manager<br>
-                        <strong>PROTEGEY</strong>
+                        <strong>Équipe Commerciale</strong><br>
+                        <strong>PROTEGEY Inc.</strong>
                     </p>
                 </div>
             `
