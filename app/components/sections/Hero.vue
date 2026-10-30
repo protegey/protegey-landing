@@ -13,21 +13,17 @@ let tl;
 
 onMounted(() => {
     try {
-        gsap.set('.hero-badge', { opacity: 0, y: -16 });
         gsap.set('.hero-title', { opacity: 0, y: 32 });
         gsap.set('.hero-subtitle', { opacity: 0, y: 16 });
         gsap.set('.hero-cta-button', { opacity: 0, y: 16 });
-        gsap.set('.hero-footnote', { opacity: 0 });
         gsap.set('.dashboard-card', { opacity: 0, scale: 0.96 });
         gsap.set('.alert-float-card', { opacity: 0, y: 12, scale: 0.95 });
         gsap.set('.connected-flow-tag', { opacity: 0, y: 10 });
 
         tl = gsap.timeline();
-        tl.to('.hero-badge', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' })
-          .to('.hero-title', { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, '-=0.4')
+        tl.to('.hero-title', { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' })
           .to('.hero-subtitle', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5')
           .to('.hero-cta-button', { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out' }, '-=0.5')
-          .to('.hero-footnote', { opacity: 1, duration: 0.6 }, '-=0.3')
           .to('.dashboard-card', { opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }, '-=0.6')
           .to('.alert-float-card', { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: 'back.out(1.4)' }, '-=0.3')
           .to('.connected-flow-tag', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.2');
@@ -54,14 +50,6 @@ onUnmounted(() => {
 
                 <!-- Left Content -->
                 <div class="text-left rtl:text-right space-y-7">
-                    <div class="hero-badge inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary-500/30 bg-primary-500/10 text-primary-600 dark:text-primary-400 text-xs font-bold tracking-widest uppercase">
-                        <span class="relative flex h-2 w-2">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
-                        </span>
-                        {{ $t('hero2.badge') }}
-                    </div>
-
                     <h1 class="hero-title text-4xl lg:text-5xl font-bold leading-[1.12] text-neutral-900 dark:text-white tracking-tight">
                         {{ $t('hero2.title') }}
                     </h1>
@@ -70,22 +58,14 @@ onUnmounted(() => {
                         {{ $t('hero2.subtitle') }}
                     </p>
 
-                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <div class="pt-2">
                         <NuxtLink :to="localePath('/#waitlist')"
-                            class="hero-cta-button group bg-primary-500 hover:bg-primary-400 text-white px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(12,185,158,0.25)] hover:shadow-[0_0_30px_rgba(12,185,158,0.4)]">
+                            class="hero-cta-button group bg-primary-500 hover:bg-primary-400 text-white px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(12,185,158,0.25)] hover:shadow-[0_0_30px_rgba(12,185,158,0.4)]">
                             {{ $t('hero2.cta_primary') }}
                             <HugeiconsIcon :icon="ArrowRight01Icon" :size="18"
                                 class="rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
                         </NuxtLink>
-                        <NuxtLink :to="localePath('/solutions')"
-                            class="hero-cta-button group border border-neutral-300 dark:border-neutral-700 hover:border-primary-500/50 text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 flex items-center justify-center gap-2 bg-white dark:bg-neutral-900/50 hover:bg-neutral-50 dark:hover:bg-neutral-800">
-                            {{ $t('hero2.cta_secondary') }}
-                        </NuxtLink>
                     </div>
-
-                    <p class="hero-footnote text-sm text-neutral-400 dark:text-neutral-500 pt-2 max-w-md leading-relaxed">
-                        {{ $t('hero2.footnote') }}
-                    </p>
                 </div>
 
                 <!-- Right Visual -->
@@ -101,12 +81,11 @@ onUnmounted(() => {
                     </div>
 
                     <!-- Floating alert card -->
-                    <div class="alert-float-card absolute -top-6 right-2 sm:-top-8 sm:-right-6 z-20 w-72 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-2xl p-4">
-                        <div class="flex items-center gap-2 mb-1.5">
+                    <div class="alert-float-card absolute -top-6 right-2 sm:-top-8 sm:-right-6 z-20 w-64 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-2xl p-4">
+                        <div class="flex items-center gap-2 mb-3">
                             <span class="w-2 h-2 rounded-full bg-accent-orange-500 flex-shrink-0"></span>
                             <p class="text-sm font-bold text-neutral-900 dark:text-white leading-snug">{{ $t('hero2.alert_card.title') }}</p>
                         </div>
-                        <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed mb-3">{{ $t('hero2.alert_card.description') }}</p>
                         <NuxtLink :to="localePath('/solutions/pan-risk')"
                             class="inline-flex items-center justify-center bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-100 text-xs font-bold px-4 py-2 rounded-lg transition-colors">
                             {{ $t('hero2.alert_card.cta') }}

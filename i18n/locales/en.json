@@ -1376,16 +1376,12 @@
         }
     },
     "hero2": {
-        "badge": "SUPER INTELLIGENCE FOR FRAUD, RISK AND COMPLIANCE",
-        "title": "From fragmented controls to connected intelligence.",
-        "subtitle": "From KYC and KYB to fraud signals and shared intelligence — financial crime does not happen in silos. Your defenses shouldn't either.",
+        "title": "AI-Native Fraud, Risk, and Compliance Infrastructure",
+        "subtitle": "Unify AML transaction monitoring, KYC/KYB verification, sanctions screening, and cross-institutional threat sharing into a single real-time engine built for modern financial institutions.",
         "cta_primary": "Request a Demo",
-        "cta_secondary": "Explore the Platform",
-        "footnote": "Built for the realities of modern financial services across Africa and beyond.",
         "photo_alt": "A risk operations professional reviewing an account on a laptop",
         "alert_card": {
             "title": "Unusual pattern detected",
-            "description": "Device and transaction signals linked. Route to review.",
             "cta": "Escalate"
         },
         "connected_flow": "CONNECTED FLOW",

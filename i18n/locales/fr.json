@@ -1376,16 +1376,12 @@
         }
     },
     "hero2": {
-        "badge": "SUPER INTELLIGENCE POUR LA FRAUDE, LE RISQUE ET LA CONFORMITÉ",
-        "title": "De contrôles fragmentés à une intelligence connectée.",
-        "subtitle": "Du KYC et KYB aux signaux de fraude et à l'intelligence partagée — la criminalité financière n'agit pas en silos. Vos défenses non plus ne devraient pas.",
+        "title": "Infrastructure IA native pour la fraude, le risque et la conformité",
+        "subtitle": "Unifiez le monitoring des transactions LBC/FT, la vérification KYC/KYB, le criblage des sanctions et le partage de menaces entre institutions dans un seul moteur temps réel conçu pour les institutions financières modernes.",
         "cta_primary": "Demander une démo",
-        "cta_secondary": "Explorer la plateforme",
-        "footnote": "Conçu pour les réalités des services financiers modernes, en Afrique et au-delà.",
         "photo_alt": "Un professionnel des opérations de risque consultant un compte sur son ordinateur portable",
         "alert_card": {
             "title": "Schéma inhabituel détecté",
-            "description": "Signaux d'appareil et de transaction liés. À transmettre pour revue.",
             "cta": "Escalader"
         },
         "connected_flow": "FLUX CONNECTÉ",
