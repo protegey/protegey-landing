@@ -33,7 +33,7 @@ export default defineEventHandler(async (event) => {
             const emailContent = getEmailContent(lang, body.name)
 
             await resend.emails.send({
-                from: 'PROTEGEY <no-reply@protegey.com>',
+                from: 'PROTEGEY <no-reply@assistance.protegey.com>',
                 to: [body.email],
                 subject: emailContent.subject,
                 html: emailContent.html
@@ -44,7 +44,7 @@ export default defineEventHandler(async (event) => {
 
         try {
             await resend.emails.send({
-                from: 'Protegey Website <notifications@protegey.com>',
+                from: 'Protegey Website <notifications@assistance.protegey.com>',
                 to: ['hello@protegey.com'],
                 replyTo: body.email,
                 subject: `New expert consultation request: ${body.name}`,
