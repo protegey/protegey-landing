@@ -41,10 +41,15 @@
         <section class="py-14 md:py-20">
             <div class="container mx-auto px-4 max-w-7xl flex gap-10">
                 <nav class="sticky top-28 hidden lg:flex h-fit w-56 shrink-0 flex-col gap-1">
-                    <a v-for="item in navItems" :key="item.id" :href="`#${item.id}`"
-                       class="rounded-lg px-3 py-1.5 text-sm text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 hover:text-neutral-900 dark:hover:text-white transition-colors">
-                        {{ t(item.labelKey) }}
-                    </a>
+                    <template v-for="item in navItems" :key="item.id">
+                        <div v-if="item.isGroup" class="mt-3 first:mt-0 px-3 text-[10px] font-black uppercase tracking-wider text-neutral-400 dark:text-neutral-600">
+                            {{ t(item.labelKey) }}
+                        </div>
+                        <a v-else :href="`#${item.id}`"
+                           class="rounded-lg px-3 py-1.5 text-sm text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 hover:text-neutral-900 dark:hover:text-white transition-colors">
+                            {{ t(item.labelKey) }}
+                        </a>
+                    </template>
                 </nav>
 
                 <div class="min-w-0 flex-1 flex flex-col gap-6 max-w-3xl">
@@ -69,7 +74,8 @@
                         </div>
                     </DocSection>
 
-                    <!-- Transactions -->
+                    <!-- ═══ Pan-Monitor™ ═══ -->
+                    <ModuleGroup id="group-pan-monitor" :title="t('api_docs.group_pan_monitor_title')" :tagline="t('api_docs.group_pan_monitor_tagline')">
                     <DocSection id="transactions" :icon="Exchange01Icon" :title="t('api_docs.transactions_title')" :body="t('api_docs.transactions_desc')">
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
                         <CodeBlock :code="TRANSACTION_EXAMPLE" />
@@ -80,9 +86,17 @@
                         <CodeBlock :code="TRANSACTION_STATUS_EXAMPLE" />
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.transactions_list_label') }}</p>
                         <CodeBlock :code="TRANSACTION_LIST_EXAMPLE" />
+                        <ValuesRef :label="t('api_docs.values_label')" :items="transactionValues" />
                     </DocSection>
 
-                    <!-- KYC -->
+                    <!-- Decision flow diagram -->
+                    <DocSection id="decision-flow" :icon="Exchange01Icon" :title="t('api_docs.decision_flow_title')" :body="t('api_docs.decision_flow_desc')">
+                        <DecisionFlowDiagram class="mt-5" />
+                    </DocSection>
+                    </ModuleGroup>
+
+                    <!-- ═══ Pan-ID™ ═══ -->
+                    <ModuleGroup id="group-pan-id" :title="t('api_docs.group_pan_id_title')" :tagline="t('api_docs.group_pan_id_tagline')">
                     <DocSection id="kyc" :icon="FingerPrintIcon" :title="t('api_docs.kyc_title')" :body="t('api_docs.kyc_desc')">
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
                         <CodeBlock :code="KYC_EXAMPLE" />
@@ -93,13 +107,13 @@
                         <CodeBlock :code="KYC_UPDATE_EXAMPLE" />
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyc_resend_label') }}</p>
                         <CodeBlock :code="KYC_RESEND_EXAMPLE" />
+                        <ValuesRef :label="t('api_docs.values_label')" :items="kycValues" />
                         <div class="mt-4">
                             <p class="mb-1.5 text-xs text-amber-600 dark:text-amber-500">{{ t('api_docs.kyc_console_warning') }}</p>
                             <ApiConsole method="POST" path="/partner-api/kyc/sessions" :fields="kycFields" />
                         </div>
                     </DocSection>
 
-                    <!-- KYB -->
                     <DocSection id="kyb" :icon="Building01Icon" :title="t('api_docs.kyb_title')" :body="t('api_docs.kyb_desc')">
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_invite_label') }}</p>
                         <CodeBlock :code="KYB_INVITE_EXAMPLE" />
@@ -111,50 +125,58 @@
                         <CodeBlock :code="KYB_RESEND_EXAMPLE" />
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_screen_label') }}</p>
                         <CodeBlock :code="KYB_SCREEN_EXAMPLE" />
+                        <ValuesRef :label="t('api_docs.values_label')" :items="kybValues" />
                         <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyb_scope_note') }}</p>
                         <div class="mt-4">
                             <ApiConsole method="POST" path="/partner-api/kyb/applicants" :fields="kybFields" />
                         </div>
                     </DocSection>
+                    </ModuleGroup>
 
-                    <!-- Sanctions -->
+                    <!-- ═══ Pan-Risk™ ═══ -->
+                    <ModuleGroup id="group-pan-risk" :title="t('api_docs.group_pan_risk_title')" :tagline="t('api_docs.group_pan_risk_tagline')">
                     <DocSection id="sanctions" :icon="Shield01Icon" :title="t('api_docs.sanctions_title')" :body="t('api_docs.sanctions_desc')">
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
                         <CodeBlock :code="SANCTIONS_EXAMPLE" />
+                        <ValuesRef :label="t('api_docs.values_label')" :items="sanctionsValues" />
                         <div class="mt-4">
                             <ApiConsole method="POST" path="/partner-api/sanctions/screen" :fields="sanctionsFields" />
                         </div>
                     </DocSection>
+                    </ModuleGroup>
 
-                    <!-- Device events -->
+                    <!-- ═══ Pan-Intel™ ═══ -->
+                    <ModuleGroup id="group-pan-intel" :title="t('api_docs.group_pan_intel_title')" :tagline="t('api_docs.group_pan_intel_tagline')">
                     <DocSection id="device-events" :icon="SmartPhone01Icon" :title="t('api_docs.device_title')" :body="t('api_docs.device_desc')">
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
                         <CodeBlock :code="DEVICE_EVENT_EXAMPLE" />
+                        <ValuesRef :label="t('api_docs.values_label')" :items="deviceValues" />
                         <div class="mt-4">
                             <ApiConsole method="POST" path="/partner-api/device-events" :fields="deviceFields" />
                         </div>
                     </DocSection>
 
-                    <!-- Behavioral events -->
                     <DocSection id="behavioral-events" :icon="Activity01Icon" :title="t('api_docs.behavioral_title')" :body="t('api_docs.behavioral_desc')">
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
                         <CodeBlock :code="BEHAVIORAL_EVENT_EXAMPLE" />
                         <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.behavioral_stepup_note') }}</p>
+                        <ValuesRef :label="t('api_docs.values_label')" :items="behavioralValues" />
                         <div class="mt-4">
                             <p class="mb-1.5 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.behavioral_console_note') }}</p>
                             <ApiConsole method="POST" path="/partner-api/behavioral-events" :fields="behavioralFields" />
                         </div>
                     </DocSection>
 
-                    <!-- Shared signal -->
                     <DocSection id="shared-signal" :icon="Share01Icon" :title="t('api_docs.shared_signal_title')" :body="t('api_docs.shared_signal_desc')">
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
                         <CodeBlock :code="SHARED_SIGNAL_EXAMPLE" />
                         <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.shared_signal_optin_note') }}</p>
+                        <ValuesRef :label="t('api_docs.values_label')" :items="sharedSignalValues" />
                         <div class="mt-4">
                             <ApiConsole method="POST" path="/partner-api/shared-signal/check" :fields="sharedSignalFields" />
                         </div>
                     </DocSection>
+                    </ModuleGroup>
 
                     <!-- Webhooks -->
                     <DocSection id="webhooks" :icon="WebhookIcon" :title="t('api_docs.webhooks_title')" :body="t('api_docs.webhooks_desc')">
@@ -303,13 +325,97 @@ const DocSection = (props, { slots }) =>
     ])
 DocSection.props = ['id', 'icon', 'title', 'body']
 
+// ── Module group banner — groups endpoint sections the same way the dashboard's own sidebar
+// groups its pages (Pan-ID / Pan-Monitor / Pan-Risk / Pan-Intel), so this reference reads the
+// same way the product itself is organized, not by an arbitrary technical taxonomy. ──
+const ModuleGroup = (props, { slots }) =>
+    h('div', { id: props.id, class: 'flex flex-col gap-6 scroll-mt-28' }, [
+        h('div', { class: 'flex items-center gap-3 pt-4' }, [
+            h('div', { class: 'h-px flex-1 bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-800 to-neutral-200 dark:to-neutral-800' }),
+            h('div', { class: 'flex items-center gap-2 px-1' }, [
+                h('span', { class: 'text-sm font-black tracking-tight text-neutral-900 dark:text-white' }, props.title),
+            ]),
+            h('div', { class: 'h-px flex-1 bg-gradient-to-l from-transparent via-neutral-200 dark:via-neutral-800 to-neutral-200 dark:to-neutral-800' }),
+        ]),
+        h('p', { class: 'text-center text-xs text-neutral-500 dark:text-neutral-400 -mt-4' }, props.tagline),
+        ...(slots.default ? slots.default() : []),
+    ])
+ModuleGroup.props = ['id', 'title', 'tagline']
+
+// ── Enum/status reference box — field: value1 | value2 | value3. Field names and enum tokens are
+// API vocabulary, language-agnostic; only the box's own label is translated. ──
+const ValuesRef = (props) =>
+    h('div', { class: 'mt-4 rounded-xl border border-dashed border-neutral-300 dark:border-neutral-700 p-3.5' }, [
+        h('p', { class: 'text-[10px] font-bold uppercase tracking-wide text-neutral-400 mb-2' }, props.label),
+        h('dl', { class: 'flex flex-col gap-1.5' },
+            props.items.map((item) =>
+                h('div', { key: item.field, class: 'flex flex-wrap items-baseline gap-x-2 text-xs' }, [
+                    h('dt', { class: 'font-mono font-bold text-neutral-700 dark:text-neutral-300' }, `${item.field}:`),
+                    h('dd', { class: 'font-mono text-neutral-500 dark:text-neutral-400' }, item.values.join(' | ')),
+                ])
+            )
+        ),
+    ])
+ValuesRef.props = ['label', 'items']
+
+// ── Decision-flow diagram — the two delivery channels (sync HTTP response vs async webhook),
+// not the internal scoring logic: what a partner's own backend needs to build around, nothing
+// about how a verdict is computed. Plain inline SVG, currentColor so it follows the page theme. ──
+const DecisionFlowDiagram = () => {
+    const laneX = { backend: 70, protegey: 340, webhook: 610 }
+    const laneLabel = {
+        backend: t('api_docs.decision_flow_actor_backend'),
+        protegey: t('api_docs.decision_flow_actor_protegey'),
+        webhook: t('api_docs.decision_flow_actor_webhook'),
+    }
+    const actorBox = (key) => [
+        h('rect', { x: laneX[key] - 65, y: 14, width: 130, height: 36, rx: 10, fill: 'none', stroke: 'currentColor', 'stroke-width': 1.5 }),
+        h('text', { x: laneX[key], y: 37, 'text-anchor': 'middle', class: 'fill-current', style: 'font-size:12px;font-weight:700' }, laneLabel[key]),
+        h('line', { x1: laneX[key], y1: 50, x2: laneX[key], y2: 275, stroke: 'currentColor', 'stroke-width': 1, 'stroke-dasharray': '3,4', opacity: 0.4 }),
+    ]
+    const arrow = (fromKey, toKey, y, label, note, dashed) => {
+        const x1 = laneX[fromKey], x2 = laneX[toKey]
+        const dir = x2 > x1 ? 1 : -1
+        const tipX = x2 - dir * 6
+        return [
+            h('line', { x1, y1: y, x2: tipX, y2: y, stroke: 'currentColor', 'stroke-width': 1.5, 'stroke-dasharray': dashed ? '5,4' : undefined, 'marker-end': 'url(#arrowhead)' }),
+            h('text', { x: (x1 + x2) / 2, y: y - 9, 'text-anchor': 'middle', class: 'fill-current font-mono', style: 'font-size:10.5px;font-weight:700' }, label),
+            note ? h('text', { x: (x1 + x2) / 2, y: y + 15, 'text-anchor': 'middle', class: 'fill-current', style: 'font-size:9.5px;opacity:0.6' }, note) : null,
+        ]
+    }
+    return h('div', { class: 'overflow-x-auto' }, [
+        h('svg', { viewBox: '0 0 680 300', class: 'w-full min-w-[560px] text-neutral-700 dark:text-neutral-300', role: 'img', 'aria-label': 'Sequence diagram: your backend calls Protegey and gets a synchronous verdict, while Protegey also pushes webhook events to your endpoint on an independent channel.' }, [
+            h('defs', {}, [
+                h('marker', { id: 'arrowhead', markerWidth: 8, markerHeight: 8, refX: 6, refY: 3, orient: 'auto' }, [
+                    h('path', { d: 'M0,0 L6,3 L0,6 Z', fill: 'currentColor' }),
+                ]),
+            ]),
+            ...actorBox('backend'), ...actorBox('protegey'), ...actorBox('webhook'),
+            // Sync group
+            h('text', { x: 10, y: 75, class: 'fill-current font-black uppercase', style: 'font-size:9px;letter-spacing:0.08em;opacity:0.5' }, t('api_docs.decision_flow_sync_label')),
+            ...arrow('backend', 'protegey', 95, t('api_docs.decision_flow_arrow1'), null, false),
+            ...arrow('protegey', 'backend', 140, t('api_docs.decision_flow_arrow2'), null, true),
+            // Async group
+            h('line', { x1: 10, y1: 170, x2: 670, y2: 170, stroke: 'currentColor', 'stroke-width': 0.5, opacity: 0.15 }),
+            h('text', { x: 10, y: 192, class: 'fill-current font-black uppercase', style: 'font-size:9px;letter-spacing:0.08em;opacity:0.5' }, t('api_docs.decision_flow_async_label')),
+            ...arrow('protegey', 'webhook', 215, t('api_docs.decision_flow_arrow3'), t('api_docs.decision_flow_arrow3_note'), true),
+            ...arrow('protegey', 'webhook', 265, t('api_docs.decision_flow_arrow4'), t('api_docs.decision_flow_arrow4_note'), true),
+        ]),
+    ])
+}
+
 const navItems = [
     { id: 'auth', labelKey: 'api_docs.nav_auth' },
     { id: 'sdks', labelKey: 'api_docs.nav_sdks' },
-    { id: 'transactions', labelKey: 'api_docs.nav_transactions' },
+    { id: 'group-pan-id', labelKey: 'api_docs.nav_group_pan_id', isGroup: true },
     { id: 'kyc', labelKey: 'api_docs.nav_kyc' },
     { id: 'kyb', labelKey: 'api_docs.nav_kyb' },
+    { id: 'group-pan-monitor', labelKey: 'api_docs.nav_group_pan_monitor', isGroup: true },
+    { id: 'transactions', labelKey: 'api_docs.nav_transactions' },
+    { id: 'decision-flow', labelKey: 'api_docs.nav_decision_flow' },
+    { id: 'group-pan-risk', labelKey: 'api_docs.nav_group_pan_risk', isGroup: true },
     { id: 'sanctions', labelKey: 'api_docs.nav_sanctions' },
+    { id: 'group-pan-intel', labelKey: 'api_docs.nav_group_pan_intel', isGroup: true },
     { id: 'device-events', labelKey: 'api_docs.nav_device' },
     { id: 'behavioral-events', labelKey: 'api_docs.nav_behavioral' },
     { id: 'shared-signal', labelKey: 'api_docs.nav_shared_signal' },
@@ -359,6 +465,37 @@ const sharedSignalFields = [
 const kybFields = [
     { name: 'contactName', label: 'contactName', type: 'text', required: true, placeholder: 'Awa Diallo' },
     { name: 'contactEmail', label: 'contactEmail', type: 'text', required: true, placeholder: 'awa@acme-sarl.com' },
+]
+
+// ── Enum/status reference data — real values from the backend's own entities/DTOs. ──
+const kycValues = [
+    { field: 'status', values: ['In Progress', 'Approved', 'Declined', 'In Review', 'Expired', 'Resubmitted'] },
+    { field: 'decision.outcome', values: ['SUCCESS', 'MANUAL', 'FAILED'] },
+]
+const kybValues = [
+    { field: 'status', values: ['invited', 'pending_review', 'more_info_required', 'active', 'rejected'] },
+    { field: 'stage (query filter)', values: ['invited', 'responded'] },
+    { field: 'business.decision / owners[].decision', values: ['clear', 'review', 'blocked'] },
+]
+const transactionValues = [
+    { field: 'direction', values: ['DEBIT', 'CREDIT'] },
+    { field: 'channel', values: ['branch', 'atm', 'pos', 'online', 'mobile_app', 'ussd', 'agent', 'api', 'call_center'] },
+    { field: 'decision', values: ['clear', 'review', 'blocked'] },
+    { field: 'deviceAction', values: ['allow', 'soft_challenge', 'hard_challenge', 'block'] },
+]
+const sanctionsValues = [
+    { field: 'decision', values: ['clear', 'review', 'blocked'] },
+    { field: 'score', values: ['0.0', '–', '1.0 (similarity ratio, not a percentage)'] },
+]
+const deviceValues = [
+    { field: 'action', values: ['allow', 'soft_challenge', 'hard_challenge', 'block'] },
+]
+const behavioralValues = [
+    { field: 'status', values: ['learning', 'scored'] },
+    { field: 'confidenceTier', values: ['null (while learning)', 'low', 'medium', 'high'] },
+]
+const sharedSignalValues = [
+    { field: 'category', values: ['confirmed_fraud', 'identity_theft', 'money_laundering', 'other'] },
 ]
 
 // ── Real curl examples — real field names, matching the actual DTOs/responses. ──
