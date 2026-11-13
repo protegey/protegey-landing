@@ -680,6 +680,8 @@
         "example_label": "Exemple de requête",
         "transactions_title": "Envoyer des transactions pour surveillance",
         "transactions_desc": "Envoyez chaque transaction par POST à /partner-api/transactions au moment où elle a lieu, en serveur à serveur depuis votre propre backend. Si ce même externalCustomerId a eu un signal d'appareil signalé depuis l'appareil de l'utilisateur dans les 15 dernières minutes, Protegey l'intègre automatiquement à cette décision. Le verdict (decision, riskScore, alerts) revient immédiatement dans la même réponse ; rien à interroger.",
+        "transactions_status_label": "Vérifier le statut d'une transaction (GET)",
+        "transactions_list_label": "Lister vos transactions, paginées (GET)",
         "kyc_title": "Démarrer une session de vérification d'identité",
         "kyc_desc": "Démarrez une session pour l'un de vos utilisateurs via POST /partner-api/kyc/sessions. Vous recevez un lien de vérification hébergé à envoyer à votre utilisateur comme vous le souhaitez (SMS, e-mail, in-app). Les mises à jour de statut arrivent sur votre webhook configuré au fur et à mesure.",
         "kyc_poll_label": "Repli par interrogation (GET)",

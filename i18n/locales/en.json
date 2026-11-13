@@ -678,6 +678,8 @@
         "example_label": "Example request",
         "transactions_title": "Sending transactions for monitoring",
         "transactions_desc": "POST each transaction to /partner-api/transactions as it happens, server-to-server from your own backend. If the same externalCustomerId had a device signal reported from the end user's device within the last 15 minutes, Protegey automatically folds it into this decision — nothing extra to relay. The verdict (decision, riskScore, alerts) comes back immediately in the same response; nothing to poll.",
+        "transactions_status_label": "Checking a transaction's status (GET)",
+        "transactions_list_label": "Listing your transactions, paginated (GET)",
         "kyc_title": "Starting an identity verification session",
         "kyc_desc": "Start a session for one of your end users via POST /partner-api/kyc/sessions. You get back a hosted verification link to send your user however you like (SMS, email, in-app). Status updates arrive on your configured webhook as the user completes each step.",
         "kyc_poll_label": "Polling fallback (GET)",
