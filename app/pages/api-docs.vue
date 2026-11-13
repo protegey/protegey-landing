@@ -78,23 +78,6 @@
                         </div>
                     </DocSection>
 
-                    <!-- Pan Studio Rules -->
-                    <DocSection id="rules" :icon="SlidersHorizontalIcon" :title="t('api_docs.rules_title')" :body="t('api_docs.rules_desc')">
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.rules_list_label') }}</p>
-                        <CodeBlock :code="RULES_LIST_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.rules_update_label') }}</p>
-                        <CodeBlock :code="RULES_UPDATE_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.rules_generate_label') }}</p>
-                        <CodeBlock :code="RULES_GENERATE_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.rules_simulate_label') }}</p>
-                        <CodeBlock :code="RULES_SIMULATE_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.rules_delete_label') }}</p>
-                        <CodeBlock :code="RULES_DELETE_EXAMPLE" />
-                        <div class="mt-4">
-                            <ApiConsole method="POST" path="/partner-api/alert-rules/generate" :fields="rulesGenerateFields" />
-                        </div>
-                    </DocSection>
-
                     <!-- KYC -->
                     <DocSection id="kyc" :icon="FingerPrintIcon" :title="t('api_docs.kyc_title')" :body="t('api_docs.kyc_desc')">
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
@@ -274,7 +257,7 @@ import {
     LockKeyIcon, Package01Icon, Exchange01Icon, FingerPrintIcon, Shield01Icon,
     SmartPhone01Icon, Activity01Icon, Share01Icon, WebhookIcon, Alert02Icon, Link01Icon,
     JavaScriptIcon, ReactIcon, PhpIcon, JavaIcon, DartIcon, MicrosoftIcon,
-    SlidersHorizontalIcon, Building01Icon
+    Building01Icon
 } from '@hugeicons/core-free-icons'
 
 const { t } = useI18n()
@@ -320,7 +303,6 @@ const navItems = [
     { id: 'auth', labelKey: 'api_docs.nav_auth' },
     { id: 'sdks', labelKey: 'api_docs.nav_sdks' },
     { id: 'transactions', labelKey: 'api_docs.nav_transactions' },
-    { id: 'rules', labelKey: 'api_docs.nav_rules' },
     { id: 'kyc', labelKey: 'api_docs.nav_kyc' },
     { id: 'kyb', labelKey: 'api_docs.nav_kyb' },
     { id: 'sanctions', labelKey: 'api_docs.nav_sanctions' },
@@ -369,10 +351,6 @@ const sharedSignalFields = [
     { name: 'phoneNumber', label: 'phoneNumber', type: 'text', placeholder: '+22890123456' },
     { name: 'email', label: 'email', type: 'text', placeholder: 'jane@example.com' },
     { name: 'deviceFingerprint', label: 'deviceFingerprint', type: 'text', placeholder: 'visitor-id-from-the-sdk' },
-]
-const rulesGenerateFields = [
-    { name: 'domain', label: 'domain', type: 'select', options: ['transaction', 'identity', 'kyb', 'intel'], defaultValue: 'transaction' },
-    { name: 'description', label: 'description', type: 'text', required: true, placeholder: 'Flag any transaction above 1 million XOF made via USSD' },
 ]
 const kybFields = [
     { name: 'contactName', label: 'contactName', type: 'text', required: true, placeholder: 'Awa Diallo' },
@@ -484,47 +462,6 @@ const SHARED_SIGNAL_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api
 
 # Response — a match (never reveals which partner reported it, or their case details)
 { "flagged": true, "category": "confirmed_fraud", "reportedDaysAgo": 12 }`
-
-const RULES_LIST_EXAMPLE = `curl https://api.protegey.com/partner-api/alert-rules \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Response
-[ { "id": "...", "ruleCode": "IND006-KYC1", "name": "Rapid velocity", "status": "active", "severity": "review", "segment": "KYC1", "domain": "transaction" }, ... ]`
-
-const RULES_UPDATE_EXAMPLE = `# Tune a parameter, change its severity, or disable it outright — same fields the Pan Studio
-# editor itself writes.
-curl -X PATCH https://api.protegey.com/partner-api/alert-rules/{id} \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{ "status": "disabled" }'`
-
-const RULES_GENERATE_EXAMPLE = `# Describe a new rule in plain language — the same assistant behind Pan Studio's "Ask for a
-# rule". Created as a draft; review it before activating.
-curl -X POST https://api.protegey.com/partner-api/alert-rules/generate \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{ "domain": "transaction", "description": "Flag any transaction above 1 million XOF made via USSD" }'
-
-# Response
-{ "id": "...", "ruleCode": "CUSTOM-C816CE83", "name": "Large USSD transaction", "status": "draft", ... }`
-
-const RULES_SIMULATE_EXAMPLE = `# Test a rule against synthetic transactions before trusting it on real traffic — never
-# persisted, never scored against real customers.
-curl -X POST https://api.protegey.com/partner-api/alert-rules/{id}/simulate \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{
-    "transactions": [
-      { "externalCustomerId": "cust-0001", "direction": "DEBIT", "amount": 1500000, "currency": "XOF", "channel": "ussd", "occurredAt": "2026-11-13T10:00:00.000Z" }
-    ]
-  }'
-
-# Response
-[ { "transaction": { "externalCustomerId": "cust-0001", "amount": 1500000, ... }, "matched": true } ]`
-
-const RULES_DELETE_EXAMPLE = `curl -X DELETE https://api.protegey.com/partner-api/alert-rules/{id} \\
-  -H "x-api-key: YOUR_API_KEY"
-# 204 No Content`
 
 const KYB_INVITE_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/kyb/applicants \\
   -H "Content-Type: application/json" \\
