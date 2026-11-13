@@ -122,6 +122,11 @@
                 {{ $t('footer.links.regulatory_alignment') }}
               </NuxtLink>
             </li>
+            <li>
+              <NuxtLink :to="localePath('api-docs')" class="hover:text-primary-400 transition-colors">
+                {{ $t('footer.links.api_docs') }}
+              </NuxtLink>
+            </li>
           </ul>
 
           <h3 class="font-semibold mt-8 mb-4 text-neutral-900 dark:text-white">{{ $t('footer.legal') }}</h3>

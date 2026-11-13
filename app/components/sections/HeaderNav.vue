@@ -152,6 +152,7 @@ const resourceItems = [
   { key: 'blog', to: 'blog', icon: News01Icon },
   { key: 'trust', to: 'trust', icon: Shield01Icon },
   { key: 'regulatory_alignment', to: 'regulatory-alignment', icon: JusticeScale01Icon },
+  { key: 'api_docs', to: 'api-docs', icon: DocumentValidationIcon },
 ]
 
 const industryIcons = {
