@@ -55,8 +55,11 @@
                             <a v-for="sdk in sdks" :key="sdk.name" :href="sdk.repo" target="_blank" rel="noopener"
                                class="group p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 hover:border-primary-500/40 transition-colors flex flex-col">
                                 <div class="flex items-center justify-between mb-2">
-                                    <span class="text-sm font-bold text-neutral-900 dark:text-white">{{ sdk.platform }}</span>
-                                    <HugeiconsIcon :icon="Link01Icon" :size="14" class="text-neutral-400 group-hover:text-primary-500" />
+                                    <span class="flex items-center gap-2 text-sm font-bold text-neutral-900 dark:text-white">
+                                        <HugeiconsIcon :icon="sdk.icon" :size="18" class="text-neutral-500 dark:text-neutral-400 shrink-0" />
+                                        {{ sdk.platform }}
+                                    </span>
+                                    <HugeiconsIcon :icon="Link01Icon" :size="14" class="text-neutral-400 group-hover:text-primary-500 shrink-0" />
                                 </div>
                                 <code class="text-[11px] text-secondary-500 dark:text-secondary-400 font-mono mb-2 break-all">{{ sdk.package }}</code>
                                 <div class="mt-auto rounded-lg bg-neutral-950 border border-white/10 px-2.5 py-1.5 font-mono text-[10.5px] text-neutral-400 overflow-x-auto">
@@ -75,6 +78,23 @@
                         </div>
                     </DocSection>
 
+                    <!-- Pan Studio Rules -->
+                    <DocSection id="rules" :icon="SlidersHorizontalIcon" :title="t('api_docs.rules_title')" :body="t('api_docs.rules_desc')">
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.rules_list_label') }}</p>
+                        <CodeBlock :code="RULES_LIST_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.rules_update_label') }}</p>
+                        <CodeBlock :code="RULES_UPDATE_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.rules_generate_label') }}</p>
+                        <CodeBlock :code="RULES_GENERATE_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.rules_simulate_label') }}</p>
+                        <CodeBlock :code="RULES_SIMULATE_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.rules_delete_label') }}</p>
+                        <CodeBlock :code="RULES_DELETE_EXAMPLE" />
+                        <div class="mt-4">
+                            <ApiConsole method="POST" path="/partner-api/alert-rules/generate" :fields="rulesGenerateFields" />
+                        </div>
+                    </DocSection>
+
                     <!-- KYC -->
                     <DocSection id="kyc" :icon="FingerPrintIcon" :title="t('api_docs.kyc_title')" :body="t('api_docs.kyc_desc')">
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
@@ -89,6 +109,24 @@
                         <div class="mt-4">
                             <p class="mb-1.5 text-xs text-amber-600 dark:text-amber-500">{{ t('api_docs.kyc_console_warning') }}</p>
                             <ApiConsole method="POST" path="/partner-api/kyc/sessions" :fields="kycFields" />
+                        </div>
+                    </DocSection>
+
+                    <!-- KYB -->
+                    <DocSection id="kyb" :icon="Building01Icon" :title="t('api_docs.kyb_title')" :body="t('api_docs.kyb_desc')">
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_invite_label') }}</p>
+                        <CodeBlock :code="KYB_INVITE_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_list_label') }}</p>
+                        <CodeBlock :code="KYB_LIST_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_get_label') }}</p>
+                        <CodeBlock :code="KYB_GET_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_resend_label') }}</p>
+                        <CodeBlock :code="KYB_RESEND_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_screen_label') }}</p>
+                        <CodeBlock :code="KYB_SCREEN_EXAMPLE" />
+                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyb_scope_note') }}</p>
+                        <div class="mt-4">
+                            <ApiConsole method="POST" path="/partner-api/kyb/applicants" :fields="kybFields" />
                         </div>
                     </DocSection>
 
@@ -234,7 +272,9 @@ import CodeBlock from '~/components/CodeBlock.vue'
 import ApiConsole from '~/components/ApiConsole.vue'
 import {
     LockKeyIcon, Package01Icon, Exchange01Icon, FingerPrintIcon, Shield01Icon,
-    SmartPhone01Icon, Activity01Icon, Share01Icon, WebhookIcon, Alert02Icon, Link01Icon
+    SmartPhone01Icon, Activity01Icon, Share01Icon, WebhookIcon, Alert02Icon, Link01Icon,
+    JavaScriptIcon, ReactIcon, PhpIcon, JavaIcon, DartIcon, MicrosoftIcon,
+    SlidersHorizontalIcon, Building01Icon
 } from '@hugeicons/core-free-icons'
 
 const { t } = useI18n()
@@ -280,7 +320,9 @@ const navItems = [
     { id: 'auth', labelKey: 'api_docs.nav_auth' },
     { id: 'sdks', labelKey: 'api_docs.nav_sdks' },
     { id: 'transactions', labelKey: 'api_docs.nav_transactions' },
+    { id: 'rules', labelKey: 'api_docs.nav_rules' },
     { id: 'kyc', labelKey: 'api_docs.nav_kyc' },
+    { id: 'kyb', labelKey: 'api_docs.nav_kyb' },
     { id: 'sanctions', labelKey: 'api_docs.nav_sanctions' },
     { id: 'device-events', labelKey: 'api_docs.nav_device' },
     { id: 'behavioral-events', labelKey: 'api_docs.nav_behavioral' },
@@ -290,12 +332,12 @@ const navItems = [
 ]
 
 const sdks = [
-    { platform: 'JavaScript / TypeScript', package: '@protegey/sdk', install: 'npm install git+https://github.com/protegey/protegey_js_sdk.git', repo: 'https://github.com/protegey/protegey_js_sdk' },
-    { platform: 'React Native', package: '@protegey/react-native-sdk', install: 'npm install git+https://github.com/protegey/protegey_react_native_sdk.git', repo: 'https://github.com/protegey/protegey_react_native_sdk' },
-    { platform: 'PHP', package: 'protegey/sdk', install: 'composer require protegey/sdk', repo: 'https://github.com/protegey/protegey_php_sdk' },
-    { platform: 'Java', package: 'com.protegey:protegey-sdk', install: "implementation 'com.protegey:protegey-sdk:0.5.0'", repo: 'https://github.com/protegey/protegey_java_sdk' },
-    { platform: 'Flutter / Dart', package: 'protegey_sdk', install: 'flutter pub add protegey_sdk', repo: 'https://github.com/protegey/protegey-sdk-flutter' },
-    { platform: '.NET', package: 'Protegey.Sdk', install: 'dotnet add package Protegey.Sdk', repo: 'https://github.com/protegey/protegey_dotnet_sdk' },
+    { platform: 'JavaScript / TypeScript', icon: JavaScriptIcon, package: '@protegey/sdk', install: 'npm install git+https://github.com/protegey/protegey_js_sdk.git', repo: 'https://github.com/protegey/protegey_js_sdk' },
+    { platform: 'React Native', icon: ReactIcon, package: '@protegey/react-native-sdk', install: 'npm install git+https://github.com/protegey/protegey_react_native_sdk.git', repo: 'https://github.com/protegey/protegey_react_native_sdk' },
+    { platform: 'PHP', icon: PhpIcon, package: 'protegey/sdk', install: 'composer require protegey/sdk', repo: 'https://github.com/protegey/protegey_php_sdk' },
+    { platform: 'Java', icon: JavaIcon, package: 'com.protegey:protegey-sdk', install: "implementation 'com.protegey:protegey-sdk:0.5.0'", repo: 'https://github.com/protegey/protegey_java_sdk' },
+    { platform: 'Flutter / Dart', icon: DartIcon, package: 'protegey_sdk', install: 'flutter pub add protegey_sdk', repo: 'https://github.com/protegey/protegey-sdk-flutter' },
+    { platform: '.NET', icon: MicrosoftIcon, package: 'Protegey.Sdk', install: 'dotnet add package Protegey.Sdk', repo: 'https://github.com/protegey/protegey_dotnet_sdk' },
 ]
 
 // ── ApiConsole field sets — mirror the real DTOs of each endpoint. ──
@@ -327,6 +369,14 @@ const sharedSignalFields = [
     { name: 'phoneNumber', label: 'phoneNumber', type: 'text', placeholder: '+22890123456' },
     { name: 'email', label: 'email', type: 'text', placeholder: 'jane@example.com' },
     { name: 'deviceFingerprint', label: 'deviceFingerprint', type: 'text', placeholder: 'visitor-id-from-the-sdk' },
+]
+const rulesGenerateFields = [
+    { name: 'domain', label: 'domain', type: 'select', options: ['transaction', 'identity', 'kyb', 'intel'], defaultValue: 'transaction' },
+    { name: 'description', label: 'description', type: 'text', required: true, placeholder: 'Flag any transaction above 1 million XOF made via USSD' },
+]
+const kybFields = [
+    { name: 'contactName', label: 'contactName', type: 'text', required: true, placeholder: 'Awa Diallo' },
+    { name: 'contactEmail', label: 'contactEmail', type: 'text', required: true, placeholder: 'awa@acme-sarl.com' },
 ]
 
 // ── Real curl examples — real field names, matching the actual DTOs/responses. ──
@@ -434,6 +484,86 @@ const SHARED_SIGNAL_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api
 
 # Response — a match (never reveals which partner reported it, or their case details)
 { "flagged": true, "category": "confirmed_fraud", "reportedDaysAgo": 12 }`
+
+const RULES_LIST_EXAMPLE = `curl https://api.protegey.com/partner-api/alert-rules \\
+  -H "x-api-key: YOUR_API_KEY"
+
+# Response
+[ { "id": "...", "ruleCode": "IND006-KYC1", "name": "Rapid velocity", "status": "active", "severity": "review", "segment": "KYC1", "domain": "transaction" }, ... ]`
+
+const RULES_UPDATE_EXAMPLE = `# Tune a parameter, change its severity, or disable it outright — same fields the Pan Studio
+# editor itself writes.
+curl -X PATCH https://api.protegey.com/partner-api/alert-rules/{id} \\
+  -H "Content-Type: application/json" \\
+  -H "x-api-key: YOUR_API_KEY" \\
+  -d '{ "status": "disabled" }'`
+
+const RULES_GENERATE_EXAMPLE = `# Describe a new rule in plain language — the same assistant behind Pan Studio's "Ask for a
+# rule". Created as a draft; review it before activating.
+curl -X POST https://api.protegey.com/partner-api/alert-rules/generate \\
+  -H "Content-Type: application/json" \\
+  -H "x-api-key: YOUR_API_KEY" \\
+  -d '{ "domain": "transaction", "description": "Flag any transaction above 1 million XOF made via USSD" }'
+
+# Response
+{ "id": "...", "ruleCode": "CUSTOM-C816CE83", "name": "Large USSD transaction", "status": "draft", ... }`
+
+const RULES_SIMULATE_EXAMPLE = `# Test a rule against synthetic transactions before trusting it on real traffic — never
+# persisted, never scored against real customers.
+curl -X POST https://api.protegey.com/partner-api/alert-rules/{id}/simulate \\
+  -H "Content-Type: application/json" \\
+  -H "x-api-key: YOUR_API_KEY" \\
+  -d '{
+    "transactions": [
+      { "externalCustomerId": "cust-0001", "direction": "DEBIT", "amount": 1500000, "currency": "XOF", "channel": "ussd", "occurredAt": "2026-11-13T10:00:00.000Z" }
+    ]
+  }'
+
+# Response
+[ { "transaction": { "externalCustomerId": "cust-0001", "amount": 1500000, ... }, "matched": true } ]`
+
+const RULES_DELETE_EXAMPLE = `curl -X DELETE https://api.protegey.com/partner-api/alert-rules/{id} \\
+  -H "x-api-key: YOUR_API_KEY"
+# 204 No Content`
+
+const KYB_INVITE_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/kyb/applicants \\
+  -H "Content-Type: application/json" \\
+  -H "x-api-key: YOUR_API_KEY" \\
+  -d '{
+    "contactName": "Awa Diallo",
+    "contactEmail": "awa@acme-sarl.com",
+    "templateId": "optional-custom-template-id"
+  }'
+
+# Response
+{ "id": "6e2e6a2e-...", "legalName": null, "contactName": "Awa Diallo", "contactEmail": "awa@acme-sarl.com", "status": "invited" }`
+
+const KYB_LIST_EXAMPLE = `# search / status / stage are all optional filters
+curl "https://api.protegey.com/partner-api/kyb/applicants?status=pending_review&stage=responded" \\
+  -H "x-api-key: YOUR_API_KEY"
+
+# Response — status is one of: invited, pending_review, more_info_required, active, rejected
+{ "data": [ { "id": "6e2e6a2e-...", "legalName": "Acme SARL", "status": "pending_review", ... } ], "total": 1, "page": 1, "limit": 20 }`
+
+const KYB_GET_EXAMPLE = `curl https://api.protegey.com/partner-api/kyb/applicants/6e2e6a2e-... \\
+  -H "x-api-key: YOUR_API_KEY"`
+
+const KYB_RESEND_EXAMPLE = `# Issues a fresh invitation link — use when the first one expired or was lost, without
+# restarting the applicant's progress.
+curl -X POST https://api.protegey.com/partner-api/kyb/applicants/6e2e6a2e-.../resend-invitation \\
+  -H "x-api-key: YOUR_API_KEY"`
+
+const KYB_SCREEN_EXAMPLE = `# Sanctions/PEP screening for the business and each declared owner — the same check that runs
+# automatically on submission, re-run on demand.
+curl https://api.protegey.com/partner-api/kyb/applicants/6e2e6a2e-.../screen \\
+  -H "x-api-key: YOUR_API_KEY"
+
+# Response
+{
+  "business": { "decision": "clear", "score": 0, "matches": [] },
+  "owners": [ { "ownerName": "Awa Diallo", "ownershipPercent": 60, "decision": "clear", "score": 0, "matches": [] } ],
+  "screenedAt": "2026-11-13T10:00:00.000Z"
+}`
 
 const WEBHOOK_HEADERS_EXAMPLE = `POST https://your-endpoint.example.com/webhooks/protegey
 Content-Type: application/json
