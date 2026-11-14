@@ -694,7 +694,7 @@
         "example_label": "Exemple de requête",
         "transactions_title": "Envoyer des transactions pour surveillance",
         "transactions_desc": "Envoyez chaque transaction par POST à /partner-api/transactions au moment où elle a lieu, en serveur à serveur depuis votre propre backend. Si ce même externalCustomerId a eu un signal d'appareil signalé depuis l'appareil de l'utilisateur dans les 15 dernières minutes, Protegey l'intègre automatiquement à cette décision. Le verdict (decision, riskScore, alerts) revient immédiatement dans la même réponse ; rien à interroger.",
-        "transactions_status_label": "Vérifier le statut d'une transaction (GET)",
+        "transactions_status_label": "Vérifier le statut d'une transaction, par l'un ou l'autre id (GET)",
         "transactions_list_label": "Lister vos transactions, paginées (GET)",
         "decision_flow_title": "Comment la décision parvient à votre système",
         "decision_flow_desc": "Deux canaux indépendants portent la même information : la réponse HTTP répond immédiatement, dans le prolongement de votre propre requête ; les webhooks portent les mêmes événements sur un canal séparé (utile quand le système qui appelle l'API n'est pas celui qui doit agir sur le résultat), et sont le SEUL canal pour deux choses que rien d'autre ne vous signale — la fin d'une vérification d'identité sur l'appareil de l'utilisateur, et le changement de statut d'une alerte par un membre de votre équipe depuis le portail.",
