@@ -38,7 +38,15 @@ jobs:
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build Project Artifacts
+        # Nitro auto-detects its deploy target from env vars (std-env's provider list), and
+        # GITHUB_ACTIONS (set automatically by the runner) is checked before VERCEL in that list —
+        # so inside this workflow Nitro silently falls back to the generic "node-server" preset
+        # (output in .output/server) instead of "vercel" (.vercel/output), and `vercel build` then
+        # fails with [STATIC_BUILD_NO_OUT_DIR] because it can't find a Vercel-shaped output.
+        # Forcing the preset here sidesteps the misdetection entirely.
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          NITRO_PRESET: vercel
 
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
