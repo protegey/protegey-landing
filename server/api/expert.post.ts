@@ -94,21 +94,22 @@ function getEmailContent(lang: string, name: string) {
 
     if (lang === 'fr') {
         return {
-            subject: 'Votre demande de consultation expert - PROTEGEY',
+            subject: 'Votre demande de démonstration - PROTEGEY',
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
-                    <h2 style="color: #1a365d;">Bonjour ${safeName},</h2>
+                    <p>Cher/Chère ${safeName},</p>
 
-                    <p>Merci pour votre intérêt envers PROTEGEY. Nous avons bien reçu votre demande de consultation et nos experts vont la traiter rapidement.</p>
+                    <p>Nous vous remercions de l'intérêt que vous portez à PROTEGEY; nous sommes ravis que vous envisagiez d'utiliser notre plateforme.</p>
 
-                    <p>Un membre de notre équipe expert vous contactera dans les <strong>24 heures</strong> pour discuter de vos besoins spécifiques en matière de prévention de la fraude.</p>
+                    <p>Un membre de notre équipe prendra contact avec vous prochainement afin de convenir d'une brève démonstration de notre solution. Au cours de cet échange, nous vous présenterons comment PROTEGEY peut contribuer à renforcer vos activités liées à la gestion des risques et à la conformité.</p>
 
-                    <p>Si vous avez des questions urgentes, n'hésitez pas à nous contacter directement à l'adresse <a href="mailto:experts@protegey.com" style="color: #1a365d; text-decoration: underline;">experts@protegey.com</a></p>
+                    <p>Dans l'attente d'échanger avec vous,</p>
 
                     <p style="margin-top: 30px;">
-                        Cordialement,<br><br>
-                        <strong>Équipe PROTEGEY</strong><br>
-                        Experts en Prévention de la Fraude
+                        Bien cordialement,<br><br>
+                        <strong>Marie</strong><br>
+                        Responsable grands comptes (Senior Account Manager)<br>
+                        PROTEGEY Inc.
                     </p>
                 </div>
             `
@@ -137,21 +138,22 @@ function getEmailContent(lang: string, name: string) {
     } else {
         // English (Default)
         return {
-            subject: 'Your Expert Consultation Request - PROTEGEY',
+            subject: 'Your Demo Request - PROTEGEY',
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
-                    <h2 style="color: #1a365d;">Hello ${safeName},</h2>
+                    <p>Dear ${safeName},</p>
 
-                    <p>Thank you for your interest in PROTEGEY. We have received your consultation request and our experts will process it promptly.</p>
+                    <p>Thank you for your interest in PROTEGEY, we truly appreciate you considering our platform.</p>
 
-                    <p>A member of our expert team will contact you within <strong>24 hours</strong> to discuss your specific fraud prevention needs.</p>
+                    <p>A member of our team will be reaching out shortly to schedule a brief product demonstration. During this session, we will walk you through how PROTEGEY can support in strengthening your risk and compliance operations.</p>
 
-                    <p>If you have any urgent questions, please feel free to contact us directly at <a href="mailto:experts@protegey.com" style="color: #1a365d; text-decoration: underline;">experts@protegey.com</a></p>
+                    <p>We look forward to speaking with you soon.</p>
 
                     <p style="margin-top: 30px;">
-                        Sincerely,<br><br>
-                        <strong>PROTEGEY Team</strong><br>
-                        Fraud Prevention Experts
+                        Warm regards,<br><br>
+                        <strong>Marie</strong><br>
+                        Senior Account Manager<br>
+                        PROTEGEY Inc.
                     </p>
                 </div>
             `
