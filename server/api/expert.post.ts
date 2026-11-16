@@ -89,74 +89,120 @@ function escapeHtml(str: string): string {
         .replace(/'/g, '&#x27;')
 }
 
+/**
+ * Shared branded shell (logo + navy header, white card, footer) — same colors/markup as the
+ * backend's transactional emails (src/mail/templates/*.hbs in protegey-backend): #0B1741 header,
+ * #0CB99E accent, same S3-hosted logo. protegey-landing has no template engine, so this is plain
+ * string interpolation instead of a Handlebars partial.
+ */
+function wrapBrandedEmail(bodyHtml: string, dir: 'ltr' | 'rtl' = 'ltr'): string {
+    const align = dir === 'rtl' ? 'right' : 'left'
+    return `
+        <!doctype html>
+        <html lang="${dir === 'rtl' ? 'ar' : 'en'}" dir="${dir}">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>PROTEGEY</title>
+          </head>
+          <body style="margin:0;padding:0;background-color:#F3F4F6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#F3F4F6;padding:32px 16px;">
+              <tr>
+                <td align="center">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background-color:#FFFFFF;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(16,24,40,0.08);">
+                    <tr>
+                      <td style="background-color:#0B1741;padding:24px 32px;">
+                        <img src="https://protegey-bucket.s3.eu-north-1.amazonaws.com/public/constant/protegey_logo.svg"
+                             alt="PROTEGEY" height="28" style="display:block;height:28px;width:auto;border:0;" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td dir="${dir}" style="padding:36px 32px 8px;text-align:${align};">
+                        ${bodyHtml}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding:20px 32px 28px;border-top:1px solid #E5E7EB;text-align:${align};">
+                        <p style="margin:0;font-size:12px;color:#9CA3AF;line-height:1.6;">
+                          &copy; ${new Date().getFullYear()} PROTEGEY Inc. All rights reserved.
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </body>
+        </html>
+    `
+}
+
 function getEmailContent(lang: string, name: string) {
     const safeName = escapeHtml(name)
 
     if (lang === 'fr') {
         return {
             subject: 'Votre demande de démonstration - PROTEGEY',
-            html: `
-                <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
-                    <p>Cher/Chère ${safeName},</p>
+            html: wrapBrandedEmail(`
+                <h1 style="margin:0 0 16px;font-size:22px;font-weight:700;color:#0B1741;line-height:1.3;">Demande de démonstration reçue</h1>
+                <p style="margin:0 0 20px;font-size:15px;color:#374151;line-height:1.6;">Cher/Chère ${safeName},</p>
 
-                    <p>Nous vous remercions de l'intérêt que vous portez à PROTEGEY; nous sommes ravis que vous envisagiez d'utiliser notre plateforme.</p>
+                <p style="margin:0 0 20px;font-size:15px;color:#374151;line-height:1.6;">Nous vous remercions de l'intérêt que vous portez à PROTEGEY ; nous sommes ravis que vous envisagiez d'utiliser notre plateforme.</p>
 
-                    <p>Un membre de notre équipe prendra contact avec vous prochainement afin de convenir d'une brève démonstration de notre solution. Au cours de cet échange, nous vous présenterons comment PROTEGEY peut contribuer à renforcer vos activités liées à la gestion des risques et à la conformité.</p>
+                <p style="margin:0 0 20px;font-size:15px;color:#374151;line-height:1.6;">Un membre de notre équipe prendra contact avec vous prochainement afin de convenir d'une brève démonstration de notre solution. Au cours de cet échange, nous vous présenterons comment PROTEGEY peut contribuer à renforcer vos activités liées à la gestion des risques et à la conformité.</p>
 
-                    <p>Dans l'attente d'échanger avec vous,</p>
+                <p style="margin:0 0 24px;font-size:15px;color:#374151;line-height:1.6;">Dans l'attente d'échanger avec vous,</p>
 
-                    <p style="margin-top: 30px;">
-                        Bien cordialement,<br><br>
-                        <strong>Marie</strong><br>
-                        Responsable grands comptes (Senior Account Manager)<br>
-                        PROTEGEY Inc.
-                    </p>
-                </div>
-            `
+                <p style="margin:0;font-size:15px;color:#374151;line-height:1.6;">
+                    Bien cordialement,<br><br>
+                    <strong>Marie</strong><br>
+                    Responsable grands comptes (Senior Account Manager)<br>
+                    PROTEGEY Inc.
+                </p>
+            `)
         }
     } else if (lang === 'ar') {
         return {
-            subject: 'طلب استشارة خبير - PROTEGEY',
-            html: `
-                <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333; direction: rtl; text-align: right;">
-                    <h2 style="color: #1a365d;">مرحباً ${safeName}،</h2>
+            subject: 'طلب العرض التوضيحي الخاص بكم - PROTEGEY',
+            html: wrapBrandedEmail(`
+                <h1 style="margin:0 0 16px;font-size:22px;font-weight:700;color:#0B1741;line-height:1.3;">تم استلام طلب العرض التوضيحي</h1>
+                <p style="margin:0 0 20px;font-size:15px;color:#374151;line-height:1.6;">عزيزي/عزيزتي ${safeName}،</p>
 
-                    <p>شكراً لاهتمامكم بـ PROTEGEY. لقد استلمنا طلب الاستشارة الخاص بكم وسيقوم خبراؤنا بمعالجته بسرعة.</p>
+                <p style="margin:0 0 20px;font-size:15px;color:#374151;line-height:1.6;">نشكركم على اهتمامكم بـ PROTEGEY؛ يسعدنا أن تفكروا في استخدام منصتنا.</p>
 
-                    <p>سيتواصل معكم أحد أعضاء فريق الخبراء خلال <strong>24 ساعة</strong> لمناقشة احتياجاتكم المحددة في مجال منع الاحتيال.</p>
+                <p style="margin:0 0 20px;font-size:15px;color:#374151;line-height:1.6;">سيتواصل معكم أحد أعضاء فريقنا قريباً لتحديد موعد لعرض توضيحي موجز لحلّنا. خلال هذا التبادل، سنوضح لكم كيف يمكن لـ PROTEGEY أن يسهم في تعزيز أنشطتكم المتعلقة بإدارة المخاطر والامتثال.</p>
 
-                    <p>إذا كانت لديكم أي أسئلة عاجلة، لا تترددوا في التواصل معنا مباشرة على <a href="mailto:experts@protegey.com" style="color: #1a365d; text-decoration: underline;">experts@protegey.com</a></p>
+                <p style="margin:0 0 24px;font-size:15px;color:#374151;line-height:1.6;">بانتظار التواصل معكم،</p>
 
-                    <p style="margin-top: 30px;">
-                        مع خالص التحيات،<br><br>
-                        <strong>فريق PROTEGEY</strong><br>
-                        خبراء منع الاحتيال
-                    </p>
-                </div>
-            `
+                <p style="margin:0;font-size:15px;color:#374151;line-height:1.6;">
+                    مع أطيب التحيات،<br><br>
+                    <strong>ماري</strong><br>
+                    مسؤولة الحسابات الكبرى (Senior Account Manager)<br>
+                    PROTEGEY Inc.
+                </p>
+            `, 'rtl')
         }
     } else {
         // English (Default)
         return {
             subject: 'Your Demo Request - PROTEGEY',
-            html: `
-                <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333;">
-                    <p>Dear ${safeName},</p>
+            html: wrapBrandedEmail(`
+                <h1 style="margin:0 0 16px;font-size:22px;font-weight:700;color:#0B1741;line-height:1.3;">Demo request received</h1>
+                <p style="margin:0 0 20px;font-size:15px;color:#374151;line-height:1.6;">Dear ${safeName},</p>
 
-                    <p>Thank you for your interest in PROTEGEY, we truly appreciate you considering our platform.</p>
+                <p style="margin:0 0 20px;font-size:15px;color:#374151;line-height:1.6;">Thank you for your interest in PROTEGEY, we truly appreciate you considering our platform.</p>
 
-                    <p>A member of our team will be reaching out shortly to schedule a brief product demonstration. During this session, we will walk you through how PROTEGEY can support in strengthening your risk and compliance operations.</p>
+                <p style="margin:0 0 20px;font-size:15px;color:#374151;line-height:1.6;">A member of our team will be reaching out shortly to schedule a brief product demonstration. During this session, we will walk you through how PROTEGEY can support in strengthening your risk and compliance operations.</p>
 
-                    <p>We look forward to speaking with you soon.</p>
+                <p style="margin:0 0 24px;font-size:15px;color:#374151;line-height:1.6;">We look forward to speaking with you soon.</p>
 
-                    <p style="margin-top: 30px;">
-                        Warm regards,<br><br>
-                        <strong>Marie</strong><br>
-                        Senior Account Manager<br>
-                        PROTEGEY Inc.
-                    </p>
-                </div>
-            `
+                <p style="margin:0;font-size:15px;color:#374151;line-height:1.6;">
+                    Warm regards,<br><br>
+                    <strong>Marie</strong><br>
+                    Senior Account Manager<br>
+                    PROTEGEY Inc.
+                </p>
+            `)
         }
     }
 }
