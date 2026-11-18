@@ -89,6 +89,23 @@
                         <ValuesRef :label="t('api_docs.values_label')" :items="transactionValues" />
                     </DocSection>
 
+                    <DocSection id="alerts" :icon="Notification01Icon" :title="t('api_docs.alerts_title')" :body="t('api_docs.alerts_desc')">
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.alerts_list_label') }}</p>
+                        <CodeBlock :code="ALERT_LIST_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.alerts_get_label') }}</p>
+                        <CodeBlock :code="ALERT_GET_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.alerts_update_label') }}</p>
+                        <CodeBlock :code="ALERT_UPDATE_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.alerts_convert_label') }}</p>
+                        <CodeBlock :code="ALERT_CONVERT_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.alerts_flag_label') }}</p>
+                        <CodeBlock :code="ALERT_FLAG_EXAMPLE" />
+                        <ValuesRef :label="t('api_docs.values_label')" :items="alertsValues" />
+                        <div class="mt-4">
+                            <ApiConsole method="POST" path="/partner-api/alerts/flag-transaction" :fields="alertsFlagFields" />
+                        </div>
+                    </DocSection>
+
                     <!-- Decision flow diagram -->
                     <DocSection id="decision-flow" :icon="Exchange01Icon" :title="t('api_docs.decision_flow_title')" :body="t('api_docs.decision_flow_desc')">
                         <DecisionFlowDiagram class="mt-5" />
@@ -281,7 +298,7 @@ import CodeBlock from '~/components/CodeBlock.vue'
 import ApiConsole from '~/components/ApiConsole.vue'
 import {
     LockKeyIcon, Package01Icon, Exchange01Icon, FingerPrintIcon, Shield01Icon,
-    SmartPhone01Icon, Activity01Icon, Share01Icon, WebhookIcon, Alert02Icon, Link01Icon,
+    SmartPhone01Icon, Activity01Icon, Share01Icon, WebhookIcon, Alert02Icon, Notification01Icon, Link01Icon,
     JavaScriptIcon, ReactIcon, PhpIcon, JavaIcon, DartIcon, MicrosoftIcon,
     Building01Icon
 } from '@hugeicons/core-free-icons'
@@ -412,6 +429,7 @@ const navItems = [
     { id: 'kyb', labelKey: 'api_docs.nav_kyb' },
     { id: 'group-pan-monitor', labelKey: 'api_docs.nav_group_pan_monitor', isGroup: true },
     { id: 'transactions', labelKey: 'api_docs.nav_transactions' },
+    { id: 'alerts', labelKey: 'api_docs.nav_alerts' },
     { id: 'decision-flow', labelKey: 'api_docs.nav_decision_flow' },
     { id: 'group-pan-risk', labelKey: 'api_docs.nav_group_pan_risk', isGroup: true },
     { id: 'sanctions', labelKey: 'api_docs.nav_sanctions' },
@@ -466,6 +484,7 @@ const kybFields = [
     { name: 'contactName', label: 'contactName', type: 'text', required: true, placeholder: 'Awa Diallo' },
     { name: 'contactEmail', label: 'contactEmail', type: 'text', required: true, placeholder: 'awa@acme-sarl.com' },
 ]
+const alertsFlagFields = [{ name: 'transactionId', label: 'transactionId', type: 'text', required: true, placeholder: '4d06ad4e-2018-428a-8323-d537da5e19fa' }]
 
 // ── Enum/status reference data — real values from the backend's own entities/DTOs. ──
 const kycValues = [
@@ -482,6 +501,10 @@ const transactionValues = [
     { field: 'channel', values: ['BRANCH', 'ATM', 'POS', 'ONLINE', 'MOBILE_APP', 'USSD', 'AGENT', 'API', 'CALL_CENTER'] },
     { field: 'decision', values: ['CLEAR', 'REVIEW', 'BLOCKED'] },
     { field: 'deviceAction', values: ['ALLOW', 'SOFT_CHALLENGE', 'HARD_CHALLENGE', 'BLOCK'] },
+]
+const alertsValues = [
+    { field: 'status', values: ['OPEN', 'CONFIRMED', 'MORE_INFO_REQUESTED', 'DISMISSED'] },
+    { field: 'disposition', values: ['CONFIRMED_FRAUD', 'FALSE_POSITIVE', 'NO_ACTION', 'SAR_FILED', 'ESCALATED'] },
 ]
 const sanctionsValues = [
     { field: 'decision', values: ['CLEAR', 'REVIEW', 'BLOCKED'] },
@@ -563,6 +586,45 @@ curl "https://api.protegey.com/partner-api/transactions?externalCustomerId=cust-
   "limit": 20,
   "totalPages": 1
 }`
+
+const ALERT_LIST_EXAMPLE = `# status / disposition / ruleCode / externalCustomerId / transactionId / dateFrom / dateTo / page / limit are all optional
+curl "https://api.protegey.com/partner-api/alerts?status=OPEN&page=1&limit=20" \\
+  -H "x-api-key: YOUR_API_KEY"
+
+# Response
+{
+  "data": [
+    { "id": "27bfd203-...", "alertNumber": 1042, "ruleCode": "IND006-KYC1", "status": "OPEN", "disposition": null, "externalCustomerId": "cust-9981", "transactionId": "4d06ad4e-...", "triggeredAt": "2026-09-20T12:51:42.593Z" }
+  ],
+  "total": 1,
+  "page": 1,
+  "limit": 20
+}`
+
+const ALERT_GET_EXAMPLE = `curl https://api.protegey.com/partner-api/alerts/27bfd203-d554-418a-bc19-fcaf13164a0e \\
+  -H "x-api-key: YOUR_API_KEY"`
+
+const ALERT_UPDATE_EXAMPLE = `# Validate, reject, request more info, assign, or just add a note — only the fields you send are
+# changed. Fires the same alert.status_changed webhook and EDD-trigger side effects as a
+# dashboard-driven update.
+curl -X PATCH https://api.protegey.com/partner-api/alerts/27bfd203-d554-418a-bc19-fcaf13164a0e \\
+  -H "Content-Type: application/json" \\
+  -H "x-api-key: YOUR_API_KEY" \\
+  -d '{ "status": "CONFIRMED", "disposition": "CONFIRMED_FRAUD", "investigationNotes": "Matches a known structuring pattern on this customer" }'`
+
+const ALERT_CONVERT_EXAMPLE = `# Turns this alert directly into a Case, escalating its disposition in the same call.
+curl -X POST https://api.protegey.com/partner-api/alerts/27bfd203-d554-418a-bc19-fcaf13164a0e/convert-to-case \\
+  -H "x-api-key: YOUR_API_KEY"
+
+# Response
+{ "alert": { "id": "27bfd203-...", "disposition": "ESCALATED", ... }, "case": { "id": "9b1e...", "caseNumber": 118, "status": "OPEN", ... } }`
+
+const ALERT_FLAG_EXAMPLE = `# Flags a transaction for investigation even though no automated rule matched it — idempotent,
+# re-flagging an already-open alert on the same transaction just returns it unchanged.
+curl -X POST https://api.protegey.com/partner-api/alerts/flag-transaction \\
+  -H "Content-Type: application/json" \\
+  -H "x-api-key: YOUR_API_KEY" \\
+  -d '{ "transactionId": "4d06ad4e-2018-428a-8323-d537da5e19fa" }'`
 
 const KYC_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/kyc/sessions \\
   -H "Content-Type: application/json" \\
