@@ -148,6 +148,7 @@ const solutionItems = [
 ]
 
 const resourceItems = [
+  { key: 'api_docs', to: 'api-docs', icon: DocumentValidationIcon },
   { key: 'who_its_for', to: 'who-its-for', icon: UserGroupIcon },
   { key: 'blog', to: 'blog', icon: News01Icon },
   { key: 'trust', to: 'trust', icon: Shield01Icon },
@@ -316,12 +317,6 @@ const getIndustries = () => {
               </div>
             </transition>
           </div>
-
-          <!-- API Docs (plain link, not a dropdown) -->
-          <NuxtLink :to="localePath('/api-docs')"
-             class="text-sm font-medium transition-colors text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">
-             {{ $t('nav.api_docs') }}
-          </NuxtLink>
         </nav>
 
         <!-- Desktop Controls -->
@@ -467,13 +462,6 @@ const getIndustries = () => {
                   </NuxtLink>
                 </div>
               </div>
-
-              <!-- Static Link: API Docs (not nested in an accordion) -->
-              <NuxtLink :to="localePath('/api-docs')" @click="toggleMenu"
-                class="flex items-center gap-3 py-3 px-3 -mx-3 rounded-xl text-sm font-bold text-neutral-700 dark:text-neutral-300 active:bg-neutral-100 dark:active:bg-neutral-900 mobile-nav-item">
-                <HugeiconsIcon :icon="DocumentValidationIcon" :size="18" class="text-neutral-400" />
-                {{ $t('nav.api_docs') }}
-              </NuxtLink>
             </div>
           </div>
 
