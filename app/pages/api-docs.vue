@@ -89,6 +89,19 @@
                         <ValuesRef :label="t('api_docs.values_label')" :items="transactionValues" />
                     </DocSection>
 
+                    <DocSection id="cash-deposits" :icon="Exchange01Icon" :title="t('api_docs.cash_deposits_title')" :body="t('api_docs.cash_deposits_desc')">
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
+                        <CodeBlock :code="CASH_DEPOSIT_EXAMPLE" />
+                        <div class="mt-4">
+                            <ApiConsole method="POST" path="/partner-api/cash-deposits" :fields="cashDepositFields" />
+                        </div>
+                        <p class="mt-6 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.cash_deposits_get_label') }}</p>
+                        <CodeBlock :code="CASH_DEPOSIT_GET_EXAMPLE" />
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.cash_deposits_list_label') }}</p>
+                        <CodeBlock :code="CASH_DEPOSIT_LIST_EXAMPLE" />
+                        <ValuesRef :label="t('api_docs.values_label')" :items="cashDepositValues" />
+                    </DocSection>
+
                     <DocSection id="alerts" :icon="Notification01Icon" :title="t('api_docs.alerts_title')" :body="t('api_docs.alerts_desc')">
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.alerts_list_label') }}</p>
                         <CodeBlock :code="ALERT_LIST_EXAMPLE" />
@@ -429,6 +442,7 @@ const navItems = [
     { id: 'kyb', labelKey: 'api_docs.nav_kyb' },
     { id: 'group-pan-monitor', labelKey: 'api_docs.nav_group_pan_monitor', isGroup: true },
     { id: 'transactions', labelKey: 'api_docs.nav_transactions' },
+    { id: 'cash-deposits', labelKey: 'api_docs.nav_cash_deposits' },
     { id: 'alerts', labelKey: 'api_docs.nav_alerts' },
     { id: 'decision-flow', labelKey: 'api_docs.nav_decision_flow' },
     { id: 'group-pan-risk', labelKey: 'api_docs.nav_group_pan_risk', isGroup: true },
@@ -463,6 +477,18 @@ const transactionFields = [
     { name: 'counterpartyInstitutionCode', label: 'counterpartyInstitutionCode', type: 'text', placeholder: 'SWIFT/BIC or local bank code' },
     { name: 'counterpartyCountry', label: 'counterpartyCountry', type: 'text', placeholder: 'SN' },
     { name: 'occurredAt', label: 'occurredAt', type: 'text', required: true, defaultValue: new Date().toISOString() },
+]
+const cashDepositFields = [
+    { name: 'externalTransactionId', label: 'externalTransactionId', type: 'text', placeholder: 'dep-0001' },
+    { name: 'externalCustomerId', label: 'externalCustomerId', type: 'text', required: true, placeholder: 'cust-0001' },
+    { name: 'amount', label: 'amount', type: 'number', required: true, placeholder: '2500000' },
+    { name: 'currency', label: 'currency', type: 'text', required: true, defaultValue: 'XOF' },
+    { name: 'channel', label: 'channel', type: 'select', options: ['BRANCH', 'AGENT', 'ATM', 'POS', 'MOBILE_APP', 'USSD', 'ONLINE', 'API', 'CALL_CENTER'] },
+    { name: 'branchId', label: 'branchId', type: 'text', placeholder: 'DKR-PLATEAU' },
+    { name: 'agentId', label: 'agentId', type: 'text', placeholder: 'AG-117' },
+    { name: 'location', label: 'location', type: 'text', placeholder: 'Dakar, Plateau' },
+    { name: 'depositorName', label: 'depositorName', type: 'text', placeholder: 'Awa Diallo' },
+    { name: 'depositedAt', label: 'depositedAt', type: 'text', defaultValue: new Date().toISOString() },
 ]
 const kycFields = [{ name: 'externalUserId', label: 'externalUserId', type: 'text', required: true, placeholder: 'cust-0001' }]
 const sanctionsFields = [{ name: 'name', label: 'name', type: 'text', required: true, placeholder: 'Jane Doe' }]
@@ -501,6 +527,11 @@ const transactionValues = [
     { field: 'channel', values: ['BRANCH', 'ATM', 'POS', 'ONLINE', 'MOBILE_APP', 'USSD', 'AGENT', 'API', 'CALL_CENTER'] },
     { field: 'decision', values: ['CLEAR', 'REVIEW', 'BLOCKED'] },
     { field: 'deviceAction', values: ['ALLOW', 'SOFT_CHALLENGE', 'HARD_CHALLENGE', 'BLOCK'] },
+]
+const cashDepositValues = [
+    { field: 'channel', values: ['BRANCH', 'AGENT', 'ATM', 'POS', 'MOBILE_APP', 'USSD', 'ONLINE', 'API', 'CALL_CENTER'] },
+    { field: 'decision', values: ['CLEAR', 'REVIEW', 'BLOCKED'] },
+    { field: 'currency', values: ['ISO 4217 code (XOF, XAF, GNF, NGN, USD, EUR...)'] },
 ]
 const alertsValues = [
     { field: 'status', values: ['OPEN', 'CONFIRMED', 'MORE_INFO_REQUESTED', 'DISMISSED'] },
@@ -580,6 +611,77 @@ curl "https://api.protegey.com/partner-api/transactions?externalCustomerId=cust-
 {
   "data": [
     { "transactionId": "b3b4f28f-...", "externalTransactionId": "tx-00234", "externalCustomerId": "cust-9981", "direction": "DEBIT", "amount": 250000, "currency": "XOF", "decision": "REVIEW", "riskScore": 20, "deviceAction": "ALLOW", "occurredAt": "2026-01-15T10:00:00.000Z", "createdAt": "2026-01-15T10:00:01.482Z" }
+  ],
+  "total": 1,
+  "page": 1,
+  "limit": 20,
+  "totalPages": 1
+}`
+
+const CASH_DEPOSIT_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/cash-deposits \\
+  -H "Content-Type: application/json" \\
+  -H "x-api-key: YOUR_API_KEY" \\
+  -d '{
+    "externalTransactionId": "dep-0001",
+    "externalCustomerId": "cust-9981",
+    "customerName": "Moussa Traoré",
+    "amount": 2500000,
+    "currency": "XOF",
+    "channel": "BRANCH",
+    "branchId": "DKR-PLATEAU",
+    "location": "Dakar, Plateau",
+    "depositorName": "Awa Diallo",
+    "depositedAt": "2026-11-18T09:30:00.000Z",
+    "metadata": { "tellerId": "T-04" }
+  }'
+
+# Only externalCustomerId, amount (> 0) and currency (ISO 4217) are required.
+# externalTransactionId is generated when omitted, but send yours to make retries safe (409 on reuse).
+# depositedAt defaults to the time of the call.
+
+# Response
+{
+  "cashDepositId": "6f1c2a9e-...",
+  "externalTransactionId": "dep-0001",
+  "decision": "REVIEW",
+  "riskScore": 20,
+  "alerts": [ { "id": "27bfd203-...", "alertNumber": 1043, "ruleCode": "IND006-KYC1", "status": "OPEN", "decisionVerdict": "REVIEW", "triggeredAt": "2026-11-18T09:30:01.204Z" } ]
+}`
+
+const CASH_DEPOSIT_GET_EXAMPLE = `# Either your own externalTransactionId or Protegey's cashDepositId
+curl https://api.protegey.com/partner-api/cash-deposits/dep-0001 \\
+  -H "x-api-key: YOUR_API_KEY"
+
+# Response
+{
+  "cashDepositId": "6f1c2a9e-...",
+  "externalTransactionId": "dep-0001",
+  "externalCustomerId": "cust-9981",
+  "customerName": "Moussa Traoré",
+  "amount": "2500000.00",
+  "currency": "XOF",
+  "channel": "BRANCH",
+  "branchId": "DKR-PLATEAU",
+  "agentId": null,
+  "location": "Dakar, Plateau",
+  "depositorName": "Awa Diallo",
+  "metadata": { "tellerId": "T-04" },
+  "decision": "REVIEW",
+  "riskScore": 20,
+  "depositedAt": "2026-11-18T09:30:00.000Z",
+  "createdAt": "2026-11-18T09:30:01.204Z",
+  "alerts": [ { "id": "27bfd203-...", "alertNumber": 1043, "ruleCode": "IND006-KYC1", "status": "OPEN", "decisionVerdict": "REVIEW", "triggeredAt": "2026-11-18T09:30:01.204Z" } ]
+}`
+
+const CASH_DEPOSIT_LIST_EXAMPLE = `# All optional: dateFrom / dateTo (ISO 8601, on depositedAt) / externalCustomerId / minAmount / maxAmount /
+# currency / channel / decision / branchId / agentId / page / limit (max 100). Newest first.
+curl "https://api.protegey.com/partner-api/cash-deposits?dateFrom=2026-11-01&minAmount=1000000&channel=BRANCH&page=1&limit=20" \\
+  -H "x-api-key: YOUR_API_KEY"
+
+# Response — each row has the same fields as the single lookup above, without "alerts"
+{
+  "data": [
+    { "cashDepositId": "6f1c2a9e-...", "externalTransactionId": "dep-0001", "externalCustomerId": "cust-9981", "amount": "2500000.00", "currency": "XOF", "channel": "BRANCH", "branchId": "DKR-PLATEAU", "decision": "REVIEW", "riskScore": 20, "depositedAt": "2026-11-18T09:30:00.000Z", ... }
   ],
   "total": 1,
   "page": 1,
