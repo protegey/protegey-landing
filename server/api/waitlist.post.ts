@@ -1,4 +1,5 @@
 import { Resend } from 'resend'
+import { DEMO_POSITION_EN } from '#shared/demoPositions'
 
 export default defineEventHandler(async (event) => {
     // 5 submissions per IP per 10 minutes
@@ -7,13 +8,36 @@ export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig()
     const body = await readBody(event)
 
-    // Validate body
-    if (!body.email || !body.name || !body.country) {
-        throw createError({
-            statusCode: 400,
-            message: 'Name, Email, and Country are required.'
-        })
+    // Every field except the message is required — sales only wants complete demo requests.
+    const str = (value: unknown, max: number) => (typeof value === 'string' ? value.trim().slice(0, max) : '')
+    const firstName = str(body?.firstName, 80)
+    const lastName = str(body?.lastName, 80)
+    const company = str(body?.company, 120)
+    const position = str(body?.position, 60)
+    const positionOther = str(body?.positionOther, 120)
+    const country = str(body?.country, 80)
+    const missing = [
+        !firstName && 'firstName',
+        !lastName && 'lastName',
+        !body?.email && 'email',
+        !company && 'company',
+        !position && 'position',
+        position === 'other' && !positionOther && 'positionOther',
+        !country && 'country',
+    ].filter(Boolean)
+    if (missing.length) {
+        throw createError({ statusCode: 400, message: `Missing required fields: ${missing.join(', ')}` })
     }
+    if (!DEMO_POSITION_EN[position]) {
+        throw createError({ statusCode: 400, message: 'Unknown position.' })
+    }
+    const publicDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'protons.me', 'mail.com', 'zoho.com', 'yandex.com', 'live.com']
+    if (publicDomains.includes(String(body.email).split('@')[1]?.toLowerCase())) {
+        throw createError({ statusCode: 400, message: 'Please use a business email address.' })
+    }
+    Object.assign(body, { firstName, lastName, company, position, positionOther, country })
+    body.name = `${firstName} ${lastName}`
+    body.positionLabel = position === 'other' ? `Other — ${positionOther}` : DEMO_POSITION_EN[position]
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(body.email)) {
@@ -61,7 +85,9 @@ function buildInternalNotificationHtml(body: any): string {
         <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 560px; margin: 0 auto; color: #111827;">
             <h2 style="font-size: 16px; margin-bottom: 16px;">New waitlist submission</h2>
             <table style="border-collapse: collapse; width: 100%;">
-                ${row('Name', body.name)}
+                ${row('First name', body.firstName)}
+                ${row('Last name', body.lastName)}
+                ${row('Position', body.positionLabel)}
                 ${row('Email', body.email)}
                 ${row('Company', body.company)}
                 ${row('Country', body.country)}

@@ -5,18 +5,23 @@ import { Shield01Icon, ZapIcon, CheckmarkCircle01Icon, ArrowRight01Icon } from '
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import CountrySelect from '~/components/ui/CountrySelect.vue'
+import { DEMO_POSITION_GROUPS } from '#shared/demoPositions'
 
 const { locale } = useI18n()
 defineProps({ isDark: Boolean })
 const { t } = useI18n()
 
-const formData = ref({
-    name: '',
+const emptyForm = () => ({
+    firstName: '',
+    lastName: '',
     email: '',
-    country: '',
     company: '',
+    position: '',
+    positionOther: '',
+    country: '',
     message: ''
 })
+const formData = ref(emptyForm())
 
 const ctaSection = ref(null)
 
@@ -28,12 +33,19 @@ const handleSubmit = async () => {
     submitMessage.value = ''
     submitError.value = ''
 
-    if (!formData.value.name || !formData.value.email) {
-        submitError.value = t('waitlist.errors.name_email')
+    const f = formData.value
+    // Every field except the message is required — sales only wants complete requests.
+    if (![f.firstName, f.lastName, f.email, f.company, f.position].every((v) => v && v.trim())) {
+        submitError.value = t('waitlist.errors.required_fields')
         return
     }
 
-    if (!formData.value.country) {
+    if (f.position === 'other' && !f.positionOther.trim()) {
+        submitError.value = t('waitlist.errors.position_other')
+        return
+    }
+
+    if (!f.country) {
         submitError.value = t('waitlist.errors.country')
         return
     }
@@ -68,7 +80,7 @@ const handleSubmit = async () => {
         submitMessage.value = data.message || t('waitlist.success_message')
 
         if (!data.isDuplicate) {
-            formData.value = { name: '', email: '', country: '', company: '', message: '' }
+            formData.value = emptyForm()
         }
     } catch (err) {
         console.error('Failed to submit form', err)
@@ -131,13 +143,24 @@ onMounted(() => {
                 <form @submit.prevent="handleSubmit" class="space-y-6 relative z-10">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label for="name"
+                            <label for="firstName"
                                 class="block text-xs font-bold uppercase tracking-widest mb-2 text-neutral-500 dark:text-neutral-400 rtl:text-right">{{
-                                    $t('waitlist.form.name') }}</label>
-                            <input id="name" v-model="formData.name" type="text" required
-                                :placeholder="$t('waitlist.form.name_placeholder')"
+                                    $t('waitlist.form.first_name') }}</label>
+                            <input id="firstName" v-model="formData.firstName" type="text" required maxlength="80" autocomplete="given-name"
+                                :placeholder="$t('waitlist.form.first_name_placeholder')"
                                 class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all bg-white/90 dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 rtl:text-right" />
                         </div>
+                        <div>
+                            <label for="lastName"
+                                class="block text-xs font-bold uppercase tracking-widest mb-2 text-neutral-500 dark:text-neutral-400 rtl:text-right">{{
+                                    $t('waitlist.form.last_name') }}</label>
+                            <input id="lastName" v-model="formData.lastName" type="text" required maxlength="80" autocomplete="family-name"
+                                :placeholder="$t('waitlist.form.last_name_placeholder')"
+                                class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all bg-white/90 dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 rtl:text-right" />
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="email"
                                 class="block text-xs font-bold uppercase tracking-widest mb-2 text-neutral-500 dark:text-neutral-400 rtl:text-right">{{
@@ -146,23 +169,46 @@ onMounted(() => {
                                 :placeholder="$t('waitlist.form.email_placeholder')"
                                 class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all bg-white/90 dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 rtl:text-right" />
                         </div>
+                        <div>
+                            <label for="country"
+                                class="block text-xs font-bold uppercase tracking-widest mb-2 text-neutral-500 dark:text-neutral-400 rtl:text-right">{{
+                                    $t('waitlist.form.country') }}</label>
+                            <CountrySelect v-model="formData.country" input-id="country"
+                                :placeholder="$t('waitlist.form.country_placeholder')" />
+                        </div>
                     </div>
 
-                    <div>
-                        <label for="company"
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="company"
+                                class="block text-xs font-bold uppercase tracking-widest mb-2 text-neutral-500 dark:text-neutral-400 rtl:text-right">{{
+                                    $t('waitlist.form.company') }}</label>
+                            <input id="company" v-model="formData.company" type="text" required maxlength="120" autocomplete="organization"
+                                :placeholder="$t('waitlist.form.company_placeholder')"
+                                class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all bg-white/90 dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 rtl:text-right" />
+                        </div>
+                        <div>
+                            <label for="position"
+                                class="block text-xs font-bold uppercase tracking-widest mb-2 text-neutral-500 dark:text-neutral-400 rtl:text-right">{{
+                                    $t('waitlist.form.position') }}</label>
+                            <select id="position" v-model="formData.position" required
+                                class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all bg-white/90 dark:bg-neutral-800 text-neutral-900 dark:text-white rtl:text-right"
+                                :class="formData.position ? '' : 'text-neutral-400 dark:text-neutral-500'">
+                                <option value="" disabled>{{ $t('waitlist.form.position_placeholder') }}</option>
+                                <optgroup v-for="g in DEMO_POSITION_GROUPS" :key="g.group" :label="$t(`waitlist.position_groups.${g.group}`)">
+                                    <option v-for="p in g.positions" :key="p.key" :value="p.key" class="text-neutral-900 dark:text-white">{{ $t(`waitlist.positions.${p.key}`) }}</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div v-if="formData.position === 'other'">
+                        <label for="positionOther"
                             class="block text-xs font-bold uppercase tracking-widest mb-2 text-neutral-500 dark:text-neutral-400 rtl:text-right">{{
-                                $t('waitlist.form.company') }}</label>
-                        <input id="company" v-model="formData.company" type="text"
-                            :placeholder="$t('waitlist.form.company_placeholder')"
+                                $t('waitlist.form.position_other') }}</label>
+                        <input id="positionOther" v-model="formData.positionOther" type="text" required maxlength="120" autocomplete="organization-title"
+                            :placeholder="$t('waitlist.form.position_other_placeholder')"
                             class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all bg-white/90 dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 rtl:text-right" />
-                    </div>
-
-                    <div>
-                        <label for="country"
-                            class="block text-xs font-bold uppercase tracking-widest mb-2 text-neutral-500 dark:text-neutral-400 rtl:text-right">{{
-                                $t('waitlist.form.country') }}</label>
-                        <CountrySelect v-model="formData.country" input-id="country"
-                            :placeholder="$t('waitlist.form.country_placeholder')" />
                     </div>
 
                     <div>
