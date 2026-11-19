@@ -38,7 +38,14 @@ const epAnchor = (id: string) => `${anchor.value}-ep-${id.replace(/[^a-z0-9]+/gi
 const scAnchor = (id: string) => `${anchor.value}-sc-${id.replace(/[^a-z0-9]+/gi, '-')}`
 const shapeAnchor = (name: string) => `${anchor.value}-shape-${name}`
 
-function toggle(set: typeof openEndpoints, id: string) {
+// Lists are passed by NAME, not by ref: in the template a top-level ref is auto-unwrapped, so
+// `toggle(openEndpoints, id)` handed over the bare Set and `set.value = …` changed nothing —
+// the "+" buttons never opened.
+type OpenList = 'endpoints' | 'scenarios' | 'shapes'
+const openLists = { endpoints: openEndpoints, scenarios: openScenarios, shapes: openShapes }
+
+function toggle(list: OpenList, id: string) {
+    const set = openLists[list]
     const next = new Set(set.value)
     next.has(id) ? next.delete(id) : next.add(id)
     set.value = next
@@ -63,12 +70,20 @@ function onTabKey(e: KeyboardEvent) {
     selectTab(tabs[next], true)
 }
 
-async function reveal(tab: Tab, set: typeof openEndpoints, id: string, elId: string) {
+async function reveal(tab: Tab, list: OpenList, id: string, elId: string) {
+    const set = openLists[list]
     activeTab.value = tab
     if (!set.value.has(id)) set.value = new Set([...set.value, id])
     await lazy.ensure()
     await nextTick()
     document.getElementById(elId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+// The example shown inline in an endpoint card: its first scenario answering with the endpoint's own
+// success status (falls back to its first scenario at all).
+function sampleFor(ep: any) {
+    const list = scenariosFor(ep)
+    return list.find((x) => Number(x.httpStatus) === Number(ep.successStatus)) ?? list[0] ?? null
 }
 
 // Scenarios whose request matches this endpoint's method + path template.
@@ -98,12 +113,12 @@ onMounted(() => {
     if (!hash.startsWith(anchor.value)) return
     lazy.ensure()
     const ep = mod.value?.endpoints.find((e: any) => hash === epAnchor(e.id))
-    if (ep) return reveal('endpoints', openEndpoints, ep.id, hash)
+    if (ep) return reveal('endpoints', 'endpoints', ep.id, hash)
     const shape = mod.value?.responseShapes.find((s: string) => hash === shapeAnchor(s))
-    if (shape) return reveal('responses', openShapes, shape, hash)
+    if (shape) return reveal('responses', 'shapes', shape, hash)
     lazy.ensure().then(() => {
         const sc = scenarios.value.find((s) => hash === scAnchor(s.id))
-        if (sc) reveal('scenarios', openScenarios, sc.id, hash)
+        if (sc) reveal('scenarios', 'scenarios', sc.id, hash)
     })
 })
 onBeforeUnmount(() => lazy.stop())
@@ -152,7 +167,7 @@ onBeforeUnmount(() => lazy.stop())
             <div v-for="ep in mod.endpoints" :id="epAnchor(ep.id)" :key="ep.id" class="scroll-mt-28 rounded-xl border border-neutral-200 dark:border-neutral-800">
                 <h5>
                     <button type="button" class="flex w-full flex-col gap-1 px-3 py-2.5 text-start hover:bg-neutral-50 dark:hover:bg-neutral-900/50 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-400"
-                            :aria-expanded="openEndpoints.has(ep.id)" :aria-controls="`${epAnchor(ep.id)}-body`" @click="toggle(openEndpoints, ep.id)">
+                            :aria-expanded="openEndpoints.has(ep.id)" :aria-controls="`${epAnchor(ep.id)}-body`" @click="toggle('endpoints', ep.id)">
                         <span class="flex flex-wrap items-center gap-2" dir="ltr">
                             <span class="rounded-md px-1.5 py-0.5 font-mono text-[10.5px] font-black" :class="methodClass(ep.method)">{{ ep.method }}</span>
                             <code class="font-mono text-[12.5px] font-semibold text-neutral-900 dark:text-white break-all">{{ ep.path }}</code>
@@ -187,7 +202,7 @@ onBeforeUnmount(() => lazy.stop())
                                 <span>{{ t('api_docs.catalog.success') }}:</span>
                                 <span class="rounded-md px-1.5 py-0.5 font-mono text-[11px] font-bold" :class="statusClass(d.successStatus)">HTTP {{ d.successStatus }}</span>
                                 <button type="button" class="font-mono text-[11px] text-primary-600 dark:text-primary-300 underline underline-offset-2"
-                                        @click="reveal('responses', openShapes, d.responseShape, shapeAnchor(d.responseShape))">{{ d.responseShape }}</button>
+                                        @click="reveal('responses', 'shapes', d.responseShape, shapeAnchor(d.responseShape))">{{ d.responseShape }}</button>
                             </div>
 
                             <div class="mt-2 flex flex-wrap items-center gap-1.5 text-xs text-neutral-600 dark:text-neutral-400">
@@ -200,8 +215,24 @@ onBeforeUnmount(() => lazy.stop())
                                 <span>{{ t('api_docs.catalog.possible_outcomes') }}:</span>
                                 <button v-for="s in scenariosFor(d)" :key="s.id" type="button"
                                         class="rounded-full border border-neutral-200 dark:border-neutral-700 px-2 py-px text-[11px] hover:border-primary-400"
-                                        @click="reveal('scenarios', openScenarios, s.id, scAnchor(s.id))">{{ L(s.title) }}</button>
+                                        @click="reveal('scenarios', 'scenarios', s.id, scAnchor(s.id))">{{ L(s.title) }}</button>
                             </div>
+
+                            <template v-for="ex in [sampleFor(d)]" :key="'ex-' + d.id">
+                                <div v-if="ex" class="mt-4">
+                                    <h6 class="mb-1.5 flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-wide text-neutral-400">
+                                        {{ t('api_docs.catalog.example_response') }}
+                                        <span class="rounded-md px-1.5 py-0.5 font-mono text-[11px] font-bold normal-case" :class="statusClass(ex.httpStatus)">HTTP {{ ex.httpStatus }}</span>
+                                        <span class="normal-case font-medium tracking-normal text-neutral-500">{{ L(ex.title) }}</span>
+                                    </h6>
+                                    <CodeBlock :code="prettyJson(ex.response)" />
+                                    <template v-if="ex.webhooks?.length">
+                                        <h6 class="mt-3 mb-1.5 text-[10px] font-bold uppercase tracking-wide text-neutral-400">{{ t('api_docs.catalog.example_webhook') }} · <span class="font-mono normal-case">{{ ex.webhooks[0].payload?.type ?? ex.webhooks[0].type }}</span></h6>
+                                        <CodeBlock :code="prettyJson(ex.webhooks[0].payload ?? ex.webhooks[0])" />
+                                    </template>
+                                    <p class="mt-1.5 text-xs text-neutral-500">{{ t('api_docs.catalog.example_response_hint') }}</p>
+                                </div>
+                            </template>
 
                             <div v-if="d.errors?.length" class="mt-4">
                                 <h6 class="mb-1.5 text-[10px] font-bold uppercase tracking-wide text-neutral-400">{{ t('api_docs.catalog.errors') }}</h6>
@@ -229,7 +260,7 @@ onBeforeUnmount(() => lazy.stop())
             <div v-for="s in scenarios" :id="scAnchor(s.id)" :key="s.id" class="scroll-mt-28 rounded-xl border border-neutral-200 dark:border-neutral-800">
                 <h5>
                     <button type="button" class="flex w-full flex-wrap items-center gap-2 px-3 py-2.5 text-start rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-900/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-400"
-                            :aria-expanded="openScenarios.has(s.id)" :aria-controls="`${scAnchor(s.id)}-body`" @click="toggle(openScenarios, s.id)">
+                            :aria-expanded="openScenarios.has(s.id)" :aria-controls="`${scAnchor(s.id)}-body`" @click="toggle('scenarios', s.id)">
                         <span class="rounded-md px-1.5 py-0.5 font-mono text-[10.5px] font-bold" :class="statusClass(s.httpStatus)">{{ s.httpStatus }}</span>
                         <span class="text-sm font-semibold text-neutral-900 dark:text-white">{{ L(s.title) }}</span>
                         <span v-if="s.sandboxTrigger" class="rounded-full bg-violet-500/10 px-2 py-px font-mono text-[10px] font-bold text-violet-700 dark:text-violet-300">sandbox: {{ s.sandboxTrigger }}</span>
@@ -249,7 +280,7 @@ onBeforeUnmount(() => lazy.stop())
                     </p>
                     <p class="mt-3 mb-1 text-[10px] font-bold uppercase tracking-wide text-neutral-400">
                         {{ t('api_docs.catalog.response') }} — HTTP {{ s.httpStatus }} ·
-                        <button type="button" class="font-mono normal-case text-primary-600 dark:text-primary-300 underline underline-offset-2" @click="reveal('responses', openShapes, s.shape, shapeAnchor(s.shape))">{{ s.shape }}</button>
+                        <button type="button" class="font-mono normal-case text-primary-600 dark:text-primary-300 underline underline-offset-2" @click="reveal('responses', 'shapes', s.shape, shapeAnchor(s.shape))">{{ s.shape }}</button>
                     </p>
                     <CodeBlock :code="prettyJson(s.response)" />
                     <p v-if="!s.webhooks?.length" class="mt-2 text-xs text-neutral-600 dark:text-neutral-400">
@@ -272,7 +303,7 @@ onBeforeUnmount(() => lazy.stop())
             <div v-for="(shape, name) in responses" :id="shapeAnchor(String(name))" :key="name" class="scroll-mt-28 rounded-xl border border-neutral-200 dark:border-neutral-800">
                 <h5>
                     <button type="button" class="flex w-full flex-wrap items-center gap-2 px-3 py-2.5 text-start rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-900/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-400"
-                            :aria-expanded="openShapes.has(String(name))" :aria-controls="`${shapeAnchor(String(name))}-body`" @click="toggle(openShapes, String(name))">
+                            :aria-expanded="openShapes.has(String(name))" :aria-controls="`${shapeAnchor(String(name))}-body`" @click="toggle('shapes', String(name))">
                         <code dir="ltr" class="font-mono text-[12.5px] font-bold text-neutral-900 dark:text-white">{{ name }}</code>
                         <span class="text-xs text-neutral-500">{{ L(shape.description) }}</span>
                         <span class="text-[10px] text-neutral-400">· {{ t('api_docs.catalog.field_count', { n: shape.fields.length }) }}</span>

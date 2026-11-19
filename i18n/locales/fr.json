@@ -846,7 +846,10 @@
             "nav_conventions": "Conventions",
             "nav_sandbox": "Scénarios sandbox",
             "nav_group_reference": "Référence",
-            "webhook_payload": "Webhook envoyé"
+            "webhook_payload": "Webhook envoyé",
+            "example_response": "Exemple de réponse",
+            "example_webhook": "Webhook envoyé",
+            "example_response_hint": "Sortie réelle de l’API pour ce cas. Toutes les autres variantes sont dans « Résultats possibles » et l’onglet Scénarios ; chaque champ est expliqué dans l’onglet Champs de réponse."
         }
     },
     "geo_pages": {
