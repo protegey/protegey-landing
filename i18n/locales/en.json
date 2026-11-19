@@ -844,7 +844,10 @@
             "nav_conventions": "Conventions",
             "nav_sandbox": "Sandbox scenarios",
             "nav_group_reference": "Reference",
-            "webhook_payload": "Webhook sent"
+            "webhook_payload": "Webhook sent",
+            "example_response": "Example response",
+            "example_webhook": "Webhook sent",
+            "example_response_hint": "Real output of the API for this case. Every other variant is under “Possible outcomes” and the Scenarios tab; every field is explained in the Response fields tab."
         }
     },
     "geo_pages": {
