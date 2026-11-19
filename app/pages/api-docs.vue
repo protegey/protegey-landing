@@ -58,7 +58,7 @@
                     <DocSection id="sdks" :icon="Package01Icon" :title="t('api_docs.sdks_title')" :body="t('api_docs.sdks_subtitle')">
                         <div class="mt-4 grid sm:grid-cols-2 gap-3">
                             <a v-for="sdk in sdks" :key="sdk.name" :href="sdk.repo" target="_blank" rel="noopener"
-                               class="group p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 hover:border-primary-500/40 transition-colors flex flex-col">
+                               class="group min-w-0 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 hover:border-primary-500/40 transition-colors flex flex-col">
                                 <div class="flex items-center justify-between mb-2">
                                     <span class="flex items-center gap-2 text-sm font-bold text-neutral-900 dark:text-white">
                                         <HugeiconsIcon :icon="sdk.icon" :size="18" class="text-neutral-500 dark:text-neutral-400 shrink-0" />
@@ -74,235 +74,131 @@
                         </div>
                     </DocSection>
 
+                    <!-- Conventions (generated catalog) -->
+                    <DocSection id="catalog-conventions" :icon="Book02Icon" :title="t('api_docs.catalog.conventions_title')" :body="t('api_docs.catalog.conventions_desc')">
+                        <CatalogConventions />
+                    </DocSection>
+
                     <!-- ═══ Pan-Monitor™ ═══ -->
                     <ModuleGroup id="group-pan-monitor" :title="t('api_docs.group_pan_monitor_title')" :tagline="t('api_docs.group_pan_monitor_tagline')">
-                    <DocSection id="transactions" :icon="Exchange01Icon" :title="t('api_docs.transactions_title')" :body="t('api_docs.transactions_desc')">
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
-                        <CodeBlock :code="TRANSACTION_EXAMPLE" />
+                    <DocSection id="transactions" level="h3" :icon="Exchange01Icon" :title="t('api_docs.transactions_title')" :body="t('api_docs.transactions_desc')">
                         <div class="mt-4">
                             <ApiConsole method="POST" path="/partner-api/transactions" :fields="transactionFields" />
                         </div>
-                        <p class="mt-6 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.transactions_status_label') }}</p>
-                        <CodeBlock :code="TRANSACTION_STATUS_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.transactions_list_label') }}</p>
-                        <CodeBlock :code="TRANSACTION_LIST_EXAMPLE" />
-                        <ValuesRef :label="t('api_docs.values_label')" :items="transactionValues" />
+                        <CatalogModule module-key="transactions" />
                     </DocSection>
 
-                    <DocSection id="cash-deposits" :icon="Exchange01Icon" :title="t('api_docs.cash_deposits_title')" :body="t('api_docs.cash_deposits_desc')">
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
-                        <CodeBlock :code="CASH_DEPOSIT_EXAMPLE" />
+                    <DocSection id="cash-deposits" level="h3" :icon="Exchange01Icon" :title="t('api_docs.cash_deposits_title')" :body="t('api_docs.cash_deposits_desc')">
                         <div class="mt-4">
                             <ApiConsole method="POST" path="/partner-api/cash-deposits" :fields="cashDepositFields" />
                         </div>
-                        <p class="mt-6 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.cash_deposits_get_label') }}</p>
-                        <CodeBlock :code="CASH_DEPOSIT_GET_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.cash_deposits_list_label') }}</p>
-                        <CodeBlock :code="CASH_DEPOSIT_LIST_EXAMPLE" />
-                        <ValuesRef :label="t('api_docs.values_label')" :items="cashDepositValues" />
+                        <CatalogModule module-key="cashDeposits" />
                     </DocSection>
 
-                    <DocSection id="alerts" :icon="Notification01Icon" :title="t('api_docs.alerts_title')" :body="t('api_docs.alerts_desc')">
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.alerts_list_label') }}</p>
-                        <CodeBlock :code="ALERT_LIST_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.alerts_get_label') }}</p>
-                        <CodeBlock :code="ALERT_GET_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.alerts_update_label') }}</p>
-                        <CodeBlock :code="ALERT_UPDATE_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.alerts_convert_label') }}</p>
-                        <CodeBlock :code="ALERT_CONVERT_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.alerts_flag_label') }}</p>
-                        <CodeBlock :code="ALERT_FLAG_EXAMPLE" />
-                        <ValuesRef :label="t('api_docs.values_label')" :items="alertsValues" />
+                    <DocSection id="alerts" level="h3" :icon="Notification01Icon" :title="t('api_docs.alerts_title')" :body="t('api_docs.alerts_desc')">
                         <div class="mt-4">
                             <ApiConsole method="POST" path="/partner-api/alerts/flag-transaction" :fields="alertsFlagFields" />
                         </div>
+                        <CatalogModule module-key="alerts" />
                     </DocSection>
 
                     <!-- Decision flow diagram -->
-                    <DocSection id="decision-flow" :icon="Exchange01Icon" :title="t('api_docs.decision_flow_title')" :body="t('api_docs.decision_flow_desc')">
+                    <DocSection id="decision-flow" level="h3" :icon="Exchange01Icon" :title="t('api_docs.decision_flow_title')" :body="t('api_docs.decision_flow_desc')">
                         <DecisionFlowDiagram class="mt-5" />
                     </DocSection>
                     </ModuleGroup>
 
                     <!-- ═══ Pan-ID™ ═══ -->
                     <ModuleGroup id="group-pan-id" :title="t('api_docs.group_pan_id_title')" :tagline="t('api_docs.group_pan_id_tagline')">
-                    <DocSection id="kyc" :icon="FingerPrintIcon" :title="t('api_docs.kyc_title')" :body="t('api_docs.kyc_desc')">
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
-                        <CodeBlock :code="KYC_EXAMPLE" />
-                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_decision_note') }}</p>
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyc_poll_label') }}</p>
-                        <CodeBlock :code="KYC_POLL_EXAMPLE" />
-                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_poll_note') }}</p>
-                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_images_note') }}</p>
-                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_capture_note') }}</p>
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyc_list_label') }}</p>
-                        <CodeBlock :code="KYC_LIST_EXAMPLE" />
-                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_list_note') }}</p>
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyc_update_label') }}</p>
-                        <CodeBlock :code="KYC_UPDATE_EXAMPLE" />
-                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_update_note') }}</p>
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyc_resend_label') }}</p>
-                        <CodeBlock :code="KYC_RESEND_EXAMPLE" />
-                        <ValuesRef :label="t('api_docs.values_label')" :items="kycValues" />
+                    <DocSection id="kyc" level="h3" :icon="FingerPrintIcon" :title="t('api_docs.kyc_title')" :body="t('api_docs.kyc_desc')">
+                        <ul class="mt-4 flex flex-col gap-2 text-xs leading-relaxed text-neutral-500 dark:text-neutral-400 list-disc ps-4">
+                            <li>{{ t('api_docs.kyc_decision_note') }}</li>
+                            <li>{{ t('api_docs.kyc_capture_note') }}</li>
+                            <li>{{ t('api_docs.kyc_poll_note') }}</li>
+                            <li>{{ t('api_docs.kyc_images_note') }}</li>
+                            <li>{{ t('api_docs.kyc_list_note') }}</li>
+                            <li>{{ t('api_docs.kyc_update_note') }}</li>
+                        </ul>
                         <div class="mt-4">
                             <p class="mb-1.5 text-xs text-amber-600 dark:text-amber-500">{{ t('api_docs.kyc_console_warning') }}</p>
                             <ApiConsole method="POST" path="/partner-api/kyc/sessions" :fields="kycFields" />
                         </div>
+                        <CatalogModule module-key="kyc" />
                     </DocSection>
 
-                    <DocSection id="kyb" :icon="Building01Icon" :title="t('api_docs.kyb_title')" :body="t('api_docs.kyb_desc')">
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_invite_label') }}</p>
-                        <CodeBlock :code="KYB_INVITE_EXAMPLE" />
-                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyb_invite_note') }}</p>
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_list_label') }}</p>
-                        <CodeBlock :code="KYB_LIST_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_get_label') }}</p>
-                        <CodeBlock :code="KYB_GET_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_resend_label') }}</p>
-                        <CodeBlock :code="KYB_RESEND_EXAMPLE" />
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_screen_label') }}</p>
-                        <CodeBlock :code="KYB_SCREEN_EXAMPLE" />
-                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyb_screen_note') }}</p>
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_decide_label') }}</p>
-                        <CodeBlock :code="KYB_DECIDE_EXAMPLE" />
-                        <ValuesRef :label="t('api_docs.values_label')" :items="kybValues" />
-                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyb_scope_note') }}</p>
+                    <DocSection id="kyb" level="h3" :icon="Building01Icon" :title="t('api_docs.kyb_title')" :body="t('api_docs.kyb_desc')">
+                        <ul class="mt-4 flex flex-col gap-2 text-xs leading-relaxed text-neutral-500 dark:text-neutral-400 list-disc ps-4">
+                            <li>{{ t('api_docs.kyb_invite_note') }}</li>
+                            <li>{{ t('api_docs.kyb_screen_note') }}</li>
+                            <li>{{ t('api_docs.kyb_scope_note') }}</li>
+                        </ul>
                         <div class="mt-4">
                             <ApiConsole method="POST" path="/partner-api/kyb/applicants" :fields="kybFields" />
                         </div>
+                        <CatalogModule module-key="kyb" />
                     </DocSection>
                     </ModuleGroup>
 
                     <!-- ═══ Pan-Risk™ ═══ -->
                     <ModuleGroup id="group-pan-risk" :title="t('api_docs.group_pan_risk_title')" :tagline="t('api_docs.group_pan_risk_tagline')">
-                    <DocSection id="sanctions" :icon="Shield01Icon" :title="t('api_docs.sanctions_title')" :body="t('api_docs.sanctions_desc')">
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
-                        <CodeBlock :code="SANCTIONS_EXAMPLE" />
-                        <ValuesRef :label="t('api_docs.values_label')" :items="sanctionsValues" />
+                    <DocSection id="sanctions" level="h3" :icon="Shield01Icon" :title="t('api_docs.sanctions_title')" :body="t('api_docs.sanctions_desc')">
                         <div class="mt-4">
                             <ApiConsole method="POST" path="/partner-api/sanctions/screen" :fields="sanctionsFields" />
                         </div>
+                        <CatalogModule module-key="screening" />
                     </DocSection>
                     </ModuleGroup>
 
                     <!-- ═══ Pan-Intel™ ═══ -->
                     <ModuleGroup id="group-pan-intel" :title="t('api_docs.group_pan_intel_title')" :tagline="t('api_docs.group_pan_intel_tagline')">
-                    <DocSection id="device-events" :icon="SmartPhone01Icon" :title="t('api_docs.device_title')" :body="t('api_docs.device_desc')">
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
-                        <CodeBlock :code="DEVICE_EVENT_EXAMPLE" />
-                        <ValuesRef :label="t('api_docs.values_label')" :items="deviceValues" />
+                    <DocSection id="device-events" level="h3" :icon="SmartPhone01Icon" :title="t('api_docs.device_title')" :body="t('api_docs.device_desc')">
                         <div class="mt-4">
                             <ApiConsole method="POST" path="/partner-api/device-events" :fields="deviceFields" />
                         </div>
+                        <CatalogModule module-key="deviceEvents" />
                     </DocSection>
 
-                    <DocSection id="behavioral-events" :icon="Activity01Icon" :title="t('api_docs.behavioral_title')" :body="t('api_docs.behavioral_desc')">
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
-                        <CodeBlock :code="BEHAVIORAL_EVENT_EXAMPLE" />
+                    <DocSection id="behavioral-events" level="h3" :icon="Activity01Icon" :title="t('api_docs.behavioral_title')" :body="t('api_docs.behavioral_desc')">
                         <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.behavioral_stepup_note') }}</p>
-                        <ValuesRef :label="t('api_docs.values_label')" :items="behavioralValues" />
                         <div class="mt-4">
                             <p class="mb-1.5 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.behavioral_console_note') }}</p>
                             <ApiConsole method="POST" path="/partner-api/behavioral-events" :fields="behavioralFields" />
                         </div>
+                        <CatalogModule module-key="behavioralEvents" />
                     </DocSection>
 
-                    <DocSection id="shared-signal" :icon="Share01Icon" :title="t('api_docs.shared_signal_title')" :body="t('api_docs.shared_signal_desc')">
-                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
-                        <CodeBlock :code="SHARED_SIGNAL_EXAMPLE" />
+                    <DocSection id="shared-signal" level="h3" :icon="Share01Icon" :title="t('api_docs.shared_signal_title')" :body="t('api_docs.shared_signal_desc')">
                         <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.shared_signal_optin_note') }}</p>
-                        <ValuesRef :label="t('api_docs.values_label')" :items="sharedSignalValues" />
                         <div class="mt-4">
                             <ApiConsole method="POST" path="/partner-api/shared-signal/check" :fields="sharedSignalFields" />
                         </div>
+                        <CatalogModule module-key="sharedSignals" />
                     </DocSection>
                     </ModuleGroup>
+
+                    <!-- Sandbox scenarios (generated catalog) -->
+                    <DocSection id="catalog-sandbox" :icon="TestTube01Icon" :title="t('api_docs.catalog.sandbox_title')" :body="t('api_docs.catalog.sandbox_desc')">
+                        <CatalogSandbox />
+                    </DocSection>
 
                     <!-- Webhooks -->
                     <DocSection id="webhooks" :icon="WebhookIcon" :title="t('api_docs.webhooks_title')" :body="t('api_docs.webhooks_desc')">
                         <p class="mt-4 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{{ t('api_docs.webhooks_sync_note') }}</p>
 
-                        <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.webhooks_events_title') }}</p>
-                        <div class="overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800">
-                            <table class="w-full text-left text-sm">
-                                <thead class="bg-neutral-100 dark:bg-neutral-900 text-neutral-500 dark:text-neutral-400">
-                                    <tr>
-                                        <th class="px-3 py-2 font-medium">type</th>
-                                        <th class="px-3 py-2 font-medium">{{ t('api_docs.webhooks_col_trigger') }}</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-neutral-200 dark:divide-neutral-800">
-                                    <tr>
-                                        <td class="whitespace-nowrap px-3 py-2 font-mono text-xs text-neutral-900 dark:text-white">kyc.status_changed</td>
-                                        <td class="px-3 py-2 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_kyc_trigger') }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="whitespace-nowrap px-3 py-2 font-mono text-xs text-neutral-900 dark:text-white">kyb.status_changed</td>
-                                        <td class="px-3 py-2 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_kyb_trigger') }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="whitespace-nowrap px-3 py-2 font-mono text-xs text-neutral-900 dark:text-white">alert.created</td>
-                                        <td class="px-3 py-2 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_alert_created_trigger') }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="whitespace-nowrap px-3 py-2 font-mono text-xs text-neutral-900 dark:text-white">alert.status_changed</td>
-                                        <td class="px-3 py-2 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_alert_status_trigger') }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="whitespace-nowrap px-3 py-2 font-mono text-xs text-neutral-900 dark:text-white">transaction.blocked</td>
-                                        <td class="px-3 py-2 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_transaction_blocked_trigger') }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="mt-2 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_more_types_note') }}</p>
+                        <CatalogWebhooks />
 
-                        <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.webhooks_request_shape_title') }}</p>
-                        <CodeBlock :code="WEBHOOK_HEADERS_EXAMPLE" />
-
-                        <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">kyc.status_changed</p>
-                        <CodeBlock :code="WEBHOOK_KYC_PAYLOAD_EXAMPLE" />
-                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_kyc_payload_note') }}</p>
-
-                        <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">kyb.status_changed</p>
-                        <CodeBlock :code="WEBHOOK_KYB_PAYLOAD_EXAMPLE" />
-
-                        <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">alert.created</p>
-                        <CodeBlock :code="WEBHOOK_ALERT_CREATED_EXAMPLE" />
-
-                        <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">alert.status_changed</p>
-                        <CodeBlock :code="WEBHOOK_ALERT_STATUS_EXAMPLE" />
-
-                        <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">transaction.blocked</p>
-                        <CodeBlock :code="WEBHOOK_TRANSACTION_BLOCKED_EXAMPLE" />
-
-                        <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.webhooks_headers_title') }}</p>
-                        <div class="overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800">
-                            <table class="w-full text-left text-sm">
-                                <tbody class="divide-y divide-neutral-200 dark:divide-neutral-800">
-                                    <tr>
-                                        <td class="whitespace-nowrap px-3 py-2 font-mono text-xs text-neutral-900 dark:text-white">X-Signature</td>
-                                        <td class="px-3 py-2 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_header_signature') }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="whitespace-nowrap px-3 py-2 font-mono text-xs text-neutral-900 dark:text-white">X-Timestamp</td>
-                                        <td class="px-3 py-2 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_header_timestamp') }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.webhooks_verify_title') }}</p>
+                        <h3 class="mt-6 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.webhooks_verify_title') }}</h3>
                         <p class="mb-1.5 text-sm text-neutral-600 dark:text-neutral-400">{{ t('api_docs.webhooks_verify_body') }}</p>
                         <CodeBlock :code="WEBHOOK_VERIFY_EXAMPLE" />
 
-                        <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.webhooks_reliability_title') }}</p>
+                        <h3 class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.webhooks_reliability_title') }}</h3>
                         <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{{ t('api_docs.webhooks_reliability_body') }}</p>
                     </DocSection>
 
                     <!-- Errors -->
-                    <DocSection id="errors" :icon="Alert02Icon" :title="t('api_docs.errors_title')" :body="t('api_docs.errors_desc')" />
+                    <DocSection id="errors" :icon="Alert02Icon" :title="t('api_docs.errors_title')" :body="t('api_docs.errors_desc')">
+                        <CatalogErrorFormat />
+                    </DocSection>
                 </div>
             </div>
         </section>
@@ -328,11 +224,16 @@ import { h } from 'vue'
 import { HugeiconsIcon } from '@hugeicons/vue'
 import CodeBlock from '~/components/CodeBlock.vue'
 import ApiConsole from '~/components/ApiConsole.vue'
+import CatalogModule from '~/components/catalog/CatalogModule.vue'
+import CatalogConventions from '~/components/catalog/CatalogConventions.vue'
+import CatalogSandbox from '~/components/catalog/CatalogSandbox.vue'
+import CatalogWebhooks from '~/components/catalog/CatalogWebhooks.vue'
+import CatalogErrorFormat from '~/components/catalog/CatalogErrorFormat.vue'
 import {
     LockKeyIcon, Package01Icon, Exchange01Icon, FingerPrintIcon, Shield01Icon,
     SmartPhone01Icon, Activity01Icon, Share01Icon, WebhookIcon, Alert02Icon, Notification01Icon, Link01Icon,
     JavaScriptIcon, ReactIcon, PhpIcon, JavaIcon, DartIcon, MicrosoftIcon,
-    Building01Icon
+    Building01Icon, Book02Icon, TestTube01Icon
 } from '@hugeicons/core-free-icons'
 
 const { t } = useI18n()
@@ -360,19 +261,20 @@ usePageMeta({
     ]
 })
 
-// ── Section wrapper — a titled card matching the rest of the page's style. ──
+// ── Section wrapper — a titled card matching the rest of the page's style. `level` keeps the
+// heading outline valid: h2 for top-level sections, h3 inside a module group (whose title is h2). ──
 const DocSection = (props, { slots }) =>
     h('section', { id: props.id, class: 'scroll-mt-28 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/40 p-6' }, [
         h('div', { class: 'flex items-center gap-2.5' }, [
             h('div', { class: 'flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary-500/10 text-primary-500' }, [
                 h(HugeiconsIcon, { icon: props.icon, size: 18 })
             ]),
-            h('p', { class: 'text-base font-bold text-neutral-900 dark:text-white' }, props.title)
+            h(props.level || 'h2', { class: 'text-base font-bold text-neutral-900 dark:text-white' }, props.title)
         ]),
         h('p', { class: 'mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400' }, props.body),
         slots.default ? slots.default() : null
     ])
-DocSection.props = ['id', 'icon', 'title', 'body']
+DocSection.props = ['id', 'icon', 'title', 'body', 'level']
 
 // ── Module group banner — groups endpoint sections the same way the dashboard's own sidebar
 // groups its pages (Pan-ID / Pan-Monitor / Pan-Risk / Pan-Intel), so this reference reads the
@@ -382,7 +284,7 @@ const ModuleGroup = (props, { slots }) =>
         h('div', { class: 'flex items-center gap-3 pt-4' }, [
             h('div', { class: 'h-px flex-1 bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-800 to-neutral-200 dark:to-neutral-800' }),
             h('div', { class: 'flex items-center gap-2 px-1' }, [
-                h('span', { class: 'text-sm font-black tracking-tight text-neutral-900 dark:text-white' }, props.title),
+                h('h2', { class: 'text-sm font-black tracking-tight text-neutral-900 dark:text-white' }, props.title),
             ]),
             h('div', { class: 'h-px flex-1 bg-gradient-to-l from-transparent via-neutral-200 dark:via-neutral-800 to-neutral-200 dark:to-neutral-800' }),
         ]),
@@ -390,22 +292,6 @@ const ModuleGroup = (props, { slots }) =>
         ...(slots.default ? slots.default() : []),
     ])
 ModuleGroup.props = ['id', 'title', 'tagline']
-
-// ── Enum/status reference box — field: value1 | value2 | value3. Field names and enum tokens are
-// API vocabulary, language-agnostic; only the box's own label is translated. ──
-const ValuesRef = (props) =>
-    h('div', { class: 'mt-4 rounded-xl border border-dashed border-neutral-300 dark:border-neutral-700 p-3.5' }, [
-        h('p', { class: 'text-[10px] font-bold uppercase tracking-wide text-neutral-400 mb-2' }, props.label),
-        h('dl', { class: 'flex flex-col gap-1.5' },
-            props.items.map((item) =>
-                h('div', { key: item.field, class: 'flex flex-wrap items-baseline gap-x-2 text-xs' }, [
-                    h('dt', { class: 'font-mono font-bold text-neutral-700 dark:text-neutral-300' }, `${item.field}:`),
-                    h('dd', { class: 'font-mono text-neutral-500 dark:text-neutral-400' }, item.values.join(' | ')),
-                ])
-            )
-        ),
-    ])
-ValuesRef.props = ['label', 'items']
 
 // ── Decision-flow diagram — the two delivery channels (sync HTTP response vs async webhook),
 // not the internal scoring logic: what a partner's own backend needs to build around, nothing
@@ -456,6 +342,7 @@ const DecisionFlowDiagram = () => {
 const navItems = [
     { id: 'auth', labelKey: 'api_docs.nav_auth' },
     { id: 'sdks', labelKey: 'api_docs.nav_sdks' },
+    { id: 'catalog-conventions', labelKey: 'api_docs.catalog.nav_conventions' },
     { id: 'group-pan-id', labelKey: 'api_docs.nav_group_pan_id', isGroup: true },
     { id: 'kyc', labelKey: 'api_docs.nav_kyc' },
     { id: 'kyb', labelKey: 'api_docs.nav_kyb' },
@@ -470,6 +357,8 @@ const navItems = [
     { id: 'device-events', labelKey: 'api_docs.nav_device' },
     { id: 'behavioral-events', labelKey: 'api_docs.nav_behavioral' },
     { id: 'shared-signal', labelKey: 'api_docs.nav_shared_signal' },
+    { id: 'group-reference', labelKey: 'api_docs.catalog.nav_group_reference', isGroup: true },
+    { id: 'catalog-sandbox', labelKey: 'api_docs.catalog.nav_sandbox' },
     { id: 'webhooks', labelKey: 'api_docs.nav_webhooks' },
     { id: 'errors', labelKey: 'api_docs.nav_errors' },
 ]
@@ -531,484 +420,6 @@ const kybFields = [
     { name: 'contactPhone', label: 'contactPhone', type: 'text', placeholder: '+224600000000' },
 ]
 const alertsFlagFields = [{ name: 'transactionId', label: 'transactionId', type: 'text', required: true, placeholder: '4d06ad4e-2018-428a-8323-d537da5e19fa' }]
-
-// ── Enum/status reference data — real values from the backend's own entities/DTOs. ──
-const kycValues = [
-    { field: 'status', values: ['IN_PROGRESS', 'APPROVED', 'DECLINED', 'IN_REVIEW', 'EXPIRED', 'RESUBMITTED'] },
-    { field: 'decision.outcome', values: ['SUCCESS', 'MANUAL', 'FAILED'] },
-    { field: 'recommendation', values: ['APPROVE', 'REVIEW', 'REJECT'] },
-]
-const kybValues = [
-    { field: 'status', values: ['INVITED', 'PENDING_REVIEW', 'MORE_INFO_REQUIRED', 'ACTIVE', 'REJECTED'] },
-    { field: 'stage (query filter)', values: ['INVITED', 'RESPONDED'] },
-    { field: 'business.decision / owners[].decision', values: ['CLEAR', 'REVIEW', 'BLOCKED'] },
-    { field: 'decision (PATCH .../decide)', values: ['APPROVE', 'REJECT', 'REQUEST_MORE_INFO'] },
-]
-const transactionValues = [
-    { field: 'direction', values: ['DEBIT', 'CREDIT'] },
-    { field: 'channel', values: ['BRANCH', 'ATM', 'POS', 'ONLINE', 'MOBILE_APP', 'USSD', 'AGENT', 'API', 'CALL_CENTER'] },
-    { field: 'decision', values: ['CLEAR', 'REVIEW', 'BLOCKED'] },
-    { field: 'deviceAction', values: ['ALLOW', 'SOFT_CHALLENGE', 'HARD_CHALLENGE', 'BLOCK'] },
-]
-const cashDepositValues = [
-    { field: 'channel', values: ['BRANCH', 'AGENT', 'ATM', 'POS', 'MOBILE_APP', 'USSD', 'ONLINE', 'API', 'CALL_CENTER'] },
-    { field: 'decision', values: ['CLEAR', 'REVIEW', 'BLOCKED'] },
-    { field: 'currency', values: ['ISO 4217 code (XOF, XAF, GNF, NGN, USD, EUR...)'] },
-]
-const alertsValues = [
-    { field: 'status', values: ['OPEN', 'CONFIRMED', 'MORE_INFO_REQUESTED', 'DISMISSED'] },
-    { field: 'disposition', values: ['CONFIRMED_FRAUD', 'FALSE_POSITIVE', 'NO_ACTION', 'SAR_FILED', 'ESCALATED'] },
-]
-const sanctionsValues = [
-    { field: 'decision', values: ['CLEAR', 'REVIEW', 'BLOCKED'] },
-    { field: 'score', values: ['0.0', '–', '1.0 (similarity ratio, not a percentage)'] },
-]
-const deviceValues = [
-    { field: 'action', values: ['ALLOW', 'SOFT_CHALLENGE', 'HARD_CHALLENGE', 'BLOCK'] },
-]
-const behavioralValues = [
-    { field: 'status', values: ['LEARNING', 'SCORED'] },
-    { field: 'confidenceTier', values: ['null (while learning)', 'LOW', 'MEDIUM', 'HIGH'] },
-]
-const sharedSignalValues = [
-    { field: 'category', values: ['CONFIRMED_FRAUD', 'IDENTITY_THEFT', 'MONEY_LAUNDERING', 'OTHER'] },
-]
-
-// ── Real curl examples — real field names, matching the actual DTOs/responses. Every status/
-// decision/action/category value is UPPER_SNAKE_CASE, both ways — accepted on input, always
-// returned that way, across every response and webhook payload. ──
-const TRANSACTION_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/transactions \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{
-    "externalTransactionId": "tx-00234",
-    "externalCustomerId": "cust-9981",
-    "direction": "DEBIT",
-    "amount": 250000,
-    "currency": "XOF",
-    "transactionType": "cashout",
-    "isCash": true,
-    "channel": "USSD",
-    "counterpartyInstitutionCode": "ECOBKTGTG",
-    "counterpartyCountry": "SN",
-    "occurredAt": "2026-01-15T10:00:00.000Z"
-  }'
-
-# Response
-{
-  "transactionId": "b3b4f28f-...",
-  "decision": "REVIEW",
-  "riskScore": 20,
-  "alerts": [ { "ruleCode": "IND006-KYC1", "status": "OPEN", ... } ]
-}`
-
-const TRANSACTION_STATUS_EXAMPLE = `# The id in the path can be EITHER identifier — your own externalTransactionId, or Protegey's
-# own transactionId from the original POST response — whichever one you have on hand.
-curl https://api.protegey.com/partner-api/transactions/tx-00234 \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Equally valid — Protegey's own id instead
-curl https://api.protegey.com/partner-api/transactions/b3b4f28f-... \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Response — same shape as the synchronous POST response above
-{
-  "transactionId": "b3b4f28f-...",
-  "externalTransactionId": "tx-00234",
-  "externalCustomerId": "cust-9981",
-  "decision": "REVIEW",
-  "riskScore": 20,
-  "deviceAction": "ALLOW",
-  "occurredAt": "2026-01-15T10:00:00.000Z",
-  "createdAt": "2026-01-15T10:00:01.482Z",
-  "alerts": [ { "id": "27bfd203-...", "alertNumber": 1042, "ruleCode": "IND006-KYC1", "status": "OPEN", "decisionVerdict": "REVIEW", "triggeredAt": "2026-01-15T10:00:01.482Z" } ]
-}`
-
-const TRANSACTION_LIST_EXAMPLE = `# direction / decision / externalCustomerId / dateFrom / dateTo / page / limit are all optional
-curl "https://api.protegey.com/partner-api/transactions?externalCustomerId=cust-9981&decision=REVIEW&page=1&limit=20" \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Response — each row omits "alerts" (fetching them for every row on a list this size would be
-# an N+1 query per page); call the status endpoint above for one transaction's own alerts.
-{
-  "data": [
-    { "transactionId": "b3b4f28f-...", "externalTransactionId": "tx-00234", "externalCustomerId": "cust-9981", "direction": "DEBIT", "amount": 250000, "currency": "XOF", "decision": "REVIEW", "riskScore": 20, "deviceAction": "ALLOW", "occurredAt": "2026-01-15T10:00:00.000Z", "createdAt": "2026-01-15T10:00:01.482Z" }
-  ],
-  "total": 1,
-  "page": 1,
-  "limit": 20,
-  "totalPages": 1
-}`
-
-const CASH_DEPOSIT_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/cash-deposits \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{
-    "externalTransactionId": "dep-0001",
-    "externalCustomerId": "cust-9981",
-    "customerName": "Moussa Traoré",
-    "amount": 2500000,
-    "currency": "XOF",
-    "channel": "BRANCH",
-    "branchId": "DKR-PLATEAU",
-    "location": "Dakar, Plateau",
-    "depositorName": "Awa Diallo",
-    "depositedAt": "2026-11-18T09:30:00.000Z",
-    "metadata": { "tellerId": "T-04" }
-  }'
-
-# Only externalCustomerId, amount (> 0) and currency (ISO 4217) are required.
-# externalTransactionId is generated when omitted, but send yours to make retries safe (409 on reuse).
-# depositedAt defaults to the time of the call.
-
-# Response
-{
-  "cashDepositId": "6f1c2a9e-...",
-  "externalTransactionId": "dep-0001",
-  "decision": "REVIEW",
-  "riskScore": 20,
-  "alerts": [ { "id": "27bfd203-...", "alertNumber": 1043, "ruleCode": "IND006-KYC1", "status": "OPEN", "decisionVerdict": "REVIEW", "triggeredAt": "2026-11-18T09:30:01.204Z" } ]
-}`
-
-const CASH_DEPOSIT_GET_EXAMPLE = `# Either your own externalTransactionId or Protegey's cashDepositId
-curl https://api.protegey.com/partner-api/cash-deposits/dep-0001 \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Response
-{
-  "cashDepositId": "6f1c2a9e-...",
-  "externalTransactionId": "dep-0001",
-  "externalCustomerId": "cust-9981",
-  "customerName": "Moussa Traoré",
-  "amount": "2500000.00",
-  "currency": "XOF",
-  "channel": "BRANCH",
-  "branchId": "DKR-PLATEAU",
-  "agentId": null,
-  "location": "Dakar, Plateau",
-  "depositorName": "Awa Diallo",
-  "metadata": { "tellerId": "T-04" },
-  "decision": "REVIEW",
-  "riskScore": 20,
-  "depositedAt": "2026-11-18T09:30:00.000Z",
-  "createdAt": "2026-11-18T09:30:01.204Z",
-  "alerts": [ { "id": "27bfd203-...", "alertNumber": 1043, "ruleCode": "IND006-KYC1", "status": "OPEN", "decisionVerdict": "REVIEW", "triggeredAt": "2026-11-18T09:30:01.204Z" } ]
-}`
-
-const CASH_DEPOSIT_LIST_EXAMPLE = `# All optional: dateFrom / dateTo (ISO 8601, on depositedAt) / externalCustomerId / minAmount / maxAmount /
-# currency / channel / decision / branchId / agentId / page / limit (max 100). Newest first.
-curl "https://api.protegey.com/partner-api/cash-deposits?dateFrom=2026-11-01&minAmount=1000000&channel=BRANCH&page=1&limit=20" \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Response — each row has the same fields as the single lookup above, without "alerts"
-{
-  "data": [
-    { "cashDepositId": "6f1c2a9e-...", "externalTransactionId": "dep-0001", "externalCustomerId": "cust-9981", "amount": "2500000.00", "currency": "XOF", "channel": "BRANCH", "branchId": "DKR-PLATEAU", "decision": "REVIEW", "riskScore": 20, "depositedAt": "2026-11-18T09:30:00.000Z", ... }
-  ],
-  "total": 1,
-  "page": 1,
-  "limit": 20,
-  "totalPages": 1
-}`
-
-const ALERT_LIST_EXAMPLE = `# status / disposition / ruleCode / externalCustomerId / transactionId / dateFrom / dateTo / page / limit are all optional
-curl "https://api.protegey.com/partner-api/alerts?status=OPEN&page=1&limit=20" \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Response
-{
-  "data": [
-    { "id": "27bfd203-...", "alertNumber": 1042, "ruleCode": "IND006-KYC1", "status": "OPEN", "disposition": null, "externalCustomerId": "cust-9981", "transactionId": "4d06ad4e-...", "triggeredAt": "2026-09-20T12:51:42.593Z" }
-  ],
-  "total": 1,
-  "page": 1,
-  "limit": 20
-}`
-
-const ALERT_GET_EXAMPLE = `curl https://api.protegey.com/partner-api/alerts/27bfd203-d554-418a-bc19-fcaf13164a0e \\
-  -H "x-api-key: YOUR_API_KEY"`
-
-const ALERT_UPDATE_EXAMPLE = `# Validate, reject, request more info, assign, or just add a note — only the fields you send are
-# changed. Fires the same alert.status_changed webhook and EDD-trigger side effects as a
-# dashboard-driven update.
-curl -X PATCH https://api.protegey.com/partner-api/alerts/27bfd203-d554-418a-bc19-fcaf13164a0e \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{ "status": "CONFIRMED", "disposition": "CONFIRMED_FRAUD", "investigationNotes": "Matches a known structuring pattern on this customer" }'`
-
-const ALERT_CONVERT_EXAMPLE = `# Turns this alert directly into a Case, escalating its disposition in the same call.
-curl -X POST https://api.protegey.com/partner-api/alerts/27bfd203-d554-418a-bc19-fcaf13164a0e/convert-to-case \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Response
-{ "alert": { "id": "27bfd203-...", "disposition": "ESCALATED", ... }, "case": { "id": "9b1e...", "caseNumber": 118, "status": "OPEN", ... } }`
-
-const ALERT_FLAG_EXAMPLE = `# Flags a transaction for investigation even though no automated rule matched it — idempotent,
-# re-flagging an already-open alert on the same transaction just returns it unchanged.
-curl -X POST https://api.protegey.com/partner-api/alerts/flag-transaction \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{ "transactionId": "4d06ad4e-2018-428a-8323-d537da5e19fa" }'`
-
-const KYC_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/kyc/sessions \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{ "externalUserId": "cust-9981" }'
-
-# Response — "url" is a one-time link to our hosted FaceTec capture app, not a third-party page
-{ "sessionId": "018f2a3e-...", "url": "https://verify-kyc.protegey.com/?enrollmentId=...&token=...&apiBase=..." }`
-
-const KYC_POLL_EXAMPLE = `# Polling fallback — the source of truth whenever you must be certain of a session's status.
-curl https://api.protegey.com/partner-api/kyc/sessions/018f2a3e-... \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Response — same fields as the outbound webhook payload (minus eventId), plus scores and photos.
-{
-  "sessionId": "018f2a3e-...",
-  "externalUserId": "cust-9981",
-  "status": "IN_REVIEW",
-  "outcome": "SUCCESS",
-  "recommendation": "APPROVE",
-  "decision": { "source": "facetec", "outcome": "SUCCESS", "passed": true, "matchLevel": 6, ... },
-  "fullName": "AWA DIALLO",
-  "documentType": "Passport",
-  "country": "CI",
-  "livenessScore": 100,
-  "faceMatchScore": 100,
-  "images": {
-    "documentFront": { "url": "https://<bucket>.s3.<region>.amazonaws.com/...-document.jpg?X-Amz-Signature=...", "expiresAt": "2026-11-19T13:00:00.000Z" },
-    "documentBack": null,
-    "selfie": { "url": "https://<bucket>.s3.<region>.amazonaws.com/...-selfie.jpg?X-Amz-Signature=...", "expiresAt": "2026-11-19T13:00:00.000Z" },
-    "documentFaceCrop": { "url": "https://<bucket>.s3.<region>.amazonaws.com/...-document-face-crop.jpg?X-Amz-Signature=...", "expiresAt": "2026-11-19T13:00:00.000Z" }
-  },
-  "documentPhoto": "<base64>", "documentBackPhoto": null, "selfiePhoto": "<base64>", "documentFaceCrop": "<base64>"
-}`
-
-const KYC_LIST_EXAMPLE = `# Find a customer's sessions by your own id — exact match, paginated, newest first.
-curl "https://api.protegey.com/partner-api/kyc/sessions?externalUserId=cust-9981&page=1&limit=20" \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Response — no base64 photos in the list, only pre-signed links.
-{
-  "data": [
-    {
-      "sessionId": "018f2a3e-...",
-      "externalUserId": "cust-9981",
-      "status": "IN_REVIEW",
-      "outcome": "SUCCESS",
-      "recommendation": "APPROVE",
-      "fullName": "AWA DIALLO",
-      "documentType": "Passport",
-      "country": "CI",
-      "createdAt": "2026-11-19T12:00:00.000Z",
-      "images": { "documentFront": { "url": "https://...", "expiresAt": "2026-11-19T13:00:00.000Z" }, "documentBack": null, "selfie": { "url": "https://...", "expiresAt": "..." }, "documentFaceCrop": null }
-    }
-  ],
-  "total": 1, "page": 1, "limit": 20, "totalPages": 1
-}`
-
-const KYC_UPDATE_EXAMPLE = `# Correct an OCR misread, or resolve an "IN_REVIEW" session by overriding its status.
-curl -X PATCH https://api.protegey.com/partner-api/kyc/sessions/018f2a3e-... \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{ "status": "APPROVED", "reviewNote": "Manually verified against a second document" }'
-
-# Response
-{
-  "sessionId": "018f2a3e-...",
-  "externalUserId": "cust-9981",
-  "status": "APPROVED",
-  "outcome": "SUCCESS",
-  "recommendation": "APPROVE",
-  "decision": {
-    "source": "facetec", "outcome": "SUCCESS", ...,
-    "manualReview": { "reviewedBy": "Partner API", "reviewedAt": "2026-11-19T12:10:00.000Z", "previousStatus": "IN_REVIEW", "newStatus": "APPROVED", "note": "Manually verified against a second document" }
-  }
-}`
-
-const KYC_RESEND_EXAMPLE = `# Issues a fresh single-use capture link for an enrollment whose previous attempt didn't lead
-# anywhere (DECLINED, EXPIRED, or stuck IN_REVIEW). Sets status to "RESUBMITTED".
-curl -X POST https://api.protegey.com/partner-api/kyc/sessions/018f2a3e-.../resend \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Response
-{ "sessionId": "018f2a3e-...", "url": "https://verify-kyc.protegey.com/?enrollmentId=...&token=...&apiBase=..." }`
-
-const SANCTIONS_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/sanctions/screen \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{ "name": "Jane Doe", "type": "person" }'
-
-# Response
-{ "decision": "CLEAR", "score": 0, "matches": [] }`
-
-const DEVICE_EVENT_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/device-events \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{
-    "eventId": "your-own-idempotency-key",
-    "externalCustomerId": "cust-9981",
-    "visitorId": "computed-by-the-sdk",
-    "deviceAttributes": { "platform": "Web", "isRooted": false }
-  }'
-
-# Response
-{ "recorded": true, "action": "ALLOW", "riskScore": 5 }`
-
-const BEHAVIORAL_EVENT_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/behavioral-events \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{
-    "externalCustomerId": "cust-9981",
-    "sessionId": "sess-20260115-01",
-    "keystroke": { "avgInterKeyLatencyMs": 145, "typingSpeedCharsPerSec": 4.2, "errorRate": 0.02 },
-    "touch": { "avgSwipeVelocity": 22, "scrollBehaviorScore": 0.8 },
-    "navigation": { "screenSequence": ["login", "dashboard", "transfer", "confirm"] },
-    "session": { "loginHourBucket": 14, "loginDayOfWeek": 2, "sessionDurationMs": 45000 }
-  }'
-
-# Response — first sessions for a customer come back as "LEARNING" (no score yet)
-{ "status": "LEARNING", "deviationScore": 0, "confidenceTier": null, "stepUpRecommended": false, "escalatedAlertId": null }
-
-# Response — once a baseline exists for that customer
-{ "status": "SCORED", "deviationScore": 35, "confidenceTier": "MEDIUM", "stepUpRecommended": true, "escalatedAlertId": null }`
-
-const SHARED_SIGNAL_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/shared-signal/check \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{ "phoneNumber": "+22890123456", "email": "jane@example.com", "deviceFingerprint": "visitor-id-from-the-sdk", "externalCustomerId": "cust-9981" }'
-  # phoneNumber, email and deviceFingerprint are all optional — send whichever you have
-
-# Response — no match
-{ "flagged": false, "category": null, "reportedDaysAgo": null }
-
-# Response — a match (never reveals which partner reported it, or their case details)
-{ "flagged": true, "category": "CONFIRMED_FRAUD", "reportedDaysAgo": 12 }`
-
-const KYB_INVITE_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/kyb/applicants \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{
-    "contactName": "Awa Diallo",
-    "contactEmail": "awa@acme-sarl.com",
-    "templateId": "optional-custom-template-id"
-  }'
-# No email address? Send "contactPhone": "+224600000000" instead of contactEmail.
-
-# Response — applicationUrl is the applicant's link to the questionnaire
-{
-  "id": "6e2e6a2e-...",
-  "legalName": null,
-  "contactName": "Awa Diallo",
-  "contactEmail": "awa@acme-sarl.com",
-  "contactPhone": null,
-  "status": "INVITED",
-  "applicationUrl": "https://app.protegey.com/client-application?token=..."
-}`
-
-const KYB_LIST_EXAMPLE = `# search / status / stage are all optional filters
-curl "https://api.protegey.com/partner-api/kyb/applicants?status=PENDING_REVIEW&stage=RESPONDED" \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Response — status is one of: INVITED, PENDING_REVIEW, MORE_INFO_REQUIRED, ACTIVE, REJECTED
-{ "data": [ { "id": "6e2e6a2e-...", "legalName": "Acme SARL", "status": "PENDING_REVIEW", ... } ], "total": 1, "page": 1, "limit": 20 }`
-
-const KYB_GET_EXAMPLE = `curl https://api.protegey.com/partner-api/kyb/applicants/6e2e6a2e-... \\
-  -H "x-api-key: YOUR_API_KEY"`
-
-const KYB_RESEND_EXAMPLE = `# Issues a fresh invitation link — use when the first one expired or was lost, without
-# restarting the applicant's progress. Returns a new applicationUrl; the previous link stops working.
-curl -X POST https://api.protegey.com/partner-api/kyb/applicants/6e2e6a2e-.../resend-invitation \\
-  -H "x-api-key: YOUR_API_KEY"`
-
-const KYB_SCREEN_EXAMPLE = `# Sanctions/PEP screening for the business and each declared owner — the same check that runs
-# automatically on submission, re-run on demand.
-curl https://api.protegey.com/partner-api/kyb/applicants/6e2e6a2e-.../screen \\
-  -H "x-api-key: YOUR_API_KEY"
-
-# Response
-{
-  "business": { "decision": "CLEAR", "score": 0, "matches": [] },
-  "owners": [ { "ownerName": "Awa Diallo", "ownershipPercent": 60, "decision": "CLEAR", "score": 0, "matches": [] } ],
-  "screenedAt": "2026-11-13T10:00:00.000Z"
-}`
-
-const KYB_DECIDE_EXAMPLE = `curl -X PATCH https://api.protegey.com/partner-api/kyb/applicants/6e2e6a2e-.../decide \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{ "decision": "APPROVE" }'
-
-# Reject — "reason" required (5+ characters)
-  -d '{ "decision": "REJECT", "reason": "Beneficial owner listed on a sanctions list" }'
-
-# Ask for more information — "note" required (5+ characters); the response carries a fresh applicationUrl
-  -d '{ "decision": "REQUEST_MORE_INFO", "note": "Please upload the latest RCCM extract" }'
-
-# Response — the applicant, with its new status (ACTIVE, REJECTED or MORE_INFO_REQUIRED)
-{ "id": "6e2e6a2e-...", "legalName": "Acme SARL", "status": "ACTIVE", ... }`
-
-const WEBHOOK_HEADERS_EXAMPLE = `POST https://your-endpoint.example.com/webhooks/protegey
-Content-Type: application/json
-X-Signature: 08fa142f2349cd86b4c4c3a46ce53afe5c63c4a587d7ff3cf52023f201c1526d
-X-Timestamp: 1789905404`
-
-const WEBHOOK_KYC_PAYLOAD_EXAMPLE = `{
-  "type": "kyc.status_changed",
-  "eventId": "d0d61d39-88c5-4bfb-89eb-08bb1d407c5a",
-  "externalUserId": "cust-9981",
-  "status": "IN_REVIEW",
-  "recommendation": "APPROVE",
-  "sessionId": "018f2a3e-...",
-  "decision": { "source": "facetec", "outcome": "SUCCESS", "passed": true, "livenessScore": 100, "matchLevel": 6, ... }
-}`
-
-const WEBHOOK_KYB_PAYLOAD_EXAMPLE = `{
-  "type": "kyb.status_changed",
-  "eventId": "5b0f3c7e-2a41-4f7e-9d0a-6c1e8b3f2d11",
-  "clientId": "6e2e6a2e-...",
-  "status": "ACTIVE",
-  "submissionStatus": "APPROVED",
-  "decision": "APPROVE"
-}
-// status: ACTIVE | REJECTED | MORE_INFO_REQUIRED — decision: APPROVE | REJECT | REQUEST_MORE_INFO`
-
-const WEBHOOK_ALERT_CREATED_EXAMPLE = `{
-  "type": "alert.created",
-  "eventId": "77cf7610-5380-4b72-aeaf-35645098140c",
-  "alertId": "27bfd203-d554-418a-bc19-fcaf13164a0e",
-  "ruleCode": "IND006-KYC1",
-  "externalCustomerId": "cust-9981",
-  "transactionId": "4d06ad4e-2018-428a-8323-d537da5e19fa",
-  "status": "OPEN",
-  "triggeredAt": "2026-09-20T12:51:42.593Z"
-}
-// transactionId is null for an alert escalated from behavioral biometrics (not tied to one transaction).`
-
-const WEBHOOK_ALERT_STATUS_EXAMPLE = `{
-  "type": "alert.status_changed",
-  "eventId": "31d8d981-1177-476f-b65a-dd69c700bb08",
-  "alertId": "27bfd203-d554-418a-bc19-fcaf13164a0e",
-  "ruleCode": "IND006-KYC1",
-  "externalCustomerId": "cust-9981",
-  "status": "CONFIRMED"
-}`
-
-const WEBHOOK_TRANSACTION_BLOCKED_EXAMPLE = `{
-  "type": "transaction.blocked",
-  "eventId": "8a5e6f5a-8b7f-4b51-9df3-2f6c3a1f0c2e",
-  "transactionId": "4d06ad4e-2018-428a-8323-d537da5e19fa",
-  "externalTransactionId": "tx-9981-004",
-  "externalCustomerId": "cust-9981",
-  "amount": 400000,
-  "currency": "XOF",
-  "riskScore": 82,
-  "ruleDecision": "REVIEW",
-  "deviceAction": "BLOCK",
-  "alertIds": ["27bfd203-d554-418a-bc19-fcaf13164a0e"],
-  "occurredAt": "2026-09-26T09:12:03.000Z"
-}
-// Fires whenever a transaction's FINAL decision is "BLOCKED" — from a rule (ruleDecision) or the
-// device signal (deviceAction), or both.`
 
 const WEBHOOK_VERIFY_EXAMPLE = `// Node.js — verify a delivery is genuinely from Protegey and hasn't been replayed
 import { createHmac, timingSafeEqual } from "node:crypto";

@@ -1,9 +1,22 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 const props = defineProps({
   code: { type: String, required: true },
+  copyable: { type: Boolean, default: true },
 })
+
+const { t } = useI18n()
+const copied = ref(false)
+async function copy() {
+  try {
+    await navigator.clipboard.writeText(props.code)
+    copied.value = true
+    setTimeout(() => { copied.value = false }, 1500)
+  } catch {
+    // Clipboard blocked (insecure context / permissions) — the code stays selectable by hand.
+  }
+}
 
 // Comments, string literals, and .methodCalls( get a touch of color; everything else stays plain
 // on a solid black background, always dark regardless of the page's own theme — matches a single
@@ -31,5 +44,11 @@ const highlighted = computed(() => {
 </script>
 
 <template>
-  <pre class="overflow-x-auto rounded-xl bg-neutral-950 border border-white/10 p-4 text-[12px] leading-relaxed text-neutral-200 font-mono"><code v-html="highlighted" /></pre>
+  <div class="relative group" dir="ltr">
+    <pre :class="copyable ? 'pt-10' : ''" class="overflow-x-auto rounded-xl bg-neutral-950 border border-white/10 p-4 text-[12px] leading-relaxed text-neutral-200 font-mono"><code v-html="highlighted" /></pre>
+    <button v-if="copyable" type="button" @click="copy"
+      class="absolute top-2 right-2 rounded-md border border-white/10 bg-neutral-900/90 px-2 py-1 text-[10px] font-semibold text-neutral-300 opacity-80 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-400">
+      <span aria-live="polite">{{ copied ? t('api_docs.catalog.copied') : t('api_docs.catalog.copy') }}</span>
+    </button>
+  </div>
 </template>
