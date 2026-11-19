@@ -135,11 +135,13 @@
                         <CodeBlock :code="KYC_POLL_EXAMPLE" />
                         <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_poll_note') }}</p>
                         <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_images_note') }}</p>
+                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_capture_note') }}</p>
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyc_list_label') }}</p>
                         <CodeBlock :code="KYC_LIST_EXAMPLE" />
                         <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_list_note') }}</p>
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyc_update_label') }}</p>
                         <CodeBlock :code="KYC_UPDATE_EXAMPLE" />
+                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_update_note') }}</p>
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyc_resend_label') }}</p>
                         <CodeBlock :code="KYC_RESEND_EXAMPLE" />
                         <ValuesRef :label="t('api_docs.values_label')" :items="kycValues" />
@@ -152,6 +154,7 @@
                     <DocSection id="kyb" :icon="Building01Icon" :title="t('api_docs.kyb_title')" :body="t('api_docs.kyb_desc')">
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_invite_label') }}</p>
                         <CodeBlock :code="KYB_INVITE_EXAMPLE" />
+                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyb_invite_note') }}</p>
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_list_label') }}</p>
                         <CodeBlock :code="KYB_LIST_EXAMPLE" />
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_get_label') }}</p>
@@ -160,6 +163,9 @@
                         <CodeBlock :code="KYB_RESEND_EXAMPLE" />
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_screen_label') }}</p>
                         <CodeBlock :code="KYB_SCREEN_EXAMPLE" />
+                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyb_screen_note') }}</p>
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyb_decide_label') }}</p>
+                        <CodeBlock :code="KYB_DECIDE_EXAMPLE" />
                         <ValuesRef :label="t('api_docs.values_label')" :items="kybValues" />
                         <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyb_scope_note') }}</p>
                         <div class="mt-4">
@@ -232,6 +238,10 @@
                                         <td class="px-3 py-2 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_kyc_trigger') }}</td>
                                     </tr>
                                     <tr>
+                                        <td class="whitespace-nowrap px-3 py-2 font-mono text-xs text-neutral-900 dark:text-white">kyb.status_changed</td>
+                                        <td class="px-3 py-2 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_kyb_trigger') }}</td>
+                                    </tr>
+                                    <tr>
                                         <td class="whitespace-nowrap px-3 py-2 font-mono text-xs text-neutral-900 dark:text-white">alert.created</td>
                                         <td class="px-3 py-2 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_alert_created_trigger') }}</td>
                                     </tr>
@@ -254,6 +264,9 @@
                         <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">kyc.status_changed</p>
                         <CodeBlock :code="WEBHOOK_KYC_PAYLOAD_EXAMPLE" />
                         <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_kyc_payload_note') }}</p>
+
+                        <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">kyb.status_changed</p>
+                        <CodeBlock :code="WEBHOOK_KYB_PAYLOAD_EXAMPLE" />
 
                         <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">alert.created</p>
                         <CodeBlock :code="WEBHOOK_ALERT_CREATED_EXAMPLE" />
@@ -514,7 +527,8 @@ const sharedSignalFields = [
 ]
 const kybFields = [
     { name: 'contactName', label: 'contactName', type: 'text', required: true, placeholder: 'Awa Diallo' },
-    { name: 'contactEmail', label: 'contactEmail', type: 'text', required: true, placeholder: 'awa@acme-sarl.com' },
+    { name: 'contactEmail', label: 'contactEmail', type: 'text', placeholder: 'awa@acme-sarl.com' },
+    { name: 'contactPhone', label: 'contactPhone', type: 'text', placeholder: '+224600000000' },
 ]
 const alertsFlagFields = [{ name: 'transactionId', label: 'transactionId', type: 'text', required: true, placeholder: '4d06ad4e-2018-428a-8323-d537da5e19fa' }]
 
@@ -528,6 +542,7 @@ const kybValues = [
     { field: 'status', values: ['INVITED', 'PENDING_REVIEW', 'MORE_INFO_REQUIRED', 'ACTIVE', 'REJECTED'] },
     { field: 'stage (query filter)', values: ['INVITED', 'RESPONDED'] },
     { field: 'business.decision / owners[].decision', values: ['CLEAR', 'REVIEW', 'BLOCKED'] },
+    { field: 'decision (PATCH .../decide)', values: ['APPROVE', 'REJECT', 'REQUEST_MORE_INFO'] },
 ]
 const transactionValues = [
     { field: 'direction', values: ['DEBIT', 'CREDIT'] },
@@ -743,7 +758,7 @@ const KYC_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/kyc/sessi
 # Response — "url" is a one-time link to our hosted biometric capture app, not a third-party page
 { "sessionId": "018f2a3e-...", "url": "https://verify-kyc.protegey.com/?enrollmentId=...&token=...&apiBase=..." }`
 
-const KYC_POLL_EXAMPLE = `# Polling fallback — see the Webhooks section: delivery is best-effort (one retry, no queue).
+const KYC_POLL_EXAMPLE = `# Polling fallback — the source of truth whenever you must be certain of a session's status.
 curl https://api.protegey.com/partner-api/kyc/sessions/018f2a3e-... \\
   -H "x-api-key: YOUR_API_KEY"
 
@@ -796,7 +811,20 @@ const KYC_UPDATE_EXAMPLE = `# Correct an OCR misread, or resolve an "IN_REVIEW" 
 curl -X PATCH https://api.protegey.com/partner-api/kyc/sessions/018f2a3e-... \\
   -H "Content-Type: application/json" \\
   -H "x-api-key: YOUR_API_KEY" \\
-  -d '{ "status": "APPROVED", "reviewNote": "Manually verified against a second document" }'`
+  -d '{ "status": "APPROVED", "reviewNote": "Manually verified against a second document" }'
+
+# Response
+{
+  "sessionId": "018f2a3e-...",
+  "externalUserId": "cust-9981",
+  "status": "APPROVED",
+  "outcome": "SUCCESS",
+  "recommendation": "APPROVE",
+  "decision": {
+    "source": "biometric", "outcome": "SUCCESS", ...,
+    "manualReview": { "reviewedBy": "Partner API", "reviewedAt": "2026-11-19T12:10:00.000Z", "previousStatus": "In Review", "newStatus": "Approved", "note": "Manually verified against a second document" }
+  }
+}`
 
 const KYC_RESEND_EXAMPLE = `# Issues a fresh single-use capture link for an enrollment whose previous attempt didn't lead
 # anywhere (DECLINED, EXPIRED, or stuck IN_REVIEW). Sets status to "RESUBMITTED".
@@ -865,9 +893,18 @@ const KYB_INVITE_EXAMPLE = `curl -X POST https://api.protegey.com/partner-api/ky
     "contactEmail": "awa@acme-sarl.com",
     "templateId": "optional-custom-template-id"
   }'
+# No email address? Send "contactPhone": "+224600000000" instead of contactEmail.
 
-# Response
-{ "id": "6e2e6a2e-...", "legalName": null, "contactName": "Awa Diallo", "contactEmail": "awa@acme-sarl.com", "status": "INVITED" }`
+# Response — applicationUrl is the applicant's link to the questionnaire
+{
+  "id": "6e2e6a2e-...",
+  "legalName": null,
+  "contactName": "Awa Diallo",
+  "contactEmail": "awa@acme-sarl.com",
+  "contactPhone": null,
+  "status": "INVITED",
+  "applicationUrl": "https://app.protegey.com/client-application?token=..."
+}`
 
 const KYB_LIST_EXAMPLE = `# search / status / stage are all optional filters
 curl "https://api.protegey.com/partner-api/kyb/applicants?status=PENDING_REVIEW&stage=RESPONDED" \\
@@ -880,7 +917,7 @@ const KYB_GET_EXAMPLE = `curl https://api.protegey.com/partner-api/kyb/applicant
   -H "x-api-key: YOUR_API_KEY"`
 
 const KYB_RESEND_EXAMPLE = `# Issues a fresh invitation link — use when the first one expired or was lost, without
-# restarting the applicant's progress.
+# restarting the applicant's progress. Returns a new applicationUrl; the previous link stops working.
 curl -X POST https://api.protegey.com/partner-api/kyb/applicants/6e2e6a2e-.../resend-invitation \\
   -H "x-api-key: YOUR_API_KEY"`
 
@@ -896,6 +933,20 @@ curl https://api.protegey.com/partner-api/kyb/applicants/6e2e6a2e-.../screen \\
   "screenedAt": "2026-11-13T10:00:00.000Z"
 }`
 
+const KYB_DECIDE_EXAMPLE = `curl -X PATCH https://api.protegey.com/partner-api/kyb/applicants/6e2e6a2e-.../decide \\
+  -H "Content-Type: application/json" \\
+  -H "x-api-key: YOUR_API_KEY" \\
+  -d '{ "decision": "APPROVE" }'
+
+# Reject — "reason" required (5+ characters)
+  -d '{ "decision": "REJECT", "reason": "Beneficial owner listed on a sanctions list" }'
+
+# Ask for more information — "note" required (5+ characters); the response carries a fresh applicationUrl
+  -d '{ "decision": "REQUEST_MORE_INFO", "note": "Please upload the latest RCCM extract" }'
+
+# Response — the applicant, with its new status (ACTIVE, REJECTED or MORE_INFO_REQUIRED)
+{ "id": "6e2e6a2e-...", "legalName": "Acme SARL", "status": "ACTIVE", ... }`
+
 const WEBHOOK_HEADERS_EXAMPLE = `POST https://your-endpoint.example.com/webhooks/protegey
 Content-Type: application/json
 X-Signature: 08fa142f2349cd86b4c4c3a46ce53afe5c63c4a587d7ff3cf52023f201c1526d
@@ -910,6 +961,16 @@ const WEBHOOK_KYC_PAYLOAD_EXAMPLE = `{
   "sessionId": "018f2a3e-...",
   "decision": { "source": "biometric", "outcome": "SUCCESS", "passed": true, "livenessScore": 100, "matchLevel": 6, ... }
 }`
+
+const WEBHOOK_KYB_PAYLOAD_EXAMPLE = `{
+  "type": "kyb.status_changed",
+  "eventId": "5b0f3c7e-2a41-4f7e-9d0a-6c1e8b3f2d11",
+  "clientId": "6e2e6a2e-...",
+  "status": "ACTIVE",
+  "submissionStatus": "approved",
+  "decision": "APPROVE"
+}
+// status: ACTIVE | REJECTED | MORE_INFO_REQUIRED — decision: APPROVE | REJECT | REQUEST_MORE_INFO`
 
 const WEBHOOK_ALERT_CREATED_EXAMPLE = `{
   "type": "alert.created",
