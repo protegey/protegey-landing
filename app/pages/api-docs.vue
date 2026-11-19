@@ -822,7 +822,7 @@ curl -X PATCH https://api.protegey.com/partner-api/kyc/sessions/018f2a3e-... \\
   "recommendation": "APPROVE",
   "decision": {
     "source": "biometric", "outcome": "SUCCESS", ...,
-    "manualReview": { "reviewedBy": "Partner API", "reviewedAt": "2026-11-19T12:10:00.000Z", "previousStatus": "In Review", "newStatus": "Approved", "note": "Manually verified against a second document" }
+    "manualReview": { "reviewedBy": "Partner API", "reviewedAt": "2026-11-19T12:10:00.000Z", "previousStatus": "IN_REVIEW", "newStatus": "APPROVED", "note": "Manually verified against a second document" }
   }
 }`
 
@@ -967,7 +967,7 @@ const WEBHOOK_KYB_PAYLOAD_EXAMPLE = `{
   "eventId": "5b0f3c7e-2a41-4f7e-9d0a-6c1e8b3f2d11",
   "clientId": "6e2e6a2e-...",
   "status": "ACTIVE",
-  "submissionStatus": "approved",
+  "submissionStatus": "APPROVED",
   "decision": "APPROVE"
 }
 // status: ACTIVE | REJECTED | MORE_INFO_REQUIRED — decision: APPROVE | REJECT | REQUEST_MORE_INFO`
