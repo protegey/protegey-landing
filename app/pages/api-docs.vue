@@ -130,9 +130,14 @@
                     <DocSection id="kyc" :icon="FingerPrintIcon" :title="t('api_docs.kyc_title')" :body="t('api_docs.kyc_desc')">
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.example_label') }}</p>
                         <CodeBlock :code="KYC_EXAMPLE" />
+                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_decision_note') }}</p>
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyc_poll_label') }}</p>
                         <CodeBlock :code="KYC_POLL_EXAMPLE" />
                         <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_poll_note') }}</p>
+                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_images_note') }}</p>
+                        <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyc_list_label') }}</p>
+                        <CodeBlock :code="KYC_LIST_EXAMPLE" />
+                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.kyc_list_note') }}</p>
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyc_update_label') }}</p>
                         <CodeBlock :code="KYC_UPDATE_EXAMPLE" />
                         <p class="mt-4 mb-1.5 text-xs font-semibold uppercase text-neutral-400">{{ t('api_docs.kyc_resend_label') }}</p>
@@ -248,6 +253,7 @@
 
                         <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">kyc.status_changed</p>
                         <CodeBlock :code="WEBHOOK_KYC_PAYLOAD_EXAMPLE" />
+                        <p class="mt-3 text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.webhooks_kyc_payload_note') }}</p>
 
                         <p class="mt-5 mb-1.5 text-xs font-semibold uppercase text-neutral-400">alert.created</p>
                         <CodeBlock :code="WEBHOOK_ALERT_CREATED_EXAMPLE" />
@@ -516,6 +522,7 @@ const alertsFlagFields = [{ name: 'transactionId', label: 'transactionId', type:
 const kycValues = [
     { field: 'status', values: ['IN_PROGRESS', 'APPROVED', 'DECLINED', 'IN_REVIEW', 'EXPIRED', 'RESUBMITTED'] },
     { field: 'decision.outcome', values: ['SUCCESS', 'MANUAL', 'FAILED'] },
+    { field: 'recommendation', values: ['APPROVE', 'REVIEW', 'REJECT'] },
 ]
 const kybValues = [
     { field: 'status', values: ['INVITED', 'PENDING_REVIEW', 'MORE_INFO_REQUIRED', 'ACTIVE', 'REJECTED'] },
@@ -740,8 +747,50 @@ const KYC_POLL_EXAMPLE = `# Polling fallback — see the Webhooks section: deliv
 curl https://api.protegey.com/partner-api/kyc/sessions/018f2a3e-... \\
   -H "x-api-key: YOUR_API_KEY"
 
-# Response — identical shape to the outbound webhook payload, minus eventId.
-{ "sessionId": "018f2a3e-...", "externalUserId": "cust-9981", "status": "APPROVED", "outcome": "SUCCESS", "decision": { "source": "facetec", "outcome": "SUCCESS", "passed": true, "confidenceScore": 94, ... } }`
+# Response — same fields as the outbound webhook payload (minus eventId), plus scores and photos.
+{
+  "sessionId": "018f2a3e-...",
+  "externalUserId": "cust-9981",
+  "status": "IN_REVIEW",
+  "outcome": "SUCCESS",
+  "recommendation": "APPROVE",
+  "decision": { "source": "facetec", "outcome": "SUCCESS", "passed": true, "matchLevel": 6, ... },
+  "fullName": "AWA DIALLO",
+  "documentType": "Passport",
+  "country": "CI",
+  "livenessScore": 100,
+  "faceMatchScore": 100,
+  "images": {
+    "documentFront": { "url": "https://<bucket>.s3.<region>.amazonaws.com/...-document.jpg?X-Amz-Signature=...", "expiresAt": "2026-11-19T13:00:00.000Z" },
+    "documentBack": null,
+    "selfie": { "url": "https://<bucket>.s3.<region>.amazonaws.com/...-selfie.jpg?X-Amz-Signature=...", "expiresAt": "2026-11-19T13:00:00.000Z" },
+    "documentFaceCrop": { "url": "https://<bucket>.s3.<region>.amazonaws.com/...-document-face-crop.jpg?X-Amz-Signature=...", "expiresAt": "2026-11-19T13:00:00.000Z" }
+  },
+  "documentPhoto": "<base64>", "documentBackPhoto": null, "selfiePhoto": "<base64>", "documentFaceCrop": "<base64>"
+}`
+
+const KYC_LIST_EXAMPLE = `# Find a customer's sessions by your own id — exact match, paginated, newest first.
+curl "https://api.protegey.com/partner-api/kyc/sessions?externalUserId=cust-9981&page=1&limit=20" \\
+  -H "x-api-key: YOUR_API_KEY"
+
+# Response — no base64 photos in the list, only pre-signed links.
+{
+  "data": [
+    {
+      "sessionId": "018f2a3e-...",
+      "externalUserId": "cust-9981",
+      "status": "IN_REVIEW",
+      "outcome": "SUCCESS",
+      "recommendation": "APPROVE",
+      "fullName": "AWA DIALLO",
+      "documentType": "Passport",
+      "country": "CI",
+      "createdAt": "2026-11-19T12:00:00.000Z",
+      "images": { "documentFront": { "url": "https://...", "expiresAt": "2026-11-19T13:00:00.000Z" }, "documentBack": null, "selfie": { "url": "https://...", "expiresAt": "..." }, "documentFaceCrop": null }
+    }
+  ],
+  "total": 1, "page": 1, "limit": 20, "totalPages": 1
+}`
 
 const KYC_UPDATE_EXAMPLE = `# Correct an OCR misread, or resolve an "IN_REVIEW" session by overriding its status.
 curl -X PATCH https://api.protegey.com/partner-api/kyc/sessions/018f2a3e-... \\
@@ -856,9 +905,10 @@ const WEBHOOK_KYC_PAYLOAD_EXAMPLE = `{
   "type": "kyc.status_changed",
   "eventId": "d0d61d39-88c5-4bfb-89eb-08bb1d407c5a",
   "externalUserId": "cust-9981",
-  "status": "APPROVED",
+  "status": "IN_REVIEW",
+  "recommendation": "APPROVE",
   "sessionId": "018f2a3e-...",
-  "decision": { "source": "facetec", "outcome": "SUCCESS", "passed": true, "confidenceScore": 94, "livenessScore": 97, "matchScore": 91, ... }
+  "decision": { "source": "facetec", "outcome": "SUCCESS", "passed": true, "livenessScore": 100, "matchLevel": 6, ... }
 }`
 
 const WEBHOOK_ALERT_CREATED_EXAMPLE = `{
