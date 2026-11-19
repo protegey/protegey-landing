@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-neutral-50 dark:bg-neutral-950 min-h-screen overflow-hidden">
+    <div class="bg-neutral-50 dark:bg-neutral-950 min-h-screen overflow-x-clip">
         <!-- ── Hero ──────────────────────────────────────────── -->
         <section class="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
             <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808007_1px,transparent_1px),linear-gradient(to_bottom,#80808007_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
@@ -40,7 +40,7 @@
         <!-- ── Body: sidebar + sections ─────────────────────── -->
         <section class="py-14 md:py-20">
             <div class="container mx-auto px-4 max-w-7xl flex gap-10">
-                <nav class="sticky top-28 hidden lg:flex h-fit w-56 shrink-0 flex-col gap-1">
+                <nav class="sticky top-28 hidden lg:flex h-fit max-h-[calc(100vh-8rem)] overflow-y-auto overscroll-contain w-56 shrink-0 flex-col gap-1 pb-4">
                     <template v-for="item in navItems" :key="item.id">
                         <div v-if="item.isGroup" class="mt-3 first:mt-0 px-3 text-[10px] font-black uppercase tracking-wider text-neutral-400 dark:text-neutral-600">
                             {{ t(item.labelKey) }}
