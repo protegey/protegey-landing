@@ -719,6 +719,8 @@
         "hero_title_1": "Conçu pour les",
         "hero_title_2": "développeurs.",
         "hero_subtitle": "Intégrez l'infrastructure d'intelligence anti-fraude de Protegey via une API REST/HTTPS classique avec votre propre clé API — aucun protocole propriétaire, aucun SDK obligatoire (même si nous en fournissons un pour six plateformes).",
+        "download_pdf": "Télécharger la documentation complète",
+        "download_pdf_hint": "Toute cette page en un seul document : référence complète, scénarios, webhooks et erreurs.",
         "nav_auth": "Authentification",
         "nav_sdks": "SDKs",
         "nav_group_pan_id": "Pan-ID™",

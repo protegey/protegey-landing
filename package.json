@@ -11,7 +11,8 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "sync:catalog": "node scripts/sync-catalog.mjs"
+    "sync:catalog": "node scripts/sync-catalog.mjs",
+    "docs:pdf": "node scripts/build-api-pdf.mjs"
   },
   "dependencies": {
     "@hugeicons/core-free-icons": "^1.2.1",

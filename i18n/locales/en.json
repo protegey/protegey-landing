@@ -717,6 +717,8 @@
         "hero_title_1": "Built for",
         "hero_title_2": "builders.",
         "hero_subtitle": "Integrate Africa's fraud intelligence infrastructure over a plain REST/HTTPS API with your own API key — no proprietary protocol, no vendor lock-in SDK required (though we provide one for six platforms).",
+        "download_pdf": "Download the full documentation",
+        "download_pdf_hint": "This whole page as one document: full reference, scenarios, webhooks and errors.",
         "nav_auth": "Authentication",
         "nav_sdks": "SDKs",
         "nav_group_pan_id": "Pan-ID™",
