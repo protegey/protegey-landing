@@ -16,6 +16,18 @@
                 <p class="text-base md:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed font-medium">
                     {{ t('api_docs.hero_subtitle') }}
                 </p>
+                <div class="mt-8 flex flex-col items-center gap-3">
+                    <p class="text-sm font-semibold text-neutral-900 dark:text-white">{{ t('api_docs.download_pdf') }}</p>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <a v-for="pdf in pdfs" :key="pdf.lang" :href="pdf.href" :hreflang="pdf.lang" download
+                           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold hover:scale-[1.03] transition-all"
+                           :class="pdf.lang === preferredPdf ? 'bg-neutral-900 dark:bg-white text-white dark:text-neutral-900' : 'border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white'">
+                            <HugeiconsIcon :icon="Download01Icon" :size="18" />
+                            {{ pdf.label }}
+                        </a>
+                    </div>
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400">{{ t('api_docs.download_pdf_hint') }}</p>
+                </div>
             </div>
         </section>
 
@@ -233,10 +245,17 @@ import {
     LockKeyIcon, Package01Icon, Exchange01Icon, FingerPrintIcon, Shield01Icon,
     SmartPhone01Icon, Activity01Icon, Share01Icon, WebhookIcon, Alert02Icon, Notification01Icon, Link01Icon,
     JavaScriptIcon, ReactIcon, PhpIcon, JavaIcon, DartIcon, MicrosoftIcon,
-    Building01Icon, Book02Icon, TestTube01Icon
+    Building01Icon, Book02Icon, TestTube01Icon, Download01Icon
 } from '@hugeicons/core-free-icons'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+// Built by `npm run docs:pdf` (scripts/build-api-pdf.mjs) — French and English only, like the catalog.
+// Both are always offered; the one matching the page language is the primary button.
+const pdfs = [
+    { lang: 'fr', label: 'PDF — Français', href: '/docs/protegey-api-documentation-fr.pdf' },
+    { lang: 'en', label: 'PDF — English', href: '/docs/protegey-api-documentation-en.pdf' },
+]
+const preferredPdf = computed(() => (locale.value === 'fr' ? 'fr' : 'en'))
 const localePath = useLocalePath()
 const baseUrl = 'https://www.protegey.com'
 
