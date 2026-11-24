@@ -385,10 +385,10 @@ const navItems = [
 const sdks = [
     { platform: 'JavaScript / TypeScript', icon: JavaScriptIcon, package: '@protegey/sdk', install: 'npm install git+https://github.com/protegey/protegey_js_sdk.git', repo: 'https://github.com/protegey/protegey_js_sdk' },
     { platform: 'React Native', icon: ReactIcon, package: '@protegey/react-native-sdk', install: 'npm install git+https://github.com/protegey/protegey_react_native_sdk.git', repo: 'https://github.com/protegey/protegey_react_native_sdk' },
-    { platform: 'PHP', icon: PhpIcon, package: 'protegey/sdk', install: 'composer require protegey/sdk', repo: 'https://github.com/protegey/protegey_php_sdk' },
-    { platform: 'Java', icon: JavaIcon, package: 'com.protegey:protegey-sdk', install: "implementation 'com.protegey:protegey-sdk:0.5.0'", repo: 'https://github.com/protegey/protegey_java_sdk' },
-    { platform: 'Flutter / Dart', icon: DartIcon, package: 'protegey_sdk', install: 'flutter pub add protegey_sdk', repo: 'https://github.com/protegey/protegey-sdk-flutter' },
-    { platform: '.NET', icon: MicrosoftIcon, package: 'Protegey.Sdk', install: 'dotnet add package Protegey.Sdk', repo: 'https://github.com/protegey/protegey_dotnet_sdk' },
+    { platform: 'PHP', icon: PhpIcon, package: 'protegey/sdk', install: 'composer config repositories.protegey vcs https://github.com/protegey/protegey_php_sdk && composer require protegey/sdk:dev-main', repo: 'https://github.com/protegey/protegey_php_sdk' },
+    { platform: 'Java', icon: JavaIcon, package: 'com.protegey:protegey-sdk', install: 'git clone https://github.com/protegey/protegey_java_sdk.git && cd protegey_java_sdk && mvn install', repo: 'https://github.com/protegey/protegey_java_sdk' },
+    { platform: 'Flutter / Dart', icon: DartIcon, package: 'protegey_sdk', install: 'flutter pub add protegey_sdk --git-url https://github.com/protegey/protegey_flutter_sdk.git', repo: 'https://github.com/protegey/protegey_flutter_sdk' },
+    { platform: '.NET', icon: MicrosoftIcon, package: 'Protegey.Sdk', install: 'git clone https://github.com/protegey/dotnet_sdk.git && dotnet pack dotnet_sdk/src/Protegey.Sdk -c Release', repo: 'https://github.com/protegey/dotnet_sdk' },
 ]
 
 // ── ApiConsole field sets — mirror the real DTOs of each endpoint. ──
@@ -435,7 +435,7 @@ const sharedSignalFields = [
 ]
 const kybFields = [
     { name: 'contactName', label: 'contactName', type: 'text', required: true, placeholder: 'Awa Diallo' },
-    { name: 'contactEmail', label: 'contactEmail', type: 'text', placeholder: 'awa@acme-sarl.com' },
+    { name: 'contactEmail', label: 'contactEmail', type: 'text', placeholder: 'awa@example.com' },
     { name: 'contactPhone', label: 'contactPhone', type: 'text', placeholder: '+224600000000' },
 ]
 const alertsFlagFields = [{ name: 'transactionId', label: 'transactionId', type: 'text', required: true, placeholder: '4d06ad4e-2018-428a-8323-d537da5e19fa' }]

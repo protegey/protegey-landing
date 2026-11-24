@@ -52,10 +52,10 @@ const GROUPS = [
 const SDKS = [
     { platform: 'JavaScript / TypeScript', package: '@protegey/sdk', install: 'npm install git+https://github.com/protegey/protegey_js_sdk.git', repo: 'https://github.com/protegey/protegey_js_sdk' },
     { platform: 'React Native', package: '@protegey/react-native-sdk', install: 'npm install git+https://github.com/protegey/protegey_react_native_sdk.git', repo: 'https://github.com/protegey/protegey_react_native_sdk' },
-    { platform: 'PHP', package: 'protegey/sdk', install: 'composer require protegey/sdk', repo: 'https://github.com/protegey/protegey_php_sdk' },
-    { platform: 'Java', package: 'com.protegey:protegey-sdk', install: "implementation 'com.protegey:protegey-sdk:0.5.0'", repo: 'https://github.com/protegey/protegey_java_sdk' },
-    { platform: 'Flutter / Dart', package: 'protegey_sdk', install: 'flutter pub add protegey_sdk', repo: 'https://github.com/protegey/protegey-sdk-flutter' },
-    { platform: '.NET', package: 'Protegey.Sdk', install: 'dotnet add package Protegey.Sdk', repo: 'https://github.com/protegey/protegey_dotnet_sdk' },
+    { platform: 'PHP', package: 'protegey/sdk', install: 'composer config repositories.protegey vcs https://github.com/protegey/protegey_php_sdk && composer require protegey/sdk:dev-main', repo: 'https://github.com/protegey/protegey_php_sdk' },
+    { platform: 'Java', package: 'com.protegey:protegey-sdk', install: 'git clone https://github.com/protegey/protegey_java_sdk.git && cd protegey_java_sdk && mvn install', repo: 'https://github.com/protegey/protegey_java_sdk' },
+    { platform: 'Flutter / Dart', package: 'protegey_sdk', install: 'flutter pub add protegey_sdk --git-url https://github.com/protegey/protegey_flutter_sdk.git', repo: 'https://github.com/protegey/protegey_flutter_sdk' },
+    { platform: '.NET', package: 'Protegey.Sdk', install: 'git clone https://github.com/protegey/dotnet_sdk.git && dotnet pack dotnet_sdk/src/Protegey.Sdk -c Release', repo: 'https://github.com/protegey/dotnet_sdk' },
 ]
 
 const WEBHOOK_VERIFY_EXAMPLE = `// Node.js — verify a delivery is genuinely from Protegey and hasn't been replayed
