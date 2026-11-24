@@ -52,8 +52,8 @@ if (typeof catalog.catalogVersion !== 'number' || !catalog.modules || !catalog.w
 const index = {
     catalogVersion: catalog.catalogVersion,
     title: catalog.title,
-    generatedFrom: catalog.generatedFrom,
-    syncedFrom: /^https?:/.test(source) ? source : 'protegey-backend/docs/partner-api-catalog.json',
+    // Never names internal repos or paths: this file ships with the public site.
+    syncedFrom: 'https://api.protegey.com/public/partner-api-catalog',
     conventions: catalog.conventions,
     sandboxScenarios: catalog.sandboxScenarios,
     webhooks: {
